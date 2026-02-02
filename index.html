@@ -12,6 +12,7 @@
   <meta name="theme-color" content="#0b1020"/>
   <title>AKIL</title>
 
+
   <!-- =======================================================
        Fonts
        - 预连接加快 Google Fonts 加载
@@ -25,6 +26,17 @@
   <!-- 主样式文件 -->
   <link rel="stylesheet" href="styles.css"/>
 </head>
+
+<script>
+  window.addEventListener("load", () => {
+    const key = "site_building_notice_shown";
+    if (!localStorage.getItem(key)) {
+      alert("⚠️ 网站正在建设中，部分功能尚未开放。");
+      localStorage.setItem(key, "1");
+    }
+  });
+</script>
+
 
 <body>
   <!-- =======================================================
