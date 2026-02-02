@@ -521,3 +521,39 @@ a{ color: inherit; text-decoration:none; }
   .split{ grid-template-columns: 1fr; }
   .section__head{ flex-direction: column; align-items:flex-start; }
 }
+
+/*增加底部图片特效*/
+.footerBanner
+{
+  position: relative;
+  margin: 0 auto 16px;
+  width: min(980px, 92vw);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  box-shadow: var(--shadow);
+}
+
+.footerBanner img
+{
+  display:block;
+  width:100%;
+  height: 160px;         /* 想更高就调这个 */
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.05);
+  opacity: .92;
+}
+
+.footerBanner__glow
+{
+  position:absolute;
+  inset:-40%;
+  background: radial-gradient(circle at 30% 40%, rgba(0,212,255,.25), transparent 55%),
+              radial-gradient(circle at 70% 30%, rgba(255,43,214,.22), transparent 55%),
+              radial-gradient(circle at 50% 80%, rgba(124,77,255,.18), transparent 60%);
+  pointer-events:none;
+  mix-blend-mode: screen;
+  filter: blur(16px);
+}
+
