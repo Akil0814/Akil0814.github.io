@@ -1,18 +1,38 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- =======================================================
+       Meta / SEO / viewport
+       - charset：编码
+       - viewport：移动端适配
+       - theme-color：手机浏览器地址栏颜色（部分浏览器支持）
+       ======================================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#0b1020"/>
   <title>AKIL</title>
+
+  <!-- =======================================================
+       Fonts
+       - 预连接加快 Google Fonts 加载
+       - Outfit：主字体
+       - JetBrains Mono：等宽字体（标签/年份/小信息）
+       ======================================================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- 主样式文件 -->
   <link rel="stylesheet" href="styles.css"/>
 </head>
 
 <body>
-  <!-- Ambient background -->
+  <!-- =======================================================
+       Ambient background layers (纯装饰，不影响内容交互)
+       - canvas#stars：星空（JS绘制）
+       - .bg-blobs：彩色光团（CSS）
+       - .scanlines：扫描线（CSS）
+       ======================================================= -->
   <canvas id="stars" aria-hidden="true"></canvas>
   <div class="bg-blobs" aria-hidden="true">
     <span class="blob b1"></span>
@@ -21,7 +41,11 @@
   </div>
   <div class="scanlines" aria-hidden="true"></div>
 
-  <!-- Top nav -->
+  <!-- =======================================================
+       Top nav (固定在顶部)
+       - 左：brand 回到顶部
+       - 右：页面锚点导航 + FX开关 + Theme开关
+       ======================================================= -->
   <header class="nav">
     <div class="nav__left">
       <a class="brand" href="#top">
@@ -29,17 +53,32 @@
         <span class="brand__text">AKIL0814</span>
       </a>
     </div>
+
     <nav class="nav__right">
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="#links">Links</a>
+
+      <!-- FX 按钮：切换背景特效（会给 body 加/删 fx-off） -->
       <button id="toggleFx" class="btn btn--ghost" type="button" title="Toggle FX">FX</button>
+
+      <!-- Theme 按钮：切换 data-theme=dark/light -->
       <button id="themeBtn" class="btn" type="button" title="Toggle theme">Theme</button>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- =======================================================
+       Main content wrapper
+       - #top：页面顶部锚点
+       - .wrap：控制最大宽度 + 给固定 nav 留出上边距
+       ======================================================= -->
   <main id="top" class="wrap">
+
+    <!-- =====================================================
+         Hero section
+         - 左：个人简介 + CTA + 三个小状态
+         - 右：头像卡 + 两个浮动链接卡
+         ===================================================== -->
     <section class="hero">
       <div class="hero__left">
         <p class="badge">
@@ -47,6 +86,7 @@
           anime-neon // portfolio
         </p>
 
+        <!-- glitch 标题：data-text 给伪元素用 -->
         <h1 class="glitch" data-text="AKIL">
           AKIL
         </h1>
@@ -57,12 +97,14 @@
           Welcome to the neon corner of the internet.
         </p>
 
+        <!-- CTA buttons -->
         <div class="cta">
           <a class="btn btn--primary" href="#projects">See Projects</a>
           <a class="btn" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn btn--ghost" href="#about">About Me</a>
         </div>
 
+        <!-- 迷你信息块：其中 #statusText 会被 JS 轮播更新 -->
         <div class="mini-stats">
           <div class="chip">
             <span class="chip__label">Focus</span>
@@ -80,30 +122,18 @@
       </div>
 
       <div class="hero__right">
+        <!-- 头像卡 -->
         <div class="card portrait">
           <div class="portrait__frame">
-            <!-- 换成你自己的头像或二次元图 -->
             <img
-              src="https://images.unsplash.com/photo-1520975958225-2dc44b872a6a?auto=format&fit=crop&w=900&q=80"
+              src="./image/Yukino.png"
               alt="Avatar"
             />
             <div class="portrait__shine" aria-hidden="true"></div>
           </div>
-
-          <div class="portrait__hud">
-            <div class="hud__row">
-              <span class="hud__tag">LV</span>
-              <span class="hud__val">24</span>
-              <span class="hud__tag">HP</span>
-              <span class="hud__val">999</span>
-            </div>
-            <div class="hud__bar">
-              <div class="hud__barFill" style="width: 86%"></div>
-            </div>
-            <p class="hud__hint">Tip: press “FX” if your laptop starts crying.</p>
-          </div>
         </div>
 
+        <!-- 右侧两个小浮动卡片链接 -->
         <div class="floating-cards">
           <a class="float-card" href="#projects">
             <span class="float-card__title">Latest Build</span>
@@ -117,7 +147,10 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- =====================================================
+         Projects section
+         - 三个项目占位卡：你之后把 Repo 链接换成真实的
+         ===================================================== -->
     <section id="projects" class="section">
       <div class="section__head">
         <h2 class="section__title">Projects</h2>
@@ -169,7 +202,11 @@
       </div>
     </section>
 
-    <!-- About -->
+    <!-- =====================================================
+         About section
+         - 左：Profile list
+         - 右：Skills tags
+         ===================================================== -->
     <section id="about" class="section section--split">
       <div class="section__head">
         <h2 class="section__title">About</h2>
@@ -206,7 +243,10 @@
       </div>
     </section>
 
-    <!-- Links -->
+    <!-- =====================================================
+         Links section
+         - 三个链接卡：GitHub / Email / Resume
+         ===================================================== -->
     <section id="links" class="section">
       <div class="section__head">
         <h2 class="section__title">Links</h2>
@@ -229,35 +269,33 @@
       </div>
     </section>
 
+    <!-- =====================================================
+         Footer (现在把 footerBanner 放进来，结构才正确)
+         - #year 会被 JS 自动填充年份
+         ===================================================== -->
     <footer class="footer">
+      <div class="footerBanner">
+        <img
+          src="./image/Yukino.png"
+          alt="Footer banner"
+          loading="lazy"
+        />
+        <div class="footerBanner__glow" aria-hidden="true"></div>
+      </div>
+
       <p>
         <span class="mono">© <span id="year"></span> Akil</span>
         <span class="dot">•</span>
         <span class="mono">Built with HTML/CSS/JS (because we enjoy pain)</span>
       </p>
     </footer>
+
   </main>
 
+  <!-- =======================================================
+       Main script
+       - 负责：主题切换、FX开关、年份填充、状态轮播、星空绘制
+       ======================================================= -->
   <script src="script.js"></script>
 </body>
 </html>
-
-<!--增加底部图片 -->
-<footer class="footer">
-  <div class="footerBanner">
-    <!-- 你可以换成自己仓库里的图片，比如 assets/footer.gif -->
-    <img
-      src="https://github.com/Akil0814/Akil0814.github.io/blob/main/image/Yukino.png"
-      alt="Footer banner"
-      loading="lazy"
-    />
-    <div class="footerBanner__glow" aria-hidden="true"></div>
-  </div>
-
-  <p>
-    <span class="mono">© <span id="year"></span> Akil</span>
-    <span class="dot">•</span>
-    <span class="mono">Built with HTML/CSS/JS</span>
-  </p>
-</footer>
-

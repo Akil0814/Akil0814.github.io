@@ -1,3 +1,8 @@
+/* =========================================================
+   Global theme variables
+   - 定义全站颜色、透明度、阴影、圆角等“设计系统”
+   - 方便统一修改风格（暗色/亮色切换也靠它）
+   ========================================================= */
 :root{
   --bg: #070a16;
   --bg2:#0b1020;
@@ -16,7 +21,13 @@
   --radius: 20px;
 }
 
-[data-theme="light"]{
+/* =========================================================
+   Light theme override
+   - 当 html 上有 data-theme="light" 时，覆盖变量
+   - 只改变量，不改组件样式，维护成本更低
+   ========================================================= */
+[data-theme="light"]
+{
   --bg: #f6f7ff;
   --bg2:#eef1ff;
   --card: rgba(10,20,40,.06);
@@ -27,30 +38,52 @@
   --shadow: 0 20px 60px rgba(10,20,40,.18);
 }
 
+/* =========================================================
+   Base reset / global typography
+   - 基础盒模型、页面高度、字体、背景、禁横向滚动
+   ========================================================= */
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
 body{
   margin:0;
   font-family: Outfit, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
+
+  /* 页面背景（你说的“蓝点/蓝光FX”主要来自这里的 radial-gradient）
+     - 如果你想“删蓝点FX”，就是删/改这几行 radial-gradient */
   background:
     radial-gradient(1200px 700px at 80% 20%, rgba(124,77,255,.18), transparent 60%),
     radial-gradient(900px 600px at 20% 30%, rgba(0,212,255,.14), transparent 55%),
     linear-gradient(180deg, var(--bg), var(--bg2));
+
   overflow-x:hidden;
 }
 
 a{ color: inherit; text-decoration:none; }
+
+/* 统一 mono 字体，用于 UI 小标签、年份等 */
 .mono{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
-#stars{
+/* =========================================================
+   Background FX layers (星空/光斑/扫描线)
+   - #stars：canvas 星空（JS 绘制）
+   - .bg-blobs：彩色大光团（纯 CSS）
+   - .scanlines：扫描线（纯 CSS）
+   ========================================================= */
+
+/* 星空 canvas：固定全屏，放到最底层 */
+#stars
+{
   position:fixed;
   inset:0;
   z-index:-3;
   opacity:.75;
 }
 
-.bg-blobs{
+/* 大光团容器：全屏固定，不挡点击 */
+.bg-blobs
+{
   position:fixed;
   inset:0;
   z-index:-2;
@@ -58,7 +91,10 @@ a{ color: inherit; text-decoration:none; }
   filter: blur(26px);
   opacity:.85;
 }
-.blob{
+
+/* 单个光团：圆形 + 渐变 + 浮动动画 */
+.blob
+{
   position:absolute;
   width:520px; height:520px;
   border-radius:50%;
@@ -68,15 +104,19 @@ a{ color: inherit; text-decoration:none; }
               linear-gradient(135deg, rgba(124,77,255,.55), rgba(0,212,255,.45), rgba(255,43,214,.40));
   animation: float 10s ease-in-out infinite;
 }
+
+/* 三个光团的位置/大小/延迟 */
 .b1{ left:-120px; top:80px; animation-delay:0s; }
 .b2{ right:-160px; top:220px; width:620px; height:620px; animation-delay:2s; }
 .b3{ left:20%; bottom:-260px; width:740px; height:740px; animation-delay:4s; }
 
+/* 光团浮动动画 */
 @keyframes float{
   0%,100%{ transform: translate3d(0,0,0) scale(1); }
   50%{ transform: translate3d(20px,-18px,0) scale(1.06); }
 }
 
+/* 扫描线层：全屏固定 + repeating-linear-gradient */
 .scanlines{
   position:fixed;
   inset:0;
@@ -92,10 +132,15 @@ a{ color: inherit; text-decoration:none; }
   opacity:.06;
 }
 
+/* =========================================================
+   Layout containers
+   - .wrap：主内容最大宽度 + 顶部留给固定导航
+   - .nav：固定顶部导航，带毛玻璃
+   ========================================================= */
 .wrap{
   width:min(1100px, 92vw);
   margin:0 auto;
-  padding: 110px 0 60px;
+  padding: 110px 0 60px; /* 顶部给 nav 留空间 */
 }
 
 .nav{
@@ -111,6 +156,9 @@ a{ color: inherit; text-decoration:none; }
   border-bottom: 1px solid var(--line);
 }
 
+/* =========================================================
+   Brand block (左上角 AKIL0814)
+   ========================================================= */
 .brand{
   display:flex;
   align-items:center;
@@ -134,6 +182,9 @@ a{ color: inherit; text-decoration:none; }
   font-size:12px;
 }
 
+/* =========================================================
+   Nav links & buttons
+   ========================================================= */
 .nav__right{
   display:flex;
   align-items:center;
@@ -152,6 +203,7 @@ a{ color: inherit; text-decoration:none; }
   background: rgba(255,255,255,.04);
 }
 
+/* 按钮通用样式 */
 .btn{
   cursor:pointer;
   border:1px solid var(--line);
@@ -162,9 +214,11 @@ a{ color: inherit; text-decoration:none; }
   font-weight:700;
 }
 .btn:hover{ background: rgba(255,255,255,.10); }
-.btn--ghost{
-  background: transparent;
-}
+
+/* ghost：透明底 */
+.btn--ghost{ background: transparent; }
+
+/* primary：渐变强调按钮 */
 .btn--primary{
   border-color: transparent;
   background: linear-gradient(135deg, rgba(124,77,255,.85), rgba(0,212,255,.70), rgba(255,43,214,.65));
@@ -172,6 +226,9 @@ a{ color: inherit; text-decoration:none; }
 }
 .btn--primary:hover{ filter: brightness(1.05); }
 
+/* =========================================================
+   Hero section (顶部两栏：文字 + 头像卡)
+   ========================================================= */
 .hero{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -180,6 +237,7 @@ a{ color: inherit; text-decoration:none; }
   margin-top: 18px;
 }
 
+/* 小 badge：左上 neon 标签 */
 .badge{
   display:inline-flex;
   gap:10px;
@@ -193,6 +251,8 @@ a{ color: inherit; text-decoration:none; }
   letter-spacing:.08em;
   text-transform: lowercase;
 }
+
+/* badge 里的呼吸小点 */
 .badge__pulse{
   width:8px; height:8px; border-radius:50%;
   background: var(--good);
@@ -204,6 +264,7 @@ a{ color: inherit; text-decoration:none; }
   50%{ transform: scale(1.35); opacity:.55; }
 }
 
+/* 大标题 glitch 效果：用 ::before / ::after 叠两层裁剪动画 */
 .glitch{
   font-size: clamp(38px, 5vw, 64px);
   line-height: 1.02;
@@ -244,12 +305,15 @@ a{ color: inherit; text-decoration:none; }
   100%{ clip-path: inset(25% 0 40% 0); }
 }
 
+/* 副标题文本 */
 .subtitle{
   color: var(--muted);
   font-size: 16px;
   line-height: 1.65;
   margin: 0 0 18px;
 }
+
+/* “胶囊关键字” */
 .k{
   color: rgba(255,255,255,.92);
   padding: 2px 8px;
@@ -260,6 +324,7 @@ a{ color: inherit; text-decoration:none; }
   font-size: 13px;
 }
 
+/* CTA 按钮区域 */
 .cta{
   display:flex;
   flex-wrap:wrap;
@@ -267,6 +332,7 @@ a{ color: inherit; text-decoration:none; }
   margin: 14px 0 18px;
 }
 
+/* mini stats：三块小信息条 */
 .mini-stats{
   display:flex;
   flex-wrap:wrap;
@@ -291,6 +357,9 @@ a{ color: inherit; text-decoration:none; }
   font-size: 13px;
 }
 
+/* =========================================================
+   Card components (头像卡、浮动小卡)
+   ========================================================= */
 .card{
   border:1px solid var(--line);
   border-radius: var(--radius);
@@ -299,6 +368,7 @@ a{ color: inherit; text-decoration:none; }
   overflow:hidden;
 }
 
+/* 头像卡：图片框 + 光泽扫过 */
 .portrait{ position:relative; }
 .portrait__frame{
   position:relative;
@@ -326,6 +396,8 @@ a{ color: inherit; text-decoration:none; }
   100%{ transform: rotate(20deg) translateX(40%); opacity:.0; }
 }
 
+/* 你之前 HUD 的样式块还在（当前 HTML 没用到）
+   - 保留也行，之后想加头像信息条时能直接用 */
 .portrait__hud{
   padding: 14px 14px 16px;
   background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.00));
@@ -364,6 +436,7 @@ a{ color: inherit; text-decoration:none; }
   color: var(--muted);
 }
 
+/* 头像卡下面的两个小浮动链接卡 */
 .floating-cards{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -381,6 +454,9 @@ a{ color: inherit; text-decoration:none; }
 .float-card__title{ display:block; font-weight:800; }
 .float-card__desc{ display:block; color: var(--muted); font-size: 12px; margin-top: 4px; }
 
+/* =========================================================
+   Section blocks (Projects / About / Links)
+   ========================================================= */
 .section{
   margin-top: 52px;
   padding-top: 18px;
@@ -403,11 +479,14 @@ a{ color: inherit; text-decoration:none; }
   max-width: 62ch;
 }
 
+/* Projects 三列网格（小屏会变一列） */
 .grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+
+/* 单个项目卡 */
 .proj{
   border:1px solid var(--line);
   border-radius: var(--radius);
@@ -432,6 +511,8 @@ a{ color: inherit; text-decoration:none; }
 .proj__title{ margin: 12px 0 8px; font-size: 18px; font-weight: 800; }
 .proj__text{ margin:0; color: var(--muted); line-height: 1.6; font-size: 14px; }
 .proj__links{ margin-top: 12px; display:flex; gap: 12px; }
+
+/* 项目卡里的链接 */
 .link{
   font-weight: 800;
   border-bottom: 1px solid transparent;
@@ -444,6 +525,7 @@ a{ color: inherit; text-decoration:none; }
   text-shadow: 0 0 18px rgba(0,212,255,.18);
 }
 
+/* About 分栏布局 */
 .section--split .section__head{ margin-bottom: 18px; }
 .split{
   display:grid;
@@ -468,6 +550,8 @@ a{ color: inherit; text-decoration:none; }
   line-height: 1.75;
 }
 .list b{ color: var(--text); }
+
+/* 技能 tag */
 .tags{
   display:flex;
   flex-wrap:wrap;
@@ -483,6 +567,7 @@ a{ color: inherit; text-decoration:none; }
 }
 .muted{ color: var(--muted); margin: 12px 0 0; font-size: 13px; line-height: 1.6; }
 
+/* Links 三列链接卡 */
 .links{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -499,6 +584,9 @@ a{ color: inherit; text-decoration:none; }
 .linkCard__k{ display:block; font-weight: 900; }
 .linkCard__v{ display:block; color: var(--muted); margin-top: 6px; font-family:"JetBrains Mono", monospace; font-size: 12px; }
 
+/* =========================================================
+   Footer
+   ========================================================= */
 .footer{
   margin-top: 52px;
   padding-top: 24px;
@@ -508,12 +596,21 @@ a{ color: inherit; text-decoration:none; }
 }
 .footer .dot{ margin: 0 10px; opacity:.65; }
 
+/* =========================================================
+   FX toggle support
+   - body 加上 .fx-off 后，关闭/弱化背景特效
+   - 这个 class 由 JS 控制（toggleFx 按钮）
+   ========================================================= */
 .fx-off .scanlines{ display:none; }
 .fx-off .bg-blobs{ display:none; }
 .fx-off #stars{ opacity:.35; }
 
-/* Responsive */
-@media (max-width: 980px){
+/* =========================================================
+   Responsive
+   - 小屏幕调整布局：两栏变一栏、三列变一列
+   ========================================================= */
+@media (max-width: 980px)
+{
   .hero{ grid-template-columns: 1fr; }
   .floating-cards{ grid-template-columns: 1fr 1fr; }
   .grid{ grid-template-columns: 1fr; }
@@ -522,7 +619,12 @@ a{ color: inherit; text-decoration:none; }
   .section__head{ flex-direction: column; align-items:flex-start; }
 }
 
-/*增加底部图片特效*/
+/* =========================================================
+   Footer banner image effect (底部横幅图 + 发光层)
+   - .footerBanner：容器，控制圆角/裁剪/边框/阴影
+   - img：固定高度横幅图
+   - .footerBanner__glow：叠一层彩色光晕，不挡点击
+   ========================================================= */
 .footerBanner
 {
   position: relative;
@@ -539,7 +641,7 @@ a{ color: inherit; text-decoration:none; }
 {
   display:block;
   width:100%;
-  height: 160px;         /* 想更高就调这个 */
+  height: 160px;         /* 横幅高度：想更高就调这个 */
   object-fit: cover;
   filter: saturate(1.1) contrast(1.05);
   opacity: .92;
@@ -556,4 +658,3 @@ a{ color: inherit; text-decoration:none; }
   mix-blend-mode: screen;
   filter: blur(16px);
 }
-
