@@ -1,7 +1,263 @@
 <!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Akil</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0b1020"/>
+  <title>AKIL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
 <body>
-  <h1>Hello, I exist.</h1>
+  <!-- Ambient background -->
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- Top nav -->
+  <header class="nav">
+    <div class="nav__left">
+      <a class="brand" href="#top">
+        <span class="brand__dot"></span>
+        <span class="brand__text">AKIL0814</span>
+      </a>
+    </div>
+    <nav class="nav__right">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#links">Links</a>
+      <button id="toggleFx" class="btn btn--ghost" type="button" title="Toggle FX">FX</button>
+      <button id="themeBtn" class="btn" type="button" title="Toggle theme">Theme</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="hero__left">
+        <p class="badge">
+          <span class="badge__pulse"></span>
+          anime-neon // portfolio
+        </p>
+
+        <h1 class="glitch" data-text="AKIL">
+          AKIL
+        </h1>
+
+        <p class="subtitle">
+          Building things with <span class="k">C++</span>, <span class="k">SDL</span>, <span class="k">Qt</span>, and the occasional human sanity check.
+          <br/>
+          Welcome to the neon corner of the internet.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn--primary" href="#projects">See Projects</a>
+          <a class="btn" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn--ghost" href="#about">About Me</a>
+        </div>
+
+        <div class="mini-stats">
+          <div class="chip">
+            <span class="chip__label">Focus</span>
+            <span class="chip__value">C++ / Systems / Graphics</span>
+          </div>
+          <div class="chip">
+            <span class="chip__label">Style</span>
+            <span class="chip__value">Neon · Cyber · Anime</span>
+          </div>
+          <div class="chip">
+            <span class="chip__label">Status</span>
+            <span class="chip__value" id="statusText">Booting...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="card portrait">
+          <div class="portrait__frame">
+            <!-- 换成你自己的头像或二次元图 -->
+            <img
+              src="https://images.unsplash.com/photo-1520975958225-2dc44b872a6a?auto=format&fit=crop&w=900&q=80"
+              alt="Avatar"
+            />
+            <div class="portrait__shine" aria-hidden="true"></div>
+          </div>
+
+          <div class="portrait__hud">
+            <div class="hud__row">
+              <span class="hud__tag">LV</span>
+              <span class="hud__val">24</span>
+              <span class="hud__tag">HP</span>
+              <span class="hud__val">999</span>
+            </div>
+            <div class="hud__bar">
+              <div class="hud__barFill" style="width: 86%"></div>
+            </div>
+            <p class="hud__hint">Tip: press “FX” if your laptop starts crying.</p>
+          </div>
+        </div>
+
+        <div class="floating-cards">
+          <a class="float-card" href="#projects">
+            <span class="float-card__title">Latest Build</span>
+            <span class="float-card__desc">Game / Tooling / Labs</span>
+          </a>
+          <a class="float-card" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">
+            <span class="float-card__title">GitHub</span>
+            <span class="float-card__desc">repos · commits · chaos</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="section__head">
+        <h2 class="section__title">Projects</h2>
+        <p class="section__desc">你把下面链接换成你的仓库。现在先用占位的，免得你问我“为啥点了没东西”。</p>
+      </div>
+
+      <div class="grid">
+        <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">SDL</span>
+            <span class="proj__badge">Game</span>
+          </div>
+          <h3 class="proj__title">WarShips</h3>
+          <p class="proj__text">A tactical naval game prototype with UI polish, input handling, and rendering pipeline experiments.</p>
+          <div class="proj__links">
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
+            <a class="link" href="#" onclick="return false;">Demo</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge">Qt</span>
+            <span class="proj__badge">UI</span>
+            <span class="proj__badge">Tool</span>
+          </div>
+          <h3 class="proj__title">College Tour Planner</h3>
+          <p class="proj__text">A campus trip planner: routes, preferences, and a UI that doesn’t look like 2007.</p>
+          <div class="proj__links">
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
+            <a class="link" href="#" onclick="return false;">Design</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge">Electronics</span>
+            <span class="proj__badge">TTL</span>
+            <span class="proj__badge">Lab</span>
+          </div>
+          <h3 class="proj__title">Logic Modules</h3>
+          <p class="proj__text">Breadboard logic experiments: buses, buffers, adders, and debugging by sheer stubbornness.</p>
+          <div class="proj__links">
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Notes</a>
+            <a class="link" href="#" onclick="return false;">Photos</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section--split">
+      <div class="section__head">
+        <h2 class="section__title">About</h2>
+        <p class="section__desc">
+          简介写得像二次元角色卡就行：技能树、主线任务、支线爱好。
+        </p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3 class="panel__title">Profile</h3>
+          <ul class="list">
+            <li><b>Name:</b> Akil</li>
+            <li><b>Role:</b> Student / Developer</li>
+            <li><b>Main:</b> C++ · Qt · SDL · Systems</li>
+            <li><b>Goal:</b> Build real stuff, not “Hello World” museums.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel__title">Skills</h3>
+          <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">CMake</span>
+            <span class="tag">vcpkg</span>
+            <span class="tag">Qt Widgets/QML</span>
+            <span class="tag">SDL2/3</span>
+            <span class="tag">Python</span>
+            <span class="tag">GitHub Pages</span>
+            <span class="tag">Hardware Debugging</span>
+          </div>
+          <p class="muted">（把你真正会的写上去就行，不用演成“全栈架构师”，互联网已经够吵了。）</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section id="links" class="section">
+      <div class="section__head">
+        <h2 class="section__title">Links</h2>
+        <p class="section__desc">把这些换成你自己的链接。别再把 “#” 当人生归宿。</p>
+      </div>
+
+      <div class="links">
+        <a class="linkCard" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">
+          <span class="linkCard__k">GitHub</span>
+          <span class="linkCard__v">@Akil0814</span>
+        </a>
+        <a class="linkCard" href="#" onclick="return false;">
+          <span class="linkCard__k">Email</span>
+          <span class="linkCard__v">you@example.com</span>
+        </a>
+        <a class="linkCard" href="#" onclick="return false;">
+          <span class="linkCard__k">Resume</span>
+          <span class="linkCard__v">resume.pdf</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        <span class="mono">© <span id="year"></span> Akil</span>
+        <span class="dot">•</span>
+        <span class="mono">Built with HTML/CSS/JS (because we enjoy pain)</span>
+      </p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+<!--增加底部图片 -->
+<footer class="footer">
+  <div class="footerBanner">
+    <!-- 你可以换成自己仓库里的图片，比如 assets/footer.gif -->
+    <img
+      src="https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif"
+      alt="Footer banner"
+      loading="lazy"
+    />
+    <div class="footerBanner__glow" aria-hidden="true"></div>
+  </div>
+
+  <p>
+    <span class="mono">© <span id="year"></span> Akil</span>
+    <span class="dot">•</span>
+    <span class="mono">Built with HTML/CSS/JS</span>
+  </p>
+</footer>
+
