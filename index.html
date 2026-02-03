@@ -27,16 +27,16 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 
+<!--建设中弹窗-->
 <script>
   window.addEventListener("load", () => {
     const key = "site_building_notice_shown";
     if (!localStorage.getItem(key)) {
-      alert("⚠️ 网站正在建设中，部分功能尚未开放。");
+      alert("⚠️ 正在建设中/currently under construction ⚠️");
       localStorage.setItem(key, "1");
     }
   });
 </script>
-
 
 <body>
   <!-- =======================================================
