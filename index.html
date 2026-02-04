@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 
-<!--建设中弹窗-->
+<!--建设中弹窗 只会弹出一次-->
 <script>
   window.addEventListener("load", () => {
     const key = "site_building_notice_shown";
@@ -87,12 +87,12 @@
   <main id="top" class="wrap">
 
     <!-- =====================================================
-         Hero section
+         me section
          - 左：个人简介 + CTA + 三个小状态
          - 右：头像卡 + 两个浮动链接卡
          ===================================================== -->
-    <section class="hero">
-      <div class="hero__left">
+    <section class="me">
+      <div class="me__left">
         <p class="badge">
           <span class="badge__pulse"></span>
           anime-neon // portfolio
@@ -123,17 +123,13 @@
             <span class="chip__value">C++ / Systems / Graphics</span>
           </div>
           <div class="chip">
-            <span class="chip__label">Style</span>
-            <span class="chip__value">Neon · Cyber · Anime</span>
-          </div>
-          <div class="chip">
             <span class="chip__label">Status</span>
             <span class="chip__value" id="statusText">Booting...</span>
           </div>
         </div>
       </div>
 
-      <div class="hero__right">
+      <div class="me__right">
         <!-- 头像卡 -->
         <div class="card portrait">
           <div class="portrait__frame">
@@ -238,7 +234,7 @@
           <h3 class="panel__title">Skills</h3>
           <div class="tags">
             <span class="tag">C++</span>
-            <span class="tag">SDL2/3</span>
+            <span class="tag">SDL</span>
           </div>
           <!--Skill 栏底部文字-->
           <p class="muted"></p>

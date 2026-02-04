@@ -12,14 +12,10 @@ const $ = (s) => document.querySelector(s);
 const yearEl = $("#year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-// --- 状态文字轮播（Hero 里的 Status） ---
+// --- 状态文字轮播（me 里的 Status） ---
 const statusText = $("#statusText");
 const statuses = [
-  "Rendering neon...",
-  "Compiling vibes...",
-  "Linking shaders...",
-  "Optimizing aesthetics...",
-  "Ready."
+  "Learning...",
 ];
 let st = 0;
 
@@ -120,7 +116,7 @@ function resize() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   // 星星数量：按面积估算，并设置下限避免太稀
-  const count = Math.floor((w * h) / 18000);
+  const count = Math.floor((w * h) / 1800);
   state.stars = Array.from({ length: Math.max(80, count) }, () => makeStar());
 }
 
