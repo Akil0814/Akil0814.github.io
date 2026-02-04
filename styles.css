@@ -19,7 +19,26 @@
 
   --shadow: 0 20px 60px rgba(0,0,0,.55);
   --radius: 20px;
+
+  /* Background FX tuning (暗色模式下的“光团过亮”就靠这里压住) */
+  --fx-stars-opacity: .75;     /* 星空层透明度 */
+  --fx-blobs-opacity: .55;     /* 光团整体透明度（暗色默认降低） */
+  --fx-blobs-blur: 32px;       /* 光团模糊半径 */
+  --fx-blob-white1: .28;       /* 光团里高光白色 1 强度 */
+  --fx-blob-white2: .12;       /* 光团里高光白色 2 强度 */
+  --fx-blob-grad-a: .45;       /* 光团渐变颜色强度 A */
+  --fx-blob-grad-b: .35;       /* 光团渐变颜色强度 B */
+  --fx-blob-grad-c: .32;       /* 光团渐变颜色强度 C */
+
+  /* Dark mode moon (替代光团的主视觉) */
+  --moon-size: clamp(220px, 30vw, 340px);   /* 月亮尺寸 */
+  --moon-home-top: 15px;                     /* 首页进入时：月亮偏上位置 */
+  --moon-docked-top: -10px;                    /* 下滑后：月亮贴到页面最上方 */
+  --moon-opacity: .92;                      /* 月亮本体透明度 */
+  --moon-halo-size: clamp(340px, 44vw, 520px); /* 月亮光晕范围 */
+  --moon-halo-opacity: .55;                 /* 光晕强度 */
 }
+
 
 /* =========================================================
    Light theme override
@@ -36,6 +55,16 @@
   --muted: rgba(10,20,40,.70);
   --line: rgba(10,20,40,.14);
   --shadow: 0 20px 60px rgba(10,20,40,.18);
+
+  /* Light theme 下光团更容易“发白”，再压一点 */
+  --fx-stars-opacity: .55;
+  --fx-blobs-opacity: .40;
+  --fx-blobs-blur: 28px;
+  --fx-blob-white1: .20;
+  --fx-blob-white2: .08;
+  --fx-blob-grad-a: .30;
+  --fx-blob-grad-b: .24;
+  --fx-blob-grad-c: .22;
 }
 
 /* =========================================================
@@ -77,7 +106,74 @@ a{ color: inherit; text-decoration:none; }
   position:fixed;
   inset:0;
   z-index:-3;
-  opacity:.75;
+  opacity: var(--fx-stars-opacity);
+}
+
+/* =========================================================
+   Dark mode moon (替代暗色光团)
+   - .bg-moon：固定在中上方的月亮 PNG
+   - .bg-moon__halo：类似原光团的描边/光晕
+   - 默认只在暗色模式显示（亮色隐藏）
+   ========================================================= */
+
+.bg-moon{
+  position: fixed;
+  left: 50%;
+  top: var(--moon-home-top);
+  transform: translateX(-50%);
+  width: var(--moon-size);
+  height: var(--moon-size);
+
+  /* 层级：在背景之上、内容之下、导航之下 */
+  z-index: 2;
+  pointer-events: none;
+
+  /* 亮色默认隐藏；暗色再开启 */
+  display: none;
+  opacity: var(--moon-opacity);
+
+  /* 主页->贴顶：用 top/transform 做位移动画（不裁切，避免 PNG 阴影被剪出方框） */
+  transition: top .35s ease, transform .35s ease, opacity .25s ease;
+  will-change: top, transform;
+}
+
+
+/* 只在暗色模式显示月亮 */
+[data-theme="dark"] .bg-moon{
+  display: block;
+}
+
+
+body.moon-docked .bg-moon{
+  top: var(--moon-docked-top);
+  transform: translate(-50%, -50%);
+}
+/* 光晕：用径向渐变 + 模糊做“描边感” */
+.bg-moon__halo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--moon-halo-size);
+  height: var(--moon-halo-size);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255, var(--moon-halo-opacity)), transparent 58%),
+    radial-gradient(circle at 50% 50%, rgba(124,77,255, .22), transparent 65%),
+    radial-gradient(circle at 50% 50%, rgba(0,212,255, .18), transparent 70%);
+  filter: blur(18px);
+}
+
+/* 月亮 PNG：多层 drop-shadow 造“描边 + 霓虹边缘” */
+.bg-moon__img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 12px rgba(255,255,255,.22))
+    drop-shadow(0 0 30px rgba(124,77,255,.18))
+    drop-shadow(0 0 46px rgba(0,212,255,.14));
 }
 
 /* 大光团容器：全屏固定，不挡点击 */
@@ -87,9 +183,15 @@ a{ color: inherit; text-decoration:none; }
   inset:0;
   z-index:-2;
   pointer-events:none;
-  filter: blur(26px);
-  opacity:.85;
+  filter: blur(var(--fx-blobs-blur));
+  opacity: var(--fx-blobs-opacity);
 }
+
+/* 暗色模式下用月亮做主视觉，光团隐藏，避免“意义不明的彩色雾” */
+[data-theme="dark"] .bg-blobs{
+  display:none;
+}
+
 
 /* 单个光团：圆形 + 渐变 + 浮动动画 */
 .blob
@@ -98,10 +200,15 @@ a{ color: inherit; text-decoration:none; }
   width:520px; height:520px;
   border-radius:50%;
   mix-blend-mode: screen;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.55), transparent 55%),
-              radial-gradient(circle at 60% 70%, rgba(255,255,255,.22), transparent 60%),
-              linear-gradient(135deg, rgba(124,77,255,.55), rgba(0,212,255,.45), rgba(255,43,214,.40));
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,var(--fx-blob-white1)), transparent 55%),
+              radial-gradient(circle at 60% 70%, rgba(255,255,255,var(--fx-blob-white2)), transparent 60%),
+              linear-gradient(135deg, rgba(124,77,255,var(--fx-blob-grad-a)), rgba(0,212,255,var(--fx-blob-grad-b)), rgba(255,43,214,var(--fx-blob-grad-c)));
   animation: float 10s ease-in-out infinite;
+}
+
+/* Light theme 下不适合用 screen（容易把整页洗白），改成正常混合 */
+[data-theme="light"] .blob{
+  mix-blend-mode: normal;
 }
 
 /* 三个光团的位置/大小/延迟 */
@@ -137,6 +244,8 @@ a{ color: inherit; text-decoration:none; }
    - .nav：固定顶部导航，带毛玻璃
    ========================================================= */
 .wrap{
+  position: relative;
+  z-index: 5;
   width:min(1100px, 92vw);
   margin:0 auto;
   padding: 110px 0 60px; /* 顶部给 nav 留空间 */
@@ -511,12 +620,15 @@ a{ color: inherit; text-decoration:none; }
 .proj__text{ margin:0; color: var(--muted); line-height: 1.6; font-size: 14px; }
 .proj__links{ margin-top: 12px; display:flex; gap: 12px; }
 
-/* 项目卡里的链接 */
+/* 项目卡里的链接（Repo / Demo / Notes 等）
+   - 之前写死了白色，亮色模式下就会“死活不变色”
+   - 现在用 var(--text) 跟随主题变量
+*/
 .link{
   font-weight: 800;
   border-bottom: 1px solid transparent;
-  color: rgba(255,255,255,.90);
-  opacity:.9;
+  color: var(--text);
+  opacity: .85;
 }
 .link:hover{
   opacity: 1;
@@ -601,6 +713,8 @@ a{ color: inherit; text-decoration:none; }
    - 这个 class 由 JS 控制（toggleFx 按钮）
    ========================================================= */
 .fx-off .scanlines{ display:none; }
+/* 关闭月亮/光团等背景装饰 */
+.fx-off .bg-moon{ display:none; }
 .fx-off .bg-blobs{ display:none; }
 .fx-off #stars{ opacity:.35; }
 

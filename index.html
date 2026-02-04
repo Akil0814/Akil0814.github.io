@@ -27,25 +27,26 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 
-<!--建设中弹窗 只会弹出一次-->
-<script>
-  window.addEventListener("load", () => {
-    const key = "site_building_notice_shown";
-    if (!localStorage.getItem(key)) {
-      alert("⚠️ 正在建设中/currently under construction ⚠️");
-      localStorage.setItem(key, "1");
-    }
-  });
-</script>
 
 <body>
   <!-- =======================================================
        Ambient background layers (纯装饰，不影响内容交互)
        - canvas#stars：星空（JS绘制）
-       - .bg-blobs：彩色光团（CSS）
+       - .bg-moon：月亮（暗色模式）
+       - .bg-blobs：彩色光团（亮色模式或你想保留时）
        - .scanlines：扫描线（CSS）
        ======================================================= -->
   <canvas id="stars" aria-hidden="true"></canvas>
+
+  <!-- =======================================================
+       Dark mode moon layer (替代暗色光团)
+       - 只在暗色模式显示
+       - 你把 moon.png 放到 ./image/ 里即可
+       ======================================================= -->
+  <div class="bg-moon" aria-hidden="true">
+    <span class="bg-moon__halo"></span>
+    <img class="bg-moon__img" src="./image/moon.png" alt="" />
+  </div>
   <div class="bg-blobs" aria-hidden="true">
     <span class="blob b1"></span>
     <span class="blob b2"></span>
@@ -111,8 +112,7 @@
 
         <!-- CTA buttons -->
         <div class="cta">
-          <a class="btn btn--primary" href="#projects">See Projects</a>
-          <a class="btn" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">GitHub</a>
+                    <a class="btn" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn btn--ghost" href="#about">About Me</a>
         </div>
 
@@ -219,6 +219,10 @@
       <div class="section__head">
         <h2 class="section__title">About</h2>
 
+        <!-- 简单说明：你也可以在这里加一句自我介绍 -->
+        <p class="section__desc">A quick snapshot so people know you’re a human (probably).</p>
+      </div>
+
       <div class="split">
         <div class="panel">
           <h3 class="panel__title">Profile</h3>
@@ -293,6 +297,7 @@
 
   <!-- =======================================================
        Main script
+       - 也包含“建设中弹窗只弹一次”的逻辑（从 HTML 移到 JS，让结构干净点）
        - 负责：主题切换、FX开关、年份填充、状态轮播、星空绘制
        ======================================================= -->
   <script src="script.js"></script>
