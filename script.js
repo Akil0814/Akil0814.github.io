@@ -134,6 +134,7 @@ async function decodeImageIfPossible(imgEl) {
     };
     overlay.addEventListener("animationend", onEnd);
   }
+  
   async function playDarkToLightTransition() {
     if (
       document.body.classList.contains("theme-transitioning-to-dark") ||
