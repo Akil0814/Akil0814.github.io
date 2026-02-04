@@ -29,7 +29,8 @@ async function decodeImageIfPossible(imgEl) {
   // ---------------------------------------------------------
   window.addEventListener("load", () => {
     const key = "site_building_notice_shown";
-    if (!localStorage.getItem(key)) {
+    if (!localStorage.getItem(key))
+    {
       alert("⚠️ 正在建设中/currently under construction ⚠️");
       localStorage.setItem(key, "1");
     }
@@ -79,7 +80,8 @@ async function decodeImageIfPossible(imgEl) {
   //  - <img data-src-dark="..." data-src-light="...">
   //  - 任意元素 data-bg-dark / data-bg-light（会写到 style.backgroundImage）
   // ---------------------------------------------------------
-  function applyThemeAssets(theme) {
+  function applyThemeAssets(theme)
+  {
     // swap <img>
     document.querySelectorAll("img[data-src-dark][data-src-light]").forEach((img) => {
       const next = theme === "dark" ? img.dataset.srcDark : img.dataset.srcLight;
@@ -361,39 +363,5 @@ document.documentElement.style.removeProperty("--moon-scale");
 })();
 
 
-//拷贝支持
-
-async function copyEmail(el) {
-  const text = el.dataset.copy || el.textContent.trim();
-
-  try {
-    await navigator.clipboard.writeText(text);
-    toast(el, "Copied!");
-  } catch (e) {
-    // fallback for older browsers / denied permission
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.left = "-9999px";
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    document.body.removeChild(ta);
-    toast(el, "Copied!");
-  }
-}
-
-function toast(el, msg) {
-  const old = el.dataset.tip;
-  el.dataset.tip = msg;
-  el.classList.add("is-copied");
-  setTimeout(() => {
-    el.dataset.tip = old || "";
-    el.classList.remove("is-copied");
-  }, 1200);
-}
-
-//拷贝支持
 
 
