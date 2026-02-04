@@ -22,7 +22,7 @@
 
   /* Background FX tuning (暗色模式下的“光团过亮”就靠这里压住) */
   --fx-stars-opacity: .75;     /* 星空层透明度 */
-  --fx-blobs-opacity: .55;     /* 光团整体透明度（暗色默认降低） */
+  --fx-blobs-opacity: .55;     /* 光团整体透明度 */
   --fx-blobs-blur: 32px;       /* 光团模糊半径 */
   --fx-blob-white1: .28;       /* 光团里高光白色 1 强度 */
   --fx-blob-white2: .12;       /* 光团里高光白色 2 强度 */
@@ -100,8 +100,6 @@ body::before{
   transform: translateZ(0);
   will-change: transform;
 }
-
-
 
 body{
   margin:0;
@@ -966,4 +964,23 @@ html.is-transitioning{
   text-decoration-thickness: 2px;
   text-decoration-color: color-mix(in srgb, var(--text) 65%, transparent);
 }
+
+/*拷贝支持*/
+.linkCard { position: relative; cursor: pointer; }
+
+.linkCard.is-copied::after {
+  content: attr(data-tip);
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  background: var(--card);
+  color: --text;
+  pointer-events: none;
+}
+
+/*拷贝支持*/
+
 
