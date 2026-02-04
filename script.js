@@ -106,7 +106,7 @@
     document.body.classList.add("theme-transitioning-to-dark");
 
     // switch theme while screen is near-black (sync with CSS)
-    const switchAt = 420; // ms
+    const switchAt = 990; // ms
     window.setTimeout(() => setTheme("dark"), switchAt);
 
     const onEnd = (e) => {
