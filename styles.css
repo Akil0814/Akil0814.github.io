@@ -30,7 +30,7 @@
   --fx-blob-grad-b: .35;       /* 光团渐变颜色强度 B */
   --fx-blob-grad-c: .32;       /* 光团渐变颜色强度 C */
 
-  /* Dark mode moon (替代光团的主视觉) */
+  /* Dark mode moon */
   --moon-size: clamp(220px, 30vw, 340px);   /* 月亮尺寸 */
   --moon-home-top: 15px;                     /* 首页进入时：月亮偏上位置 */
   --moon-docked-top: -10px;                    /* 下滑后：月亮贴到页面最上方 */
@@ -413,39 +413,10 @@ body.moon-docked .bg-moon{
   margin: 18px 0 12px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  position:relative;
+  position: relative;
   text-shadow: 0 0 26px rgba(0,212,255,.18);
 }
-.glitch::before,
-.glitch::after{
-  content: attr(data-text);
-  position:absolute;
-  left:0; top:0;
-  width:100%;
-  overflow:hidden;
-  opacity:.55;
-  pointer-events:none;
-}
-.glitch::before{
-  transform: translate(2px, -1px);
-  color: rgba(0,212,255,.65);
-  clip-path: inset(0 0 55% 0);
-  animation: glitch 2.8s infinite linear alternate-reverse;
-}
-.glitch::after{
-  transform: translate(-2px, 1px);
-  color: rgba(255,43,214,.55);
-  clip-path: inset(45% 0 0 0);
-  animation: glitch 2.4s infinite linear alternate-reverse;
-}
-@keyframes glitch{
-  0%{ clip-path: inset(10% 0 60% 0); }
-  20%{ clip-path: inset(35% 0 35% 0); }
-  40%{ clip-path: inset(55% 0 15% 0); }
-  60%{ clip-path: inset(15% 0 55% 0); }
-  80%{ clip-path: inset(70% 0 8% 0); }
-  100%{ clip-path: inset(25% 0 40% 0); }
-}
+
 
 /* 副标题文本 */
 .subtitle{
@@ -970,4 +941,75 @@ body.theme-transitioning-to-light [data-theme="dark"] .bg-moon{
     animation: none !important;
   }
   .themeTransition{ opacity: 0 !important; }
+}
+
+/* =========================
+   Theme transition overrides
+   Dark -> Light: moon.png drops to center, bloom, then fade out
+   Performance notes:
+   - transform/opacity only (GPU-friendly)
+   - preload + decode handled in script.js
+   ========================= */
+:root{
+  --transition-moon-size: 200px; /* 只给主题切换动画用，别污染全站 --moon-size */
+}
+
+/* During transitions, avoid expensive smooth scrolling and let the compositor do its job */
+html.is-transitioning{
+  scroll-behavior: auto;
+}
+
+.themeTransition{
+  contain: paint;
+}
+
+.themeTransition__moon{
+  width: var(--transition-moon-size);
+  height: var(--transition-moon-size);
+  object-fit: contain;
+  position: fixed;
+  left: 50%;
+  top: -18%;
+  transform: translate3d(-50%, 0, 0) scale(.75);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+.themeTransition.is-active .themeTransition__moon{
+  opacity: 1;
+  animation: moonDropAndBloom 1000ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+/* keep your overlay, but avoid massive blur/scale spikes that trigger heavy repaints */
+@keyframes moonDropAndBloom{
+  0%{
+    transform: translate3d(-50%, 0, 0) scale(.75);
+    opacity: 0;
+    filter: brightness(1);
+  }
+  55%{
+    transform: translate3d(-50%, 68vh, 0) scale(1);
+    opacity: 1;
+    filter: brightness(1.05);
+  }
+  80%{
+    transform: translate3d(-50%, 68vh, 0) scale(1.22);
+    opacity: 1;
+    filter: brightness(1.25);
+  }
+  100%{
+    transform: translate3d(-50%, 68vh, 0) scale(1.35);
+    opacity: 0;
+    filter: brightness(1.35);
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce){
+  .themeTransition.is-active .themeTransition__moon{
+    animation: none;
+    opacity: 0;
+  }
 }

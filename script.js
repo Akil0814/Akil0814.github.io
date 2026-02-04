@@ -1,3 +1,13 @@
+
+// Pre-decode a transition image to avoid a decode hitch during the animation.
+async function decodeImageIfPossible(imgEl) {
+  try {
+    if (imgEl && typeof imgEl.decode === "function") await imgEl.decode();
+  } catch (_) {
+    // ignore: decode can fail on some browsers or if the image isn't ready yet
+  }
+}
+
 // =========================================================
 // script.js
 // 这份脚本只做“页面交互 + 轻量背景特效”三件事：
@@ -49,6 +59,13 @@
   // 3) Theme / FX 控件节点
   // ---------------------------------------------------------
   const themeBtn = $("#themeBtn");
+
+  // Warm up the moon image to avoid first-time decode jank
+  (function preloadMoon(){
+    const img = new Image();
+    img.decoding = "async";
+    img.src = "./image/moon.png";
+  })();
   const toggleFx = $("#toggleFx");
 
   // ---------------------------------------------------------
@@ -117,8 +134,7 @@
     };
     overlay.addEventListener("animationend", onEnd);
   }
-
-  function playDarkToLightTransition() {
+  async function playDarkToLightTransition() {
     if (
       document.body.classList.contains("theme-transitioning-to-dark") ||
       document.body.classList.contains("theme-transitioning-to-light")
@@ -132,15 +148,22 @@
 
     document.body.classList.add("theme-transitioning-to-light");
 
-    // switch theme near peak exposure (sync with CSS)
-    const switchAt = 900; // ms
+    
+    // perf: ensure moon image is decoded before we start the overlay animation
+    document.documentElement.classList.add("is-transitioning");
+    const moonImg = overlay.querySelector(".themeTransition__moon");
+    await decodeImageIfPossible(moonImg);
+    await new Promise(requestAnimationFrame);
+// switch theme near peak exposure (sync with CSS)
+    const switchAt = 820; // ms
     window.setTimeout(() => setTheme("light"), switchAt);
 
     const onEnd = (e) => {
       if (e.target !== overlay) return;
       overlay.removeEventListener("animationend", onEnd);
       document.body.classList.remove("theme-transitioning-to-light");
-      document.documentElement.style.removeProperty("--moon-scale");
+            document.documentElement.classList.remove("is-transitioning");
+document.documentElement.style.removeProperty("--moon-scale");
     };
     overlay.addEventListener("animationend", onEnd);
   }
