@@ -37,6 +37,9 @@
   --moon-opacity: .92;                      /* 月亮本体透明度 */
   --moon-halo-size: clamp(340px, 44vw, 520px); /* 月亮光晕范围 */
   --moon-halo-opacity: .55;                 /* 光晕强度 */
+  --bg-accent-1: rgba(59,130,246,.18);
+  --bg-accent-2: rgba(14,165,233,.14);
+  --bg-accent-3: rgba(2,6,23,.55);
 }
 
 
@@ -65,6 +68,9 @@
   --fx-blob-grad-a: .30;
   --fx-blob-grad-b: .24;
   --fx-blob-grad-c: .22;
+  --bg-accent-1: rgba(124,77,255,.14);
+  --bg-accent-2: rgba(0,212,255,.10);
+  --bg-accent-3: rgba(255,255,255,.08);
 }
 
 /* =========================================================
@@ -73,6 +79,30 @@
    ========================================================= */
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
+/* =========================================================
+   Fixed gradient base (prevents horizontal seams when scrolling)
+   - Some browsers/GPU compositors tile long-page gradients, creating visible seams.
+   - This layer is fixed to the viewport and sits under all FX layers.
+   ========================================================= */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-4;          /* under stars(-3), blobs(-2), scanlines(-1) */
+  pointer-events:none;
+
+  background:
+    radial-gradient(1400px 900px at 80% 18%, var(--bg-accent-1), transparent 65%),
+    radial-gradient(1100px 800px at 18% 28%, var(--bg-accent-2), transparent 62%),
+    radial-gradient(1200px 900px at 50% 110%, var(--bg-accent-3), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+
 
 body{
   margin:0;
@@ -120,8 +150,8 @@ a{ color: inherit; text-decoration:none; }
   position: fixed;
   left: 50%;
   top: var(--moon-home-top);
-  transform: translateX(-50%);
-  width: var(--moon-size);
+  transform: translateX(-50%) scale(var(--moon-scale, 1));
+width: var(--moon-size);
   height: var(--moon-size);
 
   /* 层级：在背景之上、内容之下、导航之下 */
@@ -146,7 +176,7 @@ a{ color: inherit; text-decoration:none; }
 
 body.moon-docked .bg-moon{
   top: var(--moon-docked-top);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(var(--moon-scale, 1));
 }
 /* 光晕：用径向渐变 + 模糊做“描边感” */
 .bg-moon__halo{
@@ -770,4 +800,163 @@ body.moon-docked .bg-moon{
   pointer-events:none;
   mix-blend-mode: screen;
   filter: blur(16px);
+}
+
+
+/* =========================================================
+   Theme transition: Light <-> Dark
+   - Light -> Dark: slow darken + moon spark bloom + reveal
+   - Dark  -> Light: moon drops to center + bloom + brighten + switch + recover
+   ========================================================= */
+
+.themeTransition{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  background: #000;
+}
+
+/* moon spark (CSS glow) */
+.themeTransition__moon{
+  position: absolute;
+  left: 50%;
+  top: var(--moon-home-top);
+  width: 18px;
+  height: 18px;
+  transform: translateX(-50%) scale(0.1);
+  border-radius: 50%;
+  opacity: 0;
+
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.95), rgba(255,255,255,.25) 35%, transparent 70%);
+
+  filter: blur(0.2px) drop-shadow(0 0 18px rgba(255,255,255,.65))
+          drop-shadow(0 0 46px rgba(0,212,255,.20))
+          drop-shadow(0 0 60px rgba(124,77,255,.22));
+}
+
+/* -------------------------
+   Light -> Dark
+   ------------------------- */
+body.theme-transitioning-to-dark .themeTransition{
+  opacity: 1;
+  background: #000;
+  animation: curtainToDark 1400ms ease forwards;
+}
+body.theme-transitioning-to-dark .themeTransition__moon{
+  top: var(--moon-home-top);
+  animation: moonSparkDark 1400ms ease forwards;
+}
+
+/* animate the real moon PNG in (dark theme only) */
+body.theme-transitioning-to-dark [data-theme="dark"] .bg-moon{
+  --moon-scale: 0.08;
+  opacity: 0;
+  animation: realMoonIn 900ms ease forwards;
+  animation-delay: 420ms; /* near-black moment */
+}
+
+@keyframes curtainToDark{
+  0%   { opacity: 0; }
+  38%  { opacity: 1; }   /* screen slowly darkens */
+  100% { opacity: 0; }   /* reveal page */
+}
+@keyframes moonSparkDark{
+  0%{
+    opacity: 0;
+    transform: translateX(-50%) scale(0.06);
+  }
+  35%{
+    opacity: 0; /* hidden while we darken */
+    transform: translateX(-50%) scale(0.06);
+  }
+  55%{
+    opacity: 1;
+    transform: translateX(-50%) scale(10);
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-50%) scale(16);
+  }
+}
+@keyframes realMoonIn{
+  0%   { opacity: 0; --moon-scale: 0.08; }
+  100% { opacity: var(--moon-opacity); --moon-scale: 1; }
+}
+
+/* -------------------------
+   Dark -> Light
+   - Drop moon to center, bloom, brighten, then recover
+   ------------------------- */
+body.theme-transitioning-to-light .themeTransition{
+  opacity: 1;
+  background: #fff;
+  animation: curtainToLight 1500ms ease forwards;
+}
+body.theme-transitioning-to-light .themeTransition__moon{
+  top: -18%;
+  animation: moonDropAndBloom 1500ms ease forwards;
+}
+
+/* real moon PNG drops to center before the switch (still in dark theme) */
+body.theme-transitioning-to-light [data-theme="dark"] .bg-moon{
+  top: -18%;
+  opacity: var(--moon-opacity);
+  --moon-scale: 1;
+  transform: translate(-50%, -50%) scale(var(--moon-scale, 1));
+  animation: realMoonDrop 700ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+@keyframes curtainToLight{
+  0%   { opacity: 0; }
+  55%  { opacity: 1; }  /* peak exposure */
+  100% { opacity: 0; }  /* recover */
+}
+
+@keyframes moonDropAndBloom{
+  0%{
+    opacity: 0;
+    left: 50%;
+    top: -18%;
+    transform: translateX(-50%) scale(0.10);
+  }
+  18%{
+    opacity: 1;
+  }
+  45%{
+    opacity: 1;
+    top: 50%;
+    transform: translateX(-50%) scale(1.0); /* arrived center */
+  }
+  100%{
+    opacity: 0;
+    top: 50%;
+    transform: translateX(-50%) scale(18); /* bloom */
+  }
+}
+
+@keyframes realMoonDrop{
+  0%{
+    top: -18%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100%{
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Optional: reduce motion accessibility */
+@media (prefers-reduced-motion: reduce){
+  body.theme-transitioning-to-dark .themeTransition,
+  body.theme-transitioning-to-dark .themeTransition__moon,
+  body.theme-transitioning-to-dark [data-theme="dark"] .bg-moon,
+  body.theme-transitioning-to-light .themeTransition,
+  body.theme-transitioning-to-light .themeTransition__moon,
+  body.theme-transitioning-to-light [data-theme="dark"] .bg-moon{
+    animation: none !important;
+  }
+  .themeTransition{ opacity: 0 !important; }
 }

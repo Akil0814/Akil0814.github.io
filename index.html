@@ -43,7 +43,7 @@
        ======================================================= -->
   <div class="bg-moon" aria-hidden="true">
     <span class="bg-moon__halo"></span>
-    <img class="bg-moon__img" src="./image/moon.png" alt="" />
+    <img class="bg-moon__img" src="./image/moon.png" alt="" data-src-dark="./image/moon.png" data-src-light="./image/moon.png" />
   </div>
   <div class="bg-blobs" aria-hidden="true">
     <span class="blob b1"></span>
@@ -133,6 +133,8 @@
           <div class="portrait__frame">
             <img
               src="./image/Yukino.png"
+              data-src-dark="./image/Yukino.png"
+              data-src-light="./image/Yukino_light.png"
               alt="Avatar"
             />
             <div class="portrait__shine" aria-hidden="true"></div>
@@ -278,6 +280,8 @@
       <div class="footerBanner">
         <img
           src="./image/Yukino.png"
+          data-src-dark="./image/Yukino.png"
+          data-src-light="./image/Yukino_light.png"
           alt="Footer banner"
           loading="lazy"
         />
@@ -298,6 +302,11 @@
        - 也包含“建设中弹窗只弹一次”的逻辑（从 HTML 移到 JS，让结构干净点）
        - 负责：主题切换、FX开关、年份填充、状态轮播、星空绘制
        ======================================================= -->
+  <!-- Theme transition overlay (light <-> dark) -->
+  <div id="themeTransition" class="themeTransition" aria-hidden="true">
+    <span class="themeTransition__moon" aria-hidden="true"></span>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
