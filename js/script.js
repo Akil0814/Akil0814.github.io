@@ -162,15 +162,17 @@ document.documentElement.style.removeProperty("--moon-scale");
     const cur = getTheme();
     const next = cur === "dark" ? "light" : "dark";
 
-    if (cur === "light" && next === "dark")
-    {
+    const isFx = !uiState?.fxOn; // 或者你自己的 fx 判断方式
+
+    if (isFx) {
+    setTheme(next);
+    } else if (cur === "light" && next === "dark") {
       playLightToDarkTransition();
-    } else if (cur === "dark" && next === "light")
-    {
+    } else if (cur === "dark" && next === "light") {
       playDarkToLightTransition();
     } else {
       setTheme(next);
-    }
+  }
 
   });
 
@@ -320,10 +322,11 @@ document.documentElement.style.removeProperty("--moon-scale");
       ctx.fill();
 
       // subtle streaks：只给“更近”的星星画一点拖尾，并且只在 FX 开启时画
-      if (uiState.fxOn && s.z > 0.65) {
+      if (uiState.fxOn && s.z > 0.65){
+        const tail = 0.28;
         ctx.beginPath();
         ctx.moveTo(px, py);
-        ctx.lineTo(px - driftX * 0.06, py - driftY * 0.06);
+        ctx.lineTo(px - driftX * tail, py - driftY * tail);
         ctx.strokeStyle = `rgba(0,212,255,${(alpha * 0.35).toFixed(3)})`;
         ctx.lineWidth = 1;
         ctx.stroke();
