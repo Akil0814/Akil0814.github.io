@@ -19,13 +19,13 @@ async function decodeImageIfPossible(imgEl) {
 (() => {
   // ---------------------------------------------------------
   // Tiny helper: $()
-//  - document.querySelector 的快捷方式
+  //  - document.querySelector 的快捷方式
   // ---------------------------------------------------------
   const $ = (s) => document.querySelector(s);
 
   // ---------------------------------------------------------
   // 0) “建设中”弹窗（只弹一次）
-//  - 之前你写在 HTML 里，这里挪到 JS，HTML 更干净
+  // - 之前你写在 HTML 里，这里挪到 JS，HTML 更干净
   // ---------------------------------------------------------
   window.addEventListener("load", () => {
     const key = "site_building_notice_shown";
@@ -41,20 +41,6 @@ async function decodeImageIfPossible(imgEl) {
   // ---------------------------------------------------------
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-  // ---------------------------------------------------------
-  // 2) 状态文字轮播（me 里的 Status）
-  // ---------------------------------------------------------
-  const statusText = $("#statusText");
-  const statuses = ["Learning..."];
-  let st = 0;
-
-  // 每 1.4s 换一句（列表长度为 1 时其实不会变，但留着给你以后扩展）
-  setInterval(() => {
-    if (!statusText) return;
-    st = (st + 1) % statuses.length;
-    statusText.textContent = statuses[st];
-  }, 1400);
 
   // ---------------------------------------------------------
   // 3) Theme / FX 控件节点
@@ -176,13 +162,16 @@ document.documentElement.style.removeProperty("--moon-scale");
     const cur = getTheme();
     const next = cur === "dark" ? "light" : "dark";
 
-    if (cur === "light" && next === "dark") {
+    if (cur === "light" && next === "dark")
+    {
       playLightToDarkTransition();
-    } else if (cur === "dark" && next === "light") {
+    } else if (cur === "dark" && next === "light")
+    {
       playDarkToLightTransition();
     } else {
       setTheme(next);
     }
+
   });
 
 // ---------------------------------------------------------
