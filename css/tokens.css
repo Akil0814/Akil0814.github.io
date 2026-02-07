@@ -1,0 +1,73 @@
+/* =========================================================
+   Global theme variables
+   - 定义全站颜色、透明度、阴影、圆角等“设计系统”
+   - 方便统一修改风格（暗色/亮色切换也靠它）
+   ========================================================= */
+:root{
+  --bg: #070a16;
+  --bg2:#0b1020;
+  --card: rgba(255,255,255,.06);
+  --card2: rgba(255,255,255,.10);
+  --text: rgba(255,255,255,.88);
+  --muted: rgba(255,255,255,.65);
+  --line: rgba(255,255,255,.12);
+
+  --a:#7c4dff;
+  --b:#00d4ff;
+  --c:#ff2bd6;
+  --good:#43ffa7;
+
+  --shadow: 0 20px 60px rgba(0,0,0,.55);
+  --radius: 20px;
+
+  /* Background FX tuning (暗色模式下的“光团过亮”就靠这里压住) */
+  --fx-stars-opacity: .75;     /* 星空层透明度 */
+  --fx-blobs-opacity: .55;     /* 光团整体透明度 */
+  --fx-blobs-blur: 32px;       /* 光团模糊半径 */
+  --fx-blob-white1: .28;       /* 光团里高光白色 1 强度 */
+  --fx-blob-white2: .12;       /* 光团里高光白色 2 强度 */
+  --fx-blob-grad-a: .45;       /* 光团渐变颜色强度 A */
+  --fx-blob-grad-b: .35;       /* 光团渐变颜色强度 B */
+  --fx-blob-grad-c: .32;       /* 光团渐变颜色强度 C */
+
+  /* Dark mode moon */
+  --moon-size: clamp(220px, 30vw, 340px);   /* 月亮尺寸 */
+  --moon-home-top: 15px;                     /* 首页进入时：月亮偏上位置 */
+  --moon-docked-top: -10px;                    /* 下滑后：月亮贴到页面最上方 */
+  --moon-opacity: .92;                      /* 月亮本体透明度 */
+  --moon-halo-size: clamp(340px, 44vw, 520px); /* 月亮光晕范围 */
+  --moon-halo-opacity: .55;                 /* 光晕强度 */
+  --bg-accent-1: rgba(59,130,246,.18);
+  --bg-accent-2: rgba(14,165,233,.14);
+  --bg-accent-3: rgba(2,6,23,.55);
+}
+
+/* =========================================================
+   Light theme override
+   - 当 html 上有 data-theme="light" 时，覆盖变量
+   - 只改变量，不改组件样式，维护成本更低
+   ========================================================= */
+[data-theme="light"]
+{
+  --bg: #f6f7ff;
+  --bg2:#eef1ff;
+  --card: rgba(10,20,40,.06);
+  --card2: rgba(10,20,40,.10);
+  --text: rgba(10,20,40,.90);
+  --muted: rgba(10,20,40,.70);
+  --line: rgba(10,20,40,.14);
+  --shadow: 0 20px 60px rgba(10,20,40,.18);
+
+  /* Light theme 下光团更容易“发白”，再压一点 */
+  --fx-stars-opacity: .55;
+  --fx-blobs-opacity: .40;
+  --fx-blobs-blur: 28px;
+  --fx-blob-white1: .20;
+  --fx-blob-white2: .08;
+  --fx-blob-grad-a: .30;
+  --fx-blob-grad-b: .24;
+  --fx-blob-grad-c: .22;
+  --bg-accent-1: rgba(124,77,255,.14);
+  --bg-accent-2: rgba(0,212,255,.10);
+  --bg-accent-3: rgba(255,255,255,.08);
+}

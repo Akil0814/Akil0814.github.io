@@ -70,7 +70,7 @@ async function decodeImageIfPossible(imgEl) {
   // ---------------------------------------------------------
   // 3.1.c) Theme transition (Light <-> Dark)
   // ---------------------------------------------------------
-  function playLightToDarkTransition() {
+   async function playLightToDarkTransition() {
     // avoid stacking animations
     if (
       document.body.classList.contains("theme-transitioning-to-dark") ||
@@ -78,7 +78,8 @@ async function decodeImageIfPossible(imgEl) {
     ) return;
 
     const overlay = document.getElementById("themeTransition");
-    if (!overlay) {
+    if (!overlay)
+    {
       setTheme("dark");
       return;
     }
@@ -123,11 +124,12 @@ async function decodeImageIfPossible(imgEl) {
     window.setTimeout(() => setTheme("light"), switchAt);
 
     const onEnd = (e) => {
-      if (e.target !== overlay) return;
+      if (e.target !== overlay)
+          return;
       overlay.removeEventListener("animationend", onEnd);
       document.body.classList.remove("theme-transitioning-to-light");
-            document.documentElement.classList.remove("is-transitioning");
-document.documentElement.style.removeProperty("--moon-scale");
+      document.documentElement.classList.remove("is-transitioning");
+      document.documentElement.style.removeProperty("--moon-scale");
     };
     overlay.addEventListener("animationend", onEnd);
   }
@@ -186,8 +188,6 @@ document.documentElement.style.removeProperty("--moon-scale");
   // 首次更新 + 监听滚动
   updateMoonPeek();
   window.addEventListener("scroll", updateMoonPeek, { passive: true });
-
-
 
   // 点击切换 FX
   toggleFx?.addEventListener("click", () => {
