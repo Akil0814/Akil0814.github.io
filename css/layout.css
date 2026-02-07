@@ -1,0 +1,387 @@
+/* =========================================================
+   Layout containers
+   - .wrap：主内容最大宽度 + 顶部留给固定导航
+   - .nav：固定顶部导航，带毛玻璃
+   ========================================================= */
+.wrap{
+  position: relative;
+  z-index: 5;
+  width:min(1100px, 92vw);
+  margin:0 auto;
+  padding: 110px 0 60px; /* 顶部给 nav 留空间 */
+}
+
+.nav{
+  position:fixed;
+  top:0; left:0; right:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 14px 22px;
+  z-index:50;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.08));
+  border-bottom: 1px solid var(--line);
+}
+
+/* =========================================================
+   Brand block (左上角 AKIL0814)
+   ========================================================= */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius: 999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+.brand__dot{
+  width:10px; height:10px;
+  border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.35) 40%, transparent 65%),
+              linear-gradient(135deg, var(--a), var(--b), var(--c));
+  box-shadow: 0 0 18px rgba(0,212,255,.35);
+}
+.brand__text{
+  font-weight:800;
+  letter-spacing:.16em;
+  font-size:12px;
+}
+
+/* =========================================================
+   Nav links & buttons
+   ========================================================= */
+.nav__right{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:600;
+}
+.nav__right a{
+  opacity:.85;
+  padding:10px 10px;
+  border-radius: 10px;
+  border:1px solid transparent;
+}
+.nav__right a:hover{
+  opacity:1;
+  border-color: var(--line);
+  background: rgba(255,255,255,.04);
+}
+
+/* 按钮通用样式 */
+.btn{
+  cursor:pointer;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight:700;
+}
+.btn:hover{ background: rgba(255,255,255,.10); }
+
+/* ghost：透明底 */
+.btn--ghost{ background: transparent; }
+
+/* primary：渐变强调按钮 */
+.btn--primary{
+  border-color: transparent;
+  background: linear-gradient(135deg, rgba(124,77,255,.85), rgba(0,212,255,.70), rgba(255,43,214,.65));
+  box-shadow: 0 18px 40px rgba(124,77,255,.18);
+}
+.btn--primary:hover{ filter: brightness(1.05); }
+
+/* =========================================================
+   me section (顶部两栏：文字 + 头像卡)
+   ========================================================= */
+.me{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+/* 小 badge：左上 neon 标签 */
+.badge{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing:.08em;
+  text-transform: lowercase;
+}
+
+/* badge 里的呼吸小点 */
+.badge__pulse{
+  width:8px; height:8px; border-radius:50%;
+  background: var(--good);
+  box-shadow: 0 0 14px rgba(67,255,167,.45);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{ transform: scale(1); opacity:.9; }
+  50%{ transform: scale(1.35); opacity:.55; }
+}
+
+/* 大标题 glitch 效果：用 ::before / ::after 叠两层裁剪动画 */
+.glitch{
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.02;
+  margin: 18px 0 12px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  position: relative;
+  text-shadow: 0 0 26px rgba(0,212,255,.18);
+}
+
+
+/* 副标题文本 */
+.subtitle{
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 18px;
+}
+
+/* “胶囊关键字” */
+.k{
+  color: rgba(255,255,255,.92);
+  padding: 2px 8px;
+  border:1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
+
+/* CTA 按钮区域 */
+.cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+/* mini stats：三块小信息条 */
+.mini-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.chip{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.05);
+}
+.chip__label{
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+.chip__value{
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* =========================================================
+   Card components (头像卡、浮动小卡)
+   ========================================================= */
+.card{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+/* 头像卡：图片框 + 光泽扫过 */
+.portrait{ position:relative; }
+.portrait__frame{
+  position:relative;
+  aspect-ratio: 4/4.2;
+  overflow:hidden;
+}
+.portrait__frame img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  filter: saturate(1.12) contrast(1.06);
+}
+.portrait__shine{
+  position:absolute;
+  inset:-50%;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,.22) 45%, transparent 55%);
+  transform: rotate(20deg) translateX(-30%);
+  animation: shine 4.5s infinite ease-in-out;
+}
+@keyframes shine{
+  0%{ transform: rotate(20deg) translateX(-40%); opacity:.0; }
+  25%{ opacity:.35; }
+  50%{ transform: rotate(20deg) translateX(30%); opacity:.15; }
+  100%{ transform: rotate(20deg) translateX(40%); opacity:.0; }
+}
+
+
+/* 头像卡下面的两个小浮动链接卡 */
+.floating-cards{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.float-card{
+  border:1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.05);
+  padding: 12px 12px;
+  transition: transform .2s ease, background .2s ease;
+}
+.float-card:hover{ transform: translateY(-4px); background: rgba(255,255,255,.08); }
+.float-card__title{ display:block; font-weight:800; }
+.float-card__desc{ display:block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+/* =========================================================
+   Section blocks (Projects / About / Links)
+   ========================================================= */
+.section{
+  margin-top: 52px;
+  padding-top: 18px;
+}
+.section__head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.section__title{
+  font-size: 26px;
+  margin: 0;
+  font-weight: 800;
+}
+.section__desc{
+  margin:0;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* Projects 三列网格（小屏会变一列） */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* 单个项目卡 */
+.proj{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  padding: 16px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.25);
+  transition: transform .18s ease, background .18s ease;
+}
+.proj:hover{
+  transform: translateY(-6px);
+  background: rgba(255,255,255,.08);
+}
+.proj__top{ display:flex; gap: 8px; flex-wrap:wrap; }
+.proj__badge{
+  font-family:"JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.05);
+}
+.proj__title{ margin: 12px 0 8px; font-size: 18px; font-weight: 800; }
+.proj__text{ margin:0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+.proj__links{ margin-top: 12px; display:flex; gap: 12px; }
+
+/* 项目卡里的链接（Repo / Demo / Notes 等）
+   - 现在用 var(--text) 跟随主题变量
+*/
+.link{
+  font-weight: 800;
+  border-bottom: 1px solid transparent;
+  color: var(--text);
+  opacity: .85;
+}
+.link:hover{
+  opacity: 1;
+  border-bottom-color: rgba(0,212,255,.55);
+  text-shadow: 0 0 18px rgba(0,212,255,.18);
+}
+
+/* About 分栏布局 */
+.section--split .section__head{ margin-bottom: 18px; }
+.split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.panel{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  padding: 16px;
+}
+.panel__title{
+  margin:0 0 10px;
+  font-weight: 900;
+  letter-spacing: .01em;
+}
+.list{
+  margin:0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.list b{ color: var(--text); }
+
+/* 技能 tag */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+}
+.tag{
+  padding: 6px 10px;
+  border-radius: 999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  font-weight: 800;
+  font-size: 12px;
+}
+.muted{ color: var(--muted); margin: 12px 0 0; font-size: 13px; line-height: 1.6; }
+
+/* Links 三列链接卡 */
+.links{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.linkCard{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  padding: 16px;
+  transition: transform .18s ease, background .18s ease;
+}
+.linkCard:hover{ transform: translateY(-6px); background: rgba(255,255,255,.08); }
+.linkCard__k{ display:block; font-weight: 900; }
+.linkCard__v{ display:block; color: var(--muted); margin-top: 6px; font-family:"JetBrains Mono", monospace; font-size: 12px; }
