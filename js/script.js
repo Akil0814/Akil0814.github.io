@@ -93,6 +93,56 @@ async function decodeImageIfPossible(imgEl) {
     root.style.setProperty("--tt-end-scale", `${targetScale}`);
   }
 
+  function measurePersistentMoonTargetRect() {
+    const probe = document.createElement("div");
+    const docked = document.body.classList.contains("moon-docked");
+
+    probe.setAttribute("aria-hidden", "true");
+    probe.style.position = "fixed";
+    probe.style.left = "50%";
+    probe.style.width = "var(--moon-size)";
+    probe.style.height = "var(--moon-size)";
+    probe.style.visibility = "hidden";
+    probe.style.pointerEvents = "none";
+    probe.style.zIndex = "-1";
+    probe.style.transformOrigin = "center";
+    probe.style.transform = docked
+      ? "translate(-50%, -50%) scale(var(--moon-scale, 1))"
+      : "translate3d(-50%, 0, 0) scale(var(--moon-scale, 1))";
+    probe.style.top = docked ? "var(--moon-docked-top)" : "var(--moon-home-top)";
+
+    document.body.appendChild(probe);
+    const rect = probe.getBoundingClientRect();
+    probe.remove();
+    return rect;
+  }
+
+  function syncLightToDarkTransitionTarget() {
+    const root = document.documentElement;
+    const overlay = document.getElementById("themeTransition");
+    const transitionMoon = overlay?.querySelector(".themeTransition__moon");
+
+    root.style.setProperty("--tt-l2d-end-dx", "0px");
+    root.style.setProperty("--tt-l2d-end-dy", "-35vh");
+    root.style.setProperty("--tt-l2d-end-scale", ".75");
+
+    if (!transitionMoon) return;
+
+    const targetRect = measurePersistentMoonTargetRect();
+    const baseWidth = transitionMoon.offsetWidth || transitionMoon.getBoundingClientRect().width;
+    if (targetRect.width <= 0 || targetRect.height <= 0 || baseWidth <= 0) return;
+
+    const viewportCenterX = window.innerWidth / 2;
+    const viewportCenterY = window.innerHeight / 2;
+    const targetCenterX = targetRect.left + targetRect.width / 2;
+    const targetCenterY = targetRect.top + targetRect.height / 2;
+    const endScale = targetRect.width / baseWidth;
+
+    root.style.setProperty("--tt-l2d-end-dx", `${targetCenterX - viewportCenterX}px`);
+    root.style.setProperty("--tt-l2d-end-dy", `${targetCenterY - viewportCenterY}px`);
+    root.style.setProperty("--tt-l2d-end-scale", `${endScale}`);
+  }
+
   async function playLightToDarkTransition(){
   // avoid stacking animations
   if (
@@ -112,6 +162,7 @@ async function decodeImageIfPossible(imgEl) {
     return;
   }
 
+  syncLightToDarkTransitionTarget();
   document.body.classList.add("theme-transitioning-to-dark");
 
   // 可选：切换中禁用 smooth scroll（你原本只在 dark->light 做了）
@@ -127,7 +178,7 @@ async function decodeImageIfPossible(imgEl) {
   overlay.classList.add("is-active");
 
   // switch theme while animation is in progress (sync with CSS)
-  const switchAt = 700; // ms
+  const switchAt = 1080; // ms
   window.setTimeout(() => setTheme("dark"), switchAt);
 
   const onEnd = (e) => {
@@ -138,6 +189,9 @@ async function decodeImageIfPossible(imgEl) {
     document.body.classList.remove("theme-transitioning-to-dark");
     document.documentElement.classList.remove("is-transitioning");
     document.documentElement.style.removeProperty("--moon-scale");
+    document.documentElement.style.removeProperty("--tt-l2d-end-dx");
+    document.documentElement.style.removeProperty("--tt-l2d-end-dy");
+    document.documentElement.style.removeProperty("--tt-l2d-end-scale");
   };
 
   moon.addEventListener("animationend", onEnd);
