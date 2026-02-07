@@ -67,6 +67,9 @@ async function decodeImageIfPossible(imgEl) {
     // reset to default so measurement uses the canonical transition start
     root.style.setProperty("--tt-start-dx", "0px");
     root.style.setProperty("--tt-start-dy", "0px");
+    root.style.setProperty("--tt-end-dx", "0px");
+    root.style.setProperty("--tt-end-dy", "49vh");
+    root.style.setProperty("--tt-end-scale", "4.10");
 
     if (!transitionMoon || !persistentMoon) return;
 
@@ -78,9 +81,16 @@ async function decodeImageIfPossible(imgEl) {
     const fromCenterY = fromRect.top + fromRect.height / 2;
     const toCenterX = toRect.left + toRect.width / 2;
     const toCenterY = toRect.top + toRect.height / 2;
+    // offsetWidth is based on layout size and is not affected by transform: scale(.12)
+    const baseWidth = transitionMoon.offsetWidth || toRect.width;
+    if (baseWidth <= 0) return;
+    const targetScale = fromRect.width / baseWidth;
 
     root.style.setProperty("--tt-start-dx", `${fromCenterX - toCenterX}px`);
     root.style.setProperty("--tt-start-dy", `${fromCenterY - toCenterY}px`);
+    root.style.setProperty("--tt-end-dx", `${fromCenterX - toCenterX}px`);
+    root.style.setProperty("--tt-end-dy", `${fromCenterY - toCenterY}px`);
+    root.style.setProperty("--tt-end-scale", `${targetScale}`);
   }
 
   async function playLightToDarkTransition(){
@@ -117,7 +127,7 @@ async function decodeImageIfPossible(imgEl) {
   overlay.classList.add("is-active");
 
   // switch theme while animation is in progress (sync with CSS)
-  const switchAt = 900; // ms
+  const switchAt = 700; // ms
   window.setTimeout(() => setTheme("dark"), switchAt);
 
   const onEnd = (e) => {
@@ -180,6 +190,9 @@ async function playDarkToLightTransition() {
     document.documentElement.style.removeProperty("--moon-scale");
     document.documentElement.style.removeProperty("--tt-start-dx");
     document.documentElement.style.removeProperty("--tt-start-dy");
+    document.documentElement.style.removeProperty("--tt-end-dx");
+    document.documentElement.style.removeProperty("--tt-end-dy");
+    document.documentElement.style.removeProperty("--tt-end-scale");
   };
 
   moon.addEventListener("animationend", onEnd);
