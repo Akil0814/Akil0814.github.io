@@ -58,6 +58,30 @@ async function decodeImageIfPossible(imgEl) {
   // ---------------------------------------------------------
   // 3.1.c) Theme transition (Light <-> Dark)
   // ---------------------------------------------------------
+  function syncTransitionMoonStartFromPersistentMoon() {
+    const root = document.documentElement;
+    const overlay = document.getElementById("themeTransition");
+    const transitionMoon = overlay?.querySelector(".themeTransition__moon");
+    const persistentMoon = document.querySelector(".bg-moon");
+
+    // reset to default so measurement uses the canonical transition start
+    root.style.setProperty("--tt-start-dx", "0px");
+    root.style.setProperty("--tt-start-dy", "0px");
+
+    if (!transitionMoon || !persistentMoon) return;
+
+    const fromRect = persistentMoon.getBoundingClientRect();
+    if (fromRect.width <= 0 || fromRect.height <= 0) return;
+
+    const toRect = transitionMoon.getBoundingClientRect();
+    const fromCenterX = fromRect.left + fromRect.width / 2;
+    const fromCenterY = fromRect.top + fromRect.height / 2;
+    const toCenterX = toRect.left + toRect.width / 2;
+    const toCenterY = toRect.top + toRect.height / 2;
+
+    root.style.setProperty("--tt-start-dx", `${fromCenterX - toCenterX}px`);
+    root.style.setProperty("--tt-start-dy", `${fromCenterY - toCenterY}px`);
+  }
 
   async function playLightToDarkTransition(){
   // avoid stacking animations
@@ -128,6 +152,8 @@ async function playDarkToLightTransition() {
     return;
   }
 
+  // read persistent moon position before we hide it for transition
+  syncTransitionMoonStartFromPersistentMoon();
   document.body.classList.add("theme-transitioning-to-light");
 
   // perf: ensure moon image is decoded before we start the overlay animation
@@ -152,6 +178,8 @@ async function playDarkToLightTransition() {
     document.body.classList.remove("theme-transitioning-to-light");
     document.documentElement.classList.remove("is-transitioning");
     document.documentElement.style.removeProperty("--moon-scale");
+    document.documentElement.style.removeProperty("--tt-start-dx");
+    document.documentElement.style.removeProperty("--tt-start-dy");
   };
 
   moon.addEventListener("animationend", onEnd);
