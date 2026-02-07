@@ -186,7 +186,7 @@ async function decodeImageIfPossible(imgEl) {
   overlay.classList.add("is-active");
 
   // switch theme while animation is in progress (sync with CSS)
-  const switchAt = 1080; // ms
+  const switchAt = 880; // ms
   window.setTimeout(() => setTheme("dark"), switchAt);
 
   const onEnd = (e) => {
