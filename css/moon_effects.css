@@ -71,7 +71,7 @@ body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
   }
   12%{ opacity: 1; }
   55%{
-    transform: translate(-50%, 52vh) scale(3.35); 
+    transform: translate(-50%, 49vh) scale(3.35); 
     filter: brightness(1.2) drop-shadow(0 0 22px rgba(255,255,255,.85));
   }
   78%{
@@ -79,21 +79,10 @@ body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
     filter: brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,.35));
     opacity: .85;
   }
-  92%{
-    transform: translate(
-      calc(-50% + var(--tt-end-dx, 0px)),
-      calc(0px + var(--tt-end-dy, 49vh))
-    ) scale(var(--tt-end-scale, 4.10));
-    filter: brightness(1.15) drop-shadow(0 0 12px rgba(255,255,255,.35));
-    opacity: .7;
-  }
   100%{
     opacity: 0;
-    transform: translate(
-      calc(-50% + var(--tt-end-dx, 0px)),
-      calc(0px + var(--tt-end-dy, 49vh))
-    ) scale(var(--tt-end-scale, 4.10));
-    filter: brightness(1) drop-shadow(0 0 0 rgba(255,255,255,0));
+    transform: translate(-50%, 49vh) scale(4.10);
+    filter: brightness(1.9) drop-shadow(0 0 22px rgba(255,255,255,.75));
   }
 }
 
@@ -101,9 +90,10 @@ body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
 /* 整屏过曝：先升白，再回落 */
 @keyframes t_flash_to_light{
   0%{ opacity: 0; filter: brightness(1); }
-  22%{ opacity: .10; }
-  60%{ opacity: .92; filter: brightness(1.35); }
-  82%{ opacity: .80; }
+  20%{ opacity: 0.10; }
+  40%{ opacity: 0.8; filter: brightness(1.35); }
+  60%{ opacity: 1; filter: brightness(1.35); }
+  80%{ opacity: 0.8; }
   100%{ opacity: 0; filter: brightness(1); }
 }
 
@@ -123,6 +113,11 @@ body.theme-transitioning-to-dark #themeTransition .themeTransition__moon{
   animation: t_moon_spark_to_dark 2400ms ease-in-out both;
 }
 
+/* Handoff: fade in persistent moon near the end of light -> dark */
+body.theme-transitioning-to-dark .bg-moon{
+  animation: t_bg_moon_handoff 2400ms ease-in-out both;
+}
+
 /* 先压黑，再稍微回一点（让暗色界面正常对比度回归） */
 @keyframes t_dim_to_dark{
   0%   { opacity: 0; }
@@ -130,6 +125,13 @@ body.theme-transitioning-to-dark #themeTransition .themeTransition__moon{
   70%  { opacity: 1; }
   85%  { opacity: .60; }
   100% { opacity: 0; }
+}
+
+@keyframes t_bg_moon_handoff{
+  0%   { opacity: 0; }
+  74%  { opacity: 0; }
+  88%  { opacity: .55; }
+  100% { opacity: var(--moon-opacity, .92); }
 }
 
 /* moon：小光点出现 -> 变亮（主要靠 brightness + glow），尺寸变化很小 */

@@ -129,11 +129,19 @@ async function decodeImageIfPossible(imgEl) {
     if (!transitionMoon) return;
 
     const targetRect = measurePersistentMoonTargetRect();
+    const overlayRect = overlay.getBoundingClientRect();
     const baseWidth = transitionMoon.offsetWidth || transitionMoon.getBoundingClientRect().width;
-    if (targetRect.width <= 0 || targetRect.height <= 0 || baseWidth <= 0) return;
+    if (
+      targetRect.width <= 0 ||
+      targetRect.height <= 0 ||
+      overlayRect.width <= 0 ||
+      overlayRect.height <= 0 ||
+      baseWidth <= 0
+    ) return;
 
-    const viewportCenterX = window.innerWidth / 2;
-    const viewportCenterY = window.innerHeight / 2;
+    // Use overlay's own layout center as the transform baseline to avoid subtle viewport/scrollbar drift.
+    const viewportCenterX = overlayRect.left + overlayRect.width / 2;
+    const viewportCenterY = overlayRect.top + overlayRect.height / 2;
     const targetCenterX = targetRect.left + targetRect.width / 2;
     const targetCenterY = targetRect.top + targetRect.height / 2;
     const endScale = targetRect.width / baseWidth;

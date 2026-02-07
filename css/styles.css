@@ -39,7 +39,8 @@ body.theme-transitioning-to-light .bg-moon{
 
 /* Hide persistent moon during light -> dark transition to avoid double-moon overlap */
 body.theme-transitioning-to-dark .bg-moon{
-  display: none;
+  display: block;
+  opacity: 0;
 }
 
 
