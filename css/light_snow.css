@@ -17,6 +17,15 @@
   display: block;
 }
 
+/* Keep only snow for light mode background */
+[data-theme="light"] body::before{
+  display: none;
+}
+
+[data-theme="light"] body{
+  background: var(--bg) !important;
+}
+
 /* Remove old light-mode ambient effects */
 [data-theme="light"] .bg-blobs{
   display: none;
@@ -28,6 +37,12 @@
 
 [data-theme="light"] #stars{
   display: none;
+}
+
+/* Remove nav glass/gradient in light mode */
+[data-theme="light"] .nav{
+  backdrop-filter: none;
+  background: rgba(226, 234, 244, 0.94);
 }
 
 /* Reuse existing FX toggle semantics */

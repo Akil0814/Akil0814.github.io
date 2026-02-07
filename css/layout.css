@@ -261,6 +261,11 @@
   margin-top: 52px;
   padding-top: 18px;
 }
+
+/* Prevent fixed nav from covering section titles on anchor jumps */
+section[id]{
+  scroll-margin-top: 92px;
+}
 .section__head{
   display:flex;
   align-items:flex-end;
@@ -385,3 +390,42 @@
 .linkCard:hover{ transform: translateY(-6px); background: rgba(255,255,255,.08); }
 .linkCard__k{ display:block; font-weight: 900; }
 .linkCard__v{ display:block; color: var(--muted); margin-top: 6px; font-family:"JetBrains Mono", monospace; font-size: 12px; }
+
+/* =========================================================
+   Mobile nav fit
+   - Keep FX/Theme visible on narrow screens
+   ========================================================= */
+@media (max-width: 760px){
+  .nav{
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .brand{
+    padding: 8px 10px;
+  }
+
+  .brand__text{
+    letter-spacing: .12em;
+    font-size: 11px;
+  }
+
+  .nav__right{
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .nav__right a{
+    display: none;
+  }
+
+  .nav__right .btn{
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  section[id]{
+    scroll-margin-top: 76px;
+  }
+}

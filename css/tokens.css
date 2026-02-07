@@ -49,25 +49,25 @@
    ========================================================= */
 [data-theme="light"]
 {
-  --bg: #f6f7ff;
-  --bg2:#eef1ff;
-  --card: rgba(10,20,40,.06);
-  --card2: rgba(10,20,40,.10);
-  --text: rgba(10,20,40,.90);
-  --muted: rgba(10,20,40,.70);
-  --line: rgba(10,20,40,.14);
-  --shadow: 0 20px 60px rgba(10,20,40,.18);
+  --bg: #dbe3ec;
+  --bg2:#d4deea;
+  --card: rgba(43,62,84,.08);
+  --card2: rgba(43,62,84,.14);
+  --text: rgba(27,44,64,.94);
+  --muted: rgba(27,44,64,.72);
+  --line: rgba(39,58,82,.20);
+  --shadow: 0 18px 48px rgba(40,61,86,.16);
 
   /* Light theme 下光团更容易“发白”，再压一点 */
-  --fx-stars-opacity: .55;
-  --fx-blobs-opacity: .40;
+  --fx-stars-opacity: 0;
+  --fx-blobs-opacity: 0;
   --fx-blobs-blur: 28px;
   --fx-blob-white1: .20;
   --fx-blob-white2: .08;
-  --fx-blob-grad-a: .30;
-  --fx-blob-grad-b: .24;
-  --fx-blob-grad-c: .22;
-  --bg-accent-1: rgba(124,77,255,.14);
-  --bg-accent-2: rgba(0,212,255,.10);
-  --bg-accent-3: rgba(255,255,255,.08);
+  --fx-blob-grad-a: 0;
+  --fx-blob-grad-b: 0;
+  --fx-blob-grad-c: 0;
+  --bg-accent-1: rgba(181,195,212,.14);
+  --bg-accent-2: rgba(163,183,205,.10);
+  --bg-accent-3: rgba(216,226,238,.08);
 }
