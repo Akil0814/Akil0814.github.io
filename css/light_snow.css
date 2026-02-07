@@ -1,0 +1,36 @@
+/* =========================================================
+   Light Theme Snow FX
+   - Replace light-theme blobs/scanlines/stars with snowfall.
+   - Controlled by existing FX toggle via body.fx-off.
+   ========================================================= */
+
+#snow{
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  display: none;
+  opacity: 0.95;
+}
+
+[data-theme="light"] #snow{
+  display: block;
+}
+
+/* Remove old light-mode ambient effects */
+[data-theme="light"] .bg-blobs{
+  display: none;
+}
+
+[data-theme="light"] .scanlines{
+  display: none;
+}
+
+[data-theme="light"] #stars{
+  display: none;
+}
+
+/* Reuse existing FX toggle semantics */
+.fx-off #snow{
+  display: none !important;
+}
