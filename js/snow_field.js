@@ -13,7 +13,7 @@
   const MOUSE_REPEL_FORCE = 0.10;
   const VELOCITY_DAMPING = 0.92;
 
-  const CLICK_BURST_RADIUS = 140;
+  const CLICK_BURST_RADIUS = 80;
   const CLICK_BURST_FORCE = 2.4;
   const CLICK_BURST_LIFE = 22;
 

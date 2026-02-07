@@ -50,6 +50,18 @@
   font-size:12px;
 }
 
+[data-theme="light"] .brand{
+  background: rgba(214, 224, 236, .9);
+  box-shadow: 0 8px 22px rgba(62, 84, 110, .16);
+}
+
+[data-theme="light"] .brand__dot{
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff, rgba(255,255,255,.52) 42%, transparent 68%),
+    linear-gradient(135deg, #6e87a3, #9db5cc, #bed0de);
+  box-shadow: 0 0 14px rgba(120, 150, 180, .34);
+}
+
 /* =========================================================
    Nav links & buttons
    ========================================================= */
