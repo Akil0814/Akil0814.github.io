@@ -52,11 +52,11 @@ html.is-transitioning{
 body.theme-transitioning-to-light #themeTransition.themeTransition::before{
   /* 白色过曝层 */
   background: #fff;
-  animation: t_flash_to_light 1200ms ease-in-out both;
+  animation: t_flash_to_light 1400ms ease-in-out both;
 }
 
 body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
-  animation: t_moon_expand_to_light 1200ms ease-in-out both;
+  animation: t_moon_expand_to_light 1000ms ease-in-out both;
 }
 
 /* moon：小 -> 大 + 变亮 + 最后淡出（让界面显出来） */
@@ -77,12 +77,27 @@ body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
   78%{
     transform: translate(-50%, 49vh) scale(4.10);
     filter: brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,.35));
-    opacity: .85;
+    opacity: .88;
+  }
+  82%{
+    transform: translate(-50%, 49vh) scale(4.10);
+    filter:
+      brightness(2.8)
+      contrast(.68)
+      saturate(.5)
+      blur(2.2px)
+      drop-shadow(0 0 34px rgba(255,255,255,.95));
+    opacity: 0;
   }
   100%{
     opacity: 0;
     transform: translate(-50%, 49vh) scale(4.10);
-    filter: brightness(1.9) drop-shadow(0 0 22px rgba(255,255,255,.75));
+    filter:
+      brightness(2.4)
+      contrast(.72)
+      saturate(.55)
+      blur(2.4px)
+      drop-shadow(0 0 36px rgba(255,255,255,.9));
   }
 }
 
@@ -90,10 +105,11 @@ body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
 /* 整屏过曝：先升白，再回落 */
 @keyframes t_flash_to_light{
   0%{ opacity: 0; filter: brightness(1); }
-  20%{ opacity: 0.10; }
-  40%{ opacity: 0.8; filter: brightness(1.35); }
-  60%{ opacity: 1; filter: brightness(1.35); }
-  80%{ opacity: 0.8; }
+  20%{ opacity: 0.08; }
+  42%{ opacity: .96; filter: brightness(1.33); }
+  62%{ opacity: 1; filter: brightness(1.35); }
+  76%{ opacity: .86; filter: brightness(1.2); }
+  90%{ opacity: .48; filter: brightness(1.08); }
   100%{ opacity: 0; filter: brightness(1); }
 }
 

@@ -242,10 +242,11 @@ async function playDarkToLightTransition() {
   const switchAt = 700; // ms
   window.setTimeout(() => setTheme("light"), switchAt);
 
-  const onEnd = (e) => {
-    if (e.target !== moon) return;
-    moon.removeEventListener("animationend", onEnd);
-
+  // Decoupled timing:
+  // - moon can disappear early
+  // - flash can keep running to restore brightness smoothly
+  const flashDuration = 1400; // ms
+  window.setTimeout(() => {
     overlay.classList.remove("is-active");
     document.body.classList.remove("theme-transitioning-to-light");
     document.documentElement.classList.remove("is-transitioning");
@@ -255,9 +256,7 @@ async function playDarkToLightTransition() {
     document.documentElement.style.removeProperty("--tt-end-dx");
     document.documentElement.style.removeProperty("--tt-end-dy");
     document.documentElement.style.removeProperty("--tt-end-scale");
-  };
-
-  moon.addEventListener("animationend", onEnd);
+  }, flashDuration + 16);
 }
 
   // 点击切换主题
