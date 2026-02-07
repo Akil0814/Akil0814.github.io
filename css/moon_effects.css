@@ -1,0 +1,162 @@
+
+/* ===== Overlay container ===== */
+#themeTransition.themeTransition{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  isolation: isolate; /* 让混合/滤镜更可控 */
+}
+
+/* 被 JS 加上 is-active 才显示 */
+#themeTransition.themeTransition.is-active{
+  opacity: 1;
+}
+
+/* ===== Moon sprite ===== */
+.themeTransition__moon{
+  position: absolute;
+  left: 50%;
+  top: -12vh;                 /* “界面上方” */
+  width: min(38vmin, 420px);  /* 月亮最大尺寸 */
+  aspect-ratio: 1 / 1;
+  transform: translateX(-50%) scale(var(--moon-scale, .12));
+  transform-origin: 50% 50%;
+  will-change: transform, filter, opacity;
+  opacity: 0;
+
+  background: url("./image/moon.png") center / contain no-repeat;
+  filter: brightness(1) drop-shadow(0 0 0 rgba(255,255,255,0));
+}
+
+/* ===== Screen flash / dim layer (pseudo) ===== */
+#themeTransition.themeTransition::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  will-change: opacity, filter;
+}
+
+/* 防止切换时页面滚动动画乱入（你 JS 有加 is-transitioning） */
+html.is-transitioning{
+  scroll-behavior: auto !important;
+}
+
+/* =========================================================
+   D A R K  ->  L I G H T
+   moon: 上方小 -> 大
+   screen: 过曝 -> 恢复
+   ========================================================= */
+body.theme-transitioning-to-light #themeTransition.themeTransition::before{
+  /* 白色过曝层 */
+  background: #fff;
+  animation: t_flash_to_light 1200ms ease-in-out both;
+}
+
+body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
+  animation: t_moon_expand_to_light 1200ms ease-in-out both;
+}
+
+/* moon：小 -> 大 + 变亮 + 最后淡出（让界面显出来） */
+@keyframes t_moon_expand_to_light{
+  0%{
+    opacity: 0;
+    transform: translate(-50%, 0) scale(.50); 
+    filter: brightness(1) drop-shadow(0 0 0 rgba(255,255,255,0));
+  }
+  12%{ opacity: 1; }
+  55%{
+    transform: translate(-50%, 52vh) scale(3.35); 
+    filter: brightness(1.2) drop-shadow(0 0 22px rgba(255,255,255,.85));
+  }
+  78%{
+    transform: translate(-50%, 49vh) scale(4.10);
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,.35));
+    opacity: .85;
+  }
+  100%{
+    opacity: 0;
+    transform: translate(-50%, 49vh) scale(4.10);
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,.35));
+  }
+}
+
+
+/* 整屏过曝：先升白，再回落 */
+@keyframes t_flash_to_light{
+  0%{ opacity: 0; filter: brightness(1); }
+  22%{ opacity: .10; }
+  60%{ opacity: .92; filter: brightness(1.35); }
+  82%{ opacity: .80; }
+  100%{ opacity: 0; filter: brightness(1); }
+}
+
+/* =========================================================
+   L I G H T  ->  D A R K
+   screen: 先变暗（压黑）
+   moon: 上方小光点开始“变亮”（更像点亮而不是放大）
+   ========================================================= */
+body.theme-transitioning-to-dark #themeTransition.themeTransition::before{
+  background: #000;
+  animation: t_dim_to_dark 1400ms ease-in-out both;
+}
+
+body.theme-transitioning-to-dark #themeTransition .themeTransition__moon{
+  animation: t_moon_spark_to_dark 1400ms ease-in-out both;
+}
+
+/* 先压黑，再稍微回一点（让暗色界面正常对比度回归） */
+@keyframes t_dim_to_dark{
+  0%{ opacity: 0; filter: brightness(1); }
+  18%{ opacity: .55; }
+  55%{ opacity: .95; }  /* 切主题在你 JS 的 990ms，大概 70% 附近 */
+  78%{ opacity: .50; }
+  100%{ opacity: 0; }
+}
+
+/* moon：小光点出现 -> 变亮（主要靠 brightness + glow），尺寸变化很小 */
+@keyframes t_moon_spark_to_dark{
+  0%{
+    opacity: 0;
+    transform: translateX(-50%) scale(.06);
+    filter: brightness(.7) drop-shadow(0 0 0 rgba(255,255,255,0));
+  }
+  20%{
+    opacity: 0;
+    transform: translateX(-50%) scale(.06);
+  }
+  45%{
+    /* 暗下去后再出现光点 */
+    opacity: .65;
+    transform: translateX(-50%) scale(.08);
+    filter: brightness(1.2) drop-shadow(0 0 6px rgba(255,255,255,.25));
+  }
+  72%{
+    opacity: 1;
+    transform: translateX(-50%) scale(.10);
+    filter: brightness(2.6) drop-shadow(0 0 26px rgba(255,255,255,.75));
+  }
+  88%{
+    opacity: .85;
+    transform: translateX(-50%) scale(.10);
+    filter: brightness(1.4) drop-shadow(0 0 10px rgba(255,255,255,.30));
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-50%) scale(.10);
+    filter: brightness(1) drop-shadow(0 0 0 rgba(255,255,255,0));
+  }
+}
+
+/* ===== Optional: reduced motion ===== */
+@media (prefers-reduced-motion: reduce){
+  body.theme-transitioning-to-dark #themeTransition.themeTransition::before,
+  body.theme-transitioning-to-light #themeTransition.themeTransition::before,
+  body.theme-transitioning-to-dark #themeTransition .themeTransition__moon,
+  body.theme-transitioning-to-light #themeTransition .themeTransition__moon{
+    animation: none !important;
+  }
+  #themeTransition.themeTransition{ opacity: 0 !important; }
+}
