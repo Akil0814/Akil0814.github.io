@@ -43,10 +43,23 @@ async function decodeImageIfPossible(imgEl) {
       if (next) el.style.backgroundImage = `url('${next}')`;
     });
   }
+  function setThemeColor(theme) {
+    const color = theme === "dark" ? "#0b1020" : "#dbe3ec";
+    let meta = document.querySelector('meta[name="theme-color"]');
+
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "theme-color");
+      document.head.appendChild(meta);
+    }
+
+    meta.setAttribute("content", color);
+  }
   function setTheme(next) {
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
     applyThemeAssets(next);
+    setThemeColor(next);
   }
   function getTheme() {
     return localStorage.getItem("theme") || "dark";
