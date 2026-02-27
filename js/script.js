@@ -15,6 +15,7 @@ async function decodeImageIfPossible(imgEl) {
   // 3) Theme / FX 控件节点
   // ---------------------------------------------------------
   const themeBtn = $("#themeBtn");
+  const langSelect = $("#langSelect");
 
   // Warm up the moon image to avoid first-time decode jank
   (function preloadMoon(){
@@ -65,8 +66,28 @@ async function decodeImageIfPossible(imgEl) {
     return localStorage.getItem("theme") || "dark";
   }
 
+  const LANG_MAP = {
+    zh: "zh-CN",
+    ja: "ja",
+    en: "en",
+  };
+
+  function setLang(next) {
+    const normalized = LANG_MAP[next] ? next : "en";
+    document.documentElement.setAttribute("lang", LANG_MAP[normalized]);
+    localStorage.setItem("lang", normalized);
+    if (langSelect && langSelect.value !== normalized) {
+      langSelect.value = normalized;
+    }
+  }
+
+  function getLang() {
+    return localStorage.getItem("lang") || "en";
+  }
+
   // 初始化主题
   setTheme(getTheme());
+  setLang(getLang());
 
   // ---------------------------------------------------------
   // 3.1.c) Theme transition (Light <-> Dark)
@@ -330,4 +351,16 @@ async function playDarkToLightTransition() {
   // 点击切换 FX
   toggleFx?.addEventListener("click", () => {
     setFx(!uiState.fxOn);
+  });
+
+  // 语言选择（仅全局状态同步，文案切换后续实现）
+  langSelect?.addEventListener("change", () => {
+    setLang(langSelect.value);
+  });
+
+  // 跨标签页同步全局偏好
+  window.addEventListener("storage", (event) => {
+    if (event.key === "theme" && event.newValue) setTheme(event.newValue);
+    if (event.key === "fx" && event.newValue) setFx(event.newValue === "on");
+    if (event.key === "lang" && event.newValue) setLang(event.newValue);
   });

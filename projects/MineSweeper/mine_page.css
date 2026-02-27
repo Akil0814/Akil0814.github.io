@@ -309,7 +309,38 @@ a { color: inherit; text-decoration: none; }
   background: rgba(255,255,255,.08);
 }
 
-.cpp-block pre {
+.cpp-block__codewrap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.cpp-block__lines {
+  list-style: none;
+  margin: 0;
+  padding: 12px 10px 12px 12px;
+  border-right: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.02);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(148,163,184,.86);
+  text-align: right;
+  user-select: none;
+}
+
+.cpp-block__lines li {
+  margin: 0;
+  padding: 0;
+}
+
+.cpp-block pre[class*="language-"],
+.cpp-block code[class*="language-"] {
+  background: transparent;
+  text-shadow: none;
+}
+
+.cpp-block pre,
+.cpp-block pre[class*="language-"] {
   margin: 0;
   padding: 12px 14px;
   overflow: auto;
@@ -324,24 +355,6 @@ a { color: inherit; text-decoration: none; }
   white-space: pre;
 }
 
-.cpp-block code.lines {
-  counter-reset: line;
-}
-
-.cpp-block code.lines > span {
-  display: block;
-  counter-increment: line;
-}
-
-.cpp-block code.lines > span::before {
-  content: counter(line);
-  width: 2.6em;
-  margin-right: 12px;
-  display: inline-block;
-  text-align: right;
-  color: rgba(148,163,184,.86);
-}
-
 [data-theme="light"] .cpp-block {
   background: #f8fafc;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
@@ -350,6 +363,12 @@ a { color: inherit; text-decoration: none; }
 [data-theme="light"] .cpp-block__bar {
   border-bottom-color: rgba(15,23,42,.12);
   background: rgba(15,23,42,.03);
+}
+
+[data-theme="light"] .cpp-block__lines {
+  border-right-color: rgba(15,23,42,.12);
+  background: rgba(15,23,42,.03);
+  color: rgba(51,65,85,.72);
 }
 
 [data-theme="light"] .cpp-block__title {
