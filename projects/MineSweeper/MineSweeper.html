@@ -5,27 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b1020" />
   <title>MineSweeper Project - Akil0814</title>
-
-  <script>
-    (function () {
-      try {
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-        const lang = localStorage.getItem("lang") || "en";
-        const langMap = { zh: "zh-CN", ja: "ja", en: "en" };
-        document.documentElement.setAttribute("lang", langMap[lang] || "en");
-      } catch (_) {
-        document.documentElement.setAttribute("data-theme", "dark");
-        document.documentElement.setAttribute("lang", "en");
-      }
-    })();
-  </script>
+  <script src="../../js/prefs_bootstrap.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/layout.css">
   <link rel="stylesheet" href="../../css/prism.css">
+  <link rel="stylesheet" href="../_shared/project_page.css">
   <link rel="stylesheet" href="./mine_page.css">
 </head>
 <body>
@@ -79,6 +69,34 @@
           and boundary handling behavior in practice.
         </p>
       </div>
+    </section>
+
+    <section class="section section--split">
+      <article class="panel">
+        <div class="section__head">
+          <h2>Tech Stack</h2>
+        </div>
+        <div class="hero__chips">
+          <span class="chip">C++</span>
+          <span class="chip">EasyX</span>
+          <span class="chip">STL</span>
+          <span class="chip">Scene Architecture</span>
+          <span class="chip">Game Loop</span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="section__head">
+          <h2>Repo + Download</h2>
+        </div>
+        <p>
+          Source code and packaged files are available through the project repository.
+        </p>
+        <div class="action-row">
+          <a class="btn btn--link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer">Repository</a>
+          <a class="btn btn--link" href="https://github.com/Akil0814/College_Tour/archive/refs/heads/main.zip" target="_blank" rel="noreferrer">Download ZIP</a>
+        </div>
+      </article>
     </section>
 
     <section id="videos" class="section">
@@ -136,6 +154,18 @@
         </article>
       </div>
     </section>
+
+    <section class="section">
+      <article class="theme-photo-card">
+        <img
+          src="../../image/Arcueid_Bar.png"
+          data-src-dark="../../image/Arcueid_Bar.png"
+          data-src-light="../../image/The_Stranger_In_The_Mirror_T.png"
+          alt="Theme preview card"
+          loading="lazy"
+        />
+      </article>
+    </section>
   </main>
 
   <footer class="footer">
@@ -143,7 +173,8 @@
   </footer>
 
   <script src="../../js/prism.js"></script>
-  <script src="./mine_cpp_block.js"></script>
+  <script src="../_shared/project_code_block.js"></script>
+  <script src="../_shared/project_page.js"></script>
   <script src="./mine_page.js"></script>
 </body>
 </html>

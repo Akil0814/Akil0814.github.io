@@ -1,4 +1,3 @@
-// MineSweeper page local C++ block renderer.
 (function () {
   function resolveTarget(target) {
     if (typeof target === "string") return document.querySelector(target);
@@ -87,6 +86,7 @@
 
     const pre = document.createElement("pre");
     pre.className = "language-cpp";
+
     const codeEl = document.createElement("code");
     codeEl.className = "language-cpp";
     codeEl.innerHTML = highlightCpp(code);
@@ -113,14 +113,14 @@
   async function renderCppFile(target, filePath, options = {}) {
     const response = await fetch(filePath);
     if (!response.ok) {
-      throw new Error(`renderCppFile: failed to fetch ${filePath} (${response.status})`);
+      throw new Error("renderCppFile: failed to fetch " + filePath + " (" + response.status + ")");
     }
     const text = await response.text();
     const title = options.title || filePath.split("/").pop() || "C++";
     renderCppCodeBlock(target, text, { ...options, title });
   }
 
-  window.MineCppBlock = {
+  window.ProjectCodeBlock = {
     renderCppCodeBlock,
     renderCppFile,
   };
