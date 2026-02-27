@@ -40,19 +40,17 @@
 
 <body>
   <!-- =======================================================
-       Ambient background layers (纯装饰，不影响内容交互)
-       - canvas#stars：星空（JS绘制）
-       - .bg-moon：月亮（暗色模式）
-       - .bg-blobs：彩色光团（亮色模式或你想保留时）
-       - .scanlines：扫描线（CSS）
+       Ambient background layers
+       - canvas#stars：星空
+       - .bg-moon：月亮
+       - .scanlines：扫描线
        ======================================================= -->
   <canvas id="stars" aria-hidden="true"></canvas>
   <canvas id="snow" aria-hidden="true"></canvas>
 
   <!-- =======================================================
-       Dark mode moon layer (替代暗色光团)
+       Dark mode moon layer
        - 只在暗色模式显示
-       - 你把 moon.png 放到 ./image/ 里即可
        ======================================================= -->
   <div class="bg-moon" aria-hidden="true">
     <span class="bg-moon__halo"></span>
@@ -112,22 +110,23 @@
         </h1>
 
         <p class="subtitle">
-          Something about me <span class="k">C++</span>, <span class="k">SDL</span>, <span class="k">Qt</span>,...
+          What I know: <span class="k">C++</span>,
+          <span class="k">SDL</span>, <span class="k">OpenGL</span>,<span class="k">SQLite</span>,...
           <br/>
           Something.
         </p>
 
         <!-- CTA buttons -->
         <div class="cta">
-                    <a class="btn" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn--ghost" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn btn--ghost" href="#about">About Me</a>
         </div>
 
         <!-- 迷你信息块 -->
         <div class="mini-stats">
           <div class="chip">
-            <span class="chip__label">Focus</span>
-            <span class="chip__value">C++ / Systems </span>
+            <span class="chip__label">Current Focus</span>
+            <span class="chip__value">C++ / Graphics </span>
           </div>
           <div class="chip">
             <span class="chip__label">Status</span>
@@ -153,12 +152,12 @@
         <!-- 右侧两个小浮动卡片链接 -->
         <div class="floating-cards">
           <a class="float-card" href="#projects">
-            <span class="float-card__title">Latest Build</span>
-            <span class="float-card__desc">Game / Tooling / Labs</span>
+            <span class="float-card__title">Profile</span>
+            <span class="float-card__desc">Skill · Resume · </span>
           </a>
-          <a class="float-card" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">
-            <span class="float-card__title">GitHub</span>
-            <span class="float-card__desc">repos · commits · chaos</span>
+          <a class="float-card" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">
+            <span class="float-card__title">More About Me</span>
+            <span class="float-card__desc">likes · hobbies · </span>
           </a>
         </div>
       </div>
@@ -171,7 +170,7 @@
     <section id="projects" class="section">
       <div class="section__head">
         <h2 class="section__title">Projects</h2>
-        <p class="section__desc">总感觉得写点啥 后面再改吧</p>
+        <p class="section__desc">还没做多语言适配 抱歉TAT</p>
       </div>
 
       <div class="grid">
@@ -185,21 +184,21 @@
           <p class="proj__text">A tactical naval game prototype with UI polish, input handling, and rendering pipeline experiments.</p>
           <div class="proj__links">
             <a class="link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer">Repo</a>
-            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">More information</a>
+            <a class="link" href="https://akil0814.github.io/projects/WarShip/WarShip.html" target="_blank" rel="noreferrer">More information</a>
           </div>
         </article>
 
         <article class="proj">
           <div class="proj__top">
             <span class="proj__badge">C++</span>
-            <span class="proj__badge">SQLite</span>
-            <span class="proj__badge">Tool</span>
+            <span class="proj__badge">EasyX</span>
+            <span class="proj__badge">Game</span>
           </div>
-          <h3 class="proj__title">Something</h3>
-          <p class="proj__text">A campus trip planner: routes, preferences, and a UI that look like 2007.</p>
+          <h3 class="proj__title">MineSweeper</h3>
+          <p class="proj__text">A MineSweeper.</p>
           <div class="proj__links">
             <a class="link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer">Repo</a>
-            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">More information</a>
+            <a class="link" href="https://akil0814.github.io/projects/MineSweeper/MineSweeper.html" target="_blank" rel="noreferrer">More information</a>
           </div>
         </article>
 
