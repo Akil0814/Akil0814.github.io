@@ -38,6 +38,25 @@
     });
   }
 
+  function applyCodeThemeStylesheet(config, theme) {
+    if (!config.codeThemeDarkHref || !config.codeThemeLightHref) return;
+
+    const linkId = config.codeThemeLinkId || "codeThemeLink";
+    const nextHref = theme === "dark" ? config.codeThemeDarkHref : config.codeThemeLightHref;
+    let linkEl = document.getElementById(linkId);
+
+    if (!linkEl) {
+      linkEl = document.createElement("link");
+      linkEl.id = linkId;
+      linkEl.rel = "stylesheet";
+      document.head.appendChild(linkEl);
+    }
+
+    if (linkEl.getAttribute("href") !== nextHref) {
+      linkEl.setAttribute("href", nextHref);
+    }
+  }
+
   function init(options = {}) {
     const config = {
       defaultTheme: "dark",
@@ -47,6 +66,9 @@
       fxButtonId: "toggleFx",
       langSelectId: "langSelect",
       yearElementId: "year",
+      codeThemeLinkId: "codeThemeLink",
+      codeThemeDarkHref: null,
+      codeThemeLightHref: null,
       onThemeChange: null,
       onFxChange: null,
       onLangChange: null,
@@ -67,6 +89,7 @@
       document.documentElement.setAttribute("data-theme", normalized);
       localStorage.setItem("theme", normalized);
       applyThemeAssets(normalized);
+      applyCodeThemeStylesheet(config, normalized);
       setThemeColorMeta(normalized);
       if (typeof config.onThemeChange === "function") {
         config.onThemeChange(normalized);
@@ -108,6 +131,7 @@
       setFx(!getFx());
     };
     const langChangeHandler = () => {
+      if (!langSelect) return;
       setLang(langSelect.value);
     };
     const storageHandler = (event) => {

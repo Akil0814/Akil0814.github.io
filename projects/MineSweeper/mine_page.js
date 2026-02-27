@@ -44,7 +44,11 @@
       return;
     }
 
-    window.ProjectPageCore.init();
+    window.ProjectPageCore.init({
+      codeThemeLinkId: "prismThemeLink",
+      codeThemeDarkHref: "../../prism_dark.css",
+      codeThemeLightHref: "../../prism_light.css",
+    });
     loadCodeBlocks();
   }
 
