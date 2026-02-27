@@ -1,7 +1,143 @@
 <!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Akil</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>MineSweeper Project - Akil0814</title>
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch (_) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="./mine_page.css">
+</head>
 <body>
-  <h1>M Hello, I exist.</h1>
+  <header class="nav">
+    <div class="nav__left">
+      <a class="brand" href="../../index.html">
+        <span class="brand__dot"></span>
+        <span class="brand__text">AKIL</span>
+      </a>
+    </div>
+
+    <nav class="nav__right">
+      <a href="../../index.html">Home</a>
+      <a href="#videos">Videos</a>
+      <a href="#code">Code</a>
+
+      <select id="langSelect" class="lang-select" aria-label="Language select">
+        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+        <option value="en" selected>English</option>
+      </select>
+      <button id="toggleFx" class="btn" type="button" title="Toggle visual effects">FX</button>
+      <button id="themeBtn" class="btn" type="button" title="Toggle theme">Theme</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="hero__kicker">C++ / EasyX / Game Logic</p>
+      <h1 class="hero__title">MineSweeper Project Overview</h1>
+      <p class="hero__desc">
+        This page presents the architecture of my MineSweeper project, including core gameplay logic,
+        scene flow design, and implementation details through code and runtime demonstrations.
+      </p>
+      <div class="hero__chips">
+        <span class="chip">Map Generation</span>
+        <span class="chip">Safe Area Expansion</span>
+        <span class="chip">Scene Management</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head">
+        <h2>Project Summary</h2>
+      </div>
+      <div class="panel">
+        <p>
+          The MineSweeper project is implemented in C++ with a modular structure based on a main loop,
+          scene classes, and a scene manager. The code blocks below highlight the core control flow and
+          responsibilities of each module. The videos demonstrate gameplay transitions, reveal rules,
+          and boundary handling behavior in practice.
+        </p>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="section__head">
+        <h2>Demo Videos (4)</h2>
+      </div>
+      <div class="video-grid">
+        <article class="video-card">
+          <h3>Game Mode Demo</h3>
+          <video controls preload="metadata" playsinline src="./res/mine_game_mod.webm"></video>
+          <p>Shows mode selection and primary interaction flow.</p>
+        </article>
+
+        <article class="video-card">
+          <h3>Main Gameplay Flow</h3>
+          <video controls preload="metadata" playsinline src="./res/mine_main.webm"></video>
+          <p>Shows the end-to-end transition from launch to active gameplay.</p>
+        </article>
+
+        <article class="video-card">
+          <h3>Safe Cell Expansion</h3>
+          <video controls preload="metadata" playsinline src="./res/mine_safe_cell.webm"></video>
+          <p>Shows automatic expansion behavior for empty connected regions.</p>
+        </article>
+
+        <article class="video-card">
+          <h3>Safe Zone Validation</h3>
+          <video controls preload="metadata" playsinline src="./res/mine_safe_zone.webm"></video>
+          <p>Shows zone search logic and boundary condition handling.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="code" class="section">
+      <div class="section__head">
+        <h2>Core Code Blocks (3)</h2>
+      </div>
+      <div class="code-list">
+        <article class="code-card">
+          <h3>Main Loop</h3>
+          <p>Controls input handling, update steps, rendering, and exit conditions.</p>
+          <div id="code-main-loop" class="code-slot"></div>
+        </article>
+
+        <article class="code-card">
+          <h3>Scene Class</h3>
+          <p>Defines scene behavior, board state interfaces, and game-state transitions.</p>
+          <div id="code-scene-class" class="code-slot"></div>
+        </article>
+
+        <article class="code-card">
+          <h3>Scene Manager</h3>
+          <p>Handles scene registration, switching, and lifecycle management.</p>
+          <div id="code-scene-manager" class="code-slot"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="mono">&copy; <span id="year"></span> Akil</span> <span class="dot">&middot;</span> <span class="mono">MineSweeper Project Page</span></p>
+  </footer>
+
+  <script src="./mine_cpp_block.js"></script>
+  <script src="./mine_page.js"></script>
 </body>
 </html>
