@@ -1,10 +1,4 @@
 (function () {
-  const LANG_MAP = {
-    zh: "zh-CN",
-    ja: "ja",
-    en: "en",
-  };
-
   const codeEntries = [
     {
       target: "#code-main-loop",
@@ -74,24 +68,14 @@
     const langSelect = document.getElementById("langSelect");
     if (!langSelect) return;
 
-    const current = getLang();
+    const current = localStorage.getItem("lang") || "en";
     if ([...langSelect.options].some((opt) => opt.value === current)) {
       langSelect.value = current;
     }
 
     langSelect.addEventListener("change", () => {
-      setLang(langSelect.value);
+      localStorage.setItem("lang", langSelect.value);
     });
-  }
-
-  function getLang() {
-    return localStorage.getItem("lang") || "en";
-  }
-
-  function setLang(next) {
-    const normalized = LANG_MAP[next] ? next : "en";
-    document.documentElement.setAttribute("lang", LANG_MAP[normalized]);
-    localStorage.setItem("lang", normalized);
   }
 
   function setYear() {
@@ -122,7 +106,6 @@
 
   function init() {
     setTheme(getTheme());
-    setLang(getLang());
     setFxEnabled(getFxEnabled());
     setupLanguageSelect();
     setupFxToggle();
@@ -130,12 +113,6 @@
     setYear();
     loadCodeBlocks();
   }
-
-  window.addEventListener("storage", (event) => {
-    if (event.key === "theme" && event.newValue) setTheme(event.newValue);
-    if (event.key === "fx" && event.newValue) setFxEnabled(event.newValue === "on");
-    if (event.key === "lang" && event.newValue) setLang(event.newValue);
-  });
 
   window.addEventListener("DOMContentLoaded", init);
 })();

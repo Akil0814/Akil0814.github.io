@@ -12,35 +12,13 @@
       .replaceAll(">", "&gt;");
   }
 
-  function highlightCpp(code) {
-    if (
-      typeof window.Prism !== "undefined" &&
-      window.Prism.languages &&
-      typeof window.Prism.highlight === "function"
-    ) {
-      const grammar =
-        window.Prism.languages.cpp ||
-        window.Prism.languages.c ||
-        window.Prism.languages.clike;
-      if (grammar) {
-        return window.Prism.highlight(code, grammar, "cpp");
-      }
-    }
-    return escapeHtml(code);
-  }
-
-  function createLineGutter(lineCount) {
-    const gutter = document.createElement("ol");
-    gutter.className = "cpp-block__lines";
-    gutter.setAttribute("aria-hidden", "true");
-
-    for (let i = 1; i <= lineCount; i += 1) {
-      const line = document.createElement("li");
-      line.textContent = String(i);
-      gutter.appendChild(line);
-    }
-
-    return gutter;
+  function buildCodeHtml(code, showLineNumbers) {
+    const escaped = escapeHtml(code);
+    if (!showLineNumbers) return escaped;
+    return escaped
+      .split("\n")
+      .map((line) => `<span>${line || " "}</span>`)
+      .join("");
   }
 
   function createCppBlock(code, options = {}) {
@@ -82,24 +60,14 @@
       bar.appendChild(btn);
     }
 
-    const codeWrap = document.createElement("div");
-    codeWrap.className = "cpp-block__codewrap";
-
     const pre = document.createElement("pre");
-    pre.className = "language-cpp";
     const codeEl = document.createElement("code");
-    codeEl.className = "language-cpp";
-    codeEl.innerHTML = highlightCpp(code);
+    codeEl.className = opts.showLineNumbers ? "lines" : "";
+    codeEl.innerHTML = buildCodeHtml(code, opts.showLineNumbers);
     pre.appendChild(codeEl);
 
-    if (opts.showLineNumbers) {
-      const lineCount = String(code ?? "").split("\n").length;
-      codeWrap.appendChild(createLineGutter(lineCount));
-    }
-
-    codeWrap.appendChild(pre);
     root.appendChild(bar);
-    root.appendChild(codeWrap);
+    root.appendChild(pre);
     return root;
   }
 

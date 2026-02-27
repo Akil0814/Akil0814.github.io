@@ -10,12 +10,8 @@
     (function () {
       try {
         document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-        const lang = localStorage.getItem("lang") || "en";
-        const langMap = { zh: "zh-CN", ja: "ja", en: "en" };
-        document.documentElement.setAttribute("lang", langMap[lang] || "en");
       } catch (_) {
         document.documentElement.setAttribute("data-theme", "dark");
-        document.documentElement.setAttribute("lang", "en");
       }
     })();
   </script>
@@ -25,7 +21,6 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/tokens.css">
-  <link rel="stylesheet" href="../../css/prism.css">
   <link rel="stylesheet" href="./mine_page.css">
 </head>
 <body>
@@ -142,7 +137,6 @@
     <p><span class="mono">&copy; <span id="year"></span> Akil</span> <span class="dot">&middot;</span> <span class="mono">MineSweeper Project Page</span></p>
   </footer>
 
-  <script src="../../js/prism.js"></script>
   <script src="./mine_cpp_block.js"></script>
   <script src="./mine_page.js"></script>
 </body>
