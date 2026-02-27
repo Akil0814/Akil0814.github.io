@@ -46,8 +46,8 @@
 
     window.ProjectPageCore.init({
       codeThemeLinkId: "prismThemeLink",
-      codeThemeDarkHref: "../../prism_dark.css",
-      codeThemeLightHref: "../../prism_light.css",
+      codeThemeDarkHref: "../../assets/prism/prism-dark.css",
+      codeThemeLightHref: "../../assets/prism/prism-light.css",
     });
     loadCodeBlocks();
   }

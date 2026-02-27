@@ -12,13 +12,13 @@ Use these files for all project description pages under `projects/*`:
 <link rel="stylesheet" href="../../css/tokens.css">
 <link rel="stylesheet" href="../../css/base.css">
 <link rel="stylesheet" href="../../css/layout.css">
-<link rel="stylesheet" href="../../css/prism.css">
+<link rel="stylesheet" href="../../assets/prism/prism-dark.css">
 <link rel="stylesheet" href="../_shared/project_page.css">
 <link rel="stylesheet" href="./your_page.css">
 ```
 
 ```html
-<script src="../../js/prism.js"></script>
+<script src="../../assets/prism/prism.js"></script>
 <script src="../_shared/project_code_block.js"></script>
 <script src="../_shared/project_page.js"></script>
 <script src="./your_page.js"></script>
