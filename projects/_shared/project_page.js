@@ -1,40 +1,44 @@
 (function () {
-  const LANG_MAP = {
+  const LANGUAGE_MAP = {
     zh: "zh-CN",
     ja: "ja",
     en: "en",
   };
 
-  function setThemeColorMeta(theme) {
-    const value = theme === "light" ? "#dbe3ec" : "#0b1020";
-    let meta = document.querySelector('meta[name="theme-color"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "theme-color");
-      document.head.appendChild(meta);
+  function normalizeTheme(theme, fallbackTheme) {
+    return theme === "dark" || theme === "light" ? theme : fallbackTheme;
+  }
+
+  function normalizeLanguage(language, fallbackLanguage) {
+    return LANGUAGE_MAP[language] ? language : fallbackLanguage;
+  }
+
+  function ensureThemeColorMeta(theme) {
+    const themeColor = theme === "light" ? "#dbe3ec" : "#0b1020";
+    let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement("meta");
+      metaThemeColor.setAttribute("name", "theme-color");
+      document.head.appendChild(metaThemeColor);
     }
-    meta.setAttribute("content", value);
-  }
 
-  function normalizeTheme(next, fallback) {
-    if (next === "dark" || next === "light") return next;
-    return fallback;
-  }
-
-  function normalizeLang(next, fallback) {
-    if (LANG_MAP[next]) return next;
-    return fallback;
+    metaThemeColor.setAttribute("content", themeColor);
   }
 
   function applyThemeAssets(theme) {
-    document.querySelectorAll("img[data-src-dark][data-src-light]").forEach((img) => {
-      const next = theme === "dark" ? img.dataset.srcDark : img.dataset.srcLight;
-      if (next && img.getAttribute("src") !== next) img.setAttribute("src", next);
+    document.querySelectorAll("img[data-src-dark][data-src-light]").forEach((imageElement) => {
+      const nextSource = theme === "dark" ? imageElement.dataset.srcDark : imageElement.dataset.srcLight;
+      if (nextSource && imageElement.getAttribute("src") !== nextSource) {
+        imageElement.setAttribute("src", nextSource);
+      }
     });
 
-    document.querySelectorAll("[data-bg-dark][data-bg-light]").forEach((el) => {
-      const next = theme === "dark" ? el.dataset.bgDark : el.dataset.bgLight;
-      if (next) el.style.backgroundImage = "url('" + next + "')";
+    document.querySelectorAll("[data-bg-dark][data-bg-light]").forEach((element) => {
+      const nextBackground = theme === "dark" ? element.dataset.bgDark : element.dataset.bgLight;
+      if (nextBackground) {
+        element.style.backgroundImage = `url('${nextBackground}')`;
+      }
     });
   }
 
@@ -42,18 +46,18 @@
     if (!config.codeThemeDarkHref || !config.codeThemeLightHref) return;
 
     const linkId = config.codeThemeLinkId || "codeThemeLink";
-    const nextHref = theme === "dark" ? config.codeThemeDarkHref : config.codeThemeLightHref;
-    let linkEl = document.getElementById(linkId);
+    const nextStylesheetHref = theme === "dark" ? config.codeThemeDarkHref : config.codeThemeLightHref;
+    let codeThemeLink = document.getElementById(linkId);
 
-    if (!linkEl) {
-      linkEl = document.createElement("link");
-      linkEl.id = linkId;
-      linkEl.rel = "stylesheet";
-      document.head.appendChild(linkEl);
+    if (!codeThemeLink) {
+      codeThemeLink = document.createElement("link");
+      codeThemeLink.id = linkId;
+      codeThemeLink.rel = "stylesheet";
+      document.head.appendChild(codeThemeLink);
     }
 
-    if (linkEl.getAttribute("href") !== nextHref) {
-      linkEl.setAttribute("href", nextHref);
+    if (codeThemeLink.getAttribute("href") !== nextStylesheetHref) {
+      codeThemeLink.setAttribute("href", nextStylesheetHref);
     }
   }
 
@@ -75,24 +79,24 @@
       ...options,
     };
 
-    const themeBtn = document.getElementById(config.themeButtonId);
-    const fxBtn = document.getElementById(config.fxButtonId);
-    const langSelect = document.getElementById(config.langSelectId);
-    const yearEl = document.getElementById(config.yearElementId);
+    const themeButton = document.getElementById(config.themeButtonId);
+    const fxButton = document.getElementById(config.fxButtonId);
+    const languageSelect = document.getElementById(config.langSelectId);
+    const yearElement = document.getElementById(config.yearElementId);
 
     function getTheme() {
       return normalizeTheme(localStorage.getItem("theme"), config.defaultTheme);
     }
 
     function setTheme(theme) {
-      const normalized = normalizeTheme(theme, config.defaultTheme);
-      document.documentElement.setAttribute("data-theme", normalized);
-      localStorage.setItem("theme", normalized);
-      applyThemeAssets(normalized);
-      applyCodeThemeStylesheet(config, normalized);
-      setThemeColorMeta(normalized);
+      const normalizedTheme = normalizeTheme(theme, config.defaultTheme);
+      document.documentElement.setAttribute("data-theme", normalizedTheme);
+      localStorage.setItem("theme", normalizedTheme);
+      applyThemeAssets(normalizedTheme);
+      applyCodeThemeStylesheet(config, normalizedTheme);
+      ensureThemeColorMeta(normalizedTheme);
       if (typeof config.onThemeChange === "function") {
-        config.onThemeChange(normalized);
+        config.onThemeChange(normalizedTheme);
       }
     }
 
@@ -100,41 +104,40 @@
       return (localStorage.getItem("fx") || config.defaultFx) === "on";
     }
 
-    function setFx(on) {
-      document.body.classList.toggle("fx-off", !on);
-      localStorage.setItem("fx", on ? "on" : "off");
+    function setFx(enabled) {
+      document.body.classList.toggle("fx-off", !enabled);
+      localStorage.setItem("fx", enabled ? "on" : "off");
       if (typeof config.onFxChange === "function") {
-        config.onFxChange(on);
+        config.onFxChange(enabled);
       }
     }
 
     function getLang() {
-      return normalizeLang(localStorage.getItem("lang"), config.defaultLang);
+      return normalizeLanguage(localStorage.getItem("lang"), config.defaultLang);
     }
 
-    function setLang(lang) {
-      const normalized = normalizeLang(lang, config.defaultLang);
-      document.documentElement.setAttribute("lang", LANG_MAP[normalized]);
-      localStorage.setItem("lang", normalized);
-      if (langSelect && langSelect.value !== normalized) {
-        langSelect.value = normalized;
+    function setLang(language) {
+      const normalizedLanguage = normalizeLanguage(language, config.defaultLang);
+      document.documentElement.setAttribute("lang", LANGUAGE_MAP[normalizedLanguage]);
+      localStorage.setItem("lang", normalizedLanguage);
+
+      if (languageSelect && languageSelect.value !== normalizedLanguage) {
+        languageSelect.value = normalizedLanguage;
       }
+
       if (typeof config.onLangChange === "function") {
-        config.onLangChange(normalized);
+        config.onLangChange(normalizedLanguage);
       }
     }
 
-    const themeChangeHandler = () => {
-      setTheme(getTheme() === "dark" ? "light" : "dark");
+    const onThemeButtonClick = () => setTheme(getTheme() === "dark" ? "light" : "dark");
+    const onFxButtonClick = () => setFx(!getFx());
+    const onLanguageChange = () => {
+      if (!languageSelect) return;
+      setLang(languageSelect.value);
     };
-    const fxChangeHandler = () => {
-      setFx(!getFx());
-    };
-    const langChangeHandler = () => {
-      if (!langSelect) return;
-      setLang(langSelect.value);
-    };
-    const storageHandler = (event) => {
+
+    const onStorageChange = (event) => {
       if (event.key === "theme" && event.newValue) setTheme(event.newValue);
       if (event.key === "fx" && event.newValue) setFx(event.newValue === "on");
       if (event.key === "lang" && event.newValue) setLang(event.newValue);
@@ -144,11 +147,14 @@
     setFx(getFx());
     setLang(getLang());
 
-    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-    if (themeBtn) themeBtn.addEventListener("click", themeChangeHandler);
-    if (fxBtn) fxBtn.addEventListener("click", fxChangeHandler);
-    if (langSelect) langSelect.addEventListener("change", langChangeHandler);
-    window.addEventListener("storage", storageHandler);
+    if (yearElement) {
+      yearElement.textContent = String(new Date().getFullYear());
+    }
+
+    themeButton?.addEventListener("click", onThemeButtonClick);
+    fxButton?.addEventListener("click", onFxButtonClick);
+    languageSelect?.addEventListener("change", onLanguageChange);
+    window.addEventListener("storage", onStorageChange);
 
     return {
       getTheme,
@@ -158,10 +164,10 @@
       getLang,
       setLang,
       destroy() {
-        if (themeBtn) themeBtn.removeEventListener("click", themeChangeHandler);
-        if (fxBtn) fxBtn.removeEventListener("click", fxChangeHandler);
-        if (langSelect) langSelect.removeEventListener("change", langChangeHandler);
-        window.removeEventListener("storage", storageHandler);
+        themeButton?.removeEventListener("click", onThemeButtonClick);
+        fxButton?.removeEventListener("click", onFxButtonClick);
+        languageSelect?.removeEventListener("change", onLanguageChange);
+        window.removeEventListener("storage", onStorageChange);
       },
     };
   }

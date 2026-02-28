@@ -1,233 +1,230 @@
+// Main site controls: theme, FX, language, and theme transition animation.
 
-// Pre-decode a transition image to avoid a decode hitch during the animation.
-async function decodeImageIfPossible(imgEl) {
+const queryOne = (selector) => document.querySelector(selector);
+window.$ = queryOne;
+
+const themeButton = queryOne("#themeBtn");
+const languageSelect = queryOne("#langSelect");
+const fxToggleButton = queryOne("#toggleFx");
+
+const LANGUAGE_MAP = {
+  zh: "zh-CN",
+  ja: "ja",
+  en: "en",
+};
+
+const uiState = {
+  fxOn: true,
+};
+
+// Warm up the moon image to reduce decode stutter on first transition.
+(function preloadMoonImage() {
+  const moonImage = new Image();
+  moonImage.decoding = "async";
+  moonImage.src = "./image/moon.png";
+})();
+
+async function decodeImageIfPossible(imageElement) {
   try {
-    if (imgEl && typeof imgEl.decode === "function") await imgEl.decode();
+    if (imageElement && typeof imageElement.decode === "function") {
+      await imageElement.decode();
+    }
   } catch (_) {
-    // ignore: decode can fail on some browsers or if the image isn't ready yet
+    // Ignore decode failures. Some browsers may reject decode in edge cases.
   }
 }
 
-// =========================================================
-  window.$ = (s) => document.querySelector(s);
-
-  // ---------------------------------------------------------
-  // 3) Theme / FX 控件节点
-  // ---------------------------------------------------------
-  const themeBtn = $("#themeBtn");
-  const langSelect = $("#langSelect");
-
-  // Warm up the moon image to avoid first-time decode jank
-  (function preloadMoon(){
-    const img = new Image();
-    img.decoding = "async";
-    img.src = "./image/moon.png";
-  })();
-  const toggleFx = $("#toggleFx");
-
-  // ---------------------------------------------------------
-  // 3.1.a) Theme-aware assets (images / background images)
-  //  - <img data-src-dark="..." data-src-light="...">
-  //  - 任意元素 data-bg-dark / data-bg-light（会写到 style.backgroundImage）
-  // ---------------------------------------------------------
-  function applyThemeAssets(theme)
-  {
-    // swap <img>
-    document.querySelectorAll("img[data-src-dark][data-src-light]").forEach((img) => {
-      const next = theme === "dark" ? img.dataset.srcDark : img.dataset.srcLight;
-      if (next && img.getAttribute("src") !== next) img.setAttribute("src", next);
-    });
-
-    // swap background-image
-    document.querySelectorAll("[data-bg-dark][data-bg-light]").forEach((el) => {
-      const next = theme === "dark" ? el.dataset.bgDark : el.dataset.bgLight;
-      if (next) el.style.backgroundImage = `url('${next}')`;
-    });
-  }
-  function setThemeColor(theme) {
-    const color = theme === "dark" ? "#0b1020" : "#dbe3ec";
-    let meta = document.querySelector('meta[name="theme-color"]');
-
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "theme-color");
-      document.head.appendChild(meta);
+function applyThemeAssets(theme) {
+  document.querySelectorAll("img[data-src-dark][data-src-light]").forEach((imageElement) => {
+    const nextImageSource = theme === "dark" ? imageElement.dataset.srcDark : imageElement.dataset.srcLight;
+    if (nextImageSource && imageElement.getAttribute("src") !== nextImageSource) {
+      imageElement.setAttribute("src", nextImageSource);
     }
+  });
 
-    meta.setAttribute("content", color);
-  }
-  function setTheme(next) {
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    applyThemeAssets(next);
-    setThemeColor(next);
-  }
-  function getTheme() {
-    return localStorage.getItem("theme") || "dark";
-  }
-
-  const LANG_MAP = {
-    zh: "zh-CN",
-    ja: "ja",
-    en: "en",
-  };
-
-  function setLang(next) {
-    const normalized = LANG_MAP[next] ? next : "en";
-    document.documentElement.setAttribute("lang", LANG_MAP[normalized]);
-    localStorage.setItem("lang", normalized);
-    if (langSelect && langSelect.value !== normalized) {
-      langSelect.value = normalized;
+  document.querySelectorAll("[data-bg-dark][data-bg-light]").forEach((element) => {
+    const nextBackground = theme === "dark" ? element.dataset.bgDark : element.dataset.bgLight;
+    if (nextBackground) {
+      element.style.backgroundImage = `url('${nextBackground}')`;
     }
+  });
+}
+
+function setThemeColorMeta(theme) {
+  const themeColor = theme === "dark" ? "#0b1020" : "#dbe3ec";
+  let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (!metaThemeColor) {
+    metaThemeColor = document.createElement("meta");
+    metaThemeColor.setAttribute("name", "theme-color");
+    document.head.appendChild(metaThemeColor);
   }
 
-  function getLang() {
-    return localStorage.getItem("lang") || "en";
+  metaThemeColor.setAttribute("content", themeColor);
+}
+
+function getTheme() {
+  return localStorage.getItem("theme") || "dark";
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  applyThemeAssets(theme);
+  setThemeColorMeta(theme);
+}
+
+function getLang() {
+  return localStorage.getItem("lang") || "en";
+}
+
+function setLang(languageCode) {
+  const normalizedLanguage = LANGUAGE_MAP[languageCode] ? languageCode : "en";
+  document.documentElement.setAttribute("lang", LANGUAGE_MAP[normalizedLanguage]);
+  localStorage.setItem("lang", normalizedLanguage);
+
+  if (languageSelect && languageSelect.value !== normalizedLanguage) {
+    languageSelect.value = normalizedLanguage;
   }
+}
 
-  // 初始化主题
-  setTheme(getTheme());
-  setLang(getLang());
+function getFxEnabled() {
+  return (localStorage.getItem("fx") || "on") === "on";
+}
 
-  // ---------------------------------------------------------
-  // 3.1.c) Theme transition (Light <-> Dark)
-  // ---------------------------------------------------------
-  function syncTransitionMoonStartFromPersistentMoon() {
-    const root = document.documentElement;
-    const overlay = document.getElementById("themeTransition");
-    const transitionMoon = overlay?.querySelector(".themeTransition__moon");
-    const persistentMoon = document.querySelector(".bg-moon");
+function setFxEnabled(enabled) {
+  uiState.fxOn = enabled;
+  document.body.classList.toggle("fx-off", !enabled);
+  localStorage.setItem("fx", enabled ? "on" : "off");
+}
 
-    // reset to default so measurement uses the canonical transition start
-    root.style.setProperty("--tt-start-dx", "0px");
-    root.style.setProperty("--tt-start-dy", "0px");
-    root.style.setProperty("--tt-end-dx", "0px");
-    root.style.setProperty("--tt-end-dy", "49vh");
-    root.style.setProperty("--tt-end-scale", "4.10");
+function syncTransitionMoonStartFromPersistentMoon() {
+  const rootElement = document.documentElement;
+  const transitionOverlay = document.getElementById("themeTransition");
+  const transitionMoon = transitionOverlay?.querySelector(".themeTransition__moon");
+  const persistentMoon = document.querySelector(".bg-moon");
 
-    if (!transitionMoon || !persistentMoon) return;
+  rootElement.style.setProperty("--tt-start-dx", "0px");
+  rootElement.style.setProperty("--tt-start-dy", "0px");
+  rootElement.style.setProperty("--tt-end-dx", "0px");
+  rootElement.style.setProperty("--tt-end-dy", "49vh");
+  rootElement.style.setProperty("--tt-end-scale", "4.10");
 
-    const fromRect = persistentMoon.getBoundingClientRect();
-    if (fromRect.width <= 0 || fromRect.height <= 0) return;
+  if (!transitionMoon || !persistentMoon) return;
 
-    const toRect = transitionMoon.getBoundingClientRect();
-    const fromCenterX = fromRect.left + fromRect.width / 2;
-    const fromCenterY = fromRect.top + fromRect.height / 2;
-    const toCenterX = toRect.left + toRect.width / 2;
-    const toCenterY = toRect.top + toRect.height / 2;
-    // offsetWidth is based on layout size and is not affected by transform: scale(.12)
-    const baseWidth = transitionMoon.offsetWidth || toRect.width;
-    if (baseWidth <= 0) return;
-    const targetScale = fromRect.width / baseWidth;
+  const startRect = persistentMoon.getBoundingClientRect();
+  if (startRect.width <= 0 || startRect.height <= 0) return;
 
-    root.style.setProperty("--tt-start-dx", `${fromCenterX - toCenterX}px`);
-    root.style.setProperty("--tt-start-dy", `${fromCenterY - toCenterY}px`);
-    root.style.setProperty("--tt-end-dx", `${fromCenterX - toCenterX}px`);
-    root.style.setProperty("--tt-end-dy", `${fromCenterY - toCenterY}px`);
-    root.style.setProperty("--tt-end-scale", `${targetScale}`);
-  }
+  const endRect = transitionMoon.getBoundingClientRect();
+  const startCenterX = startRect.left + startRect.width / 2;
+  const startCenterY = startRect.top + startRect.height / 2;
+  const endCenterX = endRect.left + endRect.width / 2;
+  const endCenterY = endRect.top + endRect.height / 2;
+  const baseMoonWidth = transitionMoon.offsetWidth || endRect.width;
+  if (baseMoonWidth <= 0) return;
 
-  function measurePersistentMoonTargetRect() {
-    const probe = document.createElement("div");
-    const docked = document.body.classList.contains("moon-docked");
+  const endScale = startRect.width / baseMoonWidth;
+  rootElement.style.setProperty("--tt-start-dx", `${startCenterX - endCenterX}px`);
+  rootElement.style.setProperty("--tt-start-dy", `${startCenterY - endCenterY}px`);
+  rootElement.style.setProperty("--tt-end-dx", `${startCenterX - endCenterX}px`);
+  rootElement.style.setProperty("--tt-end-dy", `${startCenterY - endCenterY}px`);
+  rootElement.style.setProperty("--tt-end-scale", `${endScale}`);
+}
 
-    probe.setAttribute("aria-hidden", "true");
-    probe.style.position = "fixed";
-    probe.style.left = "50%";
-    probe.style.width = "var(--moon-size)";
-    probe.style.height = "var(--moon-size)";
-    probe.style.visibility = "hidden";
-    probe.style.pointerEvents = "none";
-    probe.style.zIndex = "-1";
-    probe.style.transformOrigin = "center";
-    probe.style.transform = docked
-      ? "translate(-50%, -50%) scale(var(--moon-scale, 1))"
-      : "translate3d(-50%, 0, 0) scale(var(--moon-scale, 1))";
-    probe.style.top = docked ? "var(--moon-docked-top)" : "var(--moon-home-top)";
+function measurePersistentMoonTargetRect() {
+  const probeElement = document.createElement("div");
+  const isMoonDocked = document.body.classList.contains("moon-docked");
 
-    document.body.appendChild(probe);
-    const rect = probe.getBoundingClientRect();
-    probe.remove();
-    return rect;
-  }
+  probeElement.setAttribute("aria-hidden", "true");
+  probeElement.style.position = "fixed";
+  probeElement.style.left = "50%";
+  probeElement.style.width = "var(--moon-size)";
+  probeElement.style.height = "var(--moon-size)";
+  probeElement.style.visibility = "hidden";
+  probeElement.style.pointerEvents = "none";
+  probeElement.style.zIndex = "-1";
+  probeElement.style.transformOrigin = "center";
+  probeElement.style.transform = isMoonDocked
+    ? "translate(-50%, -50%) scale(var(--moon-scale, 1))"
+    : "translate3d(-50%, 0, 0) scale(var(--moon-scale, 1))";
+  probeElement.style.top = isMoonDocked ? "var(--moon-docked-top)" : "var(--moon-home-top)";
 
-  function syncLightToDarkTransitionTarget() {
-    const root = document.documentElement;
-    const overlay = document.getElementById("themeTransition");
-    const transitionMoon = overlay?.querySelector(".themeTransition__moon");
+  document.body.appendChild(probeElement);
+  const measuredRect = probeElement.getBoundingClientRect();
+  probeElement.remove();
+  return measuredRect;
+}
 
-    root.style.setProperty("--tt-l2d-end-dx", "0px");
-    root.style.setProperty("--tt-l2d-end-dy", "-35vh");
-    root.style.setProperty("--tt-l2d-end-scale", ".75");
+function syncLightToDarkTransitionTarget() {
+  const rootElement = document.documentElement;
+  const transitionOverlay = document.getElementById("themeTransition");
+  const transitionMoon = transitionOverlay?.querySelector(".themeTransition__moon");
 
-    if (!transitionMoon) return;
+  rootElement.style.setProperty("--tt-l2d-end-dx", "0px");
+  rootElement.style.setProperty("--tt-l2d-end-dy", "-35vh");
+  rootElement.style.setProperty("--tt-l2d-end-scale", ".75");
 
-    const targetRect = measurePersistentMoonTargetRect();
-    const overlayRect = overlay.getBoundingClientRect();
-    const baseWidth = transitionMoon.offsetWidth || transitionMoon.getBoundingClientRect().width;
-    if (
-      targetRect.width <= 0 ||
-      targetRect.height <= 0 ||
-      overlayRect.width <= 0 ||
-      overlayRect.height <= 0 ||
-      baseWidth <= 0
-    ) return;
+  if (!transitionOverlay || !transitionMoon) return;
 
-    // Use overlay's own layout center as the transform baseline to avoid subtle viewport/scrollbar drift.
-    const viewportCenterX = overlayRect.left + overlayRect.width / 2;
-    const viewportCenterY = overlayRect.top + overlayRect.height / 2;
-    const targetCenterX = targetRect.left + targetRect.width / 2;
-    const targetCenterY = targetRect.top + targetRect.height / 2;
-    const endScale = targetRect.width / baseWidth;
-
-    root.style.setProperty("--tt-l2d-end-dx", `${targetCenterX - viewportCenterX}px`);
-    root.style.setProperty("--tt-l2d-end-dy", `${targetCenterY - viewportCenterY}px`);
-    root.style.setProperty("--tt-l2d-end-scale", `${endScale}`);
-  }
-
-  async function playLightToDarkTransition(){
-  // avoid stacking animations
+  const targetRect = measurePersistentMoonTargetRect();
+  const overlayRect = transitionOverlay.getBoundingClientRect();
+  const baseMoonWidth = transitionMoon.offsetWidth || transitionMoon.getBoundingClientRect().width;
   if (
-    document.body.classList.contains("theme-transitioning-to-dark") ||
-    document.body.classList.contains("theme-transitioning-to-light")
-  ) return;
-
-  const overlay = document.getElementById("themeTransition");
-  if (!overlay) {
-    setTheme("dark");
+    targetRect.width <= 0 ||
+    targetRect.height <= 0 ||
+    overlayRect.width <= 0 ||
+    overlayRect.height <= 0 ||
+    baseMoonWidth <= 0
+  ) {
     return;
   }
 
-  const moon = overlay.querySelector(".themeTransition__moon");
-  if (!moon) {
+  const overlayCenterX = overlayRect.left + overlayRect.width / 2;
+  const overlayCenterY = overlayRect.top + overlayRect.height / 2;
+  const targetCenterX = targetRect.left + targetRect.width / 2;
+  const targetCenterY = targetRect.top + targetRect.height / 2;
+  const endScale = targetRect.width / baseMoonWidth;
+
+  rootElement.style.setProperty("--tt-l2d-end-dx", `${targetCenterX - overlayCenterX}px`);
+  rootElement.style.setProperty("--tt-l2d-end-dy", `${targetCenterY - overlayCenterY}px`);
+  rootElement.style.setProperty("--tt-l2d-end-scale", `${endScale}`);
+}
+
+function isThemeTransitionRunning() {
+  return (
+    document.body.classList.contains("theme-transitioning-to-dark") ||
+    document.body.classList.contains("theme-transitioning-to-light")
+  );
+}
+
+async function playLightToDarkTransition() {
+  if (isThemeTransitionRunning()) return;
+
+  const transitionOverlay = document.getElementById("themeTransition");
+  const transitionMoon = transitionOverlay?.querySelector(".themeTransition__moon");
+  if (!transitionOverlay || !transitionMoon) {
     setTheme("dark");
     return;
   }
 
   syncLightToDarkTransitionTarget();
   document.body.classList.add("theme-transitioning-to-dark");
-
-  // 可选：切换中禁用 smooth scroll（你原本只在 dark->light 做了）
   document.documentElement.classList.add("is-transitioning");
 
-  // perf: ensure moon image is decoded before we start
-  await decodeImageIfPossible(moon);
+  await decodeImageIfPossible(transitionMoon);
   await new Promise(requestAnimationFrame);
 
-  // 关键：触发 CSS（图片版看的是 .themeTransition.is-active）
-  overlay.classList.remove("is-active");
-  void overlay.offsetWidth; // 强制 reflow，保证能重新触发动画
-  overlay.classList.add("is-active");
+  transitionOverlay.classList.remove("is-active");
+  void transitionOverlay.offsetWidth;
+  transitionOverlay.classList.add("is-active");
 
-  // switch theme while animation is in progress (sync with CSS)
-  const switchAt = 880; // ms
-  window.setTimeout(() => setTheme("dark"), switchAt);
+  window.setTimeout(() => setTheme("dark"), 880);
 
-  const onEnd = (e) => {
-    if (e.target !== moon) return;
-    moon.removeEventListener("animationend", onEnd);
+  const handleAnimationEnd = (event) => {
+    if (event.target !== transitionMoon) return;
 
-    overlay.classList.remove("is-active");
+    transitionMoon.removeEventListener("animationend", handleAnimationEnd);
+    transitionOverlay.classList.remove("is-active");
     document.body.classList.remove("theme-transitioning-to-dark");
     document.documentElement.classList.remove("is-transitioning");
     document.documentElement.style.removeProperty("--moon-scale");
@@ -236,52 +233,35 @@ async function decodeImageIfPossible(imgEl) {
     document.documentElement.style.removeProperty("--tt-l2d-end-scale");
   };
 
-  moon.addEventListener("animationend", onEnd);
+  transitionMoon.addEventListener("animationend", handleAnimationEnd);
 }
 
-
 async function playDarkToLightTransition() {
-  if (
-    document.body.classList.contains("theme-transitioning-to-dark") ||
-    document.body.classList.contains("theme-transitioning-to-light")
-  ) return;
+  if (isThemeTransitionRunning()) return;
 
-  const overlay = document.getElementById("themeTransition");
-  if (!overlay) {
+  const transitionOverlay = document.getElementById("themeTransition");
+  const transitionMoon = transitionOverlay?.querySelector(".themeTransition__moon");
+  if (!transitionOverlay || !transitionMoon) {
     setTheme("light");
     return;
   }
 
-  const moon = overlay.querySelector(".themeTransition__moon");
-  if (!moon) {
-    setTheme("light");
-    return;
-  }
-
-  // read persistent moon position before we hide it for transition
   syncTransitionMoonStartFromPersistentMoon();
   document.body.classList.add("theme-transitioning-to-light");
-
-  // perf: ensure moon image is decoded before we start the overlay animation
   document.documentElement.classList.add("is-transitioning");
-  await decodeImageIfPossible(moon);
+
+  await decodeImageIfPossible(transitionMoon);
   await new Promise(requestAnimationFrame);
 
-  // 关键：触发图片版动画
-  overlay.classList.remove("is-active");
-  void overlay.offsetWidth;
-  overlay.classList.add("is-active");
+  transitionOverlay.classList.remove("is-active");
+  void transitionOverlay.offsetWidth;
+  transitionOverlay.classList.add("is-active");
 
-  // switch theme near peak exposure (sync with CSS)
-  const switchAt = 700; // ms
-  window.setTimeout(() => setTheme("light"), switchAt);
+  window.setTimeout(() => setTheme("light"), 700);
 
-  // Decoupled timing:
-  // - moon can disappear early
-  // - flash can keep running to restore brightness smoothly
-  const flashDuration = 1400; // ms
+  const transitionCleanupDelay = 1416;
   window.setTimeout(() => {
-    overlay.classList.remove("is-active");
+    transitionOverlay.classList.remove("is-active");
     document.body.classList.remove("theme-transitioning-to-light");
     document.documentElement.classList.remove("is-transitioning");
     document.documentElement.style.removeProperty("--moon-scale");
@@ -290,77 +270,49 @@ async function playDarkToLightTransition() {
     document.documentElement.style.removeProperty("--tt-end-dx");
     document.documentElement.style.removeProperty("--tt-end-dy");
     document.documentElement.style.removeProperty("--tt-end-scale");
-  }, flashDuration + 16);
+  }, transitionCleanupDelay);
 }
 
-  // 点击切换主题
-  themeBtn?.addEventListener("click", () => {
-    const cur = getTheme();
-    const next = cur === "dark" ? "light" : "dark";
+function updateMoonPeekState() {
+  const shouldDockMoon = window.scrollY > 100;
+  document.body.classList.toggle("moon-docked", shouldDockMoon);
+}
 
-    const isFx = !uiState?.fxOn; // 或者你自己的 fx 判断方式
+function handleThemeToggleClick() {
+  const currentTheme = getTheme();
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+  const areFxDisabled = !uiState.fxOn;
 
-    if (isFx) {
-    setTheme(next);
-    } else if (cur === "light" && next === "dark") {
-      playLightToDarkTransition();
-    } else if (cur === "dark" && next === "light") {
-      playDarkToLightTransition();
-    } else {
-      setTheme(next);
+  if (areFxDisabled) {
+    setTheme(nextTheme);
+    return;
   }
 
-  });
-
-// ---------------------------------------------------------
-  // 3.2) FX control（背景特效开关）
-  //  - 通过给 <body> 加/删 .fx-off 控制 CSS 特效显示
-  //  - 用 localStorage 记住是否开启
-  //  - 额外：把当前状态缓存到内存里，避免每帧读 localStorage
-  // ---------------------------------------------------------
-  const uiState = {
-    fxOn: true,
-  };
-
-  function setFx(on) {
-    uiState.fxOn = on;
-    document.body.classList.toggle("fx-off", !on);
-    localStorage.setItem("fx", on ? "on" : "off");
+  if (currentTheme === "light" && nextTheme === "dark") {
+    playLightToDarkTransition();
+  } else if (currentTheme === "dark" && nextTheme === "light") {
+    playDarkToLightTransition();
+  } else {
+    setTheme(nextTheme);
   }
-  function getFx() {
-    return (localStorage.getItem("fx") || "on") === "on";
-  }
+}
 
-  // 初始化 FX
-  setFx(getFx());
-  // ---------------------------------------------------------
-  // 3.3) Moon peek（贴顶月亮：顶部全显，滚动半显）
-  //  - 通过给 <body> 加/删 .moon-docked 控制 CSS 裁切
-  //  - 顶部（scrollY 很小）显示完整月亮；往下滚动就只露出一半
-  // ---------------------------------------------------------
-  function updateMoonPeek() {
-    // 给一点点容忍区，避免滚动到 1px 就抖
-    const docked = window.scrollY > 100;
-    document.body.classList.toggle("moon-docked", docked);
-  }
+function initializeGlobalUiState() {
+  setTheme(getTheme());
+  setLang(getLang());
+  setFxEnabled(getFxEnabled());
+  updateMoonPeekState();
 
-  // 首次更新 + 监听滚动
-  updateMoonPeek();
-  window.addEventListener("scroll", updateMoonPeek, { passive: true });
+  themeButton?.addEventListener("click", handleThemeToggleClick);
+  fxToggleButton?.addEventListener("click", () => setFxEnabled(!uiState.fxOn));
+  languageSelect?.addEventListener("change", () => setLang(languageSelect.value));
+  window.addEventListener("scroll", updateMoonPeekState, { passive: true });
 
-  // 点击切换 FX
-  toggleFx?.addEventListener("click", () => {
-    setFx(!uiState.fxOn);
-  });
-
-  // 语言选择（仅全局状态同步，文案切换后续实现）
-  langSelect?.addEventListener("change", () => {
-    setLang(langSelect.value);
-  });
-
-  // 跨标签页同步全局偏好
   window.addEventListener("storage", (event) => {
     if (event.key === "theme" && event.newValue) setTheme(event.newValue);
-    if (event.key === "fx" && event.newValue) setFx(event.newValue === "on");
+    if (event.key === "fx" && event.newValue) setFxEnabled(event.newValue === "on");
     if (event.key === "lang" && event.newValue) setLang(event.newValue);
   });
+}
+
+initializeGlobalUiState();

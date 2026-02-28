@@ -23,18 +23,7 @@ public:
 		current_scene->on_exit();
 		switch (type)
 		{
-		case SceneType::Menu:
-			current_scene = menu_scene;
-			break;
-		case SceneType::Game:
-			current_scene = game_scene;
-
-			break;
-		case SceneType::Selector:
-			current_scene = selector_scene;
-			break;
-		default:
-			break;
+			...
 		}
 		current_scene->on_enter();
 	}

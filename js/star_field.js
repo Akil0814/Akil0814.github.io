@@ -1,167 +1,126 @@
-// =========================================================
-  // 4) Starfield canvas（背景星空）
-  //  - 用 <canvas id="stars"> 绘制星点
-  //  - 随鼠标位置轻微漂移，产生“视差”感
-  //  - requestAnimationFrame 循环绘制
-  //
-  // 你会注意到：这里不做复杂物理，纯视觉糖。
-//  人类总爱用花里胡哨掩盖空洞内容，我理解。
-  // =========================================================
-  const canvas = $("#stars");
-  const ctx = canvas?.getContext("2d");
+// Starfield background rendered on <canvas id="stars">.
+(function () {
+  const canvasElement = $("#stars");
+  if (!canvasElement) return;
+
+  const context = canvasElement.getContext("2d");
+  if (!context) return;
+
   const TWINKLE_SPEED = 0.6;
+  const POINTER_DRIFT_PIXELS = 30;
 
-  // w/h：视口大小；dpr：屏幕像素比（为了不糊，最大限制到 2）
-  let w = 0,
-    h = 0,
-    dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+  let viewportWidth = 0;
+  let viewportHeight = 0;
+  let devicePixelRatio = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
 
-  // 全局状态：星星数组 + 鼠标位置
-  const fxState = {
+  const starfieldState = {
     stars: [],
-    mouseX: 0.5,
-    mouseY: 0.5,
-    _lastFxOn: undefined,
+    pointerXRatio: 0.5,
+    pointerYRatio: 0.5,
+    lastFxEnabled: undefined,
   };
 
-  // 视差参数（别乱改，改大了就像屏幕坏了）
-  const DRIFT_PX = 30;
+  let isMouseMoveListenerAttached = false;
 
-  // mousemove 监听：FX 关掉时就别浪费 CPU 了
-  let _mouseListening = false;
-  function onMouseMove(e) {
-    // 归一化到 0..1（顺便防一下 0 宽高导致 NaN）
-    const iw = window.innerWidth || 1;
-    const ih = window.innerHeight || 1;
-    fxState.mouseX = e.clientX / iw;
-    fxState.mouseY = e.clientY / ih;
+  function isFxEnabled() {
+    return typeof uiState === "undefined" ? true : !!uiState.fxOn;
   }
 
-  function setMouseListening(enable) {
-    if (enable && !_mouseListening) {
+  function onMouseMove(event) {
+    const safeWidth = window.innerWidth || 1;
+    const safeHeight = window.innerHeight || 1;
+    starfieldState.pointerXRatio = event.clientX / safeWidth;
+    starfieldState.pointerYRatio = event.clientY / safeHeight;
+  }
+
+  function setMouseMoveListener(enabled) {
+    if (enabled && !isMouseMoveListenerAttached) {
       window.addEventListener("mousemove", onMouseMove, { passive: true });
-      _mouseListening = true;
-    } else if (!enable && _mouseListening) {
+      isMouseMoveListenerAttached = true;
+      return;
+    }
+
+    if (!enabled && isMouseMoveListenerAttached) {
       window.removeEventListener("mousemove", onMouseMove);
-      _mouseListening = false;
-      // FX 关掉就回到中心，不再漂移
-      fxState.mouseX = 0.5;
-      fxState.mouseY = 0.5;
+      isMouseMoveListenerAttached = false;
+      starfieldState.pointerXRatio = 0.5;
+      starfieldState.pointerYRatio = 0.5;
     }
   }
 
-  // ---------------------------------------------------------
-  // 4.1) 生成单颗星星
-  //  - z：深度（影响亮度、漂移幅度、闪烁速度）
-  // ---------------------------------------------------------
-  function makeStar() {
+  function createStar() {
+    const depth = Math.random() * 0.9 + 0.1;
     return {
-      x: Math.random() * w,
-      y: Math.random() * h,
-      z: Math.random() * 0.9 + 0.1,
-      r: Math.random() * 1.2 + 0.4,
-      tw: Math.random() * Math.PI * 2,
+      x: Math.random() * viewportWidth,
+      y: Math.random() * viewportHeight,
+      depth,
+      radius: Math.random() * 1.2 + 0.4,
+      twinklePhase: Math.random() * Math.PI * 2,
     };
   }
 
-  // ---------------------------------------------------------
-  // 4.2) resize()
-  //  - 窗口变化时重设 canvas 分辨率与样式尺寸
-  //  - 按屏幕面积生成星星数量
-  // ---------------------------------------------------------
-  function resize() {
-    if (!canvas || !ctx) return;
+  function resizeCanvas() {
+    viewportWidth = window.innerWidth;
+    viewportHeight = window.innerHeight;
+    devicePixelRatio = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
 
-    w = window.innerWidth;
-    h = window.innerHeight;
+    canvasElement.width = Math.floor(viewportWidth * devicePixelRatio);
+    canvasElement.height = Math.floor(viewportHeight * devicePixelRatio);
+    canvasElement.style.width = `${viewportWidth}px`;
+    canvasElement.style.height = `${viewportHeight}px`;
+    context.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
 
-    // dpr 可能会变（比如拖到另一个显示器），顺手更新一下
-    dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-
-    // canvas 内部分辨率（乘 dpr）保证清晰
-    canvas.width = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
-
-    // canvas 在页面中的显示尺寸（CSS 像素）
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
-
-    // 坐标系缩放回 CSS 像素单位，方便后面绘制用 w/h
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-    // 星星数量：按面积估算，并设置下限避免太稀
-    const count = Math.floor((w * h) / 1800);
-    fxState.stars = Array.from({ length: Math.max(80, count) }, makeStar);
+    const estimatedStarCount = Math.floor((viewportWidth * viewportHeight) / 1800);
+    const starCount = Math.max(80, estimatedStarCount);
+    starfieldState.stars = Array.from({ length: starCount }, createStar);
   }
 
-  // ---------------------------------------------------------
-  // 4.3) draw()
-  //  - 每帧清屏重绘所有星星
-  //  - 轻微跟随鼠标形成视差
-  //  - FX 开启时给近处星星画一点拖尾
-  // ---------------------------------------------------------
-  function draw() {
-    if (!canvas || !ctx) return;
-
-    // FX 模式切换时：动态挂载/卸载 mousemove 监听
-    if (fxState._lastFxOn !== uiState.fxOn) {
-      setMouseListening(!!uiState.fxOn);
-      fxState._lastFxOn = uiState.fxOn;
+  function drawStarfieldFrame() {
+    const fxEnabled = isFxEnabled();
+    if (starfieldState.lastFxEnabled !== fxEnabled) {
+      setMouseMoveListener(fxEnabled);
+      starfieldState.lastFxEnabled = fxEnabled;
     }
 
-    ctx.clearRect(0, 0, w, h);
+    context.clearRect(0, 0, viewportWidth, viewportHeight);
 
-    // 鼠标位置映射成漂移量（相对中心）
-    const driftX = (fxState.mouseX - 0.5) * DRIFT_PX;
-    const driftY = (fxState.mouseY - 0.5) * DRIFT_PX;
+    const pointerOffsetX = (starfieldState.pointerXRatio - 0.5) * POINTER_DRIFT_PIXELS;
+    const pointerOffsetY = (starfieldState.pointerYRatio - 0.5) * POINTER_DRIFT_PIXELS;
 
-    // 小优化：避免每颗星都构造 rgba 字符串
-    ctx.fillStyle = "#fff";
-    ctx.strokeStyle = "rgb(0,212,255)";
-    ctx.lineWidth = 1;
+    context.fillStyle = "#fff";
+    context.strokeStyle = "rgb(0,212,255)";
+    context.lineWidth = 1;
 
-    for (const s of fxState.stars) {
-      // 闪烁相位推进（z 越大闪更快）
-      s.tw += (0.01 + s.z * 0.01) * TWINKLE_SPEED;
-      const twinkle = 0.6 + Math.sin(s.tw) * 0.4;
+    for (const star of starfieldState.stars) {
+      star.twinklePhase += (0.01 + star.depth * 0.01) * TWINKLE_SPEED;
+      const twinkleIntensity = 0.6 + Math.sin(star.twinklePhase) * 0.4;
 
-      // 星星位置叠加漂移（z 越大漂移越明显）
-      const px = s.x + driftX * (0.3 + s.z);
-      const py = s.y + driftY * (0.3 + s.z);
+      const drawX = star.x + pointerOffsetX * (0.3 + star.depth);
+      const drawY = star.y + pointerOffsetY * (0.3 + star.depth);
 
-      // alpha：基础亮度 + 深度加成 + 闪烁
-      let alpha = (0.25 + s.z * 0.55) * twinkle;
-      // FX 关掉：整体变暗一点（你要的“星星亮度降低”）
-      if (!uiState.fxOn) alpha *= 0.45;
+      let alpha = (0.25 + star.depth * 0.55) * twinkleIntensity;
+      if (!fxEnabled) alpha *= 0.45;
 
-      // 绘制星点
-      ctx.globalAlpha = alpha;
-      ctx.beginPath();
-      ctx.arc(px, py, s.r * (0.6 + s.z), 0, Math.PI * 2);
-      ctx.fill();
+      context.globalAlpha = alpha;
+      context.beginPath();
+      context.arc(drawX, drawY, star.radius * (0.6 + star.depth), 0, Math.PI * 2);
+      context.fill();
 
-      // subtle streaks：只给“更近”的星星画一点拖尾，并且只在 FX 开启时画
-      if (uiState.fxOn && s.z > 0.65){
-        const tail = 0.28;
-        ctx.globalAlpha = alpha * 0.35;
-        ctx.beginPath();
-        ctx.moveTo(px, py);
-        ctx.lineTo(px - driftX * tail, py - driftY * tail);
-        ctx.stroke();
+      if (fxEnabled && star.depth > 0.65) {
+        const trailFactor = 0.28;
+        context.globalAlpha = alpha * 0.35;
+        context.beginPath();
+        context.moveTo(drawX, drawY);
+        context.lineTo(drawX - pointerOffsetX * trailFactor, drawY - pointerOffsetY * trailFactor);
+        context.stroke();
       }
     }
 
-    ctx.globalAlpha = 1;
-
-    requestAnimationFrame(draw);
+    context.globalAlpha = 1;
+    requestAnimationFrame(drawStarfieldFrame);
   }
 
-  // ---------------------------------------------------------
-  // 4.4) 事件监听
-  // ---------------------------------------------------------
-  window.addEventListener("resize", resize, { passive: true });
-  // mousemove 监听改成按 FX 状态动态挂载（见 draw() 里的逻辑）
-
-  // init
-  resize();
-  draw();
+  window.addEventListener("resize", resizeCanvas, { passive: true });
+  resizeCanvas();
+  drawStarfieldFrame();
+})();

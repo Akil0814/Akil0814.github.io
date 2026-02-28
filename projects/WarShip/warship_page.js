@@ -4,6 +4,7 @@
       console.error("Shared project modules are missing.");
       return;
     }
+
     window.ProjectPageCore.init();
   }
 

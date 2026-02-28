@@ -1,123 +1,126 @@
 (function () {
-  function resolveTarget(target) {
+  function resolveTargetElement(target) {
     if (typeof target === "string") return document.querySelector(target);
     return target || null;
   }
 
-  function escapeHtml(raw) {
-    return String(raw ?? "")
+  function escapeHtml(text) {
+    return String(text ?? "")
       .replaceAll("&", "&amp;")
       .replaceAll("<", "&lt;")
       .replaceAll(">", "&gt;");
   }
 
-  function highlightCpp(code) {
-    if (
+  function canUsePrismHighlightElement() {
+    return (
       typeof window.Prism !== "undefined" &&
-      window.Prism.languages &&
-      typeof window.Prism.highlight === "function"
-    ) {
-      const grammar =
-        window.Prism.languages.cpp ||
-        window.Prism.languages.c ||
-        window.Prism.languages.clike;
-      if (grammar) {
-        return window.Prism.highlight(code, grammar, "cpp");
-      }
-    }
-    return escapeHtml(code);
+      typeof window.Prism.highlightElement === "function"
+    );
   }
 
-  function createLineGutter(lineCount) {
-    const gutter = document.createElement("ol");
-    gutter.className = "cpp-block__lines";
-    gutter.setAttribute("aria-hidden", "true");
+  function createLineNumberGutter(lineCount) {
+    const gutterList = document.createElement("ol");
+    gutterList.className = "cpp-block__lines";
+    gutterList.setAttribute("aria-hidden", "true");
 
-    for (let i = 1; i <= lineCount; i += 1) {
-      const line = document.createElement("li");
-      line.textContent = String(i);
-      gutter.appendChild(line);
+    for (let lineNumber = 1; lineNumber <= lineCount; lineNumber += 1) {
+      const lineItem = document.createElement("li");
+      lineItem.textContent = String(lineNumber);
+      gutterList.appendChild(lineItem);
     }
 
-    return gutter;
+    return gutterList;
   }
 
   function createCppBlock(code, options = {}) {
-    const opts = {
+    const resolvedOptions = {
       title: "C++",
       showLineNumbers: true,
       copyButton: true,
       ...options,
     };
 
-    const root = document.createElement("section");
-    root.className = "cpp-block";
+    const rootElement = document.createElement("section");
+    rootElement.className = "cpp-block";
 
-    const bar = document.createElement("div");
-    bar.className = "cpp-block__bar";
+    const topBarElement = document.createElement("div");
+    topBarElement.className = "cpp-block__bar";
 
-    const title = document.createElement("span");
-    title.className = "cpp-block__title";
-    title.textContent = opts.title;
-    bar.appendChild(title);
+    const titleElement = document.createElement("span");
+    titleElement.className = "cpp-block__title";
+    titleElement.textContent = resolvedOptions.title;
+    topBarElement.appendChild(titleElement);
 
-    if (opts.copyButton) {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "cpp-block__copy";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", async () => {
+    if (resolvedOptions.copyButton) {
+      const copyButtonElement = document.createElement("button");
+      copyButtonElement.type = "button";
+      copyButtonElement.className = "cpp-block__copy";
+      copyButtonElement.textContent = "Copy";
+      copyButtonElement.addEventListener("click", async () => {
         try {
           await navigator.clipboard.writeText(code);
-          btn.textContent = "Copied";
+          copyButtonElement.textContent = "Copied";
         } catch (_) {
-          btn.textContent = "Failed";
+          copyButtonElement.textContent = "Failed";
         } finally {
           setTimeout(() => {
-            btn.textContent = "Copy";
+            copyButtonElement.textContent = "Copy";
           }, 900);
         }
       });
-      bar.appendChild(btn);
+      topBarElement.appendChild(copyButtonElement);
     }
 
-    const codeWrap = document.createElement("div");
-    codeWrap.className = "cpp-block__codewrap";
+    const codeWrapElement = document.createElement("div");
+    codeWrapElement.className = "cpp-block__codewrap";
 
-    const pre = document.createElement("pre");
-    pre.className = "language-cpp";
+    const preElement = document.createElement("pre");
+    preElement.className = "language-cpp";
 
-    const codeEl = document.createElement("code");
-    codeEl.className = "language-cpp";
-    codeEl.innerHTML = highlightCpp(code);
-    pre.appendChild(codeEl);
+    const codeElement = document.createElement("code");
+    codeElement.className = "language-cpp";
+    if (canUsePrismHighlightElement()) {
+      codeElement.textContent = code;
+    } else {
+      codeElement.innerHTML = escapeHtml(code);
+    }
+    preElement.appendChild(codeElement);
 
-    if (opts.showLineNumbers) {
+    if (resolvedOptions.showLineNumbers) {
       const lineCount = String(code ?? "").split("\n").length;
-      codeWrap.appendChild(createLineGutter(lineCount));
+      codeWrapElement.appendChild(createLineNumberGutter(lineCount));
     }
 
-    codeWrap.appendChild(pre);
-    root.appendChild(bar);
-    root.appendChild(codeWrap);
-    return root;
+    codeWrapElement.appendChild(preElement);
+    rootElement.appendChild(topBarElement);
+    rootElement.appendChild(codeWrapElement);
+
+    if (canUsePrismHighlightElement()) {
+      window.Prism.highlightElement(codeElement);
+    }
+
+    return rootElement;
   }
 
   function renderCppCodeBlock(target, code, options = {}) {
-    const host = resolveTarget(target);
-    if (!host) throw new Error("renderCppCodeBlock: target not found");
-    host.innerHTML = "";
-    host.appendChild(createCppBlock(code, options));
+    const targetElement = resolveTargetElement(target);
+    if (!targetElement) {
+      throw new Error("renderCppCodeBlock: target not found");
+    }
+
+    targetElement.innerHTML = "";
+    targetElement.appendChild(createCppBlock(code, options));
   }
 
   async function renderCppFile(target, filePath, options = {}) {
     const response = await fetch(filePath);
     if (!response.ok) {
-      throw new Error("renderCppFile: failed to fetch " + filePath + " (" + response.status + ")");
+      throw new Error(`renderCppFile: failed to fetch ${filePath} (${response.status})`);
     }
-    const text = await response.text();
-    const title = options.title || filePath.split("/").pop() || "C++";
-    renderCppCodeBlock(target, text, { ...options, title });
+
+    const codeContent = await response.text();
+    const inferredTitle = options.title || filePath.split("/").pop() || "C++";
+    renderCppCodeBlock(target, codeContent, { ...options, title: inferredTitle });
   }
 
   window.ProjectCodeBlock = {

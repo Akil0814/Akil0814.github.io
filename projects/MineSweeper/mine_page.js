@@ -1,39 +1,40 @@
 (function () {
-  const codeEntries = [
+  const codeBlockEntries = [
     {
-      target: "#code-main-loop",
-      file: "../snippets/MineSweeper_main_lop.cpp",
+      targetSelector: "#code-main-loop",
+      filePath: "../snippets/MineSweeper_main_lop.cpp",
       title: "MineSweeper_main_lop.cpp",
     },
     {
-      target: "#code-scene-class",
-      file: "../snippets/MineSweeper_scene_class.cpp",
+      targetSelector: "#code-scene-class",
+      filePath: "../snippets/MineSweeper_scene_class.cpp",
       title: "MineSweeper_scene_class.cpp",
     },
     {
-      target: "#code-scene-manager",
-      file: "../snippets/MineSweeper_scene_manager.cpp",
+      targetSelector: "#code-scene-manager",
+      filePath: "../snippets/MineSweeper_scene_manager.cpp",
       title: "MineSweeper_scene_manager.cpp",
     },
   ];
 
   async function loadCodeBlocks() {
-    for (const item of codeEntries) {
+    for (const entry of codeBlockEntries) {
       try {
-        await window.ProjectCodeBlock.renderCppFile(item.target, item.file, {
-          title: item.title,
+        await window.ProjectCodeBlock.renderCppFile(entry.targetSelector, entry.filePath, {
+          title: entry.title,
           showLineNumbers: true,
           copyButton: true,
         });
-      } catch (err) {
-        const host = document.querySelector(item.target);
-        if (!host) continue;
-        host.innerHTML = "";
-        const msg = document.createElement("p");
-        msg.className = "panel";
-        msg.textContent = "Failed to load code: " + item.file;
-        host.appendChild(msg);
-        console.error(err);
+      } catch (error) {
+        const targetElement = document.querySelector(entry.targetSelector);
+        if (!targetElement) continue;
+
+        targetElement.innerHTML = "";
+        const messageElement = document.createElement("p");
+        messageElement.className = "panel";
+        messageElement.textContent = `Failed to load code: ${entry.filePath}`;
+        targetElement.appendChild(messageElement);
+        console.error(error);
       }
     }
   }
@@ -49,6 +50,7 @@
       codeThemeDarkHref: "../../assets/prism/prism-dark.css",
       codeThemeLightHref: "../../assets/prism/prism-light.css",
     });
+
     loadCodeBlocks();
   }
 
