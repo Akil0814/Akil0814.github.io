@@ -1,7 +1,6 @@
 /* =========================================================
    Background FX layers (星空/光斑/扫描线)
    - #stars：canvas 星空（JS 绘制）
-   - .bg-blobs：彩色大光团（纯 CSS）
    - .scanlines：扫描线（纯 CSS）
    ========================================================= */
    
@@ -13,42 +12,6 @@
   z-index:-3;
   opacity: var(--fx-stars-opacity);
 }
-
-/* 大光团容器：全屏固定，不挡点击 */
-.bg-blobs
-{
-  position:fixed;
-  inset:0;
-  z-index:-2;
-  pointer-events:none;
-  filter: blur(var(--fx-blobs-blur));
-  opacity: var(--fx-blobs-opacity);
-}
-
-/* 单个光团：圆形 + 渐变 + 浮动动画 */
-.blob
-{
-  position:absolute;
-  width:520px; height:520px;
-  border-radius:50%;
-  mix-blend-mode: screen;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,var(--fx-blob-white1)), transparent 55%),
-              radial-gradient(circle at 60% 70%, rgba(255,255,255,var(--fx-blob-white2)), transparent 60%),
-              linear-gradient(135deg, rgba(124,77,255,var(--fx-blob-grad-a)), rgba(0,212,255,var(--fx-blob-grad-b)), rgba(255,43,214,var(--fx-blob-grad-c)));
-  animation: float 10s ease-in-out infinite;
-}
-
-/* 三个光团的位置/大小/延迟 */
-.b1{ left:-120px; top:80px; animation-delay:0s; }
-.b2{ right:-160px; top:220px; width:620px; height:620px; animation-delay:2s; }
-.b3{ left:20%; bottom:-260px; width:740px; height:740px; animation-delay:4s; }
-
-/* 光团浮动动画 */
-@keyframes float{
-  0%,100%{ transform: translate3d(0,0,0) scale(1); }
-  50%{ transform: translate3d(20px,-18px,0) scale(1.06); }
-}
-
 /* 扫描线层：全屏固定 + repeating-linear-gradient */
 .scanlines{
   position:fixed;

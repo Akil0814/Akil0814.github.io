@@ -1,6 +1,6 @@
 /* =========================================================
    Light Theme Snow FX
-   - Replace light-theme blobs/scanlines/stars with snowfall.
+   - Replace light-theme scanlines/stars with snowfall.
    - Controlled by existing FX toggle via body.fx-off.
    ========================================================= */
 
@@ -27,10 +27,6 @@
 }
 
 /* Remove old light-mode ambient effects */
-[data-theme="light"] .bg-blobs{
-  display: none;
-}
-
 [data-theme="light"] .scanlines{
   display: none;
 }

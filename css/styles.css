@@ -79,20 +79,6 @@ body.moon-docked .bg-moon{
   transform-origin: center;
   will-change: transform, opacity;
 }
-
-
-/* 暗色模式下用月亮做主视觉，光团隐藏，避免“意义不明的彩色雾” */
-[data-theme="dark"] .bg-blobs{
-  display:none;
-}
-
-
-/* Light theme 下不适合用 screen（容易把整页洗白），改成正常混合 */
-[data-theme="light"] .blob{
-  mix-blend-mode: normal;
-}
-
-
 /* =========================================================
    Footer
    ========================================================= */
@@ -111,9 +97,7 @@ body.moon-docked .bg-moon{
    - 这个 class 由 JS 控制（toggleFx 按钮）
    ========================================================= */
 .fx-off .scanlines{ display:none; }
-/* 关闭月亮/光团等背景装饰 */
 .fx-off .bg-moon{ display:none; }
-.fx-off .bg-blobs{ display:none; }
 .fx-off #stars{ opacity:.35; }
 
 /* =========================================================
@@ -126,7 +110,7 @@ body.moon-docked .bg-moon{
   .floating-cards{ grid-template-columns: 1fr 1fr; }
   .grid{ grid-template-columns: 1fr; }
   .links{ grid-template-columns: 1fr; }
-  .split{ grid-template-columns: 1fr; }
+  .about-panel__content{ grid-template-columns: 1fr; }
   .section__head{ flex-direction: column; align-items:flex-start; }
 }
 

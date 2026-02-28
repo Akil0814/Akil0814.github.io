@@ -19,17 +19,7 @@
 
   --shadow: 0 20px 60px rgba(0,0,0,.55);
   --radius: 20px;
-
-  /* Background FX tuning (暗色模式下的“光团过亮”就靠这里压住) */
   --fx-stars-opacity: .75;     /* 星空层透明度 */
-  --fx-blobs-opacity: .55;     /* 光团整体透明度 */
-  --fx-blobs-blur: 32px;       /* 光团模糊半径 */
-  --fx-blob-white1: .28;       /* 光团里高光白色 1 强度 */
-  --fx-blob-white2: .12;       /* 光团里高光白色 2 强度 */
-  --fx-blob-grad-a: .45;       /* 光团渐变颜色强度 A */
-  --fx-blob-grad-b: .35;       /* 光团渐变颜色强度 B */
-  --fx-blob-grad-c: .32;       /* 光团渐变颜色强度 C */
-
   /* Dark mode moon */
   --moon-size: clamp(220px, 30vw, 340px);   /* 月亮尺寸 */
   --moon-home-top: 15px;                     /* 首页进入时：月亮偏上位置 */
@@ -57,16 +47,7 @@
   --muted: rgba(27,44,64,.72);
   --line: rgba(39,58,82,.20);
   --shadow: 0 18px 48px rgba(40,61,86,.16);
-
-  /* Light theme 下光团更容易“发白”，再压一点 */
   --fx-stars-opacity: 0;
-  --fx-blobs-opacity: 0;
-  --fx-blobs-blur: 28px;
-  --fx-blob-white1: .20;
-  --fx-blob-white2: .08;
-  --fx-blob-grad-a: 0;
-  --fx-blob-grad-b: 0;
-  --fx-blob-grad-c: 0;
   --bg-accent-1: rgba(181,195,212,.14);
   --bg-accent-2: rgba(163,183,205,.10);
   --bg-accent-3: rgba(216,226,238,.08);

@@ -57,11 +57,6 @@
     <span class="bg-moon__halo"></span>
     <img class="bg-moon__img" src="./image/moon.png" alt="" data-src-dark="./image/moon.png" data-src-light="./image/moon.png" />
   </div>
-  <div class="bg-blobs" aria-hidden="true">
-    <span class="blob b1"></span>
-    <span class="blob b2"></span>
-    <span class="blob b3"></span>
-  </div>
   <div class="scanlines" aria-hidden="true"></div>
 
   <!-- =======================================================
@@ -120,7 +115,9 @@
           What I know: <span class="k">C++</span>,
           <span class="k">SDL</span>, <span class="k">OpenGL</span>,<span class="k">SQLite</span>,...
           <br/>
-          Something.
+          I’m currently learning OpenGL, and my next goal is to build a software rasterizer.
+          In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.
+          If you’re interested in collaborating, feel free to reach out..
         </p>
 
         <!-- CTA buttons -->
@@ -158,9 +155,9 @@
 
         <!-- 右侧两个小浮动卡片链接 -->
         <div class="floating-cards">
-          <a class="float-card" href="#projects">
+          <a class="float-card" href="#about">
             <span class="float-card__title">Profile</span>
-            <span class="float-card__desc">Skill · Resume · </span>
+            <span class="float-card__desc">Skill · Resume · Email</span>
           </a>
           <a class="float-card" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">
             <span class="float-card__title">More About Me</span>
@@ -172,12 +169,10 @@
 
     <!-- =====================================================
          Projects section
-         - 三个项目占位卡：你之后把 Repo 链接换成真实的
          ===================================================== -->
     <section id="projects" class="section">
       <div class="section__head">
         <h2 class="section__title">Projects</h2>
-        <p class="section__desc">还没做多语言适配 抱歉TAT</p>
       </div>
 
       <div class="grid">
@@ -188,7 +183,8 @@
             <span class="proj__badge">Game</span>
           </div>
           <h3 class="proj__title">WarShips</h3>
-          <p class="proj__text">A tactical naval game prototype with UI polish, input handling, and rendering pipeline experiments.</p>
+          <p class="proj__text">A tactical naval game prototype built to practice a more professional architecture 
+                                and multiple design patterns, improving maintainability and extensibility.</p>
           <div class="proj__links">
             <a class="link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer">Repo</a>
             <a class="link" href="https://akil0814.github.io/projects/WarShip/WarShip.html" target="_blank" rel="noreferrer">More information</a>
@@ -202,20 +198,52 @@
             <span class="proj__badge">Game</span>
           </div>
           <h3 class="proj__title">MineSweeper</h3>
-          <p class="proj__text">A MineSweeper.</p>
+          <p class="proj__text">My first OOP-structured project, featuring a scene manager for smooth scene 
+                                switching and multiple game modes.</p>
           <div class="proj__links">
             <a class="link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer">Repo</a>
             <a class="link" href="https://akil0814.github.io/projects/MineSweeper/MineSweeper.html" target="_blank" rel="noreferrer">More information</a>
           </div>
         </article>
 
+      <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge">Hardware</span>
+            <span class="proj__badge">CPU</span>
+            <span class="proj__badge">74xx TTL</span>
+          </div>
+          <h3 class="proj__title">74xx 8-bit Microcomputer</h3>
+          <p class="proj__text">A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, 
+                                program counter/address registers, and a simple memory + I/O system..</p>
+          <div class="proj__links">
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
+            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">More information</a>
+          </div>
+        </article>
+
+
         <article class="proj">
           <div class="proj__top">
             <span class="proj__badge">C++</span>
-            <span class="proj__badge">...</span>
-            <span class="proj__badge">...</span>
+            <span class="proj__badge">SQLite</span>
+            <span class="proj__badge">Tool</span>
           </div>
-          <h3 class="proj__title">Something</h3>
+          <h3 class="proj__title">CollegeTour</h3>
+          <p class="proj__text">about this something.</p>
+          <div class="proj__links">
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
+            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">More information</a>
+          </div>
+        </article>
+
+
+        <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">SDL</span>
+            <span class="proj__badge">Tool</span>
+          </div>
+          <h3 class="proj__title">ButtonForSDL</h3>
           <p class="proj__text">about this something.</p>
           <div class="proj__links">
             <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
@@ -231,38 +259,49 @@
          - 左：Profile list
          - 右：Skills tags
          ===================================================== -->
-    <section id="about" class="section section--split">
+    <section id="about" class="section">
       <div class="section__head">
         <h2 class="section__title">About</h2>
 
-        <p class="section__desc">A quick snapshot so people know I'm a human (probably).</p>
       </div>
 
-      <div class="split">
-        <div class="panel">
-          <h3 class="panel__title">Profile</h3>
-          <ul class="list">
-            <li><b>Name:</b> Akil/Akeli</li>
-            <li><b>Role:</b> Student</li>
-            <li><b>Main:</b> C++  · SDL · Systems</li>
-            <li><b>Goal:</b> Learn more stuff.</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <h3 class="panel__title">Skills</h3>
-          <div class="tags">
-            <span class="tag">C++</span>
-            <span class="tag">SDL</span>
-            <span class="tag">Chinese</span>
-            <span class="tag">Japanese</span>
-            <span class="tag tag--strike">Anime expert</span>
-
+      <article class="panel about-panel">
+        <div class="about-panel__content">
+          <div class="about-panel__block">
+            <h3 class="panel__title">Profile</h3>
+            <ul class="list">
+              <li><b>Name:</b> Akil/Akeli</li>
+              <li><b>Role:</b> Student</li>
+              <li><b>Main:</b> C++ / Graphics / Systems</li>
+              <li><b>Now:</b> Learning OpenGL.</li>
+              <li><b>Next:</b> Software Rasterizer.</li>
+            </ul>
           </div>
-          <!--Skill 栏底部文字-->
-          <p class="muted"></p>
+
+          <div class="about-panel__block about-panel__block--skills">
+            <h3 class="panel__title about-panel__subtitle">Summary</h3>
+            <p class="about-panel__intro">
+              I’m a CS student focused on C++ and graphics.
+              I enjoy building clean gameplay systems and reusable modules,
+              and I prefer understanding what’s happening under the hood,
+              because I don’t like the feeling of calling something without knowing
+              what it actually does. Right now I’m learning OpenGL to strengthen
+              my graphics fundamentals, and my next goal is to write a software rasterizer
+              to understand the rendering pipeline end-to-end.
+            </p>
+            <h3 class="panel__title">Skills</h3>
+            <div class="tags">
+              <span class="tag">C++</span>
+              <span class="tag">SDL</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">OpenGL (learning)</span>
+              <span class="tag">Chinese (native)</span>
+              <span class="tag">Japanese (beginner)</span>
+              <span class="tag tag--strike">Anime Expert</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
     </section>
 
     <!-- =====================================================
@@ -272,7 +311,6 @@
     <section id="links" class="section">
       <div class="section__head">
         <h2 class="section__title">Links</h2>
-        <p class="section__desc">将来会更新链接吧 应该 会吧</p>
       </div>
 
       <div class="links">
@@ -282,10 +320,10 @@
           <span class="linkCard__v">@Akil0814</span>
         </a>
 
-        <a class="linkCard" href="#" data-copy="Himitsu>_<@example.com"
+        <a class="linkCard" href="#" data-copy="akil08141202@gmile.com"
           onclick="copyEmail(this); return false;">
           <span class="linkCard__k">Email</span>
-          <span class="linkCard__v">Himitsu&gt;_&lt;@example.com</span>
+          <span class="linkCard__v">akil08141202@gmile.com</span>
         </a>
 
         <a class="linkCard" href="./files/Akil_test.pdf" target="_blank" rel="noopener noreferrer">
@@ -300,12 +338,12 @@
 
         <a class="linkCard" href="#" onclick="return false;">
           <span class="linkCard__k">something</span>
-          <span class="linkCard__v">(don't have it yet).pdf</span>
+          <span class="linkCard__v">(don't have it yet)</span>
         </a>
 
         <a class="linkCard" href="#" onclick="return false;">
           <span class="linkCard__k">something</span>
-          <span class="linkCard__v">(don't have it yet).pdf</span>
+          <span class="linkCard__v">(don't have it yet)</span>
         </a>
       </div>
     </section>
