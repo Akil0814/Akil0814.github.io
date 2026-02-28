@@ -1,4 +1,13 @@
 (function () {
+  function t(key, fallbackText, params) {
+    if (window.I18N && typeof window.I18N.t === "function") {
+      return window.I18N.t(key, params, fallbackText);
+    }
+
+    if (typeof fallbackText === "string") return fallbackText;
+    return key;
+  }
+
   function resolveTargetElement(target) {
     if (typeof target === "string") return document.querySelector(target);
     return target || null;
@@ -63,7 +72,8 @@
       sourceLinkElement.href = resolvedOptions.sourceUrl;
       sourceLinkElement.target = "_blank";
       sourceLinkElement.rel = "noreferrer";
-      sourceLinkElement.textContent = "View Source";
+      sourceLinkElement.setAttribute("data-i18n", "common.code.view_source");
+      sourceLinkElement.textContent = t("common.code.view_source", "View Source");
       actionsElement.appendChild(sourceLinkElement);
     }
 
@@ -71,16 +81,17 @@
       const copyButtonElement = document.createElement("button");
       copyButtonElement.type = "button";
       copyButtonElement.className = "cpp-block__copy";
-      copyButtonElement.textContent = "Copy";
+      copyButtonElement.setAttribute("data-i18n", "common.code.copy");
+      copyButtonElement.textContent = t("common.code.copy", "Copy");
       copyButtonElement.addEventListener("click", async () => {
         try {
           await navigator.clipboard.writeText(code);
-          copyButtonElement.textContent = "Copied";
+          copyButtonElement.textContent = t("common.code.copied", "Copied");
         } catch (_) {
-          copyButtonElement.textContent = "Failed";
+          copyButtonElement.textContent = t("common.code.copy_failed", "Failed");
         } finally {
           setTimeout(() => {
-            copyButtonElement.textContent = "Copy";
+            copyButtonElement.textContent = t("common.code.copy", "Copy");
           }, 900);
         }
       });

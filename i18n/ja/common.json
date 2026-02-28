@@ -1,0 +1,49 @@
+﻿{
+  "common": {
+    "lang": {
+      "select": "\u8a00\u8a9e\u9078\u629e",
+      "zh": "\u4e2d\u6587",
+      "ja": "\u65e5\u672c\u8a9e",
+      "en": "English"
+    },
+    "nav": {
+      "home": "\u30db\u30fc\u30e0",
+      "projects": "\u30d7\u30ed\u30b8\u30a7\u30af\u30c8",
+      "about": "\u6982\u8981",
+      "links": "\u30ea\u30f3\u30af",
+      "videos": "\u52d5\u753b",
+      "code": "\u30b3\u30fc\u30c9"
+    },
+    "controls": {
+      "fx": "FX",
+      "theme": "\u30c6\u30fc\u30de"
+    },
+    "sections": {
+      "project_summary": "\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u6982\u8981",
+      "tech_stack": "\u6280\u8853\u30b9\u30bf\u30c3\u30af",
+      "repo_download": "\u30ea\u30dd\u30b8\u30c8\u30ea\u3068\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9"
+    },
+    "actions": {
+      "repository": "\u30ea\u30dd\u30b8\u30c8\u30ea",
+      "download_zip": "ZIP \u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9",
+      "repo": "Repo",
+      "more_info": "\u8a73\u7d30\u60c5\u5831",
+      "about_me": "\u81ea\u5df1\u7d39\u4ecb"
+    },
+    "theme": {
+      "preview_alt": "\u30c6\u30fc\u30de\u30d7\u30ec\u30d3\u30e5\u30fc\u30ab\u30fc\u30c9"
+    },
+    "code": {
+      "view_source": "\u30bd\u30fc\u30b9\u3092\u898b\u308b",
+      "copy": "\u30b3\u30d4\u30fc",
+      "copied": "\u30b3\u30d4\u30fc\u6e08\u307f",
+      "copy_failed": "\u5931\u6557"
+    },
+    "misc": {
+      "failed_load_code": "\u30b3\u30fc\u30c9\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f: {path}"
+    },
+    "footer": {
+      "built_with": "HTML/CSS/JS \u3067\u4f5c\u6210"
+    }
+  }
+}

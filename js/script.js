@@ -86,6 +86,12 @@ function setLang(languageCode) {
   if (languageSelect && languageSelect.value !== normalizedLanguage) {
     languageSelect.value = normalizedLanguage;
   }
+
+  if (typeof window.applyI18n === "function") {
+    window.applyI18n(normalizedLanguage).catch((error) => {
+      console.warn("[i18n] Failed to apply language on main page.", error);
+    });
+  }
 }
 
 function getFxEnabled() {

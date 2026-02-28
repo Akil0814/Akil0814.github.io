@@ -1,0 +1,83 @@
+{
+  "WarShip": {
+    "title": "WarShip Project - Akil0814",
+    "intro": {
+      "kicker": "C++ / SDL / Tactical Naval Game",
+      "title": "WarShip Project Overview",
+      "desc": "This page presents the core implementation of my WarShip project through gameplay videos and source snippets, including scene flow, board logic, combat effects, and resource systems.",
+      "chips": {
+        "ship_placement": "Ship Placement",
+        "skill_system": "Skill System",
+        "scene_pool": "Scene Pool",
+        "effect_pipeline": "Effect Pipeline"
+      }
+    },
+    "summary": {
+      "text": "WarShip is a turn-based naval strategy game prototype built with C++. The modules below cover scene switching, board and ship data models, effect rendering, and gameplay loops. Demo videos show real in-game interactions such as placement, attack, and skill execution."
+    },
+    "stack": {
+      "chip_scene_architecture": "Scene Architecture",
+      "chip_2d_rendering": "2D Rendering"
+    },
+    "sections": {
+      "demo_videos": "Demo Videos",
+      "core_code_blocks": "Core Code Blocks"
+    },
+    "videos": {
+      "start_shopping": {
+        "title": "Start Shopping",
+        "desc": "Shows pre-battle shop flow and preparation phase."
+      },
+      "ship_placement": {
+        "title": "Ship Placement",
+        "desc": "Shows ship deployment rules and board placement interactions."
+      },
+      "attack_action": {
+        "title": "Attack Action",
+        "desc": "Shows core attack execution and battle feedback."
+      },
+      "detect_focus_fire": {
+        "title": "Detect + Focus Fire",
+        "desc": "Shows detection and focused-fire skill combo behavior."
+      },
+      "repair_skill": {
+        "title": "Repair Skill",
+        "desc": "Shows repair effect and ship state recovery flow."
+      }
+    },
+    "code_summaries": {
+      "main_loop": "Defines the main game loop and frame update sequence.",
+      "scene_pool": "Manages scene lifecycle, registration, and switching.",
+      "board": "Handles board state, grid logic, and hit/miss evaluation.",
+      "ship": "Defines ship data model and runtime behavior.",
+      "ship_factory": "Builds ship instances and applies configuration presets.",
+      "button": "Implements button interaction and UI event handling.",
+      "bullet": "Handles projectile movement and collision resolution.",
+      "effect": "Implements visual and gameplay effects.",
+      "effect_manager": "Coordinates effect scheduling and render timing.",
+      "animation": "Controls animation state, timing, and transitions.",
+      "atlas": "Manages texture atlas lookup and sprite regions.",
+      "resources_manager": "Loads and caches game resources.",
+      "txt_to_texture": "Builds text textures for runtime UI rendering.",
+      "default": "Core WarShip module implementation."
+    },
+    "code_tags": {
+      "main_loop": "Main Loop",
+      "scene_pool": "Scene Pool",
+      "board": "Board",
+      "ship": "Ship",
+      "ship_factory": "Ship Factory",
+      "button": "Button",
+      "bullet": "Bullet",
+      "effect": "Effect",
+      "effect_manager": "Effect Manager",
+      "animation": "Animation",
+      "atlas": "Atlas",
+      "resources_manager": "Resources Manager",
+      "txt_to_texture": "Text to Texture"
+    },
+    "footer": {
+      "page": "WarShip Project Page"
+    }
+  }
+}

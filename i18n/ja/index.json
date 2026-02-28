@@ -1,0 +1,59 @@
+﻿{
+  "index": {
+    "title": "Akil0814",
+    "hero": {
+      "subtitle_intro": "\u3067\u304d\u308b\u3053\u3068\uff1a",
+      "subtitle_line2": "\u73fe\u5728\u306f OpenGL \u3092\u5b66\u7fd2\u4e2d\u3067\u3001\u6b21\u306e\u76ee\u6a19\u306f\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2\u30e9\u30b9\u30bf\u30e9\u30a4\u30b6\u30fc\u306e\u5b9f\u88c5\u3067\u3059\u3002",
+      "subtitle_line3": "\u4eca\u5f8c\u306f WarShips \u3092\u30ea\u30d5\u30a1\u30af\u30bf\u30ea\u30f3\u30b0\u3057\u3001SDL \u3067\u65b0\u3057\u3044 2D \u6a2a\u30b9\u30af\u30ed\u30fc\u30eb\u6226\u95d8\u30b2\u30fc\u30e0\u3092\u4f5c\u308b\u4e88\u5b9a\u3067\u3059\u3002",
+      "subtitle_line4": "\u5171\u540c\u958b\u767a\u306b\u8208\u5473\u304c\u3042\u308c\u3070\u3054\u9023\u7d61\u304f\u3060\u3055\u3044\u3002",
+      "floating_profile_title": "\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb",
+      "floating_profile_desc": "\u30b9\u30ad\u30eb \u00b7 \u5c65\u6b74\u66f8 \u00b7 \u30e1\u30fc\u30eb",
+      "floating_more_title": "\u3082\u3063\u3068\u898b\u308b",
+      "floating_more_desc": "likes \u00b7 hobbies \u00b7"
+    },
+    "stats": {
+      "focus_label": "\u73fe\u5728\u306e\u6ce8\u529b",
+      "focus_value": "C++ / \u30b0\u30e9\u30d5\u30a3\u30c3\u30af\u30b9",
+      "status_label": "\u72b6\u614b",
+      "status_value": "\u5b66\u7fd2\u4e2d..."
+    },
+    "sections": {
+      "projects": "\u30d7\u30ed\u30b8\u30a7\u30af\u30c8",
+      "about": "\u6982\u8981",
+      "links": "\u30ea\u30f3\u30af"
+    },
+    "projects": {
+      "warships": { "badge_game": "\u30b2\u30fc\u30e0" },
+      "minesweeper": { "badge_game": "\u30b2\u30fc\u30e0" },
+      "microcomputer": {
+        "badge_hardware": "\u30cf\u30fc\u30c9\u30a6\u30a7\u30a2",
+        "badge_cpu": "CPU",
+        "badge_ttl": "74xx TTL"
+      },
+      "collegetour": { "badge_tool": "\u30c4\u30fc\u30eb" },
+      "buttonsdl": { "badge_tool": "\u30c4\u30fc\u30eb" }
+    },
+    "about": {
+      "profile_title": "\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb",
+      "name_label": "\u540d\u524d\uff1a",
+      "role_label": "\u5f79\u5272\uff1a",
+      "main_label": "\u4e3b\u5206\u91ce\uff1a",
+      "now_label": "\u73fe\u5728\uff1a",
+      "next_label": "\u6b21\uff1a",
+      "skills_title": "\u30b9\u30ad\u30eb",
+      "summary_title": "\u8981\u7d04",
+      "skills": {
+        "opengl_learning": "OpenGL(\u5b66\u7fd2\u4e2d)",
+        "chinese_native": "\u4e2d\u56fd\u8a9e(\u6bcd\u8a9e)",
+        "japanese_beginner": "\u65e5\u672c\u8a9e(\u521d\u7d1a)",
+        "anime_expert": "\u30a2\u30cb\u30e1\u306e\u9054\u4eba"
+      }
+    },
+    "links": {
+      "email_k": "\u30e1\u30fc\u30eb",
+      "resume_k": "\u5c65\u6b74\u66f8",
+      "placeholder_k": "\u6e96\u5099\u4e2d",
+      "placeholder_v": "(\u307e\u3060\u3042\u308a\u307e\u305b\u3093)"
+    }
+  }
+}

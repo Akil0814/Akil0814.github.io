@@ -1,0 +1,88 @@
+{
+  "index": {
+    "title": "Akil0814",
+    "hero": {
+      "subtitle_intro": "What I know:",
+      "subtitle_line2": "I'm currently learning OpenGL, and my next goal is to build a software rasterizer.",
+      "subtitle_line3": "In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.",
+      "subtitle_line4": "If you're interested in collaborating, feel free to reach out.",
+      "floating_profile_title": "Profile",
+      "floating_profile_desc": "Skill · Resume · Email",
+      "floating_more_title": "More About Me",
+      "floating_more_desc": "likes · hobbies ·"
+    },
+    "stats": {
+      "focus_label": "Current Focus",
+      "focus_value": "C++ / Graphics",
+      "status_label": "Status",
+      "status_value": "Learning..."
+    },
+    "sections": {
+      "projects": "Projects",
+      "about": "About",
+      "links": "Links"
+    },
+    "projects": {
+      "warships": {
+        "badge_game": "Game",
+        "title": "WarShips",
+        "desc": "A tactical naval game prototype built to practice a more professional architecture and multiple design patterns, improving maintainability and extensibility."
+      },
+      "minesweeper": {
+        "badge_game": "Game",
+        "title": "MineSweeper",
+        "desc": "My first OOP-structured project, featuring a scene manager for smooth scene switching and multiple game modes."
+      },
+      "microcomputer": {
+        "badge_hardware": "Hardware",
+        "badge_cpu": "CPU",
+        "badge_ttl": "74xx TTL",
+        "title": "74xx 8-bit Microcomputer",
+        "desc": "A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system."
+      },
+      "collegetour": {
+        "badge_tool": "Tool",
+        "title": "CollegeTour",
+        "desc": "about this something."
+      },
+      "buttonsdl": {
+        "badge_tool": "Tool",
+        "title": "ButtonForSDL",
+        "desc": "about this something."
+      }
+    },
+    "about": {
+      "profile_title": "Profile",
+      "name_label": "Name:",
+      "name_value": "Akil/Akeli",
+      "role_label": "Role:",
+      "role_value": "Student",
+      "main_label": "Main:",
+      "main_value": "C++ / Graphics / Systems",
+      "now_label": "Now:",
+      "now_value": "Learning OpenGL.",
+      "next_label": "Next:",
+      "next_value": "Software Rasterizer.",
+      "skills_title": "Skills",
+      "summary_title": "Summary",
+      "summary_text": "I'm a CS student focused on C++ and graphics. I enjoy building clean gameplay systems and reusable modules, and I prefer understanding what's happening under the hood, because I don't like the feeling of calling something without knowing what it actually does. Right now I'm learning OpenGL to strengthen my graphics fundamentals, and my next goal is to write a software rasterizer to understand the rendering pipeline end-to-end.",
+      "skills": {
+        "opengl_learning": "OpenGL (learning)",
+        "chinese_native": "Chinese (native)",
+        "japanese_beginner": "Japanese (beginner)",
+        "anime_expert": "Anime Expert"
+      }
+    },
+    "links": {
+      "github_k": "GitHub",
+      "github_v": "@Akil0814",
+      "email_k": "Email",
+      "resume_k": "Resume",
+      "resume_v": "resume(don't have it yet).pdf",
+      "bilibili_k": "BiliBili",
+      "bilibili_v": "AKIL081",
+      "placeholder_k": "something",
+      "placeholder_v": "(don't have it yet)"
+    }
+  }
+}

@@ -128,6 +128,12 @@
       if (typeof config.onLangChange === "function") {
         config.onLangChange(normalizedLanguage);
       }
+
+      if (typeof window.applyI18n === "function") {
+        window.applyI18n(normalizedLanguage).catch((error) => {
+          console.warn("[i18n] Failed to apply language on project page.", error);
+        });
+      }
     }
 
     const onThemeButtonClick = () => setTheme(getTheme() === "dark" ? "light" : "dark");

@@ -1,0 +1,45 @@
+﻿{
+  "WarShip": {
+    "title": "WarShip \u9879\u76ee - Akil0814",
+    "intro": {
+      "kicker": "C++ / SDL / \u6218\u672f\u6d77\u6218\u6e38\u620f",
+      "title": "WarShip \u9879\u76ee\u6982\u89c8",
+      "desc": "This page presents the core implementation of my WarShip project.",
+      "chips": {
+        "ship_placement": "\u8230\u8239\u90e8\u7f72",
+        "skill_system": "\u6280\u80fd\u7cfb\u7edf",
+        "scene_pool": "\u573a\u666f\u6c60",
+        "effect_pipeline": "\u7279\u6548\u6d41\u6c34\u7ebf"
+      }
+    },
+    "summary": {
+      "text": "WarShip is a turn-based naval prototype with scene, board, and effect systems."
+    },
+    "stack": {
+      "chip_scene_architecture": "\u573a\u666f\u67b6\u6784",
+      "chip_2d_rendering": "2D \u6e32\u67d3"
+    },
+    "sections": {
+      "demo_videos": "\u6f14\u793a\u89c6\u9891",
+      "core_code_blocks": "\u6838\u5fc3\u4ee3\u7801\u5757"
+    },
+    "code_tags": {
+      "main_loop": "\u4e3b\u5faa\u73af",
+      "scene_pool": "\u573a\u666f\u6c60",
+      "board": "\u68cb\u76d8",
+      "ship": "\u8230\u8239",
+      "ship_factory": "\u8230\u8239\u5de5\u5382",
+      "button": "\u6309\u94ae",
+      "bullet": "\u5b50\u5f39",
+      "effect": "\u7279\u6548",
+      "effect_manager": "\u7279\u6548\u7ba1\u7406\u5668",
+      "animation": "\u52a8\u753b",
+      "atlas": "\u56fe\u96c6",
+      "resources_manager": "\u8d44\u6e90\u7ba1\u7406\u5668",
+      "txt_to_texture": "\u6587\u5b57\u8f6c\u7eb9\u7406"
+    },
+    "footer": {
+      "page": "WarShip \u9879\u76ee\u9875"
+    }
+  }
+}

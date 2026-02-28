@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-i18n-page="MineSweeper" data-i18n-base="../..">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b1020" />
-  <title>MineSweeper Project</title>
+  <title data-i18n="MineSweeper.title">MineSweeper Project</title>
   <script src="../../js/prefs_bootstrap.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,40 +28,40 @@
     </div>
 
     <nav class="nav__right">
-      <a href="../../index.html">Home</a>
-      <a href="#videos">Videos</a>
-      <a href="#code">Code</a>
-      <select id="langSelect" class="lang-select" aria-label="Language select">
-        <option value="zh">&#20013;&#25991;</option>
-        <option value="ja">&#26085;&#26412;&#35486;</option>
-        <option value="en" selected>English</option>
+      <a href="../../index.html" data-i18n="common.nav.home">Home</a>
+      <a href="#videos" data-i18n="common.nav.videos">Videos</a>
+      <a href="#code" data-i18n="common.nav.code">Code</a>
+      <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
+        <option value="zh" data-i18n="common.lang.zh">&#20013;&#25991;</option>
+        <option value="ja" data-i18n="common.lang.ja">&#26085;&#26412;&#35486;</option>
+        <option value="en" selected data-i18n="common.lang.en">English</option>
       </select>
-      <button id="toggleFx" class="btn" type="button" title="Toggle visual effects">FX</button>
-      <button id="themeBtn" class="btn" type="button" title="Toggle theme">Theme</button>
+      <button id="toggleFx" class="btn" type="button" title="Toggle visual effects" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="btn" type="button" title="Toggle theme" data-i18n="common.controls.theme">Theme</button>
     </nav>
   </header>
 
   <main class="wrap">
     <section class="project-intro">
-      <p class="project-intro__kicker">C++  / Game / EasyX </p>
-      <h1 class="project-intro__title">MineSweeper Project Overview</h1>
-      <p class="project-intro__desc">
+      <p class="project-intro__kicker" data-i18n="MineSweeper.intro.kicker">C++  / Game / EasyX </p>
+      <h1 class="project-intro__title" data-i18n="MineSweeper.intro.title">MineSweeper Project Overview</h1>
+      <p class="project-intro__desc" data-i18n="MineSweeper.intro.desc">
         This page presents the architecture of my MineSweeper project, including core gameplay logic,
         scene flow design, and implementation details through code and runtime demonstrations.
       </p>
       <div class="project-intro__chips">
-        <span class="chip">Map Generation</span>
-        <span class="chip">Safe Area Expansion</span>
-        <span class="chip">Scene Management</span>
+        <span class="chip" data-i18n="MineSweeper.intro.chips.map_generation">Map Generation</span>
+        <span class="chip" data-i18n="MineSweeper.intro.chips.safe_area_expansion">Safe Area Expansion</span>
+        <span class="chip" data-i18n="MineSweeper.intro.chips.scene_management">Scene Management</span>
       </div>
     </section>
 
     <section class="section">
       <div class="section__head">
-        <h2>Project Summary</h2>
+        <h2 data-i18n="common.sections.project_summary">Project Summary</h2>
       </div>
       <div class="panel">
-        <p>
+        <p data-i18n="MineSweeper.summary.text">
           The MineSweeper project is implemented in C++ with a modular structure based on a main loop,
           scene classes, and a scene manager. The code blocks below highlight the core control flow and
           responsibilities of each module. The videos demonstrate gameplay transitions, reveal rules,
@@ -73,85 +73,85 @@
     <section class="section section--split">
       <article class="panel">
         <div class="section__head">
-          <h2>Tech Stack</h2>
+          <h2 data-i18n="common.sections.tech_stack">Tech Stack</h2>
         </div>
         <div class="project-intro__chips">
           <span class="chip">C++</span>
           <span class="chip">EasyX</span>
           <span class="chip">STL</span>
-          <span class="chip">Scene Architecture</span>
-          <span class="chip">Game Loop</span>
+          <span class="chip" data-i18n="MineSweeper.stack.chip_scene_architecture">Scene Architecture</span>
+          <span class="chip" data-i18n="MineSweeper.stack.chip_game_loop">Game Loop</span>
         </div>
       </article>
 
       <article class="panel">
         <div class="section__head">
-          <h2>Repo + Download</h2>
+          <h2 data-i18n="common.sections.repo_download">Repo + Download</h2>
         </div>
         <div class="action-row">
-          <a class="btn btn--link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer">Repository</a>
-          <a class="btn btn--link" href="https://github.com/Akil0814/College_Tour/archive/refs/heads/main.zip" target="_blank" rel="noreferrer">Download ZIP</a>
+          <a class="btn btn--link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer" data-i18n="common.actions.repository">Repository</a>
+          <a class="btn btn--link" href="https://github.com/Akil0814/College_Tour/archive/refs/heads/main.zip" target="_blank" rel="noreferrer" data-i18n="common.actions.download_zip">Download ZIP</a>
         </div>
       </article>
     </section>
 
     <section id="videos" class="section">
       <div class="section__head">
-        <h2>Demo Videos (4)</h2>
+        <h2><span data-i18n="MineSweeper.sections.demo_videos">Demo Videos</span> (4)</h2>
       </div>
       <div class="video-grid">
         <article class="video-card">
-          <h3>Game Mode Demo</h3>
+          <h3 data-i18n="MineSweeper.videos.game_mode.title">Game Mode Demo</h3>
           <video controls preload="metadata" playsinline src="./res/mine_game_mod.webm"></video>
-          <p>Shows mode selection and primary interaction flow.</p>
+          <p data-i18n="MineSweeper.videos.game_mode.desc">Shows mode selection and primary interaction flow.</p>
         </article>
 
         <article class="video-card">
-          <h3>Main Gameplay Flow</h3>
+          <h3 data-i18n="MineSweeper.videos.main_flow.title">Main Gameplay Flow</h3>
           <video controls preload="metadata" playsinline src="./res/mine_main.webm"></video>
-          <p>Shows the end-to-end transition from launch to active gameplay.</p>
+          <p data-i18n="MineSweeper.videos.main_flow.desc">Shows the end-to-end transition from launch to active gameplay.</p>
         </article>
 
         <article class="video-card">
-          <h3>Safe Cell Expansion</h3>
+          <h3 data-i18n="MineSweeper.videos.safe_cell.title">Safe Cell Expansion</h3>
           <video controls preload="metadata" playsinline src="./res/mine_safe_cell.webm"></video>
-          <p>Shows automatic expansion behavior for empty connected regions.</p>
+          <p data-i18n="MineSweeper.videos.safe_cell.desc">Shows automatic expansion behavior for empty connected regions.</p>
         </article>
 
         <article class="video-card">
-          <h3>Safe Zone Validation</h3>
+          <h3 data-i18n="MineSweeper.videos.safe_zone.title">Safe Zone Validation</h3>
           <video controls preload="metadata" playsinline src="./res/mine_safe_zone.webm"></video>
-          <p>Shows zone search logic and boundary condition handling.</p>
+          <p data-i18n="MineSweeper.videos.safe_zone.desc">Shows zone search logic and boundary condition handling.</p>
         </article>
       </div>
     </section>
 
     <section id="code" class="section">
       <div class="section__head">
-        <h2>Core Code Blocks (4)</h2>
+        <h2><span data-i18n="MineSweeper.sections.core_code_blocks">Core Code Blocks</span> (4)</h2>
       </div>
       <div class="code-list">
         <article class="code-card">
-          <h3>Main Loop</h3>
-          <p>Controls input handling, update steps, rendering, and exit conditions.</p>
+          <h3 data-i18n="MineSweeper.code.main_loop.title">Main Loop</h3>
+          <p data-i18n="MineSweeper.code.main_loop.desc">Controls input handling, update steps, rendering, and exit conditions.</p>
           <div id="code-main-loop" class="code-slot"></div>
         </article>
 
         <article class="code-card">
-          <h3>Scene Class</h3>
-          <p>Defines scene behavior, board state interfaces, and game-state transitions.</p>
+          <h3 data-i18n="MineSweeper.code.scene_class.title">Scene Class</h3>
+          <p data-i18n="MineSweeper.code.scene_class.desc">Defines scene behavior, board state interfaces, and game-state transitions.</p>
           <div id="code-scene-class" class="code-slot"></div>
         </article>
 
         <article class="code-card">
-          <h3>Scene Manager</h3>
-          <p>Handles scene registration, switching, and lifecycle management.</p>
+          <h3 data-i18n="MineSweeper.code.scene_manager.title">Scene Manager</h3>
+          <p data-i18n="MineSweeper.code.scene_manager.desc">Handles scene registration, switching, and lifecycle management.</p>
           <div id="code-scene-manager" class="code-slot"></div>
         </article>
 
         <article class="code-card">
-          <h3>Board Module</h3>
-          <p>Defines board data, mine placement, and cell-level state operations.</p>
+          <h3 data-i18n="MineSweeper.code.board.title">Board Module</h3>
+          <p data-i18n="MineSweeper.code.board.desc">Defines board data, mine placement, and cell-level state operations.</p>
           <div id="code-board" class="code-slot"></div>
         </article>
       </div>
@@ -164,6 +164,8 @@
           data-src-dark="../../image/Arcueid_Bar.png"
           data-src-light="../../image/The_Stranger_In_The_Mirror_T.png"
           alt="Theme preview card"
+          data-i18n="common.theme.preview_alt"
+          data-i18n-attr="alt"
           loading="lazy"
         />
       </article>
@@ -171,9 +173,10 @@
   </main>
 
   <footer class="footer">
-    <p><span class="mono">&copy; <span id="year"></span> Akil</span> <span class="dot">&middot;</span> <span class="mono">MineSweeper Project Page</span></p>
+    <p><span class="mono">&copy; <span id="year"></span> Akil</span> <span class="dot">&middot;</span> <span class="mono" data-i18n="MineSweeper.footer.page">MineSweeper Project Page</span></p>
   </footer>
 
+  <script src="../../assets/js/i18n.js"></script>
   <script src="../../assets/prism/prism.js"></script>
   <script src="../_shared/project_code_block.js?v=20260228"></script>
   <script src="../_shared/project_page.js?v=20260228"></script>

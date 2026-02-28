@@ -1,4 +1,13 @@
 (function () {
+  function t(key, fallbackText, params) {
+    if (window.I18N && typeof window.I18N.t === "function") {
+      return window.I18N.t(key, params, fallbackText);
+    }
+
+    if (typeof fallbackText === "string") return fallbackText;
+    return key;
+  }
+
   const codeBlockEntries = [
     {
       targetSelector: "#code-main-loop",
@@ -38,8 +47,19 @@
   ];
 
   const codeEntryBySelector = new Map(codeBlockEntries.map((entry) => [entry.targetSelector, entry]));
+  const videoTagKeyBySelector = {
+    "#code-main-loop": "MineSweeper.video_tags.main_loop",
+    "#code-scene-class": "MineSweeper.video_tags.scene_class",
+    "#code-scene-manager": "MineSweeper.video_tags.scene_manager",
+    "#code-board": "MineSweeper.video_tags.board",
+  };
 
   function buildTagLabel(selector) {
+    const labelKey = videoTagKeyBySelector[selector];
+    if (labelKey) {
+      return t(labelKey, "Code");
+    }
+
     const entry = codeEntryBySelector.get(selector);
     if (!entry) return "Code";
 
@@ -95,6 +115,10 @@
         const tagButton = document.createElement("button");
         tagButton.type = "button";
         tagButton.className = "video-tag";
+        const labelKey = videoTagKeyBySelector[selector];
+        if (labelKey) {
+          tagButton.setAttribute("data-i18n", labelKey);
+        }
         tagButton.textContent = buildTagLabel(selector);
         tagButton.addEventListener("click", () => {
           focusCodeCard(entry.cardId);
@@ -125,7 +149,11 @@
         targetElement.innerHTML = "";
         const messageElement = document.createElement("p");
         messageElement.className = "panel";
-        messageElement.textContent = `Failed to load code: ${entry.filePath}`;
+        messageElement.textContent = t(
+          "common.misc.failed_load_code",
+          `Failed to load code: ${entry.filePath}`,
+          { path: entry.filePath }
+        );
         targetElement.appendChild(messageElement);
         console.error(error);
       }
@@ -138,7 +166,7 @@
       return;
     }
 
-    window.ProjectPageCore.init({
+    const pageCore = window.ProjectPageCore.init({
       codeThemeLinkId: "prismThemeLink",
       codeThemeDarkHref: "../../assets/prism/prism-dark.css",
       codeThemeLightHref: "../../assets/prism/prism-light.css",
@@ -146,6 +174,11 @@
 
     assignCodeCardIds();
     renderVideoCodeTags();
+    if (typeof window.applyI18n === "function") {
+      window.applyI18n(pageCore.getLang()).catch((error) => {
+        console.warn("[i18n] Failed to apply MineSweeper translations.", error);
+      });
+    }
     loadCodeBlocks();
   }
 

@@ -1,31 +1,18 @@
-<!doctype html>
-<html lang="en">
+﻿<!doctype html>
+<html lang="en" data-i18n-page="index" data-i18n-base=".">
 <head>
-    <link rel="preload" as="image" href="./image/moon.png">
-  <!-- =======================================================
-       Meta / SEO / viewport
-       - charset：编码
-       - viewport：移动端适配
-       - theme-color：手机浏览器地址栏颜色（部分浏览器支持）
-       ======================================================= -->
+  <link rel="preload" as="image" href="./image/moon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#0b1020"/>
   <meta name="keywords" content="AKIL,akil,Akil0814,AKIL0814,Portfolio" />
-  <title>Akil0814</title>
+  <title data-i18n="index.title">Akil0814</title>
   <script src="./js/prefs_bootstrap.js"></script>
 
-  <!-- =======================================================
-       Fonts
-       - 预连接加快 Google Fonts 加载
-       - Outfit：主字体
-       - JetBrains Mono：等宽字体（标签/年份/小信息）
-       ======================================================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- 主样式文件 -->
   <link rel="stylesheet" href="./css/tokens.css">
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/layout.css">
@@ -35,35 +22,18 @@
   <link rel="stylesheet" href="./css/utiles.css"/>
   <link rel="stylesheet" href="./css/moon_effects.css">
   <link rel="stylesheet" href="./css/footer_banner.css">
-
-
 </head>
 
 <body>
-  <!-- =======================================================
-       Ambient background layers
-       - canvas#stars：星空
-       - .bg-moon：月亮
-       - .scanlines：扫描线
-       ======================================================= -->
   <canvas id="stars" aria-hidden="true"></canvas>
   <canvas id="snow" aria-hidden="true"></canvas>
 
-  <!-- =======================================================
-       Dark mode moon layer
-       - 只在暗色模式显示
-       ======================================================= -->
   <div class="bg-moon" aria-hidden="true">
     <span class="bg-moon__halo"></span>
     <img class="bg-moon__img" src="./image/moon.png" alt="" data-src-dark="./image/moon.png" data-src-light="./image/moon.png" />
   </div>
   <div class="scanlines" aria-hidden="true"></div>
 
-  <!-- =======================================================
-       Top nav (固定在顶部)
-       - 左：brand 回到顶部
-       - 右：页面锚点导航 + FX开关 + Theme开关
-       ======================================================= -->
   <header class="nav">
     <div class="nav__left">
       <a class="brand" href="#top">
@@ -73,74 +43,55 @@
     </div>
 
     <nav class="nav__right">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#links">Links</a>
+      <a href="#projects" data-i18n="common.nav.projects">Projects</a>
+      <a href="#about" data-i18n="common.nav.about">About</a>
+      <a href="#links" data-i18n="common.nav.links">Links</a>
 
-      <select id="langSelect" class="lang-select" aria-label="Language select">
-        <option value="zh">中文</option>
-        <option value="ja">日本語</option>
-        <option value="en" selected>English</option>
+      <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
+        <option value="zh" data-i18n="common.lang.zh">中文</option>
+        <option value="ja" data-i18n="common.lang.ja">日本語</option>
+        <option value="en" selected data-i18n="common.lang.en">English</option>
       </select>
 
-      <!-- FX 按钮：切换背景特效（会给 body 加/删 fx-off） -->
-      <button id="toggleFx" class="btn btn--ghost" type="button" title="Toggle FX">FX</button>
-
-      <!-- Theme 按钮：切换 data-theme=dark/light -->
-      <button id="themeBtn" class="btn" type="button" title="Toggle theme">Theme</button>
+      <button id="toggleFx" class="btn btn--ghost" type="button" title="Toggle FX" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="btn" type="button" title="Toggle theme" data-i18n="common.controls.theme">Theme</button>
     </nav>
   </header>
 
-  <!-- =======================================================
-       Main content wrapper
-       - #top：页面顶部锚点
-       - .wrap：控制最大宽度 + 给固定 nav 留出上边距
-       ======================================================= -->
   <main id="top" class="wrap">
-
-    <!-- =====================================================
-         me section
-         - 左：个人简介 + CTA + 三个小状态
-         - 右：头像卡 + 两个浮动链接卡
-         ===================================================== -->
     <section class="me">
       <div class="me__left">
-
-        <!-- glitch 标题：data-text 给伪元素用 -->
         <h1 class="glitch" data-text="AKIL">
           AKIL
         </h1>
 
         <p class="subtitle">
-          What I know: <span class="k">C++</span>,
-          <span class="k">SDL</span>, <span class="k">OpenGL</span>,<span class="k">SQLite</span>,...
+          <span data-i18n="index.hero.subtitle_intro">What I know:</span> <span class="k">C++</span>,
+          <span class="k">SDL</span>, <span class="k">OpenGL</span>, <span class="k">SQLite</span>, ...
           <br/>
-          I’m currently learning OpenGL, and my next goal is to build a software rasterizer.
-          In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.
-          If you’re interested in collaborating, feel free to reach out..
+          <span data-i18n="index.hero.subtitle_line2">I'm currently learning OpenGL, and my next goal is to build a software rasterizer.</span>
+          <span data-i18n="index.hero.subtitle_line3">In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.</span>
+          <span data-i18n="index.hero.subtitle_line4">If you're interested in collaborating, feel free to reach out.</span>
         </p>
 
-        <!-- CTA buttons -->
         <div class="cta">
-          <a class="btn btn--ghost" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn btn--ghost" href="#about">About Me</a>
+          <a class="btn btn--ghost" href="https://github.com/Akil0814" target="_blank" rel="noreferrer" data-i18n="index.links.github_k">GitHub</a>
+          <a class="btn btn--ghost" href="#about" data-i18n="common.actions.about_me">About Me</a>
         </div>
 
-        <!-- 迷你信息块 -->
         <div class="mini-stats">
           <div class="chip">
-            <span class="chip__label">Current Focus</span>
-            <span class="chip__value">C++ / Graphics </span>
+            <span class="chip__label" data-i18n="index.stats.focus_label">Current Focus</span>
+            <span class="chip__value" data-i18n="index.stats.focus_value">C++ / Graphics</span>
           </div>
           <div class="chip">
-            <span class="chip__label">Status</span>
-            <span class="chip__value">Learing...</span>
+            <span class="chip__label" data-i18n="index.stats.status_label">Status</span>
+            <span class="chip__value" data-i18n="index.stats.status_value">Learning...</span>
           </div>
         </div>
       </div>
 
       <div class="me__right">
-        <!-- 头像卡 -->
         <div class="card portrait">
           <div class="portrait__frame">
             <img
@@ -153,26 +104,22 @@
           </div>
         </div>
 
-        <!-- 右侧两个小浮动卡片链接 -->
         <div class="floating-cards">
           <a class="float-card" href="#about">
-            <span class="float-card__title">Profile</span>
-            <span class="float-card__desc">Skill · Resume · Email</span>
+            <span class="float-card__title" data-i18n="index.hero.floating_profile_title">Profile</span>
+            <span class="float-card__desc" data-i18n="index.hero.floating_profile_desc">Skill · Resume · Email</span>
           </a>
           <a class="float-card" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">
-            <span class="float-card__title">More About Me</span>
-            <span class="float-card__desc">likes · hobbies · </span>
+            <span class="float-card__title" data-i18n="index.hero.floating_more_title">More About Me</span>
+            <span class="float-card__desc" data-i18n="index.hero.floating_more_desc">likes · hobbies ·</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         Projects section
-         ===================================================== -->
     <section id="projects" class="section">
       <div class="section__head">
-        <h2 class="section__title">Projects</h2>
+        <h2 class="section__title" data-i18n="index.sections.projects">Projects</h2>
       </div>
 
       <div class="grid">
@@ -180,14 +127,13 @@
           <div class="proj__top">
             <span class="proj__badge">C++</span>
             <span class="proj__badge">SDL</span>
-            <span class="proj__badge">Game</span>
+            <span class="proj__badge" data-i18n="index.projects.warships.badge_game">Game</span>
           </div>
-          <h3 class="proj__title">WarShips</h3>
-          <p class="proj__text">A tactical naval game prototype built to practice a more professional architecture 
-                                and multiple design patterns, improving maintainability and extensibility.</p>
+          <h3 class="proj__title" data-i18n="index.projects.warships.title">WarShips</h3>
+          <p class="proj__text" data-i18n="index.projects.warships.desc">A tactical naval game prototype built to practice a more professional architecture and multiple design patterns, improving maintainability and extensibility.</p>
           <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer">Repo</a>
-            <a class="link" href="https://akil0814.github.io/projects/WarShip/WarShip.html" target="_blank" rel="noreferrer">More information</a>
+            <a class="link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+            <a class="link" href="https://akil0814.github.io/projects/WarShip/WarShip.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
           </div>
         </article>
 
@@ -195,163 +141,136 @@
           <div class="proj__top">
             <span class="proj__badge">C++</span>
             <span class="proj__badge">EasyX</span>
-            <span class="proj__badge">Game</span>
+            <span class="proj__badge" data-i18n="index.projects.minesweeper.badge_game">Game</span>
           </div>
-          <h3 class="proj__title">MineSweeper</h3>
-          <p class="proj__text">My first OOP-structured project, featuring a scene manager for smooth scene 
-                                switching and multiple game modes.</p>
+          <h3 class="proj__title" data-i18n="index.projects.minesweeper.title">MineSweeper</h3>
+          <p class="proj__text" data-i18n="index.projects.minesweeper.desc">My first OOP-structured project, featuring a scene manager for smooth scene switching and multiple game modes.</p>
           <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer">Repo</a>
-            <a class="link" href="https://akil0814.github.io/projects/MineSweeper/MineSweeper.html" target="_blank" rel="noreferrer">More information</a>
+            <a class="link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+            <a class="link" href="https://akil0814.github.io/projects/MineSweeper/MineSweeper.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
           </div>
         </article>
 
-      <article class="proj">
+        <article class="proj">
           <div class="proj__top">
-            <span class="proj__badge">Hardware</span>
-            <span class="proj__badge">CPU</span>
-            <span class="proj__badge">74xx TTL</span>
+            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_hardware">Hardware</span>
+            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_cpu">CPU</span>
+            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_ttl">74xx TTL</span>
           </div>
-          <h3 class="proj__title">74xx 8-bit Microcomputer</h3>
-          <p class="proj__text">A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, 
-                                program counter/address registers, and a simple memory + I/O system..</p>
+          <h3 class="proj__title" data-i18n="index.projects.microcomputer.title">74xx 8-bit Microcomputer</h3>
+          <p class="proj__text" data-i18n="index.projects.microcomputer.desc">A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system.</p>
           <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
-            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">More information</a>
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
           </div>
         </article>
-
 
         <article class="proj">
           <div class="proj__top">
             <span class="proj__badge">C++</span>
             <span class="proj__badge">SQLite</span>
-            <span class="proj__badge">Tool</span>
+            <span class="proj__badge" data-i18n="index.projects.collegetour.badge_tool">Tool</span>
           </div>
-          <h3 class="proj__title">CollegeTour</h3>
-          <p class="proj__text">about this something.</p>
+          <h3 class="proj__title" data-i18n="index.projects.collegetour.title">CollegeTour</h3>
+          <p class="proj__text" data-i18n="index.projects.collegetour.desc">about this something.</p>
           <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
-            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">More information</a>
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
           </div>
         </article>
-
 
         <article class="proj">
           <div class="proj__top">
             <span class="proj__badge">C++</span>
             <span class="proj__badge">SDL</span>
-            <span class="proj__badge">Tool</span>
+            <span class="proj__badge" data-i18n="index.projects.buttonsdl.badge_tool">Tool</span>
           </div>
-          <h3 class="proj__title">ButtonForSDL</h3>
-          <p class="proj__text">about this something.</p>
+          <h3 class="proj__title" data-i18n="index.projects.buttonsdl.title">ButtonForSDL</h3>
+          <p class="proj__text" data-i18n="index.projects.buttonsdl.desc">about this something.</p>
           <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">Repo</a>
-            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer">More information</a>
+            <a class="link" href="https://github.com/Akil0814" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+            <a class="link" href="https://akil0814.github.io/about" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
           </div>
         </article>
-        
       </div>
     </section>
 
-    <!-- =====================================================
-         About section
-         - 左：Profile list
-         - 右：Skills tags
-         ===================================================== -->
     <section id="about" class="section">
       <div class="section__head">
-        <h2 class="section__title">About</h2>
-
+        <h2 class="section__title" data-i18n="index.sections.about">About</h2>
       </div>
 
       <article class="panel about-panel">
         <div class="about-panel__content">
           <div class="about-panel__block">
-            <h3 class="panel__title">Profile</h3>
+            <h3 class="panel__title" data-i18n="index.about.profile_title">Profile</h3>
             <ul class="list">
-              <li><b>Name:</b> Akil/Akeli</li>
-              <li><b>Role:</b> Student</li>
-              <li><b>Main:</b> C++ / Graphics / Systems</li>
-              <li><b>Now:</b> Learning OpenGL.</li>
-              <li><b>Next:</b> Software Rasterizer.</li>
+              <li><b data-i18n="index.about.name_label">Name:</b> <span data-i18n="index.about.name_value">Akil/Akeli</span></li>
+              <li><b data-i18n="index.about.role_label">Role:</b> <span data-i18n="index.about.role_value">Student</span></li>
+              <li><b data-i18n="index.about.main_label">Main:</b> <span data-i18n="index.about.main_value">C++ / Graphics / Systems</span></li>
+              <li><b data-i18n="index.about.now_label">Now:</b> <span data-i18n="index.about.now_value">Learning OpenGL.</span></li>
+              <li><b data-i18n="index.about.next_label">Next:</b> <span data-i18n="index.about.next_value">Software Rasterizer.</span></li>
             </ul>
-            <h3 class="panel__title">Skills</h3>
+            <h3 class="panel__title" data-i18n="index.about.skills_title">Skills</h3>
             <div class="tags">
               <span class="tag">C++</span>
               <span class="tag">SDL</span>
               <span class="tag">SQLite</span>
-              <span class="tag">OpenGL (learning)</span>
-              <span class="tag">Chinese (native)</span>
-              <span class="tag">Japanese (beginner)</span>
-              <span class="tag tag--strike">Anime Expert</span>
+              <span class="tag" data-i18n="index.about.skills.opengl_learning">OpenGL (learning)</span>
+              <span class="tag" data-i18n="index.about.skills.chinese_native">Chinese (native)</span>
+              <span class="tag" data-i18n="index.about.skills.japanese_beginner">Japanese (beginner)</span>
+              <span class="tag tag--strike" data-i18n="index.about.skills.anime_expert">Anime Expert</span>
             </div>
           </div>
 
           <div class="about-panel__block about-panel__block--skills">
-            <h3 class="panel__title about-panel__subtitle">Summary</h3>
-            <p class="about-panel__intro">
-              I’m a CS student focused on C++ and graphics.
-              I enjoy building clean gameplay systems and reusable modules,
-              and I prefer understanding what’s happening under the hood,
-              because I don’t like the feeling of calling something without knowing
-              what it actually does. Right now I’m learning OpenGL to strengthen
-              my graphics fundamentals, and my next goal is to write a software rasterizer
-              to understand the rendering pipeline end-to-end.
+            <h3 class="panel__title about-panel__subtitle" data-i18n="index.about.summary_title">Summary</h3>
+            <p class="about-panel__intro" data-i18n="index.about.summary_text">
+              I'm a CS student focused on C++ and graphics. I enjoy building clean gameplay systems and reusable modules, and I prefer understanding what's happening under the hood, because I don't like the feeling of calling something without knowing what it actually does. Right now I'm learning OpenGL to strengthen my graphics fundamentals, and my next goal is to write a software rasterizer to understand the rendering pipeline end-to-end.
             </p>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- =====================================================
-         Links section
-         - 三个链接卡：GitHub / Email / Resume
-         ===================================================== -->
     <section id="links" class="section">
       <div class="section__head">
-        <h2 class="section__title">Links</h2>
+        <h2 class="section__title" data-i18n="index.sections.links">Links</h2>
       </div>
 
       <div class="links">
-
         <a class="linkCard" href="https://github.com/Akil0814" target="_blank" rel="noreferrer">
-          <span class="linkCard__k">GitHub</span>
-          <span class="linkCard__v">@Akil0814</span>
+          <span class="linkCard__k" data-i18n="index.links.github_k">GitHub</span>
+          <span class="linkCard__v" data-i18n="index.links.github_v">@Akil0814</span>
         </a>
 
-        <a class="linkCard" href="#" data-copy="akil08141202@gmile.com"
-          onclick="copyEmail(this); return false;">
-          <span class="linkCard__k">Email</span>
+        <a class="linkCard" href="#" data-copy="akil08141202@gmile.com" onclick="copyEmail(this); return false;">
+          <span class="linkCard__k" data-i18n="index.links.email_k">Email</span>
           <span class="linkCard__v">akil08141202@gmile.com</span>
         </a>
 
         <a class="linkCard" href="./files/Akil_test.pdf" target="_blank" rel="noopener noreferrer">
-          <span class="linkCard__k">Resume</span>
-          <span class="linkCard__v">resume(don't have it yet).pdf</span>
+          <span class="linkCard__k" data-i18n="index.links.resume_k">Resume</span>
+          <span class="linkCard__v" data-i18n="index.links.resume_v">resume(don't have it yet).pdf</span>
         </a>
 
         <a class="linkCard" href="https://space.bilibili.com/471046827" target="_blank" rel="noreferrer">
-          <span class="linkCard__k">BiliBili</span>
-          <span class="linkCard__v">AKIL081</span>
+          <span class="linkCard__k" data-i18n="index.links.bilibili_k">BiliBili</span>
+          <span class="linkCard__v" data-i18n="index.links.bilibili_v">AKIL081</span>
         </a>
 
         <a class="linkCard" href="#" onclick="return false;">
-          <span class="linkCard__k">something</span>
-          <span class="linkCard__v">(don't have it yet)</span>
+          <span class="linkCard__k" data-i18n="index.links.placeholder_k">something</span>
+          <span class="linkCard__v" data-i18n="index.links.placeholder_v">(don't have it yet)</span>
         </a>
 
         <a class="linkCard" href="#" onclick="return false;">
-          <span class="linkCard__k">something</span>
-          <span class="linkCard__v">(don't have it yet)</span>
+          <span class="linkCard__k" data-i18n="index.links.placeholder_k">something</span>
+          <span class="linkCard__v" data-i18n="index.links.placeholder_v">(don't have it yet)</span>
         </a>
       </div>
     </section>
 
-    <!-- =====================================================
-         Footer (现在把 footerBanner 放进来，结构才正确)
-         - #year 会被 JS 自动填充年份
-         ===================================================== -->
     <footer class="footer">
       <div class="footerBanner">
         <img
@@ -365,28 +284,21 @@
       </div>
 
       <p>
-        <span class="mono">© <span id="year"></span> Akil</span>
-        <span class="dot">•</span>
-        <span class="mono">Built with HTML/CSS/JS </span>
+        <span class="mono">&copy; <span id="year"></span> Akil</span>
+        <span class="dot">&middot;</span>
+        <span class="mono" data-i18n="common.footer.built_with">Built with HTML/CSS/JS</span>
       </p>
     </footer>
-
   </main>
 
-  <!-- =======================================================
-       Main script
-       - 也包含“建设中弹窗只弹一次”的逻辑（从 HTML 移到 JS，让结构干净点）
-       - 负责：主题切换、FX开关、年份填充、状态轮播、星空绘制
-       ======================================================= -->
-  <!-- Theme transition overlay (light <-> dark) -->
   <div id="themeTransition" class="themeTransition" aria-hidden="true">
     <img class="themeTransition__moon" src="./image/moon.png" alt="" aria-hidden="true" decoding="async" />
   </div>
-  
+
+  <script src="./assets/js/i18n.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/star_field.js"></script>
   <script src="./js/snow_field.js"></script>
   <script src="./js/utile.js"></script>
-
 </body>
 </html>

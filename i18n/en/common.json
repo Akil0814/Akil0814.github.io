@@ -1,0 +1,51 @@
+﻿{
+  "common": {
+    "lang": {
+      "select": "Language select",
+      "zh": "\u4e2d\u6587",
+      "ja": "\u65e5\u672c\u8a9e",
+      "en": "English"
+    },
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "about": "About",
+      "links": "Links",
+      "videos": "Videos",
+      "code": "Code"
+    },
+    "controls": {
+      "fx": "FX",
+      "theme": "Theme",
+      "toggle_fx": "Toggle visual effects",
+      "toggle_theme": "Toggle theme"
+    },
+    "sections": {
+      "project_summary": "Project Summary",
+      "tech_stack": "Tech Stack",
+      "repo_download": "Repo + Download"
+    },
+    "actions": {
+      "repository": "Repository",
+      "download_zip": "Download ZIP",
+      "repo": "Repo",
+      "more_info": "More information",
+      "about_me": "About Me"
+    },
+    "theme": {
+      "preview_alt": "Theme preview card"
+    },
+    "code": {
+      "view_source": "View Source",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copy_failed": "Failed"
+    },
+    "misc": {
+      "failed_load_code": "Failed to load code: {path}"
+    },
+    "footer": {
+      "built_with": "Built with HTML/CSS/JS"
+    }
+  }
+}

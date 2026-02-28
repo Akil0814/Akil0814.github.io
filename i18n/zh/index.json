@@ -1,0 +1,59 @@
+﻿{
+  "index": {
+    "title": "Akil0814",
+    "hero": {
+      "subtitle_intro": "\u6211\u4f1a\u7684\uff1a",
+      "subtitle_line2": "\u6211\u76ee\u524d\u6b63\u5728\u5b66\u4e60 OpenGL\uff0c\u4e0b\u4e00\u6b65\u76ee\u6807\u662f\u5b9e\u73b0\u8f6f\u4ef6\u5149\u6805\u5668\u3002",
+      "subtitle_line3": "\u4e4b\u540e\u6211\u4f1a\u91cd\u6784 WarShips \u9879\u76ee\uff0c\u5e76\u5f00\u53d1\u65b0\u7684 SDL 2D \u6a2a\u7248\u6218\u6597\u6e38\u620f\u3002",
+      "subtitle_line4": "\u5982\u679c\u4f60\u60f3\u5408\u4f5c\uff0c\u6b22\u8fce\u8054\u7cfb\u6211\u3002",
+      "floating_profile_title": "\u4e2a\u4eba\u8d44\u6599",
+      "floating_profile_desc": "\u6280\u80fd \u00b7 \u7b80\u5386 \u00b7 \u90ae\u7bb1",
+      "floating_more_title": "\u66f4\u591a\u5173\u4e8e\u6211",
+      "floating_more_desc": "likes \u00b7 hobbies \u00b7"
+    },
+    "stats": {
+      "focus_label": "\u5f53\u524d\u65b9\u5411",
+      "focus_value": "C++ / \u56fe\u5f62\u5b66",
+      "status_label": "\u72b6\u6001",
+      "status_value": "\u5b66\u4e60\u4e2d..."
+    },
+    "sections": {
+      "projects": "\u9879\u76ee",
+      "about": "\u5173\u4e8e",
+      "links": "\u94fe\u63a5"
+    },
+    "projects": {
+      "warships": { "badge_game": "\u6e38\u620f" },
+      "minesweeper": { "badge_game": "\u6e38\u620f" },
+      "microcomputer": {
+        "badge_hardware": "\u786c\u4ef6",
+        "badge_cpu": "CPU",
+        "badge_ttl": "74xx TTL"
+      },
+      "collegetour": { "badge_tool": "\u5de5\u5177" },
+      "buttonsdl": { "badge_tool": "\u5de5\u5177" }
+    },
+    "about": {
+      "profile_title": "\u4e2a\u4eba\u8d44\u6599",
+      "name_label": "\u59d3\u540d\uff1a",
+      "role_label": "\u8eab\u4efd\uff1a",
+      "main_label": "\u65b9\u5411\uff1a",
+      "now_label": "\u73b0\u5728\uff1a",
+      "next_label": "\u4e0b\u4e00\u6b65\uff1a",
+      "skills_title": "\u6280\u80fd",
+      "summary_title": "\u7b80\u4ecb",
+      "skills": {
+        "opengl_learning": "OpenGL(\u5b66\u4e60\u4e2d)",
+        "chinese_native": "\u4e2d\u6587(\u6bcd\u8bed)",
+        "japanese_beginner": "\u65e5\u8bed(\u521d\u5b66)",
+        "anime_expert": "\u52a8\u6f2b\u4e13\u5bb6"
+      }
+    },
+    "links": {
+      "email_k": "\u90ae\u7bb1",
+      "resume_k": "\u7b80\u5386",
+      "placeholder_k": "\u656c\u8bf7\u671f\u5f85",
+      "placeholder_v": "(\u6682\u672a\u63d0\u4f9b)"
+    }
+  }
+}
