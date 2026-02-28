@@ -5,14 +5,14 @@ body.fx-off {
   background: linear-gradient(180deg, var(--bg), var(--bg2));
 }
 
-body.fx-off .hero,
+body.fx-off .project-intro,
 body.fx-off .video-card,
 body.fx-off .code-card,
 body.fx-off .theme-photo-card {
   box-shadow: none;
 }
 
-.hero {
+.project-intro {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--card);
@@ -20,7 +20,7 @@ body.fx-off .theme-photo-card {
   padding: 26px;
 }
 
-.hero__kicker {
+.project-intro__kicker {
   margin: 0 0 10px;
   font-family: "JetBrains Mono", monospace;
   color: var(--muted);
@@ -29,27 +29,27 @@ body.fx-off .theme-photo-card {
   text-transform: uppercase;
 }
 
-.hero__title {
+.project-intro__title {
   margin: 0;
   font-size: clamp(30px, 4.8vw, 48px);
   line-height: 1.06;
 }
 
-.hero__desc {
+.project-intro__desc {
   margin: 14px 0 0;
   color: var(--muted);
   line-height: 1.7;
   max-width: 78ch;
 }
 
-.hero__chips {
+.project-intro__chips {
   margin-top: 18px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.hero__chips .chip {
+.project-intro__chips .chip {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255,255,255,.05);
@@ -79,12 +79,12 @@ body.fx-off .theme-photo-card {
   font-size: 20px;
 }
 
-.section--split .hero__chips {
+.section--split .project-intro__chips {
   margin-top: 8px;
   gap: 8px;
 }
 
-.section--split .hero__chips .chip {
+.section--split .project-intro__chips .chip {
   font-size: 11px;
   padding: 5px 9px;
 }
@@ -334,7 +334,7 @@ body.fx-off .theme-photo-card {
 }
 
 @media (max-width: 760px) {
-  .hero {
+  .project-intro {
     padding: 18px;
   }
 }
