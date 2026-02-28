@@ -1,10 +1,10 @@
-﻿{
+{
   "WarShip": {
     "title": "WarShip プロジェクト - Akil0814",
     "intro": {
       "kicker": "C++ / SDL / 戦術海戦ゲーム",
       "title": "WarShip プロジェクト概要",
-      "desc": "This page presents the core implementation of my WarShip project.",
+      "desc": "このページでは、WarShip プロジェクトの中核実装を動画とソースコード断片で紹介します。シーン遷移、ボードロジック、戦闘エフェクト、リソースシステムを含みます。",
       "chips": {
         "ship_placement": "艦配置",
         "skill_system": "スキルシステム",
@@ -13,7 +13,7 @@
       }
     },
     "summary": {
-      "text": "WarShip is a turn-based naval prototype with scene, board, and effect systems."
+      "text": "WarShip は C++ で作成したターン制海戦ストラテジーのプロトタイプです。下のモジュールはシーン切替、ボードと艦船データモデル、エフェクト描画、ゲームループをカバーしています。デモ動画では配置、攻撃、スキル実行などの実ゲーム操作を確認できます。"
     },
     "stack": {
       "chip_scene_architecture": "シーンアーキテクチャ",
@@ -22,6 +22,44 @@
     "sections": {
       "demo_videos": "デモ動画",
       "core_code_blocks": "主要コードブロック"
+    },
+    "videos": {
+      "start_shopping": {
+        "title": "開始ショップ",
+        "desc": "戦闘前ショップと準備フェーズの流れを示します。"
+      },
+      "ship_placement": {
+        "title": "艦配置",
+        "desc": "艦船配置ルールとボード操作を示します。"
+      },
+      "attack_action": {
+        "title": "攻撃アクション",
+        "desc": "攻撃実行の中核処理と戦闘フィードバックを示します。"
+      },
+      "detect_focus_fire": {
+        "title": "探知 + 集中砲火",
+        "desc": "探知と集中砲火スキルの連携挙動を示します。"
+      },
+      "repair_skill": {
+        "title": "修復スキル",
+        "desc": "修復エフェクトと艦状態回復フローを示します。"
+      }
+    },
+    "code_summaries": {
+      "main_loop": "メインゲームループとフレーム更新順序を定義します。",
+      "scene_pool": "シーンのライフサイクル、登録、切替を管理します。",
+      "board": "ボード状態、グリッドロジック、命中判定を処理します。",
+      "ship": "艦船データモデルと実行時挙動を定義します。",
+      "ship_factory": "艦船インスタンスを生成し設定プリセットを適用します。",
+      "button": "ボタン操作と UI イベント処理を実装します。",
+      "bullet": "弾の移動と衝突解決を処理します。",
+      "effect": "視覚効果とゲームプレイ効果を実装します。",
+      "effect_manager": "エフェクトのスケジューリングと描画タイミングを調整します。",
+      "animation": "アニメーション状態、タイミング、遷移を制御します。",
+      "atlas": "テクスチャアトラス参照とスプライト領域を管理します。",
+      "resources_manager": "ゲームリソースの読み込みとキャッシュを管理します。",
+      "txt_to_texture": "実行時 UI 向けテキストテクスチャを生成します。",
+      "default": "WarShip のコアモジュール実装です。"
     },
     "code_tags": {
       "main_loop": "メインループ",
@@ -43,4 +81,3 @@
     }
   }
 }
-

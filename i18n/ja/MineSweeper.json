@@ -1,10 +1,10 @@
-﻿{
+{
   "MineSweeper": {
     "title": "MineSweeper プロジェクト",
     "intro": {
       "kicker": "C++ / ゲーム / EasyX",
       "title": "MineSweeper プロジェクト概要",
-      "desc": "This page presents the architecture of my MineSweeper project.",
+      "desc": "このページでは、MineSweeper プロジェクトの構成を紹介します。コアなゲームロジック、シーン遷移設計、そしてコードと実行デモによる実装詳細をまとめています。",
       "chips": {
         "map_generation": "マップ生成",
         "safe_area_expansion": "安全領域の展開",
@@ -12,7 +12,7 @@
       }
     },
     "summary": {
-      "text": "MineSweeper uses a modular C++ architecture with scene flow and board logic."
+      "text": "MineSweeper プロジェクトは C++ で実装され、メインループ・シーンクラス・シーンマネージャに基づくモジュール構成です。下のコードブロックは各モジュールの制御フローと責務を示し、動画では遷移・開示ルール・境界処理の挙動を確認できます。"
     },
     "stack": {
       "chip_scene_architecture": "シーンアーキテクチャ",
@@ -21,6 +21,42 @@
     "sections": {
       "demo_videos": "デモ動画",
       "core_code_blocks": "主要コードブロック"
+    },
+    "videos": {
+      "game_mode": {
+        "title": "ゲームモードデモ",
+        "desc": "モード選択と主要な操作フローを示します。"
+      },
+      "main_flow": {
+        "title": "メインゲームフロー",
+        "desc": "起動からプレイ開始までの一連の遷移を示します。"
+      },
+      "safe_cell": {
+        "title": "安全セル展開",
+        "desc": "空セル連結領域の自動展開挙動を示します。"
+      },
+      "safe_zone": {
+        "title": "安全ゾーン検証",
+        "desc": "ゾーン探索ロジックと境界条件処理を示します。"
+      }
+    },
+    "code": {
+      "main_loop": {
+        "title": "メインループ",
+        "desc": "入力処理、更新、描画、終了条件を制御します。"
+      },
+      "scene_class": {
+        "title": "シーンクラス",
+        "desc": "シーン挙動、盤面状態インターフェース、ゲーム状態遷移を定義します。"
+      },
+      "scene_manager": {
+        "title": "シーンマネージャ",
+        "desc": "シーン登録、切替、ライフサイクル管理を行います。"
+      },
+      "board": {
+        "title": "ボードモジュール",
+        "desc": "ボードデータ、地雷配置、セル状態操作を定義します。"
+      }
     },
     "video_tags": {
       "main_loop": "メインループ",
@@ -33,4 +69,3 @@
     }
   }
 }
-

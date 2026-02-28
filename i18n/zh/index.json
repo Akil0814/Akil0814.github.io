@@ -1,4 +1,4 @@
-﻿{
+{
   "index": {
     "title": "Akil0814",
     "hero": {
@@ -9,7 +9,7 @@
       "floating_profile_title": "个人资料",
       "floating_profile_desc": "技能 · 简历 · 邮箱",
       "floating_more_title": "更多关于我",
-      "floating_more_desc": "likes · hobbies ·"
+      "floating_more_desc": "喜好 · 兴趣 ·"
     },
     "stats": {
       "focus_label": "当前方向",
@@ -23,38 +23,66 @@
       "links": "链接"
     },
     "projects": {
-      "warships": { "badge_game": "游戏" },
-      "minesweeper": { "badge_game": "游戏" },
+      "warships": {
+        "badge_game": "游戏",
+        "title": "WarShips",
+        "desc": "一个战术海战原型项目，用于练习更工程化的架构和多种设计模式，以提升可维护性与可扩展性。"
+      },
+      "minesweeper": {
+        "badge_game": "游戏",
+        "title": "MineSweeper",
+        "desc": "我的第一个 OOP 结构项目，包含场景管理器，用于实现平滑场景切换和多种游戏模式。"
+      },
       "microcomputer": {
         "badge_hardware": "硬件",
         "badge_cpu": "CPU",
-        "badge_ttl": "74xx TTL"
+        "badge_ttl": "74xx TTL",
+        "title": "74xx 8 位微型计算机",
+        "desc": "由 74 系列 TTL 芯片搭建的图灵完备 8 位微型计算机，包含自定义 ISA、程序计数器/地址寄存器，以及简易内存与 I/O 系统。"
       },
-      "collegetour": { "badge_tool": "工具" },
-      "buttonsdl": { "badge_tool": "工具" }
+      "collegetour": {
+        "badge_tool": "工具",
+        "title": "CollegeTour",
+        "desc": "about this something."
+      },
+      "buttonsdl": {
+        "badge_tool": "工具",
+        "title": "ButtonForSDL",
+        "desc": "about this something."
+      }
     },
     "about": {
       "profile_title": "个人资料",
       "name_label": "姓名：",
+      "name_value": "Akil/Akeli",
       "role_label": "身份：",
+      "role_value": "学生",
       "main_label": "方向：",
+      "main_value": "C++ / 图形学 / 系统",
       "now_label": "现在：",
+      "now_value": "学习 OpenGL。",
       "next_label": "下一步：",
+      "next_value": "软件光栅器。",
       "skills_title": "技能",
       "summary_title": "简介",
+      "summary_text": "我是一个专注 C++ 和图形学的计算机专业学生。我喜欢构建清晰的玩法系统和可复用模块，也更偏向理解底层发生了什么，因为我不喜欢在不了解原理时直接调用。现在我正在学习 OpenGL 以夯实图形学基础，下一步目标是编写软件光栅器，从头到尾理解渲染管线。",
       "skills": {
-        "opengl_learning": "OpenGL(学习中)",
-        "chinese_native": "中文(母语)",
-        "japanese_beginner": "日语(初学)",
+        "opengl_learning": "OpenGL（学习中）",
+        "chinese_native": "中文（母语）",
+        "japanese_beginner": "日语（初学）",
         "anime_expert": "动漫专家"
       }
     },
     "links": {
+      "github_k": "GitHub",
+      "github_v": "@Akil0814",
       "email_k": "邮箱",
       "resume_k": "简历",
+      "resume_v": "resume(don't have it yet).pdf",
+      "bilibili_k": "BiliBili",
+      "bilibili_v": "AKIL081",
       "placeholder_k": "敬请期待",
       "placeholder_v": "(暂未提供)"
     }
   }
 }
-

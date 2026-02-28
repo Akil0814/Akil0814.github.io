@@ -1,10 +1,10 @@
-﻿{
+{
   "MineSweeper": {
     "title": "MineSweeper 项目",
     "intro": {
       "kicker": "C++ / 游戏 / EasyX",
       "title": "MineSweeper 项目概览",
-      "desc": "This page presents the architecture of my MineSweeper project.",
+      "desc": "本页展示我的 MineSweeper 项目架构，包括核心玩法逻辑、场景流转设计，以及通过代码和运行演示呈现的实现细节。",
       "chips": {
         "map_generation": "地图生成",
         "safe_area_expansion": "安全区扩展",
@@ -12,7 +12,7 @@
       }
     },
     "summary": {
-      "text": "MineSweeper uses a modular C++ architecture with scene flow and board logic."
+      "text": "MineSweeper 项目使用 C++ 实现，采用基于主循环、场景类和场景管理器的模块化结构。下方代码块展示了核心控制流和各模块职责，视频演示了游戏切换、翻格规则和边界处理行为。"
     },
     "stack": {
       "chip_scene_architecture": "场景架构",
@@ -21,6 +21,42 @@
     "sections": {
       "demo_videos": "演示视频",
       "core_code_blocks": "核心代码块"
+    },
+    "videos": {
+      "game_mode": {
+        "title": "模式演示",
+        "desc": "展示模式选择和主要交互流程。"
+      },
+      "main_flow": {
+        "title": "主流程演示",
+        "desc": "展示从启动到进入游戏的完整流程。"
+      },
+      "safe_cell": {
+        "title": "安全格扩展",
+        "desc": "展示空白连通区域的自动扩展行为。"
+      },
+      "safe_zone": {
+        "title": "安全区验证",
+        "desc": "展示区域搜索逻辑与边界条件处理。"
+      }
+    },
+    "code": {
+      "main_loop": {
+        "title": "主循环",
+        "desc": "控制输入处理、更新步骤、渲染与退出条件。"
+      },
+      "scene_class": {
+        "title": "场景类",
+        "desc": "定义场景行为、棋盘状态接口与游戏状态切换。"
+      },
+      "scene_manager": {
+        "title": "场景管理器",
+        "desc": "负责场景注册、切换与生命周期管理。"
+      },
+      "board": {
+        "title": "棋盘模块",
+        "desc": "定义棋盘数据、地雷放置与格子状态操作。"
+      }
     },
     "video_tags": {
       "main_loop": "主循环",
@@ -33,4 +69,3 @@
     }
   }
 }
-

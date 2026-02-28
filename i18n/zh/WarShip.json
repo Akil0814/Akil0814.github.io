@@ -1,10 +1,10 @@
-﻿{
+{
   "WarShip": {
     "title": "WarShip 项目 - Akil0814",
     "intro": {
       "kicker": "C++ / SDL / 战术海战游戏",
       "title": "WarShip 项目概览",
-      "desc": "This page presents the core implementation of my WarShip project.",
+      "desc": "本页通过演示视频和源码片段展示我的 WarShip 项目核心实现，包括场景流程、棋盘逻辑、战斗特效和资源系统。",
       "chips": {
         "ship_placement": "舰船部署",
         "skill_system": "技能系统",
@@ -13,7 +13,7 @@
       }
     },
     "summary": {
-      "text": "WarShip is a turn-based naval prototype with scene, board, and effect systems."
+      "text": "WarShip 是一个基于 C++ 的回合制海战策略原型。下方模块涵盖场景切换、棋盘与舰船数据模型、特效渲染和游戏主循环。演示视频展示了部署、攻击和技能释放等实际交互。"
     },
     "stack": {
       "chip_scene_architecture": "场景架构",
@@ -22,6 +22,44 @@
     "sections": {
       "demo_videos": "演示视频",
       "core_code_blocks": "核心代码块"
+    },
+    "videos": {
+      "start_shopping": {
+        "title": "开局商店",
+        "desc": "展示战前商店流程和准备阶段。"
+      },
+      "ship_placement": {
+        "title": "舰船部署",
+        "desc": "展示舰船部署规则和棋盘放置交互。"
+      },
+      "attack_action": {
+        "title": "攻击动作",
+        "desc": "展示核心攻击执行与战斗反馈。"
+      },
+      "detect_focus_fire": {
+        "title": "探测 + 集火",
+        "desc": "展示探测与集火技能联动行为。"
+      },
+      "repair_skill": {
+        "title": "修复技能",
+        "desc": "展示修复特效与舰船状态恢复流程。"
+      }
+    },
+    "code_summaries": {
+      "main_loop": "定义主游戏循环与逐帧更新顺序。",
+      "scene_pool": "管理场景生命周期、注册与切换。",
+      "board": "处理棋盘状态、网格逻辑与命中判定。",
+      "ship": "定义舰船数据模型与运行时行为。",
+      "ship_factory": "构建舰船实例并应用配置模板。",
+      "button": "实现按钮交互与 UI 事件处理。",
+      "bullet": "处理弹体运动与碰撞结算。",
+      "effect": "实现视觉与玩法特效。",
+      "effect_manager": "协调特效调度与渲染时序。",
+      "animation": "控制动画状态、时序与过渡。",
+      "atlas": "管理纹理图集查找与精灵区域。",
+      "resources_manager": "加载并缓存游戏资源。",
+      "txt_to_texture": "为运行时 UI 生成文字纹理。",
+      "default": "WarShip 核心模块实现。"
     },
     "code_tags": {
       "main_loop": "主循环",
@@ -43,4 +81,3 @@
     }
   }
 }
-
