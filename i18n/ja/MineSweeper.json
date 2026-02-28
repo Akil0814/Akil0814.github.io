@@ -1,35 +1,36 @@
 ﻿{
   "MineSweeper": {
-    "title": "MineSweeper \u30d7\u30ed\u30b8\u30a7\u30af\u30c8",
+    "title": "MineSweeper プロジェクト",
     "intro": {
-      "kicker": "C++ / \u30b2\u30fc\u30e0 / EasyX",
-      "title": "MineSweeper \u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u6982\u8981",
+      "kicker": "C++ / ゲーム / EasyX",
+      "title": "MineSweeper プロジェクト概要",
       "desc": "This page presents the architecture of my MineSweeper project.",
       "chips": {
-        "map_generation": "\u30de\u30c3\u30d7\u751f\u6210",
-        "safe_area_expansion": "\u5b89\u5168\u9818\u57df\u306e\u5c55\u958b",
-        "scene_management": "\u30b7\u30fc\u30f3\u7ba1\u7406"
+        "map_generation": "マップ生成",
+        "safe_area_expansion": "安全領域の展開",
+        "scene_management": "シーン管理"
       }
     },
     "summary": {
       "text": "MineSweeper uses a modular C++ architecture with scene flow and board logic."
     },
     "stack": {
-      "chip_scene_architecture": "\u30b7\u30fc\u30f3\u30a2\u30fc\u30ad\u30c6\u30af\u30c1\u30e3",
-      "chip_game_loop": "\u30b2\u30fc\u30e0\u30eb\u30fc\u30d7"
+      "chip_scene_architecture": "シーンアーキテクチャ",
+      "chip_game_loop": "ゲームループ"
     },
     "sections": {
-      "demo_videos": "\u30c7\u30e2\u52d5\u753b",
-      "core_code_blocks": "\u4e3b\u8981\u30b3\u30fc\u30c9\u30d6\u30ed\u30c3\u30af"
+      "demo_videos": "デモ動画",
+      "core_code_blocks": "主要コードブロック"
     },
     "video_tags": {
-      "main_loop": "\u30e1\u30a4\u30f3\u30eb\u30fc\u30d7",
-      "scene_class": "\u30b7\u30fc\u30f3\u30af\u30e9\u30b9",
-      "scene_manager": "\u30b7\u30fc\u30f3\u30de\u30cd\u30fc\u30b8\u30e3",
-      "board": "\u30dc\u30fc\u30c9"
+      "main_loop": "メインループ",
+      "scene_class": "シーンクラス",
+      "scene_manager": "シーンマネージャ",
+      "board": "ボード"
     },
     "footer": {
-      "page": "MineSweeper \u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u30da\u30fc\u30b8"
+      "page": "MineSweeper プロジェクトページ"
     }
   }
 }
+

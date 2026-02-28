@@ -1,35 +1,36 @@
 ﻿{
   "MineSweeper": {
-    "title": "MineSweeper \u9879\u76ee",
+    "title": "MineSweeper 项目",
     "intro": {
-      "kicker": "C++ / \u6e38\u620f / EasyX",
-      "title": "MineSweeper \u9879\u76ee\u6982\u89c8",
+      "kicker": "C++ / 游戏 / EasyX",
+      "title": "MineSweeper 项目概览",
       "desc": "This page presents the architecture of my MineSweeper project.",
       "chips": {
-        "map_generation": "\u5730\u56fe\u751f\u6210",
-        "safe_area_expansion": "\u5b89\u5168\u533a\u6269\u5c55",
-        "scene_management": "\u573a\u666f\u7ba1\u7406"
+        "map_generation": "地图生成",
+        "safe_area_expansion": "安全区扩展",
+        "scene_management": "场景管理"
       }
     },
     "summary": {
       "text": "MineSweeper uses a modular C++ architecture with scene flow and board logic."
     },
     "stack": {
-      "chip_scene_architecture": "\u573a\u666f\u67b6\u6784",
-      "chip_game_loop": "\u6e38\u620f\u5faa\u73af"
+      "chip_scene_architecture": "场景架构",
+      "chip_game_loop": "游戏循环"
     },
     "sections": {
-      "demo_videos": "\u6f14\u793a\u89c6\u9891",
-      "core_code_blocks": "\u6838\u5fc3\u4ee3\u7801\u5757"
+      "demo_videos": "演示视频",
+      "core_code_blocks": "核心代码块"
     },
     "video_tags": {
-      "main_loop": "\u4e3b\u5faa\u73af",
-      "scene_class": "\u573a\u666f\u7c7b",
-      "scene_manager": "\u573a\u666f\u7ba1\u7406\u5668",
-      "board": "\u68cb\u76d8"
+      "main_loop": "主循环",
+      "scene_class": "场景类",
+      "scene_manager": "场景管理器",
+      "board": "棋盘"
     },
     "footer": {
-      "page": "MineSweeper \u9879\u76ee\u9875"
+      "page": "MineSweeper 项目页"
     }
   }
 }
+

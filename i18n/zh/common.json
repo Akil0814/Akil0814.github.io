@@ -1,49 +1,50 @@
 ﻿{
   "common": {
     "lang": {
-      "select": "\u8bed\u8a00\u9009\u62e9",
-      "zh": "\u4e2d\u6587",
-      "ja": "\u65e5\u672c\u8a9e",
+      "select": "语言选择",
+      "zh": "中文",
+      "ja": "日本語",
       "en": "English"
     },
     "nav": {
-      "home": "\u9996\u9875",
-      "projects": "\u9879\u76ee",
-      "about": "\u5173\u4e8e",
-      "links": "\u94fe\u63a5",
-      "videos": "\u89c6\u9891",
-      "code": "\u4ee3\u7801"
+      "home": "首页",
+      "projects": "项目",
+      "about": "关于",
+      "links": "链接",
+      "videos": "视频",
+      "code": "代码"
     },
     "controls": {
-      "fx": "\u7279\u6548",
-      "theme": "\u4e3b\u9898"
+      "fx": "特效",
+      "theme": "主题"
     },
     "sections": {
-      "project_summary": "\u9879\u76ee\u6982\u89c8",
-      "tech_stack": "\u6280\u672f\u6808",
-      "repo_download": "\u4ed3\u5e93\u4e0e\u4e0b\u8f7d"
+      "project_summary": "项目概览",
+      "tech_stack": "技术栈",
+      "repo_download": "仓库与下载"
     },
     "actions": {
-      "repository": "\u4ee3\u7801\u4ed3\u5e93",
-      "download_zip": "\u4e0b\u8f7d ZIP",
-      "repo": "\u4ed3\u5e93",
-      "more_info": "\u66f4\u591a\u4fe1\u606f",
-      "about_me": "\u5173\u4e8e\u6211"
+      "repository": "代码仓库",
+      "download_zip": "下载 ZIP",
+      "repo": "仓库",
+      "more_info": "更多信息",
+      "about_me": "关于我"
     },
     "theme": {
-      "preview_alt": "\u4e3b\u9898\u9884\u89c8\u56fe"
+      "preview_alt": "主题预览图"
     },
     "code": {
-      "view_source": "\u67e5\u770b\u6e90\u7801",
-      "copy": "\u590d\u5236",
-      "copied": "\u5df2\u590d\u5236",
-      "copy_failed": "\u5931\u8d25"
+      "view_source": "查看源码",
+      "copy": "复制",
+      "copied": "已复制",
+      "copy_failed": "失败"
     },
     "misc": {
-      "failed_load_code": "\u4ee3\u7801\u52a0\u8f7d\u5931\u8d25\uff1a{path}"
+      "failed_load_code": "代码加载失败：{path}"
     },
     "footer": {
-      "built_with": "\u57fa\u4e8e HTML/CSS/JS \u6784\u5efa"
+      "built_with": "基于 HTML/CSS/JS 构建"
     }
   }
 }
+
