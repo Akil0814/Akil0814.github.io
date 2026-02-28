@@ -38,11 +38,13 @@
       showLineNumbers: true,
       copyButton: true,
       sourceUrl: "",
+      visibleLines: 16,
       ...options,
     };
 
     const rootElement = document.createElement("section");
     rootElement.className = "cpp-block";
+    rootElement.style.setProperty("--cpp-visible-lines", String(resolvedOptions.visibleLines));
 
     const topBarElement = document.createElement("div");
     topBarElement.className = "cpp-block__bar";

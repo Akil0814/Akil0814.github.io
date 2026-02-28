@@ -34,3 +34,5 @@ Ship* ShipFactory::creat_ship(ShipType type,Board* board)
 
 	return new_ship;
 }
+
+...

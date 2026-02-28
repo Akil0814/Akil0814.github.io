@@ -2,21 +2,21 @@
   const codeBlockEntries = [
     {
       targetSelector: "#code-main-loop",
-      filePath: "../snippets/MineSweeper_main_lop.cpp",
+      filePath: "../snippets/MineSweepr/MineSweeper_main_lop.cpp",
       title: "MineSweeper_main_lop.cpp",
-      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweeper_main_lop.cpp",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweepr/MineSweeper_main_lop.cpp",
     },
     {
       targetSelector: "#code-scene-class",
-      filePath: "../snippets/MineSweeper_scene_class.cpp",
+      filePath: "../snippets/MineSweepr/MineSweeper_scene_class.cpp",
       title: "MineSweeper_scene_class.cpp",
-      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweeper_scene_class.cpp",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweepr/MineSweeper_scene_class.cpp",
     },
     {
       targetSelector: "#code-scene-manager",
-      filePath: "../snippets/MineSweeper_scene_manager.cpp",
+      filePath: "../snippets/MineSweepr/MineSweeper_scene_manager.cpp",
       title: "MineSweeper_scene_manager.cpp",
-      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweeper_scene_manager.cpp",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweepr/MineSweeper_scene_manager.cpp",
     },
   ];
 
@@ -28,6 +28,7 @@
           showLineNumbers: true,
           copyButton: true,
           sourceUrl: entry.sourceUrl,
+          visibleLines: 20,
         });
       } catch (error) {
         const targetElement = document.querySelector(entry.targetSelector);

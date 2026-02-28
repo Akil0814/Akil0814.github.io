@@ -26,3 +26,28 @@ private:
 	SDL_Point play_pos = { 0 };
 	SDL_Rect play_rect = { 0 };
 };
+
+std::unique_ptr<Effect> Effect::clone()const
+{
+	auto clone_effect = std::make_unique<Effect>();
+
+	clone_effect->set_frame(texture_list);
+	clone_effect->set_interval(interval);
+	clone_effect->set_loop(is_loop);
+	clone_effect->set_on_finished(on_finished);
+
+	if (have_sound)
+		clone_effect->set_sound_effect(sound_effect);
+
+	return clone_effect;
+}
+
+void Effect::on_update(double delta)
+{
+	if(idx_frame==0 && have_sound)
+		Mix_PlayChannel(-1, sound_effect, 0);
+
+	Animation::on_update(delta);
+}
+
+...

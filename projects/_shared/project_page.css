@@ -126,6 +126,8 @@ body.fx-off .theme-photo-card {
 }
 
 .cpp-block {
+  --cpp-visible-lines: 16;
+  --cpp-line-height-px: 19.2px;
   border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
@@ -187,6 +189,8 @@ body.fx-off .theme-photo-card {
 .cpp-block__codewrap {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
+  max-height: calc(var(--cpp-visible-lines) * var(--cpp-line-height-px) + 24px);
+  overflow: auto;
 }
 
 .cpp-block__lines {
@@ -218,11 +222,12 @@ body.fx-off .theme-photo-card {
 .cpp-block pre[class*="language-"] {
   margin: 0;
   padding: 12px 14px;
-  overflow: auto;
+  overflow: visible;
   font-family: "JetBrains Mono", monospace;
   font-size: 12px;
   line-height: 1.6;
   color: rgba(226,232,240,.96);
+  min-width: max-content;
 }
 
 .cpp-block code {

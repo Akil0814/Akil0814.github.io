@@ -32,3 +32,5 @@ Scene* ScenePool::get_scene(SceneType type)
 
 	return nullptr;
 }
+
+...
