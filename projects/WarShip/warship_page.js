@@ -27,7 +27,7 @@
 
   const videoEntries = [
     {
-      fileName: "WarShip_start_shoping.webm",
+      fileName: "WarShip_start_shopping.webm",
       title: "Start Shopping",
       description: "Shows pre-battle shop flow and preparation phase.",
       relatedCodeFiles: [
@@ -47,7 +47,7 @@
       ],
     },
     {
-      fileName: "WarShip_attak.webm",
+      fileName: "WarShip_attack.webm",
       title: "Attack Action",
       description: "Shows core attack execution and battle feedback.",
       relatedCodeFiles: [
@@ -57,7 +57,7 @@
       ],
     },
     {
-      fileName: "WarShip_skill_detect_and_focu_fire.webm",
+      fileName: "WarShip_skill_detect_and_focus_fire.webm",
       title: "Detect + Focus Fire",
       description: "Shows detection and focused-fire skill combo behavior.",
       relatedCodeFiles: [
@@ -67,7 +67,7 @@
       ],
     },
     {
-      fileName: "WarShip_skill_repear.webm",
+      fileName: "WarShip_skill_repair.webm",
       title: "Repair Skill",
       description: "Shows repair effect and ship state recovery flow.",
       relatedCodeFiles: [
