@@ -18,6 +18,12 @@
       title: "MineSweeper_scene_manager.cpp",
       sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweepr/MineSweeper_scene_manager.cpp",
     },
+    {
+      targetSelector: "#code-board",
+      filePath: "../snippets/MineSweepr/MineSweeper_board.cpp",
+      title: "MineSweeper_board.cpp",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweepr/MineSweeper_board.cpp",
+    },
   ];
 
   async function loadCodeBlocks() {
