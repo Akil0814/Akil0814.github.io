@@ -2,17 +2,17 @@
   const codeEntries = [
     "WarShip_main_loop.cpp",
     "WarShip_scene_pool.cpp",
-    "WarShip_board.cpp",
+    "WarShip_Board.cpp",
     "WarShip_ship.cpp",
     "WarShip_ship_factory.cpp",
-    "WarShip_button.cpp",
+    "WarShip_Button.cpp",
     "WarShip_bullet.cpp",
     "WarShip_effect.cpp",
     "WarShip_effect_manager.cpp",
     "WarShip_animation.cpp",
     "WarShip_atlas.cpp",
     "WarShip_resources_manager.cpp",
-    "WarShip_txt_to_texture.cpp",
+    "WarShip_Txt_to_Texture.cpp",
   ].map((fileName, index) => ({
     fileName,
     targetSelector: `#code-slot-${index + 1}`,
@@ -31,9 +31,9 @@
       title: "Start Shopping",
       description: "Shows pre-battle shop flow and preparation phase.",
       relatedCodeFiles: [
-        "WarShip_button.cpp",
+        "WarShip_Button.cpp",
         "WarShip_resources_manager.cpp",
-        "WarShip_txt_to_texture.cpp",
+        "WarShip_Txt_to_Texture.cpp",
       ],
     },
     {
@@ -41,7 +41,7 @@
       title: "Ship Placement",
       description: "Shows ship deployment rules and board placement interactions.",
       relatedCodeFiles: [
-        "WarShip_board.cpp",
+        "WarShip_Board.cpp",
         "WarShip_ship.cpp",
         "WarShip_ship_factory.cpp",
       ],
@@ -52,7 +52,7 @@
       description: "Shows core attack execution and battle feedback.",
       relatedCodeFiles: [
         "WarShip_main_loop.cpp",
-        "WarShip_board.cpp",
+        "WarShip_Board.cpp",
         "WarShip_bullet.cpp",
       ],
     },
