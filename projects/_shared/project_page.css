@@ -159,7 +159,28 @@ body.fx-off .theme-photo-card {
   cursor: pointer;
 }
 
+.cpp-block__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cpp-block__source {
+  border: 1px solid rgba(226,232,240,.25);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(226,232,240,.92);
+  padding: 3px 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  text-decoration: none;
+}
+
 .cpp-block__copy:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.cpp-block__source:hover {
   background: rgba(255,255,255,.08);
 }
 
@@ -230,6 +251,11 @@ body.fx-off .theme-photo-card {
 }
 
 [data-theme="light"] .cpp-block__copy {
+  border-color: rgba(27,44,64,.3);
+  color: rgba(27,44,64,.94);
+}
+
+[data-theme="light"] .cpp-block__source {
   border-color: rgba(27,44,64,.3);
   color: rgba(27,44,64,.94);
 }

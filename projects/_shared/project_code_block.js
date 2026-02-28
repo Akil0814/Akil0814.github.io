@@ -37,6 +37,7 @@
       title: "C++",
       showLineNumbers: true,
       copyButton: true,
+      sourceUrl: "",
       ...options,
     };
 
@@ -50,6 +51,19 @@
     titleElement.className = "cpp-block__title";
     titleElement.textContent = resolvedOptions.title;
     topBarElement.appendChild(titleElement);
+
+    const actionsElement = document.createElement("div");
+    actionsElement.className = "cpp-block__actions";
+
+    if (resolvedOptions.sourceUrl) {
+      const sourceLinkElement = document.createElement("a");
+      sourceLinkElement.className = "cpp-block__source";
+      sourceLinkElement.href = resolvedOptions.sourceUrl;
+      sourceLinkElement.target = "_blank";
+      sourceLinkElement.rel = "noreferrer";
+      sourceLinkElement.textContent = "View Source";
+      actionsElement.appendChild(sourceLinkElement);
+    }
 
     if (resolvedOptions.copyButton) {
       const copyButtonElement = document.createElement("button");
@@ -68,7 +82,11 @@
           }, 900);
         }
       });
-      topBarElement.appendChild(copyButtonElement);
+      actionsElement.appendChild(copyButtonElement);
+    }
+
+    if (actionsElement.childElementCount > 0) {
+      topBarElement.appendChild(actionsElement);
     }
 
     const codeWrapElement = document.createElement("div");
