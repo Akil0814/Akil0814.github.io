@@ -14,8 +14,9 @@
   <link rel="stylesheet" href="../../css/tokens.css">
   <link rel="stylesheet" href="../../css/base.css">
   <link rel="stylesheet" href="../../css/layout.css">
-  <link rel="stylesheet" href="../_shared/project_page.css">
-  <link rel="stylesheet" href="./warship_page.css">
+  <link id="prismThemeLink" rel="stylesheet" href="../../assets/prism/prism-dark.css">
+  <link rel="stylesheet" href="../_shared/project_page.css?v=20260228">
+  <link rel="stylesheet" href="./warship_page.css?v=20260227b">
 </head>
 <body>
   <header class="nav">
@@ -28,12 +29,12 @@
 
     <nav class="nav__right">
       <a href="../../index.html">Home</a>
-      <a href="#summary">Summary</a>
-      <a href="#links">Links</a>
+      <a href="#videos">Videos</a>
+      <a href="#code">Code</a>
 
-      <select id="langSelect" class="lang-select" aria-label="Language select">
-        <option value="zh">中文</option>
-        <option value="ja">日本語</option>
+            <select id="langSelect" class="lang-select" aria-label="Language select">
+        <option value="zh">&#20013;&#25991;</option>
+        <option value="ja">&#26085;&#26412;&#35486;</option>
         <option value="en" selected>English</option>
       </select>
       <button id="toggleFx" class="btn" type="button" title="Toggle visual effects">FX</button>
@@ -43,33 +44,34 @@
 
   <main class="wrap">
     <section class="hero">
-      <p class="hero__kicker">C++ / SDL / Tactical Game</p>
+      <p class="hero__kicker">C++ / SDL / Tactical Naval Game</p>
       <h1 class="hero__title">WarShip Project Overview</h1>
       <p class="hero__desc">
-        This page is now prepared with the shared project-page template.
-        Detailed gameplay media and code sections will be added in the next update.
+        This page presents the core implementation of my WarShip project through gameplay videos
+        and source snippets, including scene flow, board logic, combat effects, and resource systems.
       </p>
       <div class="hero__chips">
-        <span class="chip">Battle Grid</span>
-        <span class="chip">Turn Strategy</span>
-        <span class="chip">Rendering Pipeline</span>
+        <span class="chip">Ship Placement</span>
+        <span class="chip">Skill System</span>
+        <span class="chip">Scene Pool</span>
+        <span class="chip">Effect Pipeline</span>
       </div>
     </section>
 
-    <section id="summary" class="section">
+    <section class="section">
       <div class="section__head">
         <h2>Project Summary</h2>
       </div>
       <div class="panel">
         <p>
-          WarShip is a tactical naval game prototype focused on gameplay flow, input handling,
-          and rendering architecture. This page is intentionally lightweight for now and shares
-          the same reusable structure as other project pages.
+          WarShip is a turn-based naval strategy game prototype built with C++. The modules below
+          cover scene switching, board and ship data models, effect rendering, and gameplay loops.
+          Demo videos show real in-game interactions such as placement, attack, and skill execution.
         </p>
       </div>
     </section>
 
-    <section id="links" class="section section--split">
+    <section class="section section--split">
       <article class="panel">
         <div class="section__head">
           <h2>Tech Stack</h2>
@@ -77,16 +79,49 @@
         <div class="hero__chips">
           <span class="chip">C++</span>
           <span class="chip">SDL</span>
-          <span class="chip">Game Loop</span>
+          <span class="chip">STL</span>
+          <span class="chip">Scene Architecture</span>
+          <span class="chip">2D Rendering</span>
         </div>
       </article>
+
       <article class="panel">
         <div class="section__head">
-          <h2>Repository</h2>
+          <h2>Repo + Download</h2>
         </div>
+        <p>
+          Source code and packaged files are available through the project repository.
+        </p>
         <div class="action-row">
           <a class="btn btn--link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer">Repository</a>
+          <a class="btn btn--link" href="https://github.com/Akil0814/WarShips/archive/refs/heads/main.zip" target="_blank" rel="noreferrer">Download ZIP</a>
         </div>
+      </article>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="section__head">
+        <h2>Demo Videos (<span id="videoCount">0</span>)</h2>
+      </div>
+      <div id="videoGrid" class="video-grid"></div>
+    </section>
+
+    <section id="code" class="section">
+      <div class="section__head">
+        <h2>Core Code Blocks (<span id="codeCount">0</span>)</h2>
+      </div>
+      <div id="codeList" class="code-list"></div>
+    </section>
+
+    <section class="section">
+      <article class="theme-photo-card">
+        <img
+          src="../../image/Arcueid_Bar.png"
+          data-src-dark="../../image/Arcueid_Bar.png"
+          data-src-light="../../image/The_Stranger_In_The_Mirror_T.png"
+          alt="Theme preview card"
+          loading="lazy"
+        />
       </article>
     </section>
   </main>
@@ -95,7 +130,9 @@
     <p><span class="mono">&copy; <span id="year"></span> Akil</span> <span class="dot">&middot;</span> <span class="mono">WarShip Project Page</span></p>
   </footer>
 
-  <script src="../_shared/project_page.js"></script>
-  <script src="./warship_page.js"></script>
+  <script src="../../assets/prism/prism.js"></script>
+  <script src="../_shared/project_code_block.js?v=20260228"></script>
+  <script src="../_shared/project_page.js?v=20260228"></script>
+  <script src="./warship_page.js?v=20260227b"></script>
 </body>
 </html>
