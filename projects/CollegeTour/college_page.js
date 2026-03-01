@@ -10,36 +10,40 @@
 
   const codeEntries = [
     {
-      fileName: "CollegeTour_data_manager_class.h",
+      fileName: "data_manager_class.h",
       summaryKey: "CollegeTour.code.data_manager_class.desc",
       summaryFallback: "DataManager class contract, members, and backend-facing interfaces.",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.h",
     },
     {
-      fileName: "CollegeTour_data_manager_init.cpp",
+      fileName: "data_manager_init.cpp",
       summaryKey: "CollegeTour.code.data_manager_init.desc",
       summaryFallback: "Initializes core data structures and startup loading path.",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.cpp",
     },
     {
-      fileName: "CollegeTour_data_manager_read_dynamic.cpp",
+      fileName: "data_manager_read_dynamic.cpp",
       summaryKey: "CollegeTour.code.data_manager_read_dynamic.desc",
       summaryFallback: "Reads runtime data from SQLite-backed storage and maps it into in-memory state.",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.cpp",
     },
     {
-      fileName: "CollegeTour_data_manager_reset_database.cpp",
+      fileName: "data_manager_reset_database.cpp",
       summaryKey: "CollegeTour.code.data_manager_reset_database.desc",
       summaryFallback: "Resets backend data state and rebuilds required base records.",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.cpp",
     },
     {
-      fileName: "CollegeTour_login_XOR.cpp",
+      fileName: "login_XOR.cpp",
       summaryKey: "CollegeTour.code.login_xor.desc",
       summaryFallback: "Administrator login verification flow and XOR-based credential processing.",
+      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/login_window.cpp",
     },
   ].map((entry, index) => ({
     ...entry,
     targetSelector: `#code-slot-${index + 1}`,
     cardId: `code-card-${index + 1}`,
     filePath: `../snippets/CollegeTour/${entry.fileName}`,
-    sourceUrl: `https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/CollegeTour/${entry.fileName}`,
   }));
 
   function renderCodeCards() {
