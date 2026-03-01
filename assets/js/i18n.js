@@ -14,6 +14,9 @@
     dict: {},
     enDict: {},
   };
+  const JAPANESE_NOTICE_KEY = "ja_notice_shown_v1";
+  const JAPANESE_NOTICE_TEXT =
+    "日本語はまだ学習中で、十分に上手ではありません。多くの日本語テキストはAI翻訳を使用しています。誤りがあれば、あらかじめお詫びします。";
 
   const bundleCache = new Map();
 
@@ -165,6 +168,18 @@
     return "en";
   }
 
+  function maybeShowJapaneseNotice(language) {
+    if (language !== "ja") return;
+
+    try {
+      if (localStorage.getItem(JAPANESE_NOTICE_KEY) === "1") return;
+      window.alert(JAPANESE_NOTICE_TEXT);
+      localStorage.setItem(JAPANESE_NOTICE_KEY, "1");
+    } catch (_) {
+      // Ignore localStorage or alert restrictions.
+    }
+  }
+
   function translate(key, params, fallbackText, options = {}) {
     const resolvedFromActive = getNestedValue(state.dict, key);
     const resolvedFromEnglish = getNestedValue(state.enDict, key);
@@ -229,6 +244,7 @@
     state.page = pageName;
     state.dict = bundle.merged;
     state.enDict = bundle.english;
+    maybeShowJapaneseNotice(normalizedLanguage);
 
     const translatableElements = document.querySelectorAll("[data-i18n]");
     translatableElements.forEach((element) => applyElementTranslation(element));
