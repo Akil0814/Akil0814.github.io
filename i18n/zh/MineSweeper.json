@@ -33,7 +33,7 @@
         "切换时严格执行 on_exit → 指针切换 → on_enter，并把输入/更新/绘制统一转发,确保逻辑清楚且有一定的可扩展性<br>",
 
         " <h4>事件处理与 UI 控件（Button）</h4> Button 内部维护一个 RECT region 作为点击区域，状态分为 Idle/Hovered/Pushed ",
-        "根据 WM_MOUSEMOVE/WM_LBUTTONDOWN/WM_LBUTTONUP 更新 点击判定不是“按下就算”，而是 按下后在 LButtonUp 才置 is_clicked=true 避免误触，",   
+        "根据鼠标事件状体更新 点击判定不是“按下就算”，而是 按下后在 LButtonUp 才置 is_clicked=true 避免误触，",   
         "使用 will_hold 作为“保持按下外观”的机制，用于难度选择的高亮<br>",
 
         " <h4>首击安全与布雷策略（延迟生成）</h4> 游戏并非启动即生成雷，而是等到第一次左键点击时调用 board.set_mine(y_index, x_index) ",
