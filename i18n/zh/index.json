@@ -2,14 +2,14 @@
   "index": {
     "title": "Akil0814",
     "hero": {
-      "subtitle_intro": "我会的：",
-      "subtitle_line2": "我目前正在学习 OpenGL，下一步目标是实现软件光栅器。",
-      "subtitle_line3": "之后我会重构 WarShips 项目，并开发新的 SDL 2D 横版战斗游戏。",
+      "subtitle_intro": "技术栈：",
+      "subtitle_line2": "目前正在学习 OpenGL，下一步的学习计划是实现一个软光栅。",
+      "subtitle_line3": "之后有计划重构 WarShips 项目，并计划开发新的 SDL 2D 横版战斗游戏。",
       "subtitle_line4": "如果你想合作，欢迎联系我。",
       "floating_profile_title": "个人资料",
       "floating_profile_desc": "技能 · 简历 · 邮箱",
       "floating_more_title": "更多关于我",
-      "floating_more_desc": "喜好 · 兴趣 ·"
+      "floating_more_desc": "喜好 · 兴趣"
     },
     "stats": {
       "focus_label": "当前方向",
@@ -26,12 +26,12 @@
       "warships": {
         "badge_game": "游戏",
         "title": "WarShips",
-        "desc": "一个战术海战原型项目，用于练习更工程化的架构和多种设计模式，以提升可维护性与可扩展性。"
+        "desc": "一个战术海战棋项目，用于练习更工程化的架构和多种设计模式，以提升可维护性与可扩展性"
       },
       "minesweeper": {
         "badge_game": "游戏",
         "title": "MineSweeper",
-        "desc": "我的第一个 OOP 结构项目，包含场景管理器，用于实现平滑场景切换和多种游戏模式。"
+        "desc": "第一个尝试构建的OOP项目，使用场景管理器统一驱动与切换场景，包含按钮类，棋盘类等"
       },
       "microcomputer": {
         "badge_hardware": "硬件",
@@ -43,12 +43,12 @@
       "collegetour": {
         "badge_tool": "工具",
         "title": "CollegeTour",
-        "desc": "about this something."
+        "desc": "数据结构课的小组项目，我负责实现基于SQLite的DataManager与管理员登录凭证模块."
       },
       "buttonsdl": {
         "badge_tool": "工具",
         "title": "ButtonForSDL",
-        "desc": "about this something."
+        "desc": "由项目中抽象出的Button类，进行了一系列重构让交互逻辑更清晰，提高可维护性."
       }
     },
     "about": {
@@ -56,21 +56,26 @@
       "name_label": "姓名：",
       "name_value": "Akil/Akeli",
       "role_label": "身份：",
-      "role_value": "学生",
+      "role_value": "在读学生",
+
+      "location_label": "现居地：",
+      "location_value": "美国 加州 OC",
+
       "main_label": "方向：",
-      "main_value": "C++ / 图形学 / 系统",
-      "now_label": "现在：",
-      "now_value": "学习 OpenGL。",
+      "main_value": "C++ / 图形学 ",
+      "now_label": "当前：",
+      "now_value": "OpenGL学习中",
       "next_label": "下一步：",
-      "next_value": "软件光栅器。",
+      "next_value": "手写软光栅",
       "skills_title": "技能",
       "summary_title": "简介",
-      "summary_text": "我是一个专注 C++ 和图形学的计算机专业学生。我喜欢构建清晰的玩法系统和可复用模块，也更偏向理解底层发生了什么，因为我不喜欢在不了解原理时直接调用。现在我正在学习 OpenGL 以夯实图形学基础，下一步目标是编写软件光栅器，从头到尾理解渲染管线。",
+      "summary_text": "CS在读学生，目前主攻C++和图形学，对游戏编程和图形学感兴趣，喜欢了解底层原理而不是单纯调用黑箱API，学习OpenGL后打算写个软光栅，当前阶段的目标是实现一个3D渲染引擎",
       "skills": {
-        "opengl_learning": "OpenGL（学习中）",
-        "chinese_native": "中文（母语）",
-        "japanese_beginner": "日语（初学）",
-        "anime_expert": "动漫专家"
+        "opengl": "OpenGL（学习中）",
+        "english": "英文（流利）",
+        "chinese": "中文（母语）",
+        "japanese": "日语（初学）",
+        "anime_expert": "动漫糕手"
       }
     },
     "links": {

@@ -2,14 +2,14 @@
   "index": {
     "title": "Akil0814",
     "hero": {
-      "subtitle_intro": "What I know:",
+      "subtitle_intro": "Tech stack:",
       "subtitle_line2": "I'm currently learning OpenGL, and my next goal is to build a software rasterizer.",
       "subtitle_line3": "In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.",
       "subtitle_line4": "If you're interested in collaborating, feel free to reach out.",
       "floating_profile_title": "Profile",
       "floating_profile_desc": "Skill · Resume · Email",
       "floating_more_title": "More About Me",
-      "floating_more_desc": "likes · hobbies ·"
+      "floating_more_desc": "likes · hobbies"
     },
     "stats": {
       "focus_label": "Current Focus",
@@ -26,12 +26,12 @@
       "warships": {
         "badge_game": "Game",
         "title": "WarShips",
-        "desc": "A tactical naval game prototype built to practice a more professional architecture and multiple design patterns, improving maintainability and extensibility."
+        "desc": "A tactical naval battle board-game project designed to practice more engineering-oriented architecture and multiple design patterns, improving maintainability and extensibility."
       },
       "minesweeper": {
         "badge_game": "Game",
         "title": "MineSweeper",
-        "desc": "My first OOP-structured project, featuring a scene manager for smooth scene switching and multiple game modes."
+        "desc": "My first attempt at building an OOP-structured project: I implemented a Scene Manager to drive and switch scenes in a unified way, and built core components such as a Button class and a Board class."
       },
       "microcomputer": {
         "badge_hardware": "Hardware",
@@ -43,12 +43,12 @@
       "collegetour": {
         "badge_tool": "Tool",
         "title": "CollegeTour",
-        "desc": "about this something."
+        "desc": "A group project for my Data Structures course. I was responsible for implementing a SQLite-based DataManager and an admin login/credential module."
       },
       "buttonsdl": {
         "badge_tool": "Tool",
         "title": "ButtonForSDL",
-        "desc": "about this something."
+        "desc": "I extracted a reusable Button class from the project and performed a series of refactors to make interaction logic clearer and improve maintainability."
       }
     },
     "about": {
@@ -57,19 +57,22 @@
       "name_value": "Akil/Akeli",
       "role_label": "Role:",
       "role_value": "Student",
+      "location_label": "Location:",
+      "location_value": "Orange County, CA, USA",
       "main_label": "Main:",
-      "main_value": "C++ / Graphics / Systems",
-      "now_label": "Now:",
+      "main_value": "C++ / Graphics ",
+      "now_label": "Currently:",
       "now_value": "Learning OpenGL.",
       "next_label": "Next:",
       "next_value": "Software Rasterizer.",
       "skills_title": "Skills",
       "summary_title": "Summary",
-      "summary_text": "I'm a CS student focused on C++ and graphics. I enjoy building clean gameplay systems and reusable modules, and I prefer understanding what's happening under the hood, because I don't like the feeling of calling something without knowing what it actually does. Right now I'm learning OpenGL to strengthen my graphics fundamentals, and my next goal is to write a software rasterizer to understand the rendering pipeline end-to-end.",
+      "summary_text": "I’m a CS student focusing on C++ and computer graphics, with a strong interest in game programming and rendering. I prefer digging into low-level principles instead of treating APIs as black boxes. After learning OpenGL, I plan to build a software rasterizer. My current goal is to implement a 3D rendering engine.",
       "skills": {
-        "opengl_learning": "OpenGL (learning)",
-        "chinese_native": "Chinese (native)",
-        "japanese_beginner": "Japanese (beginner)",
+        "opengl": "OpenGL (learning)",
+        "english": "English (fluent)",
+        "chinese": "Chinese (native)",
+        "japanese": "Japanese (basic)",
         "anime_expert": "Anime Expert"
       }
     },

@@ -2,14 +2,14 @@
   "index": {
     "title": "Akil0814",
     "hero": {
-      "subtitle_intro": "できること：",
+      "subtitle_intro": "使用技術：",
       "subtitle_line2": "現在は OpenGL を学習中で、次の目標はソフトウェアラスタライザーの実装です。",
       "subtitle_line3": "今後は WarShips をリファクタリングし、SDL で新しい 2D 横スクロール戦闘ゲームを作る予定です。",
       "subtitle_line4": "共同開発に興味があればご連絡ください。",
       "floating_profile_title": "プロフィール",
       "floating_profile_desc": "スキル · 履歴書 · メール",
       "floating_more_title": "もっと見る",
-      "floating_more_desc": "好きなもの · 趣味 ·"
+      "floating_more_desc": "好きなもの · 趣味"
     },
     "stats": {
       "focus_label": "現在の注力",
@@ -26,12 +26,12 @@
       "warships": {
         "badge_game": "ゲーム",
         "title": "WarShips",
-        "desc": "より実践的なアーキテクチャと複数のデザインパターンを練習するための戦術海戦ゲーム試作で、保守性と拡張性の向上を目的としています。"
+        "desc": "よりエンジニアリング志向のアーキテクチャと複数のデザインパターンを練習するために制作した戦術海戦ボードゲームで、保守性と拡張性の向上を目的としました。"
       },
       "minesweeper": {
         "badge_game": "ゲーム",
         "title": "MineSweeper",
-        "desc": "私の最初の OOP 構造プロジェクトで、シーン管理によるスムーズな切り替えと複数のゲームモードを備えています。"
+        "desc": "初めて OOP を意識して構築したプロジェクトです。シーン管理を統一して駆動・切り替えを行う Scene Manager を実装し、Button クラスや盤面（Board）クラスなどの基盤コンポーネントも作成しました。"
       },
       "microcomputer": {
         "badge_hardware": "ハードウェア",
@@ -43,12 +43,12 @@
       "collegetour": {
         "badge_tool": "ツール",
         "title": "CollegeTour",
-        "desc": "about this something."
+        "desc": "データ構造の授業におけるグループプロジェクトで、SQLite ベースの DataManager と管理者ログイン（認証情報）モジュールの実装を担当しました。"
       },
       "buttonsdl": {
         "badge_tool": "ツール",
         "title": "ButtonForSDL",
-        "desc": "about this something."
+        "desc": "プロジェクトから抽象化した Button クラスをもとに複数回のリファクタリングを行い、入力・操作のロジックをより明確にして保守性を高めました。"
       }
     },
     "about": {
@@ -57,20 +57,23 @@
       "name_value": "Akil/Akeli",
       "role_label": "役割：",
       "role_value": "学生",
+      "location_label": "拠点：",
+      "location_value": "米国 CA OC",
       "main_label": "主分野：",
-      "main_value": "C++ / グラフィックス / システム",
+      "main_value": "C++ / グラフィックス ",
       "now_label": "現在：",
-      "now_value": "OpenGL を学習中。",
+      "now_value": "OpenGL勉強中",
       "next_label": "次：",
-      "next_value": "ソフトウェアラスタライザー。",
+      "next_value": "ソフトウェアラスタライザー",
       "skills_title": "スキル",
       "summary_title": "要約",
-      "summary_text": "私は C++ とグラフィックスに注力している CS 学生です。クリーンなゲームプレイシステムと再利用可能なモジュールを作ることが好きで、内部で何が起きているかを理解することを重視しています。仕組みを知らないまま使う感覚が苦手だからです。現在は OpenGL で基礎を強化しており、次の目標はソフトウェアラスタライザーを書いてレンダリングパイプラインを端から端まで理解することです。",
+      "summary_text": "CS 在学中。C++ とコンピュータグラフィックスを中心に学び、ゲームプログラミングとレンダリングに興味があります。API をブラックボックスとして使うのではなく、低レベルの原理を理解して自分で実装するのが好きです。OpenGL の学習後はソフトウェアラスタライザーを作り、最終的には 3D レンダリングエンジンの実装を目指しています。",
       "skills": {
-        "opengl_learning": "OpenGL（学習中）",
-        "chinese_native": "中国語（母語）",
-        "japanese_beginner": "日本語（初級）",
-        "anime_expert": "アニメの達人"
+        "opengl": "OpenGL（学習中）",
+        "english": "英語（上級）",
+        "chinese": "中国語（ネイティブ）",
+        "japanese": "日本語（勉強中）",
+        "anime_expert": "アニメ玄人（自称）"
       }
     },
     "links": {
