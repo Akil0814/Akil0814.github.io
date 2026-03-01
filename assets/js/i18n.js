@@ -165,10 +165,25 @@
     return "en";
   }
 
-  function translate(key, params, fallbackText) {
+  function translate(key, params, fallbackText, options = {}) {
     const resolvedFromActive = getNestedValue(state.dict, key);
     const resolvedFromEnglish = getNestedValue(state.enDict, key);
     let value = resolvedFromActive ?? resolvedFromEnglish;
+    const renderAsHtml = Boolean(options.html);
+
+    if (Array.isArray(value)) {
+      const pieces = value
+        .map((item) => {
+          if (typeof item === "string") return interpolate(item, params);
+          if (item === null || item === undefined) return "";
+          return String(item);
+        })
+        .filter((item) => item.length > 0);
+
+      // Arrays are concatenated inline by default.
+      // Add explicit "<br>" in locale strings when line breaks are needed.
+      return renderAsHtml ? pieces.join("") : pieces.join(" ");
+    }
 
     if (typeof value !== "string") {
       console.warn(`[i18n] Missing key "${key}" in page "${state.page}" and English fallback.`);
@@ -182,7 +197,8 @@
     const key = element.getAttribute("data-i18n");
     if (!key) return;
 
-    const value = translate(key);
+    const allowHtml = element.hasAttribute("data-i18n-html");
+    const value = translate(key, undefined, undefined, { html: allowHtml });
     const rawAttrs = element.getAttribute("data-i18n-attr");
     const attrs = rawAttrs
       ? rawAttrs
@@ -196,6 +212,10 @@
     }
 
     if (attrs.length === 0 || element.hasAttribute("data-i18n-text")) {
+      if (allowHtml) {
+        element.innerHTML = value;
+        return;
+      }
       element.textContent = value;
     }
   }

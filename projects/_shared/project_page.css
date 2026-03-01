@@ -135,6 +135,14 @@ body.fx-off .theme-photo-card {
   line-height: 1.65;
 }
 
+/* Keep inline code semantic styling while inheriting the page text font. */
+.panel p code {
+  font-family: inherit;
+  color: inherit;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
 .video-card video {
   width: 100%;
   border-radius: 12px;
