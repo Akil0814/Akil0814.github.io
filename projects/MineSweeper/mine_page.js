@@ -63,16 +63,13 @@
           "common.mermaid.scene_lifecycle.desc",
           "Main loop and scene manager collaboration during runtime."
         ),
-        code: `flowchart TD
-  A[Program Start] --> B[Create SceneManager]
-  B --> C[Register Scenes]
-  C --> D[Main Loop Tick]
-  D --> E{Scene Switch Requested?}
-  E -->|Yes| F[SceneManager::ChangeScene]
-  E -->|No| G[Current Scene Update]
-  F --> G
-  G --> H[Render Frame]
-  H --> D`,
+        code: `stateDiagram-v2
+  [*] --> Menu
+  Menu --> Game: Start
+  Menu --> Selector: Setting
+  Selector --> Menu: Back
+  Game --> Menu: Exit
+  Game --> Game: Restart`,
       },
       {
         title: t("common.mermaid.cell_reveal_pipeline.title", "Cell Reveal Pipeline"),
@@ -80,18 +77,25 @@
           "common.mermaid.cell_reveal_pipeline.desc",
           "How click input drives reveal, expansion, and game-over checks."
         ),
-        code: `flowchart LR
-  A[Click Cell] --> B{Mine?}
-  B -->|Yes| C[Set Game Over]
-  B -->|No| D[Reveal Cell]
-  D --> E{Adjacent Mine Count == 0?}
-  E -->|Yes| F[Flood Fill Expansion]
-  E -->|No| G[Stop Expansion]
-  F --> H[Update Visible Cells]
-  G --> H
-  H --> I{All Safe Cells Revealed?}
-  I -->|Yes| J[Set Victory]
-  I -->|No| K[Continue]`,
+        code: `flowchart TD
+  A[Start] --> B[MenuScene]
+  B -->|Start| C[GameScene]
+  B -->|Setting| D[SelectorScene]
+  D -->|Select preset / Custom| B
+
+  C --> E{First left click?}
+  E -->|Yes| F[set_mine]
+  F --> G[Start timer]
+  E -->|No| H[check_mine]
+
+  H --> I{Cell number=0?}
+  I -->|Yes| J[check_around]
+  I -->|No| K[Reveal only this cell]
+
+  C -->|Right click| L[set_flag - toggle flag state]
+  C -->|Restart| M[reset board data]
+  C -->|Exit| B
+  `,
       },
     ];
   }
