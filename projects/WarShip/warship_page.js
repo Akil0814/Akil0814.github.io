@@ -93,19 +93,19 @@
   }
 
   const codeEntries = [
-    "WarShip_main_loop.cpp",
-    "WarShip_scene_pool.cpp",
-    "WarShip_Board.cpp",
-    "WarShip_ship.cpp",
-    "WarShip_ship_factory.cpp",
-    "WarShip_Button.cpp",
-    "WarShip_bullet.cpp",
-    "WarShip_effect.cpp",
-    "WarShip_effect_manager.cpp",
-    "WarShip_animation.cpp",
-    "WarShip_atlas.cpp",
-    "WarShip_resources_manager.cpp",
-    "WarShip_Txt_to_Texture.cpp",
+    "main.cpp",
+    "scene_pool.cpp",
+    "board.cpp",
+    "ship.cpp",
+    "ship_factory.cpp",
+    "button.cpp",
+    "bullet.cpp",
+    "effect.cpp",
+    "effect_manager.cpp",
+    "animation.cpp",
+    "atlas.cpp",
+    "resources_manager.cpp",
+    "txt_texture_manager.cpp",
   ].map((fileName, index) => ({
     fileName,
     targetSelector: `#code-slot-${index + 1}`,
@@ -116,7 +116,7 @@
     tagKey: getCodeTagKey(fileName),
     tagFallback: getCodeTagFallback(fileName),
     filePath: `../snippets/WarShip/${fileName}`,
-    sourceUrl: `https://github.com/Akil0814/WarShips/blob/main/projects/snippets/WarShip/${fileName}`,
+    sourceUrl: `https://github.com/Akil0814/WarShips/blob/master/${fileName}`,
   }));
 
   const codeEntryByFileName = new Map(codeEntries.map((entry) => [entry.fileName, entry]));
