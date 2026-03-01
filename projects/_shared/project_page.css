@@ -147,6 +147,60 @@ body.fx-off .theme-photo-card {
   gap: 16px;
 }
 
+.project-mermaid-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.project-mermaid-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.project-mermaid-card h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.project-mermaid__desc {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.project-mermaid__canvas {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,.03);
+  overflow: auto;
+}
+
+.project-mermaid__canvas svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 280px;
+}
+
+.project-mermaid__empty,
+.project-mermaid__error {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  padding: 14px;
+  color: var(--muted);
+}
+
+[data-theme="light"] .project-mermaid__canvas {
+  background: rgba(15,23,42,.03);
+}
+
 .code-slot {
   margin-top: 12px;
 }

@@ -29,6 +29,7 @@
 
     <nav class="nav__right">
       <a href="../../index.html" data-i18n="common.nav.home">Home</a>
+      <a href="#architecture" data-i18n="common.nav.diagram">Diagram</a>
       <a href="#videos" data-i18n="common.nav.videos">Videos</a>
       <a href="#code" data-i18n="common.nav.code">Code</a>
       <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
@@ -70,6 +71,13 @@
       </div>
     </section>
 
+    <section id="architecture" class="section">
+      <div class="section__head">
+        <h2 data-i18n="common.sections.architecture_diagram">Architecture Diagram</h2>
+      </div>
+      <div id="mine-mermaid" class="project-mermaid-grid"></div>
+    </section>
+
     <section class="section section--split">
       <article class="panel">
         <div class="section__head">
@@ -100,16 +108,17 @@
         <h2><span data-i18n="MineSweeper.sections.demo_videos">Demo Videos</span> (4)</h2>
       </div>
       <div class="video-grid">
-        <article class="video-card">
-          <h3 data-i18n="MineSweeper.videos.game_mode.title">Game Mode Demo</h3>
-          <video controls preload="metadata" playsinline src="./res/mine_game_mod.webm"></video>
-          <p data-i18n="MineSweeper.videos.game_mode.desc">Shows mode selection and primary interaction flow.</p>
-        </article>
 
         <article class="video-card">
           <h3 data-i18n="MineSweeper.videos.main_flow.title">Main Gameplay Flow</h3>
           <video controls preload="metadata" playsinline src="./res/mine_main.webm"></video>
           <p data-i18n="MineSweeper.videos.main_flow.desc">Shows the end-to-end transition from launch to active gameplay.</p>
+        </article>
+
+        <article class="video-card">
+          <h3 data-i18n="MineSweeper.videos.game_mode.title">Game Mode Demo</h3>
+          <video controls preload="metadata" playsinline src="./res/mine_game_mod.webm"></video>
+          <p data-i18n="MineSweeper.videos.game_mode.desc">Shows mode selection and primary interaction flow.</p>
         </article>
 
         <article class="video-card">
@@ -180,6 +189,7 @@
   <script src="../../assets/prism/prism.js"></script>
   <script src="../_shared/project_code_block.js?v=20260228"></script>
   <script src="../_shared/project_page.js?v=20260228"></script>
-  <script src="./mine_page.js?v=20260228d"></script>
+  <script src="../_shared/project_mermaid.js?v=20260301"></script>
+  <script src="./mine_page.js?v=20260301a"></script>
 </body>
 </html>

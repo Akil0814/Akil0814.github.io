@@ -1,10 +1,10 @@
 {
   "MineSweeper": {
-    "title": "MineSweeper 项目",
+    "title": "MineSweeper 项目概览",
     "intro": {
       "kicker": "C++ / 游戏 / EasyX",
       "title": "MineSweeper 项目概览",
-      "desc": "本页展示我的 MineSweeper 项目架构，包括核心玩法逻辑、场景流转设计，以及通过代码和运行演示呈现的实现细节。",
+      "desc": "MineSweeper 项目基于 EasyX 图形库与C++，实现经典扫雷游戏，采用“场景（Scene）+ 场景管理器（SceneManager）”的组织方式，对菜单、难度/自定义设置、游戏本体等不同游戏状态进行管理。核心玩法逻辑包括随机布雷、格子状态管理、递归展开安全区等，对局计时，快速重开等，下方模块涵盖主循环设计、场景类定义、场景管理器实现以及棋盘数据结构与操作。演示视频展示了模式选择、安全格保留和安全区扩展等关键交互流程。",
       "chips": {
         "map_generation": "地图生成",
         "safe_area_expansion": "安全区扩展",
@@ -12,7 +12,7 @@
       }
     },
     "summary": {
-      "text": "MineSweeper 项目使用 C++ 实现，采用基于主循环、场景类和场景管理器的模块化结构。下方代码块展示了核心控制流和各模块职责，视频演示了游戏切换、翻格规则和边界处理行为。"
+      "text": "核心玩法由 <code>MineBoard<code> 承担，内部用三张二维表分别维护 雷分布、玩家可见状态、数字提示（周围雷数），并在点击空白格时用递归实现“连片翻开”（见 mine_board.h 的 check_mine / check_around）"
     },
     "stack": {
       "chip_scene_architecture": "场景架构",
@@ -24,20 +24,20 @@
     },
     "videos": {
       "game_mode": {
-        "title": "模式演示",
-        "desc": "展示模式选择和主要交互流程。"
+        "title": "模式选择演示",
+        "desc": "模式选择交互流程。"
       },
       "main_flow": {
-        "title": "主流程演示",
-        "desc": "展示从启动到进入游戏的完整流程。"
+        "title": "游戏流程演示",
+        "desc": "从启动到进入游戏的完整流程。"
       },
       "safe_cell": {
-        "title": "安全格扩展",
-        "desc": "展示空白连通区域的自动扩展行为。"
+        "title": "安全格演示",
+        "desc": "最少保留一个安全格，防止开局即死"
       },
       "safe_zone": {
-        "title": "安全区验证",
-        "desc": "展示区域搜索逻辑与边界条件处理。"
+        "title": "安全区演示",
+        "desc": "当有足够空间时，保留一个3*3的安全区，提升游戏体验"
       }
     },
     "code": {

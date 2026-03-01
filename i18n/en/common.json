@@ -12,7 +12,8 @@
       "about": "About",
       "links": "Links",
       "videos": "Videos",
-      "code": "Code"
+      "code": "Code",
+      "diagram": "Diagram"
     },
     "controls": {
       "fx": "FX",
@@ -21,9 +22,10 @@
       "toggle_theme": "Toggle theme"
     },
     "sections": {
-      "project_summary": "Project Summary",
+      "project_summary": "Architecture & Implementation",
       "tech_stack": "Tech Stack",
-      "repo_download": "Repo + Download"
+      "repo_download": "Repo + Download",
+      "architecture_diagram": "Architecture Diagram"
     },
     "actions": {
       "repository": "Repository",
@@ -43,6 +45,16 @@
     },
     "misc": {
       "failed_load_code": "Failed to load code: {path}"
+    },
+    "mermaid": {
+      "scene_lifecycle": {
+        "title": "Scene Lifecycle",
+        "desc": "Main loop and scene manager collaboration during runtime."
+      },
+      "cell_reveal_pipeline": {
+        "title": "Cell Reveal Pipeline",
+        "desc": "How click input drives reveal, expansion, and game-over checks."
+      }
     },
     "footer": {
       "built_with": "Built with HTML/CSS/JS"

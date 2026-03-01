@@ -53,6 +53,48 @@
     "#code-scene-manager": "MineSweeper.video_tags.scene_manager",
     "#code-board": "MineSweeper.video_tags.board",
   };
+  let mermaidRenderer = null;
+
+  function getMermaidDiagrams() {
+    return [
+      {
+        title: t("common.mermaid.scene_lifecycle.title", "Scene Lifecycle"),
+        description: t(
+          "common.mermaid.scene_lifecycle.desc",
+          "Main loop and scene manager collaboration during runtime."
+        ),
+        code: `flowchart TD
+  A[Program Start] --> B[Create SceneManager]
+  B --> C[Register Scenes]
+  C --> D[Main Loop Tick]
+  D --> E{Scene Switch Requested?}
+  E -->|Yes| F[SceneManager::ChangeScene]
+  E -->|No| G[Current Scene Update]
+  F --> G
+  G --> H[Render Frame]
+  H --> D`,
+      },
+      {
+        title: t("common.mermaid.cell_reveal_pipeline.title", "Cell Reveal Pipeline"),
+        description: t(
+          "common.mermaid.cell_reveal_pipeline.desc",
+          "How click input drives reveal, expansion, and game-over checks."
+        ),
+        code: `flowchart LR
+  A[Click Cell] --> B{Mine?}
+  B -->|Yes| C[Set Game Over]
+  B -->|No| D[Reveal Cell]
+  D --> E{Adjacent Mine Count == 0?}
+  E -->|Yes| F[Flood Fill Expansion]
+  E -->|No| G[Stop Expansion]
+  F --> H[Update Visible Cells]
+  G --> H
+  H --> I{All Safe Cells Revealed?}
+  I -->|Yes| J[Set Victory]
+  I -->|No| K[Continue]`,
+      },
+    ];
+  }
 
   function buildTagLabel(selector) {
     const labelKey = videoTagKeyBySelector[selector];
@@ -160,6 +202,27 @@
     }
   }
 
+  function initMermaidSection(initialTheme) {
+    const targetElement = document.getElementById("mine-mermaid");
+    if (!targetElement || !window.ProjectMermaid) {
+      if (!window.ProjectMermaid) {
+        console.warn("ProjectMermaid module is missing.");
+      }
+      return;
+    }
+
+    mermaidRenderer = window.ProjectMermaid.mount(targetElement, {
+      diagrams: getMermaidDiagrams(),
+      theme: initialTheme,
+      idPrefix: "mine-mermaid",
+      mermaidConfig: {
+        flowchart: {
+          curve: "basis",
+        },
+      },
+    });
+  }
+
   function init() {
     if (!window.ProjectPageCore || !window.ProjectCodeBlock) {
       console.error("Shared project modules are missing.");
@@ -170,13 +233,39 @@
       codeThemeLinkId: "prismThemeLink",
       codeThemeDarkHref: "../../assets/prism/prism-dark.css",
       codeThemeLightHref: "../../assets/prism/prism-light.css",
+      onThemeChange(theme) {
+        if (mermaidRenderer) {
+          mermaidRenderer.setTheme(theme);
+        }
+      },
+      onLangChange(language) {
+        if (!mermaidRenderer) return;
+
+        if (typeof window.applyI18n === "function") {
+          window.applyI18n(language)
+            .then(() => {
+              mermaidRenderer.setDiagrams(getMermaidDiagrams());
+            })
+            .catch((error) => {
+              console.warn("[i18n] Failed to refresh Mermaid translations.", error);
+            });
+          return;
+        }
+
+        mermaidRenderer.setDiagrams(getMermaidDiagrams());
+      },
     });
 
     assignCodeCardIds();
     renderVideoCodeTags();
+    initMermaidSection(pageCore.getTheme());
     if (typeof window.applyI18n === "function") {
       window.applyI18n(pageCore.getLang()).catch((error) => {
         console.warn("[i18n] Failed to apply MineSweeper translations.", error);
+      }).finally(() => {
+        if (mermaidRenderer) {
+          mermaidRenderer.setDiagrams(getMermaidDiagrams());
+        }
       });
     }
     loadCodeBlocks();

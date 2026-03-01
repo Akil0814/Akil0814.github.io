@@ -12,16 +12,18 @@
       "about": "关于",
       "links": "链接",
       "videos": "视频",
-      "code": "代码"
+      "code": "代码",
+      "diagram": "图表"
     },
     "controls": {
       "fx": "特效",
       "theme": "主题"
     },
     "sections": {
-      "project_summary": "项目概览",
+      "project_summary": "架构与实现",
       "tech_stack": "技术栈",
-      "repo_download": "仓库与下载"
+      "repo_download": "仓库与下载",
+      "architecture_diagram": "架构图"
     },
     "actions": {
       "repository": "代码仓库",
@@ -42,9 +44,18 @@
     "misc": {
       "failed_load_code": "代码加载失败：{path}"
     },
+    "mermaid": {
+      "scene_lifecycle": {
+        "title": "场景生命周期",
+        "desc": "展示主循环与场景管理器在运行期间的协作关系。"
+      },
+      "cell_reveal_pipeline": {
+        "title": "格子揭示流程",
+        "desc": "展示单击输入如何驱动揭开、扩展与胜负判定流程。"
+      }
+    },
     "footer": {
       "built_with": "Built with HTML/CSS/JS"
     }
   }
 }
-
