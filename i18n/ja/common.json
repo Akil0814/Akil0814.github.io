@@ -26,8 +26,8 @@
     "actions": {
       "repository": "リポジトリ",
       "download_zip": "ZIP をダウンロード",
-      "repo": "Repo",
-      "more_info": "詳細情報",
+      "repo": "リポジトリ",
+      "more_info": "詳細を見る",
       "about_me": "自己紹介"
     },
     "theme": {
