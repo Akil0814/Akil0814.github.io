@@ -43,7 +43,7 @@
       "failed_load_code": "代码加载失败：{path}"
     },
     "footer": {
-      "built_with": "基于 HTML/CSS/JS 构建"
+      "built_with": "Built with HTML/CSS/JS"
     }
   }
 }

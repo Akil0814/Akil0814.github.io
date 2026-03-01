@@ -43,7 +43,7 @@
       "failed_load_code": "コードの読み込みに失敗しました: {path}"
     },
     "footer": {
-      "built_with": "HTML/CSS/JS で作成"
+      "built_with": "Built with HTML/CSS/JS"
     }
   }
 }
