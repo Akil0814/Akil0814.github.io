@@ -58,9 +58,9 @@
   function getMermaidDiagrams() {
     return [
       {
-        title: t("common.mermaid.scene_lifecycle.title", "Scene Lifecycle"),
+        title: t("MineSweeper.mermaid.scene_lifecycle.title", "Scene Lifecycle"),
         description: t(
-          "common.mermaid.scene_lifecycle.desc",
+          "MineSweeper.mermaid.scene_lifecycle.desc",
           "Main loop and scene manager collaboration during runtime."
         ),
         code: `stateDiagram-v2
@@ -72,9 +72,9 @@
   Game --> Game: Restart`,
       },
       {
-        title: t("common.mermaid.cell_reveal_pipeline.title", "Cell Reveal Pipeline"),
+        title: t("MineSweeper.mermaid.cell_reveal_pipeline.title", "Cell Reveal Pipeline"),
         description: t(
-          "common.mermaid.cell_reveal_pipeline.desc",
+          "MineSweeper.mermaid.cell_reveal_pipeline.desc",
           "How click input drives reveal, expansion, and game-over checks."
         ),
         code: `flowchart TD

@@ -70,6 +70,16 @@
       "demo_videos": "演示视频",
       "core_code_blocks": "核心代码块"
     },
+    "mermaid": {
+      "scene_lifecycle": {
+        "title": "场景流程图",
+        "desc": "展示场景之间的协作关系。"
+      },
+      "cell_reveal_pipeline": {
+        "title": "游戏流程图",
+        "desc": "展示包括首次点击检测的游戏流程。"
+      }
+    },
     "videos": {
       "game_mode": {
         "title": "模式选择演示",

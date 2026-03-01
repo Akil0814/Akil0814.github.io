@@ -22,6 +22,16 @@
       "demo_videos": "デモ動画",
       "core_code_blocks": "主要コードブロック"
     },
+    "mermaid": {
+      "scene_lifecycle": {
+        "title": "シーンライフサイクル",
+        "desc": "実行中のメインループとシーンマネージャの連携を示します。"
+      },
+      "cell_reveal_pipeline": {
+        "title": "セル公開パイプライン",
+        "desc": "クリック入力が公開、拡張、勝敗判定へどのようにつながるかを示します。"
+      }
+    },
     "videos": {
       "game_mode": {
         "title": "ゲームモードデモ",

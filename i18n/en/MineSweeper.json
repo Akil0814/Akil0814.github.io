@@ -22,6 +22,16 @@
       "demo_videos": "Demo Videos",
       "core_code_blocks": "Core Code Blocks"
     },
+    "mermaid": {
+      "scene_lifecycle": {
+        "title": "Scene Lifecycle",
+        "desc": "Main loop and scene manager collaboration during runtime."
+      },
+      "cell_reveal_pipeline": {
+        "title": "Cell Reveal Pipeline",
+        "desc": "How click input drives reveal, expansion, and game-over checks."
+      }
+    },
     "videos": {
       "game_mode": {
         "title": "Game Mode Demo",

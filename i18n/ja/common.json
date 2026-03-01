@@ -44,16 +44,6 @@
     "misc": {
       "failed_load_code": "コードの読み込みに失敗しました: {path}"
     },
-    "mermaid": {
-      "scene_lifecycle": {
-        "title": "シーンライフサイクル",
-        "desc": "実行中のメインループとシーンマネージャの連携を示します。"
-      },
-      "cell_reveal_pipeline": {
-        "title": "セル公開パイプライン",
-        "desc": "クリック入力が公開、拡張、勝敗判定へどのようにつながるかを示します。"
-      }
-    },
     "footer": {
       "built_with": "Built with HTML/CSS/JS"
     }

@@ -44,16 +44,6 @@
     "misc": {
       "failed_load_code": "代码加载失败：{path}"
     },
-    "mermaid": {
-      "scene_lifecycle": {
-        "title": "场景生命周期",
-        "desc": "展示主循环与场景管理器在运行期间的协作关系。"
-      },
-      "cell_reveal_pipeline": {
-        "title": "格子揭示流程",
-        "desc": "展示单击输入如何驱动揭开、扩展与胜负判定流程。"
-      }
-    },
     "footer": {
       "built_with": "Built with HTML/CSS/JS"
     }
