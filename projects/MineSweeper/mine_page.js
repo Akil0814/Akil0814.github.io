@@ -14,28 +14,28 @@
       cardId: "code-card-main-loop",
       filePath: "../snippets/MineSweeper/MineSweeper_main_loop.cpp",
       title: "MineSweeper_main_loop.cpp",
-      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweeper/MineSweeper_main_loop.cpp",
+      sourceUrl: "https://github.com/Akil0814/Minesweeper/blob/master/main.cpp",
     },
     {
-      targetSelector: "#code-scene-class",
+      targetSelector: "#code-scene-class",  
       cardId: "code-card-scene-class",
       filePath: "../snippets/MineSweeper/MineSweeper_scene_class.cpp",
       title: "MineSweeper_scene_class.cpp",
-      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweeper/MineSweeper_scene_class.cpp",
+      sourceUrl: "https://github.com/Akil0814/Minesweeper/blob/master/scene.h",
     },
     {
       targetSelector: "#code-scene-manager",
       cardId: "code-card-scene-manager",
       filePath: "../snippets/MineSweeper/MineSweeper_scene_manager.cpp",
       title: "MineSweeper_scene_manager.cpp",
-      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweeper/MineSweeper_scene_manager.cpp",
+      sourceUrl: "https://github.com/Akil0814/Minesweeper/blob/master/scene_manager.h",
     },
     {
       targetSelector: "#code-board",
       cardId: "code-card-board",
       filePath: "../snippets/MineSweeper/MineSweeper_board.cpp",
       title: "MineSweeper_board.cpp",
-      sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/projects/snippets/MineSweeper/MineSweeper_board.cpp",
+      sourceUrl: "https://github.com/Akil0814/Minesweeper/blob/master/button.h",
     },
   ];
 
