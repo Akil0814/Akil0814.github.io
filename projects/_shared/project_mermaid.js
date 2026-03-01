@@ -68,9 +68,26 @@
     return errorElement;
   }
 
-  function createDiagramCard(diagram) {
+  function getLocalizedToggleText(isCollapsed) {
+    if (window.I18N && typeof window.I18N.t === "function") {
+      const key = isCollapsed ? "common.controls.show_diagram" : "common.controls.hide_diagram";
+      const fallback = isCollapsed ? "Show Diagram" : "Hide Diagram";
+      return window.I18N.t(key, undefined, fallback);
+    }
+
+    return isCollapsed ? "Show Diagram" : "Hide Diagram";
+  }
+
+  function createDiagramCard(diagram, state) {
     const cardElement = document.createElement("article");
     cardElement.className = "project-mermaid-card";
+    const shouldStartCollapsed =
+      typeof diagram.defaultCollapsed === "boolean"
+        ? diagram.defaultCollapsed
+        : state.defaultCollapsed;
+    if (shouldStartCollapsed) {
+      cardElement.classList.add("is-collapsed");
+    }
 
     if (diagram.title) {
       const titleElement = document.createElement("h3");
@@ -85,9 +102,30 @@
       cardElement.appendChild(descriptionElement);
     }
 
+    const toggleButton = document.createElement("button");
+    toggleButton.type = "button";
+    toggleButton.className = "project-mermaid__toggle";
+    cardElement.appendChild(toggleButton);
+
     const canvasElement = document.createElement("div");
     canvasElement.className = "project-mermaid__canvas";
+    const canvasId = `${state.idPrefix}-canvas-${state.cardSeed += 1}`;
+    canvasElement.id = canvasId;
+    toggleButton.setAttribute("aria-controls", canvasId);
     cardElement.appendChild(canvasElement);
+
+    const syncToggleState = () => {
+      const isCollapsed = cardElement.classList.contains("is-collapsed");
+      toggleButton.textContent = getLocalizedToggleText(isCollapsed);
+      toggleButton.setAttribute("aria-expanded", String(!isCollapsed));
+    };
+
+    toggleButton.addEventListener("click", () => {
+      cardElement.classList.toggle("is-collapsed");
+      syncToggleState();
+    });
+
+    syncToggleState();
 
     return { cardElement, canvasElement };
   }
@@ -134,10 +172,12 @@
       themeByMode: options.themeByMode || null,
       mermaidConfig: options.mermaidConfig || {},
       autoSyncTheme: options.autoSyncTheme !== false,
+      defaultCollapsed: options.defaultCollapsed !== false,
       idPrefix: options.idPrefix || `project-mermaid-${rendererSeed += 1}`,
       observerCleanup: null,
       renderVersion: 0,
       isMounted: false,
+      cardSeed: 0,
     };
 
     async function render() {
@@ -164,7 +204,7 @@
         if (state.renderVersion !== version) return;
 
         const diagram = state.diagrams[index];
-        const { cardElement, canvasElement } = createDiagramCard(diagram);
+        const { cardElement, canvasElement } = createDiagramCard(diagram, state);
         state.targetElement.appendChild(cardElement);
 
         const diagramId = `${state.idPrefix}-${index + 1}`;

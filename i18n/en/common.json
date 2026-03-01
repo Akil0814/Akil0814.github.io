@@ -19,7 +19,9 @@
       "fx": "FX",
       "theme": "Theme",
       "toggle_fx": "Toggle visual effects",
-      "toggle_theme": "Toggle theme"
+      "toggle_theme": "Toggle theme",
+      "show_diagram": "Show Diagram",
+      "hide_diagram": "Hide Diagram"
     },
     "sections": {
       "project_summary": "Architecture & Implementation",

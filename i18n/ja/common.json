@@ -17,7 +17,9 @@
     },
     "controls": {
       "fx": "FX",
-      "theme": "テーマ"
+      "theme": "テーマ",
+      "show_diagram": "図を表示",
+      "hide_diagram": "図を折りたたむ"
     },
     "sections": {
       "project_summary": "設計と実装",

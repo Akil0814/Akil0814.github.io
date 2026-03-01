@@ -179,6 +179,26 @@ body.fx-off .theme-photo-card {
   line-height: 1.65;
 }
 
+.project-mermaid__toggle {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  padding: 6px 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.project-mermaid__toggle:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.project-mermaid-card.is-collapsed .project-mermaid__canvas {
+  display: none;
+}
+
 .project-mermaid__canvas {
   margin-top: 12px;
   border: 1px solid var(--line);
@@ -207,6 +227,10 @@ body.fx-off .theme-photo-card {
 
 [data-theme="light"] .project-mermaid__canvas {
   background: rgba(15,23,42,.03);
+}
+
+[data-theme="light"] .project-mermaid__toggle:hover {
+  background: rgba(15,23,42,.06);
 }
 
 .code-slot {

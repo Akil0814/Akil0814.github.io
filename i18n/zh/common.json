@@ -17,7 +17,9 @@
     },
     "controls": {
       "fx": "特效",
-      "theme": "主题"
+      "theme": "主题",
+      "show_diagram": "展开图表",
+      "hide_diagram": "收起图表"
     },
     "sections": {
       "project_summary": "架构与实现",
