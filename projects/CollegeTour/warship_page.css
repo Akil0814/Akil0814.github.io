@@ -1,0 +1,39 @@
+/* WarShip page specific overrides.
+   Shared layout and behavior live in ../_shared/project_page.css and ../_shared/project_page.js. */
+
+.video-tags {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.video-tag {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  color: inherit;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.video-tag:hover {
+  background: rgba(255,255,255,.12);
+}
+
+.code-card {
+  scroll-margin-top: 90px;
+}
+
+.code-card.is-targeted {
+  border-color: rgba(88, 166, 255, 0.95);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.18), var(--shadow);
+}
+
+[data-theme="light"] .code-card.is-targeted {
+  border-color: rgba(38, 119, 255, 0.9);
+  box-shadow: 0 0 0 2px rgba(38, 119, 255, 0.16), var(--shadow);
+}
