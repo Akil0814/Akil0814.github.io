@@ -1,0 +1,34 @@
+{
+  "8BitComputer": {
+    "title": "8Bit Computer Project",
+    "intro": {
+      "kicker": "CPU Design / Digital Logic / 8-bit Architecture",
+      "title": "8Bit Computer Project Overview",
+      "desc": "This page follows the same project-page architecture as the rest of the site. Demo videos will be added later, and code snippets are intentionally omitted for now.",
+      "chips": {
+        "isa": "8-bit ISA",
+        "registers": "Registers",
+        "alu": "ALU",
+        "control_unit": "Control Unit"
+      }
+    },
+    "summary": {
+      "text": "The current stage focuses on page scaffolding and information structure. Function demos will be delivered through videos in a later update."
+    },
+    "stack": {
+      "digital_logic": "Digital Logic",
+      "arch_design": "Architecture Design",
+      "simulation": "Simulation"
+    },
+    "sections": {
+      "demo_videos": "Demo Videos"
+    },
+    "videos": {
+      "placeholder": "Video demonstration is not uploaded yet. This section is reserved and ready for future content."
+    },
+    "footer": {
+      "page": "8Bit Computer Project Page"
+    }
+  }
+}
+

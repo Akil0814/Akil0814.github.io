@@ -1,0 +1,47 @@
+{
+  "CollegeTour": {
+    "title": "CollegeTour プロジェクト",
+    "intro": {
+      "kicker": "C++ / SQLite / チーム開発",
+      "title": "CollegeTour プロジェクト概要",
+      "desc": "これはチーム開発プロジェクトです。私は主にバックエンドを担当し、SQLite ベースの DataManager と管理者ログイン認証を実装しました。",
+      "chips": {
+        "data_manager": "DataManager",
+        "sqlite": "SQLite",
+        "admin_auth": "管理者認証",
+        "database_reset": "データベースリセット"
+      }
+    },
+    "summary": {
+      "text": "このページはコードスニペットのみを表示し、動画セクションは含みません。選定したコードはバックエンドのデータライフサイクルと管理者認証ロジックに焦点を当てています。"
+    },
+    "stack": {
+      "file_io": "ファイル I/O",
+      "validation": "検証ロジック"
+    },
+    "sections": {
+      "core_code_blocks": "主要コードブロック"
+    },
+    "code": {
+      "data_manager_class": {
+        "desc": "DataManager クラスの契約、メンバー構成、バックエンド向けインターフェース。"
+      },
+      "data_manager_init": {
+        "desc": "コアデータ構造と起動時ロード経路の初期化。"
+      },
+      "data_manager_read_dynamic": {
+        "desc": "SQLite ベースのストレージから実行時データを読み込み、メモリ状態へマッピング。"
+      },
+      "data_manager_reset_database": {
+        "desc": "バックエンドデータ状態をリセットし、基本レコードを再構築。"
+      },
+      "login_xor": {
+        "desc": "管理者ログイン認証フローと XOR ベースの資格情報処理。"
+      }
+    },
+    "footer": {
+      "page": "CollegeTour プロジェクトページ"
+    }
+  }
+}
+

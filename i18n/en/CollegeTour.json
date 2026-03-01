@@ -1,0 +1,47 @@
+{
+  "CollegeTour": {
+    "title": "CollegeTour Project",
+    "intro": {
+      "kicker": "C++ / SQLite / Group Project",
+      "title": "CollegeTour Project Overview",
+      "desc": "This is a team collaboration project. I mainly handled backend modules, specifically the SQLite-based DataManager and administrator login verification pipeline.",
+      "chips": {
+        "data_manager": "DataManager",
+        "sqlite": "SQLite",
+        "admin_auth": "Admin Auth",
+        "database_reset": "Database Reset"
+      }
+    },
+    "summary": {
+      "text": "This page only presents code snippets. No video section is included by design. The selected files focus on backend data lifecycle and administrator verification logic."
+    },
+    "stack": {
+      "file_io": "File I/O",
+      "validation": "Validation"
+    },
+    "sections": {
+      "core_code_blocks": "Core Code Blocks"
+    },
+    "code": {
+      "data_manager_class": {
+        "desc": "DataManager class contract, members, and backend-facing interfaces."
+      },
+      "data_manager_init": {
+        "desc": "Initializes core data structures and startup loading path."
+      },
+      "data_manager_read_dynamic": {
+        "desc": "Reads runtime data from SQLite-backed storage and maps it into in-memory state."
+      },
+      "data_manager_reset_database": {
+        "desc": "Resets backend data state and rebuilds required base records."
+      },
+      "login_xor": {
+        "desc": "Administrator login verification flow and XOR-based credential processing."
+      }
+    },
+    "footer": {
+      "page": "CollegeTour Project Page"
+    }
+  }
+}
+

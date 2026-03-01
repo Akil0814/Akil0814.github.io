@@ -1,0 +1,47 @@
+{
+  "CollegeTour": {
+    "title": "CollegeTour 项目",
+    "intro": {
+      "kicker": "C++ / SQLite / 小组项目",
+      "title": "CollegeTour 项目概览",
+      "desc": "这是一个小组合作项目。我主要负责后端模块，重点是基于 SQLite 的 DataManager，以及管理员登录验证流程。",
+      "chips": {
+        "data_manager": "DataManager",
+        "sqlite": "SQLite",
+        "admin_auth": "管理员认证",
+        "database_reset": "数据库重置"
+      }
+    },
+    "summary": {
+      "text": "本页面只展示代码片段，不包含视频区。所选代码主要覆盖后端数据生命周期与管理员验证逻辑。"
+    },
+    "stack": {
+      "file_io": "文件 I/O",
+      "validation": "校验逻辑"
+    },
+    "sections": {
+      "core_code_blocks": "核心代码块"
+    },
+    "code": {
+      "data_manager_class": {
+        "desc": "DataManager 的类定义、成员结构与后端接口约定。"
+      },
+      "data_manager_init": {
+        "desc": "初始化核心数据结构与启动加载流程。"
+      },
+      "data_manager_read_dynamic": {
+        "desc": "从 SQLite 存储读取运行期数据并映射到内存状态。"
+      },
+      "data_manager_reset_database": {
+        "desc": "重置后端数据状态并重建基础记录。"
+      },
+      "login_xor": {
+        "desc": "管理员登录验证流程与基于 XOR 的凭据处理逻辑。"
+      }
+    },
+    "footer": {
+      "page": "CollegeTour 项目页"
+    }
+  }
+}
+

@@ -1,0 +1,34 @@
+{
+  "8BitComputer": {
+    "title": "8BitComputer プロジェクト",
+    "intro": {
+      "kicker": "CPU 設計 / デジタル論理 / 8ビットアーキテクチャ",
+      "title": "8BitComputer プロジェクト概要",
+      "desc": "このページは他のプロジェクトページと同じ構成です。デモ動画は後で追加し、現時点ではコードスニペットを表示しません。",
+      "chips": {
+        "isa": "8ビット ISA",
+        "registers": "レジスタ",
+        "alu": "ALU",
+        "control_unit": "制御ユニット"
+      }
+    },
+    "summary": {
+      "text": "現在はページ構造と情報レイアウトの整備を優先しています。機能デモは後続更新で動画として追加予定です。"
+    },
+    "stack": {
+      "digital_logic": "デジタル論理",
+      "arch_design": "アーキテクチャ設計",
+      "simulation": "シミュレーション"
+    },
+    "sections": {
+      "demo_videos": "デモ動画"
+    },
+    "videos": {
+      "placeholder": "デモ動画はまだアップロードされていません。このセクションは今後の追加用に予約済みです。"
+    },
+    "footer": {
+      "page": "8BitComputer プロジェクトページ"
+    }
+  }
+}
+
