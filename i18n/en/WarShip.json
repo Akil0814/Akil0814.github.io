@@ -58,7 +58,7 @@
       "animation": "Controls animation state, timing, and transitions.",
       "atlas": "Manages texture atlas lookup and sprite regions.",
       "resources_manager": "Loads and caches game resources.",
-      "txt_to_texture": "Builds text textures for runtime UI rendering.",
+      "txt_texture_manager": "Builds text textures for runtime UI rendering.",
       "default": "Core WarShip module implementation."
     },
     "code_tags": {
@@ -74,7 +74,7 @@
       "animation": "Animation",
       "atlas": "Atlas",
       "resources_manager": "Resources Manager",
-      "txt_to_texture": "Text to Texture"
+      "txt_texture_manager": "Text to Texture"
     },
     "footer": {
       "page": "WarShip Project Page"

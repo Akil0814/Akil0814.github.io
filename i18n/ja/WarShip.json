@@ -58,7 +58,7 @@
       "animation": "アニメーション状態、タイミング、遷移を制御します。",
       "atlas": "テクスチャアトラス参照とスプライト領域を管理します。",
       "resources_manager": "ゲームリソースの読み込みとキャッシュを管理します。",
-      "txt_to_texture": "実行時 UI 向けテキストテクスチャを生成します。",
+      "txt_texture_manager": "実行時 UI 向けテキストテクスチャを生成します。",
       "default": "WarShip のコアモジュール実装です。"
     },
     "code_tags": {
@@ -74,7 +74,7 @@
       "animation": "アニメーション",
       "atlas": "アトラス",
       "resources_manager": "リソース管理",
-      "txt_to_texture": "テキストテクスチャ化"
+      "txt_texture_manager": "テキストテクスチャ化"
     },
     "footer": {
       "page": "WarShip プロジェクトページ"

@@ -21,7 +21,7 @@
     animation: "Controls animation state, timing, and transitions.",
     atlas: "Manages texture atlas lookup and sprite regions.",
     resources_manager: "Loads and caches game resources.",
-    txt_to_texture: "Builds text textures for runtime UI rendering.",
+    txt_texture_manager: "Builds text textures for runtime UI rendering.",
     default: "Core WarShip module implementation.",
   };
 
@@ -38,17 +38,19 @@
     animation: "Animation",
     atlas: "Atlas",
     resources_manager: "Resources Manager",
-    txt_to_texture: "Text to Texture",
+    txt_texture_manager: "Text to Texture",
   };
 
   function resolveCodeToken(fileName) {
     const key = String(fileName).toLowerCase();
+    if (key === "main.cpp") return "main_loop";
     if (key.includes("main_loop")) return "main_loop";
     if (key.includes("scene_pool")) return "scene_pool";
     if (key.includes("ship_factory")) return "ship_factory";
     if (key.includes("resources_manager")) return "resources_manager";
     if (key.includes("effect_manager")) return "effect_manager";
-    if (key.includes("txt_to_texture")) return "txt_to_texture";
+    if (key.includes("txt_texture_manager")) return "txt_texture_manager";
+    if (key.includes("txt_to_texture")) return "txt_texture_manager";
     if (key.includes("board")) return "board";
     if (key.includes("bullet")) return "bullet";
     if (key.includes("button")) return "button";

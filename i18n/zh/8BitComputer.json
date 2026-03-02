@@ -4,7 +4,7 @@
     "intro": {
       "kicker": "CPU 设计 / 数字逻辑 / 8位架构",
       "title": "8BitComputer 项目概览",
-      "desc": "本页面采用与其他项目页一致的架构。演示视频将在后续补充，当前阶段不展示代码片段。",
+      "desc": "该项目在建设中。",
       "chips": {
         "isa": "8位 ISA",
         "registers": "寄存器",
@@ -13,7 +13,7 @@
       }
     },
     "summary": {
-      "text": "目前重点是页面结构与信息布局。功能演示将在后续版本通过视频展示。"
+      "text": "该项目在建设中。"
     },
     "stack": {
       "digital_logic": "数字逻辑",
@@ -21,14 +21,17 @@
       "simulation": "仿真"
     },
     "sections": {
-      "demo_videos": "演示视频"
+      "demo_videos": "演示视频",
+      "preview_image": "提前预览图"
     },
     "videos": {
-      "placeholder": "演示视频暂未上传，此区域已预留，后续可直接补充内容。"
+      "placeholder": "该项目在建设中。"
+    },
+    "preview": {
+      "alt": "8BitComputer 提前预览图"
     },
     "footer": {
       "page": "8BitComputer 项目页"
     }
   }
 }
-

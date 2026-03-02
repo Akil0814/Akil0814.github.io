@@ -4,7 +4,7 @@
     "intro": {
       "kicker": "CPU Design / Digital Logic / 8-bit Architecture",
       "title": "8Bit Computer Project Overview",
-      "desc": "This page follows the same project-page architecture as the rest of the site. Demo videos will be added later, and code snippets are intentionally omitted for now.",
+      "desc": "This project is under construction.",
       "chips": {
         "isa": "8-bit ISA",
         "registers": "Registers",
@@ -13,7 +13,7 @@
       }
     },
     "summary": {
-      "text": "The current stage focuses on page scaffolding and information structure. Function demos will be delivered through videos in a later update."
+      "text": "This project is under construction."
     },
     "stack": {
       "digital_logic": "Digital Logic",
@@ -21,14 +21,17 @@
       "simulation": "Simulation"
     },
     "sections": {
-      "demo_videos": "Demo Videos"
+      "demo_videos": "Demo Videos",
+      "preview_image": "Preview Image"
     },
     "videos": {
-      "placeholder": "Video demonstration is not uploaded yet. This section is reserved and ready for future content."
+      "placeholder": "This project is under construction."
+    },
+    "preview": {
+      "alt": "8BitComputer preview image"
     },
     "footer": {
       "page": "8Bit Computer Project Page"
     }
   }
 }
-
