@@ -129,9 +129,10 @@
       descriptionKey: "WarShip.videos.start_shopping.desc",
       descriptionFallback: "Shows pre-battle shop flow and preparation phase.",
       relatedCodeFiles: [
-        "WarShip_Button.cpp",
-        "WarShip_resources_manager.cpp",
-        "WarShip_Txt_to_Texture.cpp",
+        "scene_pool.cpp",
+        "ship.cpp",
+        "ship_factory.cpp",
+        "button.cpp"
       ],
     },
     {
@@ -141,9 +142,8 @@
       descriptionKey: "WarShip.videos.ship_placement.desc",
       descriptionFallback: "Shows ship deployment rules and board placement interactions.",
       relatedCodeFiles: [
-        "WarShip_Board.cpp",
-        "WarShip_ship.cpp",
-        "WarShip_ship_factory.cpp",
+        "ship.cpp",
+        "board.cpp",
       ],
     },
     {
@@ -153,9 +153,11 @@
       descriptionKey: "WarShip.videos.attack_action.desc",
       descriptionFallback: "Shows core attack execution and battle feedback.",
       relatedCodeFiles: [
-        "WarShip_main_loop.cpp",
-        "WarShip_Board.cpp",
-        "WarShip_bullet.cpp",
+        "effect.cpp",
+        "effect_manager.cpp",
+        "txt_texture_manager.cpp",
+        "bullet.cpp",
+        "board.cpp"
       ],
     },
     {
@@ -165,9 +167,10 @@
       descriptionKey: "WarShip.videos.detect_focus_fire.desc",
       descriptionFallback: "Shows detection and focused-fire skill combo behavior.",
       relatedCodeFiles: [
-        "WarShip_effect.cpp",
-        "WarShip_effect_manager.cpp",
-        "WarShip_animation.cpp",
+        "effect.cpp",
+        "effect_manager.cpp",
+        "animation.cpp",
+        "board.cpp"
       ],
     },
     {
@@ -177,9 +180,10 @@
       descriptionKey: "WarShip.videos.repair_skill.desc",
       descriptionFallback: "Shows repair effect and ship state recovery flow.",
       relatedCodeFiles: [
-        "WarShip_effect.cpp",
-        "WarShip_effect_manager.cpp",
-        "WarShip_ship.cpp",
+        "effect.cpp",
+        "effect_manager.cpp",
+        "ship.cpp",
+        "board.cpp"
       ],
     },
   ];
