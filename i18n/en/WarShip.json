@@ -13,7 +13,9 @@
       }
     },
     "summary": {
-      "text": "WarShip is a turn-based naval strategy game prototype built with C++. The modules below cover scene switching, board and ship data models, effect rendering, and gameplay loops. Demo videos show real in-game interactions such as placement, attack, and skill execution."
+      "text": [
+        "WarShip is a turn-based naval strategy game prototype built with C++. The modules below cover scene switching, board and ship data models, effect rendering, and gameplay loops. Demo videos show real in-game interactions such as placement, attack, and skill execution."
+      ]
     },
     "stack": {
       "chip_scene_architecture": "Scene Architecture",
