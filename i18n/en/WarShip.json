@@ -40,7 +40,7 @@
         "Adding a new ship type only requires extending the type definition and factory branch, minimizing invasive changes to upper-layer game flow.</p>",
         "<p><strong>Board Data Structure (20x20 TileBoard + Tile State):</strong><br>",
         "The core battlefield uses a 20x20 TileBoard. Each Tile tracks state (visible/hit/unexplored, etc.) and an optional <code>Ship*</code> reference.",
-        "Attack and skill resolution are board-centric with legality checks and state updates, while rendering only reflects state, keeping rules and presentation separated.</p>",       
+        "Attack and skill resolution are board-centric with legality checks and state updates, while rendering only reflects state, keeping rules and presentation separated.</p>",
         "<p><strong>Visual Feedback → Final Commit (Bullet::on_arrive() + Effect callbacks + Prototype cloning):</strong><br>",
         "After the bullet reaches the target tile, the board state is not mutated immediately. In <code>Bullet::on_arrive()</code>, the game first chooses and plays the proper VFX/SFX (Explosion / WaterSplash, etc.) based on the target Tile state, then wraps the final state update as a callback and passes it into <code>EffectManager::show_effect(...)</code>. When the effect system triggers the callback, the game commits the result (hit: <code>take_hit()</code>, miss: mark <code>Miss</code>), keeping visuals and logic strictly consistent.<br><br>",
         "The effect system uses a “template + clone” reuse strategy: EffectManager pre-registers effect templates (e.g., Explosion / WaterSplash / Shield). When playing an effect, it does not directly new a concrete effect object; instead it calls <code>Effect::clone()</code> to copy from the template, then configures the target rect/parameters and pushes the instance into the manager’s update/render queue. This avoids repeated loading and initialization, and new effects can be reused by simply registering a template.</p>",
@@ -50,7 +50,7 @@
         "<strong>2) Bullet Spawn:</strong> BulletManager creates a Bullet instance and the bullet enters the per-frame flight update (time-based movement/animation).<br>",
         "<strong>3) On Arrive:</strong> When the bullet arrives, it enters <code>Bullet::on_arrive()</code>, reads the target Tile state, and decides which feedback to play (Explosion / WaterSplash / Shield, etc.).<br>",
         "<strong>4) Effect Playback:</strong> EffectManager owns effect lifetime (create, update, render, destroy) and executes the provided commit callback during playback.<br>",
-        "<strong>5) State Commit:</strong> The final state is committed inside the effect callback (hit: <code>Tile::take_hit()</code>; miss: mark <code>Tile::Status::Miss</code>). Repeated attacks on already-sunk tiles only play feedback and do not apply extra damage, ensuring visuals and state remain consistent.</p>",       
+        "<strong>5) State Commit:</strong> The final state is committed inside the effect callback (hit: <code>Tile::take_hit()</code>; miss: mark <code>Tile::Status::Miss</code>). Repeated attacks on already-sunk tiles only play feedback and do not apply extra damage, ensuring visuals and state remain consistent.</p>",
         "<p><strong>Resource and Performance Optimization (Resource Cache + Text Texture Cache + Atlas Animation):</strong><br>",
         "ResourcesManager centralizes load/cache for textures, fonts, and sounds. Resource references are reused across scene switches to avoid duplicate loading.",
         "Frequently used UI text is texture-cached (TxtTextureManager) to reduce repeated text texture generation overhead.",
@@ -128,6 +128,20 @@
     },
     "footer": {
       "page": "WarShip Project Page"
+    },
+    "mermaid": {
+      "turn_flow": {
+        "title": "State Flow",
+        "desc": "State transitions across Menu, Setup, Game, and Settlement, including key actions per state."
+      },
+      "class_diagram": {
+        "title": "Core Class Diagram",
+        "desc": "Relationships among managers, scenes, players, board/tile, ships, bullets, and effects."
+      },
+      "attack_commit": {
+        "title": "Attack Commit Sequence",
+        "desc": "Sequence from bullet firing to effect playback and final board/tile state updates."
+      }
     }
   }
 }

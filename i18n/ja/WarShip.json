@@ -41,18 +41,16 @@
         "<p><strong>盤面データ構造（20×20 TileBoard + Tile 状態）：</strong><br>",
         "コア戦場は 20×20 の TileBoard を採用しています。各 Tile はマス状態（可視/命中/未探索など）と、必要に応じた <code>Ship*</code> 参照を保持します。",
         "攻撃・スキル判定は盤面中心で合法性検証と状態更新を行い、描画層は状態に応じた結果描画のみを担当することで、ルールと表現を分離しています。</p>",
-        
         "<p><strong>演出 → 確定処理（Bullet::on_arrive() + Effect コールバック + Prototype クローン）：</strong><br>",
         "弾がターゲットのマスに到達しても、盤面データは即座に更新しません。<code>Bullet::on_arrive()</code> 内でターゲット Tile の状態に応じて爆発／水しぶき等の VFX・SFX を先に再生し、その後、最終的な状態更新をコールバックとしてまとめて <code>EffectManager::show_effect(...)</code> に渡します。特效システムがコールバックを実行したタイミングで結算を確定（命中：<code>take_hit()</code>、外れ：<code>Miss</code> を付与）することで、見た目とロジックの整合性を保ちます。<br><br>",
         "特效は「テンプレート + クローン」による再利用方式を採用しています。EffectManager は Explosion / WaterSplash / Shield などの特效テンプレートを事前登録し、再生時は具体クラスを直接 new せずに <code>Effect::clone()</code> でテンプレートから複製します。その後、描画矩形やパラメータを設定して管理キュー（update/render）に投入します。これにより重複ロードや初期化コストを抑え、新しい特效もテンプレート登録だけで再利用できます。</p>",
-
         "<p><strong>攻撃処理パイプライン（入力 → 演出 → 確定）：</strong><br>",
         "本プロジェクトは「マス選択」と「盤面更新」を分離し、攻撃処理を固定のパイプラインで進めます：<br>",
         "<strong>1) ターゲットプレビュー：</strong>プレイヤーがマスを選択した後、合法性とリソースを検証します。OK の場合は選択状態を更新し、ハイライト等のプレビュー演出のみを行い、この段階では命中/外れの状態は確定しません。<br>",
         "<strong>2) 弾生成：</strong>BulletManager が Bullet を生成し、弾はフレーム更新で飛行（時間ベースの移動/アニメーション）します。<br>",
         "<strong>3) 到達（On Arrive）：</strong>到達時に <code>Bullet::on_arrive()</code> に入り、ターゲット Tile 状態を参照して Explosion / WaterSplash / Shield など、再生する演出を決定します。<br>",
         "<strong>4) 演出再生：</strong>EffectManager が特效のライフサイクル（生成・更新・描画・破棄）を管理し、再生中に渡された確定用コールバックを実行します。<br>",
-        "<strong>5) 状態確定：</strong>特效コールバック内で最終状態を確定します（命中：<code>Tile::take_hit()</code>、外れ：<code>Tile::Status::Miss</code>）。沈没済みマスへの反復攻撃は演出のみで追加ダメージを与えず、見た目と状態の一致を保証します。</p>",        
+        "<strong>5) 状態確定：</strong>特效コールバック内で最終状態を確定します（命中：<code>Tile::take_hit()</code>、外れ：<code>Tile::Status::Miss</code>）。沈没済みマスへの反復攻撃は演出のみで追加ダメージを与えず、見た目と状態の一致を保証します。</p>",
         "<p><strong>リソースと性能最適化（リソースキャッシュ + テキストテクスチャキャッシュ + アトラスアニメーション）：</strong><br>",
         "ResourcesManager でテクスチャ/フォント/SE などを統一ロード・キャッシュし、シーン切替時は参照を再利用して重複ロードを防ぎます。",
         "頻用 UI テキストは貼り付けテクスチャとしてキャッシュ（TxtTextureManager）し、文字テクスチャ再生成コストを削減します。",
@@ -129,6 +127,20 @@
     },
     "footer": {
       "page": "WarShip プロジェクトページ"
+    },
+    "mermaid": {
+      "turn_flow": {
+        "title": "状態遷移フロー",
+        "desc": "Menu・Setup・Game・Settlement の状態遷移と、各状態での主要操作を示します。"
+      },
+      "class_diagram": {
+        "title": "コアクラス図",
+        "desc": "Manager・Scene・Player・Board/Tile・Ship・Bullet・Effect など主要クラス間の関係を示します。"
+      },
+      "attack_commit": {
+        "title": "攻撃解決シーケンス",
+        "desc": "砲弾発射からエフェクト再生、盤面/タイル状態の最終反映までの時系列を示します。"
+      }
     }
   }
 }

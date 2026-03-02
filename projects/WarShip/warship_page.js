@@ -194,10 +194,10 @@
   function getMermaidDiagrams() {
     return [
       {
-        title: t("WarShip.mermaid.turn_flow.title", "Turn Flow"),
+        title: t("WarShip.mermaid.turn_flow.title", "State Flow"),
         description: t(
           "WarShip.mermaid.turn_flow.desc",
-          "How the game flows from setup to battle, and how turns alternate between players."
+          "State transitions across Menu, Setup, Game, and Settlement, including key actions per state."
         ),
         code: `
         stateDiagram-v2
@@ -215,11 +215,11 @@
   Menu --> [*] : Quit
   `,
       },
-            {
-        title: t("WarShip.mermaid.turn_flow.title", "Class Diagram"),
+      {
+        title: t("WarShip.mermaid.class_diagram.title", "Core Class Diagram"),
         description: t(
-          "",
-          ""
+          "WarShip.mermaid.class_diagram.desc",
+          "Relationships among managers, scenes, players, board/tile, ships, bullets, and effects."
         ),
         code: `
 classDiagram
@@ -324,10 +324,10 @@ classDiagram
   `,
       },
       {
-        title: t("WarShip.mermaid.attack_commit.title", "Attack Commit Pipeline"),
+        title: t("WarShip.mermaid.attack_commit.title", "Attack Commit Sequence"),
         description: t(
           "WarShip.mermaid.attack_commit.desc",
-          "Input to visual feedback to final state commit."
+          "Sequence from bullet firing to effect playback and final board/tile state updates."
         ),
         code: `
 sequenceDiagram
