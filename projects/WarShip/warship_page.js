@@ -197,7 +197,29 @@
         title: t("WarShip.mermaid.turn_flow.title", "Turn Flow"),
         description: t(
           "WarShip.mermaid.turn_flow.desc",
-          "How turns switch between players with attack and skill actions."
+          "How the game flows from setup to battle, and how turns alternate between players."
+        ),
+        code: `
+        stateDiagram-v2
+  [*] --> Menu
+
+  Menu --> Setup : Start
+  Setup --> Setup : Buy / Drag / Rotate
+  Setup --> Setup : Next / Reset
+  Setup --> Game : Start (P1 & P2 ready)
+
+  Game --> Game : Attack / Skill / EndTurn
+  Game --> Settlement : Opponent has no remaining ships
+
+  Settlement --> Menu : Back (TODO)
+  Menu --> [*] : Quit
+  `,
+      },
+            {
+        title: t("WarShip.mermaid.turn_flow.title", "Class Diagram"),
+        description: t(
+          "",
+          ""
         ),
         code: `
 classDiagram
