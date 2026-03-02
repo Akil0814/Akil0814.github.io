@@ -62,6 +62,16 @@
     },
     "footer": {
       "page": "CollegeTour Project Page"
+    },
+    "mermaid": {
+      "data_manager_class": {
+        "title": "Data Layer Class Diagram",
+        "desc": "Shows DataManager-centered architecture and how UI windows, route planning, and SQLite interact."
+      },
+      "price_update_txn": {
+        "title": "Price Update Transaction Sequence",
+        "desc": "Shows transactional execution of souvenir price updates with commit on success and rollback on failure."
+      }
     }
   }
 }

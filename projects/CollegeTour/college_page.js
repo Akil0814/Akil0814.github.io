@@ -45,6 +45,95 @@
     cardId: `code-card-${index + 1}`,
     filePath: `../snippets/CollegeTour/${entry.fileName}`,
   }));
+  let mermaidRenderer = null;
+
+  function getMermaidDiagrams() {
+    return [
+      {
+        title: t("CollegeTour.mermaid.data_manager_class.title", "Data Layer Class Diagram"),
+        description: t(
+          "CollegeTour.mermaid.data_manager_class.desc",
+          "Shows DataManager-centered architecture and how UI windows, route planning, and SQLite interact."
+        ),
+        code: `classDiagram
+  direction LR
+
+  class DataManager{
+    -QString connName
+    -QString lastError
+    +bool open_db()
+    +void close_db()
+    +QString last_error() const
+    +bool transaction()
+    +bool commit()
+    +bool rollback()
+    +optional<int> get_college_id(name)
+    +optional<QString> get_college_name(id)
+    +bool add_college(...)
+    +bool remove_college(id)
+    +bool adjust_souvenir_price(...)
+    +vector<int> compute_route(...)
+  }
+
+  class LoginWindow{
+    +onLoginClicked()
+    +onAdminClicked()
+  }
+
+  class MainWindow{
+    +showColleges()
+    +showRoute()
+    +showShopping()
+  }
+
+  class AdminWindow{
+    +addCollege()
+    +deleteCollege()
+    +updatePrice()
+    +rebuildDatabase()
+  }
+
+  class RoutePlanner{
+    +vector<int> plan(...)
+    +double totalDistance(...)
+  }
+
+  class SQLite{
+    <<database>>
+  }
+
+  LoginWindow --> DataManager : auth/query
+  MainWindow --> DataManager : read/write
+  AdminWindow --> DataManager : admin CRUD
+  DataManager --> SQLite : SQL/transaction
+  DataManager --> RoutePlanner : provide data / invoke algorithm`,
+      },
+      {
+        title: t("CollegeTour.mermaid.price_update_txn.title", "Price Update Transaction Sequence"),
+        description: t(
+          "CollegeTour.mermaid.price_update_txn.desc",
+          "Shows transactional execution of souvenir price updates with commit on success and rollback on failure."
+        ),
+        code: `sequenceDiagram
+  participant UI as Qt Widget
+  participant DM as DataManager
+  participant DB as SQLite
+
+  UI->>DM: adjust_souvenir_price(...)
+  DM->>DM: validate connection (isValid && isOpen)
+  DM->>DB: BEGIN TRANSACTION
+  DM->>DB: PREPARE + BIND + EXEC
+  alt success
+    DM->>DB: COMMIT
+    DM-->>UI: true
+  else fail
+    DM->>DB: ROLLBACK
+    DM->>DM: set lastError
+    DM-->>UI: false
+  end`,
+      },
+    ];
+  }
 
   function renderCodeCards() {
     const codeList = document.getElementById("codeList");
@@ -107,6 +196,27 @@
     }
   }
 
+  function initMermaidSection(initialTheme) {
+    const targetElement = document.getElementById("college-mermaid");
+    if (!targetElement || !window.ProjectMermaid) {
+      if (!window.ProjectMermaid) {
+        console.warn("ProjectMermaid module is missing.");
+      }
+      return;
+    }
+
+    mermaidRenderer = window.ProjectMermaid.mount(targetElement, {
+      diagrams: getMermaidDiagrams(),
+      theme: initialTheme,
+      idPrefix: "college-mermaid",
+      mermaidConfig: {
+        flowchart: {
+          curve: "basis",
+        },
+      },
+    });
+  }
+
   function init() {
     if (!window.ProjectPageCore || !window.ProjectCodeBlock) {
       console.error("Shared project modules are missing.");
@@ -117,12 +227,38 @@
       codeThemeLinkId: "prismThemeLink",
       codeThemeDarkHref: "../../assets/prism/prism-dark.css",
       codeThemeLightHref: "../../assets/prism/prism-light.css",
+      onThemeChange(theme) {
+        if (mermaidRenderer) {
+          mermaidRenderer.setTheme(theme);
+        }
+      },
+      onLangChange(language) {
+        if (!mermaidRenderer) return;
+
+        if (typeof window.applyI18n === "function") {
+          window.applyI18n(language)
+            .then(() => {
+              mermaidRenderer.setDiagrams(getMermaidDiagrams());
+            })
+            .catch((error) => {
+              console.warn("[i18n] Failed to refresh Mermaid translations.", error);
+            });
+          return;
+        }
+
+        mermaidRenderer.setDiagrams(getMermaidDiagrams());
+      },
     });
 
     renderCodeCards();
+    initMermaidSection(pageCore.getTheme());
     if (typeof window.applyI18n === "function") {
       window.applyI18n(pageCore.getLang()).catch((error) => {
         console.warn("[i18n] Failed to apply CollegeTour translations.", error);
+      }).finally(() => {
+        if (mermaidRenderer) {
+          mermaidRenderer.setDiagrams(getMermaidDiagrams());
+        }
       });
     }
     loadCodeBlocks();
