@@ -14,7 +14,7 @@
     },
     "summary": {
       "text": [
-        "WarShip is a turn-based naval strategy prototype built with C++ and SDL. The gameplay loop is: menu -> shop and drag-and-drop deployment (two players take turns) -> turn-based attack/skill actions -> settlement. The demo videos below show real interactions such as purchasing, placement, attacks, and skill releases.",
+        "<h3>Core Gameplay Implementation</h3>",
         "The core loop is strictly turn-based with alternating players. At the start of each turn, available resources are recalculated from fleet state (Missile / Attack / Skill counts).",
         "All actions in a turn must stay within those resource limits. Each action consumes its quota immediately. When resources are exhausted, or the player ends the turn manually, control switches to Next Player.",
         "The battlefield is a 20x20 TileBoard. Each Tile stores grid state (empty, hit, unexplored, etc.) plus an optional Ship* reference, enabling fast lookup for hit checks and rendering.<br>",
