@@ -122,6 +122,7 @@
   }));
 
   const codeEntryByFileName = new Map(codeEntries.map((entry) => [entry.fileName, entry]));
+  let mermaidRenderer = null;
 
   const videoEntries = [
     {
@@ -189,6 +190,155 @@
       ],
     },
   ];
+
+  function getMermaidDiagrams() {
+    return [
+      {
+        title: t("WarShip.mermaid.turn_flow.title", "Turn Flow"),
+        description: t(
+          "WarShip.mermaid.turn_flow.desc",
+          "How turns switch between players with attack and skill actions."
+        ),
+        code: `
+classDiagram
+  class Manager~T~{
+    +static T* instance()
+  }
+
+  class GameManager{
+    -SDL_Window* window
+    -SDL_Renderer* renderer
+    -bool is_quit
+    +int run(int argc,char** argv)
+    +void switch_scene(SceneType)
+    +void create_player()
+    +Player* get_player1()
+    +Player* get_player2()
+  }
+  Manager~GameManager~ <|-- GameManager
+
+  class Scene{
+    +on_enter()
+    +on_exit()
+    +on_update(delta)
+    +on_render(renderer)
+    +on_input(event)
+  }
+
+  class SceneManager{
+    -Scene* current_scene
+    +set_current_scene(Scene*)
+    +switch_to(Scene*)
+  }
+  Manager~SceneManager~ <|-- SceneManager
+  SceneManager o--> Scene
+
+  class ScenePool{
+    -Scene* menu_scene
+    -Scene* setup_scene
+    -Scene* game_scene
+    -Scene* settlement_scene
+    +get_scene(SceneType) Scene*
+  }
+  ScenePool o--> Scene
+
+  class Player{
+    -int coin_have
+    -vector~Ship*~ ship_list
+    -Board board
+    +get_atk_time() int
+    +get_skill_time(SkillType) int
+    +have_remaining_ship() bool
+  }
+  GameManager o--> Player
+
+  class Board{
+    -TileBoard board
+    -SkillType skill_using
+    +place_ship(Ship*,pos,size,horizontal) SDL_Point
+    +detect_board(SkillType,center)
+  }
+  Player *-- Board
+  Board *-- Tile
+
+  class Tile{
+    -Status status
+    -Ship* ship_on_tile
+    +take_hit()
+    +change_status(Status)
+  }
+  Tile o--> Ship
+
+  class Ship{
+    -int hp
+    -int defense_time
+    -int atk_time
+    -SkillType skill
+    -int skill_time
+    +take_damage()
+    +reinforce()
+  }
+  Ship <|-- Battleship
+  Ship <|-- AircraftCarrier
+  Ship <|-- Submarine
+  Ship <|-- RepairShip
+
+  class BulletManager{
+    -vector~unique_ptr~Bullet~~ bullet_list
+    +fire(end,board,index,skill)
+  }
+  Manager~BulletManager~ <|-- BulletManager
+  BulletManager o--> Bullet
+  Bullet o--> Board
+
+  class EffectManager{
+    -EffectPool effect_pool
+    -EffectOnPlay effect_on_play
+    +show_effect(id,rect,angle,callback)
+  }
+  Manager~EffectManager~ <|-- EffectManager
+  EffectManager o--> Effect
+  Effect <|-- Animation
+  `,
+      },
+      {
+        title: t("WarShip.mermaid.attack_commit.title", "Attack Commit Pipeline"),
+        description: t(
+          "WarShip.mermaid.attack_commit.desc",
+          "Input to visual feedback to final state commit."
+        ),
+        code: `
+sequenceDiagram
+  participant UI as GameScene/Board
+  participant BL as Bullet
+  participant EM as EffectManager
+  participant BD as Board
+  participant TL as Tile
+
+  UI->>BL: fire bullet (set effect_board/effect_index/end_pos)
+  loop Every frame
+    BL->>BL: on_update(delta) move bullet
+  end
+  BL->>BL: on_arrive()
+
+  alt Hit ship and tile not Sink
+    BL->>EM: show_effect(Explosion1, rect, callback)
+    EM-->>BD: callback()
+    BD->>TL: take_hit()
+    opt Tile is Defend
+      BL->>EM: show_effect(Shield, rect, no-op)
+    end
+  else Empty tile (no ship)
+    BL->>EM: show_effect(WaterSplash, rect, callback)
+    EM-->>BD: callback()
+    BD->>TL: change_status(Miss)
+  else Tile already Sink
+    BL->>EM: show_effect(WaterSplash, rect, no-op)
+  end
+  `,
+      },
+    ];
+  }
 
   function focusCodeCard(cardId) {
     const targetCard = document.getElementById(cardId);
@@ -330,6 +480,27 @@
     }
   }
 
+  function initMermaidSection(initialTheme) {
+    const targetElement = document.getElementById("warship-mermaid");
+    if (!targetElement || !window.ProjectMermaid) {
+      if (!window.ProjectMermaid) {
+        console.warn("ProjectMermaid module is missing.");
+      }
+      return;
+    }
+
+    mermaidRenderer = window.ProjectMermaid.mount(targetElement, {
+      diagrams: getMermaidDiagrams(),
+      theme: initialTheme,
+      idPrefix: "warship-mermaid",
+      mermaidConfig: {
+        flowchart: {
+          curve: "basis",
+        },
+      },
+    });
+  }
+
   function init() {
     if (!window.ProjectPageCore || !window.ProjectCodeBlock) {
       console.error("Shared project modules are missing.");
@@ -340,13 +511,39 @@
       codeThemeLinkId: "prismThemeLink",
       codeThemeDarkHref: "../../assets/prism/prism-dark.css",
       codeThemeLightHref: "../../assets/prism/prism-light.css",
+      onThemeChange(theme) {
+        if (mermaidRenderer) {
+          mermaidRenderer.setTheme(theme);
+        }
+      },
+      onLangChange(language) {
+        if (!mermaidRenderer) return;
+
+        if (typeof window.applyI18n === "function") {
+          window.applyI18n(language)
+            .then(() => {
+              mermaidRenderer.setDiagrams(getMermaidDiagrams());
+            })
+            .catch((error) => {
+              console.warn("[i18n] Failed to refresh Mermaid translations.", error);
+            });
+          return;
+        }
+
+        mermaidRenderer.setDiagrams(getMermaidDiagrams());
+      },
     });
 
     renderVideos();
     renderCodeCards();
+    initMermaidSection(pageCore.getTheme());
     if (typeof window.applyI18n === "function") {
       window.applyI18n(pageCore.getLang()).catch((error) => {
         console.warn("[i18n] Failed to apply WarShip translations.", error);
+      }).finally(() => {
+        if (mermaidRenderer) {
+          mermaidRenderer.setDiagrams(getMermaidDiagrams());
+        }
       });
     }
     loadCodeBlocks();
