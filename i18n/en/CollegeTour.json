@@ -4,7 +4,7 @@
     "intro": {
       "kicker": "C++ / SQLite / Group Project",
       "title": "CollegeTour Project Overview",
-      "desc": "This is a team collaboration project. I mainly handled backend modules, specifically the SQLite-based DataManager and administrator login verification pipeline.",
+      "desc": "This is a team project for the College Tour application. It is a campus trip planning app built with Qt Widgets + SQLite, including login/admin mode, data management (colleges/routes/products), and constraint-based route calculation and presentation. I mainly handled backend modules, focusing on the SQLite-based DataManager, file loading and basic CRUD flows, and the administrator login verification pipeline. This page shows code snippets only: since my scope was primarily backend, there is no video section, and the selected code focuses on backend data lifecycle and admin verification logic.",
       "chips": {
         "data_manager": "DataManager",
         "sqlite": "SQLite",
@@ -13,7 +13,28 @@
       }
     },
     "summary": {
-      "text": "This page only presents code snippets. No video section is included by design. The selected files focus on backend data lifecycle and administrator verification logic."
+      "text": [
+        "<h4>Project Overview:</h4>",
+        "College Tour is a Qt Widgets desktop app centered on a \"data-driven UI\" architecture: SQLite handles persistent storage, Qt handles interaction and presentation, and business/data-access logic is managed centrally in DataManager.",
+        "The app provides two entry modes: regular users can browse colleges, plan trip routes (ordered calculation), shop, and view statistics; administrators can import, maintain, and restore data.",
+        "<h4>Data Layer Design and Implementation:</h4>",
+        "Because the project is data-driven at its core, I designed a global singleton DataManager to unify database connection, transaction, and query handling across multiple UI scenarios.",
+        "The goal is to decouple logic from the UI and keep the system extensible and maintainable. DataManager covers SQLite initialization, schema migration, transaction rollback, CSV import, and idempotent upsert, ensuring consistent and repeatable imports. It also includes dynamic database rebuild and backup/restore mechanisms for reliability and recoverability.",
+        "<h4>Data Reading Flow:</h4>",
+        "DataManager implements dynamic path resolution. At startup, it searches for the `data` folder from the current directory; if not found, it moves upward and retries, up to 8 attempts. If still not found, it creates a `data` folder in the current directory.",
+        "This avoids hard-coded paths and supports automatic file discovery under different run directories. The same strategy is used to locate `key.dat`. Runtime file loading is also supported: when a new file path is provided, DataManager parses and imports it into the database, improving flexibility.",
+        "<h4>Dynamic Database Rebuild:</h4>",
+        "During database rebuild, the app first closes and removes active DB connections to avoid handle conflicts, then creates a timestamped `.bak` backup to avoid overwriting the previous database.",
+        "If rebuild fails, it automatically attempts rollback from backup and re-initialization to preserve recoverability. In `last_error`, it distinguishes between \"new DB failed but old DB recovered successfully\" and \"new DB failed and old DB recovery failed,\" which helps troubleshooting.",
+        "<h4>Admin Credential Module:</h4>",
+        "This module implements lightweight obfuscation and verification. A pre-generated XOR-encrypted `key.dat` is stored in the `data` folder, with a layout of `magic + version + username_length + username + password_length + password + decode_key`.",
+        "During verification, it first validates `magic` and `version` to avoid loading unknown files. It then extracts the key from the end of the file, encrypts user input with that key, and compares it with stored content.",
+        "If matched, it returns `true`; otherwise, it returns `false`.",
+        "<h4>Potential Improvements:</h4>",
+        "As a centralized data-access layer, DataManager improves reuse but may become bloated as features grow, and the current design does not explicitly address thread safety. It can be split into domain-specific services with interface abstractions to reduce coupling.",
+        "The admin credential module is currently a lightweight local validation scheme suitable for course/personal project scenarios. For stronger security, standard password hashing (such as PBKDF2/BCrypt) and role-based permission strategies should be introduced.",
+        "Some database operations are currently triggered directly on the UI thread, which may affect interaction smoothness at larger scale. A follow-up improvement is moving heavy query/import tasks to background threads and adding local caching for high-frequency reads with explicit invalidation strategies to avoid inconsistency."
+      ]
     },
     "stack": {
       "file_io": "File I/O",
@@ -44,4 +65,3 @@
     }
   }
 }
-
