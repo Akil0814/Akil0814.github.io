@@ -4,15 +4,6 @@ if (yearElement) {
   yearElement.textContent = String(new Date().getFullYear());
 }
 
-// One-time construction notice.
-window.addEventListener("load", () => {
-  const noticeStorageKey = "site_building_notice_shown";
-  if (!localStorage.getItem(noticeStorageKey)) {
-    alert("⚠️ 正在建设中 / currently under construction ⚠️");
-    localStorage.setItem(noticeStorageKey, "1");
-  }
-});
-
 // Called by inline onclick handlers in HTML.
 async function copyEmail(element) {
   const textToCopy = element.dataset.copy || element.textContent.trim();
