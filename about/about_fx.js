@@ -292,21 +292,11 @@
       constellationConfig.cyclePeriodMs;
     const currentIndex = Math.floor(normalizedTime / slotDuration);
     const slotTime = normalizedTime - currentIndex * slotDuration;
-    const nextIndex = (currentIndex + 1) % constellationCount;
-    const fadeDuration = Math.min(constellationConfig.fadeDurationMs, slotDuration * 0.45);
-
-    if (fadeDuration <= 0 || slotTime < slotDuration - fadeDuration) {
-      weights[currentIndex] = 1;
-      return { weights, primaryIndex: currentIndex };
-    }
-
-    const transitionTime = slotTime - (slotDuration - fadeDuration);
-    const blend = easeInOut(transitionTime / fadeDuration);
-    weights[currentIndex] = 1 - blend;
-    weights[nextIndex] = blend;
-
-    const primaryIndex = blend < 0.5 ? currentIndex : nextIndex;
-    return { weights, primaryIndex };
+    const slotProgress = clamp(slotTime / slotDuration, 0, 1);
+    // One constellation per slot: dark -> bright -> dark.
+    const pulseWeight = 0.5 - 0.5 * Math.cos(slotProgress * TAU);
+    weights[currentIndex] = pulseWeight;
+    return { weights, primaryIndex: currentIndex };
   }
 
   function updateFocusPulse(primaryIndex, nowMs) {

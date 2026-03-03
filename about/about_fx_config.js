@@ -13,9 +13,9 @@ window.aboutFxConfig = {
   layers: [
     {
       id: "far",
-      count: 260,
+      count: 560,
       radius: [0.35, 1.0],
-      alpha: [0.08, 0.24],
+      alpha: [0.28, 0.44],
       twinkleSpeed: [0.35, 0.75],
       twinkleStrength: 0.3,
       parallax: 0.28,
@@ -23,9 +23,9 @@ window.aboutFxConfig = {
     },
     {
       id: "mid",
-      count: 180,
+      count: 380,
       radius: [0.65, 1.45],
-      alpha: [0.16, 0.42],
+      alpha: [0.36, 0.62],
       twinkleSpeed: [0.55, 1.0],
       twinkleStrength: 0.4,
       parallax: 0.62,
@@ -33,9 +33,9 @@ window.aboutFxConfig = {
     },
     {
       id: "near",
-      count: 78,
+      count: 70,
       radius: [1.1, 2.15],
-      alpha: [0.28, 0.68],
+      alpha: [0.38, 0.88],
       twinkleSpeed: [0.85, 1.4],
       twinkleStrength: 0.5,
       parallax: 1,
@@ -58,7 +58,7 @@ window.aboutFxConfig = {
   },
   summerTriangle: {
     lineWidth: 1.1,
-    alpha: 0.25,
+    alpha: 0.05,
     color: [175, 208, 255],
   },
   majorStars: {
@@ -75,8 +75,8 @@ window.aboutFxConfig = {
         y: 0.129,
         radius: 2.45,
         alpha: 0.84,
-        glowRadius: 24,
-        glowAlpha: 0.3,
+        glowRadius: 5,
+        glowAlpha: 0.34,
         color: [206, 230, 255],
       },
       vega: {
@@ -84,8 +84,8 @@ window.aboutFxConfig = {
         y: 0.498,
         radius: 3.1,
         alpha: 0.99,
-        glowRadius: 31,
-        glowAlpha: 0.42,
+        glowRadius: 8,
+        glowAlpha: 0.43,
         color: [214, 236, 255],
       },
       altair: {
@@ -93,8 +93,8 @@ window.aboutFxConfig = {
         y: 0.873,
         radius: 2.72,
         alpha: 0.9,
-        glowRadius: 27,
-        glowAlpha: 0.35,
+        glowRadius: 6,
+        glowAlpha: 0.37,
         color: [210, 232, 255],
       },
     },
@@ -120,7 +120,7 @@ window.aboutFxConfig = {
       {
         id: "lyra",
         anchor: "vega",
-        scale: 0.098,
+        scale: 0.196,
         points: [
           [0, 0],
           [-0.36, -0.2],
@@ -140,7 +140,7 @@ window.aboutFxConfig = {
       {
         id: "aquila",
         anchor: "altair",
-        scale: 0.115,
+        scale: 0.23,
         points: [
           [0, 0],
           [-0.54, -0.05],
@@ -163,7 +163,7 @@ window.aboutFxConfig = {
       {
         id: "cygnus",
         anchor: "deneb",
-        scale: 0.128,
+        scale: 0.206,
         points: [
           [0, 0],
           [-0.46, 0.34],
