@@ -276,19 +276,20 @@
     context.globalAlpha = 1;
   }
 
-  function getConstellationCycle(nowMs) {
-    const constellationConfig = config.constellations;
-    const items = constellationConfig.items;
+  function getConstellationCycle(nowMs, constellationConfig) {
+    const items = constellationConfig?.items || [];
     const constellationCount = items.length;
     const weights = new Array(constellationCount).fill(0);
 
-    if (!constellationConfig.cycle || constellationCount <= 1) {
+    if (!constellationConfig || !constellationConfig.cycle || constellationCount <= 1) {
       weights[0] = 1;
       return { weights, primaryIndex: 0 };
     }
 
     const slotDuration = constellationConfig.cyclePeriodMs / constellationCount;
-    const normalizedTime = ((nowMs % constellationConfig.cyclePeriodMs) + constellationConfig.cyclePeriodMs) %
+    const phaseOffsetMs = constellationConfig.phaseOffsetMs || 0;
+    const normalizedTime = (((nowMs + phaseOffsetMs) % constellationConfig.cyclePeriodMs) +
+      constellationConfig.cyclePeriodMs) %
       constellationConfig.cyclePeriodMs;
     const currentIndex = Math.floor(normalizedTime / slotDuration);
     const slotTime = normalizedTime - currentIndex * slotDuration;
@@ -342,12 +343,15 @@
     return boosts;
   }
 
-  function drawConstellationLayer(nowMs, anchors, weights) {
-    const constellationConfig = config.constellations;
+  function drawConstellationLayer(nowMs, constellationConfig, weights, namedAnchors) {
     const shortSide = Math.min(state.width, state.height);
     const [lineR, lineG, lineB] = constellationConfig.color;
     const nodeConfig = constellationConfig.nodes;
     const flowConfig = constellationConfig.flowHighlight;
+    const inactiveAlpha = constellationConfig.inactiveAlphaMode === "summerTriangle"
+      ? config.summerTriangle.alpha
+      : constellationConfig.inactiveAlpha;
+    const groupOffset = getParallaxOffset(constellationConfig.parallax || 0);
 
     context.lineCap = "round";
     context.lineJoin = "round";
@@ -355,7 +359,15 @@
     context.globalAlpha = 1;
 
     constellationConfig.items.forEach((item, itemIndex) => {
-      const anchor = anchors[item.anchor];
+      let anchor = null;
+      if (item.anchor && namedAnchors && namedAnchors[item.anchor]) {
+        anchor = namedAnchors[item.anchor];
+      } else if (item.anchorPos) {
+        anchor = {
+          x: state.width * item.anchorPos[0] + groupOffset.x,
+          y: state.height * item.anchorPos[1] + groupOffset.y,
+        };
+      }
       if (!anchor) return;
 
       const scaledPoints = item.points.map(([x, y]) => ({
@@ -375,7 +387,7 @@
       }
 
       const weight = weights[itemIndex] || 0;
-      const lineAlpha = lerp(constellationConfig.inactiveAlpha, constellationConfig.activeAlpha, weight);
+      const lineAlpha = lerp(inactiveAlpha, constellationConfig.activeAlpha, weight);
       if (lineAlpha <= 0.003) return;
 
       context.globalAlpha = 1;
@@ -492,10 +504,20 @@
     drawStarLayers(deltaTimeSec);
     drawMeteor(nowMs);
 
-    const constellationCycle = getConstellationCycle(nowMs);
+    const summerConstellationCycle = getConstellationCycle(nowMs, config.constellations);
+    const summerConstellationAnchors = buildAnchorPositions(config.constellations.parallax);
+    drawConstellationLayer(
+      nowMs,
+      config.constellations,
+      summerConstellationCycle.weights,
+      summerConstellationAnchors
+    );
 
-    const constellationAnchors = buildAnchorPositions(config.constellations.parallax);
-    drawConstellationLayer(nowMs, constellationAnchors, constellationCycle.weights);
+    const extraConstellationConfig = config.extraConstellations;
+    if (extraConstellationConfig?.items?.length) {
+      const extraCycle = getConstellationCycle(nowMs, extraConstellationConfig);
+      drawConstellationLayer(nowMs, extraConstellationConfig, extraCycle.weights, null);
+    }
 
     const majorAnchors = buildAnchorPositions(config.majorStars.parallax);
     drawSummerTriangle(majorAnchors);
