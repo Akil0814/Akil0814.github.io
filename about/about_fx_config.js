@@ -50,7 +50,7 @@ window.aboutFxConfig = {
     speedPxPerSec: [520, 760],
     tailLengthPx: [62, 105],
     thickness: [1.0, 1.6],
-    alpha: 0.4,
+    alpha: 0.5,
     spawnXRatio: [0.54, 1.04],
     spawnYRatio: [-0.08, 0.42],
     angleRad: [2.3, 2.56],
@@ -72,7 +72,7 @@ window.aboutFxConfig = {
     stars: {
       deneb: {
         x: 0.499,
-        y: 0.129,
+        y: 0.277,
         radius: 2.45,
         alpha: 0.84,
         glowRadius: 5,
@@ -80,8 +80,8 @@ window.aboutFxConfig = {
         color: [206, 230, 255],
       },
       vega: {
-        x: 0.696,
-        y: 0.498,
+        x: 0.618,
+        y: 0.499,
         radius: 3.1,
         alpha: 0.99,
         glowRadius: 8,
@@ -89,8 +89,8 @@ window.aboutFxConfig = {
         color: [214, 236, 255],
       },
       altair: {
-        x: 0.305,
-        y: 0.873,
+        x: 0.383,
+        y: 0.724,
         radius: 2.72,
         alpha: 0.9,
         glowRadius: 6,
@@ -125,7 +125,7 @@ window.aboutFxConfig = {
       {
         id: "lyra",
         anchor: "vega",
-        scale: 0.196,
+        scale: 0.19,
         points: [
           [0, 0],
           [-0.36, -0.2],
@@ -145,7 +145,7 @@ window.aboutFxConfig = {
       {
         id: "aquila",
         anchor: "altair",
-        scale: 0.23,
+        scale: 0.205,
         points: [
           [0, 0],
           [-0.54, -0.05],
@@ -168,7 +168,7 @@ window.aboutFxConfig = {
       {
         id: "cygnus",
         anchor: "deneb",
-        scale: 0.206,
+        scale: 0.182,
         points: [
           [0, 0],
           [-0.46, 0.34],
