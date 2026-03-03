@@ -125,7 +125,7 @@ window.aboutFxConfig = {
       {
         id: "lyra",
         anchor: "vega",
-        scale: 0.19,
+        scale: 0.124,
         points: [
           [0, 0],
           [-0.36, -0.2],
@@ -145,7 +145,7 @@ window.aboutFxConfig = {
       {
         id: "aquila",
         anchor: "altair",
-        scale: 0.205,
+        scale: 0.133,
         points: [
           [0, 0],
           [-0.54, -0.05],
@@ -168,7 +168,7 @@ window.aboutFxConfig = {
       {
         id: "cygnus",
         anchor: "deneb",
-        scale: 0.182,
+        scale: 0.118,
         points: [
           [0, 0],
           [-0.46, 0.34],
