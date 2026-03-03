@@ -352,12 +352,9 @@
     context.lineCap = "round";
     context.lineJoin = "round";
     context.lineWidth = constellationConfig.lineWidth;
+    context.globalAlpha = 1;
 
     constellationConfig.items.forEach((item, itemIndex) => {
-      const weight = weights[itemIndex] || 0;
-      const lineAlpha = lerp(constellationConfig.inactiveAlpha, constellationConfig.activeAlpha, weight);
-      if (lineAlpha <= 0.003) return;
-
       const anchor = anchors[item.anchor];
       if (!anchor) return;
 
@@ -367,6 +364,7 @@
       }));
 
       if (nodeConfig) {
+        context.globalAlpha = 1;
         const [nodeR, nodeG, nodeB] = nodeConfig.color;
         context.fillStyle = `rgba(${nodeR}, ${nodeG}, ${nodeB}, ${nodeConfig.alpha})`;
         for (const point of scaledPoints) {
@@ -376,6 +374,11 @@
         }
       }
 
+      const weight = weights[itemIndex] || 0;
+      const lineAlpha = lerp(constellationConfig.inactiveAlpha, constellationConfig.activeAlpha, weight);
+      if (lineAlpha <= 0.003) return;
+
+      context.globalAlpha = 1;
       context.strokeStyle = `rgba(${lineR}, ${lineG}, ${lineB}, ${lineAlpha})`;
       for (const [startIndex, endIndex] of item.lines) {
         const startPoint = scaledPoints[startIndex];
