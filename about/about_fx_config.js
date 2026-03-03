@@ -18,7 +18,6 @@ window.aboutFxConfig = {
       alpha: [0.08, 0.24],
       twinkleSpeed: [0.35, 0.75],
       twinkleStrength: 0.3,
-      driftSpeed: [1.2, 2.8],
       parallax: 0.28,
       color: [215, 226, 255],
     },
@@ -29,7 +28,6 @@ window.aboutFxConfig = {
       alpha: [0.16, 0.42],
       twinkleSpeed: [0.55, 1.0],
       twinkleStrength: 0.4,
-      driftSpeed: [3.0, 6.8],
       parallax: 0.62,
       color: [222, 235, 255],
     },
@@ -40,7 +38,6 @@ window.aboutFxConfig = {
       alpha: [0.28, 0.68],
       twinkleSpeed: [0.85, 1.4],
       twinkleStrength: 0.5,
-      driftSpeed: [6.5, 12.5],
       parallax: 1,
       color: [235, 244, 255],
     },
@@ -70,10 +67,12 @@ window.aboutFxConfig = {
     focusPulseDurationMs: 1200,
     // Layout tuned to roughly match real Summer Triangle side ratios:
     // Deneb-Vega shortest, Vega-Altair middle, Deneb-Altair longest.
+    // Anchor placement follows the reference composition while keeping
+    // the current inter-star distance ratio (rigid transform: rotate + translate).
     stars: {
       deneb: {
-        x: 0.565,
-        y: 0.22,
+        x: 0.499,
+        y: 0.129,
         radius: 2.45,
         alpha: 0.84,
         glowRadius: 24,
@@ -81,8 +80,8 @@ window.aboutFxConfig = {
         color: [206, 230, 255],
       },
       vega: {
-        x: 0.72,
-        y: 0.24,
+        x: 0.696,
+        y: 0.498,
         radius: 3.1,
         alpha: 0.99,
         glowRadius: 31,
@@ -90,8 +89,8 @@ window.aboutFxConfig = {
         color: [214, 236, 255],
       },
       altair: {
-        x: 0.67,
-        y: 0.62,
+        x: 0.305,
+        y: 0.873,
         radius: 2.72,
         alpha: 0.9,
         glowRadius: 27,
@@ -121,13 +120,13 @@ window.aboutFxConfig = {
       {
         id: "lyra",
         anchor: "vega",
-        scale: 0.1,
+        scale: 0.098,
         points: [
           [0, 0],
-          [0.42, -0.22],
-          [0.72, 0.08],
-          [0.42, 0.38],
-          [-0.07, 0.22],
+          [-0.36, -0.2],
+          [-0.63, 0.02],
+          [-0.38, 0.3],
+          [0.06, 0.18],
         ],
         lines: [
           [0, 1],
@@ -141,7 +140,7 @@ window.aboutFxConfig = {
       {
         id: "aquila",
         anchor: "altair",
-        scale: 0.125,
+        scale: 0.115,
         points: [
           [0, 0],
           [-0.54, -0.05],
@@ -164,21 +163,21 @@ window.aboutFxConfig = {
       {
         id: "cygnus",
         anchor: "deneb",
-        scale: 0.125,
+        scale: 0.128,
         points: [
           [0, 0],
-          [0, 0.46],
-          [0, 0.93],
-          [-0.56, 0.53],
-          [0.57, 0.52],
-          [0, 1.28],
+          [-0.46, 0.34],
+          [-0.96, 0.72],
+          [-0.12, -0.46],
+          [0.18, 0.68],
+          [-1.34, 1.1],
         ],
         lines: [
           [0, 1],
           [1, 2],
           [2, 5],
-          [3, 2],
-          [2, 4],
+          [1, 3],
+          [1, 4],
         ],
       },
     ],

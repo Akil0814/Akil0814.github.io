@@ -30,6 +30,7 @@
     nextMeteorAtMs: 0,
     lastFrameTimeMs: performance.now(),
     lastPrimaryConstellation: -1,
+    lastPrimaryChangeMs: 0,
     focusPulse: {
       anchor: "",
       startMs: 0,
@@ -80,10 +81,6 @@
   }
 
   function createStar(layerConfig) {
-    const driftSpeed = randomRange(layerConfig.driftSpeed[0], layerConfig.driftSpeed[1]);
-    const driftDirection = (Math.random() < 0.6 ? 1 : -1) * randomRange(0.05, 0.22);
-    const driftAngle = driftDirection;
-
     return {
       xRatio: Math.random(),
       yRatio: Math.random(),
@@ -92,8 +89,6 @@
       twinklePhase: Math.random() * TAU,
       twinkleSpeed: randomRange(layerConfig.twinkleSpeed[0], layerConfig.twinkleSpeed[1]),
       twinkleStrength: layerConfig.twinkleStrength * randomRange(0.75, 1.2),
-      velocityX: Math.cos(driftAngle) * driftSpeed,
-      velocityY: Math.sin(driftAngle) * driftSpeed,
     };
   }
 
@@ -176,14 +171,6 @@
         const twinkleRatio = 0.5 + 0.5 * Math.sin(star.twinklePhase);
         const twinkleAlpha = lerp(1 - star.twinkleStrength, 1, twinkleRatio);
         const alpha = star.alphaBase * twinkleAlpha;
-
-        star.xRatio += (star.velocityX * deltaTimeSec) / state.width;
-        star.yRatio += (star.velocityY * deltaTimeSec) / state.height;
-
-        if (star.xRatio > 1.02) star.xRatio = -0.02;
-        if (star.xRatio < -0.02) star.xRatio = 1.02;
-        if (star.yRatio > 1.02) star.yRatio = -0.02;
-        if (star.yRatio < -0.02) star.yRatio = 1.02;
 
         const drawX = star.xRatio * state.width + offset.x;
         const drawY = star.yRatio * state.height + offset.y;
@@ -305,34 +292,34 @@
       constellationConfig.cyclePeriodMs;
     const currentIndex = Math.floor(normalizedTime / slotDuration);
     const slotTime = normalizedTime - currentIndex * slotDuration;
+    const nextIndex = (currentIndex + 1) % constellationCount;
     const fadeDuration = Math.min(constellationConfig.fadeDurationMs, slotDuration * 0.45);
 
-    if (slotTime < fadeDuration) {
-      const previousIndex = (currentIndex - 1 + constellationCount) % constellationCount;
-      const blend = easeInOut(slotTime / fadeDuration);
-      weights[previousIndex] = 1 - blend;
-      weights[currentIndex] = blend;
-    } else if (slotTime > slotDuration - fadeDuration) {
-      const nextIndex = (currentIndex + 1) % constellationCount;
-      const blend = easeInOut((slotTime - (slotDuration - fadeDuration)) / fadeDuration);
-      weights[currentIndex] = 1 - blend;
-      weights[nextIndex] = blend;
-    } else {
+    if (fadeDuration <= 0 || slotTime < slotDuration - fadeDuration) {
       weights[currentIndex] = 1;
+      return { weights, primaryIndex: currentIndex };
     }
 
-    let primaryIndex = 0;
-    for (let index = 1; index < weights.length; index += 1) {
-      if (weights[index] > weights[primaryIndex]) primaryIndex = index;
-    }
+    const transitionTime = slotTime - (slotDuration - fadeDuration);
+    const blend = easeInOut(transitionTime / fadeDuration);
+    weights[currentIndex] = 1 - blend;
+    weights[nextIndex] = blend;
 
+    const primaryIndex = blend < 0.5 ? currentIndex : nextIndex;
     return { weights, primaryIndex };
   }
 
   function updateFocusPulse(primaryIndex, nowMs) {
     if (primaryIndex === state.lastPrimaryConstellation) return;
+    if (
+      state.lastPrimaryConstellation !== -1 &&
+      nowMs - state.lastPrimaryChangeMs < 280
+    ) {
+      return;
+    }
 
     state.lastPrimaryConstellation = primaryIndex;
+    state.lastPrimaryChangeMs = nowMs;
     const activeConstellation = config.constellations.items[primaryIndex];
     if (!activeConstellation) return;
 
