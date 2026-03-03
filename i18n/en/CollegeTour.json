@@ -1,6 +1,6 @@
 {
   "CollegeTour": {
-    "title": "CollegeTour Project",
+    "title": "CollegeTour Project Overview",
     "intro": {
       "kicker": "C++ / SQLite / Group Project",
       "title": "CollegeTour Project Overview",
@@ -25,10 +25,10 @@
         "This avoids hard-coded paths and supports automatic file discovery under different run directories. The same strategy is used to locate `key.dat`. Runtime file loading is also supported: when a new file path is provided, DataManager parses and imports it into the database, improving flexibility.",
         "<h4>Dynamic Database Rebuild:</h4>",
         "During database rebuild, the app first closes and removes active DB connections to avoid handle conflicts, then creates a timestamped `.bak` backup to avoid overwriting the previous database.",
-        "If rebuild fails, it automatically attempts rollback from backup and re-initialization to preserve recoverability. In `last_error`, it distinguishes between \"new DB failed but old DB recovered successfully\" and \"new DB failed and old DB recovery failed,\" which helps troubleshooting.",
+        "If rebuild fails, it automatically attempts rollback from backup and re-initialization, then verifies file availability to preserve recoverability. In `last_error`, it distinguishes between \"new DB failed but old DB recovered successfully\" and \"new DB failed and old DB recovery failed,\" which helps troubleshooting.",
         "<h4>Admin Credential Module:</h4>",
         "This module implements lightweight obfuscation and verification. A pre-generated XOR-encrypted `key.dat` is stored in the `data` folder, with a layout of `magic + version + username_length + username + password_length + password + decode_key`.",
-        "During verification, it first validates `magic` and `version` to avoid loading unknown files. It then extracts the key from the end of the file, encrypts user input with that key, and compares it with stored content.",
+        "During verification, it first checks `magic` and `version` character by character to avoid loading unknown files. It then extracts the key from the end of the file, encrypts user input with that key, and compares it with stored content.",
         "If matched, it returns `true`; otherwise, it returns `false`.",
         "<h4>Potential Improvements:</h4>",
         "As a centralized data-access layer, DataManager improves reuse but may become bloated as features grow, and the current design does not explicitly address thread safety. It can be split into domain-specific services with interface abstractions to reduce coupling.",
@@ -38,7 +38,7 @@
     },
     "stack": {
       "file_io": "File I/O",
-      "validation": "Validation"
+      "validation": "Validation Logic"
     },
     "sections": {
       "core_code_blocks": "Core Code Blocks"

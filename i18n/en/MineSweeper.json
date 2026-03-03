@@ -1,10 +1,10 @@
 {
   "MineSweeper": {
-    "title": "MineSweeper Project",
+    "title": "MineSweeper Project Overview",
     "intro": {
       "kicker": "C++ / Game / EasyX",
       "title": "MineSweeper Project Overview",
-      "desc": "MineSweeper is built with C++ and EasyX. The project uses a Scene + SceneManager architecture to manage menu, difficulty/custom setup, and gameplay states. Core gameplay includes random mine generation, board-state management, recursive safe-area reveal, match timer, and quick restart flow.",
+      "desc": "MineSweeper is implemented with C++ and the EasyX graphics library. The project uses a \"Scene + SceneManager\" structure to manage different game states such as main menu, difficulty/custom settings, and gameplay. Core gameplay logic includes random mine placement, cell-state management, recursive safe-area expansion, match timing, and quick restart. The modules below cover main-loop design, Scene class definition, SceneManager implementation, and board data structure/operations. The demo videos show key interactions including mode selection, safe-cell retention, and safe-zone expansion.",
       "chips": {
         "map_generation": "Map Generation",
         "safe_area_expansion": "Safe Area Expansion",
@@ -14,14 +14,14 @@
     "summary": {
       "text": [
         "<b>Core Gameplay Implementation:</b> The core module is <code>MineBoard</code>, which tracks mine distribution, visible player state, and neighbor hint numbers.",
-        "Empty-cell clicks trigger recursive chain reveal, mine clicks end the game, and clearing all non-mine cells results in victory.<br>",
+        "Empty-cell clicks trigger recursive chain reveal. Clicking a mine ends the game and reveals board layout; clearing all non-mine cells results in victory and also reveals board layout.<br>",
         "<b>Rendering and Interaction:</b> The project is built on EasyX (<code>graphics.h</code>) and message/event handling with <code>ExMessage</code>.<br>",
-        "<b>State Separation:</b> Main menu, difficulty/custom setup, and gameplay are separated into scene subclasses and orchestrated by <code>SceneManager</code>.<br>",
+        "<b>State Separation:</b> Main menu, difficulty/custom setup, and gameplay are implemented as three Scene subclasses inheriting from <code>Scene</code>, and are orchestrated by <code>SceneManager</code>.<br>",
         "<b>Board Logic:</b> <code>MineBoard</code> handles mine placement, number calculation, reveal/flag actions, win/loss checks, and final board display.<br>",
         "<h2>Main Features and Interaction Flow:</h2>",
         "<b>Main Menu:</b> Start enters gameplay; Setting opens difficulty/custom configuration.<br>",
         "<b>Difficulty and Custom Mode:</b> Presets include Easy/Normal/Hard/Expert. Custom mode supports Row/Col/Mine input through keyboard editing.<br>",
-        "<b>First-Click Safety:</b> Mines are generated on the first left click (not at launch), and the timer starts at that moment to avoid instant-death openings.<br>",
+        "<b>First-Click Safety:</b> Mines are generated on the first left click (not at launch), and the timer starts at that moment. First-click safety is implemented in a staged way to improve opening-game experience.<br>",
         "<b>Reveal and Expansion:</b> Clicking empty cells triggers recursive neighborhood expansion (flood-fill style).<br>",
         "<b>Flagging and Counter:</b> Right click toggles flags and updates remaining mine/flag counter display.<br>",
         "<b>Win/Loss Display:</b> On failure or win, the board reveals full mine and mark status for result feedback.<br>",
@@ -31,15 +31,15 @@
         "Input/update/render dispatch is centralized to keep logic clear and extensible.<br>",
         "<h4>Event Handling + UI Button</h4> Button maintains a clickable RECT region with Idle/Hovered/Pushed states.",
         "Click confirmation is performed on mouse-up after press, reducing accidental triggers. A hold-state mechanism is used for difficulty-selection highlighting.<br>",
-        "<h4>Delayed Mine Generation Strategy</h4> Mine placement is delayed until first left click via <code>set_mine(y, x)</code>, then timer starts.",
-        "When free area is sufficient, a protected 3x3 safe zone can be reserved around the first click to improve opening experience.<br>",
+        "<h4>Delayed Mine Generation Strategy</h4> Mine placement is delayed until first left click via <code>board.set_mine(y_index, x_index)</code>, then timer starts.",
+        "MineBoard::set_mine() uses <code>rand()</code> to generate mine coordinates and ensures the first-clicked cell is not mined. When empty space is sufficient, it also protects the 8-neighborhood around that click, forming a 3x3 safe zone to reduce luck-only openings.<br>",
         "<h4>Board Data Model: Three 2D Grids</h4> MineBoard uses separate grids for mine map, visible state, and neighbor count.",
         "Board storage includes a padded boundary to simplify neighborhood traversal and reduce boundary-condition branching.<br>",
         "<h4>Reveal Algorithm: Recursive Flood Fill</h4> Safe unopened cells are revealed and expanded recursively when neighbor count is zero.<br>",
         "<h2>Potential Improvements:</h2>",
         "<h4>Resource and Logic Decoupling</h4> Earlier implementation loaded many global IMAGE resources in one place, which raises maintenance cost.",
         "A centralized ResourceManager can better control loading, cache, and lifecycle.<br>",
-        "<h4>Custom Input State Edge Cases</h4> Certain custom-setting button hold/reset timing paths are easy to break and can be further simplified with stronger state encapsulation.<br>",
+        "<h4>Custom Input State Edge Cases</h4> In SelectorScene, reset timing around <code>current_customize_button</code> and <code>will_hold</code> is not clear enough and can cause bugs. A clearer Button design can help prevent these issues at the design level.<br>",
         "<h4>General Refactoring</h4> Prefer <code>std::unique_ptr&lt;Scene&gt;</code> for scene ownership and move large implementation blocks from headers into <code>.cpp</code> files.<br>"
       ]
     },
@@ -54,7 +54,7 @@
     "mermaid": {
       "scene_lifecycle": {
         "title": "Scene Flow Diagram",
-        "desc": "Shows collaboration and transitions between main loop control and scene management."
+        "desc": "Shows collaboration relationships between scenes."
       },
       "cell_reveal_pipeline": {
         "title": "Gameplay Flow Diagram",
