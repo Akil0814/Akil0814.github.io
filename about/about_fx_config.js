@@ -107,6 +107,11 @@ window.aboutFxConfig = {
     activeAlpha: 0.35,
     lineWidth: 1.05,
     color: [162, 194, 248],
+    nodes: {
+      radius: 1.55,
+      alpha: 0.56,
+      color: [214, 232, 255],
+    },
     parallax: 0.42,
     flowHighlight: {
       enabled: true,

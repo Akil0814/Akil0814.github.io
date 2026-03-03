@@ -346,6 +346,7 @@
     const constellationConfig = config.constellations;
     const shortSide = Math.min(state.width, state.height);
     const [lineR, lineG, lineB] = constellationConfig.color;
+    const nodeConfig = constellationConfig.nodes;
     const flowConfig = constellationConfig.flowHighlight;
 
     context.lineCap = "round";
@@ -364,6 +365,16 @@
         x: anchor.x + x * shortSide * item.scale,
         y: anchor.y + y * shortSide * item.scale,
       }));
+
+      if (nodeConfig) {
+        const [nodeR, nodeG, nodeB] = nodeConfig.color;
+        context.fillStyle = `rgba(${nodeR}, ${nodeG}, ${nodeB}, ${nodeConfig.alpha})`;
+        for (const point of scaledPoints) {
+          context.beginPath();
+          context.arc(point.x, point.y, nodeConfig.radius, 0, TAU);
+          context.fill();
+        }
+      }
 
       context.strokeStyle = `rgba(${lineR}, ${lineG}, ${lineB}, ${lineAlpha})`;
       for (const [startIndex, endIndex] of item.lines) {
@@ -479,15 +490,13 @@
     drawMeteor(nowMs);
 
     const constellationCycle = getConstellationCycle(nowMs);
-    updateFocusPulse(constellationCycle.primaryIndex, nowMs);
-    const boosts = buildAnchorBoosts(constellationCycle.weights, nowMs);
 
     const constellationAnchors = buildAnchorPositions(config.constellations.parallax);
     drawConstellationLayer(nowMs, constellationAnchors, constellationCycle.weights);
 
     const majorAnchors = buildAnchorPositions(config.majorStars.parallax);
     drawSummerTriangle(majorAnchors);
-    drawMajorStars(majorAnchors, boosts);
+    drawMajorStars(majorAnchors, { deneb: 0, vega: 0, altair: 0 });
 
     requestAnimationFrame(renderFrame);
   }
