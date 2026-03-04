@@ -24,3 +24,40 @@
 [data-theme="light"] .about-page .scanlines {
   display: none;
 }
+
+.about-quote-layer {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(26px, 8vh, 84px);
+  transform: translateX(-50%);
+  width: min(88vw, 980px);
+  padding: 0 14px;
+  z-index: 0;
+  pointer-events: none;
+  text-align: center;
+}
+
+.about-quote-layer.is-hidden {
+  display: none;
+}
+
+.about-quote-layer__line {
+  margin: 0;
+  opacity: 0;
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 28px);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: rgba(237, 243, 255, 0.92);
+  text-shadow:
+    0 2px 16px rgba(3, 8, 22, 0.62),
+    0 0 1px rgba(255, 255, 255, 0.35);
+  transition: opacity 1.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-quote-layer__line {
+    transition: none;
+  }
+}
