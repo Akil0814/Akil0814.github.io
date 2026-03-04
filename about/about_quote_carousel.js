@@ -1,18 +1,18 @@
 (function () {
   const QUOTES = [
-    "これで全部よ",
-    "私が持っているもの、全部",
-    "……この星空",
-    "私が持っているのは、これくらいのもの",
-    "私があなたにあげられるのは、これくらいのもの",
-    "これくらいで全部",
+    "これで全部よ。",
+    "私が持っているもの、全部。",
+    "……それに、この星空。",
+    "私が持っているのは、これくらいのもの。",
+    "私があなたにあげられるのは、これくらいのもの。",
+    "これくらいで全部。",
   ];
 
   const defaultConfig = {
     fadeInMs: 1200,
-    holdMs: 3000,
+    holdMs: 3600,
     fadeOutMs: 1200,
-    maxOpacity: 0.25,
+    maxOpacity: 0.75,
   };
 
   const runtimeConfig = Object.assign({}, defaultConfig, window.aboutQuoteCarouselConfig || {});
@@ -94,12 +94,11 @@
       return;
     }
 
-    const currentQuoteIndex = state.quoteIndex;
     showLayer();
-    setQuote(currentQuoteIndex);
-
+    setQuote(state.quoteIndex);
     lineElement.style.transitionDuration = `${runtimeConfig.fadeInMs}ms`;
     lineElement.style.opacity = "0";
+
     requestAnimationFrame(() => {
       if (!state.running || cycleToken !== state.token) return;
       requestAnimationFrame(() => {
@@ -157,6 +156,14 @@
     syncCarouselState(true);
   };
 
+  function applyFixedTopPosition() {
+    layerElement.style.position = "fixed";
+    layerElement.style.left = "50%";
+    layerElement.style.top = "calc(62px + clamp(12px, 3vh, 22px))";
+    layerElement.style.bottom = "auto";
+    layerElement.style.transform = "translateX(-50%)";
+  }
+
   const themeObserver = new MutationObserver(() => {
     syncCarouselState(true);
   });
@@ -183,5 +190,7 @@
     reducedMotionQuery.addListener(handleMotionPreferenceChange);
   }
 
+  applyFixedTopPosition();
+  window.addEventListener("resize", applyFixedTopPosition, { passive: true });
   syncCarouselState(true);
 })();

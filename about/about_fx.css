@@ -26,9 +26,10 @@
 }
 
 .about-quote-layer {
-  position: fixed;
+  position: fixed !important;
   left: 50%;
-  bottom: clamp(26px, 8vh, 84px);
+  top: calc(62px + clamp(12px, 3vh, 22px)) !important;
+  bottom: auto !important;
   transform: translateX(-50%);
   width: min(88vw, 980px);
   padding: 0 14px;
