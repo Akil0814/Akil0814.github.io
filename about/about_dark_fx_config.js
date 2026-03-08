@@ -1,4 +1,4 @@
-window.aboutFxConfig = {
+window.aboutDarkFxConfig = {
   canvasId: "stars",
   maxDevicePixelRatio: 2,
   themes: {

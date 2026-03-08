@@ -6,7 +6,7 @@
     ? window.$
     : (selector) => document.querySelector(selector);
 
-  const config = window.aboutFxConfig;
+  const config = window.aboutDarkFxConfig;
   if (!config) return;
 
   const canvasElement = selectElement(`#${config.canvasId || "stars"}`);
@@ -63,10 +63,7 @@
   }
 
   function isRendererActive() {
-    const theme = getTheme();
-    const themeConfig = config.themes?.[theme];
-    if (!themeConfig || !themeConfig.enabled) return false;
-    return isFxEnabled();
+    return getTheme() === "dark" && isFxEnabled();
   }
 
   function scheduleNextMeteor(nowMs) {
@@ -495,11 +492,12 @@
     state.pointer.currentX += (state.pointer.targetX - state.pointer.currentX) * smoothing;
     state.pointer.currentY += (state.pointer.targetY - state.pointer.currentY) * smoothing;
 
-    context.clearRect(0, 0, state.width, state.height);
     if (!isRendererActive()) {
       requestAnimationFrame(renderFrame);
       return;
     }
+
+    context.clearRect(0, 0, state.width, state.height);
 
     drawStarLayers(deltaTimeSec);
     drawMeteor(nowMs);

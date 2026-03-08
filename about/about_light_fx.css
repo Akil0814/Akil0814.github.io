@@ -1,0 +1,12 @@
+[data-theme="light"] .about-page #stars {
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+[data-theme="light"] .about-page .scanlines {
+  display: none;
+}
+
+[data-theme="light"] .about-page.fx-off #stars {
+  opacity: 0;
+}
