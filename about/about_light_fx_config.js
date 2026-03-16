@@ -2,9 +2,9 @@ window.aboutLightFxConfig = {
   canvasId: "stars",
   maxDevicePixelRatio: 2,
   sakura: {
-    count: 74,
+    count: 180,
     sizePx: [6.5, 13.5],
-    fallSpeedPxPerSec: [24, 72],
+    fallSpeedPxPerSec: [80, 150],
     driftPxPerSec: [-18, 20],
     spinRadPerSec: [0.45, 1.6],
     wobbleAmplitudePx: [6, 20],
