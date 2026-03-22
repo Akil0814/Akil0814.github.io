@@ -26,6 +26,7 @@
     maxOpacity: defaultConfig.maxOpacity,
     fixedTop: true,
     fixedTopOffset: "calc(62px + clamp(12px, 3vh, 22px))",
+    fixedPosition: null,
     observeTheme: true,
     observeBodyClass: true,
     manualEnabled: true,
@@ -196,13 +197,42 @@
       }
     }
 
-    function applyFixedTopPosition() {
-      if (mergedConfig.fixedTop === false) return;
-      layerElement.style.position = "fixed";
-      layerElement.style.left = "50%";
-      layerElement.style.top = mergedConfig.fixedTopOffset;
-      layerElement.style.bottom = "auto";
-      layerElement.style.transform = "translateX(-50%)";
+    function applyFixedPosition() {
+      if (mergedConfig.fixedTop === false && !mergedConfig.fixedPosition) return;
+
+      layerElement.style.setProperty("position", "fixed", "important");
+
+      if (mergedConfig.fixedPosition && typeof mergedConfig.fixedPosition === "object") {
+        const positionConfig = mergedConfig.fixedPosition;
+        const topValue = positionConfig.top != null ? String(positionConfig.top) : "auto";
+        const rightValue = positionConfig.right != null ? String(positionConfig.right) : "auto";
+        const bottomValue = positionConfig.bottom != null ? String(positionConfig.bottom) : "auto";
+        const leftValue = positionConfig.left != null ? String(positionConfig.left) : "auto";
+        const transformValue = positionConfig.transform != null ? String(positionConfig.transform) : "none";
+
+        layerElement.style.setProperty("top", topValue, "important");
+        layerElement.style.setProperty("right", rightValue, "important");
+        layerElement.style.setProperty("bottom", bottomValue, "important");
+        layerElement.style.setProperty("left", leftValue, "important");
+        layerElement.style.setProperty("transform", transformValue, "important");
+
+        if (positionConfig.width != null) {
+          layerElement.style.width = String(positionConfig.width);
+        }
+        if (positionConfig.padding != null) {
+          layerElement.style.padding = String(positionConfig.padding);
+        }
+        if (positionConfig.textAlign != null) {
+          layerElement.style.textAlign = String(positionConfig.textAlign);
+        }
+        return;
+      }
+
+      layerElement.style.setProperty("left", "50%", "important");
+      layerElement.style.setProperty("right", "auto", "important");
+      layerElement.style.setProperty("top", String(mergedConfig.fixedTopOffset), "important");
+      layerElement.style.setProperty("bottom", "auto", "important");
+      layerElement.style.setProperty("transform", "translateX(-50%)", "important");
     }
 
     function handleMotionPreferenceChange() {
@@ -235,8 +265,8 @@
       reducedMotionQuery.addListener(handleMotionPreferenceChange);
     }
 
-    applyFixedTopPosition();
-    window.addEventListener("resize", applyFixedTopPosition, { passive: true });
+    applyFixedPosition();
+    window.addEventListener("resize", applyFixedPosition, { passive: true });
     syncCarouselState(true);
 
     const controller = {
@@ -286,7 +316,7 @@
         } else if (typeof reducedMotionQuery.removeListener === "function") {
           reducedMotionQuery.removeListener(handleMotionPreferenceChange);
         }
-        window.removeEventListener("resize", applyFixedTopPosition);
+        window.removeEventListener("resize", applyFixedPosition);
       },
       getState() {
         return {

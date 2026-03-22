@@ -31,6 +31,9 @@
   <div id="quoteCarousel" class="about-quote-layer is-hidden" aria-hidden="true">
     <p id="quoteCarouselText" class="about-quote-layer__line"></p>
   </div>
+  <div id="quoteCarouselMeteor" class="about-quote-layer is-hidden" aria-hidden="true">
+    <p id="quoteCarouselMeteorText" class="about-quote-layer__line"></p>
+  </div>
 
   <header class="nav">
     <div class="nav__left">
@@ -63,6 +66,34 @@
   <script src="./about_light_fx_config.js"></script>
   <script src="./about_dark_fx.js"></script>
   <script src="./about_light_fx.js"></script>
+  <script>
+    window.aboutQuoteCarousels = (window.aboutQuoteCarousels || []).concat([
+      {
+        layerSelector: "#quoteCarouselMeteor",
+        lineSelector: "#quoteCarouselMeteorText",
+        quotes: [
+          "「ねえ、流れ星が见たいな」",
+          "冗谈で振りかざした指先",
+          "绮丽な尾を引いた",
+          "それはまるで魔法のようで",
+        ],
+        theme: "dark",
+        fadeInMs: 1000,
+        holdMs: 3200,
+        fadeOutMs: 1000,
+        maxOpacity: 0.72,
+        fixedPosition: {
+          top: "auto",
+          right: "clamp(20px, 4vw, 56px)",
+          bottom: "clamp(16px, 4vh, 36px)",
+          left: "auto",
+          transform: "none",
+          width: "min(48vw, 620px)",
+          textAlign: "right",
+        },
+      },
+    ]);
+  </script>
   <script src="./about_quote_carousel.js"></script>
 </body>
 </html>
