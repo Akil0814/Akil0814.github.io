@@ -21,6 +21,7 @@
     height: 0,
     dpr: 1,
     petals: [],
+    wasRendererActive: false,
     pointer: {
       clientX: -10000,
       clientY: -10000,
@@ -221,16 +222,25 @@
     }
   }
 
+  function clearCanvas() {
+    context.clearRect(0, 0, state.width, state.height);
+  }
+
   function renderFrame(nowMs) {
     const deltaTimeSec = clamp((nowMs - state.lastFrameTimeMs) / 1000, 0, 0.05);
     state.lastFrameTimeMs = nowMs;
 
     if (!isRendererActive()) {
+      if (state.wasRendererActive) {
+        clearCanvas();
+        state.wasRendererActive = false;
+      }
       requestAnimationFrame(renderFrame);
       return;
     }
 
-    context.clearRect(0, 0, state.width, state.height);
+    state.wasRendererActive = true;
+    clearCanvas();
     drawSakuraLayer(deltaTimeSec);
     requestAnimationFrame(renderFrame);
   }

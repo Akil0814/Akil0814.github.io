@@ -20,6 +20,7 @@
     height: 0,
     dpr: 1,
     layers: [],
+    wasRendererActive: false,
     pointer: {
       targetX: 0,
       targetY: 0,
@@ -484,6 +485,10 @@
     }
   }
 
+  function clearCanvas() {
+    context.clearRect(0, 0, state.width, state.height);
+  }
+
   function renderFrame(nowMs) {
     const deltaTimeSec = clamp((nowMs - state.lastFrameTimeMs) / 1000, 0, 0.05);
     state.lastFrameTimeMs = nowMs;
@@ -493,11 +498,16 @@
     state.pointer.currentY += (state.pointer.targetY - state.pointer.currentY) * smoothing;
 
     if (!isRendererActive()) {
+      if (state.wasRendererActive) {
+        clearCanvas();
+        state.wasRendererActive = false;
+      }
       requestAnimationFrame(renderFrame);
       return;
     }
 
-    context.clearRect(0, 0, state.width, state.height);
+    state.wasRendererActive = true;
+    clearCanvas();
 
     drawStarLayers(deltaTimeSec);
     drawMeteor(nowMs);
