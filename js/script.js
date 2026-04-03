@@ -289,6 +289,24 @@ function handleThemeToggleClick() {
   const nextTheme = currentTheme === "dark" ? "light" : "dark";
   const areFxDisabled = !uiState.fxOn;
 
+  if (typeof window.handleCustomThemeToggle === "function") {
+    try {
+      const handledByPage = window.handleCustomThemeToggle({
+        currentTheme,
+        nextTheme,
+        fxEnabled: uiState.fxOn,
+        getTheme,
+        setTheme,
+      });
+
+      if (handledByPage) {
+        return;
+      }
+    } catch (error) {
+      console.warn("[theme] Custom theme toggle hook failed. Falling back to default handler.", error);
+    }
+  }
+
   if (areFxDisabled) {
     setTheme(nextTheme);
     return;
@@ -320,5 +338,11 @@ function initializeGlobalUiState() {
     if (event.key === "lang" && event.newValue) setLang(event.newValue);
   });
 }
+
+window.siteThemeApi = {
+  getTheme,
+  setTheme,
+  getFxEnabled,
+};
 
 initializeGlobalUiState();
