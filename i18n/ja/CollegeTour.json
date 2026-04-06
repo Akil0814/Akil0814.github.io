@@ -41,7 +41,11 @@
       "validation": "検証ロジック"
     },
     "sections": {
+      "demo_videos": "デモ動画",
       "core_code_blocks": "主要コードブロック"
+    },
+    "videos": {
+      "placeholder": "このプロジェクトページでは、まだ動画デモは公開していません。"
     },
     "code": {
       "data_manager_class": {

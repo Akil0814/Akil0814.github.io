@@ -44,7 +44,11 @@
       "validation": "校验逻辑"
     },
     "sections": {
+      "demo_videos": "演示视频",
       "core_code_blocks": "核心代码块"
+    },
+    "videos": {
+      "placeholder": "该项目页暂未提供视频演示。"
     },
     "code": {
       "data_manager_class": {

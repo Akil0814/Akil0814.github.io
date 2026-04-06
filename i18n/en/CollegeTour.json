@@ -41,7 +41,11 @@
       "validation": "Validation Logic"
     },
     "sections": {
+      "demo_videos": "Demo Videos",
       "core_code_blocks": "Core Code Blocks"
+    },
+    "videos": {
+      "placeholder": "No video clips are available for this project page yet."
     },
     "code": {
       "data_manager_class": {
