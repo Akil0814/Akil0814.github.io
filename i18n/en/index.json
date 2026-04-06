@@ -40,6 +40,11 @@
         "title": "74xx 8-bit Microcomputer",
         "desc": "A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system."
       },
+      "softrenderer": {
+        "badge_graphics": "Graphics",
+        "title": "SoftRenderer",
+        "desc": "A software renderer project focused on rebuilding the rendering pipeline on CPU side, including triangle rasterization, depth testing, and shading basics."
+      },
       "collegetour": {
         "badge_tool": "Tool",
         "title": "CollegeTour",

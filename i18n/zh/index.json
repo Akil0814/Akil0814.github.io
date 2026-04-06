@@ -40,6 +40,11 @@
         "title": "74xx 8 位微型计算机",
         "desc": "由 74 系列 TTL 芯片搭建的图灵完备 8 位微型计算机，包含自定义 ISA、程序计数器/地址寄存器，以及简易内存与 I/O 系统。"
       },
+      "softrenderer": {
+        "badge_graphics": "图形",
+        "title": "SoftRenderer",
+        "desc": "一个以 CPU 端重建渲染管线为目标的软件渲染器项目，当前聚焦三角形光栅化、深度测试与基础着色。"
+      },
       "collegetour": {
         "badge_tool": "工具",
         "title": "CollegeTour",

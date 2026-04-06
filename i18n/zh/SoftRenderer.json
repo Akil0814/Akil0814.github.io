@@ -1,0 +1,55 @@
+{
+  "SoftRenderer": {
+    "title": "SoftRenderer 项目",
+    "intro": {
+      "kicker": "C++ / 渲染 / 软件光栅器",
+      "title": "SoftRenderer 项目概览",
+      "desc": "SoftRenderer 是我用于学习图形学的个人项目，目标是在 CPU 端从零实现一套渲染管线。当前重点是先完成可验证、可扩展的基础版本：顶点变换、三角形光栅化、深度测试与基础着色。",
+      "chips": {
+        "pipeline": "CPU 管线",
+        "triangle_rasterization": "三角形光栅化",
+        "depth_test": "深度测试",
+        "shading": "着色"
+      }
+    },
+    "summary": {
+      "text": [
+        "<h4>项目目标：</h4>",
+        "本页用于作为 SoftRenderer 的基础展示页结构，并与其他项目页保持一致，方便后续持续补充内容。",
+        "<h4>当前范围：</h4>",
+        "现阶段主要实现渲染底层链路：几何变换、视口映射、三角形建立、光栅化、深度比较与最终帧缓冲输出。",
+        "<h4>下一步计划：</h4>",
+        "在基础管线稳定后，我会补充演示视频、核心代码片段，以及关键设计取舍与性能优化思路。"
+      ]
+    },
+    "stack": {
+      "cpu_rasterization": "CPU 光栅化",
+      "linear_algebra": "线性代数",
+      "geometry_pipeline": "几何管线"
+    },
+    "sections": {
+      "demo_videos": "演示视频",
+      "core_code_blocks": "核心代码片段"
+    },
+    "videos": {
+      "placeholder": "演示视频正在准备中。"
+    },
+    "code": {
+      "placeholder": "将在首个稳定里程碑后补充代码片段。"
+    },
+    "footer": {
+      "page": "SoftRenderer 项目页"
+    },
+    "mermaid": {
+      "pipeline": {
+        "title": "渲染管线总览",
+        "desc": "展示从模型输入到帧缓冲输出的 CPU 端渲染流程。"
+      },
+      "frame_loop": {
+        "title": "逐帧执行流程",
+        "desc": "展示每一帧中的更新、渲染与呈现循环。"
+      }
+    }
+  }
+}
+

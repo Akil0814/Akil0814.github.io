@@ -1,0 +1,55 @@
+{
+  "SoftRenderer": {
+    "title": "SoftRenderer Project",
+    "intro": {
+      "kicker": "C++ / Rendering / Software Rasterizer",
+      "title": "SoftRenderer Project Overview",
+      "desc": "SoftRenderer is my graphics-learning project focused on implementing a CPU-side rendering pipeline from scratch. The current target is to complete a clean, testable baseline including vertex transforms, triangle rasterization, depth testing, and basic shading.",
+      "chips": {
+        "pipeline": "CPU Pipeline",
+        "triangle_rasterization": "Triangle Rasterization",
+        "depth_test": "Depth Test",
+        "shading": "Shading"
+      }
+    },
+    "summary": {
+      "text": [
+        "<h4>Project Goal:</h4>",
+        "This page is the base structure for the SoftRenderer project documentation. It follows the same architecture as other project pages so future content can be added consistently.",
+        "<h4>Current Scope:</h4>",
+        "At this stage, I am building the foundational rendering pipeline: geometry transform, viewport mapping, triangle setup, rasterization, depth comparison, and final framebuffer output.",
+        "<h4>Next Steps:</h4>",
+        "After the baseline pipeline is stable, I will add richer demos, core code snippets, and a deeper explanation of design decisions and performance tradeoffs."
+      ]
+    },
+    "stack": {
+      "cpu_rasterization": "CPU Rasterization",
+      "linear_algebra": "Linear Algebra",
+      "geometry_pipeline": "Geometry Pipeline"
+    },
+    "sections": {
+      "demo_videos": "Demo Videos",
+      "core_code_blocks": "Core Code Blocks"
+    },
+    "videos": {
+      "placeholder": "Demo videos are being prepared."
+    },
+    "code": {
+      "placeholder": "Code snippets will be added after the first stable milestone."
+    },
+    "footer": {
+      "page": "SoftRenderer Project Page"
+    },
+    "mermaid": {
+      "pipeline": {
+        "title": "Rendering Pipeline Overview",
+        "desc": "Shows the CPU-side rendering pipeline from model input to framebuffer output."
+      },
+      "frame_loop": {
+        "title": "Per-Frame Execution",
+        "desc": "Highlights the update-render-present cycle used in each frame."
+      }
+    }
+  }
+}
+
