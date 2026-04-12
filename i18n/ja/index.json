@@ -84,11 +84,15 @@
     "links": {
       "github_k": "GitHub",
       "github_v": "@Akil0814",
+      "linkedin_k": "LinkedIn",
+      "linkedin_v": "akeli-akil",
       "email_k": "メール",
       "resume_k": "履歴書",
       "resume_v": "AKIL_Resume.pdf",
       "bilibili_k": "BiliBili",
       "bilibili_v": "AKIL081",
+      "bangumi_k": "Bangumi",
+      "bangumi_v": "@akil0814",
       "placeholder_k": "準備中",
       "placeholder_v": "(まだありません)"
     }
