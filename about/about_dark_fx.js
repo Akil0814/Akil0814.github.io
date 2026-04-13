@@ -1,10 +1,7 @@
 (function () {
-  const TAU = Math.PI * 2;
-  const BASE_AREA = 1920 * 1080;
-
-  const selectElement = typeof window.$ === "function"
-    ? window.$
-    : (selector) => document.querySelector(selector);
+  const fxUtils = window.aboutFxUtils;
+  if (!fxUtils) return;
+  const { TAU, BASE_AREA, selectElement, clamp, lerp, randomRange, getTheme, isFxEnabled } = fxUtils;
 
   const config = window.aboutDarkFxConfig;
   if (!config) return;
@@ -30,38 +27,7 @@
     meteor: null,
     nextMeteorAtMs: 0,
     lastFrameTimeMs: performance.now(),
-    lastPrimaryConstellation: -1,
-    lastPrimaryChangeMs: 0,
-    focusPulse: {
-      anchor: "",
-      startMs: 0,
-    },
   };
-
-  function clamp(value, minValue, maxValue) {
-    return Math.min(maxValue, Math.max(minValue, value));
-  }
-
-  function lerp(startValue, endValue, ratio) {
-    return startValue + (endValue - startValue) * ratio;
-  }
-
-  function easeInOut(ratio) {
-    const normalized = clamp(ratio, 0, 1);
-    return 0.5 - 0.5 * Math.cos(normalized * Math.PI);
-  }
-
-  function randomRange(minValue, maxValue) {
-    return minValue + Math.random() * (maxValue - minValue);
-  }
-
-  function getTheme() {
-    return document.documentElement.getAttribute("data-theme") || "dark";
-  }
-
-  function isFxEnabled() {
-    return typeof uiState === "undefined" ? true : !!uiState.fxOn;
-  }
 
   function isRendererActive() {
     return getTheme() === "dark" && isFxEnabled();
@@ -296,49 +262,6 @@
     const pulseWeight = 0.5 - 0.5 * Math.cos(slotProgress * TAU);
     weights[currentIndex] = pulseWeight;
     return { weights, primaryIndex: currentIndex };
-  }
-
-  function updateFocusPulse(primaryIndex, nowMs) {
-    if (primaryIndex === state.lastPrimaryConstellation) return;
-    if (
-      state.lastPrimaryConstellation !== -1 &&
-      nowMs - state.lastPrimaryChangeMs < 280
-    ) {
-      return;
-    }
-
-    state.lastPrimaryConstellation = primaryIndex;
-    state.lastPrimaryChangeMs = nowMs;
-    const activeConstellation = config.constellations.items[primaryIndex];
-    if (!activeConstellation) return;
-
-    state.focusPulse.anchor = activeConstellation.anchor;
-    state.focusPulse.startMs = nowMs;
-  }
-
-  function buildAnchorBoosts(weights, nowMs) {
-    const boosts = { deneb: 0, vega: 0, altair: 0 };
-    const focusBoost = config.majorStars.focusBoost;
-
-    config.constellations.items.forEach((item, index) => {
-      const weight = weights[index] || 0;
-      boosts[item.anchor] = Math.max(boosts[item.anchor], weight * focusBoost);
-    });
-
-    if (state.focusPulse.anchor) {
-      const pulseAge = nowMs - state.focusPulse.startMs;
-      if (pulseAge <= config.majorStars.focusPulseDurationMs) {
-        const ratio = 1 - pulseAge / config.majorStars.focusPulseDurationMs;
-        const pulseStrength = easeInOut(ratio) * 0.26;
-        boosts[state.focusPulse.anchor] = clamp(
-          boosts[state.focusPulse.anchor] + pulseStrength,
-          0,
-          1
-        );
-      }
-    }
-
-    return boosts;
   }
 
   function drawConstellationLayer(nowMs, constellationConfig, weights, namedAnchors) {

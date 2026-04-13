@@ -2,26 +2,16 @@
   const THEME_CARD_TOTAL_MS = 320;
   const THEME_CARD_TEXT_MS = 56;
   const THEME_SWITCH_MS = 104;
-
-  const MAIN_TEXT_BY_THEME = {
-    dark: "黒齣",
-    light: "黒齣",
-  };
-
-  const CARD_LINES = {
-    dark: [
-    "誰も、見ないはず。",
-    "それでも、読む？",
-    "気づいた？",
-    "まだ、見てる。",
-    ],
-    light: [
-    "誰も、見ないはず。",
-    "それでも、読む？",
-    "気づいた？",
-    "まだ、見てる。",
+  const DEFAULT_CONTENT = {
+    title: "黒齣",
+    lines: [
+      "誰も、見ないはず。",
+      "それでも、読む？",
+      "気づいた？",
+      "まだ、見てる。",
     ],
   };
+  const cardContentByTheme = window.aboutThemeCardConfig?.contentByTheme || {};
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const overlayState = {
@@ -77,9 +67,10 @@
   function hydrateCardContent(nextTheme) {
     const safeTheme = nextTheme === "light" ? "light" : "dark";
     const overlayElement = buildOverlay();
-    const lines = CARD_LINES[safeTheme];
+    const content = cardContentByTheme[safeTheme] || DEFAULT_CONTENT;
+    const lines = Array.isArray(content.lines) ? content.lines : DEFAULT_CONTENT.lines;
 
-    overlayState.titleElement.textContent = MAIN_TEXT_BY_THEME[safeTheme];
+    overlayState.titleElement.textContent = content.title || DEFAULT_CONTENT.title;
     overlayState.lineElements.forEach((lineElement, index) => {
       lineElement.textContent = lines[index] || "";
     });

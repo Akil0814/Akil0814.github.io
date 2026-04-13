@@ -1,10 +1,6 @@
 window.aboutDarkFxConfig = {
   canvasId: "stars",
   maxDevicePixelRatio: 2,
-  themes: {
-    dark: { enabled: true },
-    light: { enabled: false },
-  },
   pointer: {
     maxOffsetX: 22,
     maxOffsetY: 16,
@@ -63,8 +59,6 @@ window.aboutDarkFxConfig = {
   },
   majorStars: {
     parallax: 0.42,
-    focusBoost: 0.34,
-    focusPulseDurationMs: 1200,
     // Layout tuned to roughly match real Summer Triangle side ratios:
     // Deneb-Vega shortest, Vega-Altair middle, Deneb-Altair longest.
     // Anchor placement follows the reference composition while keeping
@@ -102,7 +96,6 @@ window.aboutDarkFxConfig = {
   constellations: {
     cycle: true,
     cyclePeriodMs: 18000,
-    fadeDurationMs: 1000,
     inactiveAlpha: 0.05,
     activeAlpha: 0.35,
     lineWidth: 1.05,

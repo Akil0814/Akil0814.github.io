@@ -1,10 +1,7 @@
 (function () {
-  const TAU = Math.PI * 2;
-  const BASE_AREA = 1920 * 1080;
-
-  const selectElement = typeof window.$ === "function"
-    ? window.$
-    : (selector) => document.querySelector(selector);
+  const fxUtils = window.aboutFxUtils;
+  if (!fxUtils) return;
+  const { TAU, BASE_AREA, selectElement, clamp, randomRange, getTheme, isFxEnabled } = fxUtils;
 
   const config = window.aboutLightFxConfig;
   if (!config?.sakura) return;
@@ -29,22 +26,6 @@
     },
     lastFrameTimeMs: performance.now(),
   };
-
-  function clamp(value, minValue, maxValue) {
-    return Math.min(maxValue, Math.max(minValue, value));
-  }
-
-  function randomRange(minValue, maxValue) {
-    return minValue + Math.random() * (maxValue - minValue);
-  }
-
-  function getTheme() {
-    return document.documentElement.getAttribute("data-theme") || "dark";
-  }
-
-  function isFxEnabled() {
-    return typeof uiState === "undefined" ? true : !!uiState.fxOn;
-  }
 
   function isRendererActive() {
     return getTheme() === "light" && isFxEnabled();
