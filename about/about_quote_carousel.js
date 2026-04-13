@@ -1,13 +1,4 @@
 (function () {
-  const QUOTES = [
-    "これで全部よ",
-    "私が持っているもの、全部",
-    "……この星空",
-    "私が持っているのは、これくらいのもの",
-    "私があなたにあげられるのは、これくらいのもの",
-    "これくらいで全部",
-  ];
-
   const defaultConfig = {
     fadeInMs: 1200,
     holdMs: 3600,
@@ -18,7 +9,7 @@
   const defaultFactoryConfig = {
     layerSelector: "#quoteCarousel",
     lineSelector: "#quoteCarouselText",
-    quotes: QUOTES,
+    quotes: [],
     theme: "dark",
     fadeInMs: defaultConfig.fadeInMs,
     holdMs: defaultConfig.holdMs,
@@ -337,21 +328,22 @@
 
   window.createQuoteCarousel = createQuoteCarousel;
 
-  const defaultRuntimeConfig = Object.assign({}, window.aboutQuoteCarouselConfig || {});
-  if (!defaultRuntimeConfig.quotes) {
-    defaultRuntimeConfig.quotes = QUOTES;
-  }
+  const carouselConfigs = Array.isArray(window.aboutQuoteCarousels)
+    ? window.aboutQuoteCarousels
+    : window.aboutQuoteCarouselConfig
+      ? [window.aboutQuoteCarouselConfig]
+      : [];
 
-  const defaultCarousel = createQuoteCarousel(defaultRuntimeConfig);
-  if (defaultCarousel) {
-    window.aboutQuoteCarousel = defaultCarousel;
-    window.toggleQuoteCarousel = (on) => defaultCarousel.toggle(on);
-  }
-
-  if (Array.isArray(window.aboutQuoteCarousels)) {
-    const builtInstances = window.aboutQuoteCarousels
+  if (carouselConfigs.length) {
+    const builtInstances = carouselConfigs
       .map((instanceConfig) => createQuoteCarousel(instanceConfig))
       .filter(Boolean);
+
     window.aboutQuoteCarouselInstances = builtInstances;
+
+    if (builtInstances[0]) {
+      window.aboutQuoteCarousel = builtInstances[0];
+      window.toggleQuoteCarousel = (on) => builtInstances[0].toggle(on);
+    }
   }
 })();
