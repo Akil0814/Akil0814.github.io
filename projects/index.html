@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" data-i18n-page="projects" data-i18n-base="..">
+<head>
+  <link rel="preload" as="image" href="../image/moon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="icon" type="image/png" sizes="20x18" href="../icon/icon_S.png" />
+  <link rel="icon" type="image/png" sizes="116x104" href="../icon/icon_M.png" />
+  <link rel="icon" type="image/png" sizes="306x279" href="../icon/icon_L.png" />
+  <link rel="apple-touch-icon" href="../icon/icon_L.png" />
+  <title data-i18n="projects.title">More Projects - Akil0814</title>
+
+  <script src="../js/prefs_bootstrap.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/effects.css">
+  <link rel="stylesheet" href="../css/light_snow.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/utils.css">
+  <link rel="stylesheet" href="../css/moon_effects.css">
+  <link rel="stylesheet" href="../css/footer_banner.css">
+  <link rel="stylesheet" href="./_shared/project_page.css?v=20260228c">
+  <link rel="stylesheet" href="./projects_index.css">
+</head>
+
+<body class="projects-index-page">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <div class="bg-moon" aria-hidden="true">
+    <span class="bg-moon__halo"></span>
+    <img class="bg-moon__img" src="../image/moon.png" alt="" data-src-dark="../image/moon.png" data-src-light="../image/moon.png" />
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav__left">
+      <a class="brand" href="../index.html#top">
+        <span class="brand__dot"></span>
+        <span class="brand__text">AKIL</span>
+      </a>
+    </div>
+
+    <nav class="nav__right">
+      <a href="../index.html" data-i18n="common.nav.home">Home</a>
+      <a href="../index.html#projects" data-i18n="projects.nav.featured">Featured</a>
+      <a href="../index.html#about" data-i18n="common.nav.about">About</a>
+      <a href="../index.html#links" data-i18n="common.nav.links">Links</a>
+
+      <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
+        <option value="zh" data-i18n="common.lang.zh">中文</option>
+        <option value="ja" data-i18n="common.lang.ja">日本語</option>
+        <option value="en" selected data-i18n="common.lang.en">English</option>
+      </select>
+
+      <button id="toggleFx" class="btn btn--ghost" type="button" title="Toggle FX" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="btn" type="button" title="Toggle theme" data-i18n="common.controls.theme">Theme</button>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="project-intro projects-overview-hero">
+      <p class="project-intro__kicker" data-i18n="projects.hero.kicker">Project archive</p>
+      <h1 class="project-intro__title" data-i18n="projects.hero.title">More Projects</h1>
+      <p class="project-intro__desc" data-i18n="projects.hero.desc">
+        A longer project shelf for experiments, class projects, utilities, and the builds that explain how my C++ / graphics path is growing.
+      </p>
+      <div class="project-intro__chips">
+        <span class="chip">C++</span>
+        <span class="chip">SDL</span>
+        <span class="chip">OpenGL</span>
+        <span class="chip">SQLite</span>
+        <span class="chip" data-i18n="projects.hero.chip_hardware">Hardware</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head projects-section-head">
+        <div>
+          <h2 class="section__title" data-i18n="projects.sections.all_projects">All Projects</h2>
+          <p class="section__desc" data-i18n="projects.sections.all_projects_desc">Each card links to the detailed project page when one is available, plus the repository for source code.</p>
+        </div>
+        <a class="btn btn--ghost" href="../index.html#projects" data-i18n="projects.actions.back_to_featured">Back to Featured</a>
+      </div>
+
+      <div class="project-catalog">
+        <article class="proj project-card">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">SDL</span>
+            <span class="proj__badge" data-i18n="projects.cards.warships.kind">Game</span>
+          </div>
+          <p class="project-card__meta" data-i18n="projects.cards.warships.meta">Featured / Architecture practice</p>
+          <h3 class="proj__title" data-i18n="projects.cards.warships.title">WarShips</h3>
+          <p class="proj__text" data-i18n="projects.cards.warships.desc">A tactical naval game prototype focused on cleaner architecture, reusable systems, and design-pattern practice.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="./WarShip/WarShip.html" data-i18n="common.actions.more_info">More information</a>
+            <a class="link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+          </div>
+        </article>
+
+        <article class="proj project-card">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">Rasterizer</span>
+            <span class="proj__badge" data-i18n="projects.cards.softrenderer.kind">Graphics</span>
+          </div>
+          <p class="project-card__meta" data-i18n="projects.cards.softrenderer.meta">Current direction / Rendering pipeline</p>
+          <h3 class="proj__title" data-i18n="projects.cards.softrenderer.title">SoftRenderer</h3>
+          <p class="proj__text" data-i18n="projects.cards.softrenderer.desc">A CPU-side renderer for rebuilding the graphics pipeline through triangle rasterization, depth testing, and basic shading.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="./SoftRenderer/SoftRenderer.html" data-i18n="common.actions.more_info">More information</a>
+            <a class="link" href="https://github.com/Akil0814/Akil0814.github.io" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+          </div>
+        </article>
+
+        <article class="proj project-card">
+          <div class="proj__top">
+            <span class="proj__badge" data-i18n="projects.cards.microcomputer.kind">Hardware</span>
+            <span class="proj__badge">CPU</span>
+            <span class="proj__badge">74xx TTL</span>
+          </div>
+          <p class="project-card__meta" data-i18n="projects.cards.microcomputer.meta">Low-level systems / Digital logic</p>
+          <h3 class="proj__title" data-i18n="projects.cards.microcomputer.title">74xx 8-bit Microcomputer</h3>
+          <p class="proj__text" data-i18n="projects.cards.microcomputer.desc">A Turing-complete 8-bit microcomputer built from 74-series TTL chips with a custom ISA, registers, memory, and I/O.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="./8BitComputer/8BitComputer.html" data-i18n="common.actions.more_info">More information</a>
+          </div>
+        </article>
+
+        <article class="proj project-card">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">Algorithm</span>
+            <span class="proj__badge" data-i18n="projects.cards.pathfinding.kind">Visualizer</span>
+          </div>
+          <p class="project-card__meta" data-i18n="projects.cards.pathfinding.meta">Algorithm demo / Learning note</p>
+          <h3 class="proj__title" data-i18n="projects.cards.pathfinding.title">PathFindingVisualizer</h3>
+          <p class="proj__text" data-i18n="projects.cards.pathfinding.desc">A visualizer page prepared for grid-search demos, frontier expansion, and final path reconstruction notes.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="./PathFindingVisualizer/PathFindingVisualizer.html" data-i18n="common.actions.more_info">More information</a>
+          </div>
+        </article>
+
+        <article class="proj project-card">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">EasyX</span>
+            <span class="proj__badge" data-i18n="projects.cards.minesweeper.kind">Game</span>
+          </div>
+          <p class="project-card__meta" data-i18n="projects.cards.minesweeper.meta">First OOP project / Scene manager</p>
+          <h3 class="proj__title" data-i18n="projects.cards.minesweeper.title">MineSweeper</h3>
+          <p class="proj__text" data-i18n="projects.cards.minesweeper.desc">My first OOP-structured project, with a scene manager, reusable UI components, and multiple game modes.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="./MineSweeper/MineSweeper.html" data-i18n="common.actions.more_info">More information</a>
+            <a class="link" href="https://github.com/Akil0814/Minesweeper" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+          </div>
+        </article>
+
+        <article class="proj project-card">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">SQLite</span>
+            <span class="proj__badge" data-i18n="projects.cards.collegetour.kind">Tool</span>
+          </div>
+          <p class="project-card__meta" data-i18n="projects.cards.collegetour.meta">Course project / Data management</p>
+          <h3 class="proj__title" data-i18n="projects.cards.collegetour.title">CollegeTour</h3>
+          <p class="proj__text" data-i18n="projects.cards.collegetour.desc">A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="./CollegeTour/CollegeTour.html" data-i18n="common.actions.more_info">More information</a>
+            <a class="link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+          </div>
+        </article>
+
+        <article class="proj project-card">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">SDL</span>
+            <span class="proj__badge" data-i18n="projects.cards.buttonsdl.kind">Utility</span>
+          </div>
+          <p class="project-card__meta" data-i18n="projects.cards.buttonsdl.meta">Reusable component / Small library</p>
+          <h3 class="proj__title" data-i18n="projects.cards.buttonsdl.title">ButtonForSDL</h3>
+          <p class="proj__text" data-i18n="projects.cards.buttonsdl.desc">A reusable SDL button component extracted and refactored to make interaction logic clearer and easier to maintain.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="https://github.com/Akil0814/Button_for_SDL" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footerBanner">
+        <img
+          src="../image/Arcueid_Bar.png"
+          data-src-dark="../image/Arcueid_Bar.png"
+          data-src-light="../image/The_Stranger_In_The_Mirror_T.png"
+          alt="Footer banner"
+          loading="lazy"
+        />
+        <div class="footerBanner__glow" aria-hidden="true"></div>
+      </div>
+
+      <p>
+        <span class="mono">&copy; <span id="year"></span> Akil</span>
+        <span class="dot">&middot;</span>
+        <span class="mono" data-i18n="projects.footer.page">More Projects</span>
+      </p>
+    </footer>
+  </main>
+
+  <div id="themeTransition" class="themeTransition" aria-hidden="true">
+    <img class="themeTransition__moon" src="../image/moon.png" alt="" aria-hidden="true" decoding="async" />
+  </div>
+
+  <script src="../assets/js/i18n.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/star_field.js"></script>
+  <script src="../js/snow_field.js"></script>
+  <script src="../js/utils.js"></script>
+</body>
+</html>

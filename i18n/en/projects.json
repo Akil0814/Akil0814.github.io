@@ -1,0 +1,68 @@
+{
+  "projects": {
+    "title": "More Projects - Akil0814",
+    "nav": {
+      "featured": "Featured"
+    },
+    "hero": {
+      "kicker": "Project archive",
+      "title": "More Projects",
+      "desc": "A longer project shelf for experiments, class projects, utilities, and the builds that explain how my C++ / graphics path is growing.",
+      "chip_hardware": "Hardware"
+    },
+    "sections": {
+      "all_projects": "All Projects",
+      "all_projects_desc": "Each card links to the detailed project page when one is available, plus the repository for source code."
+    },
+    "actions": {
+      "back_to_featured": "Back to Featured"
+    },
+    "cards": {
+      "warships": {
+        "kind": "Game",
+        "meta": "Featured / Architecture practice",
+        "title": "WarShips",
+        "desc": "A tactical naval game prototype focused on cleaner architecture, reusable systems, and design-pattern practice."
+      },
+      "softrenderer": {
+        "kind": "Graphics",
+        "meta": "Current direction / Rendering pipeline",
+        "title": "SoftRenderer",
+        "desc": "A CPU-side renderer for rebuilding the graphics pipeline through triangle rasterization, depth testing, and basic shading."
+      },
+      "microcomputer": {
+        "kind": "Hardware",
+        "meta": "Low-level systems / Digital logic",
+        "title": "74xx 8-bit Microcomputer",
+        "desc": "A Turing-complete 8-bit microcomputer built from 74-series TTL chips with a custom ISA, registers, memory, and I/O."
+      },
+      "pathfinding": {
+        "kind": "Visualizer",
+        "meta": "Algorithm demo / Learning note",
+        "title": "PathFindingVisualizer",
+        "desc": "A visualizer page prepared for grid-search demos, frontier expansion, and final path reconstruction notes."
+      },
+      "minesweeper": {
+        "kind": "Game",
+        "meta": "First OOP project / Scene manager",
+        "title": "MineSweeper",
+        "desc": "My first OOP-structured project, with a scene manager, reusable UI components, and multiple game modes."
+      },
+      "collegetour": {
+        "kind": "Tool",
+        "meta": "Course project / Data management",
+        "title": "CollegeTour",
+        "desc": "A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module."
+      },
+      "buttonsdl": {
+        "kind": "Utility",
+        "meta": "Reusable component / Small library",
+        "title": "ButtonForSDL",
+        "desc": "A reusable SDL button component extracted and refactored to make interaction logic clearer and easier to maintain."
+      }
+    },
+    "footer": {
+      "page": "More Projects"
+    }
+  }
+}
