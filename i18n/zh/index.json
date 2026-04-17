@@ -33,6 +33,11 @@
         "title": "MineSweeper",
         "desc": "第一个尝试构建的OOP项目，使用场景管理器统一驱动与切换场景，包含按钮类，棋盘类等"
       },
+      "pathfindingvisualizer": {
+        "badge_visualizer": "可视化",
+        "title": "PathFindingVisualizer",
+        "desc": "一个用于展示寻路算法的可视化项目页，后续会补充网格搜索演示、边界扩展与最终路径回溯等内容。"
+      },
       "microcomputer": {
         "badge_hardware": "硬件",
         "badge_cpu": "CPU",

@@ -1,0 +1,47 @@
+{
+  "PathFindingVisualizer": {
+    "title": "PathFindingVisualizer 项目",
+    "intro": {
+      "kicker": "C++ / 算法 / 寻路可视化",
+      "title": "PathFindingVisualizer 项目概览",
+      "desc": "PathFindingVisualizer 是一个寻路算法可视化项目的基础展示页。页面结构与其他项目页保持一致，方便后续补充演示、架构说明与核心代码片段。",
+      "chips": {
+        "grid_search": "网格搜索",
+        "pathfinding": "路径查找",
+        "heuristics": "启发式",
+        "visualization": "可视化"
+      }
+    },
+    "summary": {
+      "text": [
+        "<h4>项目目标：</h4>",
+        "本页用于作为 PathFindingVisualizer 项目的基础文档骨架。",
+        "<h4>当前范围：</h4>",
+        "项目将聚焦网格搜索与寻路过程的可视化，包括访问节点、边界扩展、障碍处理与最终路径回溯。",
+        "<h4>下一步计划：</h4>",
+        "在首个稳定里程碑完成后，我会补充演示素材、算法流程图，以及核心搜索管线的代码片段。"
+      ]
+    },
+    "stack": {
+      "algorithms": "算法",
+      "data_structures": "数据结构",
+      "visual_debugging": "可视化调试"
+    },
+    "sections": {
+      "demo_videos": "演示视频",
+      "core_code_blocks": "核心代码片段"
+    },
+    "videos": {
+      "placeholder": "演示视频将在可视化器达到稳定里程碑后补充。"
+    },
+    "architecture": {
+      "placeholder": "架构图将在核心搜索流程定型后补充。"
+    },
+    "code": {
+      "placeholder": "代码片段将在核心算法模块完成后补充。"
+    },
+    "footer": {
+      "page": "PathFindingVisualizer 项目页"
+    }
+  }
+}

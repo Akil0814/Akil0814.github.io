@@ -33,6 +33,11 @@
         "title": "MineSweeper",
         "desc": "初めて OOP を意識して構築したプロジェクトです。シーン管理を統一して駆動・切り替えを行う Scene Manager を実装し、Button クラスや盤面（Board）クラスなどの基盤コンポーネントも作成しました。"
       },
+      "pathfindingvisualizer": {
+        "badge_visualizer": "可視化",
+        "title": "PathFindingVisualizer",
+        "desc": "グリッド探索デモ、フロンティア展開、最終経路復元の説明を追加するために用意した経路探索アルゴリズム可視化ページです。"
+      },
       "microcomputer": {
         "badge_hardware": "ハードウェア",
         "badge_cpu": "CPU",

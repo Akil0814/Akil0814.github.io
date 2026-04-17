@@ -1,0 +1,47 @@
+{
+  "PathFindingVisualizer": {
+    "title": "PathFindingVisualizer Project",
+    "intro": {
+      "kicker": "C++ / Algorithms / Pathfinding Visualization",
+      "title": "PathFindingVisualizer Project Overview",
+      "desc": "PathFindingVisualizer is a project page skeleton for a pathfinding algorithm visualizer. It follows the same structure as the other project pages, so demos, architecture notes, and code snippets can be added consistently later.",
+      "chips": {
+        "grid_search": "Grid Search",
+        "pathfinding": "Pathfinding",
+        "heuristics": "Heuristics",
+        "visualization": "Visualization"
+      }
+    },
+    "summary": {
+      "text": [
+        "<h4>Project Goal:</h4>",
+        "This page is prepared as the base documentation structure for the PathFindingVisualizer project.",
+        "<h4>Current Scope:</h4>",
+        "The project will focus on visualizing grid-based search and pathfinding behavior, including visited nodes, frontier expansion, obstacle handling, and final path reconstruction.",
+        "<h4>Next Steps:</h4>",
+        "After the first stable milestone, I will add demo media, algorithm diagrams, and selected code snippets for the core search pipeline."
+      ]
+    },
+    "stack": {
+      "algorithms": "Algorithms",
+      "data_structures": "Data Structures",
+      "visual_debugging": "Visual Debugging"
+    },
+    "sections": {
+      "demo_videos": "Demo Videos",
+      "core_code_blocks": "Core Code Blocks"
+    },
+    "videos": {
+      "placeholder": "Demo videos will be added after the visualizer reaches a stable milestone."
+    },
+    "architecture": {
+      "placeholder": "Architecture diagrams will be added after the core search flow is finalized."
+    },
+    "code": {
+      "placeholder": "Code snippets will be added after the core algorithm modules are ready."
+    },
+    "footer": {
+      "page": "PathFindingVisualizer Project Page"
+    }
+  }
+}

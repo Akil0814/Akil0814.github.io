@@ -1,0 +1,47 @@
+{
+  "PathFindingVisualizer": {
+    "title": "PathFindingVisualizer プロジェクト",
+    "intro": {
+      "kicker": "C++ / アルゴリズム / 経路探索可視化",
+      "title": "PathFindingVisualizer プロジェクト概要",
+      "desc": "PathFindingVisualizer は、経路探索アルゴリズムを可視化するプロジェクトのベース紹介ページです。他のプロジェクトページと同じ構成にしているため、後からデモ、設計メモ、主要コード断片を一貫した形で追加できます。",
+      "chips": {
+        "grid_search": "グリッド探索",
+        "pathfinding": "経路探索",
+        "heuristics": "ヒューリスティック",
+        "visualization": "可視化"
+      }
+    },
+    "summary": {
+      "text": [
+        "<h4>プロジェクト目標：</h4>",
+        "このページは PathFindingVisualizer の基礎ドキュメント構造として用意しています。",
+        "<h4>現在の範囲：</h4>",
+        "グリッドベースの探索と経路探索の挙動を可視化することを中心に、訪問ノード、フロンティア展開、障害物処理、最終経路の復元を扱う予定です。",
+        "<h4>今後の予定：</h4>",
+        "最初の安定版の後に、デモ素材、アルゴリズム図、コア探索パイプラインのコード断片を追加します。"
+      ]
+    },
+    "stack": {
+      "algorithms": "アルゴリズム",
+      "data_structures": "データ構造",
+      "visual_debugging": "可視化デバッグ"
+    },
+    "sections": {
+      "demo_videos": "デモ動画",
+      "core_code_blocks": "主要コードブロック"
+    },
+    "videos": {
+      "placeholder": "ビジュアライザーが安定したマイルストーンに到達した後、デモ動画を追加します。"
+    },
+    "architecture": {
+      "placeholder": "コア探索フローが固まった後、アーキテクチャ図を追加します。"
+    },
+    "code": {
+      "placeholder": "コアアルゴリズムモジュールが準備できた後、コード断片を追加します。"
+    },
+    "footer": {
+      "page": "PathFindingVisualizer プロジェクトページ"
+    }
+  }
+}

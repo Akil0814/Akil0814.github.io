@@ -33,6 +33,11 @@
         "title": "MineSweeper",
         "desc": "My first attempt at building an OOP-structured project: I implemented a Scene Manager to drive and switch scenes in a unified way, and built core components such as a Button class and a Board class."
       },
+      "pathfindingvisualizer": {
+        "badge_visualizer": "Visualizer",
+        "title": "PathFindingVisualizer",
+        "desc": "A pathfinding algorithm visualizer page prepared for grid-search demos, frontier expansion, and final path reconstruction notes."
+      },
       "microcomputer": {
         "badge_hardware": "Hardware",
         "badge_cpu": "CPU",
