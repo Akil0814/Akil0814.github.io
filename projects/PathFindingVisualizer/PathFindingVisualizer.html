@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../../css/tokens.css">
   <link rel="stylesheet" href="../../css/base.css">
   <link rel="stylesheet" href="../../css/layout.css">
+  <link id="prismThemeLink" rel="stylesheet" href="../../assets/prism/prism-dark.css">
   <link rel="stylesheet" href="../_shared/project_page.css?v=20260301a">
 </head>
 <body>
@@ -108,20 +109,14 @@
       <div class="section__head">
         <h2 data-i18n="common.sections.architecture_diagram">Architecture Diagram</h2>
       </div>
-      <div class="panel">
-        <p class="project-intro__desc" data-i18n="PathFindingVisualizer.architecture.placeholder">
-        </p>
-      </div>
+      <div id="pathfinding-mermaid" class="project-mermaid-grid"></div>
     </section>
 
     <section id="code" class="section">
       <div class="section__head">
         <h2><span data-i18n="PathFindingVisualizer.sections.core_code_blocks">Core Code Blocks</span> (<span id="codeCount">0</span>)</h2>
       </div>
-      <div class="panel">
-        <p class="project-intro__desc" data-i18n="PathFindingVisualizer.code.placeholder">
-        </p>
-      </div>
+      <div id="codeList" class="code-list"></div>
     </section>
 
     <section class="section">
@@ -144,7 +139,10 @@
   </footer>
 
   <script src="../../assets/js/i18n.js"></script>
+  <script src="../../assets/prism/prism.js"></script>
+  <script src="../_shared/project_code_block.js?v=20260228"></script>
+  <script src="../_shared/project_mermaid.js?v=20260228"></script>
   <script src="../_shared/project_page.js?v=20260228"></script>
-  <script src="./pathfinding_visualizer_page.js?v=20260416a"></script>
+  <script src="./pathfinding_visualizer_page.js?v=20260417a"></script>
 </body>
 </html>

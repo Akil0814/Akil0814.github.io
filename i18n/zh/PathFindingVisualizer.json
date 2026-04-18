@@ -2,29 +2,41 @@
   "PathFindingVisualizer": {
     "title": "PathFindingVisualizer 项目",
     "intro": {
-      "kicker": "C++ / 算法 / 寻路可视化",
+      "kicker": "C++ / 寻路算法 / 工程实践",
       "title": "PathFindingVisualizer 项目概览",
-      "desc": "PathFindingVisualizer 是一个寻路算法可视化项目的基础展示页。页面结构与其他项目页保持一致，方便后续补充演示、架构说明与核心代码片段。",
+      "desc": "PathFindingVisualizer 是一个 20 x 20 网格寻路可视化工程。项目支持设置起点、终点、墙体和权重格子，并通过单步执行、自动运行、暂停和回退来观察算法状态如何变化。这个页面重点记录项目的工程拆分：算法如何从渲染和输入中解耦，搜索状态如何被可视化，单步执行如何保存快照并支持回退。",
       "chips": {
         "grid_search": "网格搜索",
-        "pathfinding": "路径查找",
-        "heuristics": "启发式",
-        "visualization": "可视化"
+        "pathfinding": "算法抽象",
+        "heuristics": "状态机",
+        "visualization": "快照回退"
       }
     },
     "summary": {
       "text": [
         "<h4>项目目标：</h4>",
-        "本页用于作为 PathFindingVisualizer 项目的基础文档骨架。",
-        "<h4>当前范围：</h4>",
-        "项目将聚焦网格搜索与寻路过程的可视化，包括访问节点、边界扩展、障碍处理与最终路径回溯。",
-        "<h4>下一步计划：</h4>",
-        "在首个稳定里程碑完成后，我会补充演示素材、算法流程图，以及核心搜索管线的代码片段。"
+        "这个项目不是只把 A* 或 Dijkstra 一次性跑完，而是把寻路算法拆成可观察、可暂停、可回退的执行过程。每一次 <code>next_step()</code> 只推进一个搜索步骤，让 Open、Current、Closed、Path、parent 链和 G/H/F 代价都能在棋盘上逐步呈现。<br>",
+        "<h4>交互流程：</h4>",
+        "用户先在棋盘上放置 Start、Goal、Wall，也可以在开发者面板中编辑权重格子、移动模式、斜角策略、A* 启发函数和自动运行速度。搜索开始后棋盘进入锁定状态，防止运行中继续改写起点、终点或障碍。需要重新编辑时，必须通过 Restart 清除搜索状态，或 Reset 清空整个棋盘。<br>",
+        "<h4>架构拆分：</h4>",
+        "<code>Application</code> 负责主循环、事件分发、按钮响应和调试面板；<code>SimulationController</code> 负责运行状态、自动播放节奏、算法实例创建、统计数据和历史快照；<code>Board</code> 负责棋盘格状态、邻居过滤、移动代价、parent 链统计和渲染所需数据；<code>Pathfinder</code> 作为算法基类，统一封装读取起终点、计算邻居、设置 parent、标记 Tile 状态、重建最终路径等公共逻辑。<br>",
+        "<h4>单步执行与回退：</h4>",
+        "每次推进前，控制器会先保存当前算法的 <code>clone()</code>，再调用 <code>Board::save_snapshot()</code> 保存棋盘状态，然后执行 <code>Pathfinder::next_step()</code>。如果用户点击 Prev Step，则控制器恢复上一个算法对象，同时让棋盘回滚到上一个快照。这样算法内部容器和棋盘可视化状态不会脱节。<br>",
+        "<h4>算法实现约束：</h4>",
+        "算法类只维护搜索本身的状态，例如 frontier/open set、visited 或 best-cost、当前节点、起点终点和优先队列。算法不处理 SDL 事件，不渲染，不管理按钮，也不保存棋盘快照。这样 BFS、Dijkstra、A*、Greedy 可以共享同一套可视化管线，只在“下一步如何选择节点”这件事上保持差异。<br>",
+        "<h4>代价模型与路径重建：</h4>",
+        "棋盘支持四方向和八方向移动，并通过斜角策略控制是否允许 corner cutting。移动代价由直走/斜走基础代价乘以目标格权重得到，A* 的启发式也使用同一套代价尺度。最终路径不是额外存一条数组，而是从 Goal 沿着每个 Tile 的 parent 回溯到 Start，再把中间格标记为 Path。<br>",
+        "<h4>实现亮点：</h4>",
+        "项目把“算法状态”和“显示状态”做了明确同步：每次发现更优路径时同步写入 parent 与 G/H/F；每次展开节点时更新 Open、Current、Closed；找到终点时通过 parent 链重建 Path。调试面板还能显示当前状态机、移动配置和每个格子的代价，便于检查算法是否真的按预期推进。<br>",
+        "<h4>可改进点：</h4>",
+        "当前仍有一些 UI 文本、资源加载和应用层逻辑集中在 <code>Application</code> 中，后续可以继续抽离成配置或独立 UI 层。资源生命周期也可以进一步统一管理，减少静态纹理和大类职责，让算法实验、界面控制和渲染资源之间的边界更干净。",
+        "<h4>开发效率与 AI 辅助：</h4>",
+        "这个项目引入了Agent辅助变成的开发流程：先明确模块边界和状态机设计，创建可行的框架，再借助 AI 完成部高内容如：处理重复的纹理创建流程与重构检查和文档整理。最终从计划、核心功能实现到页面文档落地大约用了 3 天。把 AI 当作加速器，在自己能理解和验收每个模块职责的前提下，提高从想法到可运行工程的迭代速度。"
       ]
     },
     "stack": {
-      "algorithms": "算法",
-      "data_structures": "数据结构",
+      "algorithms": "算法抽象",
+      "data_structures": "状态机",
       "visual_debugging": "可视化调试"
     },
     "sections": {
@@ -32,13 +44,39 @@
       "core_code_blocks": "核心代码片段"
     },
     "videos": {
-      "placeholder": "演示视频将在可视化器达到稳定里程碑后补充。"
+      "placeholder": "演示视频暂时留空，后续可补充单步执行、自动运行、权重格和八方向移动等交互录屏。"
     },
     "architecture": {
-      "placeholder": "架构图将在核心搜索流程定型后补充。"
+      "placeholder": "架构图由页面脚本动态渲染。"
     },
     "code": {
-      "placeholder": "代码片段将在核心算法模块完成后补充。"
+      "placeholder": "核心代码片段由页面脚本动态加载。",
+      "simulation_controller_step_history": {
+        "desc": "SimulationController 负责自动运行节奏、单步推进、历史快照、回退恢复和最终统计，是算法执行和棋盘可视化之间的调度层。"
+      },
+      "pathfinder_shared_helpers": {
+        "desc": "Pathfinder 基类把所有算法共用的棋盘访问、移动代价、启发函数、Tile 状态标记和 parent 链回溯集中起来，避免每个算法重复处理可视化细节。"
+      },
+      "a_star_visual_step": {
+        "desc": "A* 每次只推进一个可视化步骤：弹出当前最优节点，松弛邻居，更新 best-cost、parent、G/H/F 和 Open/Current 状态。"
+      },
+      "board_neighbors_and_cost": {
+        "desc": "Board 负责邻居过滤、斜角策略、权重移动代价和最终路径统计，算法通过统一接口获取合法移动范围。"
+      }
+    },
+    "mermaid": {
+      "module_architecture": {
+        "title": "模块架构图",
+        "desc": "展示 Application、SimulationController、Pathfinder、Board 与 Tile 的职责边界。"
+      },
+      "step_sequence": {
+        "title": "单步执行与回退时序",
+        "desc": "展示 Next Step / Auto Run 如何保存快照、推进算法、更新统计，并支持 Prev Step。"
+      },
+      "search_data_flow": {
+        "title": "搜索数据流",
+        "desc": "展示一次可视化搜索步骤中起终点、邻居、代价、parent 链和最终路径之间的数据流。"
+      }
     },
     "footer": {
       "page": "PathFindingVisualizer 项目页"
