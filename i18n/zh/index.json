@@ -53,7 +53,7 @@
       "takemetoballgame": {
         "badge_project": "项目",
         "title": "Take me  to  ballgame.",
-        "desc": "为后续项目说明、架构细节和代码片段准备的项目页骨架。"
+        "desc": "基于 Qt Widgets + SQLite 的 MLB 球场旅行规划项目，我负责整体架构与 App 后端层实现。"
       },
       "buttonsdl": {
         "badge_tool": "工具",

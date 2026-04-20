@@ -2,35 +2,94 @@
   "TakeMeToBallgame": {
     "title": "Take me  to  ballgame. 项目",
     "intro": {
-      "kicker": "C++ / Qt / 项目骨架",
+      "kicker": "C++ / Qt Widgets / SQLite / 后端架构",
       "title": "Take me  to  ballgame.",
-      "desc": "该项目页目前先搭建骨架，后续会补充项目说明、架构细节和代码片段。",
+      "desc": "Take me out to the Ballgame 是一个基于 Qt Widgets + SQLite 的 MLB 球场旅行规划课程项目，围绕球场资料浏览、管理员维护、纪念品数据、球场距离图与旅行路线等功能展开。我负责整体项目架构与后端内容，App 文件夹中的应用入口、数据库管理、Repository 数据访问、CSV 解析、认证服务与行程模型等模块均由我实现。",
       "chips": {
-        "planning": "规划中",
-        "placeholder": "骨架"
+        "planning": "后端架构",
+        "placeholder": "App 模块"
       }
     },
     "stack": {
-      "data_model": "数据模型",
-      "ui_flow": "界面流程"
+      "data_model": "Repository 数据访问",
+      "ui_flow": "Qt 页面对接"
     },
     "repo": {
-      "placeholder": "仓库与下载链接稍后补充。"
+      "placeholder": "仓库与下载链接稍后补充。本页先记录项目后端架构与 App 目录中的核心实现。"
     },
     "summary": {
       "text": [
-        "<h4>项目骨架：</h4>",
-        "详细项目说明稍后补充。本页面沿用 CollegeTour 的项目页结构，但不包含视频部分。"
+        "<h4>项目概览：</h4>",
+        "Take me out to the Ballgame 是一个 MLB 球场旅行规划应用，使用 Qt Widgets 构建桌面端界面，使用 SQLite 管理球场、纪念品和球场间距离等持久化数据。项目功能面向两类使用场景：普通用户浏览球队/球场信息、查看详情并进行旅行规划；管理员维护球场、纪念品和距离数据。<br>",
+        "项目整体以“UI 页面 + App 后端层 + SQLite 数据库”为主线组织。UI 层包含主页面、浏览窗口、详情窗口和管理员页面；后端层集中在 App 文件夹中，负责路径解析、数据库初始化、数据导入、查询接口、认证校验和行程状态管理。<br>",
+        "<h4>我的负责内容：</h4>",
+        "我负责整体项目架构与后端内容。App 文件夹中的 Application、DatabaseManager、StadiumRepository、DistanceRepository、SouvenirRepository 接口、AuthService、Trip / TripPlanner、CsvUtils 和 MessageUtils 等模块均由我实现。<br>",
+        "设计目标是把 Qt 页面从数据库细节中解耦：窗口只需要通过 Application 单例取得对应 Repository 或 Service，不直接关心数据库连接、CSV 文件位置、表结构初始化、事务回滚和错误聚合等后端细节。这样 UI 页面可以专注交互流程，后端层负责保证数据来源、数据状态和模块可用性。<br>",
+        "<h4>Application 层：</h4>",
+        "Application 是全局应用入口，通过单例模式统一管理后端模块生命周期。初始化时会先解析运行路径，在当前目录及上层目录中寻找 App/data 或 data 文件夹，再派生出 BaseBall_data.db 与 key.dat 的实际路径。<br>",
+        "随后 Application 会创建并初始化 DatabaseManager，再根据数据库模块的可用状态决定是否装配 StadiumRepository、SouvenirRepository、DistanceRepository、AuthService 和 TripPlanner。对于可降级模块，例如纪念品数据或距离数据，Application 会把不可用状态记录到 warning 中，而不是让整个程序直接失败；但如果核心球场数据不可用，则会返回初始化失败。<br>",
+        "<h4>数据库生命周期：</h4>",
+        "DatabaseManager 负责 SQLite 数据库的完整生命周期：打开连接、配置 PRAGMA、检查表结构兼容性、创建 schema、从 CSV 初始化数据、记录错误与警告，并在需要时重建数据库。<br>",
+        "初始化流程会先打开命名连接 main，并设置 QSQLITE_BUSY_TIMEOUT。随后启用 foreign_keys，优先使用 WAL journal_mode，失败时回退到 DELETE，同时配置 synchronous=NORMAL 和 temp_store=MEMORY。表结构部分按 stadiums、souvenirs、stadium_distances 分模块建立，并用事务包裹每个建表步骤，避免部分结构写入后状态不一致。<br>",
+        "为了避免旧数据库结构与新代码不匹配，DatabaseManager 会读取 sqlite_master 与 PRAGMA table_info 检查必要字段。如果检测到结构不兼容，会触发 resetDatabase：先关闭并移除数据库连接，再把旧库按时间戳重命名为 .bak，重新初始化新库；若新库创建失败，则尝试恢复备份并重新初始化，让失败状态尽量可恢复、可排查。<br>",
+        "<h4>CSV 导入与种子数据：</h4>",
+        "CsvUtils 封装了 CSV 读取与字段解析，支持带引号字段、BOM 清理、header 归一化、按候选列名查找字段、宽松整数解析和从文本中提取第一个数字。这样可以处理课程 CSV 中列名不统一、数字带逗号或单位、球场名包含特殊空格等问题。<br>",
+        "球场数据导入会读取 MLB Information.csv，根据 team_name / stadium_name 等关键字段写入 stadiums 表，并使用 ON CONFLICT 做 upsert，保证重复导入不会制造重复记录。距离数据导入会先建立球场名到 stadium_id 的映射，再把球场间距离规范化为无向边，也就是把较小 id 放在 stadium_a_id，较大 id 放在 stadium_b_id，避免 A-B 与 B-A 重复存储。<br>",
+        "导入距离时会统计并跳过空行、未知球场、非法距离和自环数据，并把这些情况聚合为 warning。核心球场数据失败会阻止初始化；距离与纪念品数据失败则会进入降级状态，使程序仍能保留基础浏览能力。<br>",
+        "<h4>Repository 数据访问：</h4>",
+        "StadiumRepository 负责球场数据查询与维护，提供按队名、球场名、开放年份、座位数和球场类型排序的列表查询，也支持按联盟筛选，并封装按 id、队名、球场名查找单个球场，以及新增、更新、删除、重名检测等管理接口。<br>",
+        "DistanceRepository 负责球场距离图的读写。它会先校验 id 和距离，再统一规范化边的两个端点，保证查询、添加、更新和删除操作都使用同一种无向边表示。getDistanceNodeOfStadium 会返回某个球场连接到的所有边，为后续路线规划算法提供图结构入口。<br>",
+        "SouvenirRepository 当前主要完成了接口边界预留，数据库侧已经能为所有球场 upsert 默认纪念品。后续可以继续补齐按球场读取纪念品、新增纪念品、更新价格和删除纪念品等接口实现，并与管理员页面和购物车流程对接。<br>",
+        "<h4>管理员认证模块：</h4>",
+        "AuthService 负责读取 key.dat 并校验管理员输入。文件中包含 magic、version、用户名长度、加密用户名、密码长度、加密密码以及尾部混淆 key。读取时会先检查 magic 与 version，避免误读不匹配文件，再从文件末尾恢复 XOR key，把用户输入加密后与文件中的加密内容比较。<br>",
+        "这个模块适合课程项目中的本地轻量级校验，用于把管理员入口和普通用户入口分开。若面向真实生产环境，后续应替换为更标准的密码哈希与权限模型，例如 PBKDF2、BCrypt 或 Argon2，并移除调试输出。<br>",
+        "<h4>Trip 与路线规划模型：</h4>",
+        "Trip 使用 TripResult 保存完整行程结果，并维护当前停靠点索引，提供 goNextStop、goBackLastStop、getCurrentStop、stopCount 和 currentStopIndex 等状态访问接口。每个 Trip 内部包含 ShoppingCart，为之后的球场旅行购物流程预留状态位置。<br>",
+        "TripPlanner 当前保留了行程规划服务入口，并通过 unique_ptr 管理当前 Trip。代码中已经预留最短路径、自定义顺序路线、最近邻访问全部球场、MST、DFS 和 BFS 等算法方向，后续可以在现有 Repository 和 DistanceNode 的基础上补齐具体路线规划逻辑。<br>",
+        "<h4>可改进的部分：</h4>",
+        "当前后端架构已经把 UI、应用入口、数据库管理和数据访问拆开，但仍有继续打磨空间：SouvenirRepository 与 TripPlanner 的核心逻辑还需要补齐；distancere_pository 的文件命名可以统一修正；DatabaseManager 中部分调试输出可以改为统一日志；耗时 CSV 导入或数据库重建后续可迁移到后台线程，避免阻塞 Qt UI。<br>",
+        "认证部分目前仍是课程项目级别的本地 XOR 混淆方案，可以用于展示文件格式、二进制读取和验证流程，但不应被描述为强安全方案。后续如果继续强化项目，可以加入更正式的密码存储策略、管理员权限分级和更完整的错误展示机制。"
       ]
     },
     "architecture": {
-      "placeholder": "项目结构确定后会在这里补充架构图。"
+      "placeholder": "当前架构可以概括为：Qt UI 页面 -> Application 单例 -> DatabaseManager / Repository / AuthService / TripPlanner -> SQLite 与 CSV 数据。后续接入 Mermaid 后，可补充 Application 拥有各后端模块、DatabaseManager 初始化数据库、Repository 向 UI 提供查询接口的类图与时序图。"
     },
     "sections": {
       "core_code_blocks": "核心代码块"
     },
     "code": {
-      "placeholder": "代码片段稍后补充。"
+      "placeholder": "本轮先写入中文页面文案。后续接入代码块时，建议优先展示 application.cpp 的模块装配流程、database_manager.cpp 的初始化/重建/CSV 导入流程、csv_utils.cpp 的 CSV 解析工具、stadium_repository.cpp 与 distancere_pository.cpp 的 Repository 查询逻辑、auth_service.cpp 的 key.dat 校验流程，以及 trip.cpp 的行程状态模型。",
+      "application_init": {
+        "desc": "Application 单例负责解析 data 路径、初始化 DatabaseManager，并按模块可用性装配 Repository、AuthService 与 TripPlanner。"
+      },
+      "database_lifecycle": {
+        "desc": "DatabaseManager 管理 SQLite 连接、PRAGMA、schema 检查、自动恢复、数据库重建和错误/警告聚合。"
+      },
+      "csv_import": {
+        "desc": "CSV 导入流程通过表头归一化、字段解析、事务和 upsert，将球场与距离数据稳定写入数据库。"
+      },
+      "stadium_repository": {
+        "desc": "StadiumRepository 封装球场列表查询、排序、联盟筛选、单项查找和管理员维护接口。"
+      },
+      "distance_repository": {
+        "desc": "DistanceRepository 统一处理球场距离无向边，提供距离查询、邻接边读取以及距离增删改接口。"
+      },
+      "auth_service": {
+        "desc": "AuthService 读取 key.dat，检查 magic/version，并用 XOR key 对管理员输入进行本地校验。"
+      },
+      "trip_model": {
+        "desc": "Trip 保存行程结果、当前停靠点索引和购物车，为路线浏览与购物流程保留状态模型。"
+      }
+    },
+    "mermaid": {
+      "application_architecture": {
+        "title": "Application 后端模块类图",
+        "desc": "展示 Application 单例如何拥有 DatabaseManager、Repository、AuthService 与 TripPlanner，并向 Qt 页面提供统一后端入口。"
+      },
+      "database_init": {
+        "title": "数据库初始化流程",
+        "desc": "展示路径解析、SQLite 打开、PRAGMA 配置、schema 检查、CSV 种子导入和模块可用性判断的顺序。"
+      }
     },
     "footer": {
       "page": "Take me  to  ballgame. 项目页"
