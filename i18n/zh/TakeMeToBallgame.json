@@ -1,0 +1,39 @@
+{
+  "TakeMeToBallgame": {
+    "title": "Take me  to  ballgame. 项目",
+    "intro": {
+      "kicker": "C++ / Qt / 项目骨架",
+      "title": "Take me  to  ballgame.",
+      "desc": "该项目页目前先搭建骨架，后续会补充项目说明、架构细节和代码片段。",
+      "chips": {
+        "planning": "规划中",
+        "placeholder": "骨架"
+      }
+    },
+    "stack": {
+      "data_model": "数据模型",
+      "ui_flow": "界面流程"
+    },
+    "repo": {
+      "placeholder": "仓库与下载链接稍后补充。"
+    },
+    "summary": {
+      "text": [
+        "<h4>项目骨架：</h4>",
+        "详细项目说明稍后补充。本页面沿用 CollegeTour 的项目页结构，但不包含视频部分。"
+      ]
+    },
+    "architecture": {
+      "placeholder": "项目结构确定后会在这里补充架构图。"
+    },
+    "sections": {
+      "core_code_blocks": "核心代码块"
+    },
+    "code": {
+      "placeholder": "代码片段稍后补充。"
+    },
+    "footer": {
+      "page": "Take me  to  ballgame. 项目页"
+    }
+  }
+}

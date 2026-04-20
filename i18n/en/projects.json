@@ -54,6 +54,12 @@
         "title": "CollegeTour",
         "desc": "A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module."
       },
+      "takemetoballgame": {
+        "kind": "Project",
+        "meta": "Project skeleton / Details coming soon",
+        "title": "Take me  to  ballgame.",
+        "desc": "A project page skeleton prepared for future notes, architecture details, and code snippets."
+      },
       "buttonsdl": {
         "kind": "Utility",
         "meta": "Reusable component / Small library",

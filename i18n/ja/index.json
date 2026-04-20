@@ -50,10 +50,10 @@
         "title": "SoftRenderer",
         "desc": "CPU 側でレンダリングパイプラインを再構築することを目的としたソフトウェアレンダラープロジェクトです。現在は三角形ラスタライズ、深度テスト、基礎シェーディングに注力しています。"
       },
-      "collegetour": {
-        "badge_tool": "ツール",
-        "title": "CollegeTour",
-        "desc": "データ構造の授業におけるグループプロジェクトで、SQLite ベースの DataManager と管理者ログイン（認証情報）モジュールの実装を担当しました。"
+      "takemetoballgame": {
+        "badge_project": "プロジェクト",
+        "title": "Take me  to  ballgame.",
+        "desc": "今後のノート、設計詳細、コード片を追加するためのプロジェクトページ骨組みです。"
       },
       "buttonsdl": {
         "badge_tool": "ツール",

@@ -50,10 +50,10 @@
         "title": "SoftRenderer",
         "desc": "一个以 CPU 端重建渲染管线为目标的软件渲染器项目，当前聚焦三角形光栅化、深度测试与基础着色。"
       },
-      "collegetour": {
-        "badge_tool": "工具",
-        "title": "CollegeTour",
-        "desc": "数据结构课的小组项目，我负责实现基于SQLite的DataManager与管理员登录凭证模块."
+      "takemetoballgame": {
+        "badge_project": "项目",
+        "title": "Take me  to  ballgame.",
+        "desc": "为后续项目说明、架构细节和代码片段准备的项目页骨架。"
       },
       "buttonsdl": {
         "badge_tool": "工具",

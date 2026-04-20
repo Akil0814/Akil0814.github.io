@@ -1,0 +1,39 @@
+{
+  "TakeMeToBallgame": {
+    "title": "Take me  to  ballgame. プロジェクト",
+    "intro": {
+      "kicker": "C++ / Qt / プロジェクト骨組み",
+      "title": "Take me  to  ballgame.",
+      "desc": "このプロジェクトページは、今後のノート、設計詳細、コード片を追加するための骨組みです。",
+      "chips": {
+        "planning": "計画中",
+        "placeholder": "骨組み"
+      }
+    },
+    "stack": {
+      "data_model": "データモデル",
+      "ui_flow": "UI フロー"
+    },
+    "repo": {
+      "placeholder": "リポジトリとダウンロードリンクは後で追加します。"
+    },
+    "summary": {
+      "text": [
+        "<h4>プロジェクト骨組み：</h4>",
+        "詳細なプロジェクトノートは後で追加します。このページは CollegeTour と同じプロジェクトページ構成を使い、動画セクションは含めません。"
+      ]
+    },
+    "architecture": {
+      "placeholder": "プロジェクト構成が固まった後、ここにアーキテクチャ図を追加します。"
+    },
+    "sections": {
+      "core_code_blocks": "主要コードブロック"
+    },
+    "code": {
+      "placeholder": "コード片は後で追加します。"
+    },
+    "footer": {
+      "page": "Take me  to  ballgame. プロジェクトページ"
+    }
+  }
+}

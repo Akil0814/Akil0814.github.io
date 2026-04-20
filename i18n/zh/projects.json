@@ -1,0 +1,74 @@
+{
+  "projects": {
+    "title": "更多项目 - Akil0814",
+    "nav": {
+      "featured": "精选"
+    },
+    "hero": {
+      "kicker": "项目归档",
+      "title": "更多项目",
+      "desc": "这里整理了更多实验、课程项目、工具和一些能说明我 C++ / 图形学学习路线的作品。",
+      "chip_hardware": "硬件"
+    },
+    "sections": {
+      "all_projects": "全部项目",
+      "all_projects_desc": "每张卡片会在有详细页面时链接到项目说明页，并附上源码仓库。"
+    },
+    "actions": {
+      "back_to_featured": "返回精选项目"
+    },
+    "cards": {
+      "warships": {
+        "kind": "游戏",
+        "meta": "精选 / 架构练习",
+        "title": "WarShips",
+        "desc": "一个战术海战原型项目，重点练习更清晰的架构、可复用系统和设计模式。"
+      },
+      "softrenderer": {
+        "kind": "图形",
+        "meta": "当前方向 / 渲染管线",
+        "title": "SoftRenderer",
+        "desc": "一个 CPU 端软件渲染器，用于通过三角形光栅化、深度测试和基础着色重建图形管线。"
+      },
+      "microcomputer": {
+        "kind": "硬件",
+        "meta": "底层系统 / 数字逻辑",
+        "title": "74xx 8 位微型计算机",
+        "desc": "由 74 系列 TTL 芯片搭建的图灵完备 8 位微型计算机，包含自定义 ISA、寄存器、内存和 I/O。"
+      },
+      "pathfinding": {
+        "kind": "可视化",
+        "meta": "算法演示 / 学习笔记",
+        "title": "PathFindingVisualizer",
+        "desc": "一个用于网格搜索演示、边界扩展和最终路径回溯说明的寻路算法可视化页面。"
+      },
+      "minesweeper": {
+        "kind": "游戏",
+        "meta": "第一个 OOP 项目 / 场景管理器",
+        "title": "MineSweeper",
+        "desc": "我的第一个 OOP 结构项目，包含场景管理器、可复用 UI 组件和多种游戏模式。"
+      },
+      "collegetour": {
+        "kind": "工具",
+        "meta": "课程项目 / 数据管理",
+        "title": "CollegeTour",
+        "desc": "数据结构课的小组项目，我负责实现基于 SQLite 的 DataManager 与管理员凭证模块。"
+      },
+      "takemetoballgame": {
+        "kind": "项目",
+        "meta": "项目骨架 / 细节待补充",
+        "title": "Take me  to  ballgame.",
+        "desc": "为后续项目说明、架构细节和代码片段准备的项目页骨架。"
+      },
+      "buttonsdl": {
+        "kind": "工具",
+        "meta": "可复用组件 / 小型库",
+        "title": "ButtonForSDL",
+        "desc": "从项目中抽离并重构的 SDL 按钮组件，让交互逻辑更清晰、更易维护。"
+      }
+    },
+    "footer": {
+      "page": "更多项目"
+    }
+  }
+}

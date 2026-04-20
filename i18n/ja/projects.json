@@ -1,0 +1,74 @@
+{
+  "projects": {
+    "title": "More Projects - Akil0814",
+    "nav": {
+      "featured": "注目"
+    },
+    "hero": {
+      "kicker": "プロジェクトアーカイブ",
+      "title": "More Projects",
+      "desc": "実験、授業プロジェクト、ユーティリティ、そして C++ / グラフィックスの学習過程を示す制作物をまとめています。",
+      "chip_hardware": "ハードウェア"
+    },
+    "sections": {
+      "all_projects": "すべてのプロジェクト",
+      "all_projects_desc": "各カードは、詳細ページがある場合はそのページへ、あわせてソースコードのリポジトリへリンクします。"
+    },
+    "actions": {
+      "back_to_featured": "注目プロジェクトへ戻る"
+    },
+    "cards": {
+      "warships": {
+        "kind": "ゲーム",
+        "meta": "注目 / アーキテクチャ練習",
+        "title": "WarShips",
+        "desc": "より明確なアーキテクチャ、再利用可能なシステム、デザインパターンを練習するための戦術海戦ゲームプロトタイプです。"
+      },
+      "softrenderer": {
+        "kind": "グラフィックス",
+        "meta": "現在の方向 / レンダリングパイプライン",
+        "title": "SoftRenderer",
+        "desc": "三角形ラスタライズ、深度テスト、基礎シェーディングを通じてグラフィックスパイプラインを CPU 側で再構築するレンダラーです。"
+      },
+      "microcomputer": {
+        "kind": "ハードウェア",
+        "meta": "低レイヤーシステム / デジタルロジック",
+        "title": "74xx 8-bit マイクロコンピュータ",
+        "desc": "74 シリーズ TTL チップで構成したチューリング完全な 8-bit マイクロコンピュータで、独自 ISA、レジスタ、メモリ、I/O を備えています。"
+      },
+      "pathfinding": {
+        "kind": "可視化",
+        "meta": "アルゴリズムデモ / 学習ノート",
+        "title": "PathFindingVisualizer",
+        "desc": "グリッド探索、フロンティア展開、最終経路復元の説明を追加するために用意した経路探索可視化ページです。"
+      },
+      "minesweeper": {
+        "kind": "ゲーム",
+        "meta": "初めての OOP プロジェクト / シーン管理",
+        "title": "MineSweeper",
+        "desc": "初めて OOP を意識して作ったプロジェクトで、シーンマネージャー、再利用可能な UI コンポーネント、複数のゲームモードを含みます。"
+      },
+      "collegetour": {
+        "kind": "ツール",
+        "meta": "授業プロジェクト / データ管理",
+        "title": "CollegeTour",
+        "desc": "データ構造のグループプロジェクトで、SQLite ベースの DataManager と管理者認証モジュールを実装しました。"
+      },
+      "takemetoballgame": {
+        "kind": "プロジェクト",
+        "meta": "プロジェクト骨組み / 詳細は後で追加",
+        "title": "Take me  to  ballgame.",
+        "desc": "今後のノート、設計詳細、コード片を追加するためのプロジェクトページ骨組みです。"
+      },
+      "buttonsdl": {
+        "kind": "ユーティリティ",
+        "meta": "再利用コンポーネント / 小さなライブラリ",
+        "title": "ButtonForSDL",
+        "desc": "プロジェクトから抽出してリファクタリングした SDL ボタンコンポーネントで、操作ロジックをより明確で保守しやすくしました。"
+      }
+    },
+    "footer": {
+      "page": "More Projects"
+    }
+  }
+}

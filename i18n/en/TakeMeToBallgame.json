@@ -1,0 +1,39 @@
+{
+  "TakeMeToBallgame": {
+    "title": "Take me  to  ballgame. Project",
+    "intro": {
+      "kicker": "C++ / Qt / Project Skeleton",
+      "title": "Take me  to  ballgame.",
+      "desc": "This project page is prepared as a skeleton for future notes, architecture details, and code snippets.",
+      "chips": {
+        "planning": "Planning",
+        "placeholder": "Skeleton"
+      }
+    },
+    "stack": {
+      "data_model": "Data Model",
+      "ui_flow": "UI Flow"
+    },
+    "repo": {
+      "placeholder": "Repository and download links will be added later."
+    },
+    "summary": {
+      "text": [
+        "<h4>Project Skeleton:</h4>",
+        "Detailed project notes will be added later. This page keeps the same project-page structure as CollegeTour, without a video section."
+      ]
+    },
+    "architecture": {
+      "placeholder": "Architecture diagrams will be added after the project structure is finalized."
+    },
+    "sections": {
+      "core_code_blocks": "Core Code Blocks"
+    },
+    "code": {
+      "placeholder": "Code snippets will be added later."
+    },
+    "footer": {
+      "page": "Take me  to  ballgame. Project Page"
+    }
+  }
+}
