@@ -52,12 +52,6 @@
       font-size: 20px;
     }
 
-    .demo-stage__hint {
-      margin: 8px 0 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
     .demo-stage__status {
       flex-shrink: 0;
       padding: 8px 12px;
@@ -87,13 +81,6 @@
         linear-gradient(180deg, rgba(8,12,24,.94), rgba(11,16,32,.98));
       box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
       outline: none;
-    }
-
-    .demo-stage__foot {
-      margin: 0;
-      padding: 0 20px 20px;
-      color: var(--muted);
-      line-height: 1.7;
     }
 
     @media (max-width: 820px) {
@@ -152,9 +139,6 @@
         <div class="demo-stage__top">
           <div>
             <h2 class="demo-stage__title" data-i18n="pathfinding_web.runtime.title">Live Demo</h2>
-            <p id="hint" class="demo-stage__hint" data-i18n="pathfinding_web.runtime.hint.ready">
-              The page will load the compiled web files from this folder automatically when they are present.
-            </p>
           </div>
           <div id="status" class="demo-stage__status" data-i18n="pathfinding_web.runtime.status.checking">Checking runtime...</div>
         </div>
@@ -163,8 +147,6 @@
           <canvas
             id="canvas"
             class="demo-stage__canvas"
-            width="1080"
-            height="720"
             oncontextmenu="event.preventDefault()"
             tabindex="-1"
           ></canvas>
@@ -183,13 +165,27 @@
     ProjectPageCore.init();
 
     const statusElement = document.getElementById("status");
-    const hintElement = document.getElementById("hint");
     const canvasElement = document.getElementById("canvas");
+    const canvasAspectRatio = 3 / 2;
 
     const runtimeState = {
       mode: "checking",
       loadingLeft: 0,
     };
+
+    function syncCanvasSize() {
+      const bounds = canvasElement.getBoundingClientRect();
+      const targetWidth = Math.max(1, Math.round(bounds.width));
+      const targetHeight = Math.max(1, Math.round(targetWidth / canvasAspectRatio));
+
+      if (canvasElement.width !== targetWidth) {
+        canvasElement.width = targetWidth;
+      }
+
+      if (canvasElement.height !== targetHeight) {
+        canvasElement.height = targetHeight;
+      }
+    }
 
     function t(key, fallback) {
       if (window.I18N && typeof window.I18N.t === "function") {
@@ -201,10 +197,6 @@
     function renderRuntimeCopy() {
       if (runtimeState.mode === "missing") {
         statusElement.textContent = t("pathfinding_web.runtime.status.missing", "Build not found");
-        hintElement.textContent = t(
-          "pathfinding_web.runtime.hint.missing",
-          "Add the compiled web build files to this folder to enable the live demo."
-        );
         return;
       }
 
@@ -213,27 +205,15 @@
         statusElement.textContent = runtimeState.loadingLeft > 0
           ? `${loadingLabel} (${runtimeState.loadingLeft})`
           : loadingLabel;
-        hintElement.textContent = t(
-          "pathfinding_web.runtime.hint.ready",
-          "The page will load the compiled web files from this folder automatically when they are present."
-        );
         return;
       }
 
       if (runtimeState.mode === "ready") {
         statusElement.textContent = t("pathfinding_web.runtime.status.ready", "Ready");
-        hintElement.textContent = t(
-          "pathfinding_web.runtime.hint.ready",
-          "The page will load the compiled web files from this folder automatically when they are present."
-        );
         return;
       }
 
       statusElement.textContent = t("pathfinding_web.runtime.status.checking", "Checking runtime...");
-      hintElement.textContent = t(
-        "pathfinding_web.runtime.hint.ready",
-        "The page will load the compiled web files from this folder automatically when they are present."
-      );
     }
 
     window.Module = {
@@ -262,6 +242,13 @@
       runtimeScript.async = true;
       runtimeScript.onerror = showMissingRuntime;
       document.body.appendChild(runtimeScript);
+    }
+
+    syncCanvasSize();
+    if (typeof ResizeObserver === "function") {
+      new ResizeObserver(syncCanvasSize).observe(canvasElement);
+    } else {
+      window.addEventListener("resize", syncCanvasSize);
     }
 
     renderRuntimeCopy();

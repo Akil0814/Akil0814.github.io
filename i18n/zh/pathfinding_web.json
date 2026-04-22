@@ -7,7 +7,6 @@
     "intro": {
       "kicker": "C++ / WebAssembly / 路径搜索",
       "title": "PathFindingVisualizer 网页演示",
-      "desc": "这是一个精简过的浏览器演示页，保持和站内其他页面一致的结构，只保留必要介绍与运行区域。",
       "chips": {
         "visualizer": "可视化",
         "algorithms": "算法"
@@ -20,17 +19,12 @@
     },
     "runtime": {
       "title": "在线演示",
-      "hint": {
-        "ready": "当这个目录中存在编译后的网页文件时，页面会自动加载它们。",
-        "missing": "把编译后的网页构建文件放到当前目录后，这个演示页就可以直接运行。"
-      },
       "status": {
         "checking": "正在检查运行时...",
         "loading": "正在加载演示",
         "ready": "已就绪",
         "missing": "未找到构建文件"
-      },
-      "foot": "这里仅保留演示画布和简短说明，让页面更干净，也更贴近整站风格。"
+      }
     },
     "footer": {
       "page": "PathFindingVisualizer 网页演示"
