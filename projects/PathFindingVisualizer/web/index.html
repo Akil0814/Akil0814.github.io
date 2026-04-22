@@ -1,219 +1,278 @@
-﻿<!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-i18n-page="pathfinding_web" data-i18n-base="../../..">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b1020" />
-  <title>PathFindingVisualizer Web Demo</title>
   <link rel="icon" type="image/png" sizes="20x18" href="../../../icon/icon_S.png" />
   <link rel="icon" type="image/png" sizes="116x104" href="../../../icon/icon_M.png" />
   <link rel="icon" type="image/png" sizes="306x279" href="../../../icon/icon_L.png" />
+  <link rel="apple-touch-icon" href="../../../icon/icon_L.png" />
+  <title data-i18n="pathfinding_web.title">PathFindingVisualizer Web Demo</title>
+  <script src="../../../js/prefs_bootstrap.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../../css/tokens.css">
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/layout.css">
+  <link rel="stylesheet" href="../../_shared/project_page.css?v=20260301a">
+
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0c111a;
-      --panel: rgba(18, 24, 34, 0.94);
-      --panel-border: rgba(255, 255, 255, 0.08);
-      --text: #e7edf8;
-      --muted: #97a5ba;
-      --accent: #82b1ff;
-      --accent-2: #7ef0d6;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top, rgba(130, 177, 255, 0.16), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(126, 240, 214, 0.10), transparent 26%),
-        linear-gradient(180deg, #111827 0%, var(--bg) 62%);
-    }
-
-    .wrap {
-      width: min(1240px, calc(100vw - 24px));
-      margin: 0 auto;
-      padding: 24px 0 36px;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      padding: 0 4px;
-    }
-
-    .nav h1 {
-      margin: 0;
-      font-size: 20px;
-      letter-spacing: 0.02em;
-    }
-
-    .links {
+    .demo-actions {
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .link {
-      color: var(--text);
+    .demo-actions .btn {
       text-decoration: none;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--panel-border);
-      background: rgba(255, 255, 255, 0.04);
     }
 
-    .link:hover {
-      border-color: rgba(130, 177, 255, 0.45);
-      color: white;
-    }
-
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: 22px;
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+    .demo-stage {
       overflow: hidden;
+      padding: 0;
     }
 
-    .panel__top {
+    .demo-stage__top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--panel-border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
     }
 
-    .panel__top strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 15px;
+    .demo-stage__title {
+      margin: 0;
+      font-size: 20px;
     }
 
-    .panel__top span,
-    .hint,
-    .footnote {
+    .demo-stage__hint {
+      margin: 8px 0 0;
       color: var(--muted);
+      line-height: 1.65;
     }
 
-    .status {
-      color: var(--accent-2);
-      font-size: 13px;
+    .demo-stage__status {
+      flex-shrink: 0;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      color: var(--text);
       white-space: nowrap;
     }
 
-    .canvas-wrap {
+    .demo-stage__canvas-wrap {
       padding: 18px;
     }
 
-    canvas {
+    .demo-stage__canvas {
       display: block;
       width: 100%;
       height: auto;
-      max-width: 1080px;
+      aspect-ratio: 3 / 2;
       margin: 0 auto;
-      border-radius: 14px;
-      background: #afafaf;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top, rgba(124,77,255,.10), transparent 32%),
+        linear-gradient(180deg, rgba(8,12,24,.94), rgba(11,16,32,.98));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
       outline: none;
     }
 
-    .hint {
-      padding: 0 20px 18px;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .footnote {
-      margin-top: 14px;
-      font-size: 12px;
-      text-align: right;
+    .demo-stage__foot {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
     @media (max-width: 820px) {
-      .nav,
-      .panel__top {
+      .demo-stage__top {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .status {
+      .demo-stage__status {
         white-space: normal;
       }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="nav">
-      <h1>PathFindingVisualizer Web Demo</h1>
-      <div class="links">
-        <a class="link" href="../PathFindingVisualizer.html">Back to project page</a>
-        <a class="link" href="../../../projects/index.html">More projects</a>
-        <a class="link" href="https://github.com/Akil0814/PathFindingVisualizer" target="_blank" rel="noreferrer">Source repo</a>
-      </div>
+  <header class="nav">
+    <div class="nav__left">
+      <a class="brand" href="../../../index.html#top">
+        <span class="brand__dot"></span>
+        <span class="brand__text">AKIL</span>
+      </a>
     </div>
 
-    <section class="panel">
-      <div class="panel__top">
-        <div>
-          <strong>Browser build slot</strong>
-          <span>This page auto-loads <code>PathFindingVisualizer.js</code>, <code>.wasm</code>, and optional <code>.data</code> from the current folder.</span>
-        </div>
-        <div class="status" id="status">Checking runtime...</div>
-      </div>
+    <nav class="nav__right">
+      <a href="../../../index.html" data-i18n="common.nav.home">Home</a>
+      <a href="../PathFindingVisualizer.html" data-i18n="pathfinding_web.nav.project_page">Project Page</a>
+      <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
+        <option value="zh" data-i18n="common.lang.zh">&#20013;&#25991;</option>
+        <option value="ja" data-i18n="common.lang.ja">&#26085;&#26412;&#35486;</option>
+        <option value="en" selected data-i18n="common.lang.en">English</option>
+      </select>
+      <button id="toggleFx" class="btn" type="button" title="Toggle visual effects" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="btn" type="button" title="Toggle theme" data-i18n="common.controls.theme">Theme</button>
+    </nav>
+  </header>
 
-      <div class="canvas-wrap">
-        <canvas id="canvas" width="1080" height="720" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+  <main id="top" class="wrap">
+    <section class="project-intro">
+      <p class="project-intro__kicker" data-i18n="pathfinding_web.intro.kicker">C++ / WebAssembly / Pathfinding</p>
+      <h1 class="project-intro__title" data-i18n="pathfinding_web.intro.title">PathFindingVisualizer Web Demo</h1>
+      <p class="project-intro__desc" data-i18n="pathfinding_web.intro.desc">
+        A lightweight browser host for the pathfinding visualizer, kept consistent with the rest of the project pages.
+      </p>
+      <div class="project-intro__chips">
+        <span class="chip">C++</span>
+        <span class="chip">WebAssembly</span>
+        <span class="chip" data-i18n="pathfinding_web.intro.chips.visualizer">Visualizer</span>
+        <span class="chip" data-i18n="pathfinding_web.intro.chips.algorithms">Algorithms</span>
       </div>
-
-      <div class="hint" id="hint">
-        If the compiled WebAssembly files are not here yet, this page will stay as a ready-made host shell so the demo can be dropped in later without changing URLs.
+      <div class="demo-actions">
+        <a class="btn btn--ghost" href="../PathFindingVisualizer.html" data-i18n="pathfinding_web.actions.project_page">Back to Project Page</a>
+        <a class="btn btn--ghost" href="../../index.html" data-i18n="pathfinding_web.actions.more_projects">More Projects</a>
+        <a class="btn btn--ghost" href="https://github.com/Akil0814/PathFindingVisualizer" target="_blank" rel="noreferrer" data-i18n="pathfinding_web.actions.source">Source Repo</a>
       </div>
     </section>
 
-    <div class="footnote">Location: <code>/projects/PathFindingVisualizer/web/</code></div>
+    <section class="section">
+      <article class="panel demo-stage">
+        <div class="demo-stage__top">
+          <div>
+            <h2 class="demo-stage__title" data-i18n="pathfinding_web.runtime.title">Live Demo</h2>
+            <p id="hint" class="demo-stage__hint" data-i18n="pathfinding_web.runtime.hint.ready">
+              The page will load the compiled web files from this folder automatically when they are present.
+            </p>
+          </div>
+          <div id="status" class="demo-stage__status" data-i18n="pathfinding_web.runtime.status.checking">Checking runtime...</div>
+        </div>
+
+        <div class="demo-stage__canvas-wrap">
+          <canvas
+            id="canvas"
+            class="demo-stage__canvas"
+            width="1080"
+            height="720"
+            oncontextmenu="event.preventDefault()"
+            tabindex="-1"
+          ></canvas>
+        </div>
+      </article>
+    </section>
   </main>
 
+  <footer class="footer">
+    <p><span class="mono">&copy; <span id="year"></span> Akil</span> <span class="dot">&middot;</span> <span class="mono" data-i18n="pathfinding_web.footer.page">PathFindingVisualizer Web Demo</span></p>
+  </footer>
+
+  <script src="../../../assets/js/i18n.js"></script>
+  <script src="../../_shared/project_page.js?v=20260228"></script>
   <script>
-    const statusElement = document.getElementById('status');
-    const hintElement = document.getElementById('hint');
-    const canvasElement = document.getElementById('canvas');
-    canvasElement.width = 1080;
-    canvasElement.height = 720;
+    ProjectPageCore.init();
+
+    const statusElement = document.getElementById("status");
+    const hintElement = document.getElementById("hint");
+    const canvasElement = document.getElementById("canvas");
+
+    const runtimeState = {
+      mode: "checking",
+      loadingLeft: 0,
+    };
+
+    function t(key, fallback) {
+      if (window.I18N && typeof window.I18N.t === "function") {
+        return window.I18N.t(key, undefined, fallback);
+      }
+      return fallback;
+    }
+
+    function renderRuntimeCopy() {
+      if (runtimeState.mode === "missing") {
+        statusElement.textContent = t("pathfinding_web.runtime.status.missing", "Build not found");
+        hintElement.textContent = t(
+          "pathfinding_web.runtime.hint.missing",
+          "Add the compiled web build files to this folder to enable the live demo."
+        );
+        return;
+      }
+
+      if (runtimeState.mode === "loading") {
+        const loadingLabel = t("pathfinding_web.runtime.status.loading", "Loading demo");
+        statusElement.textContent = runtimeState.loadingLeft > 0
+          ? `${loadingLabel} (${runtimeState.loadingLeft})`
+          : loadingLabel;
+        hintElement.textContent = t(
+          "pathfinding_web.runtime.hint.ready",
+          "The page will load the compiled web files from this folder automatically when they are present."
+        );
+        return;
+      }
+
+      if (runtimeState.mode === "ready") {
+        statusElement.textContent = t("pathfinding_web.runtime.status.ready", "Ready");
+        hintElement.textContent = t(
+          "pathfinding_web.runtime.hint.ready",
+          "The page will load the compiled web files from this folder automatically when they are present."
+        );
+        return;
+      }
+
+      statusElement.textContent = t("pathfinding_web.runtime.status.checking", "Checking runtime...");
+      hintElement.textContent = t(
+        "pathfinding_web.runtime.hint.ready",
+        "The page will load the compiled web files from this folder automatically when they are present."
+      );
+    }
 
     window.Module = {
       canvas: canvasElement,
       setStatus(text) {
-        statusElement.textContent = text || 'Ready';
+        runtimeState.mode = text ? "loading" : "ready";
+        runtimeState.loadingLeft = 0;
+        statusElement.textContent = text || t("pathfinding_web.runtime.status.ready", "Ready");
       },
       monitorRunDependencies(left) {
-        statusElement.textContent = left ? `Loading assets (${left})...` : 'Ready';
+        runtimeState.mode = left ? "loading" : "ready";
+        runtimeState.loadingLeft = left || 0;
+        renderRuntimeCopy();
       }
     };
 
     function showMissingRuntime() {
-      statusElement.textContent = 'Compiled web build not found in this folder yet.';
-      hintElement.innerHTML = 'This page is already wired up. To make the live demo run, place <code>PathFindingVisualizer.js</code>, <code>PathFindingVisualizer.wasm</code>, and any generated <code>PathFindingVisualizer.data</code> into this same folder.';
+      runtimeState.mode = "missing";
+      runtimeState.loadingLeft = 0;
+      renderRuntimeCopy();
     }
 
     function loadRuntime() {
-      const runtimeScript = document.createElement('script');
-      runtimeScript.src = './PathFindingVisualizer.js';
+      const runtimeScript = document.createElement("script");
+      runtimeScript.src = "./PathFindingVisualizer.js";
       runtimeScript.async = true;
       runtimeScript.onerror = showMissingRuntime;
       document.body.appendChild(runtimeScript);
     }
 
+    renderRuntimeCopy();
     loadRuntime();
+
+    document.getElementById("langSelect")?.addEventListener("change", () => {
+      window.setTimeout(renderRuntimeCopy, 0);
+    });
   </script>
 </body>
 </html>
-

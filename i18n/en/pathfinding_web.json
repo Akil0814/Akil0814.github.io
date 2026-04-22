@@ -1,0 +1,39 @@
+{
+  "pathfinding_web": {
+    "title": "PathFindingVisualizer Web Demo",
+    "nav": {
+      "project_page": "Project Page"
+    },
+    "intro": {
+      "kicker": "C++ / WebAssembly / Pathfinding",
+      "title": "PathFindingVisualizer Web Demo",
+      "desc": "A lightweight browser host for the pathfinding visualizer, kept consistent with the rest of the site and trimmed down to the essentials.",
+      "chips": {
+        "visualizer": "Visualizer",
+        "algorithms": "Algorithms"
+      }
+    },
+    "actions": {
+      "project_page": "Back to Project Page",
+      "more_projects": "More Projects",
+      "source": "Source Repo"
+    },
+    "runtime": {
+      "title": "Live Demo",
+      "hint": {
+        "ready": "The page will load the compiled web files from this folder automatically when they are present.",
+        "missing": "Add the compiled web build files to this folder to enable the live demo."
+      },
+      "status": {
+        "checking": "Checking runtime...",
+        "loading": "Loading demo",
+        "ready": "Ready",
+        "missing": "Build not found"
+      },
+      "foot": "Only the demo canvas and a short runtime note are kept here, so the page stays focused."
+    },
+    "footer": {
+      "page": "PathFindingVisualizer Web Demo"
+    }
+  }
+}

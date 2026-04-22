@@ -1,0 +1,39 @@
+{
+  "pathfinding_web": {
+    "title": "PathFindingVisualizer Web デモ",
+    "nav": {
+      "project_page": "プロジェクトページ"
+    },
+    "intro": {
+      "kicker": "C++ / WebAssembly / 経路探索",
+      "title": "PathFindingVisualizer Web デモ",
+      "desc": "サイト全体のページ構成に合わせて整理した、必要最小限のブラウザーデモページです。",
+      "chips": {
+        "visualizer": "ビジュアライザ",
+        "algorithms": "アルゴリズム"
+      }
+    },
+    "actions": {
+      "project_page": "プロジェクトページへ戻る",
+      "more_projects": "他のプロジェクト",
+      "source": "ソースリポジトリ"
+    },
+    "runtime": {
+      "title": "ライブデモ",
+      "hint": {
+        "ready": "このフォルダにコンパイル済みの Web ファイルがあれば、自動的に読み込みます。",
+        "missing": "コンパイル済みの Web ビルドをこのフォルダに置くと、ライブデモを有効にできます。"
+      },
+      "status": {
+        "checking": "ランタイムを確認中...",
+        "loading": "デモを読み込み中",
+        "ready": "準備完了",
+        "missing": "ビルドが見つかりません"
+      },
+      "foot": "このページにはデモ用キャンバスと短い補足だけを残し、全体の構成に合わせて簡潔にしています。"
+    },
+    "footer": {
+      "page": "PathFindingVisualizer Web デモ"
+    }
+  }
+}
