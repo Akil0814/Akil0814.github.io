@@ -171,7 +171,7 @@
       </div>
 
       <div class="canvas-wrap">
-        <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+        <canvas id="canvas" width="1080" height="720" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
       </div>
 
       <div class="hint" id="hint">
@@ -186,6 +186,8 @@
     const statusElement = document.getElementById('status');
     const hintElement = document.getElementById('hint');
     const canvasElement = document.getElementById('canvas');
+    canvasElement.width = 1080;
+    canvasElement.height = 720;
 
     window.Module = {
       canvas: canvasElement,
@@ -214,3 +216,4 @@
   </script>
 </body>
 </html>
+
