@@ -98,7 +98,7 @@
 <body>
   <header class="nav">
     <div class="nav__left">
-      <a class="brand" href="../../../index.html#top">
+      <a class="brand"  href="#top">
         <span class="brand__dot"></span>
         <span class="brand__text">AKIL</span>
       </a>
@@ -162,11 +162,10 @@
   <script src="../../../assets/js/i18n.js"></script>
   <script src="../../_shared/project_page.js?v=20260228"></script>
   <script>
-    ProjectPageCore.init();
-
     const statusElement = document.getElementById("status");
     const canvasElement = document.getElementById("canvas");
     const canvasAspectRatio = 3 / 2;
+    const t = window.I18N?.t?.bind(window.I18N) ?? ((key, params, fallback) => fallback ?? key);
 
     const runtimeState = {
       mode: "checking",
@@ -187,21 +186,14 @@
       }
     }
 
-    function t(key, fallback) {
-      if (window.I18N && typeof window.I18N.t === "function") {
-        return window.I18N.t(key, undefined, fallback);
-      }
-      return fallback;
-    }
-
     function renderRuntimeCopy() {
       if (runtimeState.mode === "missing") {
-        statusElement.textContent = t("pathfinding_web.runtime.status.missing", "Build not found");
+        statusElement.textContent = t("pathfinding_web.runtime.status.missing", undefined, "Build not found");
         return;
       }
 
       if (runtimeState.mode === "loading") {
-        const loadingLabel = t("pathfinding_web.runtime.status.loading", "Loading demo");
+        const loadingLabel = t("pathfinding_web.runtime.status.loading", undefined, "Loading demo");
         statusElement.textContent = runtimeState.loadingLeft > 0
           ? `${loadingLabel} (${runtimeState.loadingLeft})`
           : loadingLabel;
@@ -209,11 +201,11 @@
       }
 
       if (runtimeState.mode === "ready") {
-        statusElement.textContent = t("pathfinding_web.runtime.status.ready", "Ready");
+        statusElement.textContent = t("pathfinding_web.runtime.status.ready", undefined, "Ready");
         return;
       }
 
-      statusElement.textContent = t("pathfinding_web.runtime.status.checking", "Checking runtime...");
+      statusElement.textContent = t("pathfinding_web.runtime.status.checking", undefined, "Checking runtime...");
     }
 
     window.Module = {
@@ -221,7 +213,7 @@
       setStatus(text) {
         runtimeState.mode = text ? "loading" : "ready";
         runtimeState.loadingLeft = 0;
-        statusElement.textContent = text || t("pathfinding_web.runtime.status.ready", "Ready");
+        statusElement.textContent = text || t("pathfinding_web.runtime.status.ready", undefined, "Ready");
       },
       monitorRunDependencies(left) {
         runtimeState.mode = left ? "loading" : "ready";
@@ -244,6 +236,12 @@
       document.body.appendChild(runtimeScript);
     }
 
+    ProjectPageCore.init({
+      onLangChange() {
+        window.setTimeout(renderRuntimeCopy, 0);
+      }
+    });
+
     syncCanvasSize();
     if (typeof ResizeObserver === "function") {
       new ResizeObserver(syncCanvasSize).observe(canvasElement);
@@ -253,10 +251,6 @@
 
     renderRuntimeCopy();
     loadRuntime();
-
-    document.getElementById("langSelect")?.addEventListener("change", () => {
-      window.setTimeout(renderRuntimeCopy, 0);
-    });
   </script>
 </body>
 </html>
