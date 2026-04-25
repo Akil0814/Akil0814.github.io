@@ -36,13 +36,25 @@
   border:1px solid var(--line);
   background: rgba(255,255,255,.04);
   box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.brand:hover{
+  border-color: color-mix(in oklab, var(--line) 55%, var(--b) 45%);
+  background: rgba(255,255,255,.07);
+  transform: translateY(-1px);
+}
+.brand:focus-visible{
+  outline: none;
+  border-color: color-mix(in oklab, var(--line) 55%, var(--b) 45%);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--a) 35%, transparent 65%);
 }
 .brand__dot{
   width:10px; height:10px;
   border-radius:50%;
-  background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.35) 40%, transparent 65%),
-              linear-gradient(135deg, var(--a), var(--b), var(--c));
-  box-shadow: 0 0 18px rgba(0,212,255,.35);
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff, rgba(224,242,254,.72) 34%, transparent 64%),
+    linear-gradient(135deg, #dbeafe 0%, #7dd3fc 42%, #38bdf8 100%);
+  box-shadow: 0 0 16px rgba(125,211,252,.42), 0 0 28px rgba(56,189,248,.16);
 }
 .brand__text{
   font-weight:800;
@@ -53,6 +65,10 @@
 [data-theme="light"] .brand{
   background: rgba(214, 224, 236, .9);
   box-shadow: 0 8px 22px rgba(62, 84, 110, .16);
+}
+
+[data-theme="light"] .brand:hover{
+  background: rgba(226, 235, 244, .96);
 }
 
 [data-theme="light"] .brand__dot{
@@ -149,6 +165,15 @@
 }
 
 @supports not (color: color-mix(in oklab, white, black)){
+  .brand:hover,
+  .brand:focus-visible{
+    border-color: var(--a);
+  }
+
+  .brand:focus-visible{
+    box-shadow: 0 0 0 2px rgba(124,77,255,.28);
+  }
+
   .nav__right .btn:focus-visible,
   .lang-select:focus{
     border-color: var(--a);
