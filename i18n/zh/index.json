@@ -37,7 +37,7 @@
       "pathfindingvisualizer": {
         "badge_visualizer": "可视化",
         "title": "PathFindingVisualizer",
-        "desc": "一个用于展示寻路算法的可视化项目页，后续会补充网格搜索演示、边界扩展与最终路径回溯等内容。"
+        "desc": "一个用于展示寻路算法的可视化项目页，包含A*、Dijkstra、BFS、DFS等算法的实现与可视化展示，支持动态添加障碍物和调整算法参数以观察不同算法的性能表现。"
       },
       "microcomputer": {
         "badge_hardware": "硬件",
@@ -49,7 +49,7 @@
       "softrenderer": {
         "badge_graphics": "图形",
         "title": "SoftRenderer",
-        "desc": "一个以 CPU 端重建渲染管线为目标的软件渲染器项目，当前聚焦三角形光栅化、深度测试与基础着色。"
+        "desc": "一个基于 CPU 的 C++ 软件渲染器，实现了简化图形管线，包括顶点处理、三角形光栅化、片元着色与纹理采样；同时集成适配当前管线的 Dear ImGui 后端，用于运行时调试、性能统计和渲染瓶颈定位，项目目前处于长期性能优化阶段。"
       },
       "takemetoballgame": {
         "badge_project": "项目",
@@ -77,10 +77,10 @@
       "now_label": "当前：",
       "now_value": "OpenGL学习中",
       "next_label": "下一步：",
-      "next_value": "手写软光栅",
+      "next_value": "Vulkan",
       "skills_title": "技能",
       "summary_title": "简介",
-      "summary_text": "CS在读学生，目前主攻C++和图形学，对游戏编程和图形学感兴趣，喜欢了解底层原理而不是单纯调用黑箱API，学习OpenGL后打算写个软光栅，当前阶段的目标是实现一个3D渲染引擎",
+      "summary_text": "CS在读学生，目前主攻C++和图形学，对游戏编程和图形学感兴趣，喜欢了解底层原理而不是单纯调用黑箱API，当前阶段的目标是实现一个3D渲染引擎",
       "skills": {
         "opengl": "OpenGL（学习中）",
         "english": "英文（流利）",
