@@ -1,4 +1,35 @@
 (function () {
+  const videoEntries = [
+    {
+      fileName: "SoftRenderer_Blending_And_Depth_Test.webm",
+      titleKey: "SoftRenderer.videos.blending_depth.title",
+      titleFallback: "Blending and Depth Test",
+      descriptionKey: "SoftRenderer.videos.blending_depth.desc",
+      descriptionFallback: "Shows fragment blending behavior together with depth-based visibility checks.",
+    },
+    {
+      fileName: "SoftRenderer_ImGui_And_Cull_Face.webm",
+      titleKey: "SoftRenderer.videos.imgui_cull_face.title",
+      titleFallback: "ImGui and Cull Face",
+      descriptionKey: "SoftRenderer.videos.imgui_cull_face.desc",
+      descriptionFallback: "Shows the debug UI workflow and back-face culling controls.",
+    },
+    {
+      fileName: "SoftRenderer_Texture_Perspective_Correction.webm",
+      titleKey: "SoftRenderer.videos.texture_perspective.title",
+      titleFallback: "Texture Perspective Correction",
+      descriptionKey: "SoftRenderer.videos.texture_perspective.desc",
+      descriptionFallback: "Shows perspective-correct texture mapping during triangle rasterization.",
+    },
+    {
+      fileName: "SoftRenderer_View_Frustum_Clipping.webm",
+      titleKey: "SoftRenderer.videos.frustum_clipping.title",
+      titleFallback: "View Frustum Clipping",
+      descriptionKey: "SoftRenderer.videos.frustum_clipping.desc",
+      descriptionFallback: "Shows clipping behavior when geometry crosses the camera frustum bounds.",
+    },
+  ];
+
   let mermaidRenderer = null;
 
   function t(key, fallbackText, params) {
@@ -52,10 +83,40 @@
 
   function setStaticCounts() {
     const videoCount = document.getElementById("videoCount");
-    if (videoCount) videoCount.textContent = "0";
+    if (videoCount) videoCount.textContent = String(videoEntries.length);
 
     const codeCount = document.getElementById("codeCount");
     if (codeCount) codeCount.textContent = "0";
+  }
+
+  function renderVideos() {
+    const videoGrid = document.getElementById("videoGrid");
+    if (!videoGrid) return;
+
+    videoGrid.innerHTML = "";
+    for (const video of videoEntries) {
+      const card = document.createElement("article");
+      card.className = "video-card";
+
+      const title = document.createElement("h3");
+      title.setAttribute("data-i18n", video.titleKey);
+      title.textContent = t(video.titleKey, video.titleFallback);
+
+      const player = document.createElement("video");
+      player.controls = true;
+      player.preload = "metadata";
+      player.playsInline = true;
+      player.src = `./res/${video.fileName}`;
+
+      const description = document.createElement("p");
+      description.setAttribute("data-i18n", video.descriptionKey);
+      description.textContent = t(video.descriptionKey, video.descriptionFallback);
+
+      card.appendChild(title);
+      card.appendChild(player);
+      card.appendChild(description);
+      videoGrid.appendChild(card);
+    }
   }
 
   function initMermaidSection(theme) {
@@ -93,6 +154,7 @@
     });
 
     setStaticCounts();
+    renderVideos();
     initMermaidSection(pageCore.getTheme());
 
     if (typeof window.applyI18n === "function") {
@@ -108,4 +170,3 @@
 
   window.addEventListener("DOMContentLoaded", init);
 })();
-
