@@ -44,7 +44,23 @@
       "core_code_blocks": "核心代码片段"
     },
     "videos": {
-      "placeholder": "演示视频暂时留空，后续可补充单步执行、自动运行、权重格和八方向移动等交互录屏。"
+      "placeholder": "演示视频暂时留空，后续可补充单步执行、自动运行、权重格和八方向移动等交互录屏。",
+      "basic_demo": {
+        "title": "基础演示",
+        "desc": "展示从棋盘配置到最终路径重建的核心搜索流程。"
+      },
+      "step_controls": {
+        "title": "单步控制",
+        "desc": "展示如何沿着模拟历史向前推进或向后回退。"
+      },
+      "speed_control": {
+        "title": "速度控制",
+        "desc": "展示自动运行速度如何影响可视化播放节奏。"
+      },
+      "weights_algorithms": {
+        "title": "权重与算法",
+        "desc": "展示不同权重与算法选择如何改变搜索范围与最终路径。"
+      }
     },
     "architecture": {
       "placeholder": "架构图由页面脚本动态渲染。"
