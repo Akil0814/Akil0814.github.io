@@ -32,7 +32,23 @@
       "core_code_blocks": "Core Code Blocks"
     },
     "videos": {
-      "placeholder": "Demo videos will be added after the visualizer reaches a stable milestone."
+      "placeholder": "Demo videos will be added after the visualizer reaches a stable milestone.",
+      "basic_demo": {
+        "title": "Basic Demo",
+        "desc": "Shows the core search flow from board setup to final path reconstruction."
+      },
+      "step_controls": {
+        "title": "Step Controls",
+        "desc": "Shows stepping forward and backward through the simulation history."
+      },
+      "speed_control": {
+        "title": "Speed Control",
+        "desc": "Shows how auto-run speed affects the pacing of the visualization."
+      },
+      "weights_algorithms": {
+        "title": "Weights and Algorithms",
+        "desc": "Shows how different weights and algorithm choices change the explored path."
+      }
     },
     "architecture": {
       "placeholder": "Architecture diagrams will be added after the core search flow is finalized."

@@ -1,4 +1,35 @@
 (function () {
+  const videoEntries = [
+    {
+      fileName: "PathFinding_Basic_Demo.webm",
+      titleKey: "PathFindingVisualizer.videos.basic_demo.title",
+      titleFallback: "Basic Demo",
+      descriptionKey: "PathFindingVisualizer.videos.basic_demo.desc",
+      descriptionFallback: "Shows the core search flow from board setup to final path reconstruction.",
+    },
+    {
+      fileName: "PathFinding_Step_Controls.webm",
+      titleKey: "PathFindingVisualizer.videos.step_controls.title",
+      titleFallback: "Step Controls",
+      descriptionKey: "PathFindingVisualizer.videos.step_controls.desc",
+      descriptionFallback: "Shows stepping forward and backward through the simulation history.",
+    },
+    {
+      fileName: "PathFinding_Speed_Control.webm",
+      titleKey: "PathFindingVisualizer.videos.speed_control.title",
+      titleFallback: "Speed Control",
+      descriptionKey: "PathFindingVisualizer.videos.speed_control.desc",
+      descriptionFallback: "Shows how auto-run speed affects the pacing of the visualization.",
+    },
+    {
+      fileName: "PathFinding_Weights_And_Algorithms.webm",
+      titleKey: "PathFindingVisualizer.videos.weights_algorithms.title",
+      titleFallback: "Weights and Algorithms",
+      descriptionKey: "PathFindingVisualizer.videos.weights_algorithms.desc",
+      descriptionFallback: "Shows how different weights and algorithm choices change the explored path.",
+    },
+  ];
+
   const codeEntries = [
     {
       fileName: "simulation_controller_step_history.cpp",
@@ -117,10 +148,40 @@
 
   function setStaticCounts() {
     const videoCount = document.getElementById("videoCount");
-    if (videoCount) videoCount.textContent = "0";
+    if (videoCount) videoCount.textContent = String(videoEntries.length);
 
     const codeCount = document.getElementById("codeCount");
     if (codeCount) codeCount.textContent = String(codeEntries.length);
+  }
+
+  function renderVideos() {
+    const videoGrid = document.getElementById("videoGrid");
+    if (!videoGrid) return;
+
+    videoGrid.innerHTML = "";
+    for (const video of videoEntries) {
+      const card = document.createElement("article");
+      card.className = "video-card";
+
+      const title = document.createElement("h3");
+      title.setAttribute("data-i18n", video.titleKey);
+      title.textContent = t(video.titleKey, video.titleFallback);
+
+      const player = document.createElement("video");
+      player.controls = true;
+      player.preload = "metadata";
+      player.playsInline = true;
+      player.src = `./res/${video.fileName}`;
+
+      const description = document.createElement("p");
+      description.setAttribute("data-i18n", video.descriptionKey);
+      description.textContent = t(video.descriptionKey, video.descriptionFallback);
+
+      card.appendChild(title);
+      card.appendChild(player);
+      card.appendChild(description);
+      videoGrid.appendChild(card);
+    }
   }
 
   function renderCodeCards() {
@@ -235,6 +296,7 @@
     });
 
     setStaticCounts();
+    renderVideos();
     renderCodeCards();
     initMermaidSection(pageCore.getTheme());
 
