@@ -7,12 +7,10 @@
     "hero": {
       "kicker": "项目归档",
       "title": "更多项目",
-      "desc": "这里整理了更多实验、课程项目、工具和一些能说明我 C++ / 图形学学习路线的作品。",
-      "chip_hardware": "硬件"
+      "desc": "这里整理了我的项目作品、实用小工具，以及能够体现学习路线和技术积累的实践内容。"
     },
     "sections": {
-      "all_projects": "全部项目",
-      "all_projects_desc": "每张卡片会在有详细页面时链接到项目说明页，并附上源码仓库。"
+      "all_projects": "全部项目"
     },
     "actions": {
       "back_to_featured": "返回精选项目"
@@ -20,51 +18,43 @@
     "cards": {
       "warships": {
         "kind": "游戏",
-        "meta": "精选 / 架构练习",
         "title": "WarShips",
-        "desc": "一个战术海战原型项目，重点练习更清晰的架构、可复用系统和设计模式。"
+        "desc": "一个战术海战棋项目，用于练习更工程化的架构和多种设计模式，以提升可维护性与可扩展性"
       },
       "softrenderer": {
         "kind": "图形",
-        "meta": "当前方向 / 渲染管线",
         "title": "SoftRenderer",
-        "desc": "一个 CPU 端软件渲染器，用于通过三角形光栅化、深度测试和基础着色重建图形管线。"
+        "desc": "一个基于 CPU 的 C++ 软件渲染器，实现了简化图形管线，包括顶点处理、三角形光栅化、片元着色与纹理采样；同时集成适配当前管线的 Dear ImGui 后端，用于运行时调试、性能统计和渲染瓶颈定位，项目目前处于长期性能优化阶段。"
       },
       "microcomputer": {
         "kind": "硬件",
-        "meta": "底层系统 / 数字逻辑",
         "title": "74xx 8 位微型计算机",
         "desc": "由 74 系列 TTL 芯片搭建的图灵完备 8 位微型计算机，包含自定义 ISA、寄存器、内存和 I/O。"
       },
       "pathfinding": {
         "kind": "可视化",
-        "meta": "算法演示 / 学习笔记",
         "title": "PathFindingVisualizer",
-        "desc": "一个用于网格搜索演示、边界扩展和最终路径回溯说明的寻路算法可视化页面。"
+        "desc": "一个用于展示寻路算法的可视化项目页，包含A*、Dijkstra、BFS、DFS等算法的实现与可视化展示，支持动态添加障碍物和调整算法参数以观察不同算法的性能表现。"
       },
       "minesweeper": {
         "kind": "游戏",
-        "meta": "第一个 OOP 项目 / 场景管理器",
         "title": "MineSweeper",
-        "desc": "我的第一个 OOP 结构项目，包含场景管理器、可复用 UI 组件和多种游戏模式。"
+        "desc": "第一个尝试构建的OOP项目，使用场景管理器统一驱动与切换场景，包含按钮类，棋盘类等"
       },
       "collegetour": {
         "kind": "工具",
-        "meta": "课程项目 / 数据管理",
         "title": "CollegeTour",
         "desc": "数据结构课的小组项目，我负责实现基于 SQLite 的 DataManager 与管理员凭证模块。"
       },
       "takemetoballgame": {
         "kind": "项目",
-        "meta": "课程项目 / 后端架构",
         "title": "Take me  to  ballgame.",
-        "desc": "基于 Qt Widgets + SQLite 的 MLB 球场旅行规划项目，我负责 Application、DatabaseManager、Repository、AuthService 与行程模型等 App 后端模块。"
+        "desc": "基于 Qt Widgets + SQLite 的 MLB 球场旅行规划项目，我负责整体架构与 App 后端层实现。"
       },
       "buttonsdl": {
         "kind": "工具",
-        "meta": "可复用组件 / 小型库",
         "title": "ButtonForSDL",
-        "desc": "从项目中抽离并重构的 SDL 按钮组件，让交互逻辑更清晰、更易维护。"
+        "desc": "由项目中抽象出的Button类，进行了一系列重构让交互逻辑更清晰，提高可维护性."
       }
     },
     "footer": {

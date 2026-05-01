@@ -7,12 +7,10 @@
     "hero": {
       "kicker": "Project archive",
       "title": "More Projects",
-      "desc": "A longer project shelf for experiments, class projects, utilities, and the builds that explain how my C++ / graphics path is growing.",
-      "chip_hardware": "Hardware"
+      "desc": "A longer project shelf for experiments, class projects, utilities, and the builds that explain how my C++ / graphics path is growing."
     },
     "sections": {
-      "all_projects": "All Projects",
-      "all_projects_desc": "Each card links to the detailed project page when one is available, plus the repository for source code."
+      "all_projects": "All Projects"
     },
     "actions": {
       "back_to_featured": "Back to Featured"
@@ -20,51 +18,43 @@
     "cards": {
       "warships": {
         "kind": "Game",
-        "meta": "Featured / Architecture practice",
         "title": "WarShips",
-        "desc": "A tactical naval game prototype focused on cleaner architecture, reusable systems, and design-pattern practice."
+        "desc": "A tactical naval battle board-game project designed to practice more engineering-oriented architecture and multiple design patterns, improving maintainability and extensibility."
       },
       "softrenderer": {
         "kind": "Graphics",
-        "meta": "Current direction / Rendering pipeline",
         "title": "SoftRenderer",
-        "desc": "A CPU-side renderer for rebuilding the graphics pipeline through triangle rasterization, depth testing, and basic shading."
+        "desc": "A CPU-based C++ software renderer that implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling. It also integrates a Dear ImGui backend adapted to the current pipeline for runtime debugging, performance statistics, and rendering bottleneck analysis. The project is currently in a long-term performance optimization phase."
       },
       "microcomputer": {
         "kind": "Hardware",
-        "meta": "Low-level systems / Digital logic",
         "title": "74xx 8-bit Microcomputer",
         "desc": "A Turing-complete 8-bit microcomputer built from 74-series TTL chips with a custom ISA, registers, memory, and I/O."
       },
       "pathfinding": {
         "kind": "Visualizer",
-        "meta": "Algorithm demo / Learning note",
         "title": "PathFindingVisualizer",
-        "desc": "A visualizer page prepared for grid-search demos, frontier expansion, and final path reconstruction notes."
+        "desc": "A visualization project page for pathfinding algorithms, including implementations and visual demonstrations of A*, Dijkstra, BFS, DFS, and more. It also supports dynamically adding obstacles and adjusting algorithm parameters to observe the performance of different algorithms."
       },
       "minesweeper": {
         "kind": "Game",
-        "meta": "First OOP project / Scene manager",
         "title": "MineSweeper",
-        "desc": "My first OOP-structured project, with a scene manager, reusable UI components, and multiple game modes."
+        "desc": "My first attempt at building an OOP-structured project: I implemented a Scene Manager to drive and switch scenes in a unified way, and built core components such as a Button class and a Board class."
       },
       "collegetour": {
         "kind": "Tool",
-        "meta": "Course project / Data management",
         "title": "CollegeTour",
         "desc": "A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module."
       },
       "takemetoballgame": {
         "kind": "Project",
-        "meta": "Project skeleton / Details coming soon",
         "title": "Take me  to  ballgame.",
-        "desc": "A project page skeleton prepared for future notes, architecture details, and code snippets."
+        "desc": "An MLB stadium trip-planning project built with Qt Widgets + SQLite, where I was responsible for the overall architecture and the app's backend-layer implementation."
       },
       "buttonsdl": {
         "kind": "Utility",
-        "meta": "Reusable component / Small library",
         "title": "ButtonForSDL",
-        "desc": "A reusable SDL button component extracted and refactored to make interaction logic clearer and easier to maintain."
+        "desc": "I extracted a reusable Button class from the project and performed a series of refactors to make interaction logic clearer and improve maintainability."
       }
     },
     "footer": {
