@@ -3,9 +3,9 @@
     "title": "Akil0814",
     "hero": {
       "subtitle_intro": "技术栈：",
-      "subtitle_line2": "目前正在学习 OpenGL，下一步的学习计划是实现一个软光栅。",
+      "subtitle_line2": "目前正在学习 OpenGL，当前阶段的计划是学习vulkan后实现一个多后端的渲染引擎。",
       "subtitle_line3": "之后有计划重构 WarShips 项目，并计划开发新的 SDL 2D 横版战斗游戏。",
-      "subtitle_line4": "如果你想合作，欢迎联系我。",
+      "subtitle_line4": "如果你想合作开发有任何兴趣，欢迎联系我。",
       "floating_profile_title": "个人资料",
       "floating_profile_desc": "技能 · 简历 · 邮箱",
       "floating_more_title": "更多关于我",
@@ -80,7 +80,7 @@
       "next_value": "Vulkan",
       "skills_title": "技能",
       "summary_title": "简介",
-      "summary_text": "CS在读学生，目前主攻C++和图形学，对游戏编程和图形学感兴趣，喜欢了解底层原理而不是单纯调用黑箱API，当前阶段的目标是实现一个3D渲染引擎",
+      "summary_text": "CS在读学生，目前主攻C++和图形学，对游戏编程和实时渲染感兴趣，相比单纯调用黑箱API，更喜欢去了解底层实现，实现一个支持OpenGL、Vulkan和自研软光栅后端的多后端3D渲染引擎，并逐步完善动态模型加载、实时光源调整、骨骼动画播控、材质系统、场景管理和调试工具",
       "skills": {
         "opengl": "OpenGL（学习中）",
         "english": "英文（流利）",

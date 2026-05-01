@@ -3,9 +3,9 @@
     "title": "Akil0814",
     "hero": {
       "subtitle_intro": "使用技術：",
-      "subtitle_line2": "現在は OpenGL を学習中で、次の目標はソフトウェアラスタライザーの実装です。",
+      "subtitle_line2": "現在は OpenGL を学習中で、現段階では Vulkan を学んだ後にマルチバックエンドのレンダリングエンジンを実装する計画です。",
       "subtitle_line3": "今後は WarShips をリファクタリングし、SDL で新しい 2D 横スクロール戦闘ゲームを作る予定です。",
-      "subtitle_line4": "共同開発に興味があればご連絡ください。",
+      "subtitle_line4": "共同開発に少しでも興味があれば、ぜひご連絡ください。",
       "floating_profile_title": "プロフィール",
       "floating_profile_desc": "スキル · 履歴書 · メール",
       "floating_more_title": "もっと見る",
@@ -37,7 +37,7 @@
       "pathfindingvisualizer": {
         "badge_visualizer": "可視化",
         "title": "PathFindingVisualizer",
-        "desc": "グリッド探索デモ、フロンティア展開、最終経路復元の説明を追加するために用意した経路探索アルゴリズム可視化ページです。"
+        "desc": "A*、Dijkstra、BFS、DFS などの経路探索アルゴリズムの実装と可視化表示を含むプロジェクトページです。障害物を動的に追加したり、アルゴリズムのパラメータを調整したりして、各アルゴリズムの性能の違いを観察できます。"
       },
       "microcomputer": {
         "badge_hardware": "ハードウェア",
@@ -54,7 +54,7 @@
       "takemetoballgame": {
         "badge_project": "プロジェクト",
         "title": "Take me  to  ballgame.",
-        "desc": "今後のノート、設計詳細、コード片を追加するためのプロジェクトページ骨組みです。"
+        "desc": "Qt Widgets + SQLite を用いた MLB 球場旅行計画プロジェクトで、全体アーキテクチャとアプリのバックエンド層実装を担当しました。"
       },
       "buttonsdl": {
         "badge_tool": "ツール",
@@ -75,15 +75,15 @@
       "now_label": "現在：",
       "now_value": "OpenGL勉強中",
       "next_label": "次：",
-      "next_value": "ソフトウェアラスタライザー",
+      "next_value": "Vulkan",
       "skills_title": "スキル",
       "summary_title": "要約",
-      "summary_text": "CS 在学中。C++ とコンピュータグラフィックスを中心に学び、ゲームプログラミングとレンダリングに興味があります。API をブラックボックスとして使うのではなく、低レベルの原理を理解して自分で実装するのが好きです。OpenGL の学習後はソフトウェアラスタライザーを作り、最終的には 3D レンダリングエンジンの実装を目指しています。",
+      "summary_text": "CS 在学中で、現在は C++ とコンピュータグラフィックスを主軸に学んでいます。ゲームプログラミングとリアルタイムレンダリングに興味があり、ブラックボックスな API を使うだけでなく、その背後にある低レベル実装を理解することを好みます。OpenGL、Vulkan、自作ソフトウェアラスタライザーバックエンドを支えるマルチバックエンド 3D レンダリングエンジンの実装を目標にしつつ、動的モデル読み込み、リアルタイム光源調整、スケルタルアニメーション再生制御、マテリアルシステム、シーン管理、デバッグツールを段階的に整備していく予定です。",
       "skills": {
         "opengl": "OpenGL（学習中）",
         "english": "英語（上級）",
         "chinese": "中国語（ネイティブ）",
-        "japanese": "日本語（勉強中）",
+        "japanese": "日本語（初学）",
         "anime_expert": "アニメ玄人（自称）"
       }
     },

@@ -3,9 +3,9 @@
     "title": "Akil0814",
     "hero": {
       "subtitle_intro": "Tech stack:",
-      "subtitle_line2": "I'm currently learning OpenGL, and my next goal is to build a software rasterizer.",
+      "subtitle_line2": "I'm currently learning OpenGL, and at this stage I plan to learn Vulkan and then build a multi-backend rendering engine.",
       "subtitle_line3": "In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.",
-      "subtitle_line4": "If you're interested in collaborating, feel free to reach out.",
+      "subtitle_line4": "If you're interested in collaborating on development, feel free to reach out.",
       "floating_profile_title": "Profile",
       "floating_profile_desc": "Skill · Resume · Email",
       "floating_more_title": "More About Me",
@@ -37,7 +37,7 @@
       "pathfindingvisualizer": {
         "badge_visualizer": "Visualizer",
         "title": "PathFindingVisualizer",
-        "desc": "A pathfinding algorithm visualizer page prepared for grid-search demos, frontier expansion, and final path reconstruction notes."
+        "desc": "A visualization project page for pathfinding algorithms, including implementations and visual demonstrations of A*, Dijkstra, BFS, DFS, and more. It also supports dynamically adding obstacles and adjusting algorithm parameters to observe the performance of different algorithms."
       },
       "microcomputer": {
         "badge_hardware": "Hardware",
@@ -49,12 +49,12 @@
       "softrenderer": {
         "badge_graphics": "Graphics",
         "title": "SoftRenderer",
-        "desc": "A software renderer project focused on rebuilding the rendering pipeline on CPU side, including triangle rasterization, depth testing, and shading basics."
+        "desc": "A CPU-based C++ software renderer that implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling. It also integrates a Dear ImGui backend adapted to the current pipeline for runtime debugging, performance statistics, and rendering bottleneck analysis. The project is currently in a long-term performance optimization phase."
       },
       "takemetoballgame": {
         "badge_project": "Project",
         "title": "Take me  to  ballgame.",
-        "desc": "A project page skeleton prepared for future notes, architecture details, and code snippets."
+        "desc": "An MLB stadium trip-planning project built with Qt Widgets + SQLite, where I was responsible for the overall architecture and the app's backend-layer implementation."
       },
       "buttonsdl": {
         "badge_tool": "Tool",
@@ -75,15 +75,15 @@
       "now_label": "Currently:",
       "now_value": "Learning OpenGL.",
       "next_label": "Next:",
-      "next_value": "Software Rasterizer.",
+      "next_value": "Vulkan",
       "skills_title": "Skills",
       "summary_title": "Summary",
-      "summary_text": "I’m a CS student focusing on C++ and computer graphics, with a strong interest in game programming and rendering. I prefer digging into low-level principles instead of treating APIs as black boxes. After learning OpenGL, I plan to build a software rasterizer. My current goal is to implement a 3D rendering engine.",
+      "summary_text": "I’m a CS student currently focusing on C++ and computer graphics, with strong interests in game programming and real-time rendering. Rather than simply calling black-box APIs, I prefer understanding the underlying implementation details. My goal is to build a multi-backend 3D rendering engine that supports OpenGL, Vulkan, and a self-developed software rasterizer backend, while gradually improving dynamic model loading, real-time light adjustment, skeletal animation playback and control, the material system, scene management, and debugging tools.",
       "skills": {
         "opengl": "OpenGL (learning)",
         "english": "English (fluent)",
         "chinese": "Chinese (native)",
-        "japanese": "Japanese (basic)",
+        "japanese": "Japanese (beginner)",
         "anime_expert": "Anime Expert"
       }
     },
