@@ -49,7 +49,7 @@
       "softrenderer": {
         "badge_graphics": "Graphics",
         "title": "SoftRenderer",
-        "desc": "A CPU-based C++ software renderer that implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling. It also integrates a Dear ImGui backend adapted to the current pipeline for runtime debugging, performance statistics, and rendering bottleneck analysis. The project is currently in a long-term performance optimization phase."
+        "desc": "A CPU-based C++ software renderer with an OpenGL-inspired interface. It implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling, and also integrates a Dear ImGui backend adapted to the current pipeline. The project is currently in a long-term performance optimization phase."
       },
       "takemetoballgame": {
         "badge_project": "Project",
