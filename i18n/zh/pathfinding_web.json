@@ -5,11 +5,11 @@
       "project_page": "项目页"
     },
     "intro": {
-      "kicker": "C++ / WebAssembly / 路径搜索",
+      "kicker": "C++ / WebAssembly",
       "title": "PathFindingVisualizer 网页演示",
       "chips": {
-        "visualizer": "可视化",
-        "algorithms": "算法"
+        "visualizer": "在线可视化",
+        "algorithms": "算法切换"
       }
     },
     "actions": {

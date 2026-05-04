@@ -2,7 +2,7 @@
   "PathFindingVisualizer": {
     "title": "PathFindingVisualizer 项目",
     "intro": {
-      "kicker": "C++ / 寻路算法 / 工程实践",
+      "kicker": "C++ / SDL ",
       "title": "PathFindingVisualizer 项目概览",
       "desc": "PathFindingVisualizer 是一个 20 x 20 网格寻路可视化工程。项目支持设置起点、终点、墙体和权重格子，并通过单步执行、自动运行、暂停和回退来观察算法状态如何变化。这个页面重点记录项目的工程拆分：算法如何从渲染和输入中解耦，搜索状态如何被可视化，单步执行如何保存快照并支持回退。",
       "chips": {

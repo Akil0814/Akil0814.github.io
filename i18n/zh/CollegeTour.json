@@ -2,14 +2,13 @@
   "CollegeTour": {
     "title": "CollegeTour 项目",
     "intro": {
-      "kicker": "C++ / SQLite / 小组项目",
+      "kicker": "C++ / Qt Widgets / SQLite",
       "title": "CollegeTour 项目概览",
       "desc": "这是一个小组合作完成的College Tour项目。一个基于 Qt Widgets + SQLite 的校园旅行规划应用，包含登录/管理员模式、数据管理（学校/路线/商品）、以及基于约束的路线计算与展示。我主要负责后端模块，重点是基于 SQLite 的 DataManager，实现文件读取和基本的CRUD，以及管理员登录验证流程。本页面只展示代码片段，因为我负责的模块基本为后端模块，所以不包含视频区，所选代码主要覆盖后端数据生命周期与管理员验证逻辑。",
       "chips": {
-        "data_manager": "DataManager",
-        "sqlite": "SQLite",
-        "admin_auth": "管理员认证",
-        "database_reset": "数据库重置"
+        "data_manager": "数据访问层",
+        "sqlite": "Schema 迁移",
+        "admin_auth": "管理员认证"
       }
     },
     "summary": {

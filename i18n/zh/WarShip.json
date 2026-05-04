@@ -2,14 +2,14 @@
   "WarShip": {
     "title": "WarShip 项目概览",
     "intro": {
-      "kicker": "C++ / SDL / 战术海战游戏",
+      "kicker": "C++ / SDL",
       "title": "WarShip 项目概览",
       "desc": "WarShip项目基于SDL图形库与C++实现，以回合制海战策略游戏为原型原创的小游戏。项目由GameManager统一驱动，尝试引入多种设计模式。游戏流程主线为：菜单 → 购船与拖拽布阵（两位玩家轮流） → 回合制交替攻击/技能 → 结算场景，下方演示视频展示了购船部署、攻击和技能释放等实际交互。核心玩法围绕舰船部署、攻击与技能系统展开，设计了多样化的舰船类型和技能效果，提供丰富的战术选择。下方代码块展示了主循环、场景池、棋盘逻辑、舰船行为等核心实现细节。",
       "chips": {
-        "ship_placement": "舰船部署",
-        "skill_system": "技能系统",
-        "scene_pool": "场景池",
-        "effect_pipeline": "特效管线"
+        "ship_placement": "拖拽布阵",
+        "skill_system": "技能结算",
+        "scene_pool": "场景池复用",
+        "effect_pipeline": "特效回调"
       }
     },
     "summary": {

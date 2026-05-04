@@ -2,7 +2,7 @@
   "8BitComputer": {
     "title": "8BitComputer 项目",
     "intro": {
-      "kicker": "CPU 设计 / 数字逻辑 / 8位架构",
+      "kicker": "74 系列 TTL / 数字逻辑 / 8位 ISA",
       "title": "8BitComputer 项目概览",
       "desc": "该项目在建设中。",
       "chips": {

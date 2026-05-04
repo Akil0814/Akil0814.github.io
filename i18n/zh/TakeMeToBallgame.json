@@ -2,12 +2,12 @@
   "TakeMeToBallgame": {
     "title": "Take me  to  ballgame. 项目",
     "intro": {
-      "kicker": "C++ / Qt Widgets / SQLite / 后端架构",
+      "kicker": "C++ / Qt Widgets / SQLite",
       "title": "Take me  to  ballgame.",
       "desc": "Take me out to the Ballgame 是一个基于 Qt Widgets + SQLite 的 MLB 球场旅行规划课程项目，围绕球场资料浏览、管理员维护、纪念品数据、球场距离图与旅行路线等功能展开。我负责整体项目架构与后端内容，App 文件夹中的应用入口、数据库管理、Repository 数据访问、CSV 解析、认证服务与行程模型等模块均由我实现。",
       "chips": {
-        "planning": "后端架构",
-        "placeholder": "App 模块"
+        "planning": "Repository 分层",
+        "placeholder": "降级初始化"
       }
     },
     "stack": {
