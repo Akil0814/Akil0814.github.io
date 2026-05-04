@@ -2,12 +2,12 @@
   "TakeMeToBallgame": {
     "title": "Take me  to  ballgame. Project",
     "intro": {
-      "kicker": "C++ / Qt / Project Skeleton",
+      "kicker": "C++ / Qt Widgets / SQLite",
       "title": "Take me  to  ballgame.",
       "desc": "This project page is prepared as a skeleton for future notes, architecture details, and code snippets.",
       "chips": {
-        "planning": "Planning",
-        "placeholder": "Skeleton"
+        "planning": "Repository Layering",
+        "placeholder": "Graceful Degradation"
       }
     },
     "stack": {
@@ -30,7 +30,38 @@
       "core_code_blocks": "Core Code Blocks"
     },
     "code": {
-      "placeholder": "Code snippets will be added later."
+      "placeholder": "Code snippets will be added later.",
+      "application_init": {
+        "desc": "The Application singleton resolves data paths, initializes DatabaseManager, and wires Repository, AuthService, and TripPlanner based on module availability."
+      },
+      "database_lifecycle": {
+        "desc": "DatabaseManager handles SQLite connections, PRAGMA setup, schema checks, recovery, rebuild flow, and aggregated errors or warnings."
+      },
+      "csv_import": {
+        "desc": "The CSV import pipeline normalizes headers, parses fields, and uses transactions plus upsert to load stadium and distance data reliably."
+      },
+      "stadium_repository": {
+        "desc": "StadiumRepository encapsulates stadium list queries, sorting, league filtering, single-item lookup, and administrator maintenance interfaces."
+      },
+      "distance_repository": {
+        "desc": "DistanceRepository normalizes undirected stadium-distance edges and provides query, adjacency lookup, and update interfaces."
+      },
+      "auth_service": {
+        "desc": "AuthService reads key.dat, checks magic and version, and validates administrator input locally with an XOR key."
+      },
+      "trip_model": {
+        "desc": "Trip stores route results, the current stop index, and the shopping cart so route browsing and purchasing can share one state model."
+      }
+    },
+    "mermaid": {
+      "application_architecture": {
+        "title": "Application Backend Module Diagram",
+        "desc": "Shows how the Application singleton owns DatabaseManager, Repository modules, AuthService, and TripPlanner, and exposes a unified backend entry for Qt pages."
+      },
+      "database_init": {
+        "title": "Database Initialization Flow",
+        "desc": "Shows the sequence of path resolution, SQLite open, PRAGMA setup, schema checks, CSV seed import, and module availability decisions."
+      }
     },
     "footer": {
       "page": "Take me  to  ballgame. Project Page"

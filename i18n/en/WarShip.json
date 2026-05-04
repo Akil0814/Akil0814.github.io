@@ -2,14 +2,14 @@
   "WarShip": {
     "title": "WarShip Project Overview",
     "intro": {
-      "kicker": "C++ / SDL / Tactical Naval Game",
+      "kicker": "C++ / SDL",
       "title": "WarShip Project Overview",
       "desc": "WarShip is an original small game implemented with SDL and C++, modeled on a turn-based naval strategy game. The project is driven by GameManager and experiments with multiple design patterns. The main flow is: Menu -> ship purchase and drag-and-drop deployment (two players take turns) -> turn-based alternating attack/skill actions -> Settlement scene. The demo videos below show shopping/deployment, attacks, and skill casting interactions. Core gameplay focuses on ship deployment, attacks, and the skill system, with varied ship types and skill effects for richer tactical choices. The code blocks below show key implementation details such as the main loop, scene pool, board logic, and ship behavior.",
       "chips": {
-        "ship_placement": "Ship Placement",
-        "skill_system": "Skill System",
-        "scene_pool": "Scene Pool",
-        "effect_pipeline": "Effect Pipeline"
+        "ship_placement": "Drag-and-Drop Deployment",
+        "skill_system": "Skill Resolution",
+        "scene_pool": "Scene Pool Reuse",
+        "effect_pipeline": "Effect Callback"
       }
     },
     "summary": {

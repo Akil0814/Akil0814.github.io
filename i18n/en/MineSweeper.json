@@ -2,13 +2,13 @@
   "MineSweeper": {
     "title": "MineSweeper Project Overview",
     "intro": {
-      "kicker": "C++ / Game / EasyX",
+      "kicker": "C++ / EasyX",
       "title": "MineSweeper Project Overview",
       "desc": "MineSweeper is implemented with C++ and the EasyX graphics library. The project uses a \"Scene + SceneManager\" structure to manage different game states such as main menu, difficulty/custom settings, and gameplay. Core gameplay logic includes random mine placement, cell-state management, recursive safe-area expansion, match timing, and quick restart. The modules below cover main-loop design, Scene class definition, SceneManager implementation, and board data structure/operations. The demo videos show key interactions including mode selection, safe-cell retention, and safe-zone expansion.",
       "chips": {
-        "map_generation": "Map Generation",
-        "safe_area_expansion": "Safe Area Expansion",
-        "scene_management": "Scene Management"
+        "map_generation": "Delayed Mine Placement",
+        "safe_area_expansion": "Safe-Zone Expansion",
+        "scene_management": "Scene Switching"
       }
     },
     "summary": {

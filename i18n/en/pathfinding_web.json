@@ -5,11 +5,11 @@
       "project_page": "Project Page"
     },
     "intro": {
-      "kicker": "C++ / WebAssembly / Pathfinding",
+      "kicker": "C++ / WebAssembly",
       "title": "PathFindingVisualizer Web Demo",
       "chips": {
-        "visualizer": "Visualizer",
-        "algorithms": "Algorithms"
+        "visualizer": "Online Visualization",
+        "algorithms": "Algorithm Switching"
       }
     },
     "actions": {

@@ -2,14 +2,14 @@
   "PathFindingVisualizer": {
     "title": "PathFindingVisualizer プロジェクト",
     "intro": {
-      "kicker": "C++ / アルゴリズム / 経路探索可視化",
+      "kicker": "C++ / SDL",
       "title": "PathFindingVisualizer プロジェクト概要",
       "desc": "PathFindingVisualizer は、経路探索アルゴリズムを可視化するプロジェクトのベース紹介ページです。他のプロジェクトページと同じ構成にしているため、後からデモ、設計メモ、主要コード断片を一貫した形で追加できます。",
       "chips": {
         "grid_search": "グリッド探索",
-        "pathfinding": "経路探索",
-        "heuristics": "ヒューリスティック",
-        "visualization": "可視化"
+        "pathfinding": "アルゴリズム抽象化",
+        "heuristics": "状態機械",
+        "visualization": "スナップショット巻き戻し"
       }
     },
     "summary": {
@@ -54,7 +54,33 @@
       "placeholder": "コア探索フローが固まった後、アーキテクチャ図を追加します。"
     },
     "code": {
-      "placeholder": "コアアルゴリズムモジュールが準備できた後、コード断片を追加します。"
+      "placeholder": "コアアルゴリズムモジュールが準備できた後、コード断片を追加します。",
+      "simulation_controller_step_history": {
+        "desc": "SimulationController は自動実行のテンポ、単歩進行、履歴スナップショット、巻き戻し復元、最終統計を担当し、アルゴリズム実行と盤面可視化の間を調停します。"
+      },
+      "pathfinder_shared_helpers": {
+        "desc": "Pathfinder 基底クラスは、共有の盤面アクセス、移動コスト、ヒューリスティック計算、Tile 状態更新、parent チェーン復元を集約し、各アルゴリズムが可視化処理を重複実装しないようにします。"
+      },
+      "a_star_visual_step": {
+        "desc": "A* は一度に 1 つの可視化ステップだけを進めます。現在の最良ノードを取り出し、近傍を緩和し、best-cost、parent、G/H/F、Open/Current 状態を更新します。"
+      },
+      "board_neighbors_and_cost": {
+        "desc": "Board は近傍フィルタ、斜め移動ポリシー、重み付き移動コスト、最終経路統計を担当し、アルゴリズムに合法移動範囲の統一インターフェースを提供します。"
+      }
+    },
+    "mermaid": {
+      "module_architecture": {
+        "title": "モジュール構成図",
+        "desc": "Application、SimulationController、Pathfinder、Board、Tile の責務境界を示します。"
+      },
+      "step_sequence": {
+        "title": "単歩実行と巻き戻し時系列",
+        "desc": "Next Step と Auto Run がどのようにスナップショットを保存し、アルゴリズムを進め、統計を更新し、Prev Step を支えるかを示します。"
+      },
+      "search_data_flow": {
+        "title": "探索データフロー",
+        "desc": "可視化された探索ステップの中で、開始点・終点、近傍、コスト、parent チェーン、最終経路がどう流れるかを示します。"
+      }
     },
     "footer": {
       "page": "PathFindingVisualizer プロジェクトページ"

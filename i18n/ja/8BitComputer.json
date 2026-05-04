@@ -2,7 +2,7 @@
   "8BitComputer": {
     "title": "8BitComputer プロジェクト",
     "intro": {
-      "kicker": "CPU 設計 / デジタル論理 / 8ビットアーキテクチャ",
+      "kicker": "74シリーズ TTL / デジタル論理 / 8ビット ISA",
       "title": "8BitComputer プロジェクト概要",
       "desc": "このプロジェクトは現在開発中です。",
       "chips": {

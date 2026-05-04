@@ -5,11 +5,11 @@
       "project_page": "プロジェクトページ"
     },
     "intro": {
-      "kicker": "C++ / WebAssembly / 経路探索",
+      "kicker": "C++ / WebAssembly",
       "title": "PathFindingVisualizer Web デモ",
       "chips": {
-        "visualizer": "ビジュアライザ",
-        "algorithms": "アルゴリズム"
+        "visualizer": "オンライン可視化",
+        "algorithms": "アルゴリズム切替"
       }
     },
     "actions": {

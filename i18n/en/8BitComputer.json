@@ -2,7 +2,7 @@
   "8BitComputer": {
     "title": "8Bit Computer Project",
     "intro": {
-      "kicker": "CPU Design / Digital Logic / 8-bit Architecture",
+      "kicker": "74-series TTL / Digital Logic / 8-bit ISA",
       "title": "8Bit Computer Project Overview",
       "desc": "This project is under construction.",
       "chips": {

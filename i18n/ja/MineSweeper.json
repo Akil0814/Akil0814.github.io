@@ -2,13 +2,13 @@
   "MineSweeper": {
     "title": "MineSweeper プロジェクト概要",
     "intro": {
-      "kicker": "C++ / ゲーム / EasyX",
+      "kicker": "C++ / EasyX",
       "title": "MineSweeper プロジェクト概要",
       "desc": "MineSweeper は EasyX グラフィックスライブラリと C++ で実装された、クラシックなマインスイーパーゲームです。メニュー、難易度/カスタム設定、ゲーム本体などの状態を「Scene + SceneManager」で管理します。コアロジックにはランダム地雷配置、セル状態管理、再帰的な安全領域展開、対局タイマー、クイックリスタートを含みます。下部モジュールでは、メインループ設計、Scene クラス定義、SceneManager 実装、盤面データ構造と操作をカバーします。デモ動画では、モード選択、安全セル保持、安全領域展開などの主要操作を示します。",
       "chips": {
-        "map_generation": "マップ生成",
+        "map_generation": "遅延地雷配置",
         "safe_area_expansion": "安全領域展開",
-        "scene_management": "シーン管理"
+        "scene_management": "シーン切替"
       }
     },
     "summary": {

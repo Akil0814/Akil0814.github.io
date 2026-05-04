@@ -8,7 +8,8 @@
       "chips": {
         "data_manager": "数据访问层",
         "sqlite": "Schema 迁移",
-        "admin_auth": "管理员认证"
+        "admin_auth": "管理员认证",
+        "database_reset": "数据库重建"
       }
     },
     "summary": {

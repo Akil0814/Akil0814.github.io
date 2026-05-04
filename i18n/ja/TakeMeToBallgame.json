@@ -2,12 +2,12 @@
   "TakeMeToBallgame": {
     "title": "Take me  to  ballgame. プロジェクト",
     "intro": {
-      "kicker": "C++ / Qt / プロジェクト骨組み",
+      "kicker": "C++ / Qt Widgets / SQLite",
       "title": "Take me  to  ballgame.",
       "desc": "このプロジェクトページは、今後のノート、設計詳細、コード片を追加するための骨組みです。",
       "chips": {
-        "planning": "計画中",
-        "placeholder": "骨組み"
+        "planning": "Repository 分離",
+        "placeholder": "縮退初期化"
       }
     },
     "stack": {
@@ -30,7 +30,38 @@
       "core_code_blocks": "主要コードブロック"
     },
     "code": {
-      "placeholder": "コード片は後で追加します。"
+      "placeholder": "コード片は後で追加します。",
+      "application_init": {
+        "desc": "Application シングルトンは data パスを解決し、DatabaseManager を初期化したうえで、モジュール可用性に応じて Repository、AuthService、TripPlanner を組み立てます。"
+      },
+      "database_lifecycle": {
+        "desc": "DatabaseManager は SQLite 接続、PRAGMA 設定、スキーマ検査、自動復旧、再構築フロー、エラーと警告の集約を管理します。"
+      },
+      "csv_import": {
+        "desc": "CSV 取り込みはヘッダ正規化、フィールド解析、トランザクション、upsert を通じて、球場と距離データを安定して読み込みます。"
+      },
+      "stadium_repository": {
+        "desc": "StadiumRepository は球場一覧クエリ、ソート、リーグ絞り込み、単体参照、管理者向け保守インターフェースをカプセル化します。"
+      },
+      "distance_repository": {
+        "desc": "DistanceRepository は球場間距離の無向辺を正規化し、距離クエリ、隣接取得、更新インターフェースを提供します。"
+      },
+      "auth_service": {
+        "desc": "AuthService は key.dat を読み込み、magic と version を確認し、XOR key で管理者入力をローカル検証します。"
+      },
+      "trip_model": {
+        "desc": "Trip は経路結果、現在の停留地点インデックス、ショッピングカートを保持し、経路閲覧と購入フローで同じ状態モデルを共有します。"
+      }
+    },
+    "mermaid": {
+      "application_architecture": {
+        "title": "Application バックエンド構成図",
+        "desc": "Application シングルトンが DatabaseManager、各 Repository、AuthService、TripPlanner をどう保持し、Qt ページへ統一バックエンド入口を提供するかを示します。"
+      },
+      "database_init": {
+        "title": "データベース初期化フロー",
+        "desc": "パス解決、SQLite オープン、PRAGMA 設定、スキーマ検査、CSV シード投入、モジュール可用性判断の順序を示します。"
+      }
     },
     "footer": {
       "page": "Take me  to  ballgame. プロジェクトページ"

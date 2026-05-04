@@ -2,14 +2,14 @@
   "SoftRenderer": {
     "title": "SoftRenderer プロジェクト",
     "intro": {
-      "kicker": "C++ / レンダリング / ソフトウェアラスタライザ",
+      "kicker": "C++ / Win32 / GDI",
       "title": "SoftRenderer プロジェクト概要",
       "desc": "SoftRenderer は、CPU 側でレンダリングパイプラインをゼロから実装するための個人学習プロジェクトです。現在は、頂点変換・三角形ラスタライズ・深度テスト・基礎シェーディングを含む土台の完成を目標にしています。",
       "chips": {
         "pipeline": "CPU パイプライン",
         "triangle_rasterization": "三角形ラスタライズ",
         "depth_test": "深度テスト",
-        "shading": "シェーディング"
+        "shading": "基礎シェーディング"
       }
     },
     "summary": {

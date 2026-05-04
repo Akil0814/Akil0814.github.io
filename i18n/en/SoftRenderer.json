@@ -2,14 +2,14 @@
   "SoftRenderer": {
     "title": "SoftRenderer Project",
     "intro": {
-      "kicker": "C++ / Rendering / Software Rasterizer",
+      "kicker": "C++ / Win32 / GDI",
       "title": "SoftRenderer Project Overview",
       "desc": "SoftRenderer is my graphics-learning project focused on implementing a CPU-side rendering pipeline from scratch. The current target is to complete a clean, testable baseline including vertex transforms, triangle rasterization, depth testing, and basic shading.",
       "chips": {
         "pipeline": "CPU Pipeline",
         "triangle_rasterization": "Triangle Rasterization",
         "depth_test": "Depth Test",
-        "shading": "Shading"
+        "shading": "Basic Shading"
       }
     },
     "summary": {

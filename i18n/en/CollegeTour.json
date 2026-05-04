@@ -2,14 +2,14 @@
   "CollegeTour": {
     "title": "CollegeTour Project Overview",
     "intro": {
-      "kicker": "C++ / SQLite / Group Project",
+      "kicker": "C++ / Qt Widgets / SQLite",
       "title": "CollegeTour Project Overview",
       "desc": "This is a team project for the College Tour application. It is a campus trip planning app built with Qt Widgets + SQLite, including login/admin mode, data management (colleges/routes/products), and constraint-based route calculation and presentation. I mainly handled backend modules, focusing on the SQLite-based DataManager, file loading and basic CRUD flows, and the administrator login verification pipeline. This page shows code snippets only: since my scope was primarily backend, there is no video section, and the selected code focuses on backend data lifecycle and admin verification logic.",
       "chips": {
-        "data_manager": "DataManager",
-        "sqlite": "SQLite",
+        "data_manager": "Data Access Layer",
+        "sqlite": "Schema Migration",
         "admin_auth": "Admin Auth",
-        "database_reset": "Database Reset"
+        "database_reset": "Database Rebuild"
       }
     },
     "summary": {
