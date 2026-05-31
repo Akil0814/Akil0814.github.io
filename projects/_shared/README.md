@@ -14,7 +14,6 @@ Use these files for all project description pages under `projects/*`:
 <link rel="stylesheet" href="../../css/layout.css">
 <link rel="stylesheet" href="../../assets/prism/prism-dark.css">
 <link rel="stylesheet" href="../_shared/project_page.css">
-<link rel="stylesheet" href="./your_page.css">
 ```
 
 ```html
@@ -31,4 +30,4 @@ window.ProjectPageCore.init();
 window.ProjectCodeBlock.renderCppFile(...);
 ```
 
-Keep only page-specific content and overrides in each page folder (`your_page.css`, `your_page.js`).
+Keep page-specific behavior and content in each page folder (`your_page.js`). Add page-specific CSS only when a page truly needs a unique override that should not be shared.
