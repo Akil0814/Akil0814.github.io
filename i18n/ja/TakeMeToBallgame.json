@@ -7,15 +7,8 @@
       "desc": "このプロジェクトページは、今後のノート、設計詳細、コード片を追加するための骨組みです。",
       "chips": {
         "planning": "Repository 分離",
-        "placeholder": "縮退初期化"
+        "graceful_bootstrap": "縮退初期化"
       }
-    },
-    "stack": {
-      "data_model": "データモデル",
-      "ui_flow": "UI フロー"
-    },
-    "repo": {
-      "placeholder": "リポジトリとダウンロードリンクは後で追加します。"
     },
     "summary": {
       "text": [
@@ -23,35 +16,35 @@
         "詳細なプロジェクトノートは後で追加します。このページは CollegeTour と同じプロジェクトページ構成を使い、動画セクションは含めません。"
       ]
     },
-    "architecture": {
-      "placeholder": "プロジェクト構成が固まった後、ここにアーキテクチャ図を追加します。"
+    "stack": {
+      "data_model": "データモデル",
+      "ui_flow": "UI フロー"
     },
     "sections": {
+      "demo_videos": "",
       "core_code_blocks": "主要コードブロック"
     },
-    "code": {
-      "placeholder": "コード片は後で追加します。",
-      "application_init": {
-        "desc": "Application シングルトンは data パスを解決し、DatabaseManager を初期化したうえで、モジュール可用性に応じて Repository、AuthService、TripPlanner を組み立てます。"
-      },
-      "database_lifecycle": {
-        "desc": "DatabaseManager は SQLite 接続、PRAGMA 設定、スキーマ検査、自動復旧、再構築フロー、エラーと警告の集約を管理します。"
-      },
-      "csv_import": {
-        "desc": "CSV 取り込みはヘッダ正規化、フィールド解析、トランザクション、upsert を通じて、球場と距離データを安定して読み込みます。"
-      },
-      "stadium_repository": {
-        "desc": "StadiumRepository は球場一覧クエリ、ソート、リーグ絞り込み、単体参照、管理者向け保守インターフェースをカプセル化します。"
-      },
-      "distance_repository": {
-        "desc": "DistanceRepository は球場間距離の無向辺を正規化し、距離クエリ、隣接取得、更新インターフェースを提供します。"
-      },
-      "auth_service": {
-        "desc": "AuthService は key.dat を読み込み、magic と version を確認し、XOR key で管理者入力をローカル検証します。"
-      },
-      "trip_model": {
-        "desc": "Trip は経路結果、現在の停留地点インデックス、ショッピングカートを保持し、経路閲覧と購入フローで同じ状態モデルを共有します。"
-      }
+    "videos": {},
+    "code_summaries": {
+      "application_init": "Application シングルトンは data パスを解決し、DatabaseManager を初期化したうえで、モジュール可用性に応じて Repository、AuthService、TripPlanner を組み立てます。",
+      "database_lifecycle": "DatabaseManager は SQLite 接続、PRAGMA 設定、スキーマ検査、自動復旧、再構築フロー、エラーと警告の集約を管理します。",
+      "csv_import": "CSV 取り込みはヘッダ正規化、フィールド解析、トランザクション、upsert を通じて、球場と距離データを安定して読み込みます。",
+      "stadium_repository": "StadiumRepository は球場一覧クエリ、ソート、リーグ絞り込み、単体参照、管理者向け保守インターフェースをカプセル化します。",
+      "distance_repository": "DistanceRepository は球場間距離の無向辺を正規化し、距離クエリ、隣接取得、更新インターフェースを提供します。",
+      "auth_service": "AuthService は key.dat を読み込み、magic と version を確認し、XOR key で管理者入力をローカル検証します。",
+      "trip_model": "Trip は経路結果、現在の停留地点インデックス、ショッピングカートを保持し、経路閲覧と購入フローで同じ状態モデルを共有します。"
+    },
+    "code_tags": {
+      "application_init": "",
+      "database_lifecycle": "",
+      "csv_import": "",
+      "stadium_repository": "",
+      "distance_repository": "",
+      "auth_service": "",
+      "trip_model": ""
+    },
+    "footer": {
+      "page": "Take me  to  ballgame. プロジェクトページ"
     },
     "mermaid": {
       "application_architecture": {
@@ -62,9 +55,6 @@
         "title": "データベース初期化フロー",
         "desc": "パス解決、SQLite オープン、PRAGMA 設定、スキーマ検査、CSV シード投入、モジュール可用性判断の順序を示します。"
       }
-    },
-    "footer": {
-      "page": "Take me  to  ballgame. プロジェクトページ"
     }
   }
 }

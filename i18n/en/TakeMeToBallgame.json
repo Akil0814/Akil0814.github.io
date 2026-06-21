@@ -7,15 +7,8 @@
       "desc": "This project page is prepared as a skeleton for future notes, architecture details, and code snippets.",
       "chips": {
         "planning": "Repository Layering",
-        "placeholder": "Graceful Degradation"
+        "graceful_bootstrap": "Graceful Degradation"
       }
-    },
-    "stack": {
-      "data_model": "Data Model",
-      "ui_flow": "UI Flow"
-    },
-    "repo": {
-      "placeholder": "Repository and download links will be added later."
     },
     "summary": {
       "text": [
@@ -23,35 +16,35 @@
         "Detailed project notes will be added later. This page keeps the same project-page structure as CollegeTour, without a video section."
       ]
     },
-    "architecture": {
-      "placeholder": "Architecture diagrams will be added after the project structure is finalized."
+    "stack": {
+      "data_model": "Data Model",
+      "ui_flow": "UI Flow"
     },
     "sections": {
+      "demo_videos": "",
       "core_code_blocks": "Core Code Blocks"
     },
-    "code": {
-      "placeholder": "Code snippets will be added later.",
-      "application_init": {
-        "desc": "The Application singleton resolves data paths, initializes DatabaseManager, and wires Repository, AuthService, and TripPlanner based on module availability."
-      },
-      "database_lifecycle": {
-        "desc": "DatabaseManager handles SQLite connections, PRAGMA setup, schema checks, recovery, rebuild flow, and aggregated errors or warnings."
-      },
-      "csv_import": {
-        "desc": "The CSV import pipeline normalizes headers, parses fields, and uses transactions plus upsert to load stadium and distance data reliably."
-      },
-      "stadium_repository": {
-        "desc": "StadiumRepository encapsulates stadium list queries, sorting, league filtering, single-item lookup, and administrator maintenance interfaces."
-      },
-      "distance_repository": {
-        "desc": "DistanceRepository normalizes undirected stadium-distance edges and provides query, adjacency lookup, and update interfaces."
-      },
-      "auth_service": {
-        "desc": "AuthService reads key.dat, checks magic and version, and validates administrator input locally with an XOR key."
-      },
-      "trip_model": {
-        "desc": "Trip stores route results, the current stop index, and the shopping cart so route browsing and purchasing can share one state model."
-      }
+    "videos": {},
+    "code_summaries": {
+      "application_init": "The Application singleton resolves data paths, initializes DatabaseManager, and wires Repository, AuthService, and TripPlanner based on module availability.",
+      "database_lifecycle": "DatabaseManager handles SQLite connections, PRAGMA setup, schema checks, recovery, rebuild flow, and aggregated errors or warnings.",
+      "csv_import": "The CSV import pipeline normalizes headers, parses fields, and uses transactions plus upsert to load stadium and distance data reliably.",
+      "stadium_repository": "StadiumRepository encapsulates stadium list queries, sorting, league filtering, single-item lookup, and administrator maintenance interfaces.",
+      "distance_repository": "DistanceRepository normalizes undirected stadium-distance edges and provides query, adjacency lookup, and update interfaces.",
+      "auth_service": "AuthService reads key.dat, checks magic and version, and validates administrator input locally with an XOR key.",
+      "trip_model": "Trip stores route results, the current stop index, and the shopping cart so route browsing and purchasing can share one state model."
+    },
+    "code_tags": {
+      "application_init": "",
+      "database_lifecycle": "",
+      "csv_import": "",
+      "stadium_repository": "",
+      "distance_repository": "",
+      "auth_service": "",
+      "trip_model": ""
+    },
+    "footer": {
+      "page": "Take me  to  ballgame. Project Page"
     },
     "mermaid": {
       "application_architecture": {
@@ -62,9 +55,6 @@
         "title": "Database Initialization Flow",
         "desc": "Shows the sequence of path resolution, SQLite open, PRAGMA setup, schema checks, CSV seed import, and module availability decisions."
       }
-    },
-    "footer": {
-      "page": "Take me  to  ballgame. Project Page"
     }
   }
 }

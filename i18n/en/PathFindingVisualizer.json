@@ -32,7 +32,6 @@
       "core_code_blocks": "Core Code Blocks"
     },
     "videos": {
-      "placeholder": "Demo videos will be added after the visualizer reaches a stable milestone.",
       "basic_demo": {
         "title": "Basic Demo",
         "desc": "Shows the core search flow from board setup to final path reconstruction."
@@ -50,23 +49,20 @@
         "desc": "Shows how different weights and algorithm choices change the explored path."
       }
     },
-    "architecture": {
-      "placeholder": "Architecture diagrams will be added after the core search flow is finalized."
+    "code_summaries": {
+      "simulation_controller_step_history": "SimulationController handles auto-run pacing, single-step progression, history snapshots, undo recovery, and final statistics as the scheduler between algorithm execution and board visualization.",
+      "pathfinder_shared_helpers": "The Pathfinder base class centralizes shared board access, movement cost, heuristic computation, tile-state markers, and parent-chain reconstruction so each algorithm does not repeat visualization logic.",
+      "a_star_visual_step": "A* advances one visual step at a time: pop the current best node, relax neighbors, and update best-cost, parent links, G/H/F values, and Open/Current state.",
+      "board_neighbors_and_cost": "Board owns neighbor filtering, diagonal-policy checks, weighted movement cost, and final path statistics, giving algorithms a unified interface for legal movement."
     },
-    "code": {
-      "placeholder": "Code snippets will be added after the core algorithm modules are ready.",
-      "simulation_controller_step_history": {
-        "desc": "SimulationController handles auto-run pacing, single-step progression, history snapshots, undo recovery, and final statistics as the scheduler between algorithm execution and board visualization."
-      },
-      "pathfinder_shared_helpers": {
-        "desc": "The Pathfinder base class centralizes shared board access, movement cost, heuristic computation, tile-state markers, and parent-chain reconstruction so each algorithm does not repeat visualization logic."
-      },
-      "a_star_visual_step": {
-        "desc": "A* advances one visual step at a time: pop the current best node, relax neighbors, and update best-cost, parent links, G/H/F values, and Open/Current state."
-      },
-      "board_neighbors_and_cost": {
-        "desc": "Board owns neighbor filtering, diagonal-policy checks, weighted movement cost, and final path statistics, giving algorithms a unified interface for legal movement."
-      }
+    "code_tags": {
+      "simulation_controller_step_history": "",
+      "pathfinder_shared_helpers": "",
+      "a_star_visual_step": "",
+      "board_neighbors_and_cost": ""
+    },
+    "footer": {
+      "page": "PathFindingVisualizer Project Page"
     },
     "mermaid": {
       "module_architecture": {
@@ -81,9 +77,6 @@
         "title": "Search Data Flow",
         "desc": "Shows the data flow between start/goal nodes, neighbors, costs, parent chains, and the final path during a visualized search step."
       }
-    },
-    "footer": {
-      "page": "PathFindingVisualizer Project Page"
     }
   }
 }

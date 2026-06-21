@@ -50,16 +50,6 @@
       "demo_videos": "デモ動画",
       "core_code_blocks": "主要コードブロック"
     },
-    "mermaid": {
-      "scene_lifecycle": {
-        "title": "シーンフロー図",
-        "desc": "シーン間の協調関係を示します。"
-      },
-      "cell_reveal_pipeline": {
-        "title": "ゲームフロー図",
-        "desc": "初手安全判定を含む公開処理パイプラインの流れを示します。"
-      }
-    },
     "videos": {
       "game_mode": {
         "title": "モード選択デモ",
@@ -78,32 +68,30 @@
         "desc": "空き領域が十分な場合に 3x3 の安全領域を確保する挙動を示します。"
       }
     },
-    "code": {
-      "main_loop": {
-        "title": "メインループ",
-        "desc": "入力処理、更新ステップ、描画を制御します。"
-      },
-      "scene_class": {
-        "title": "Scene 抽象クラス",
-        "desc": "シーン挙動、盤面インターフェース、ゲーム状態遷移を定義します。"
-      },
-      "scene_manager": {
-        "title": "Scene Manager",
-        "desc": "シーン登録、切替、ライフサイクル管理を担当します。"
-      },
-      "board": {
-        "title": "盤面モジュール",
-        "desc": "盤面データ、地雷配置、セル状態操作を定義します。"
-      }
+    "code_summaries": {
+      "main_loop": "入力処理、更新ステップ、描画を制御します。",
+      "scene_class": "シーン挙動、盤面インターフェース、ゲーム状態遷移を定義します。",
+      "scene_manager": "シーン登録、切替、ライフサイクル管理を担当します。",
+      "board": "盤面データ、地雷配置、セル状態操作を定義します。"
     },
-    "video_tags": {
+    "code_tags": {
       "main_loop": "メインループ",
-      "scene_class": "Scene Class",
+      "scene_class": "Scene 抽象クラス",
       "scene_manager": "Scene Manager",
-      "board": "Board"
+      "board": "盤面モジュール"
     },
     "footer": {
       "page": "MineSweeper プロジェクトページ"
+    },
+    "mermaid": {
+      "scene_lifecycle": {
+        "title": "シーンフロー図",
+        "desc": "シーン間の協調関係を示します。"
+      },
+      "cell_reveal_pipeline": {
+        "title": "ゲームフロー図",
+        "desc": "初手安全判定を含む公開処理パイプラインの流れを示します。"
+      }
     }
   }
 }

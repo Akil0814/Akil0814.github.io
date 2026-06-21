@@ -44,25 +44,20 @@
       "demo_videos": "Demo Videos",
       "core_code_blocks": "Core Code Blocks"
     },
-    "videos": {
-      "placeholder": "No video clips are available for this project page yet."
+    "videos": {},
+    "code_summaries": {
+      "data_manager_class": "DataManager class contract, members, and backend-facing interfaces.",
+      "data_manager_init": "Initializes core data structures and startup loading path.",
+      "data_manager_read_dynamic": "Reads runtime data from SQLite-backed storage and maps it into in-memory state.",
+      "data_manager_reset_database": "Resets backend data state and rebuilds required base records.",
+      "login_xor": "Administrator login verification flow and XOR-based credential processing."
     },
-    "code": {
-      "data_manager_class": {
-        "desc": "DataManager class contract, members, and backend-facing interfaces."
-      },
-      "data_manager_init": {
-        "desc": "Initializes core data structures and startup loading path."
-      },
-      "data_manager_read_dynamic": {
-        "desc": "Reads runtime data from SQLite-backed storage and maps it into in-memory state."
-      },
-      "data_manager_reset_database": {
-        "desc": "Resets backend data state and rebuilds required base records."
-      },
-      "login_xor": {
-        "desc": "Administrator login verification flow and XOR-based credential processing."
-      }
+    "code_tags": {
+      "data_manager_class": "",
+      "data_manager_init": "",
+      "data_manager_read_dynamic": "",
+      "data_manager_reset_database": "",
+      "login_xor": ""
     },
     "footer": {
       "page": "CollegeTour Project Page"

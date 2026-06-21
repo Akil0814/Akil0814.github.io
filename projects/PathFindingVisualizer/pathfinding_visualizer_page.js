@@ -33,22 +33,22 @@
   const codeEntries = [
     {
       fileName: "simulation_controller_step_history.cpp",
-      summaryKey: "PathFindingVisualizer.code.simulation_controller_step_history.desc",
+      summaryKey: "PathFindingVisualizer.code_summaries.simulation_controller_step_history",
       summaryFallback: "SimulationController coordinates auto-run, single-step execution, history snapshots, undo, and final statistics.",
     },
     {
       fileName: "pathfinder_shared_helpers.cpp",
-      summaryKey: "PathFindingVisualizer.code.pathfinder_shared_helpers.desc",
+      summaryKey: "PathFindingVisualizer.code_summaries.pathfinder_shared_helpers",
       summaryFallback: "Pathfinder centralizes shared board access, movement cost, heuristic cost, tile-state markers, and final path rebuild logic.",
     },
     {
       fileName: "a_star_visual_step.cpp",
-      summaryKey: "PathFindingVisualizer.code.a_star_visual_step.desc",
+      summaryKey: "PathFindingVisualizer.code_summaries.a_star_visual_step",
       summaryFallback: "A* advances one visual step at a time, updating best cost, parent links, tile status, and the priority queue.",
     },
     {
       fileName: "board_neighbors_and_cost.cpp",
-      summaryKey: "PathFindingVisualizer.code.board_neighbors_and_cost.desc",
+      summaryKey: "PathFindingVisualizer.code_summaries.board_neighbors_and_cost",
       summaryFallback: "Board owns neighbor filtering, diagonal policy, weighted movement cost, and final path statistics.",
     },
   ].map((entry, index) => ({

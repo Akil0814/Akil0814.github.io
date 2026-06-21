@@ -44,25 +44,20 @@
       "demo_videos": "デモ動画",
       "core_code_blocks": "主要コードブロック"
     },
-    "videos": {
-      "placeholder": "このプロジェクトページでは、まだ動画デモは公開していません。"
+    "videos": {},
+    "code_summaries": {
+      "data_manager_class": "DataManager クラスの契約、メンバー構成、バックエンド向けインターフェース。",
+      "data_manager_init": "コアデータ構造と起動時ロード経路の初期化。",
+      "data_manager_read_dynamic": "SQLite ベースのストレージから実行時データを読み込み、メモリ状態へマッピング。",
+      "data_manager_reset_database": "バックエンドデータ状態をリセットし、基本レコードを再構築。",
+      "login_xor": "管理者ログイン認証フローと XOR ベースの資格情報処理。"
     },
-    "code": {
-      "data_manager_class": {
-        "desc": "DataManager クラスの契約、メンバー構成、バックエンド向けインターフェース。"
-      },
-      "data_manager_init": {
-        "desc": "コアデータ構造と起動時ロード経路の初期化。"
-      },
-      "data_manager_read_dynamic": {
-        "desc": "SQLite ベースのストレージから実行時データを読み込み、メモリ状態へマッピング。"
-      },
-      "data_manager_reset_database": {
-        "desc": "バックエンドデータ状態をリセットし、基本レコードを再構築。"
-      },
-      "login_xor": {
-        "desc": "管理者ログイン認証フローと XOR ベースの資格情報処理。"
-      }
+    "code_tags": {
+      "data_manager_class": "",
+      "data_manager_init": "",
+      "data_manager_read_dynamic": "",
+      "data_manager_reset_database": "",
+      "login_xor": ""
     },
     "footer": {
       "page": "CollegeTour プロジェクトページ"

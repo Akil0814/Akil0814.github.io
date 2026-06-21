@@ -48,10 +48,10 @@
 
   const codeEntryBySelector = new Map(codeBlockEntries.map((entry) => [entry.targetSelector, entry]));
   const videoTagKeyBySelector = {
-    "#code-main-loop": "MineSweeper.video_tags.main_loop",
-    "#code-scene-class": "MineSweeper.video_tags.scene_class",
-    "#code-scene-manager": "MineSweeper.video_tags.scene_manager",
-    "#code-board": "MineSweeper.video_tags.board",
+    "#code-main-loop": "MineSweeper.code_tags.main_loop",
+    "#code-scene-class": "MineSweeper.code_tags.scene_class",
+    "#code-scene-manager": "MineSweeper.code_tags.scene_manager",
+    "#code-board": "MineSweeper.code_tags.board",
   };
   let mermaidRenderer = null;
 

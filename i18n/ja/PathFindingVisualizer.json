@@ -32,7 +32,6 @@
       "core_code_blocks": "主要コードブロック"
     },
     "videos": {
-      "placeholder": "ビジュアライザーが安定したマイルストーンに到達した後、デモ動画を追加します。",
       "basic_demo": {
         "title": "基本デモ",
         "desc": "盤面設定から最終経路の再構築まで、コアとなる探索フローを示します。"
@@ -50,23 +49,20 @@
         "desc": "重みやアルゴリズムの選択によって、探索範囲と最終経路がどう変わるかを示します。"
       }
     },
-    "architecture": {
-      "placeholder": "コア探索フローが固まった後、アーキテクチャ図を追加します。"
+    "code_summaries": {
+      "simulation_controller_step_history": "SimulationController は自動実行のテンポ、単歩進行、履歴スナップショット、巻き戻し復元、最終統計を担当し、アルゴリズム実行と盤面可視化の間を調停します。",
+      "pathfinder_shared_helpers": "Pathfinder 基底クラスは、共有の盤面アクセス、移動コスト、ヒューリスティック計算、Tile 状態更新、parent チェーン復元を集約し、各アルゴリズムが可視化処理を重複実装しないようにします。",
+      "a_star_visual_step": "A* は一度に 1 つの可視化ステップだけを進めます。現在の最良ノードを取り出し、近傍を緩和し、best-cost、parent、G/H/F、Open/Current 状態を更新します。",
+      "board_neighbors_and_cost": "Board は近傍フィルタ、斜め移動ポリシー、重み付き移動コスト、最終経路統計を担当し、アルゴリズムに合法移動範囲の統一インターフェースを提供します。"
     },
-    "code": {
-      "placeholder": "コアアルゴリズムモジュールが準備できた後、コード断片を追加します。",
-      "simulation_controller_step_history": {
-        "desc": "SimulationController は自動実行のテンポ、単歩進行、履歴スナップショット、巻き戻し復元、最終統計を担当し、アルゴリズム実行と盤面可視化の間を調停します。"
-      },
-      "pathfinder_shared_helpers": {
-        "desc": "Pathfinder 基底クラスは、共有の盤面アクセス、移動コスト、ヒューリスティック計算、Tile 状態更新、parent チェーン復元を集約し、各アルゴリズムが可視化処理を重複実装しないようにします。"
-      },
-      "a_star_visual_step": {
-        "desc": "A* は一度に 1 つの可視化ステップだけを進めます。現在の最良ノードを取り出し、近傍を緩和し、best-cost、parent、G/H/F、Open/Current 状態を更新します。"
-      },
-      "board_neighbors_and_cost": {
-        "desc": "Board は近傍フィルタ、斜め移動ポリシー、重み付き移動コスト、最終経路統計を担当し、アルゴリズムに合法移動範囲の統一インターフェースを提供します。"
-      }
+    "code_tags": {
+      "simulation_controller_step_history": "",
+      "pathfinder_shared_helpers": "",
+      "a_star_visual_step": "",
+      "board_neighbors_and_cost": ""
+    },
+    "footer": {
+      "page": "PathFindingVisualizer プロジェクトページ"
     },
     "mermaid": {
       "module_architecture": {
@@ -81,9 +77,6 @@
         "title": "探索データフロー",
         "desc": "可視化された探索ステップの中で、開始点・終点、近傍、コスト、parent チェーン、最終経路がどう流れるかを示します。"
       }
-    },
-    "footer": {
-      "page": "PathFindingVisualizer プロジェクトページ"
     }
   }
 }

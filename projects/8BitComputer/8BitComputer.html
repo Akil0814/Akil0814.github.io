@@ -19,11 +19,6 @@
   <link rel="stylesheet" href="../../css/base.css">
   <link rel="stylesheet" href="../../css/layout.css">
   <link rel="stylesheet" href="../_shared/project_page.css?v=20260530a">
-  <style>
-    .preview-image-card img {
-      max-height: 320px;
-    }
-  </style>
 </head>
 <body>
   <header class="nav">
@@ -92,10 +87,7 @@
       <div class="section__head">
         <h2><span data-i18n="8BitComputer.sections.demo_videos">Demo Videos</span> (<span id="videoCount">0</span>)</h2>
       </div>
-      <div class="panel">
-        <p class="project-intro__desc" data-i18n="8BitComputer.videos.placeholder">
-        </p>
-      </div>
+      <div id="videoGrid" class="video-grid"></div>
     </section>
 
     <section id="summary" class="section">
@@ -112,35 +104,14 @@
       <div class="section__head">
         <h2 data-i18n="common.sections.architecture_diagram">Architecture Diagram</h2>
       </div>
-      <div class="panel">
-        <p class="project-intro__desc" data-i18n="8BitComputer.architecture.placeholder">
-        </p>
-      </div>
+      <div class="project-mermaid-grid"></div>
     </section>
 
     <section id="code" class="section">
       <div class="section__head">
         <h2><span data-i18n="8BitComputer.sections.core_code_blocks">Core Code Blocks</span> (<span id="codeCount">0</span>)</h2>
       </div>
-      <div class="panel">
-        <p class="project-intro__desc" data-i18n="8BitComputer.code.placeholder">
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section__head">
-        <h2 data-i18n="8BitComputer.sections.preview_image">Preview Image</h2>
-      </div>
-      <article class="theme-photo-card preview-image-card">
-        <img
-          src="/projects/8BitComputer/res/tmp_demo.png"
-          alt="8BitComputer preview image"
-          data-i18n="8BitComputer.preview.alt"
-          data-i18n-attr="alt"
-          loading="lazy"
-        />
-      </article>
+      <div id="codeList" class="code-list"></div>
     </section>
 
     <section class="section">

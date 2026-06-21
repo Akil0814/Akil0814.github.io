@@ -32,7 +32,6 @@
       "core_code_blocks": "核心代码片段"
     },
     "videos": {
-      "placeholder": "演示视频正在准备中。",
       "blending_depth": {
         "title": "混合与深度测试",
         "desc": "展示片元混合效果以及基于深度的可见性判断。"
@@ -50,9 +49,8 @@
         "desc": "展示几何体穿过相机视锥边界时的裁剪行为。"
       }
     },
-    "code": {
-      "placeholder": "将在首个稳定里程碑后补充代码片段。"
-    },
+    "code_summaries": {},
+    "code_tags": {},
     "footer": {
       "page": "SoftRenderer 项目页"
     },

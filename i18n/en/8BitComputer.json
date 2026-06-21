@@ -22,23 +22,14 @@
     },
     "sections": {
       "demo_videos": "Demo Videos",
-      "core_code_blocks": "Core Code Blocks",
-      "preview_image": "Preview Image"
+      "core_code_blocks": "Core Code Blocks"
     },
-    "videos": {
-      "placeholder": "This project is under construction."
-    },
-    "architecture": {
-      "placeholder": "Architecture diagram content will be added in a later update."
-    },
-    "code": {
-      "placeholder": "Code snippets will be added after the first public milestone."
-    },
-    "preview": {
-      "alt": "8BitComputer preview image"
-    },
+    "videos": {},
+    "code_summaries": {},
+    "code_tags": {},
     "footer": {
       "page": "8Bit Computer Project Page"
-    }
+    },
+    "mermaid": {}
   }
 }

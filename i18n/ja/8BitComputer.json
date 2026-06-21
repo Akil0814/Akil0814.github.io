@@ -22,23 +22,14 @@
     },
     "sections": {
       "demo_videos": "デモ動画",
-      "core_code_blocks": "主要コードブロック",
-      "preview_image": "プレビュー画像"
+      "core_code_blocks": "主要コードブロック"
     },
-    "videos": {
-      "placeholder": "このプロジェクトは現在開発中です。"
-    },
-    "architecture": {
-      "placeholder": "アーキテクチャ図は後続アップデートで追加予定です。"
-    },
-    "code": {
-      "placeholder": "コード断片は最初の公開マイルストーン後に追加します。"
-    },
-    "preview": {
-      "alt": "8BitComputer プレビュー画像"
-    },
+    "videos": {},
+    "code_summaries": {},
+    "code_tags": {},
     "footer": {
       "page": "8BitComputer プロジェクトページ"
-    }
+    },
+    "mermaid": {}
   }
 }

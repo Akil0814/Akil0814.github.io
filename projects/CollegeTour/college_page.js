@@ -11,31 +11,31 @@
   const codeEntries = [
     {
       fileName: "data_manager_class.h",
-      summaryKey: "CollegeTour.code.data_manager_class.desc",
+      summaryKey: "CollegeTour.code_summaries.data_manager_class",
       summaryFallback: "DataManager class contract, members, and backend-facing interfaces.",
       sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.h",
     },
     {
       fileName: "data_manager_init.cpp",
-      summaryKey: "CollegeTour.code.data_manager_init.desc",
+      summaryKey: "CollegeTour.code_summaries.data_manager_init",
       summaryFallback: "Initializes core data structures and startup loading path.",
       sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.cpp",
     },
     {
       fileName: "data_manager_read_dynamic.cpp",
-      summaryKey: "CollegeTour.code.data_manager_read_dynamic.desc",
+      summaryKey: "CollegeTour.code_summaries.data_manager_read_dynamic",
       summaryFallback: "Reads runtime data from SQLite-backed storage and maps it into in-memory state.",
       sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.cpp",
     },
     {
       fileName: "data_manager_reset_database.cpp",
-      summaryKey: "CollegeTour.code.data_manager_reset_database.desc",
+      summaryKey: "CollegeTour.code_summaries.data_manager_reset_database",
       summaryFallback: "Resets backend data state and rebuilds required base records.",
       sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/data_manager.cpp",
     },
     {
       fileName: "login_XOR.cpp",
-      summaryKey: "CollegeTour.code.login_xor.desc",
+      summaryKey: "CollegeTour.code_summaries.login_xor",
       summaryFallback: "Administrator login verification flow and XOR-based credential processing.",
       sourceUrl: "https://github.com/Akil0814/College_Tour/blob/main/login_window.cpp",
     },

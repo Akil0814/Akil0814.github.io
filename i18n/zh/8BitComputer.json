@@ -22,23 +22,14 @@
     },
     "sections": {
       "demo_videos": "演示视频",
-      "core_code_blocks": "核心代码片段",
-      "preview_image": "提前预览图"
+      "core_code_blocks": "核心代码片段"
     },
-    "videos": {
-      "placeholder": "该项目在建设中。"
-    },
-    "architecture": {
-      "placeholder": "架构图内容将在后续版本补充。"
-    },
-    "code": {
-      "placeholder": "代码片段将在首个公开里程碑后补充。"
-    },
-    "preview": {
-      "alt": "8BitComputer 提前预览图"
-    },
+    "videos": {},
+    "code_summaries": {},
+    "code_tags": {},
     "footer": {
       "page": "8BitComputer 项目页"
-    }
+    },
+    "mermaid": {}
   }
 }

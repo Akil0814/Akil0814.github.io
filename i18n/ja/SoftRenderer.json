@@ -32,7 +32,6 @@
       "core_code_blocks": "主要コードブロック"
     },
     "videos": {
-      "placeholder": "デモ動画は準備中です。",
       "blending_depth": {
         "title": "ブレンディングと深度テスト",
         "desc": "フラグメントのブレンド処理と、深度に基づく可視判定を示します。"
@@ -50,9 +49,8 @@
         "desc": "ジオメトリがカメラ視錐台の境界をまたぐときのクリッピング動作を示します。"
       }
     },
-    "code": {
-      "placeholder": "コード断片は最初の安定版の後に追加します。"
-    },
+    "code_summaries": {},
+    "code_tags": {},
     "footer": {
       "page": "SoftRenderer プロジェクトページ"
     },

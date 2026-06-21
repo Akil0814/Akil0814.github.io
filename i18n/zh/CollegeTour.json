@@ -47,25 +47,20 @@
       "demo_videos": "演示视频",
       "core_code_blocks": "核心代码块"
     },
-    "videos": {
-      "placeholder": "该项目页暂未提供视频演示。"
+    "videos": {},
+    "code_summaries": {
+      "data_manager_class": "DataManager 的类定义、成员结构与后端接口约定",
+      "data_manager_init": "初始化核心数据结构与启动加载流程",
+      "data_manager_read_dynamic": "从 SQLite 存储读取运行期数据并映射到内存状态",
+      "data_manager_reset_database": "重置后端数据状态并重建基础记录",
+      "login_xor": "管理员登录验证流程与基于 XOR 的凭据处理逻辑"
     },
-    "code": {
-      "data_manager_class": {
-        "desc": "DataManager 的类定义、成员结构与后端接口约定"
-      },
-      "data_manager_init": {
-        "desc": "初始化核心数据结构与启动加载流程"
-      },
-      "data_manager_read_dynamic": {
-        "desc": "从 SQLite 存储读取运行期数据并映射到内存状态"
-      },
-      "data_manager_reset_database": {
-        "desc": "重置后端数据状态并重建基础记录"
-      },
-      "login_xor": {
-        "desc": "管理员登录验证流程与基于 XOR 的凭据处理逻辑"
-      }
+    "code_tags": {
+      "data_manager_class": "",
+      "data_manager_init": "",
+      "data_manager_read_dynamic": "",
+      "data_manager_reset_database": "",
+      "login_xor": ""
     },
     "footer": {
       "page": "CollegeTour 项目页"

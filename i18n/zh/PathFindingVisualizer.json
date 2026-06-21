@@ -44,7 +44,6 @@
       "core_code_blocks": "核心代码片段"
     },
     "videos": {
-      "placeholder": "演示视频暂时留空，后续可补充单步执行、自动运行、权重格和八方向移动等交互录屏。",
       "basic_demo": {
         "title": "基础演示",
         "desc": "展示从棋盘配置到最终路径重建的核心搜索流程。"
@@ -62,23 +61,20 @@
         "desc": "展示不同权重与算法选择如何改变搜索范围与最终路径。"
       }
     },
-    "architecture": {
-      "placeholder": "架构图由页面脚本动态渲染。"
+    "code_summaries": {
+      "simulation_controller_step_history": "SimulationController 负责自动运行节奏、单步推进、历史快照、回退恢复和最终统计，是算法执行和棋盘可视化之间的调度层。",
+      "pathfinder_shared_helpers": "Pathfinder 基类把所有算法共用的棋盘访问、移动代价、启发函数、Tile 状态标记和 parent 链回溯集中起来，避免每个算法重复处理可视化细节。",
+      "a_star_visual_step": "A* 每次只推进一个可视化步骤：弹出当前最优节点，松弛邻居，更新 best-cost、parent、G/H/F 和 Open/Current 状态。",
+      "board_neighbors_and_cost": "Board 负责邻居过滤、斜角策略、权重移动代价和最终路径统计，算法通过统一接口获取合法移动范围。"
     },
-    "code": {
-      "placeholder": "核心代码片段由页面脚本动态加载。",
-      "simulation_controller_step_history": {
-        "desc": "SimulationController 负责自动运行节奏、单步推进、历史快照、回退恢复和最终统计，是算法执行和棋盘可视化之间的调度层。"
-      },
-      "pathfinder_shared_helpers": {
-        "desc": "Pathfinder 基类把所有算法共用的棋盘访问、移动代价、启发函数、Tile 状态标记和 parent 链回溯集中起来，避免每个算法重复处理可视化细节。"
-      },
-      "a_star_visual_step": {
-        "desc": "A* 每次只推进一个可视化步骤：弹出当前最优节点，松弛邻居，更新 best-cost、parent、G/H/F 和 Open/Current 状态。"
-      },
-      "board_neighbors_and_cost": {
-        "desc": "Board 负责邻居过滤、斜角策略、权重移动代价和最终路径统计，算法通过统一接口获取合法移动范围。"
-      }
+    "code_tags": {
+      "simulation_controller_step_history": "",
+      "pathfinder_shared_helpers": "",
+      "a_star_visual_step": "",
+      "board_neighbors_and_cost": ""
+    },
+    "footer": {
+      "page": "PathFindingVisualizer 项目页"
     },
     "mermaid": {
       "module_architecture": {
@@ -93,9 +89,6 @@
         "title": "搜索数据流",
         "desc": "展示一次可视化搜索步骤中起终点、邻居、代价、parent 链和最终路径之间的数据流。"
       }
-    },
-    "footer": {
-      "page": "PathFindingVisualizer 项目页"
     }
   }
 }

@@ -32,7 +32,6 @@
       "core_code_blocks": "Core Code Blocks"
     },
     "videos": {
-      "placeholder": "Demo videos are being prepared.",
       "blending_depth": {
         "title": "Blending and Depth Test",
         "desc": "Shows fragment blending behavior together with depth-based visibility checks."
@@ -50,9 +49,8 @@
         "desc": "Shows clipping behavior when geometry crosses the camera frustum bounds."
       }
     },
-    "code": {
-      "placeholder": "Code snippets will be added after the first stable milestone."
-    },
+    "code_summaries": {},
+    "code_tags": {},
     "footer": {
       "page": "SoftRenderer Project Page"
     },

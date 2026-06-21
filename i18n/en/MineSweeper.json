@@ -51,16 +51,6 @@
       "demo_videos": "Demo Videos",
       "core_code_blocks": "Core Code Blocks"
     },
-    "mermaid": {
-      "scene_lifecycle": {
-        "title": "Scene Flow Diagram",
-        "desc": "Shows collaboration relationships between scenes."
-      },
-      "cell_reveal_pipeline": {
-        "title": "Gameplay Flow Diagram",
-        "desc": "Shows the gameplay flow, including first-click safety checks and reveal pipeline."
-      }
-    },
     "videos": {
       "game_mode": {
         "title": "Game Mode Demo",
@@ -79,32 +69,30 @@
         "desc": "When space allows, reserves a 3x3 safe zone to improve opening experience."
       }
     },
-    "code": {
-      "main_loop": {
-        "title": "Main Loop",
-        "desc": "Controls input handling, update steps, and rendering."
-      },
-      "scene_class": {
-        "title": "Scene Abstract Class",
-        "desc": "Defines scene behavior, board interfaces, and game-state transitions."
-      },
-      "scene_manager": {
-        "title": "Scene Manager",
-        "desc": "Handles scene registration, switching, and lifecycle management."
-      },
-      "board": {
-        "title": "Board Module",
-        "desc": "Defines board data, mine placement, and cell-state operations."
-      }
+    "code_summaries": {
+      "main_loop": "Controls input handling, update steps, and rendering.",
+      "scene_class": "Defines scene behavior, board interfaces, and game-state transitions.",
+      "scene_manager": "Handles scene registration, switching, and lifecycle management.",
+      "board": "Defines board data, mine placement, and cell-state operations."
     },
-    "video_tags": {
+    "code_tags": {
       "main_loop": "Main Loop",
-      "scene_class": "Scene Class",
+      "scene_class": "Scene Abstract Class",
       "scene_manager": "Scene Manager",
-      "board": "Board"
+      "board": "Board Module"
     },
     "footer": {
       "page": "MineSweeper Project Page"
+    },
+    "mermaid": {
+      "scene_lifecycle": {
+        "title": "Scene Flow Diagram",
+        "desc": "Shows collaboration relationships between scenes."
+      },
+      "cell_reveal_pipeline": {
+        "title": "Gameplay Flow Diagram",
+        "desc": "Shows the gameplay flow, including first-click safety checks and reveal pipeline."
+      }
     }
   }
 }
