@@ -1,0 +1,24 @@
+{
+  "ElysiaEngine": {
+    "nav": {
+      "home": "主页",
+      "overview": "概览",
+      "modules": "模块页",
+      "renderer": "渲染",
+      "scene": "场景",
+      "tooling": "工具",
+      "roadmap_page": "路线图",
+      "architecture": "架构",
+      "roadmap": "路线图",
+      "notes": "笔记"
+    },
+    "page_common": {
+      "back_home": "返回 Elysia 首页",
+      "next_renderer": "前往渲染页",
+      "next_scene": "前往场景页",
+      "next_tooling": "前往工具页",
+      "next_roadmap": "前往路线图",
+      "scope_eyebrow": "当前范围"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "ElysiaEngine": {
+    "page_scene": {
+      "title": "Elysia Engine シーンシステムページ",
+      "kicker": "ランタイムモジュール",
+      "heading": "シーンシステム",
+      "desc": "このページは、Transform、所有関係、シーン構成、ゲーム側構造からレンダー送信までの設計を説明するための枠です。",
+      "scope_title": "このページで扱う内容",
+      "scope": {
+        "transform_title": "Transform",
+        "transform_body": "ローカル/ワールド変換、親子関係、更新順序を分かりやすく保つ方法を説明します。",
+        "ownership_title": "所有の流れ",
+        "ownership_body": "オブジェクト寿命、シーン登録、共有ランタイムサービスの説明用スペースです。",
+        "bridge_title": "レンダーブリッジ",
+        "bridge_body": "シーンデータがレンダーデータへ変わる流れを、ランタイムとレンダラーを絡めすぎずに説明します。"
+      },
+      "footer": "Elysia Engine シーンシステムページ"
+    }
+  }
+}

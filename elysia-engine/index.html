@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" data-i18n-page="elysia-engine/index" data-i18n-base="..">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#170d19" />
+  <link rel="icon" type="image/png" sizes="20x18" href="../icon/icon_S.png" />
+  <link rel="icon" type="image/png" sizes="116x104" href="../icon/icon_M.png" />
+  <link rel="icon" type="image/png" sizes="306x279" href="../icon/icon_L.png" />
+  <link rel="apple-touch-icon" href="../icon/icon_L.png" />
+  <title data-i18n="ElysiaEngine.title">Elysia Engine</title>
+  <script src="../js/prefs_bootstrap.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="./_shared/base.css?v=20260706c">
+</head>
+<body class="elysia-page">
+  <div class="elysia-aura elysia-aura--one" aria-hidden="true"></div>
+  <div class="elysia-aura elysia-aura--two" aria-hidden="true"></div>
+  <div class="elysia-stars" aria-hidden="true"></div>
+
+  <header class="elysia-nav">
+    <div class="elysia-nav__left">
+      <a class="elysia-brand" href="../index.html" aria-label="Home">
+        <span class="elysia-brand__crest"></span>
+        <span class="elysia-brand__text">AKIL</span>
+      </a>
+    </div>
+
+    <nav class="elysia-nav__right">
+      <a href="#overview" data-i18n="ElysiaEngine.nav.overview">Overview</a>
+      <a href="#modules" data-i18n="ElysiaEngine.nav.modules">Modules</a>
+      <a href="./renderer.html" data-i18n="ElysiaEngine.nav.renderer">Renderer</a>
+      <a href="./tooling.html" data-i18n="ElysiaEngine.nav.tooling">Tooling</a>
+      <a href="./roadmap.html" data-i18n="ElysiaEngine.nav.roadmap_page">Roadmap</a>
+
+      <select id="langSelect" class="elysia-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
+        <option value="zh" data-i18n="common.lang.zh">中文</option>
+        <option value="ja" data-i18n="common.lang.ja">日本語</option>
+        <option value="en" selected data-i18n="common.lang.en">English</option>
+      </select>
+
+      <button id="toggleFx" class="elysia-control" type="button" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="elysia-control" type="button" data-i18n="common.controls.theme">Theme</button>
+    </nav>
+  </header>
+
+  <main class="wrap elysia-shell">
+    <section class="elysia-hero">
+      <div class="elysia-hero__copy">
+        <p class="elysia-kicker" data-i18n="ElysiaEngine.hero.kicker">Rendering Engine / Pre-production</p>
+        <h1 class="elysia-title" data-i18n="ElysiaEngine.hero.title">Elysia Engine</h1>
+        <p class="elysia-lead" data-i18n="ElysiaEngine.hero.desc">
+          Elysia Engine is the personal engine branch I am shaping around rendering fundamentals, tooling clarity, and elegant iteration speed.
+        </p>
+
+        <div class="elysia-chip-row">
+          <span class="elysia-chip" data-i18n="ElysiaEngine.hero.chips.graphics">Graphics R&D</span>
+          <span class="elysia-chip" data-i18n="ElysiaEngine.hero.chips.engine">Engine Architecture</span>
+          <span class="elysia-chip" data-i18n="ElysiaEngine.hero.chips.tools">Tooling First</span>
+          <span class="elysia-chip" data-i18n="ElysiaEngine.hero.chips.long_term">Long-term Build</span>
+        </div>
+
+        <div class="elysia-hero__actions">
+          <a class="elysia-btn" href="../projects/index.html" data-i18n="ElysiaEngine.hero.cta_archive">Back to Projects</a>
+          <a class="elysia-btn elysia-btn--ghost" href="#modules" data-i18n="ElysiaEngine.hero.cta_modules">Open Modules</a>
+        </div>
+      </div>
+
+      <aside class="elysia-hero__aside">
+        <article class="elysia-status-card">
+          <p class="elysia-status-card__label" data-i18n="ElysiaEngine.hero.status_label">Current Status</p>
+          <p class="elysia-status-card__value" data-i18n="ElysiaEngine.hero.status_value">Scaffolding the first public page and system plan.</p>
+          <div class="elysia-status-card__meta">
+            <span class="elysia-mini-pill" data-i18n="ElysiaEngine.hero.meta.rendering">Rendering Core</span>
+            <span class="elysia-mini-pill" data-i18n="ElysiaEngine.hero.meta.prototype">Prototype Phase</span>
+          </div>
+        </article>
+
+        <div class="elysia-sigil" aria-hidden="true">
+          <span class="elysia-sigil__ring"></span>
+          <span class="elysia-sigil__ring elysia-sigil__ring--inner"></span>
+          <span class="elysia-sigil__diamond"></span>
+          <span class="elysia-sigil__spark elysia-sigil__spark--one"></span>
+          <span class="elysia-sigil__spark elysia-sigil__spark--two"></span>
+          <span class="elysia-sigil__spark elysia-sigil__spark--three"></span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="overview" class="elysia-section">
+      <div class="elysia-section__head">
+        <div>
+          <p class="elysia-section__eyebrow" data-i18n="ElysiaEngine.sections.overview_eyebrow">Project Intent</p>
+          <h2 class="elysia-section__title" data-i18n="ElysiaEngine.sections.overview">Overview</h2>
+        </div>
+      </div>
+
+      <div class="elysia-overview-grid">
+        <article class="elysia-panel">
+          <h3 data-i18n="ElysiaEngine.overview.intent_title">Design Intent</h3>
+          <p data-i18n="ElysiaEngine.overview.intent_body">
+            This project is meant to become a more authored engine space than a generic project archive page.
+          </p>
+        </article>
+
+        <article class="elysia-panel">
+          <h3 data-i18n="common.sections.tech_stack">Tech Stack</h3>
+          <div class="elysia-stack-list">
+            <span class="elysia-stack-item" data-i18n="ElysiaEngine.stack.cpp">Modern C++</span>
+            <span class="elysia-stack-item" data-i18n="ElysiaEngine.stack.opengl">OpenGL First</span>
+            <span class="elysia-stack-item" data-i18n="ElysiaEngine.stack.tools">ImGui / Tools</span>
+            <span class="elysia-stack-item" data-i18n="ElysiaEngine.stack.build">CMake Workflow</span>
+          </div>
+        </article>
+
+        <article class="elysia-panel">
+          <h3 data-i18n="ElysiaEngine.overview.focus_title">Current Focus</h3>
+          <p data-i18n="ElysiaEngine.overview.focus_body">
+            The first milestone is a clean bootstrap: app loop, renderer shell, scene flow, and debug-friendly structure.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="elysia-section">
+      <div class="elysia-section__head">
+        <div>
+          <p class="elysia-section__eyebrow" data-i18n="ElysiaEngine.sections.pillars_eyebrow">North Star</p>
+          <h2 class="elysia-section__title" data-i18n="ElysiaEngine.sections.pillars">Core Pillars</h2>
+        </div>
+      </div>
+      <div id="pillarGrid" class="elysia-card-grid"></div>
+    </section>
+
+    <section id="modules" class="elysia-section">
+      <div class="elysia-section__head">
+        <div>
+          <p class="elysia-section__eyebrow" data-i18n="ElysiaEngine.sections.modules_eyebrow">Site Structure</p>
+          <h2 class="elysia-section__title" data-i18n="ElysiaEngine.sections.modules">Module Pages</h2>
+        </div>
+      </div>
+      <div id="moduleGrid" class="elysia-note-grid"></div>
+    </section>
+
+    <section id="architecture" class="elysia-section">
+      <div class="elysia-section__head">
+        <div>
+          <p class="elysia-section__eyebrow" data-i18n="ElysiaEngine.sections.architecture_eyebrow">Skeleton</p>
+          <h2 class="elysia-section__title" data-i18n="ElysiaEngine.sections.architecture">Planned Subsystems</h2>
+        </div>
+      </div>
+      <div id="systemGrid" class="elysia-system-grid"></div>
+    </section>
+
+    <section class="elysia-section">
+      <div class="elysia-section__head">
+        <div>
+          <p class="elysia-section__eyebrow" data-i18n="ElysiaEngine.sections.notes_eyebrow">Documentation</p>
+          <h2 class="elysia-section__title" data-i18n="ElysiaEngine.sections.notes">Current Note Slots</h2>
+        </div>
+      </div>
+      <div id="notesGrid" class="elysia-note-grid"></div>
+    </section>
+  </main>
+
+  <footer class="elysia-footer">
+    <p>
+      <span class="mono">&copy; <span id="year"></span> Akil</span>
+      <span class="elysia-footer__dot">·</span>
+      <span data-i18n="ElysiaEngine.footer.page">Elysia Engine skeleton page</span>
+    </p>
+  </footer>
+
+  <script src="../assets/js/i18n.js"></script>
+  <script src="./_shared/base.js?v=20260706a"></script>
+  <script src="./index.js?v=20260706c"></script>
+</body>
+</html>

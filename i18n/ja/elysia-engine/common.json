@@ -1,0 +1,24 @@
+{
+  "ElysiaEngine": {
+    "nav": {
+      "home": "ホーム",
+      "overview": "概要",
+      "modules": "モジュール",
+      "renderer": "レンダラー",
+      "scene": "シーン",
+      "tooling": "ツール",
+      "roadmap_page": "ロードマップ",
+      "architecture": "構成",
+      "roadmap": "ロードマップ",
+      "notes": "ノート"
+    },
+    "page_common": {
+      "back_home": "Elysia ホームへ戻る",
+      "next_renderer": "レンダラーへ",
+      "next_scene": "シーンへ",
+      "next_tooling": "ツールへ",
+      "next_roadmap": "ロードマップへ",
+      "scope_eyebrow": "現在の範囲"
+    }
+  }
+}

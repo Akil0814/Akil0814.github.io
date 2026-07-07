@@ -1,0 +1,24 @@
+{
+  "ElysiaEngine": {
+    "nav": {
+      "home": "Home",
+      "overview": "Overview",
+      "modules": "Modules",
+      "renderer": "Renderer",
+      "scene": "Scene",
+      "tooling": "Tooling",
+      "roadmap_page": "Roadmap",
+      "architecture": "Architecture",
+      "roadmap": "Roadmap",
+      "notes": "Notes"
+    },
+    "page_common": {
+      "back_home": "Back to Elysia Home",
+      "next_renderer": "Go to Renderer",
+      "next_scene": "Go to Scene",
+      "next_tooling": "Go to Tooling",
+      "next_roadmap": "Go to Roadmap",
+      "scope_eyebrow": "Current Scope"
+    }
+  }
+}

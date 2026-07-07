@@ -1,0 +1,20 @@
+{
+  "ElysiaEngine": {
+    "page_roadmap": {
+      "title": "Elysia Engine ロードマップページ",
+      "kicker": "計画モジュール",
+      "heading": "ロードマップ",
+      "desc": "このページは、節目、重要な技術判断、そして Elysia Engine を代表作へ育てる順序を説明するための枠です。",
+      "scope_title": "このページで扱う内容",
+      "scope": {
+        "sequence_title": "節目の順序",
+        "sequence_body": "何を先に作るべきか、何を後回しにできるか、どの機能が前段システムに依存するかを説明します。",
+        "risk_title": "リスクメモ",
+        "risk_body": "性能、複雑さ、依存関係による優先度変動を記録するための場所です。",
+        "case_title": "ケーススタディ物語",
+        "case_body": "技術的な前進を、代表作としての物語へ結び直すために使います。"
+      },
+      "footer": "Elysia Engine ロードマップページ"
+    }
+  }
+}

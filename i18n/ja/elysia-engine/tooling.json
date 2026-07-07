@@ -1,0 +1,20 @@
+{
+  "ElysiaEngine": {
+    "page_tooling": {
+      "title": "Elysia Engine ツールページ",
+      "kicker": "開発体験モジュール",
+      "heading": "ツール",
+      "desc": "このページは、デバッグ UI、インスペクタ、統計、ライブ切り替えなど、エンジンを回しやすくする部分のための枠です。",
+      "scope_title": "このページで扱う内容",
+      "scope": {
+        "debug_title": "デバッグパネル",
+        "debug_body": "即時モードのツールウィンドウ、切り替え、ライブ制御の形を整理します。",
+        "inspect_title": "インスペクタ",
+        "inspect_body": "シーン状態、アセット情報、エンティティ確認フローのための説明枠です。",
+        "metrics_title": "計測",
+        "metrics_body": "フレーム時間、GPU/CPU 計測、最適化判断を支える数値を記録します。"
+      },
+      "footer": "Elysia Engine ツールページ"
+    }
+  }
+}

@@ -1,0 +1,813 @@
+:root {
+  --elysia-bg: #160c18;
+  --elysia-bg-soft: rgba(45, 18, 44, 0.72);
+  --elysia-panel: rgba(43, 18, 45, 0.72);
+  --elysia-panel-strong: rgba(58, 23, 58, 0.86);
+  --elysia-border: rgba(255, 202, 233, 0.28);
+  --elysia-border-strong: rgba(255, 223, 243, 0.48);
+  --elysia-text: #fff6fd;
+  --elysia-text-muted: rgba(255, 240, 250, 0.76);
+  --elysia-accent: #ff96cf;
+  --elysia-accent-soft: #ffc7ea;
+  --elysia-accent-strong: #ff6fbc;
+  --elysia-gold: #ffe3b2;
+  --elysia-shadow: 0 24px 80px rgba(19, 5, 21, 0.42);
+}
+
+html[data-theme="light"] {
+  --elysia-bg: #fff7fb;
+  --elysia-bg-soft: rgba(255, 242, 250, 0.9);
+  --elysia-panel: rgba(255, 248, 253, 0.86);
+  --elysia-panel-strong: rgba(255, 244, 251, 0.95);
+  --elysia-border: rgba(237, 146, 192, 0.32);
+  --elysia-border-strong: rgba(219, 120, 176, 0.5);
+  --elysia-text: #542744;
+  --elysia-text-muted: rgba(84, 39, 68, 0.78);
+  --elysia-accent: #e875b7;
+  --elysia-accent-soft: #fff1f8;
+  --elysia-accent-strong: #d94ca3;
+  --elysia-gold: #e5ae63;
+  --elysia-shadow: 0 20px 60px rgba(204, 132, 177, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.elysia-page {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--elysia-text);
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 170, 222, 0.22), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(255, 228, 191, 0.16), transparent 24%),
+    radial-gradient(circle at 78% 74%, rgba(255, 130, 193, 0.16), transparent 26%),
+    linear-gradient(160deg, #120913 0%, #1d0d20 38%, #2a0d2f 100%);
+  overflow-x: hidden;
+}
+
+html[data-theme="light"] body.elysia-page {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 178, 222, 0.38), transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(255, 229, 187, 0.28), transparent 26%),
+    radial-gradient(circle at 78% 74%, rgba(251, 155, 210, 0.22), transparent 28%),
+    linear-gradient(160deg, #fffafc 0%, #fff0f8 48%, #fde9f4 100%);
+}
+
+body.elysia-page::before,
+body.elysia-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -3;
+}
+
+body.elysia-page::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 82%);
+  opacity: 0.35;
+}
+
+body.elysia-page::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.03));
+}
+
+.elysia-aura,
+.elysia-stars {
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  z-index: -2;
+}
+
+.elysia-aura {
+  filter: blur(12px);
+  opacity: 0.7;
+}
+
+.elysia-aura--one {
+  background: radial-gradient(circle at 15% 30%, rgba(255, 140, 206, 0.26), transparent 22%);
+  animation: elysiaDriftOne 16s ease-in-out infinite alternate;
+}
+
+.elysia-aura--two {
+  background: radial-gradient(circle at 82% 18%, rgba(255, 219, 164, 0.16), transparent 18%);
+  animation: elysiaDriftTwo 22s ease-in-out infinite alternate;
+}
+
+.elysia-stars {
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.56) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 22% 72%, rgba(255, 222, 238, 0.52) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 42% 28%, rgba(255, 244, 222, 0.48) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 68% 18%, rgba(255, 255, 255, 0.6) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 82% 62%, rgba(255, 218, 240, 0.55) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 92% 34%, rgba(255, 244, 222, 0.55) 0 1px, transparent 1.8px);
+  animation: elysiaTwinkle 12s ease-in-out infinite alternate;
+  opacity: 0.65;
+}
+
+body.fx-off .elysia-aura,
+body.fx-off .elysia-stars,
+body.fx-off .elysia-sigil__ring,
+body.fx-off .elysia-sigil__spark,
+body.fx-off .elysia-brand__crest::after {
+  animation: none !important;
+}
+
+.elysia-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(20px);
+  background: linear-gradient(180deg, rgba(34, 13, 33, 0.9), rgba(34, 13, 33, 0.55));
+  border-bottom: 1px solid rgba(255, 221, 239, 0.14);
+}
+
+html[data-theme="light"] .elysia-nav {
+  background: linear-gradient(180deg, rgba(255, 248, 252, 0.92), rgba(255, 248, 252, 0.64));
+  border-bottom-color: rgba(219, 120, 176, 0.18);
+}
+
+.elysia-nav__left,
+.elysia-nav__right {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.elysia-nav__right {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.elysia-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--elysia-text);
+  text-decoration: none;
+}
+
+.elysia-brand__crest {
+  position: relative;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, #fff6fd 0%, #ffb0da 48%, #ff71ba 100%);
+  box-shadow: 0 0 20px rgba(255, 136, 204, 0.5);
+}
+
+.elysia-brand__crest::after {
+  content: "";
+  position: absolute;
+  inset: -0.3rem;
+  border: 1px solid rgba(255, 220, 240, 0.38);
+  border-radius: 999px;
+  animation: elysiaHalo 5s linear infinite;
+}
+
+.elysia-brand__text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.elysia-nav a,
+.elysia-control,
+.elysia-select {
+  color: var(--elysia-text);
+  font-size: 0.92rem;
+}
+
+.elysia-nav a {
+  position: relative;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.elysia-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, transparent, var(--elysia-accent), transparent);
+  transition: transform 180ms ease;
+}
+
+.elysia-nav a:hover::after,
+.elysia-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.elysia-select,
+.elysia-control,
+.elysia-btn,
+.elysia-btn--ghost {
+  border-radius: 999px;
+  border: 1px solid var(--elysia-border);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+}
+
+.elysia-select,
+.elysia-control {
+  padding: 0.55rem 0.9rem;
+  font: inherit;
+}
+
+.elysia-select {
+  min-width: 8.2rem;
+}
+
+.elysia-control {
+  cursor: pointer;
+}
+
+.elysia-shell {
+  padding-top: 2.25rem;
+  padding-bottom: 4rem;
+}
+
+.elysia-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.elysia-hero__copy,
+.elysia-hero__aside,
+.elysia-panel,
+.elysia-status-card,
+.elysia-system-card,
+.elysia-roadmap__item,
+.elysia-note-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
+    var(--elysia-panel);
+  border: 1px solid var(--elysia-border);
+  box-shadow: var(--elysia-shadow);
+}
+
+.elysia-hero__copy,
+.elysia-status-card,
+.elysia-panel {
+  border-radius: 28px;
+  padding: 1.6rem;
+}
+
+.elysia-hero__copy {
+  position: relative;
+  overflow: hidden;
+}
+
+.elysia-hero__copy::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -22% 38%;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255, 188, 228, 0.24), transparent 68%);
+  pointer-events: none;
+}
+
+.elysia-kicker,
+.elysia-section__eyebrow,
+.elysia-system-card__stage,
+.elysia-note-card__tag {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--elysia-gold);
+}
+
+.elysia-title {
+  margin: 0.55rem 0 0.7rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  line-height: 0.94;
+  letter-spacing: 0.02em;
+}
+
+.elysia-lead {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--elysia-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.elysia-chip-row,
+.elysia-status-card__meta,
+.elysia-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.elysia-chip,
+.elysia-mini-pill,
+.elysia-stack-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--elysia-border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--elysia-text);
+}
+
+.elysia-chip-row {
+  margin-top: 1.3rem;
+}
+
+.elysia-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.elysia-btn,
+.elysia-btn--ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.7rem 1.2rem;
+  color: var(--elysia-text);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.elysia-btn {
+  background: linear-gradient(135deg, rgba(255, 138, 205, 0.24), rgba(255, 220, 175, 0.14));
+}
+
+.elysia-btn--ghost {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.elysia-btn:hover,
+.elysia-btn--ghost:hover,
+.elysia-btn:focus-visible,
+.elysia-btn--ghost:focus-visible,
+.elysia-control:hover,
+.elysia-control:focus-visible,
+.elysia-select:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--elysia-border-strong);
+}
+
+.elysia-hero__aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.elysia-status-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 30%),
+    var(--elysia-panel-strong);
+}
+
+.elysia-status-card__label,
+.elysia-status-card__value {
+  margin: 0;
+}
+
+.elysia-status-card__label {
+  color: var(--elysia-gold);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.elysia-status-card__value {
+  margin-top: 0.7rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.elysia-status-card__meta {
+  margin-top: 1.1rem;
+}
+
+.elysia-sigil {
+  position: relative;
+  min-height: 300px;
+  border-radius: 30px;
+  border: 1px solid var(--elysia-border);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 50% 50%, rgba(255, 164, 220, 0.14), transparent 58%),
+    linear-gradient(160deg, rgba(255, 203, 233, 0.08), rgba(255, 232, 193, 0.04));
+  overflow: hidden;
+}
+
+.elysia-sigil__ring,
+.elysia-sigil__diamond,
+.elysia-sigil__spark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.elysia-sigil__ring {
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 216, 238, 0.38);
+  box-shadow: inset 0 0 30px rgba(255, 190, 227, 0.2);
+  animation: elysiaSpin 18s linear infinite;
+}
+
+.elysia-sigil__ring--inner {
+  width: 130px;
+  height: 130px;
+  border-color: rgba(255, 228, 191, 0.48);
+  animation-direction: reverse;
+  animation-duration: 12s;
+}
+
+.elysia-sigil__diamond {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(255, 246, 253, 0.95), rgba(255, 139, 210, 0.82));
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 14px;
+  box-shadow: 0 0 30px rgba(255, 132, 205, 0.35);
+}
+
+.elysia-sigil__spark {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #fff8fd;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.8);
+}
+
+.elysia-sigil__spark--one {
+  margin-left: -112px;
+  margin-top: -80px;
+  animation: elysiaSparkOne 7s ease-in-out infinite;
+}
+
+.elysia-sigil__spark--two {
+  margin-left: 90px;
+  margin-top: -22px;
+  animation: elysiaSparkTwo 6s ease-in-out infinite;
+}
+
+.elysia-sigil__spark--three {
+  margin-left: -8px;
+  margin-top: 102px;
+  animation: elysiaSparkThree 8s ease-in-out infinite;
+}
+
+.elysia-section {
+  margin-top: 1.5rem;
+}
+
+.elysia-section__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.elysia-section__title {
+  margin: 0.3rem 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+}
+
+.elysia-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.elysia-panel h3,
+.elysia-system-card h3,
+.elysia-roadmap__title,
+.elysia-note-card h3 {
+  margin: 0 0 0.7rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.75rem;
+}
+
+.elysia-panel p,
+.elysia-system-card p,
+.elysia-roadmap__body,
+.elysia-note-card p {
+  margin: 0;
+  color: var(--elysia-text-muted);
+  line-height: 1.75;
+}
+
+.elysia-card-grid,
+.elysia-system-grid,
+.elysia-note-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.elysia-card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.elysia-system-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.elysia-note-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.elysia-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  padding: 1.35rem;
+  border-radius: 26px;
+  border: 1px solid var(--elysia-border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), transparent 28%),
+    var(--elysia-panel);
+  box-shadow: var(--elysia-shadow);
+}
+
+.elysia-card::after,
+.elysia-system-card::after,
+.elysia-roadmap__item::after,
+.elysia-note-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -16% -34% auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 172, 220, 0.22), transparent 68%);
+  pointer-events: none;
+}
+
+.elysia-card__eyebrow,
+.elysia-system-card__stage,
+.elysia-note-card__tag,
+.elysia-roadmap__phase {
+  display: inline-flex;
+  margin-bottom: 0.8rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 226, 243, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.elysia-card__title {
+  margin: 0 0 0.65rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.85rem;
+}
+
+.elysia-card__body {
+  margin: 0;
+  color: var(--elysia-text-muted);
+  line-height: 1.72;
+}
+
+.elysia-system-card,
+.elysia-note-card,
+.elysia-roadmap__item {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem;
+  border-radius: 26px;
+}
+
+.elysia-system-card__tags,
+.elysia-note-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.elysia-inline-tag {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 224, 241, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--elysia-text);
+  font-size: 0.86rem;
+}
+
+.elysia-roadmap {
+  display: grid;
+  gap: 1rem;
+}
+
+.elysia-roadmap__item {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.elysia-roadmap__phase {
+  width: fit-content;
+}
+
+.elysia-roadmap__title {
+  margin-top: 0.05rem;
+}
+
+.elysia-roadmap__deliverable {
+  margin-top: 0.85rem;
+  color: var(--elysia-text);
+  font-size: 0.95rem;
+}
+
+.elysia-footer {
+  padding: 0 1.5rem 2rem;
+  color: var(--elysia-text-muted);
+  text-align: center;
+}
+
+.elysia-footer__dot {
+  display: inline-block;
+  margin: 0 0.45rem;
+  color: var(--elysia-accent);
+}
+
+@media (max-width: 1180px) {
+  .elysia-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .elysia-note-grid,
+  .elysia-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .elysia-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .elysia-nav__right {
+    justify-content: flex-start;
+  }
+
+  .elysia-hero,
+  .elysia-system-grid,
+  .elysia-overview-grid,
+  .elysia-note-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elysia-roadmap__item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .elysia-shell {
+    padding-top: 1.25rem;
+    padding-bottom: 3rem;
+  }
+
+  .elysia-title {
+    font-size: 3rem;
+  }
+
+  .elysia-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elysia-hero__copy,
+  .elysia-panel,
+  .elysia-status-card,
+  .elysia-card,
+  .elysia-system-card,
+  .elysia-roadmap__item,
+  .elysia-note-card {
+    padding: 1.15rem;
+    border-radius: 22px;
+  }
+
+  .elysia-nav {
+    padding: 0.9rem 1rem;
+  }
+}
+
+@keyframes elysiaDriftOne {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.08);
+  }
+}
+
+@keyframes elysiaDriftTwo {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-4%, 2%, 0) scale(1.06);
+  }
+}
+
+@keyframes elysiaTwinkle {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 0.78;
+  }
+}
+
+@keyframes elysiaSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes elysiaHalo {
+  from {
+    transform: scale(0.92);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+}
+
+@keyframes elysiaSparkOne {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes elysiaSparkTwo {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) translateX(8px);
+    opacity: 1;
+  }
+}
+
+@keyframes elysiaSparkThree {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-7px);
+    opacity: 1;
+  }
+}

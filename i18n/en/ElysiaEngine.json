@@ -1,0 +1,240 @@
+{
+  "ElysiaEngine": {
+    "title": "Elysia Engine",
+    "nav": {
+      "home": "Home",
+      "overview": "Overview",
+      "modules": "Modules",
+      "renderer": "Renderer",
+      "scene": "Scene",
+      "tooling": "Tooling",
+      "roadmap_page": "Roadmap",
+      "architecture": "Architecture",
+      "roadmap": "Roadmap",
+      "notes": "Notes"
+    },
+    "hero": {
+      "kicker": "Rendering Engine / Pre-production",
+      "title": "Elysia Engine",
+      "desc": "Elysia Engine is the personal engine branch I am shaping around rendering fundamentals, tooling clarity, and elegant iteration speed. This page is the first standalone shell for its architecture, milestones, and future graphics experiments.",
+      "cta_archive": "Back to Projects",
+      "cta_modules": "Open Modules",
+      "status_label": "Current Status",
+      "status_value": "Scaffolding the first public page and system plan.",
+      "chips": {
+        "graphics": "Graphics R&D",
+        "engine": "Engine Architecture",
+        "tools": "Tooling First",
+        "long_term": "Long-term Build"
+      },
+      "meta": {
+        "rendering": "Rendering Core",
+        "prototype": "Prototype Phase"
+      }
+    },
+    "overview": {
+      "intent_title": "Design Intent",
+      "intent_body": "This project is meant to become a more authored engine space than a generic archive page. The goal is to explain the engine as a signature work: what it is trying to become, how it is organized, and why each system exists.",
+      "focus_title": "Current Focus",
+      "focus_body": "The first milestone is a clean bootstrap: app loop, renderer shell, scene flow, and a debug-friendly structure that will survive later rendering experiments."
+    },
+    "stack": {
+      "cpp": "Modern C++",
+      "opengl": "OpenGL First",
+      "tools": "ImGui / Tools",
+      "build": "CMake Workflow"
+    },
+    "sections": {
+      "overview_eyebrow": "Project Intent",
+      "overview": "Overview",
+      "pillars_eyebrow": "North Star",
+      "pillars": "Core Pillars",
+      "modules_eyebrow": "Site Structure",
+      "modules": "Module Pages",
+      "architecture_eyebrow": "Skeleton",
+      "architecture": "Planned Subsystems",
+      "roadmap_eyebrow": "Milestones",
+      "roadmap": "Roadmap",
+      "notes_eyebrow": "Documentation",
+      "notes": "Current Note Slots"
+    },
+    "pillars": {
+      "rendering": {
+        "eyebrow": "Renderer",
+        "title": "Understand the pipeline, don't hide it",
+        "body": "The renderer should stay readable enough that each stage can be studied, profiled, and replaced without losing the mental model."
+      },
+      "tools": {
+        "eyebrow": "Tools",
+        "title": "Build debugging into the engine early",
+        "body": "Debug overlays, scene inspection, and frame stats should be part of the engine shell instead of late add-ons."
+      },
+      "structure": {
+        "eyebrow": "Structure",
+        "title": "Prefer clean seams over premature scale",
+        "body": "The first versions should stay small, but the subsystems need enough separation to avoid redoing the whole project later."
+      },
+      "identity": {
+        "eyebrow": "Identity",
+        "title": "Give the project a voice, not just features",
+        "body": "This page frames the engine as a signature project with its own visual language, goals, and documentation rhythm."
+      }
+    },
+    "modules": {
+      "renderer": {
+        "tag": "Module",
+        "title": "Renderer Core",
+        "body": "A dedicated page for frame flow, render passes, materials, and future backend work."
+      },
+      "scene": {
+        "tag": "Module",
+        "title": "Scene System",
+        "body": "A dedicated page for transforms, object ownership, scene graph direction, and runtime-to-render bridging."
+      },
+      "tooling": {
+        "tag": "Module",
+        "title": "Tooling",
+        "body": "A dedicated page for debug panels, live controls, inspectors, and developer experience."
+      },
+      "roadmap": {
+        "tag": "Module",
+        "title": "Roadmap",
+        "body": "A dedicated page for milestone planning, sequencing, risks, and representative-project framing."
+      }
+    },
+    "systems": {
+      "app": {
+        "stage": "Foundation",
+        "title": "App / Platform Layer",
+        "body": "Window creation, input routing, frame pacing, and the bootstrap path that keeps the engine launch flow predictable."
+      },
+      "renderer": {
+        "stage": "Graphics",
+        "title": "Renderer Core",
+        "body": "A focused rendering shell for command submission, camera data, render passes, materials, and future backend experiments."
+      },
+      "scene": {
+        "stage": "Runtime",
+        "title": "Scene / Entity Flow",
+        "body": "A light scene structure for transforms, object ownership, and the path between gameplay objects and renderer data."
+      },
+      "tooling": {
+        "stage": "Editor",
+        "title": "Tooling / Diagnostics",
+        "body": "Debug panels, live tuning, and future asset inspection pages that make iteration smoother while the engine is still changing rapidly."
+      }
+    },
+    "roadmap": {
+      "bootstrap": {
+        "phase": "Phase 01",
+        "title": "Bootstrap the shell",
+        "body": "Stabilize project layout, startup flow, renderer ownership, and the first debug surfaces.",
+        "deliverable": "Deliverable: a clean engine app that opens, renders a frame, and exposes core debug state."
+      },
+      "rendering": {
+        "phase": "Phase 02",
+        "title": "First rendering milestone",
+        "body": "Add a usable camera, mesh submission, material inputs, and an intentionally small but dependable pass layout.",
+        "deliverable": "Deliverable: basic scene rendering with room for lighting and model-loading expansion."
+      },
+      "tooling": {
+        "phase": "Phase 03",
+        "title": "Tooling and quality-of-life",
+        "body": "Layer in performance counters, toggles, scene inspection, and the notes needed to explain the engine publicly.",
+        "deliverable": "Deliverable: a better developer experience and a stronger case-study narrative."
+      }
+    },
+    "notes": {
+      "renderer": {
+        "tag": "Reserved",
+        "title": "Renderer bootstrap note",
+        "body": "This slot is reserved for the first write-up covering initialization flow, ownership boundaries, and frame startup."
+      },
+      "assets": {
+        "tag": "Reserved",
+        "title": "Asset path note",
+        "body": "This slot can document how models, textures, and future materials move through the engine without creating fragile dependencies."
+      },
+      "debug": {
+        "tag": "Reserved",
+        "title": "Debug surface note",
+        "body": "This slot can explain debug overlays, live tuning controls, and how the engine exposes information while still being built."
+      }
+    },
+    "page_common": {
+      "back_home": "Back to Elysia Home",
+      "next_renderer": "Go to Renderer",
+      "next_scene": "Go to Scene",
+      "next_tooling": "Go to Tooling",
+      "next_roadmap": "Go to Roadmap",
+      "scope_eyebrow": "Current Scope"
+    },
+    "page_renderer": {
+      "title": "Elysia Engine Renderer",
+      "kicker": "Graphics Module",
+      "heading": "Renderer Core",
+      "desc": "This page is reserved for the rendering path: frame flow, pass organization, camera data, materials, and future backend experiments.",
+      "scope_title": "What this page will cover",
+      "scope": {
+        "pipeline_title": "Frame Pipeline",
+        "pipeline_body": "Document the submit-update-render-present path and explain where each render stage lives.",
+        "material_title": "Material Flow",
+        "material_body": "Track how shader parameters, textures, and mesh state become renderer-facing commands.",
+        "experiment_title": "Backend Experiments",
+        "experiment_body": "Reserve space for comparing future OpenGL, software rasterizer, or other backend branches."
+      },
+      "footer": "Elysia Engine Renderer Page"
+    },
+    "page_scene": {
+      "title": "Elysia Engine Scene System",
+      "kicker": "Runtime Module",
+      "heading": "Scene System",
+      "desc": "This page is reserved for transforms, object ownership, scene organization, and the path from gameplay-side structures to render submission.",
+      "scope_title": "What this page will cover",
+      "scope": {
+        "transform_title": "Transforms",
+        "transform_body": "Explain local/world transforms, parent-child relationships, and how update order stays understandable.",
+        "ownership_title": "Ownership Flow",
+        "ownership_body": "Reserve a place to document object lifetimes, scene registration, and shared runtime services.",
+        "bridge_title": "Render Bridge",
+        "bridge_body": "Describe how scene data becomes render data without tangling runtime logic directly into the renderer."
+      },
+      "footer": "Elysia Engine Scene System Page"
+    },
+    "page_tooling": {
+      "title": "Elysia Engine Tooling",
+      "kicker": "Developer Experience Module",
+      "heading": "Tooling",
+      "desc": "This page is reserved for debug UI, inspectors, counters, live toggles, and the pieces that make the engine easier to iterate on.",
+      "scope_title": "What this page will cover",
+      "scope": {
+        "debug_title": "Debug Panels",
+        "debug_body": "Explain the shape of immediate-mode tools, windows, toggles, and live renderer controls.",
+        "inspect_title": "Inspectors",
+        "inspect_body": "Reserve a place for scene state, asset metadata, and entity inspection flows.",
+        "metrics_title": "Metrics",
+        "metrics_body": "Track frame time, GPU or CPU timings, and the measurements that shape optimization decisions."
+      },
+      "footer": "Elysia Engine Tooling Page"
+    },
+    "page_roadmap": {
+      "title": "Elysia Engine Roadmap",
+      "kicker": "Planning Module",
+      "heading": "Roadmap",
+      "desc": "This page is reserved for milestones, major technical bets, and the sequence used to grow Elysia Engine into a more complete signature project.",
+      "scope_title": "What this page will cover",
+      "scope": {
+        "sequence_title": "Milestone Sequence",
+        "sequence_body": "Explain what should be built first, what can wait, and which features are blocked by earlier systems.",
+        "risk_title": "Risk Notes",
+        "risk_body": "Reserve space for performance, complexity, and dependency risks that could shift priorities.",
+        "case_title": "Case Study Narrative",
+        "case_body": "Use this page to tie technical work back into the broader representative-project story."
+      },
+      "footer": "Elysia Engine Roadmap Page"
+    },
+    "footer": {
+      "page": "Elysia Engine skeleton page"
+    }
+  }
+}

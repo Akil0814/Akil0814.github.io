@@ -1,0 +1,20 @@
+{
+  "ElysiaEngine": {
+    "page_scene": {
+      "title": "Elysia Engine 场景系统页",
+      "kicker": "运行时模块",
+      "heading": "场景系统",
+      "desc": "这个页面预留给变换、对象归属、场景组织，以及游戏侧结构到渲染提交路径的设计说明。",
+      "scope_title": "这个页面会覆盖什么",
+      "scope": {
+        "transform_title": "变换系统",
+        "transform_body": "解释局部/世界变换、父子层级，以及如何让更新顺序保持清晰。",
+        "ownership_title": "所有权流转",
+        "ownership_body": "预留给对象生命周期、场景注册和共享运行时服务的说明。",
+        "bridge_title": "渲染桥接",
+        "bridge_body": "讲清场景数据如何变成渲染数据，而不把运行时逻辑直接缠进渲染器。"
+      },
+      "footer": "Elysia Engine 场景系统页"
+    }
+  }
+}

@@ -105,6 +105,13 @@
     return `${basePath}/i18n/${lang}/${fileName}.json`;
   }
 
+  function getPageScope(page) {
+    if (!page || !page.includes("/")) return "";
+    const segments = page.split("/");
+    segments.pop();
+    return segments.join("/");
+  }
+
   async function readJson(path) {
     try {
       const response = await fetch(path, { cache: "no-cache" });
@@ -130,11 +137,23 @@
       return bundleCache.get(cacheKey);
     }
 
-    const enCommonPath = buildLocaleFilePath(basePath, "en", "common");
-    const enPagePath = buildLocaleFilePath(basePath, "en", page);
-    const [enCommon, enPage] = await Promise.all([readJson(enCommonPath), readJson(enPagePath)]);
+    const pageScope = getPageScope(page);
 
-    const enBundle = deepMerge(deepClone(enCommon), enPage);
+    const enCommonPath = buildLocaleFilePath(basePath, "en", "common");
+    const enScopedCommonPath = pageScope
+      ? buildLocaleFilePath(basePath, "en", `${pageScope}/common`)
+      : null;
+    const enPagePath = buildLocaleFilePath(basePath, "en", page);
+    const [enCommon, enScopedCommon, enPage] = await Promise.all([
+      readJson(enCommonPath),
+      enScopedCommonPath ? readJson(enScopedCommonPath) : Promise.resolve({}),
+      readJson(enPagePath),
+    ]);
+
+    const enBundle = deepMerge(
+      deepMerge(deepClone(enCommon), enScopedCommon),
+      enPage
+    );
     if (lang === "en") {
       const result = { merged: enBundle, english: enBundle };
       bundleCache.set(cacheKey, result);
@@ -142,11 +161,21 @@
     }
 
     const commonPath = buildLocaleFilePath(basePath, lang, "common");
+    const scopedCommonPath = pageScope
+      ? buildLocaleFilePath(basePath, lang, `${pageScope}/common`)
+      : null;
     const pagePath = buildLocaleFilePath(basePath, lang, page);
-    const [commonBundle, pageBundle] = await Promise.all([readJson(commonPath), readJson(pagePath)]);
+    const [commonBundle, scopedCommonBundle, pageBundle] = await Promise.all([
+      readJson(commonPath),
+      scopedCommonPath ? readJson(scopedCommonPath) : Promise.resolve({}),
+      readJson(pagePath),
+    ]);
 
     const localizedBundle = deepMerge(
-      deepMerge(deepClone(enBundle), commonBundle),
+      deepMerge(
+        deepMerge(deepClone(enBundle), commonBundle),
+        scopedCommonBundle
+      ),
       pageBundle
     );
     const result = { merged: localizedBundle, english: enBundle };
