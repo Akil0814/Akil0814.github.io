@@ -53,7 +53,7 @@
       "ui_flow": "Qt 页面对接"
     },
     "sections": {
-      "demo_videos": "",
+      "demo_videos": "演示视频",
       "core_code_blocks": "核心代码块"
     },
     "videos": {},
