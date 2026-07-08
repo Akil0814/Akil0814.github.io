@@ -108,6 +108,8 @@ body.moon-docked .bg-moon{
 {
   .me{ grid-template-columns: 1fr; }
   .floating-cards{ grid-template-columns: 1fr 1fr; }
+  .featured-project{ grid-template-columns: 1fr; padding: 22px 20px; }
+  .featured-project__cta{ justify-self: start; }
   .grid{ grid-template-columns: 1fr; }
   .links{ grid-template-columns: 1fr; }
   .about-panel__content{ grid-template-columns: 1fr; }

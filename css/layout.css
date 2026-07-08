@@ -401,6 +401,90 @@ section[id]{
   color: var(--muted);
   max-width: 62ch;
 }
+.featured-project{
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 24px 26px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: calc(var(--radius) + 4px);
+  background:
+    linear-gradient(135deg, rgba(124,77,255,.18), rgba(255,43,214,.12) 40%, rgba(0,212,255,.14) 100%),
+    rgba(255,255,255,.05);
+  box-shadow: 0 24px 60px rgba(0,0,0,.26);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.featured-project::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.14), transparent 30%),
+    linear-gradient(90deg, rgba(255,255,255,.10), transparent 18%);
+  pointer-events:none;
+}
+.featured-project:hover{
+  transform: translateY(-4px);
+  border-color: rgba(0,212,255,.35);
+  box-shadow: 0 28px 70px rgba(0,0,0,.32);
+}
+.featured-project__copy,
+.featured-project__cta{
+  position: relative;
+  z-index: 1;
+}
+.featured-project__meta{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.featured-project__eyebrow{
+  font-family:"JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.76);
+}
+.featured-project__badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+}
+.featured-project__title{
+  margin: 12px 0 10px;
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.05;
+}
+.featured-project__text{
+  margin:0;
+  max-width: 62ch;
+  color: rgba(255,255,255,.78);
+  line-height: 1.7;
+}
+.featured-project__cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width: 150px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.featured-project:hover .featured-project__cta{
+  border-color: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.12);
+}
 
 /* Projects 三列网格（小屏会变一列） */
 .grid{

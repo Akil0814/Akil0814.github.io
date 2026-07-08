@@ -23,6 +23,13 @@
       "about": "About",
       "links": "Links"
     },
+    "featured": {
+      "elysia": {
+        "eyebrow": "Main Project",
+        "desc": "A dedicated engine portal covering rendering goals, engine architecture, scene systems, tooling plans, and the long-term roadmap.",
+        "cta": "Open Project"
+      }
+    },
     "projects": {
       "warships": {
         "badge_game": "Game",
