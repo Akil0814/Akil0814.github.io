@@ -12,11 +12,11 @@
   ].join("\n");
 
   const TIMINGS = {
-    codeStart: 380,
-    revealInterval: 170,
-    lineDuration: 280,
-    holdAfterReveal: 320,
-    exitDuration: 580,
+    codeStart: 520,
+    revealInterval: 320,
+    lineDuration: 380,
+    holdAfterReveal: 620,
+    exitDuration: 700,
     reducedMotionHold: 250,
     videoReadyTimeout: 1200,
   };
