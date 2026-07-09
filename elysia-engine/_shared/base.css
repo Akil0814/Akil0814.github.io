@@ -335,7 +335,7 @@ html[data-theme="dark"] .elysia-intro__code .token.deleted {
   white-space: pre;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(0);
   clip-path: inset(0 0 100% 0);
   text-shadow:
     0 0 18px rgba(255, 255, 255, 0.28),
@@ -358,7 +358,7 @@ html[data-theme="dark"] .elysia-intro-code__line {
 
 /* Re-skin the shared site nav with Elysia's palette while keeping the site-wide nav layout. */
 .elysia-page .nav {
-  justify-content: flex-end;
+  justify-content: space-between;
   background: linear-gradient(180deg, rgba(255, 248, 252, 0.92), rgba(255, 248, 252, 0.64));
   border-bottom: 1px solid rgba(219, 120, 176, 0.18);
   backdrop-filter: blur(20px);
@@ -660,7 +660,7 @@ body.fx-off .elysia-brand__crest::after {
   z-index: 1;
   display: grid;
   gap: 3.5rem;
-  padding-top: 0.75rem;
+  padding-top: 1.4rem;
   padding-bottom: 4rem;
 }
 
@@ -679,22 +679,25 @@ body.fx-off .elysia-brand__crest::after {
 .elysia-landing-hero {
   position: relative;
   display: grid;
-  min-height: calc(100vh - 86px);
-  gap: 0.9rem;
+  justify-items: center;
+  min-height: calc(100vh - 126px);
+  padding-top: clamp(3rem, 8vh, 5rem);
+  gap: 1rem;
 }
 
 .elysia-landing-hero__stage {
   position: relative;
-  min-height: calc(100vh - 138px);
+  width: min(980px, 76vw);
+  min-height: clamp(190px, 27vh, 248px);
   display: grid;
   place-items: center;
   overflow: hidden;
-  padding: clamp(1.8rem, 5vw, 3rem) clamp(1.4rem, 4vw, 2.4rem);
+  padding: clamp(1rem, 2.4vw, 1.5rem) clamp(1.6rem, 4vw, 2.8rem);
   border-radius: 38px;
   border: 1px solid var(--elysia-border);
   background:
-    radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.3), transparent 28%),
-    radial-gradient(circle at 50% 58%, rgba(255, 214, 239, 0.16), transparent 34%),
+    radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.3), transparent 28%),
+    radial-gradient(circle at 50% 64%, rgba(255, 214, 239, 0.16), transparent 34%),
     linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 244, 251, 0.04)),
     var(--elysia-panel);
   box-shadow: var(--elysia-shadow);
@@ -730,7 +733,7 @@ html[data-theme="dark"] .elysia-landing-hero__stage::before {
   display: grid;
   place-items: center;
   width: 100%;
-  min-height: 100%;
+  min-height: auto;
   text-align: center;
   padding: 0;
 }
@@ -739,14 +742,16 @@ html[data-theme="dark"] .elysia-landing-hero__stage::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 2vw, 1.6rem);
+  gap: clamp(1.15rem, 2.3vw, 1.9rem);
+  max-width: 100%;
+  transform: none;
 }
 
 .elysia-landing-hero__title-mark {
   position: relative;
   flex: 0 0 auto;
-  width: clamp(72px, 8vw, 108px);
-  height: clamp(72px, 8vw, 108px);
+  width: clamp(68px, 7.2vw, 96px);
+  height: clamp(68px, 7.2vw, 96px);
 }
 
 .elysia-landing-hero__title-icon {
@@ -1604,14 +1609,15 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-skeleton-grid {
     grid-template-columns: 1fr;
   }
-
   .elysia-landing-hero {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 116px);
+    padding-top: 2.2rem;
   }
 
   .elysia-landing-hero__stage {
-    min-height: calc(100vh - 156px);
-    padding-bottom: 1.4rem;
+    width: min(900px, 88vw);
+    min-height: clamp(180px, 24vh, 224px);
+    padding: 0.95rem 1.4rem;
   }
 
   .elysia-landing-hero__copy {
@@ -1619,7 +1625,8 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   }
 
   .elysia-landing-hero__title-lockup {
-    gap: 1rem;
+    gap: 1.1rem;
+    transform: none;
   }
 
   .elysia-landing-hero__art {
@@ -1650,12 +1657,12 @@ html[data-theme="dark"] .elysia-bottom-showcase {
 
   .elysia-landing-hero__title-lockup {
     flex-direction: column;
+    transform: translateY(0);
   }
 
   .elysia-landing-hero__title-mark {
-    width: 74px;
-    height: 74px;
-    border-radius: 22px;
+    width: 70px;
+    height: 70px;
   }
 
   .elysia-intro__code-title {
@@ -1669,7 +1676,7 @@ html[data-theme="dark"] .elysia-bottom-showcase {
 
   .elysia-shell {
     gap: 2.7rem;
-    padding-top: 0;
+    padding-top: 0.65rem;
     padding-bottom: 3rem;
   }
 
@@ -1678,15 +1685,16 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   }
 
   .elysia-landing-hero {
-    min-height: calc(100vh - 74px);
+    min-height: calc(100vh - 104px);
+    padding-top: 1.6rem;
   }
 
   .elysia-landing-hero__stage {
-    min-height: calc(100vh - 144px);
-    padding: 1.1rem;
+    width: min(92vw, 560px);
+    min-height: clamp(168px, 22vh, 208px);
+    padding: 0.8rem 1rem;
     border-radius: 28px;
   }
-
   .elysia-landing-hero__title {
     font-size: clamp(4.2rem, 20vw, 6.6rem);
   }
