@@ -26,8 +26,8 @@
     "featured": {
       "elysia": {
         "eyebrow": "Main Project",
-        "desc": "A dedicated engine portal covering rendering goals, engine architecture, scene systems, tooling plans, and the long-term roadmap.",
-        "cta": "Open Project"
+        "desc": "A reusable 2D game engine framework featuring an asynchronous asset loading pipeline, a scene management system, systems for frame-based animations and special effects, basic physics support, i18n capabilities, and a foundational UI system.",
+        "cta": "Project Detail"
       }
     },
     "projects": {

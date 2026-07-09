@@ -23,6 +23,13 @@
       "about": "关于",
       "links": "链接"
     },
+    "featured": {
+      "elysia": {
+        "eyebrow": "主要项目",
+        "desc": "一个可复用的2D游戏引擎层框架，包含基础的资源异步加载管线，场景管理系统，帧动画与特效系统，基础物理支持，i18n，与基础的UI系统",
+        "cta": "项目详细"
+      }
+      },
     "projects": {
       "warships": {
         "badge_game": "游戏",
