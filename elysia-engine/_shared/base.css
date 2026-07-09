@@ -681,7 +681,7 @@ body.fx-off .elysia-brand__crest::after {
   display: grid;
   justify-items: center;
   min-height: calc(100vh - 126px);
-  padding-top: clamp(3rem, 8vh, 5rem);
+  padding-top: clamp(11rem, 24vh, 15rem);
   gap: 1rem;
 }
 
@@ -1611,7 +1611,7 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   }
   .elysia-landing-hero {
     min-height: calc(100vh - 116px);
-    padding-top: 2.2rem;
+    padding-top: 8.8rem;
   }
 
   .elysia-landing-hero__stage {
@@ -1686,7 +1686,7 @@ html[data-theme="dark"] .elysia-bottom-showcase {
 
   .elysia-landing-hero {
     min-height: calc(100vh - 104px);
-    padding-top: 1.6rem;
+    padding-top: 6.4rem;
   }
 
   .elysia-landing-hero__stage {
