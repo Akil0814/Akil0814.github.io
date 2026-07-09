@@ -1,7 +1,7 @@
 /* =========================================================
    Footer banner image effect (底部横幅图 + 发光层)
    - .footerBanner：容器，控制圆角/裁剪/边框/阴影
-   - img：固定高度横幅图
+   - img：按固定比例铺满横幅
    - .footerBanner__glow：叠一层彩色光晕，不挡点击
    ========================================================= */
 .footerBanner
@@ -9,6 +9,7 @@
   position: relative;
   margin: 0 auto 16px;
   width: min(980px, 92vw);
+  aspect-ratio: 16 / 6;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -20,7 +21,7 @@
 {
   display:block;
   width:100%;
-  height: 400px;         /* 横幅高度：想更高就调这个 */
+  height:100%;
   object-fit: cover;
   filter: saturate(1.1) contrast(1.05);
   opacity: .92;

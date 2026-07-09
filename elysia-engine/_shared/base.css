@@ -14,6 +14,22 @@
   --elysia-shadow: 0 20px 60px rgba(204, 132, 177, 0.18);
 }
 
+html[data-theme="dark"] {
+  --elysia-bg: #09162d;
+  --elysia-bg-soft: rgba(10, 21, 45, 0.92);
+  --elysia-panel: rgba(11, 23, 48, 0.72);
+  --elysia-panel-strong: rgba(12, 27, 58, 0.82);
+  --elysia-border: rgba(135, 181, 255, 0.22);
+  --elysia-border-strong: rgba(177, 210, 255, 0.42);
+  --elysia-text: #edf5ff;
+  --elysia-text-muted: rgba(220, 234, 255, 0.76);
+  --elysia-accent: #8bc9ff;
+  --elysia-accent-soft: #10254b;
+  --elysia-accent-strong: #b5dbff;
+  --elysia-gold: #ffd792;
+  --elysia-shadow: 0 28px 90px rgba(2, 10, 24, 0.5);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -23,6 +39,8 @@ html {
 }
 
 body.elysia-page {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   min-height: 100vh;
   color: var(--elysia-text);
@@ -33,6 +51,14 @@ body.elysia-page {
     radial-gradient(circle at 78% 74%, rgba(251, 155, 210, 0.22), transparent 28%),
     linear-gradient(160deg, #fffafc 0%, #fff0f8 48%, #fde9f4 100%);
   overflow-x: hidden;
+}
+
+html[data-theme="dark"] body.elysia-page {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(73, 131, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 84% 12%, rgba(111, 198, 255, 0.14), transparent 26%),
+    radial-gradient(circle at 74% 76%, rgba(88, 118, 255, 0.16), transparent 28%),
+    linear-gradient(160deg, #071327 0%, #091935 46%, #0e2448 100%);
 }
 
 body.elysia-page::before,
@@ -57,11 +83,191 @@ body.elysia-page::after {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.03));
 }
 
+html[data-theme="dark"] body.elysia-page::before {
+  background-image:
+    linear-gradient(rgba(182, 212, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(182, 212, 255, 0.045) 1px, transparent 1px);
+  opacity: 0.28;
+}
+
+html[data-theme="dark"] body.elysia-page::after {
+  background: linear-gradient(180deg, rgba(5, 16, 34, 0.18), transparent 18%, transparent 82%, rgba(5, 16, 34, 0.22));
+}
+
+body.elysia-intro-active {
+  overflow: hidden;
+}
+
+.elysia-intro {
+  --elysia-intro-line-count: 9;
+  --elysia-intro-line-height: 1.5em;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 580ms ease, visibility 0s linear 580ms;
+}
+
+html[data-elysia-intro="armed"] .elysia-intro,
+html[data-elysia-intro="running"] .elysia-intro,
+html[data-elysia-intro="exiting"] .elysia-intro {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+html[data-elysia-intro="exiting"] .elysia-intro {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.elysia-intro__backdrop,
+.elysia-intro__video {
+  position: absolute;
+  inset: 0;
+}
+
+.elysia-intro__backdrop {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 221, 241, 0.36), transparent 28%),
+    radial-gradient(circle at 82% 16%, rgba(255, 233, 196, 0.22), transparent 24%),
+    linear-gradient(180deg, #fffdfd 0%, #fff4fa 40%, #fce4f1 100%);
+}
+
+html[data-theme="dark"] .elysia-intro__backdrop {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(102, 157, 255, 0.24), transparent 28%),
+    radial-gradient(circle at 82% 16%, rgba(154, 212, 255, 0.18), transparent 24%),
+    linear-gradient(180deg, #08152d 0%, #0a1c3c 42%, #0d274c 100%);
+}
+
+.elysia-intro__backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 22%, rgba(255, 255, 255, 0.04));
+}
+
+html[data-theme="dark"] .elysia-intro__backdrop::after {
+  background:
+    radial-gradient(circle at center, rgba(188, 223, 255, 0.1), transparent 46%),
+    linear-gradient(180deg, rgba(200, 225, 255, 0.08), transparent 22%, rgba(4, 16, 34, 0.12));
+}
+
+.elysia-intro__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  filter: saturate(1.04) contrast(1.04);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.elysia-intro.is-video-ready .elysia-intro__video {
+  opacity: 0.96;
+  transform: scale(1);
+}
+
+.elysia-intro__code-panel {
+  position: absolute;
+  right: clamp(18px, 4vw, 46px);
+  bottom: clamp(18px, 5vw, 42px);
+  width: min(520px, calc(100vw - 32px));
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.elysia-intro.is-code-active .elysia-intro__code-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.elysia-intro__code-shell {
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(241, 177, 209, 0.46);
+  background: rgba(255, 251, 253, 0.84);
+  box-shadow: 0 24px 70px rgba(193, 112, 161, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+html[data-theme="dark"] .elysia-intro__code-shell {
+  border-color: rgba(146, 192, 255, 0.36);
+  background: rgba(8, 18, 38, 0.82);
+  box-shadow: 0 28px 80px rgba(3, 9, 24, 0.48);
+}
+
+.elysia-intro__code-title {
+  margin: 0;
+  padding: 0.92rem 1.12rem 0.72rem;
+  border-bottom: 1px solid rgba(229, 165, 198, 0.28);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.79rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(112, 52, 89, 0.86);
+}
+
+html[data-theme="dark"] .elysia-intro__code-title {
+  border-bottom-color: rgba(146, 192, 255, 0.18);
+  color: rgba(219, 234, 255, 0.84);
+}
+
+.elysia-intro__code.language-cpp {
+  min-height: calc(var(--elysia-intro-line-count) * var(--elysia-intro-line-height) + 2rem);
+  margin: 0;
+  padding: 1rem 1.12rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+  font-size: clamp(0.8rem, 1.2vw, 0.96rem);
+  line-height: var(--elysia-intro-line-height);
+}
+
+.elysia-intro__code.language-cpp > code {
+  display: block;
+}
+
+.elysia-intro__code.language-cpp code[class*="language-"],
+.elysia-intro__code.language-cpp pre[class*="language-"] {
+  text-shadow: none;
+}
+
+.elysia-intro-code__line {
+  display: block;
+  min-height: var(--elysia-intro-line-height);
+  white-space: pre;
+  opacity: 0;
+  transform: translateY(12px);
+  clip-path: inset(0 0 100% 0);
+  transition: opacity 280ms ease, transform 280ms ease, clip-path 280ms ease;
+}
+
+.elysia-intro-code__line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
+}
+
 /* Re-skin the shared site nav with Elysia's palette while keeping the site-wide nav layout. */
 .elysia-page .nav {
   background: linear-gradient(180deg, rgba(255, 248, 252, 0.92), rgba(255, 248, 252, 0.64));
   border-bottom: 1px solid rgba(219, 120, 176, 0.18);
   backdrop-filter: blur(20px);
+}
+
+html[data-theme="dark"] .elysia-page .nav {
+  background: linear-gradient(180deg, rgba(9, 21, 44, 0.92), rgba(9, 21, 44, 0.66));
+  border-bottom-color: rgba(146, 192, 255, 0.18);
 }
 
 .elysia-page .brand {
@@ -71,10 +277,19 @@ body.elysia-page::after {
   box-shadow: 0 10px 30px rgba(204, 132, 177, 0.14);
 }
 
+html[data-theme="dark"] .elysia-page .brand {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 12px 34px rgba(3, 10, 24, 0.28);
+}
+
 .elysia-page .brand:hover {
   border-color: var(--elysia-border-strong);
   background: rgba(255, 255, 255, 0.48);
   transform: translateY(-1px);
+}
+
+html[data-theme="dark"] .elysia-page .brand:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .elysia-page .brand:focus-visible {
@@ -87,6 +302,13 @@ body.elysia-page::after {
     radial-gradient(circle at 30% 30%, #ffffff, rgba(255, 246, 253, 0.72) 34%, transparent 64%),
     linear-gradient(135deg, #ffd6ef 0%, #ff9cd1 48%, #ff71ba 100%);
   box-shadow: 0 0 16px rgba(255, 136, 204, 0.34), 0 0 28px rgba(255, 163, 218, 0.16);
+}
+
+html[data-theme="dark"] .elysia-page .brand__dot {
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff, rgba(231, 243, 255, 0.74) 34%, transparent 64%),
+    linear-gradient(135deg, #9cc9ff 0%, #6aaeff 48%, #95e4ff 100%);
+  box-shadow: 0 0 16px rgba(132, 190, 255, 0.34), 0 0 28px rgba(144, 225, 255, 0.16);
 }
 
 .elysia-page .brand__text,
@@ -105,16 +327,30 @@ body.elysia-page::after {
   background: rgba(255, 255, 255, 0.26);
 }
 
+html[data-theme="dark"] .elysia-page .nav__right a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .elysia-page .nav__right .btn,
 .elysia-page .lang-select {
   border: 1px solid var(--elysia-border);
   background-color: rgba(255, 255, 255, 0.18);
 }
 
+html[data-theme="dark"] .elysia-page .nav__right .btn,
+html[data-theme="dark"] .elysia-page .lang-select {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .elysia-page .nav__right .btn:hover,
 .elysia-page .lang-select:hover {
   border-color: var(--elysia-border-strong);
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+html[data-theme="dark"] .elysia-page .nav__right .btn:hover,
+html[data-theme="dark"] .elysia-page .lang-select:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .elysia-page .nav__right .btn:focus-visible,
@@ -142,12 +378,17 @@ body.elysia-page::after {
   color: var(--elysia-text);
 }
 
+html[data-theme="dark"] .elysia-page .lang-select option {
+  background: #0b1730;
+  color: var(--elysia-text);
+}
+
 .elysia-aura,
 .elysia-stars {
   position: fixed;
   pointer-events: none;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
 }
 
 .elysia-aura {
@@ -160,9 +401,17 @@ body.elysia-page::after {
   animation: elysiaDriftOne 16s ease-in-out infinite alternate;
 }
 
+html[data-theme="dark"] .elysia-aura--one {
+  background: radial-gradient(circle at 15% 30%, rgba(92, 154, 255, 0.22), transparent 22%);
+}
+
 .elysia-aura--two {
   background: radial-gradient(circle at 82% 18%, rgba(255, 219, 164, 0.16), transparent 18%);
   animation: elysiaDriftTwo 22s ease-in-out infinite alternate;
+}
+
+html[data-theme="dark"] .elysia-aura--two {
+  background: radial-gradient(circle at 82% 18%, rgba(121, 212, 255, 0.14), transparent 18%);
 }
 
 .elysia-stars {
@@ -175,6 +424,10 @@ body.elysia-page::after {
     radial-gradient(circle at 92% 34%, rgba(255, 244, 222, 0.55) 0 1px, transparent 1.8px);
   animation: elysiaTwinkle 12s ease-in-out infinite alternate;
   opacity: 0.65;
+}
+
+html[data-theme="dark"] .elysia-stars {
+  opacity: 0.82;
 }
 
 body.fx-off .elysia-aura,
@@ -300,8 +553,15 @@ body.fx-off .elysia-brand__crest::after {
 }
 
 .elysia-shell {
+  position: relative;
+  z-index: 1;
   padding-top: 0.75rem;
   padding-bottom: 4rem;
+}
+
+.elysia-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .elysia-hero {
@@ -316,10 +576,36 @@ body.fx-off .elysia-brand__crest::after {
   display: grid;
   place-items: center;
   text-align: center;
+  gap: 1.5rem;
 }
 
 .elysia-minimal-hero__title {
   margin: 0;
+}
+
+.elysia-bottom-showcase {
+  width: min(920px, 100%);
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid var(--elysia-border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
+    var(--elysia-panel);
+  box-shadow: var(--elysia-shadow);
+}
+
+html[data-theme="dark"] .elysia-bottom-showcase {
+  background:
+    linear-gradient(180deg, rgba(194, 220, 255, 0.06), transparent 22%),
+    var(--elysia-panel);
+}
+
+.elysia-bottom-showcase__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 6;
+  object-fit: cover;
 }
 
 .elysia-hero__copy,
@@ -851,6 +1137,25 @@ body.fx-off .elysia-brand__crest::after {
 }
 
 @media (max-width: 640px) {
+  .elysia-intro__code-panel {
+    right: 16px;
+    bottom: 16px;
+    width: calc(100vw - 32px);
+  }
+
+  .elysia-intro__code-shell {
+    border-radius: 20px;
+  }
+
+  .elysia-intro__code-title {
+    padding: 0.85rem 1rem 0.66rem;
+  }
+
+  .elysia-intro__code.language-cpp {
+    padding: 0.92rem 1rem;
+    font-size: 0.8rem;
+  }
+
   .elysia-shell {
     padding-top: 0;
     padding-bottom: 3rem;
@@ -877,6 +1182,16 @@ body.fx-off .elysia-brand__crest::after {
 
   .elysia-nav {
     padding: 0.9rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elysia-intro,
+  .elysia-intro__video,
+  .elysia-intro__code-panel,
+  .elysia-intro-code__line {
+    transition-duration: 1ms !important;
+    animation: none !important;
   }
 }
 

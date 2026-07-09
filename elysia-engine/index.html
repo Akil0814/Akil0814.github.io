@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light" data-i18n-page="elysia-engine/index" data-i18n-base="..">
+<html lang="en" data-theme="dark" data-i18n-page="elysia-engine/index" data-i18n-base="..">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,44 @@
   <link rel="icon" type="image/png" sizes="1024x1024" href="../icon/elysia_1024.png" />
   <link rel="apple-touch-icon" href="../icon/elysia_1024.png" />
   <title data-i18n="ElysiaEngine.title">Elysia Engine</title>
+  <script>
+    (function () {
+      const LANGUAGE_MAP = { zh: "zh-CN", ja: "ja", en: "en" };
+      const root = document.documentElement;
+
+      try {
+        const theme = localStorage.getItem("theme") === "light" ? "light" : "dark";
+        const fxEnabled = (localStorage.getItem("fx") || "on") !== "off";
+        const savedLanguage = localStorage.getItem("lang") || "en";
+        const prismThemeHref = theme === "dark" ? "../assets/prism/prism-dark.css" : "../assets/prism/prism-light.css";
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        const prismThemeLink = document.createElement("link");
+
+        root.setAttribute("data-theme", theme);
+        root.setAttribute("lang", LANGUAGE_MAP[savedLanguage] || "en");
+        root.setAttribute("data-elysia-intro", fxEnabled ? "armed" : "skip");
+
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute("content", theme === "dark" ? "#091934" : "#fff3f8");
+        }
+
+        prismThemeLink.id = "elysiaPrismThemeLink";
+        prismThemeLink.rel = "stylesheet";
+        prismThemeLink.href = prismThemeHref;
+        document.head.appendChild(prismThemeLink);
+
+        window.__elysiaIntroFailSafe = window.setTimeout(function () {
+          if (root.getAttribute("data-elysia-intro") !== "done") {
+            root.setAttribute("data-elysia-intro", "skip");
+          }
+        }, 5000);
+      } catch (_) {
+        root.setAttribute("data-theme", "dark");
+        root.setAttribute("lang", "en");
+        root.setAttribute("data-elysia-intro", "skip");
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
@@ -15,9 +53,30 @@
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="./_shared/base.css?v=20260708a">
+  <link rel="stylesheet" href="./_shared/base.css?v=20260709a">
 </head>
 <body class="elysia-page">
+  <div class="elysia-intro" id="elysiaIntro" aria-hidden="true">
+    <div class="elysia-intro__backdrop"></div>
+    <video
+      class="elysia-intro__video"
+      id="elysiaIntroVideo"
+      muted
+      autoplay
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    >
+      <source src="./res/elysia_intro.mp4" type="video/mp4" />
+    </video>
+    <div class="elysia-intro__code-panel" id="elysiaIntroCodePanel" aria-hidden="true">
+      <div class="elysia-intro__code-shell">
+        <p class="elysia-intro__code-title">main.cpp</p>
+        <pre class="elysia-intro__code language-cpp"><code id="elysiaIntroCode"></code></pre>
+      </div>
+    </div>
+  </div>
+
   <div class="elysia-aura elysia-aura--one" aria-hidden="true"></div>
   <div class="elysia-aura elysia-aura--two" aria-hidden="true"></div>
   <div class="elysia-stars" aria-hidden="true"></div>
@@ -49,6 +108,9 @@
   <main class="wrap elysia-shell">
     <section class="elysia-minimal-hero">
       <h1 class="elysia-title elysia-minimal-hero__title" data-i18n="ElysiaEngine.title">Elysia Engine</h1>
+      <div class="elysia-bottom-showcase">
+        <img class="elysia-bottom-showcase__image" src="../image/elysia_bottom.jpg" alt="Elysia bottom artwork" />
+      </div>
     </section>
   </main>
 
@@ -61,6 +123,8 @@
   </footer>
 
   <script src="../assets/js/i18n.js"></script>
-  <script src="./_shared/base.js?v=20260708a"></script>
+  <script src="../assets/prism/prism.js"></script>
+  <script src="./_shared/base.js?v=20260709a"></script>
+  <script src="./index_intro.js?v=20260709a"></script>
 </body>
 </html>

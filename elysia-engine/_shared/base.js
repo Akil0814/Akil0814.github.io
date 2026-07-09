@@ -14,7 +14,7 @@
   }
 
   function ensureThemeColorMeta(theme) {
-    const themeColor = theme === "light" ? "#fff3f8" : "#170d19";
+    const themeColor = theme === "light" ? "#fff3f8" : "#091934";
     let metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
     if (!metaThemeColor) {
