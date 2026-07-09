@@ -57,6 +57,91 @@ body.elysia-page::after {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.03));
 }
 
+/* Re-skin the shared site nav with Elysia's palette while keeping the site-wide nav layout. */
+.elysia-page .nav {
+  background: linear-gradient(180deg, rgba(255, 248, 252, 0.92), rgba(255, 248, 252, 0.64));
+  border-bottom: 1px solid rgba(219, 120, 176, 0.18);
+  backdrop-filter: blur(20px);
+}
+
+.elysia-page .brand {
+  color: var(--elysia-text);
+  border: 1px solid var(--elysia-border);
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 10px 30px rgba(204, 132, 177, 0.14);
+}
+
+.elysia-page .brand:hover {
+  border-color: var(--elysia-border-strong);
+  background: rgba(255, 255, 255, 0.48);
+  transform: translateY(-1px);
+}
+
+.elysia-page .brand:focus-visible {
+  border-color: var(--elysia-accent-strong);
+  box-shadow: 0 0 0 2px rgba(232, 117, 183, 0.2);
+}
+
+.elysia-page .brand__dot {
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff, rgba(255, 246, 253, 0.72) 34%, transparent 64%),
+    linear-gradient(135deg, #ffd6ef 0%, #ff9cd1 48%, #ff71ba 100%);
+  box-shadow: 0 0 16px rgba(255, 136, 204, 0.34), 0 0 28px rgba(255, 163, 218, 0.16);
+}
+
+.elysia-page .brand__text,
+.elysia-page .nav__right a,
+.elysia-page .nav__right .btn,
+.elysia-page .lang-select {
+  color: var(--elysia-text);
+}
+
+.elysia-page .nav__right a {
+  opacity: 0.9;
+}
+
+.elysia-page .nav__right a:hover {
+  border-color: var(--elysia-border);
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.elysia-page .nav__right .btn,
+.elysia-page .lang-select {
+  border: 1px solid var(--elysia-border);
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.elysia-page .nav__right .btn:hover,
+.elysia-page .lang-select:hover {
+  border-color: var(--elysia-border-strong);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.elysia-page .nav__right .btn:focus-visible,
+.elysia-page .lang-select:focus {
+  border-color: var(--elysia-accent-strong);
+  box-shadow: 0 0 0 2px rgba(232, 117, 183, 0.18);
+}
+
+.elysia-page .lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(255, 255, 255, 0.18);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--elysia-text-muted) 50%),
+    linear-gradient(135deg, var(--elysia-text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) calc(50% + 1px),
+    calc(100% - 12px) calc(50% + 1px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.elysia-page .lang-select option {
+  background: #fff7fb;
+  color: var(--elysia-text);
+}
+
 .elysia-aura,
 .elysia-stars {
   position: fixed;
@@ -215,7 +300,7 @@ body.fx-off .elysia-brand__crest::after {
 }
 
 .elysia-shell {
-  padding-top: 2.25rem;
+  padding-top: 0.75rem;
   padding-bottom: 4rem;
 }
 
@@ -756,7 +841,7 @@ body.fx-off .elysia-brand__crest::after {
 
 @media (max-width: 640px) {
   .elysia-shell {
-    padding-top: 1.25rem;
+    padding-top: 0;
     padding-bottom: 3rem;
   }
 
