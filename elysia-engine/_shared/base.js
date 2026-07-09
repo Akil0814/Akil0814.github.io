@@ -29,6 +29,7 @@
   function init(options = {}) {
     const config = {
       defaultTheme: "dark",
+      fixedTheme: null,
       defaultFx: "on",
       defaultLang: "en",
       themeButtonId: "themeBtn",
@@ -40,6 +41,7 @@
       onLangChange: null,
       ...options,
     };
+    const fixedTheme = normalizeTheme(config.fixedTheme, null);
 
     const themeButton = document.getElementById(config.themeButtonId);
     const fxButton = document.getElementById(config.fxButtonId);
@@ -47,13 +49,16 @@
     const yearElement = document.getElementById(config.yearElementId);
 
     function getTheme() {
+      if (fixedTheme) return fixedTheme;
       return normalizeTheme(localStorage.getItem("theme"), config.defaultTheme);
     }
 
-    function setTheme(theme) {
-      const normalizedTheme = normalizeTheme(theme, config.defaultTheme);
+    function setTheme(theme, { persist = true } = {}) {
+      const normalizedTheme = fixedTheme || normalizeTheme(theme, config.defaultTheme);
       document.documentElement.setAttribute("data-theme", normalizedTheme);
-      localStorage.setItem("theme", normalizedTheme);
+      if (persist && !fixedTheme) {
+        localStorage.setItem("theme", normalizedTheme);
+      }
       ensureThemeColorMeta(normalizedTheme);
       if (typeof config.onThemeChange === "function") {
         config.onThemeChange(normalizedTheme);
@@ -98,12 +103,12 @@
     };
 
     const onStorageChange = (event) => {
-      if (event.key === "theme" && event.newValue) setTheme(event.newValue);
+      if (!fixedTheme && event.key === "theme" && event.newValue) setTheme(event.newValue);
       if (event.key === "fx" && event.newValue) setFx(event.newValue === "on");
       if (event.key === "lang" && event.newValue) setLang(event.newValue);
     };
 
-    setTheme(getTheme());
+    setTheme(getTheme(), { persist: false });
     setFx(getFx());
     setLang(getLang());
 
@@ -111,7 +116,9 @@
       yearElement.textContent = String(new Date().getFullYear());
     }
 
-    themeButton?.addEventListener("click", onThemeButtonClick);
+    if (!fixedTheme) {
+      themeButton?.addEventListener("click", onThemeButtonClick);
+    }
     fxButton?.addEventListener("click", onFxButtonClick);
     languageSelect?.addEventListener("change", onLanguageChange);
     window.addEventListener("storage", onStorageChange);
@@ -124,7 +131,9 @@
       getLang,
       setLang,
       destroy() {
-        themeButton?.removeEventListener("click", onThemeButtonClick);
+        if (!fixedTheme) {
+          themeButton?.removeEventListener("click", onThemeButtonClick);
+        }
         fxButton?.removeEventListener("click", onFxButtonClick);
         languageSelect?.removeEventListener("change", onLanguageChange);
         window.removeEventListener("storage", onStorageChange);

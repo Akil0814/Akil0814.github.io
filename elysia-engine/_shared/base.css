@@ -1,20 +1,4 @@
 :root {
-  --elysia-bg: #160c18;
-  --elysia-bg-soft: rgba(45, 18, 44, 0.72);
-  --elysia-panel: rgba(43, 18, 45, 0.72);
-  --elysia-panel-strong: rgba(58, 23, 58, 0.86);
-  --elysia-border: rgba(255, 202, 233, 0.28);
-  --elysia-border-strong: rgba(255, 223, 243, 0.48);
-  --elysia-text: #fff6fd;
-  --elysia-text-muted: rgba(255, 240, 250, 0.76);
-  --elysia-accent: #ff96cf;
-  --elysia-accent-soft: #ffc7ea;
-  --elysia-accent-strong: #ff6fbc;
-  --elysia-gold: #ffe3b2;
-  --elysia-shadow: 0 24px 80px rgba(19, 5, 21, 0.42);
-}
-
-html[data-theme="light"] {
   --elysia-bg: #fff7fb;
   --elysia-bg-soft: rgba(255, 242, 250, 0.9);
   --elysia-panel: rgba(255, 248, 253, 0.86);
@@ -44,19 +28,11 @@ body.elysia-page {
   color: var(--elysia-text);
   font-family: "Manrope", sans-serif;
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 170, 222, 0.22), transparent 28%),
-    radial-gradient(circle at 85% 12%, rgba(255, 228, 191, 0.16), transparent 24%),
-    radial-gradient(circle at 78% 74%, rgba(255, 130, 193, 0.16), transparent 26%),
-    linear-gradient(160deg, #120913 0%, #1d0d20 38%, #2a0d2f 100%);
-  overflow-x: hidden;
-}
-
-html[data-theme="light"] body.elysia-page {
-  background:
     radial-gradient(circle at 18% 18%, rgba(255, 178, 222, 0.38), transparent 30%),
     radial-gradient(circle at 85% 12%, rgba(255, 229, 187, 0.28), transparent 26%),
     radial-gradient(circle at 78% 74%, rgba(251, 155, 210, 0.22), transparent 28%),
     linear-gradient(160deg, #fffafc 0%, #fff0f8 48%, #fde9f4 100%);
+  overflow-x: hidden;
 }
 
 body.elysia-page::before,
@@ -134,13 +110,8 @@ body.fx-off .elysia-brand__crest::after {
   gap: 1rem;
   padding: 1rem 1.25rem;
   backdrop-filter: blur(20px);
-  background: linear-gradient(180deg, rgba(34, 13, 33, 0.9), rgba(34, 13, 33, 0.55));
-  border-bottom: 1px solid rgba(255, 221, 239, 0.14);
-}
-
-html[data-theme="light"] .elysia-nav {
   background: linear-gradient(180deg, rgba(255, 248, 252, 0.92), rgba(255, 248, 252, 0.64));
-  border-bottom-color: rgba(219, 120, 176, 0.18);
+  border-bottom: 1px solid rgba(219, 120, 176, 0.18);
 }
 
 .elysia-nav__left,

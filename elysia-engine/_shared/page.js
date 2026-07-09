@@ -6,6 +6,7 @@
     }
 
     const pageCore = window.ElysiaBase.init({
+      fixedTheme: "light",
       onLangChange(language) {
         if (typeof window.applyI18n !== "function") return;
         window.applyI18n(language).catch((error) => {
