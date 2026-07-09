@@ -438,6 +438,15 @@ section[id]{
   position: relative;
   z-index: 1;
 }
+.featured-project__copy{
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+.featured-project__body{
+  min-width: 0;
+}
 .featured-project__meta{
   display:flex;
   align-items:center;
@@ -453,8 +462,8 @@ section[id]{
   line-height: 0;
 }
 .featured-project__icon{
-  width: 34px;
-  height: 34px;
+  width: 88px;
+  height: 88px;
   object-fit: contain;
 }
 .featured-project__icon--light{
