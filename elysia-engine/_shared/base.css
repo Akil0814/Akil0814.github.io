@@ -311,6 +311,17 @@ body.fx-off .elysia-brand__crest::after {
   align-items: stretch;
 }
 
+.elysia-minimal-hero {
+  min-height: calc(100vh - 180px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.elysia-minimal-hero__title {
+  margin: 0;
+}
+
 .elysia-hero__copy,
 .elysia-hero__aside,
 .elysia-panel,
