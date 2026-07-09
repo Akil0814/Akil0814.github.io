@@ -81,19 +81,7 @@
   <div class="elysia-stars" aria-hidden="true"></div>
 
   <header class="nav">
-    <div class="nav__left">
-      <a class="brand" href="../index.html" aria-label="Home">
-        <span class="brand__dot"></span>
-        <span class="brand__text">AKIL</span>
-      </a>
-    </div>
-
     <nav class="nav__right">
-      <a href="./renderer.html" data-i18n="ElysiaEngine.nav.renderer">Renderer</a>
-      <a href="./scene-system.html" data-i18n="ElysiaEngine.nav.scene">Scene</a>
-      <a href="./tooling.html" data-i18n="ElysiaEngine.nav.tooling">Tooling</a>
-      <a href="./roadmap.html" data-i18n="ElysiaEngine.nav.roadmap_page">Roadmap</a>
-
       <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
         <option value="zh" data-i18n="common.lang.zh">&#20013;&#25991;</option>
         <option value="ja" data-i18n="common.lang.ja">&#26085;&#26412;&#35486;</option>
@@ -101,6 +89,7 @@
       </select>
 
       <button id="toggleFx" class="btn btn--ghost" type="button" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="btn" type="button" data-i18n="common.controls.theme">Theme</button>
     </nav>
   </header>
 
@@ -108,7 +97,13 @@
     <section class="elysia-landing-hero">
       <div class="elysia-landing-hero__stage">
         <div class="elysia-landing-hero__copy">
-          <h1 class="elysia-title elysia-landing-hero__title" data-i18n="ElysiaEngine.title">Elysia Engine</h1>
+          <div class="elysia-landing-hero__title-lockup">
+            <span class="elysia-landing-hero__title-mark" aria-hidden="true">
+              <img class="elysia-landing-hero__title-icon elysia-landing-hero__title-icon--light" src="../icon/elysia_128.png" alt="" />
+              <img class="elysia-landing-hero__title-icon elysia-landing-hero__title-icon--dark" src="../icon/elysia_white_128.png" alt="" />
+            </span>
+            <h1 class="elysia-title elysia-landing-hero__title" data-i18n="ElysiaEngine.title">Elysia Engine</h1>
+          </div>
         </div>
       </div>
       <a class="elysia-scroll-cue" href="#elysia-content" aria-label="Scroll to content skeleton">

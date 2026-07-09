@@ -358,6 +358,7 @@ html[data-theme="dark"] .elysia-intro-code__line {
 
 /* Re-skin the shared site nav with Elysia's palette while keeping the site-wide nav layout. */
 .elysia-page .nav {
+  justify-content: flex-end;
   background: linear-gradient(180deg, rgba(255, 248, 252, 0.92), rgba(255, 248, 252, 0.64));
   border-bottom: 1px solid rgba(219, 120, 176, 0.18);
   backdrop-filter: blur(20px);
@@ -407,6 +408,10 @@ html[data-theme="dark"] .elysia-page .brand__dot {
     radial-gradient(circle at 30% 30%, #ffffff, rgba(231, 243, 255, 0.74) 34%, transparent 64%),
     linear-gradient(135deg, #9cc9ff 0%, #6aaeff 48%, #95e4ff 100%);
   box-shadow: 0 0 16px rgba(132, 190, 255, 0.34), 0 0 28px rgba(144, 225, 255, 0.16);
+}
+
+.elysia-page .nav__right {
+  margin-left: auto;
 }
 
 .elysia-page .brand__text,
@@ -728,6 +733,38 @@ html[data-theme="dark"] .elysia-landing-hero__stage::before {
   min-height: 100%;
   text-align: center;
   padding: 0;
+}
+
+.elysia-landing-hero__title-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 1.6rem);
+}
+
+.elysia-landing-hero__title-mark {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(72px, 8vw, 108px);
+  height: clamp(72px, 8vw, 108px);
+}
+
+.elysia-landing-hero__title-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.elysia-landing-hero__title-icon--dark {
+  display: none;
+}
+
+html[data-theme="dark"] .elysia-landing-hero__title-icon--light {
+  display: none;
+}
+
+html[data-theme="dark"] .elysia-landing-hero__title-icon--dark {
+  display: block;
 }
 
 .elysia-landing-hero__eyebrow {
@@ -1581,6 +1618,10 @@ html[data-theme="dark"] .elysia-bottom-showcase {
     min-height: auto;
   }
 
+  .elysia-landing-hero__title-lockup {
+    gap: 1rem;
+  }
+
   .elysia-landing-hero__art {
     width: min(440px, 72vw);
     margin-bottom: -0.9rem;
@@ -1605,6 +1646,16 @@ html[data-theme="dark"] .elysia-bottom-showcase {
 
   .elysia-intro__code-shell {
     border-radius: 0;
+  }
+
+  .elysia-landing-hero__title-lockup {
+    flex-direction: column;
+  }
+
+  .elysia-landing-hero__title-mark {
+    width: 74px;
+    height: 74px;
+    border-radius: 22px;
   }
 
   .elysia-intro__code-title {
