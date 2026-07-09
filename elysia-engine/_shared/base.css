@@ -176,7 +176,7 @@ html[data-theme="dark"] .elysia-intro__backdrop::after {
 
 .elysia-intro__code-panel {
   position: absolute;
-  right: clamp(18px, 4vw, 46px);
+  right: clamp(10px, 2.4vw, 28px);
   bottom: clamp(18px, 5vw, 42px);
   width: min(520px, calc(100vw - 32px));
   opacity: 0;
@@ -1236,7 +1236,7 @@ html[data-theme="dark"] .elysia-bottom-showcase {
 
 @media (max-width: 640px) {
   .elysia-intro__code-panel {
-    right: 16px;
+    right: 10px;
     bottom: 16px;
     width: calc(100vw - 32px);
   }

@@ -177,7 +177,7 @@
       codePanelElement?.setAttribute("aria-hidden", "false");
       introElement.classList.add("is-code-active");
 
-      const revealOrder = codeLines.slice().reverse();
+      const revealOrder = codeLines;
       if (revealOrder.length === 0) {
         beginExit();
         return;
