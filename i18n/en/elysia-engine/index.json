@@ -7,8 +7,17 @@
       "tooling": "Tooling",
       "roadmap_page": "Roadmap"
     },
+    "modules": {
+      "eyebrow": "Engine Module Index",
+      "title": "Engine Modules",
+      "aria_label": "Engine modules",
+      "scene": "Scene",
+      "resources": "Resource Loading",
+      "input": "Input",
+      "ui": "UI"
+    },
     "footer": {
-      "page": "Elysia Engine skeleton page"
+      "page": "Elysia Engine module index"
     }
   }
 }

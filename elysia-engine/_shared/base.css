@@ -830,69 +830,6 @@ html[data-theme="dark"] .elysia-landing-hero__title {
   color: var(--elysia-text);
 }
 
-.elysia-landing-hero__art {
-  position: relative;
-  z-index: 1;
-  justify-self: center;
-  width: min(560px, 48vw);
-  margin-top: 0;
-  margin-bottom: -2rem;
-  pointer-events: none;
-}
-
-.elysia-skeleton-visual {
-  display: grid;
-  justify-items: center;
-  margin-top: clamp(0.4rem, 1vw, 0.8rem);
-  margin-bottom: clamp(0.8rem, 2vw, 1.4rem);
-}
-
-.elysia-landing-hero__glow {
-  position: absolute;
-  inset: 8% 12% 16% 12%;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle, rgba(255, 182, 224, 0.42), transparent 54%),
-    radial-gradient(circle at 56% 42%, rgba(255, 236, 196, 0.24), transparent 34%);
-  filter: blur(34px);
-}
-
-html[data-theme="dark"] .elysia-landing-hero__glow {
-  background:
-    radial-gradient(circle, rgba(132, 187, 255, 0.28), transparent 54%),
-    radial-gradient(circle at 56% 42%, rgba(170, 220, 255, 0.16), transparent 34%);
-}
-
-.elysia-landing-hero__orb {
-  position: absolute;
-  left: 50%;
-  top: 16%;
-  width: 156px;
-  height: 156px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 229, 243, 0.22);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 66%);
-  box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.08);
-  transform: translateX(-50%);
-}
-
-html[data-theme="dark"] .elysia-landing-hero__orb {
-  border-color: rgba(195, 222, 255, 0.18);
-  background: radial-gradient(circle, rgba(199, 226, 255, 0.12), transparent 66%);
-}
-
-.elysia-landing-hero__stand {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 26px 54px rgba(219, 120, 176, 0.26));
-}
-
-html[data-theme="dark"] .elysia-landing-hero__stand {
-  filter: drop-shadow(0 30px 56px rgba(4, 12, 30, 0.54));
-}
-
 .elysia-scroll-cue {
   justify-self: center;
   align-self: end;
@@ -918,143 +855,224 @@ html[data-theme="dark"] .elysia-landing-hero__stand {
   text-transform: uppercase;
 }
 
-.elysia-skeleton-section {
-  display: grid;
-  gap: 1.65rem;
+.elysia-module-section {
   padding-top: 0.4rem;
 }
 
-.elysia-section__head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1.2rem;
-}
-
-.elysia-section__title {
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 2.7rem);
-  line-height: 0.96;
-}
-
-.elysia-section__desc {
-  margin: 0;
-  max-width: 48ch;
-  color: var(--elysia-text-muted);
-  line-height: 1.75;
-}
-
-.elysia-skeleton-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem;
-}
-
-.elysia-skeleton-card {
+.elysia-module-showcase {
   position: relative;
   overflow: hidden;
   display: grid;
-  gap: 1.2rem;
-  min-height: 250px;
-  padding: 1.5rem;
-  border-radius: 30px;
+  grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.12fr);
+  min-height: 610px;
+  border-radius: 34px;
   border: 1px solid var(--elysia-border);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 24%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), transparent 38%),
     var(--elysia-panel);
   box-shadow: var(--elysia-shadow);
 }
 
-.elysia-skeleton-card::after {
-  content: "";
+html[data-theme="dark"] .elysia-module-showcase {
+  background:
+    linear-gradient(145deg, rgba(194, 220, 255, 0.07), transparent 38%),
+    var(--elysia-panel);
+}
+
+.elysia-module-showcase__visual {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 610px;
+  border-right: 1px solid var(--elysia-border);
+  background:
+    radial-gradient(circle at 48% 34%, rgba(255, 219, 239, 0.3), transparent 30%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 203, 233, 0.05));
+}
+
+html[data-theme="dark"] .elysia-module-showcase__visual {
+  background:
+    radial-gradient(circle at 48% 34%, rgba(136, 191, 255, 0.2), transparent 31%),
+    linear-gradient(160deg, rgba(111, 168, 235, 0.08), rgba(4, 14, 34, 0.08));
+}
+
+.elysia-module-showcase__glow {
   position: absolute;
-  inset: auto -10% -18% 40%;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255, 187, 227, 0.18), transparent 70%);
+  inset: 8% 2% 4%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 174, 220, 0.38), transparent 58%),
+    radial-gradient(circle at 58% 42%, rgba(255, 229, 183, 0.2), transparent 34%);
+  filter: blur(30px);
   pointer-events: none;
 }
 
-html[data-theme="dark"] .elysia-skeleton-card::after {
-  background: radial-gradient(circle, rgba(129, 184, 255, 0.14), transparent 70%);
+html[data-theme="dark"] .elysia-module-showcase__glow {
+  background:
+    radial-gradient(circle, rgba(122, 180, 255, 0.26), transparent 58%),
+    radial-gradient(circle at 58% 42%, rgba(153, 218, 255, 0.14), transparent 34%);
 }
 
-.elysia-skeleton-card__top,
-.elysia-skeleton-card__footer {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  flex-wrap: wrap;
+.elysia-module-showcase__orb {
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  width: clamp(150px, 16vw, 210px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 229, 243, 0.22);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 66%);
+  box-shadow: inset 0 0 28px rgba(255, 255, 255, 0.08);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
-.elysia-skeleton-card__dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ffb0da, #ff71ba);
-  box-shadow: 0 0 18px rgba(255, 135, 204, 0.32);
+html[data-theme="dark"] .elysia-module-showcase__orb {
+  border-color: rgba(195, 222, 255, 0.18);
+  background: radial-gradient(circle, rgba(199, 226, 255, 0.1), transparent 66%);
 }
 
-html[data-theme="dark"] .elysia-skeleton-card__dot {
-  background: linear-gradient(135deg, #9cc9ff, #95e4ff);
-  box-shadow: 0 0 18px rgba(132, 190, 255, 0.28);
+.elysia-module-showcase__character {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: -1.5%;
+  display: block;
+  width: min(690px, 56vw);
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 28px 54px rgba(219, 120, 176, 0.25));
+  pointer-events: none;
+  user-select: none;
 }
 
-.elysia-skeleton-card__eyebrow {
+html[data-theme="dark"] .elysia-module-showcase__character {
+  filter: drop-shadow(0 30px 56px rgba(4, 12, 30, 0.54));
+}
+
+.elysia-module-showcase__index {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  min-width: 0;
+  padding: clamp(2rem, 5vw, 4.5rem);
+}
+
+.elysia-module-showcase__header {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.elysia-module-showcase__eyebrow {
+  margin: 0;
   font-family: "JetBrains Mono", monospace;
   font-size: 0.74rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--elysia-gold);
 }
 
-.elysia-skeleton-card__title {
-  position: relative;
-  z-index: 1;
+.elysia-module-showcase__title {
   margin: 0;
-  font-size: clamp(1.55rem, 3vw, 2.08rem);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  line-height: 0.9;
 }
 
-.elysia-skeleton-card__lines {
+.elysia-module-grid {
   display: grid;
-  gap: 0.72rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
-.elysia-skeleton-card__line,
-.elysia-skeleton-card__badge,
-.elysia-skeleton-card__button {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
+.elysia-module-card {
+  position: relative;
+  min-width: 0;
+  min-height: 138px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--elysia-border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--elysia-text);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
-html[data-theme="dark"] .elysia-skeleton-card__line,
-html[data-theme="dark"] .elysia-skeleton-card__badge,
-html[data-theme="dark"] .elysia-skeleton-card__button {
-  background: linear-gradient(90deg, rgba(208, 226, 255, 0.12), rgba(208, 226, 255, 0.22), rgba(208, 226, 255, 0.12));
+html[data-theme="dark"] .elysia-module-card {
+  background: rgba(169, 207, 255, 0.035);
 }
 
-.elysia-skeleton-card__line {
-  height: 10px;
-  border-radius: 999px;
+.elysia-module-card::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -54px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 166, 218, 0.18), transparent 70%);
+  pointer-events: none;
 }
 
-.elysia-skeleton-card__line--short {
-  width: 68%;
+html[data-theme="dark"] .elysia-module-card::after {
+  background: radial-gradient(circle, rgba(124, 185, 255, 0.14), transparent 70%);
 }
 
-.elysia-skeleton-card__footer {
-  margin-top: auto;
+.elysia-module-card:hover,
+.elysia-module-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--elysia-border-strong);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 34px rgba(204, 132, 177, 0.16);
 }
 
-.elysia-skeleton-card__badge {
-  width: 76px;
-  height: 26px;
-  border-radius: 999px;
+html[data-theme="dark"] .elysia-module-card:hover,
+html[data-theme="dark"] .elysia-module-card:focus-visible {
+  background: rgba(169, 207, 255, 0.075);
+  box-shadow: 0 16px 34px rgba(4, 12, 30, 0.28);
 }
 
-.elysia-skeleton-card__button {
-  margin-left: auto;
-  width: 126px;
-  height: 38px;
-  border-radius: 999px;
+.elysia-module-card:focus-visible {
+  outline: 2px solid var(--elysia-accent);
+  outline-offset: 3px;
+}
+
+.elysia-module-card__number {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--elysia-gold);
+}
+
+.elysia-module-card__name {
+  align-self: end;
+  min-width: 0;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.elysia-module-card__arrow {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+  font-size: 1.35rem;
+  color: var(--elysia-text-muted);
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.elysia-module-card:hover .elysia-module-card__arrow,
+.elysia-module-card:focus-visible .elysia-module-card__arrow {
+  color: var(--elysia-accent-soft);
+  transform: translate(2px, -2px);
 }
 
 .elysia-bottom-banner {
@@ -1605,10 +1623,29 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-hero,
   .elysia-system-grid,
   .elysia-overview-grid,
-  .elysia-note-grid,
-  .elysia-skeleton-grid {
+  .elysia-note-grid {
     grid-template-columns: 1fr;
   }
+
+  .elysia-module-showcase {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .elysia-module-showcase__visual {
+    min-height: 470px;
+    border-right: 0;
+    border-bottom: 1px solid var(--elysia-border);
+  }
+
+  .elysia-module-showcase__character {
+    width: min(690px, 78vw);
+  }
+
+  .elysia-module-showcase__index {
+    padding: clamp(2rem, 7vw, 3.5rem);
+  }
+
   .elysia-landing-hero {
     min-height: calc(100vh - 116px);
     padding-top: 8.8rem;
@@ -1627,11 +1664,6 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-landing-hero__title-lockup {
     gap: 1.1rem;
     transform: none;
-  }
-
-  .elysia-landing-hero__art {
-    width: min(440px, 72vw);
-    margin-bottom: -0.9rem;
   }
 
   .elysia-section__head {
@@ -1699,14 +1731,39 @@ html[data-theme="dark"] .elysia-bottom-showcase {
     font-size: clamp(4.2rem, 20vw, 6.6rem);
   }
 
-  .elysia-landing-hero__art {
-    width: min(360px, 84vw);
-    margin-bottom: -0.45rem;
+  .elysia-module-showcase {
+    border-radius: 24px;
   }
 
-  .elysia-landing-hero__orb {
-    width: 132px;
-    height: 132px;
+  .elysia-module-showcase__visual {
+    min-height: 350px;
+  }
+
+  .elysia-module-showcase__character {
+    width: min(530px, 128vw);
+    bottom: -2%;
+  }
+
+  .elysia-module-showcase__orb {
+    width: 138px;
+  }
+
+  .elysia-module-showcase__index {
+    gap: 1.8rem;
+    padding: 1.5rem;
+  }
+
+  .elysia-module-showcase__title {
+    font-size: clamp(2.7rem, 14vw, 3.7rem);
+  }
+
+  .elysia-module-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elysia-module-card {
+    min-height: 104px;
+    border-radius: 18px;
   }
 
   .elysia-scroll-cue__line {
@@ -1723,8 +1780,7 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-card,
   .elysia-system-card,
   .elysia-roadmap__item,
-  .elysia-note-card,
-  .elysia-skeleton-card {
+  .elysia-note-card {
     padding: 1.15rem;
     border-radius: 22px;
   }
@@ -1738,7 +1794,9 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-intro,
   .elysia-intro__video,
   .elysia-intro__code-panel,
-  .elysia-intro-code__line {
+  .elysia-intro-code__line,
+  .elysia-module-card,
+  .elysia-module-card__arrow {
     transition-duration: 1ms !important;
     animation: none !important;
   }

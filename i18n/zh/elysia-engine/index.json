@@ -7,8 +7,17 @@
       "tooling": "工具",
       "roadmap_page": "路线图"
     },
+    "modules": {
+      "eyebrow": "引擎模块索引",
+      "title": "引擎模块",
+      "aria_label": "引擎模块",
+      "scene": "场景",
+      "resources": "资源加载",
+      "input": "输入",
+      "ui": "UI"
+    },
     "footer": {
-      "page": "Elysia Engine 骨架页"
+      "page": "Elysia Engine 模块索引"
     }
   }
 }

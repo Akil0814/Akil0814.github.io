@@ -7,8 +7,17 @@
       "tooling": "ツール",
       "roadmap_page": "ロードマップ"
     },
+    "modules": {
+      "eyebrow": "エンジンモジュール索引",
+      "title": "エンジンモジュール",
+      "aria_label": "エンジンモジュール",
+      "scene": "シーン",
+      "resources": "リソース読み込み",
+      "input": "入力",
+      "ui": "UI"
+    },
     "footer": {
-      "page": "Elysia Engine 骨格ページ"
+      "page": "Elysia Engine モジュール索引"
     }
   }
 }
