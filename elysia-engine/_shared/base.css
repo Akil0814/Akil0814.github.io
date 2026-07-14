@@ -944,11 +944,12 @@ html[data-theme="dark"] .elysia-module-showcase__orb {
   position: absolute;
   z-index: 1;
   left: 50%;
-  bottom: -1.5%;
+  bottom: 0;
   display: block;
-  width: min(690px, 56vw);
-  max-width: none;
+  width: min(100%, 660px);
   height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   transform: translateX(-50%);
   filter: drop-shadow(0 28px 54px rgba(219, 120, 176, 0.25));
   pointer-events: none;
@@ -1650,10 +1651,6 @@ html[data-theme="dark"] .elysia-bottom-showcase {
     border-bottom: 1px solid var(--elysia-border);
   }
 
-  .elysia-module-showcase__character {
-    width: min(690px, 78vw);
-  }
-
   .elysia-module-showcase__index {
     padding: clamp(2rem, 7vw, 3.5rem);
   }
@@ -1749,11 +1746,6 @@ html[data-theme="dark"] .elysia-bottom-showcase {
 
   .elysia-module-showcase__visual {
     min-height: 350px;
-  }
-
-  .elysia-module-showcase__character {
-    width: min(530px, 128vw);
-    bottom: -2%;
   }
 
   .elysia-module-showcase__orb {
