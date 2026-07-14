@@ -2,8 +2,8 @@
   "use strict";
 
   const TAU = Math.PI * 2;
-  const MIN_STAR_COUNT = 90;
-  const MAX_STAR_COUNT = 120;
+  const MIN_STAR_COUNT = 140;
+  const MAX_STAR_COUNT = 180;
   const MAX_DPR = 1.5;
 
   function clamp(value, minimum, maximum) {
@@ -55,7 +55,7 @@
 
     function createParticles() {
       const area = width * height;
-      const starCount = clamp(Math.round(area / 14000), MIN_STAR_COUNT, MAX_STAR_COUNT);
+      const starCount = clamp(Math.round(area / 9500), MIN_STAR_COUNT, MAX_STAR_COUNT);
       const dustCount = clamp(Math.round(starCount * 0.34), 30, 40);
       const maximumRadius = Math.hypot(width * 0.58, height * 1.08);
       const random = createRandom(((width * 73856093) ^ (height * 19349663)) >>> 0);
@@ -79,8 +79,8 @@
           size: 0.55 + layer * 0.22 + random() * (0.7 + layer * 0.2),
           brightness,
           hue: random() > 0.58 ? "pink" : random() > 0.42 ? "violet" : "white",
-          trail: brightness > 0.65 && random() < 0.34,
-          trailLength: 4 + random() * 13,
+          trail: brightness > 0.55 && random() < 0.48,
+          trailLength: 8 + random() * 20,
           twinkleOffset: random() * TAU,
           twinkleSpeed: 0.00035 + random() * 0.00065,
         };
