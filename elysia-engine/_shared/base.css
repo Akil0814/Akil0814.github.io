@@ -15,19 +15,19 @@
 }
 
 html[data-theme="dark"] {
-  --elysia-bg: #09162d;
-  --elysia-bg-soft: rgba(10, 21, 45, 0.92);
-  --elysia-panel: rgba(11, 23, 48, 0.72);
-  --elysia-panel-strong: rgba(12, 27, 58, 0.82);
-  --elysia-border: rgba(135, 181, 255, 0.22);
-  --elysia-border-strong: rgba(177, 210, 255, 0.42);
-  --elysia-text: #edf5ff;
-  --elysia-text-muted: rgba(220, 234, 255, 0.76);
-  --elysia-accent: #8bc9ff;
-  --elysia-accent-soft: #10254b;
-  --elysia-accent-strong: #b5dbff;
-  --elysia-gold: #ffd792;
-  --elysia-shadow: 0 28px 90px rgba(2, 10, 24, 0.5);
+  --elysia-bg: #08072f;
+  --elysia-bg-soft: rgba(12, 9, 51, 0.92);
+  --elysia-panel: rgba(18, 14, 67, 0.74);
+  --elysia-panel-strong: rgba(27, 19, 88, 0.86);
+  --elysia-border: rgba(176, 148, 255, 0.28);
+  --elysia-border-strong: rgba(244, 145, 255, 0.52);
+  --elysia-text: #f8f2ff;
+  --elysia-text-muted: rgba(226, 215, 255, 0.8);
+  --elysia-accent: #d76dff;
+  --elysia-accent-soft: #f2bdff;
+  --elysia-accent-strong: #ff91e4;
+  --elysia-gold: #f4c98c;
+  --elysia-shadow: 0 30px 96px rgba(4, 3, 36, 0.58), 0 0 44px rgba(121, 72, 255, 0.1);
 }
 
 * {
@@ -55,10 +55,11 @@ body.elysia-page {
 
 html[data-theme="dark"] body.elysia-page {
   background:
-    radial-gradient(circle at 18% 18%, rgba(73, 131, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 84% 12%, rgba(111, 198, 255, 0.14), transparent 26%),
-    radial-gradient(circle at 74% 76%, rgba(88, 118, 255, 0.16), transparent 28%),
-    linear-gradient(160deg, #071327 0%, #091935 46%, #0e2448 100%);
+    radial-gradient(circle at 16% 16%, rgba(183, 77, 255, 0.24), transparent 31%),
+    radial-gradient(circle at 84% 11%, rgba(255, 93, 218, 0.18), transparent 27%),
+    radial-gradient(circle at 76% 74%, rgba(101, 99, 255, 0.28), transparent 31%),
+    radial-gradient(circle at 34% 84%, rgba(64, 75, 218, 0.2), transparent 28%),
+    linear-gradient(158deg, #05062b 0%, #0e0c4e 45%, #172176 100%);
 }
 
 body.elysia-page::before,
@@ -85,13 +86,15 @@ body.elysia-page::after {
 
 html[data-theme="dark"] body.elysia-page::before {
   background-image:
-    linear-gradient(rgba(182, 212, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(182, 212, 255, 0.045) 1px, transparent 1px);
-  opacity: 0.28;
+    linear-gradient(rgba(215, 190, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(215, 190, 255, 0.055) 1px, transparent 1px);
+  opacity: 0.24;
 }
 
 html[data-theme="dark"] body.elysia-page::after {
-  background: linear-gradient(180deg, rgba(5, 16, 34, 0.18), transparent 18%, transparent 82%, rgba(5, 16, 34, 0.22));
+  background:
+    linear-gradient(180deg, rgba(4, 3, 31, 0.22), transparent 18%, transparent 78%, rgba(5, 3, 40, 0.32)),
+    radial-gradient(circle at 50% 44%, transparent 46%, rgba(2, 2, 24, 0.16) 100%);
 }
 
 body.elysia-intro-active {
@@ -139,9 +142,10 @@ html[data-elysia-intro="exiting"] .elysia-intro {
 
 html[data-theme="dark"] .elysia-intro__backdrop {
   background:
-    radial-gradient(circle at 20% 18%, rgba(102, 157, 255, 0.24), transparent 28%),
-    radial-gradient(circle at 82% 16%, rgba(154, 212, 255, 0.18), transparent 24%),
-    linear-gradient(180deg, #08152d 0%, #0a1c3c 42%, #0d274c 100%);
+    radial-gradient(circle at 20% 18%, rgba(183, 77, 255, 0.28), transparent 29%),
+    radial-gradient(circle at 82% 16%, rgba(255, 100, 220, 0.2), transparent 25%),
+    radial-gradient(circle at 58% 76%, rgba(94, 93, 255, 0.22), transparent 32%),
+    linear-gradient(180deg, #07062f 0%, #110e55 42%, #192275 100%);
 }
 
 .elysia-intro__backdrop::after {
@@ -155,8 +159,8 @@ html[data-theme="dark"] .elysia-intro__backdrop {
 
 html[data-theme="dark"] .elysia-intro__backdrop::after {
   background:
-    radial-gradient(circle at center, rgba(188, 223, 255, 0.1), transparent 46%),
-    linear-gradient(180deg, rgba(200, 225, 255, 0.08), transparent 22%, rgba(4, 16, 34, 0.12));
+    radial-gradient(circle at center, rgba(224, 195, 255, 0.12), transparent 46%),
+    linear-gradient(180deg, rgba(235, 202, 255, 0.08), transparent 22%, rgba(5, 3, 38, 0.18));
 }
 
 .elysia-intro__video {
@@ -210,8 +214,8 @@ html[data-theme="dark"] .elysia-intro__backdrop::after {
 }
 
 html[data-theme="dark"] .elysia-intro__code-title {
-  color: rgba(239, 247, 255, 0.96);
-  text-shadow: 0 2px 18px rgba(8, 18, 38, 0.72);
+  color: rgba(250, 241, 255, 0.97);
+  text-shadow: 0 2px 20px rgba(6, 3, 39, 0.76), 0 0 22px rgba(220, 113, 255, 0.14);
 }
 
 .elysia-intro__code.language-cpp {
@@ -242,7 +246,7 @@ html[data-theme="dark"] .elysia-intro__code-title {
 
 html[data-theme="dark"] .elysia-intro__code.language-cpp code[class*="language-"],
 html[data-theme="dark"] .elysia-intro__code.language-cpp pre[class*="language-"] {
-  color: rgba(238, 246, 255, 0.98);
+  color: rgba(247, 238, 255, 0.98);
 }
 
 .elysia-intro__code .token.comment,
@@ -291,11 +295,11 @@ html[data-theme="dark"] .elysia-intro__code .token.comment,
 html[data-theme="dark"] .elysia-intro__code .token.prolog,
 html[data-theme="dark"] .elysia-intro__code .token.doctype,
 html[data-theme="dark"] .elysia-intro__code .token.cdata {
-  color: rgba(166, 191, 227, 0.72);
+  color: rgba(190, 177, 226, 0.76);
 }
 
 html[data-theme="dark"] .elysia-intro__code .token.punctuation {
-  color: rgba(215, 231, 255, 0.94);
+  color: rgba(234, 219, 255, 0.95);
 }
 
 html[data-theme="dark"] .elysia-intro__code .token.keyword,
@@ -304,12 +308,12 @@ html[data-theme="dark"] .elysia-intro__code .token.selector,
 html[data-theme="dark"] .elysia-intro__code .token.symbol,
 html[data-theme="dark"] .elysia-intro__code .token.builtin,
 html[data-theme="dark"] .elysia-intro__code .token.constant {
-  color: #8fd0ff;
+  color: #e391ff;
 }
 
 html[data-theme="dark"] .elysia-intro__code .token.function,
 html[data-theme="dark"] .elysia-intro__code .token.class-name {
-  color: #ffd48d;
+  color: #ffb5e4;
 }
 
 html[data-theme="dark"] .elysia-intro__code .token.string,
@@ -318,14 +322,14 @@ html[data-theme="dark"] .elysia-intro__code .token.url,
 html[data-theme="dark"] .elysia-intro__code .token.attr-value,
 html[data-theme="dark"] .elysia-intro__code .token.variable,
 html[data-theme="dark"] .elysia-intro__code .token.inserted {
-  color: #a9f1df;
+  color: #aaa9ff;
 }
 
 html[data-theme="dark"] .elysia-intro__code .token.number,
 html[data-theme="dark"] .elysia-intro__code .token.boolean,
 html[data-theme="dark"] .elysia-intro__code .token.tag,
 html[data-theme="dark"] .elysia-intro__code .token.deleted {
-  color: #ffb38f;
+  color: #ff91d7;
 }
 
 .elysia-intro-code__line {
@@ -365,8 +369,8 @@ html[data-theme="dark"] .elysia-intro-code__line {
 }
 
 html[data-theme="dark"] .elysia-page .nav {
-  background: linear-gradient(180deg, rgba(9, 21, 44, 0.92), rgba(9, 21, 44, 0.66));
-  border-bottom-color: rgba(146, 192, 255, 0.18);
+  background: linear-gradient(180deg, rgba(8, 6, 43, 0.94), rgba(14, 10, 61, 0.7));
+  border-bottom-color: rgba(188, 151, 255, 0.22);
 }
 
 .elysia-page .brand {
@@ -377,8 +381,8 @@ html[data-theme="dark"] .elysia-page .nav {
 }
 
 html[data-theme="dark"] .elysia-page .brand {
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 12px 34px rgba(3, 10, 24, 0.28);
+  background: rgba(177, 141, 255, 0.07);
+  box-shadow: 0 12px 34px rgba(3, 2, 30, 0.34);
 }
 
 .elysia-page .brand:hover {
@@ -388,7 +392,7 @@ html[data-theme="dark"] .elysia-page .brand {
 }
 
 html[data-theme="dark"] .elysia-page .brand:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(217, 154, 255, 0.13);
 }
 
 .elysia-page .brand:focus-visible {
@@ -405,9 +409,9 @@ html[data-theme="dark"] .elysia-page .brand:hover {
 
 html[data-theme="dark"] .elysia-page .brand__dot {
   background:
-    radial-gradient(circle at 30% 30%, #ffffff, rgba(231, 243, 255, 0.74) 34%, transparent 64%),
-    linear-gradient(135deg, #9cc9ff 0%, #6aaeff 48%, #95e4ff 100%);
-  box-shadow: 0 0 16px rgba(132, 190, 255, 0.34), 0 0 28px rgba(144, 225, 255, 0.16);
+    radial-gradient(circle at 30% 30%, #ffffff, rgba(248, 221, 255, 0.78) 34%, transparent 64%),
+    linear-gradient(135deg, #b7a0ff 0%, #d869ff 48%, #ff82dc 100%);
+  box-shadow: 0 0 18px rgba(220, 105, 255, 0.44), 0 0 34px rgba(255, 113, 218, 0.2);
 }
 
 .elysia-page .nav__right {
@@ -431,7 +435,7 @@ html[data-theme="dark"] .elysia-page .brand__dot {
 }
 
 html[data-theme="dark"] .elysia-page .nav__right a:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(211, 157, 255, 0.12);
 }
 
 .elysia-page .nav__right .btn,
@@ -442,7 +446,7 @@ html[data-theme="dark"] .elysia-page .nav__right a:hover {
 
 html[data-theme="dark"] .elysia-page .nav__right .btn,
 html[data-theme="dark"] .elysia-page .lang-select {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(176, 140, 255, 0.08);
 }
 
 .elysia-page .nav__right .btn:hover,
@@ -453,7 +457,7 @@ html[data-theme="dark"] .elysia-page .lang-select {
 
 html[data-theme="dark"] .elysia-page .nav__right .btn:hover,
 html[data-theme="dark"] .elysia-page .lang-select:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(224, 155, 255, 0.15);
 }
 
 .elysia-page .nav__right .btn:focus-visible,
@@ -482,7 +486,7 @@ html[data-theme="dark"] .elysia-page .lang-select:hover {
 }
 
 html[data-theme="dark"] .elysia-page .lang-select option {
-  background: #0b1730;
+  background: #100c4b;
   color: var(--elysia-text);
 }
 
@@ -505,7 +509,7 @@ html[data-theme="dark"] .elysia-page .lang-select option {
 }
 
 html[data-theme="dark"] .elysia-aura--one {
-  background: radial-gradient(circle at 15% 30%, rgba(92, 154, 255, 0.22), transparent 22%);
+  background: radial-gradient(circle at 15% 30%, rgba(179, 77, 255, 0.3), transparent 24%);
 }
 
 .elysia-aura--two {
@@ -514,7 +518,7 @@ html[data-theme="dark"] .elysia-aura--one {
 }
 
 html[data-theme="dark"] .elysia-aura--two {
-  background: radial-gradient(circle at 82% 18%, rgba(121, 212, 255, 0.14), transparent 18%);
+  background: radial-gradient(circle at 82% 18%, rgba(255, 95, 216, 0.22), transparent 21%);
 }
 
 .elysia-stars {
@@ -530,7 +534,8 @@ html[data-theme="dark"] .elysia-aura--two {
 }
 
 html[data-theme="dark"] .elysia-stars {
-  opacity: 0.82;
+  filter: drop-shadow(0 0 4px rgba(226, 177, 255, 0.44));
+  opacity: 0.88;
 }
 
 body.fx-off .elysia-aura,
@@ -705,9 +710,9 @@ body.fx-off .elysia-brand__crest::after {
 
 html[data-theme="dark"] .elysia-landing-hero__stage {
   background:
-    radial-gradient(circle at 50% 32%, rgba(190, 221, 255, 0.14), transparent 28%),
-    radial-gradient(circle at 50% 58%, rgba(122, 186, 255, 0.12), transparent 34%),
-    linear-gradient(160deg, rgba(203, 228, 255, 0.06), rgba(10, 25, 48, 0.08)),
+    radial-gradient(circle at 50% 30%, rgba(235, 186, 255, 0.17), transparent 29%),
+    radial-gradient(circle at 54% 62%, rgba(255, 102, 218, 0.12), transparent 35%),
+    linear-gradient(155deg, rgba(164, 119, 255, 0.11), rgba(34, 19, 99, 0.1)),
     var(--elysia-panel);
 }
 
@@ -723,8 +728,8 @@ html[data-theme="dark"] .elysia-landing-hero__stage {
 
 html[data-theme="dark"] .elysia-landing-hero__stage::before {
   background:
-    linear-gradient(180deg, rgba(210, 232, 255, 0.05), transparent 24%),
-    radial-gradient(circle at 50% 72%, rgba(132, 187, 255, 0.1), transparent 28%);
+    linear-gradient(180deg, rgba(239, 210, 255, 0.08), transparent 24%),
+    radial-gradient(circle at 50% 72%, rgba(222, 92, 255, 0.14), transparent 30%);
 }
 
 .elysia-landing-hero__copy {
@@ -787,8 +792,8 @@ html[data-theme="dark"] .elysia-landing-hero__title-icon--dark {
 }
 
 html[data-theme="dark"] .elysia-landing-hero__eyebrow {
-  border-color: rgba(189, 220, 255, 0.2);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(220, 171, 255, 0.25);
+  background: rgba(193, 132, 255, 0.07);
 }
 
 .elysia-landing-hero__title {
@@ -801,7 +806,7 @@ html[data-theme="dark"] .elysia-landing-hero__eyebrow {
 }
 
 html[data-theme="dark"] .elysia-landing-hero__title {
-  text-shadow: 0 18px 48px rgba(10, 24, 54, 0.6);
+  text-shadow: 0 18px 52px rgba(4, 2, 35, 0.68), 0 0 34px rgba(207, 105, 255, 0.16);
 }
 
 .elysia-landing-hero__lead {
@@ -875,7 +880,8 @@ html[data-theme="dark"] .elysia-landing-hero__title {
 
 html[data-theme="dark"] .elysia-module-showcase {
   background:
-    linear-gradient(145deg, rgba(194, 220, 255, 0.07), transparent 38%),
+    radial-gradient(circle at 18% 18%, rgba(203, 91, 255, 0.12), transparent 32%),
+    linear-gradient(145deg, rgba(211, 174, 255, 0.09), transparent 42%),
     var(--elysia-panel);
 }
 
@@ -892,8 +898,9 @@ html[data-theme="dark"] .elysia-module-showcase {
 
 html[data-theme="dark"] .elysia-module-showcase__visual {
   background:
-    radial-gradient(circle at 48% 34%, rgba(136, 191, 255, 0.2), transparent 31%),
-    linear-gradient(160deg, rgba(111, 168, 235, 0.08), rgba(4, 14, 34, 0.08));
+    radial-gradient(circle at 48% 32%, rgba(239, 155, 255, 0.25), transparent 32%),
+    radial-gradient(circle at 26% 78%, rgba(89, 88, 255, 0.2), transparent 36%),
+    linear-gradient(155deg, rgba(178, 98, 255, 0.13), rgba(15, 9, 67, 0.14));
 }
 
 .elysia-module-showcase__glow {
@@ -909,8 +916,8 @@ html[data-theme="dark"] .elysia-module-showcase__visual {
 
 html[data-theme="dark"] .elysia-module-showcase__glow {
   background:
-    radial-gradient(circle, rgba(122, 180, 255, 0.26), transparent 58%),
-    radial-gradient(circle at 58% 42%, rgba(153, 218, 255, 0.14), transparent 34%);
+    radial-gradient(circle, rgba(226, 91, 255, 0.34), transparent 58%),
+    radial-gradient(circle at 62% 40%, rgba(255, 105, 216, 0.22), transparent 36%);
 }
 
 .elysia-module-showcase__orb {
@@ -928,8 +935,9 @@ html[data-theme="dark"] .elysia-module-showcase__glow {
 }
 
 html[data-theme="dark"] .elysia-module-showcase__orb {
-  border-color: rgba(195, 222, 255, 0.18);
-  background: radial-gradient(circle, rgba(199, 226, 255, 0.1), transparent 66%);
+  border-color: rgba(224, 182, 255, 0.24);
+  background: radial-gradient(circle, rgba(231, 194, 255, 0.15), transparent 66%);
+  box-shadow: inset 0 0 30px rgba(213, 119, 255, 0.12), 0 0 36px rgba(210, 86, 255, 0.1);
 }
 
 .elysia-module-showcase__character {
@@ -948,7 +956,7 @@ html[data-theme="dark"] .elysia-module-showcase__orb {
 }
 
 html[data-theme="dark"] .elysia-module-showcase__character {
-  filter: drop-shadow(0 30px 56px rgba(4, 12, 30, 0.54));
+  filter: drop-shadow(0 30px 58px rgba(4, 2, 35, 0.58)) drop-shadow(0 0 24px rgba(224, 107, 255, 0.13));
 }
 
 .elysia-module-showcase__index {
@@ -1007,7 +1015,9 @@ html[data-theme="dark"] .elysia-module-showcase__character {
 }
 
 html[data-theme="dark"] .elysia-module-card {
-  background: rgba(169, 207, 255, 0.035);
+  background:
+    linear-gradient(145deg, rgba(195, 143, 255, 0.08), rgba(93, 80, 218, 0.035)),
+    rgba(18, 12, 67, 0.46);
 }
 
 .elysia-module-card::after {
@@ -1023,7 +1033,7 @@ html[data-theme="dark"] .elysia-module-card {
 }
 
 html[data-theme="dark"] .elysia-module-card::after {
-  background: radial-gradient(circle, rgba(124, 185, 255, 0.14), transparent 70%);
+  background: radial-gradient(circle, rgba(241, 91, 220, 0.24), transparent 70%);
 }
 
 .elysia-module-card:hover,
@@ -1036,8 +1046,10 @@ html[data-theme="dark"] .elysia-module-card::after {
 
 html[data-theme="dark"] .elysia-module-card:hover,
 html[data-theme="dark"] .elysia-module-card:focus-visible {
-  background: rgba(169, 207, 255, 0.075);
-  box-shadow: 0 16px 34px rgba(4, 12, 30, 0.28);
+  background:
+    linear-gradient(145deg, rgba(218, 139, 255, 0.16), rgba(255, 104, 218, 0.07)),
+    rgba(25, 16, 82, 0.62);
+  box-shadow: 0 18px 38px rgba(4, 2, 35, 0.4), 0 0 28px rgba(217, 92, 255, 0.12);
 }
 
 .elysia-module-card:focus-visible {
@@ -1092,7 +1104,7 @@ html[data-theme="dark"] .elysia-module-card:focus-visible {
 
 html[data-theme="dark"] .elysia-bottom-showcase {
   background:
-    linear-gradient(180deg, rgba(194, 220, 255, 0.06), transparent 22%),
+    linear-gradient(180deg, rgba(221, 180, 255, 0.09), transparent 24%),
     var(--elysia-panel);
 }
 
