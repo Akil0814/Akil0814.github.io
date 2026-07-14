@@ -491,11 +491,26 @@ html[data-theme="dark"] .elysia-page .lang-select option {
 }
 
 .elysia-aura,
-.elysia-stars {
+.elysia-stars,
+.elysia-cosmos {
   position: fixed;
   pointer-events: none;
   inset: 0;
   z-index: 0;
+}
+
+.elysia-cosmos {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 700ms ease, visibility 0s linear 700ms;
+}
+
+html[data-theme="dark"] .elysia-cosmos {
+  opacity: 0.88;
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 .elysia-aura {
@@ -510,6 +525,8 @@ html[data-theme="dark"] .elysia-page .lang-select option {
 
 html[data-theme="dark"] .elysia-aura--one {
   background: radial-gradient(circle at 15% 30%, rgba(179, 77, 255, 0.3), transparent 24%);
+  animation: none;
+  opacity: 0.38;
 }
 
 .elysia-aura--two {
@@ -519,6 +536,8 @@ html[data-theme="dark"] .elysia-aura--one {
 
 html[data-theme="dark"] .elysia-aura--two {
   background: radial-gradient(circle at 82% 18%, rgba(255, 95, 216, 0.22), transparent 21%);
+  animation: none;
+  opacity: 0.34;
 }
 
 .elysia-stars {
@@ -534,16 +553,22 @@ html[data-theme="dark"] .elysia-aura--two {
 }
 
 html[data-theme="dark"] .elysia-stars {
-  filter: drop-shadow(0 0 4px rgba(226, 177, 255, 0.44));
-  opacity: 0.88;
+  display: none;
 }
 
 body.fx-off .elysia-aura,
 body.fx-off .elysia-stars,
+body.fx-off .elysia-cosmos,
 body.fx-off .elysia-sigil__ring,
 body.fx-off .elysia-sigil__spark,
 body.fx-off .elysia-brand__crest::after {
   animation: none !important;
+}
+
+body.fx-off .elysia-cosmos {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
 }
 
 .elysia-nav {
@@ -1799,6 +1824,7 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-intro__video,
   .elysia-intro__code-panel,
   .elysia-intro-code__line,
+  .elysia-cosmos,
   .elysia-module-card,
   .elysia-module-card__arrow {
     transition-duration: 1ms !important;
