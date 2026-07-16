@@ -128,39 +128,44 @@
           <img class="elysia-module-showcase__character" src="../image/elysia_stand.png" alt="" />
         </div>
 
-        <div class="elysia-module-showcase__index">
+        <div class="elysia-module-showcase__content">
           <header class="elysia-module-showcase__header">
             <p class="elysia-module-showcase__eyebrow" data-i18n="ElysiaEngine.modules.eyebrow">Engine Module Index</p>
-            <h2 class="elysia-module-showcase__title" data-i18n="ElysiaEngine.modules.title">Engine Modules</h2>
+            <h2 class="elysia-module-showcase__title" id="elysia-module-heading" data-i18n="ElysiaEngine.modules.title">Engine Modules</h2>
+            <p class="elysia-module-showcase__description" data-i18n="ElysiaEngine.modules.description">
+              Elysia Engine is a reusable 2D game engine framework built with C++, centered on scene organization, asynchronous resource loading, unified input handling, and a foundational UI system, with support for frame-based animation, effects, basic physics, and multiple languages.
+            </p>
           </header>
-
-          <nav class="elysia-module-grid" aria-label="Engine modules" data-i18n="ElysiaEngine.modules.aria_label" data-i18n-attr="aria-label">
-            <a class="elysia-module-card" href="./scene/">
-              <span class="elysia-module-card__number">01</span>
-              <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.scene">Scene</span>
-              <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
-            </a>
-
-            <a class="elysia-module-card" href="./resources/">
-              <span class="elysia-module-card__number">02</span>
-              <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.resources">Resource Loading</span>
-              <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
-            </a>
-
-            <a class="elysia-module-card" href="./input/">
-              <span class="elysia-module-card__number">03</span>
-              <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.input">Input</span>
-              <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
-            </a>
-
-            <a class="elysia-module-card" href="./ui/">
-              <span class="elysia-module-card__number">04</span>
-              <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.ui">UI</span>
-              <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
-            </a>
-          </nav>
         </div>
       </div>
+    </section>
+
+    <section class="elysia-module-index-section" aria-labelledby="elysia-module-heading">
+      <nav class="elysia-module-grid" aria-label="Engine modules" data-i18n="ElysiaEngine.modules.aria_label" data-i18n-attr="aria-label">
+        <a class="elysia-module-card" href="./scene/">
+          <span class="elysia-module-card__number">01</span>
+          <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.scene">Scene</span>
+          <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <a class="elysia-module-card" href="./resources/">
+          <span class="elysia-module-card__number">02</span>
+          <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.resources">Resource Loading</span>
+          <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <a class="elysia-module-card" href="./input/">
+          <span class="elysia-module-card__number">03</span>
+          <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.input">Input</span>
+          <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <a class="elysia-module-card" href="./ui/">
+          <span class="elysia-module-card__number">04</span>
+          <span class="elysia-module-card__name" data-i18n="ElysiaEngine.modules.ui">UI</span>
+          <span class="elysia-module-card__arrow" aria-hidden="true">&nearr;</span>
+        </a>
+      </nav>
     </section>
 
     <section class="elysia-bottom-banner">

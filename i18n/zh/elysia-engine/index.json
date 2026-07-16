@@ -10,6 +10,7 @@
     "modules": {
       "eyebrow": "引擎模块索引",
       "title": "引擎模块",
+      "description": "Elysia Engine 是一个使用 C++ 构建的可复用 2D 游戏引擎框架，围绕场景组织、异步资源加载、统一输入处理与基础 UI 系统构建，并提供帧动画、特效、基础物理和多语言支持。",
       "aria_label": "引擎模块",
       "scene": "场景",
       "resources": "资源加载",
