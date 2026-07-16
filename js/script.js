@@ -19,9 +19,12 @@ const uiState = {
 
 // Warm up the moon image to reduce decode stutter on first transition.
 (function preloadMoonImage() {
+  const transitionMoon = document.querySelector(".themeTransition__moon");
+  if (!transitionMoon) return;
+
   const moonImage = new Image();
   moonImage.decoding = "async";
-  moonImage.src = "./image/moon.png";
+  moonImage.src = transitionMoon.currentSrc || transitionMoon.src;
 })();
 
 async function decodeImageIfPossible(imageElement) {

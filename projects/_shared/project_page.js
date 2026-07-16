@@ -116,7 +116,7 @@
       return normalizeLanguage(localStorage.getItem("lang"), config.defaultLang);
     }
 
-    function setLang(language) {
+    function syncLanguage(language) {
       const normalizedLanguage = normalizeLanguage(language, config.defaultLang);
       document.documentElement.setAttribute("lang", LANGUAGE_MAP[normalizedLanguage]);
       localStorage.setItem("lang", normalizedLanguage);
@@ -125,14 +125,25 @@
         languageSelect.value = normalizedLanguage;
       }
 
-      if (typeof config.onLangChange === "function") {
-        config.onLangChange(normalizedLanguage);
-      }
+      return normalizedLanguage;
+    }
 
-      if (typeof window.applyI18n === "function") {
-        window.applyI18n(normalizedLanguage).catch((error) => {
-          console.warn("[i18n] Failed to apply language on project page.", error);
-        });
+    async function setLang(language) {
+      const normalizedLanguage = syncLanguage(language);
+
+      try {
+        const applied = typeof window.applyI18n === "function"
+          ? await window.applyI18n(normalizedLanguage)
+          : true;
+
+        if (applied && typeof config.onLangChange === "function") {
+          await config.onLangChange(normalizedLanguage);
+        }
+
+        return applied;
+      } catch (error) {
+        console.warn("[i18n] Failed to apply language on project page.", error);
+        return false;
       }
     }
 
@@ -140,18 +151,18 @@
     const onFxButtonClick = () => setFx(!getFx());
     const onLanguageChange = () => {
       if (!languageSelect) return;
-      setLang(languageSelect.value);
+      void setLang(languageSelect.value);
     };
 
     const onStorageChange = (event) => {
       if (event.key === "theme" && event.newValue) setTheme(event.newValue);
       if (event.key === "fx" && event.newValue) setFx(event.newValue === "on");
-      if (event.key === "lang" && event.newValue) setLang(event.newValue);
+      if (event.key === "lang" && event.newValue) void setLang(event.newValue);
     };
 
     setTheme(getTheme());
     setFx(getFx());
-    setLang(getLang());
+    syncLanguage(getLang());
 
     if (yearElement) {
       yearElement.textContent = String(new Date().getFullYear());

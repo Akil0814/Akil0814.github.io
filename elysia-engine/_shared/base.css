@@ -1073,6 +1073,12 @@ html[data-theme="dark"] .elysia-module-showcase__character {
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
+.elysia-module-card.is-disabled {
+  cursor: default;
+  opacity: 0.72;
+  transition: none;
+}
+
 html[data-theme="dark"] .elysia-module-card {
   background:
     linear-gradient(145deg, rgba(195, 143, 255, 0.08), rgba(93, 80, 218, 0.035)),
@@ -1095,23 +1101,23 @@ html[data-theme="dark"] .elysia-module-card::after {
   background: radial-gradient(circle, rgba(241, 91, 220, 0.24), transparent 70%);
 }
 
-.elysia-module-card:hover,
-.elysia-module-card:focus-visible {
+.elysia-module-card:not(.is-disabled):hover,
+.elysia-module-card:not(.is-disabled):focus-visible {
   transform: translateY(-3px);
   border-color: var(--elysia-border-strong);
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0 16px 34px rgba(204, 132, 177, 0.16);
 }
 
-html[data-theme="dark"] .elysia-module-card:hover,
-html[data-theme="dark"] .elysia-module-card:focus-visible {
+html[data-theme="dark"] .elysia-module-card:not(.is-disabled):hover,
+html[data-theme="dark"] .elysia-module-card:not(.is-disabled):focus-visible {
   background:
     linear-gradient(145deg, rgba(218, 139, 255, 0.16), rgba(255, 104, 218, 0.07)),
     rgba(25, 16, 82, 0.62);
   box-shadow: 0 18px 38px rgba(4, 2, 35, 0.4), 0 0 28px rgba(217, 92, 255, 0.12);
 }
 
-.elysia-module-card:focus-visible {
+.elysia-module-card:not(.is-disabled):focus-visible {
   outline: 2px solid var(--elysia-accent);
   outline-offset: 3px;
 }
@@ -1131,19 +1137,18 @@ html[data-theme="dark"] .elysia-module-card:focus-visible {
   line-height: 1.15;
 }
 
-.elysia-module-card__arrow {
+.elysia-module-card__status {
   grid-column: 2;
   grid-row: 1 / span 2;
   align-self: start;
-  font-size: 1.35rem;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--elysia-border);
+  border-radius: 999px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
   color: var(--elysia-text-muted);
-  transition: transform 180ms ease, color 180ms ease;
-}
-
-.elysia-module-card:hover .elysia-module-card__arrow,
-.elysia-module-card:focus-visible .elysia-module-card__arrow {
-  color: var(--elysia-accent-soft);
-  transform: translate(2px, -2px);
 }
 
 .elysia-bottom-banner {

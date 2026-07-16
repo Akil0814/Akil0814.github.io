@@ -262,7 +262,7 @@
     });
   }
 
-  function init() {
+  async function init() {
     if (!window.ProjectPageCore || !window.ProjectCodeBlock) {
       console.error("Shared project modules are missing.");
       return;
@@ -277,40 +277,18 @@
           mermaidRenderer.setTheme(theme);
         }
       },
-      onLangChange(language) {
-        if (!mermaidRenderer) return;
-
-        if (typeof window.applyI18n === "function") {
-          window.applyI18n(language)
-            .then(() => {
-              mermaidRenderer.setDiagrams(getMermaidDiagrams());
-            })
-            .catch((error) => {
-              console.warn("[i18n] Failed to refresh PathFindingVisualizer Mermaid translations.", error);
-            });
-          return;
+      onLangChange() {
+        if (mermaidRenderer) {
+          mermaidRenderer.setDiagrams(getMermaidDiagrams());
         }
-
-        mermaidRenderer.setDiagrams(getMermaidDiagrams());
       },
     });
 
+    await pageCore.setLang(pageCore.getLang());
     setStaticCounts();
     renderVideos();
     renderCodeCards();
     initMermaidSection(pageCore.getTheme());
-
-    if (typeof window.applyI18n === "function") {
-      window.applyI18n(pageCore.getLang())
-        .catch((error) => {
-          console.warn("[i18n] Failed to apply PathFindingVisualizer translations.", error);
-        })
-        .finally(() => {
-          if (mermaidRenderer) {
-            mermaidRenderer.setDiagrams(getMermaidDiagrams());
-          }
-        });
-    }
 
     loadCodeBlocks();
   }

@@ -15,7 +15,8 @@
       "scene": "Scene",
       "resources": "Resource Loading",
       "input": "Input",
-      "ui": "UI"
+      "ui": "UI",
+      "coming_soon": "Coming Soon"
     },
     "footer": {
       "page": "Elysia Engine module index"

@@ -15,7 +15,8 @@
       "scene": "シーン",
       "resources": "リソース読み込み",
       "input": "入力",
-      "ui": "UI"
+      "ui": "UI",
+      "coming_soon": "近日公開"
     },
     "footer": {
       "page": "Elysia Engine モジュール索引"

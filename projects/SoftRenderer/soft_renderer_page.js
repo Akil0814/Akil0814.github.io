@@ -130,7 +130,7 @@
     });
   }
 
-  function init() {
+  async function init() {
     if (!window.ProjectPageCore) {
       console.error("ProjectPageCore module is missing.");
       return;
@@ -143,29 +143,17 @@
       onThemeChange(theme) {
         if (mermaidRenderer) mermaidRenderer.setTheme(theme);
       },
-      onLangChange(language) {
-        if (!mermaidRenderer || typeof window.applyI18n !== "function") return;
-        window.applyI18n(language)
-          .then(() => mermaidRenderer.setDiagrams(getMermaidDiagrams()))
-          .catch((error) => {
-            console.warn("[i18n] Failed to refresh SoftRenderer Mermaid translations.", error);
-          });
+      onLangChange() {
+        if (mermaidRenderer) {
+          mermaidRenderer.setDiagrams(getMermaidDiagrams());
+        }
       },
     });
 
+    await pageCore.setLang(pageCore.getLang());
     setStaticCounts();
     renderVideos();
     initMermaidSection(pageCore.getTheme());
-
-    if (typeof window.applyI18n === "function") {
-      window.applyI18n(pageCore.getLang())
-        .then(() => {
-          if (mermaidRenderer) mermaidRenderer.setDiagrams(getMermaidDiagrams());
-        })
-        .catch((error) => {
-          console.warn("[i18n] Failed to apply SoftRenderer translations.", error);
-        });
-    }
   }
 
   window.addEventListener("DOMContentLoaded", init);

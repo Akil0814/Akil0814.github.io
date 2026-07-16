@@ -26,7 +26,6 @@
   will-change: transform, filter, opacity;
   opacity: 0;
 
-  background: url("./image/moon.png") center / contain no-repeat;
   filter: brightness(1) drop-shadow(0 0 0 rgba(255,255,255,0));
 }
 

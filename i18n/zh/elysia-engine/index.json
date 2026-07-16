@@ -15,7 +15,8 @@
       "scene": "场景",
       "resources": "资源加载",
       "input": "输入",
-      "ui": "UI"
+      "ui": "UI",
+      "coming_soon": "即将开放"
     },
     "footer": {
       "page": "Elysia Engine 模块索引"
