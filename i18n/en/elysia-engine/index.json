@@ -12,10 +12,18 @@
       "title": "Engine Modules",
       "description": "Elysia Engine is a reusable 2D game engine framework built with C++, centered on scene organization, asynchronous resource loading, unified input handling, and a foundational UI system, with support for frame-based animation, effects, basic physics, and multiple languages.",
       "aria_label": "Engine modules",
+      "core": "Core Architecture",
+      "runtime": "Runtime",
       "scene": "Scene",
       "resources": "Resource Loading",
       "input": "Input",
+      "animation_effects": "Animation & Effects",
+      "audio": "Audio",
+      "camera": "Camera",
+      "physics": "Physics",
+      "localization": "Localization",
       "ui": "UI",
+      "testbed": "Testbed",
       "coming_soon": "Coming Soon"
     },
     "footer": {

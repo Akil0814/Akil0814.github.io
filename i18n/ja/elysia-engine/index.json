@@ -12,10 +12,18 @@
       "title": "エンジンモジュール",
       "description": "Elysia Engine は、C++ で構築された再利用可能な 2D ゲームエンジンフレームワークです。シーン管理、非同期リソース読み込み、統一された入力処理、基本的な UI システムを中心に構成し、フレームアニメーション、エフェクト、基本的な物理処理、多言語対応を備えています。",
       "aria_label": "エンジンモジュール",
+      "core": "コアアーキテクチャ",
+      "runtime": "ランタイム",
       "scene": "シーン",
       "resources": "リソース読み込み",
       "input": "入力",
+      "animation_effects": "アニメーションとエフェクト",
+      "audio": "オーディオ",
+      "camera": "カメラ",
+      "physics": "物理",
+      "localization": "ローカライゼーション",
       "ui": "UI",
+      "testbed": "テストベッド",
       "coming_soon": "近日公開"
     },
     "footer": {
