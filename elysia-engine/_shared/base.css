@@ -541,15 +541,7 @@ html[data-theme="dark"] .elysia-aura--one {
 }
 
 html[data-theme="dark"] .elysia-aura--two {
-  background:
-    radial-gradient(circle at 15% 56%, rgba(255, 107, 216, 0.08), transparent 13%),
-    radial-gradient(circle at 45% 9%, rgba(174, 117, 255, 0.1), transparent 16%),
-    radial-gradient(circle at 55% 72%, rgba(214, 102, 255, 0.09), transparent 19%),
-    radial-gradient(circle at 79% 82%, rgba(104, 118, 255, 0.1), transparent 17%),
-    radial-gradient(circle at 76% 34%, rgba(255, 132, 230, 0.08), transparent 12%);
-  animation: elysiaNebulaDriftTwo 39s ease-in-out infinite alternate;
-  filter: blur(20px);
-  opacity: 0.86;
+  display: none;
 }
 
 .elysia-stars {

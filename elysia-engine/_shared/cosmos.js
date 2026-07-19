@@ -2,9 +2,9 @@
   "use strict";
 
   const TAU = Math.PI * 2;
-  const MIN_STAR_COUNT = 140;
-  const MAX_STAR_COUNT = 180;
-  const MAX_DPR = 1.5;
+  const MIN_STAR_COUNT = 80;
+  const MAX_STAR_COUNT = 110;
+  const MAX_DPR = 1.25;
 
   function clamp(value, minimum, maximum) {
     return Math.min(maximum, Math.max(minimum, value));
@@ -79,8 +79,8 @@
           size: 0.55 + layer * 0.22 + random() * (0.7 + layer * 0.2),
           brightness,
           hue: random() > 0.58 ? "pink" : random() > 0.42 ? "violet" : "white",
-          trail: brightness > 0.55 && random() < 0.48,
-          trailLength: 8 + random() * 20,
+          trail: brightness > 0.55 && random() < 0.7,
+          trailLength: 18 + random() * 28,
           twinkleOffset: random() * TAU,
           twinkleSpeed: 0.00035 + random() * 0.00065,
         };
