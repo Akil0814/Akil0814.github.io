@@ -194,6 +194,7 @@
         const alpha = star.brightness * twinkle;
         const color = starColor(star, alpha);
 
+        context.shadowBlur = 0;
         if (star.trail) {
           const tangentX = -Math.sin(star.angle);
           const tangentY = Math.cos(star.angle);
@@ -215,8 +216,10 @@
         context.beginPath();
         context.arc(x, y, star.size, 0, TAU);
         context.fillStyle = color;
-        context.shadowColor = color;
-        context.shadowBlur = 4 + star.size * 4;
+        if (star.trail) {
+          context.shadowColor = color;
+          context.shadowBlur = 4 + star.size * 4;
+        }
         context.fill();
       }
 
