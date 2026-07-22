@@ -24,7 +24,8 @@
       "localization": "Localization",
       "ui": "UI",
       "testbed": "Testbed",
-      "coming_soon": "Coming Soon"
+      "coming_soon": "Coming Soon",
+      "view_module": "View Module"
     },
     "footer": {
       "page": "Elysia Engine module index"

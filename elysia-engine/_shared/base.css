@@ -1143,6 +1143,12 @@ html[data-theme="dark"] .elysia-module-card:not(.is-disabled):focus-visible {
   color: var(--elysia-text-muted);
 }
 
+.elysia-module-card:not(.is-disabled) .elysia-module-card__status::after {
+  content: "↗";
+  margin-left: 0.38rem;
+  color: var(--elysia-accent);
+}
+
 .elysia-bottom-banner {
   margin-top: 0.8rem;
 }

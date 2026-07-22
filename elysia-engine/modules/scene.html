@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-i18n-page="elysia-engine/scene" data-i18n-base="../..">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#091934" />
+  <link rel="icon" type="image/png" sizes="128x128" href="../../icon/elysia_128.png" />
+  <title data-i18n="ElysiaEngine.scene.meta.title">Scene System · Elysia Engine</title>
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const languageMap = { zh: "zh-CN", ja: "ja", en: "en" };
+      try {
+        const theme = localStorage.getItem("theme") === "light" ? "light" : "dark";
+        const language = localStorage.getItem("lang") || "en";
+        root.dataset.theme = theme;
+        root.lang = languageMap[language] || "en";
+      } catch (_) {
+        root.dataset.theme = "dark";
+        root.lang = "en";
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../_shared/base.css?v=20260722a">
+  <link rel="stylesheet" href="../../projects/_shared/project_page.css?v=20260722a">
+  <link rel="stylesheet" href="../_shared/module-page.css?v=20260722b">
+  <link
+    id="elysiaPrismThemeLink"
+    rel="stylesheet"
+    href="../../assets/prism/prism-dark.css"
+    data-dark-href="../../assets/prism/prism-dark.css"
+    data-light-href="../../assets/prism/prism-light.css"
+  >
+</head>
+<body class="elysia-page elysia-module-page">
+  <div class="elysia-aura elysia-aura--one" aria-hidden="true"></div>
+  <div class="elysia-aura elysia-aura--two" aria-hidden="true"></div>
+  <div class="elysia-stars" aria-hidden="true"></div>
+  <canvas class="elysia-cosmos" id="elysiaCosmos" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <div class="nav__left">
+      <a class="brand" href="../../index.html" aria-label="Home">
+        <span class="brand__dot"></span>
+        <span class="brand__text">AKIL</span>
+      </a>
+      <a href="../index.html" data-i18n="ElysiaEngine.page_common.back_home">Back to Elysia Home</a>
+    </div>
+    <nav class="nav__right" aria-label="Page controls">
+      <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
+        <option value="zh" data-i18n="common.lang.zh">中文</option>
+        <option value="ja" data-i18n="common.lang.ja">日本語</option>
+        <option value="en" data-i18n="common.lang.en">English</option>
+      </select>
+      <button id="toggleFx" class="btn btn--ghost" type="button" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="btn" type="button" data-i18n="common.controls.theme">Theme</button>
+    </nav>
+  </header>
+
+  <main class="wrap elysia-shell">
+    <header class="module-hero">
+      <div>
+        <p class="module-hero__eyebrow" data-i18n="ElysiaEngine.scene.hero.eyebrow">Engine Module · Runtime Coordination</p>
+        <h1 class="module-hero__title" data-i18n="ElysiaEngine.scene.hero.title">Scene System</h1>
+        <p class="module-hero__summary" data-i18n="ElysiaEngine.scene.hero.summary">
+          A lifecycle and routing boundary that owns scene objects, defers transitions to safe frame boundaries, and coordinates input, physics, cameras, rendering, and UI.
+        </p>
+        <div class="module-hero__meta">
+          <span class="module-chip" data-i18n="ElysiaEngine.scene.hero.status">Implemented</span>
+          <span class="module-chip">Lifecycle</span>
+          <span class="module-chip">Routing</span>
+          <span class="module-chip">Ownership</span>
+          <span class="module-chip">Runtime Context</span>
+        </div>
+      </div>
+      <span class="module-hero__number" aria-hidden="true">03</span>
+    </header>
+
+    <div class="module-layout">
+      <aside class="module-toc" data-module-toc>
+        <p class="module-toc__label" data-i18n="ElysiaEngine.scene.toc.label">On this page</p>
+        <ol class="module-toc__list">
+          <li><a href="#overview" data-i18n="ElysiaEngine.scene.toc.overview">Overview</a></li>
+          <li><a href="#boundaries" data-i18n="ElysiaEngine.scene.toc.boundaries">Responsibilities</a></li>
+          <li><a href="#architecture" data-i18n="ElysiaEngine.scene.toc.architecture">Architecture</a></li>
+          <li><a href="#decisions" data-i18n="ElysiaEngine.scene.toc.decisions">Design Evolution</a></li>
+          <li><a href="#code" data-i18n="ElysiaEngine.scene.toc.code">Source</a></li>
+          <li><a href="#next" data-i18n="ElysiaEngine.scene.toc.next">Next</a></li>
+        </ol>
+      </aside>
+
+      <div class="module-content">
+        <section class="module-section" id="overview">
+          <header class="module-section__head">
+            <p class="module-section__eyebrow" data-i18n="ElysiaEngine.scene.overview.eyebrow">01 · Overview</p>
+            <h2 class="module-section__title" data-i18n="ElysiaEngine.scene.overview.title">One boundary for scene lifetime and frame work</h2>
+            <p class="module-section__intro" data-i18n="ElysiaEngine.scene.overview.intro">
+              The system separates route decisions from lifecycle execution. Scenes request a destination; SceneManager validates, stores, and applies that request after input or update completes.
+            </p>
+          </header>
+          <div class="module-grid module-grid--two">
+            <article class="module-card">
+              <p class="module-card__label">SceneManager</p>
+              <h3 data-i18n="ElysiaEngine.scene.overview.manager_title">Registry and transition authority</h3>
+              <p data-i18n="ElysiaEngine.scene.overview.manager_body">Maps SceneKey values to providers, owns the active-scene pointer, binds runtime context, and enforces transition rules.</p>
+            </article>
+            <article class="module-card">
+              <p class="module-card__label">SceneFactory</p>
+              <h3 data-i18n="ElysiaEngine.scene.overview.factory_title">Typed instance cache</h3>
+              <p data-i18n="ElysiaEngine.scene.overview.factory_body">Caches scenes by concrete C++ type and supports reuse, reset, or full reconstruction without exposing allocation to callers.</p>
+            </article>
+            <article class="module-card">
+              <p class="module-card__label">SceneRoute</p>
+              <h3 data-i18n="ElysiaEngine.scene.overview.route_title">A value-owned transition request</h3>
+              <p data-i18n="ElysiaEngine.scene.overview.route_body">Carries the target key, type-erased payload, and reload policy. The manager copies it before processing.</p>
+            </article>
+            <article class="module-card">
+              <p class="module-card__label">SceneRuntimeContext</p>
+              <h3 data-i18n="ElysiaEngine.scene.overview.context_title">Runtime services at the lifecycle boundary</h3>
+              <p data-i18n="ElysiaEngine.scene.overview.context_body">Provides the renderer, content registry, logical dimensions, font resolver, and engine-assist services before on_enter runs.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="module-section" id="boundaries">
+          <header class="module-section__head">
+            <p class="module-section__eyebrow" data-i18n="ElysiaEngine.scene.boundaries.eyebrow">02 · Boundaries</p>
+            <h2 class="module-section__title" data-i18n="ElysiaEngine.scene.boundaries.title">What the scene owns—and what it delegates</h2>
+          </header>
+          <div class="module-grid module-grid--two">
+            <article class="module-card">
+              <p class="module-card__label" data-i18n="ElysiaEngine.scene.boundaries.owns_label">Scene owns</p>
+              <ul class="module-list">
+                <li data-i18n="ElysiaEngine.scene.boundaries.owns_objects">GameObject instances grouped by depth layer and UI root ownership.</li>
+                <li data-i18n="ElysiaEngine.scene.boundaries.owns_dispatch">Input, update, physics, collision, camera, and render dispatch order.</li>
+                <li data-i18n="ElysiaEngine.scene.boundaries.owns_cleanup">Interface registration and frame-end removal of destroyed objects.</li>
+              </ul>
+            </article>
+            <article class="module-card">
+              <p class="module-card__label" data-i18n="ElysiaEngine.scene.boundaries.delegates_label">Scene delegates</p>
+              <ul class="module-list">
+                <li data-i18n="ElysiaEngine.scene.boundaries.delegates_routes">Registration, route validation, caching, and active-scene replacement to SceneManager.</li>
+                <li data-i18n="ElysiaEngine.scene.boundaries.delegates_services">Shared cameras, resources, fonts, and engine services through focused service objects.</li>
+                <li data-i18n="ElysiaEngine.scene.boundaries.delegates_quit">Application termination through an observer request instead of closing the app directly.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="module-section" id="architecture">
+          <header class="module-section__head">
+            <p class="module-section__eyebrow" data-i18n="ElysiaEngine.scene.architecture.eyebrow">03 · Architecture</p>
+            <h2 class="module-section__title" data-i18n="ElysiaEngine.scene.architecture.title">Composition and safe transitions</h2>
+            <p class="module-section__intro" data-i18n="ElysiaEngine.scene.architecture.intro">Two views show how scenes enter the application and how a runtime request becomes a lifecycle transition.</p>
+          </header>
+
+          <figure class="module-diagram" data-module-diagram>
+            <h3 data-i18n="ElysiaEngine.scene.architecture.composition_title">Application scene composition</h3>
+            <p data-i18n="ElysiaEngine.scene.architecture.composition_body">Engine-owned, testbed, and game scenes share one registry before the initial route starts.</p>
+            <div class="module-diagram__fallback" data-i18n="ElysiaEngine.scene.architecture.composition_fallback">Application registers engine, testbed, and game scenes, then starts the configured initial route.</div>
+            <div class="module-diagram__canvas" data-diagram-target></div>
+            <script type="text/plain" data-module-diagram-source>
+flowchart LR
+  A[Application composition] --> B[Engine scenes]
+  A --> C[Testbed scenes]
+  A --> D[Game module scenes]
+  B --> E[SceneManager registry]
+  C --> E
+  D --> E
+  F[Initial SceneRoute] --> E
+  E --> G[SceneFactory]
+  G --> H[Active Scene]
+            </script>
+          </figure>
+
+          <figure class="module-diagram" data-module-diagram>
+            <h3 data-i18n="ElysiaEngine.scene.architecture.transition_title">Deferred transition boundary</h3>
+            <p data-i18n="ElysiaEngine.scene.architecture.transition_body">A scene emits intent during input or update; replacement happens only after that phase returns.</p>
+            <div class="module-diagram__fallback" data-i18n="ElysiaEngine.scene.architecture.transition_fallback">Scene request → pending value copy → frame boundary → exit and reload policy → context binding → enter.</div>
+            <div class="module-diagram__canvas" data-diagram-target></div>
+            <script type="text/plain" data-module-diagram-source>
+flowchart LR
+  A[Scene requests switch] --> B[Copy pending request]
+  B --> C[Input or update returns]
+  C --> D[Validate target]
+  D --> E[Exit current scene]
+  E --> F{Reload mode}
+  F -->|Reuse| G[Use cached instance]
+  F -->|Reset| H[Reset cached instance]
+  F -->|Recreate| I[Destroy and construct]
+  G --> J[Bind runtime context]
+  H --> J
+  I --> J
+  J --> K[Enter with payload]
+            </script>
+          </figure>
+        </section>
+
+        <section class="module-section" id="decisions">
+          <header class="module-section__head">
+            <p class="module-section__eyebrow" data-i18n="ElysiaEngine.scene.decisions.eyebrow">04 · Design evolution</p>
+            <h2 class="module-section__title" data-i18n="ElysiaEngine.scene.decisions.title">How the scene boundary became explicit</h2>
+            <p class="module-section__intro" data-i18n="ElysiaEngine.scene.decisions.intro">Three changes turned scene switching from a convenient manager call into a predictable runtime contract.</p>
+          </header>
+
+          <div class="module-evolution">
+            <article class="module-evolution-story" data-i18n="ElysiaEngine.scene.decisions.deferred_story" data-i18n-html>
+              <header class="module-evolution-story__head">
+                <span class="module-evolution-story__index">01</span>
+                <div>
+                  <h3>From direct switching to a deferred request boundary</h3>
+                  <p>Scene code expresses navigation intent; lifecycle replacement waits until the current frame phase has returned.</p>
+                </div>
+              </header>
+              <div class="module-evolution-story__stages">
+                <section class="module-evolution-stage module-evolution-stage--initial">
+                  <h4>Initial approach</h4>
+                  <p><code>SceneManager::switch_to&lt;T&gt;()</code> obtained a typed instance from the factory and replaced the active scene immediately.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--pressure">
+                  <h4>Why it changed</h4>
+                  <p>Once scenes initiated navigation themselves, immediate replacement during an input or update callback could re-enter lifecycle work while the old scene was still on the call stack.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--current">
+                  <h4>Current design</h4>
+                  <p>A Scene emits a value-owned request. SceneManager copies it, then processes it only after <code>on_input</code> or <code>on_update</code> returns.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--tradeoff">
+                  <h4>Trade-off</h4>
+                  <p>Requests are valid only during normal input or update work. One request is accepted per cycle; duplicate or reentrant requests throw <code>logic_error</code>.</p>
+                </section>
+              </div>
+            </article>
+
+            <article class="module-evolution-story" data-i18n="ElysiaEngine.scene.decisions.route_story" data-i18n-html>
+              <header class="module-evolution-story__head">
+                <span class="module-evolution-story__index">02</span>
+                <div>
+                  <h3>From separate operations to explicit route semantics</h3>
+                  <p>A transition now carries its destination, data, and instance-lifetime policy as one coherent value.</p>
+                </div>
+              </header>
+              <div class="module-evolution-story__stages">
+                <section class="module-evolution-stage module-evolution-stage--initial">
+                  <h4>Initial approach</h4>
+                  <p>Switching, resetting, and destroying scenes were separate manager operations. The first request structure also stored target, payload, and reload mode as independent fields.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--pressure">
+                  <h4>Why it changed</h4>
+                  <p>A call site could not express the complete transition contract in one object, and related routing fields could be passed or evolved independently.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--current">
+                  <h4>Current design</h4>
+                  <p><code>SceneRoute</code> groups the target, payload, and policy. <code>Reuse</code> keeps cached state, <code>Reset</code> keeps allocation but restores state, and <code>Recreate</code> constructs a new instance.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--tradeoff">
+                  <h4>Trade-off</h4>
+                  <p>The factory cache and type-erased payload keep callers simple, but payload compatibility and the selected reload policy remain runtime contracts.</p>
+                </section>
+              </div>
+            </article>
+
+            <article class="module-evolution-story" data-i18n="ElysiaEngine.scene.decisions.context_story" data-i18n-html>
+              <header class="module-evolution-story__head">
+                <span class="module-evolution-story__index">03</span>
+                <div>
+                  <h3>From implicit services to a bounded runtime context</h3>
+                  <p>Runtime-only dependencies are supplied at the lifecycle boundary instead of being treated as construction-time state.</p>
+                </div>
+              </header>
+              <div class="module-evolution-story__stages">
+                <section class="module-evolution-stage module-evolution-stage--initial">
+                  <h4>Initial approach</h4>
+                  <p>The Scene lifecycle had no unified runtime dependency carrier, while the manager and scenes reached renderer, camera, and other services through separate paths.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--pressure">
+                  <h4>Why it changed</h4>
+                  <p>Cached scenes may be constructed long before entry. Renderer, content registry, logical dimensions, and related services belong to the active runtime rather than factory construction.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--current">
+                  <h4>Current design</h4>
+                  <p>SceneManager binds <code>SceneRuntimeContext</code> before <code>on_enter</code>. Recreate and shutdown clear that binding before a cached scene is destroyed.</p>
+                </section>
+                <section class="module-evolution-stage module-evolution-stage--tradeoff">
+                  <h4>Trade-off</h4>
+                  <p>The non-owning context centralizes access without extending service lifetime, so Application, SceneManager, and Scene must preserve a strict destruction order.</p>
+                </section>
+              </div>
+            </article>
+          </div>
+          <p class="module-source-note">
+            <span data-i18n="ElysiaEngine.scene.decisions.test_note">Lifecycle behavior is covered by the Scene core tests.</span>
+            <a href="https://github.com/Akil0814/Moonline/blob/master/tests/scene/scene_core_tests.cpp" target="_blank" rel="noreferrer" data-i18n="ElysiaEngine.scene.decisions.test_link">View scene_core_tests.cpp ↗</a>
+          </p>
+        </section>
+
+        <section class="module-section" id="code">
+          <header class="module-section__head">
+            <p class="module-section__eyebrow" data-i18n="ElysiaEngine.scene.code.eyebrow">05 · Selected source</p>
+            <h2 class="module-section__title" data-i18n="ElysiaEngine.scene.code.title">The contracts behind the flow</h2>
+            <p class="module-section__intro" data-i18n="ElysiaEngine.scene.code.intro">These snapshots were selected from the current local Moonline working tree. The source links point to their canonical files on GitHub.</p>
+          </header>
+
+          <article class="module-code-card" data-module-code data-code-path="../snippets/scene/scene_contract.h" data-code-title="scene.h" data-visible-lines="22" data-source-url="https://github.com/Akil0814/Moonline/blob/master/engine/scene/scene.h">
+            <div class="module-code-card__head">
+              <div><p class="module-card__label">Contract</p><h3 data-i18n="ElysiaEngine.scene.code.contract_title">Scene lifecycle and routing surface</h3></div>
+              <span class="module-code-card__path">engine/scene/scene.h</span>
+            </div>
+            <p data-i18n="ElysiaEngine.scene.code.contract_body">The base class exposes lifecycle hooks while keeping route emission and runtime services behind the protected boundary.</p>
+            <pre class="module-code-fallback"><code>virtual void on_enter(const ScenePayload&amp; payload) = 0;
+virtual void on_exit() = 0;
+virtual void reset() = 0;
+
+void request_scene_switch(const SceneRoute&amp; route);
+[[nodiscard]] const SceneRuntimeContext&amp; runtime_context() const;</code></pre>
+            <div class="module-code-slot" data-code-target></div>
+          </article>
+
+          <article class="module-code-card" data-module-code data-code-path="../snippets/scene/scene_route.h" data-code-title="scene_route.h + scene_request.h" data-visible-lines="22" data-source-url="https://github.com/Akil0814/Moonline/blob/master/engine/scene/routing/scene_route.h">
+            <div class="module-code-card__head">
+              <div><p class="module-card__label">Routing</p><h3 data-i18n="ElysiaEngine.scene.code.route_title">Value-owned route data</h3></div>
+              <span class="module-code-card__path">engine/scene/routing/scene_route.h</span>
+            </div>
+            <p data-i18n="ElysiaEngine.scene.code.route_body">The route keeps destination, payload, and lifetime policy together, while SceneRequest distinguishes switching from quitting.</p>
+            <pre class="module-code-fallback"><code>enum class SceneReloadMode
+{
+    Reuse,
+    Reset,
+    Recreate
+};
+
+struct SceneRoute
+{
+    SceneKey target = SceneKeys::Invalid;
+    ScenePayload payload{};
+    SceneReloadMode reload_mode = SceneReloadMode::Reuse;
+};</code></pre>
+            <div class="module-code-slot" data-code-target></div>
+          </article>
+
+          <article class="module-code-card" data-module-code data-code-path="../snippets/scene/scene_manager_transition.cpp" data-code-title="scene_manager.cpp" data-visible-lines="24" data-source-url="https://github.com/Akil0814/Moonline/blob/master/engine/scene/scene_manager.cpp">
+            <div class="module-code-card__head">
+              <div><p class="module-card__label">Transition</p><h3 data-i18n="ElysiaEngine.scene.code.manager_title">Pending request and lifecycle execution</h3></div>
+              <span class="module-code-card__path">engine/scene/scene_manager.cpp</span>
+            </div>
+            <p data-i18n="ElysiaEngine.scene.code.manager_body">The manager rejects ambiguous requests, takes a value copy, and applies exit, reset, context binding, and enter in a controlled order.</p>
+            <pre class="module-code-fallback"><code>const SceneRequest request = _pending_request;
+_pending_request = SceneRequest{};
+_has_pending_request = false;
+
+ProcessingRequestGuard processing_guard(_is_processing_request);
+
+switch (request.type)
+{
+case SceneRequestType::Switch:
+    switch_to_registered_scene(request.route);
+    break;
+}</code></pre>
+            <div class="module-code-slot" data-code-target></div>
+          </article>
+        </section>
+
+        <section class="module-section" id="next">
+          <header class="module-section__head">
+            <p class="module-section__eyebrow" data-i18n="ElysiaEngine.scene.next.eyebrow">06 · Limits and next steps</p>
+            <h2 class="module-section__title" data-i18n="ElysiaEngine.scene.next.title">Keep the boundary explicit as the engine grows</h2>
+          </header>
+          <div class="module-grid module-grid--two">
+            <article class="module-card">
+              <h3 data-i18n="ElysiaEngine.scene.next.limit_title">Current constraints</h3>
+              <p data-i18n="ElysiaEngine.scene.next.limit_body">Requests are intentionally limited to normal input and update execution, and only one request may be queued per processing cycle.</p>
+            </article>
+            <article class="module-card">
+              <h3 data-i18n="ElysiaEngine.scene.next.future_title">Natural extensions</h3>
+              <p data-i18n="ElysiaEngine.scene.next.future_body">Future work can add transition effects or asynchronous scene preparation while preserving the same route and lifecycle boundary.</p>
+            </article>
+          </div>
+        </section>
+
+        <nav class="module-bottom-nav" aria-label="Module navigation" data-i18n="ElysiaEngine.scene.navigation.aria" data-i18n-attr="aria-label">
+          <a href="../index.html#elysia-content">
+            <span class="module-bottom-nav__label" data-i18n="ElysiaEngine.scene.navigation.back_label">Module index</span>
+            <span class="module-bottom-nav__title" data-i18n="ElysiaEngine.scene.navigation.back_title">← Back to all modules</span>
+          </a>
+          <span aria-disabled="true">
+            <span class="module-bottom-nav__label" data-i18n="ElysiaEngine.scene.navigation.next_label">Next module</span>
+            <span class="module-bottom-nav__title" data-i18n="ElysiaEngine.scene.navigation.next_title">Resource Loading · Coming soon</span>
+          </span>
+        </nav>
+      </div>
+    </div>
+  </main>
+
+  <footer class="elysia-footer">
+    <p><span class="mono">&copy; <span id="year"></span> Akil</span><span class="elysia-footer__dot"> · </span><span data-i18n="ElysiaEngine.scene.footer">Elysia Engine · Scene System</span></p>
+  </footer>
+
+  <script src="../../assets/js/i18n.js"></script>
+  <script src="../../assets/prism/prism.js"></script>
+  <script src="../_shared/base.js?v=20260722a"></script>
+  <script src="../_shared/cosmos.js?v=20260719c"></script>
+  <script src="../../projects/_shared/project_code_block.js?v=20260722a"></script>
+  <script src="../../projects/_shared/project_mermaid.js?v=20260722a"></script>
+  <script src="../_shared/module-page.js?v=20260722b"></script>
+</body>
+</html>

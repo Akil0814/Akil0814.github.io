@@ -24,7 +24,8 @@
       "localization": "本地化",
       "ui": "UI",
       "testbed": "测试平台",
-      "coming_soon": "即将开放"
+      "coming_soon": "即将开放",
+      "view_module": "查看模块"
     },
     "footer": {
       "page": "Elysia Engine 模块索引"

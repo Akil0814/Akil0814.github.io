@@ -1,0 +1,95 @@
+{
+  "ElysiaEngine": {
+    "scene": {
+      "meta": { "title": "场景系统 · Elysia Engine" },
+      "hero": {
+        "eyebrow": "引擎模块 · 运行时协调",
+        "title": "场景系统",
+        "summary": "一个负责场景生命周期与路由的边界：持有场景对象，将切换推迟到安全的帧边界，并统一协调输入、物理、相机、渲染与 UI。",
+        "status": "已实现"
+      },
+      "toc": {
+        "label": "本页目录",
+        "overview": "概览",
+        "boundaries": "职责边界",
+        "architecture": "架构",
+        "decisions": "设计演进",
+        "code": "源码",
+        "next": "后续"
+      },
+      "overview": {
+        "eyebrow": "01 · 概览",
+        "title": "统一场景生命周期与帧内工作的边界",
+        "intro": "系统将路由决策与生命周期执行分开。场景只请求目标；SceneManager 在输入或更新结束后校验、保存并执行请求。",
+        "manager_title": "注册表与切换权威",
+        "manager_body": "把 SceneKey 映射到 provider，持有活动场景指针，绑定运行时上下文并执行切换规则。",
+        "factory_title": "按类型缓存实例",
+        "factory_body": "SceneFactory 按具体 C++ 类型缓存场景，并支持复用、重置或完全重建，无需调用方处理分配。",
+        "route_title": "按值持有的切换请求",
+        "route_body": "同时携带目标 key、类型擦除 payload 与重载策略；管理器会在处理前复制整条路由。",
+        "context_title": "生命周期边界上的运行时服务",
+        "context_body": "在 on_enter 前提供 renderer、内容注册表、逻辑尺寸、字体解析器和引擎辅助服务。"
+      },
+      "boundaries": {
+        "eyebrow": "02 · 职责边界",
+        "title": "场景负责什么，又把什么交给其他系统",
+        "owns_label": "Scene 负责",
+        "owns_objects": "按深度层持有 GameObject，并持有 UI 根元素。",
+        "owns_dispatch": "规定输入、更新、物理、碰撞、相机与渲染的分发顺序。",
+        "owns_cleanup": "登记对象实现的接口，并在帧末移除已销毁对象。",
+        "delegates_label": "Scene 委托",
+        "delegates_routes": "把注册、路由校验、缓存与活动场景替换交给 SceneManager。",
+        "delegates_services": "通过专用服务对象使用共享相机、资源、字体与引擎服务。",
+        "delegates_quit": "通过观察者请求应用退出，而不是由场景直接关闭程序。"
+      },
+      "architecture": {
+        "eyebrow": "03 · 架构",
+        "title": "场景组合与安全切换",
+        "intro": "两张图分别说明场景如何进入应用，以及运行时请求如何转化为生命周期切换。",
+        "composition_title": "应用场景组合",
+        "composition_body": "引擎内置场景、测试平台场景与游戏场景在初始路由启动前共享同一个注册表。",
+        "composition_fallback": "应用注册引擎、测试平台和游戏场景，然后启动配置的初始路由。",
+        "transition_title": "延迟执行的切换边界",
+        "transition_body": "场景在输入或更新阶段发出意图；只有当前阶段返回后，管理器才真正替换场景。",
+        "transition_fallback": "场景请求 → 复制待处理值 → 帧边界 → 退出与重载策略 → 绑定上下文 → 进入。"
+      },
+      "decisions": {
+        "eyebrow": "04 · 设计演进",
+        "title": "场景边界如何一步步变得明确",
+        "intro": "三次关键调整，将一次方便的管理器调用逐渐收束为可预测的运行时契约。",
+        "deferred_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>01</span><div><h3>从直接切换到延迟请求边界</h3><p>场景只表达导航意图；生命周期替换会等到当前帧阶段返回后再执行。</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>初期方案</h4><p><code>SceneManager::switch_to&lt;T&gt;()</code> 直接从 factory 取得具体类型的实例，并立即替换活动场景。</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>为什么需要改变</h4><p>当场景开始自主发起导航后，如果在输入或更新回调中立刻替换，旧场景仍在调用栈上时就可能重入生命周期处理。</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>当前设计</h4><p>Scene 发出按值持有的请求；SceneManager 复制请求，仅在 <code>on_input</code> 或 <code>on_update</code> 返回后处理。</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>取舍</h4><p>请求只能在正常输入或更新阶段发出。每周期只接受一个请求；重复或重入请求会抛出 <code>logic_error</code>。</p></section></div>",
+        "route_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>02</span><div><h3>从分散操作到显式路由语义</h3><p>一次切换现在会用同一个值完整表达目标、数据和实例生命周期策略。</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>初期方案</h4><p>切换、重置和销毁场景是彼此分离的管理器操作；最初的请求结构也分别保存 target、payload 和 reload mode。</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>为什么需要改变</h4><p>调用点无法用一个对象表达完整的切换契约，彼此相关的路由字段也可能被独立传递或演进。</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>当前设计</h4><p><code>SceneRoute</code> 聚合目标、payload 与策略。<code>Reuse</code> 保留缓存状态，<code>Reset</code> 保留分配但恢复状态，<code>Recreate</code> 创建全新实例。</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>取舍</h4><p>factory 缓存和类型擦除 payload 简化了调用方，但 payload 兼容性与重载策略仍然是运行时契约。</p></section></div>",
+        "context_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>03</span><div><h3>从隐式服务访问到有边界的运行时上下文</h3><p>只在运行时成立的依赖由生命周期边界提供，而不再被当作构造期状态。</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>初期方案</h4><p>Scene 生命周期没有统一的运行时依赖载体，管理器和场景分别通过不同路径接触 renderer、相机及其他服务。</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>为什么需要改变</h4><p>缓存场景可能早在进入前就已构造；renderer、内容注册表、逻辑尺寸等依赖属于活动运行时，而不是 factory 构造阶段。</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>当前设计</h4><p>SceneManager 在 <code>on_enter</code> 前绑定 <code>SceneRuntimeContext</code>；Recreate 和 shutdown 会在销毁缓存场景前解除绑定。</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>取舍</h4><p>非拥有上下文集中服务访问但不会延长服务寿命，因此 Application、SceneManager 与 Scene 必须保持严格的销毁顺序。</p></section></div>",
+        "test_note": "这些生命周期行为由 Scene 核心测试覆盖。",
+        "test_link": "查看 scene_core_tests.cpp ↗"
+      },
+      "code": {
+        "eyebrow": "05 · 精选源码",
+        "title": "流程背后的真实契约",
+        "intro": "这些快照取自当前本地 Moonline 工作树；源码按钮指向 GitHub 上对应的规范文件。",
+        "contract_title": "Scene 生命周期与路由接口",
+        "contract_body": "基类公开生命周期 hook，同时把路由发送与运行时服务限制在 protected 边界内。",
+        "route_title": "按值持有的路由数据",
+        "route_body": "SceneRoute 把目标、payload 与生命周期策略放在一起，SceneRequest 则区分切换和退出。",
+        "manager_title": "待处理请求与生命周期执行",
+        "manager_body": "管理器拒绝含糊请求，保存值副本，并按受控顺序执行退出、重置、上下文绑定与进入。"
+      },
+      "next": {
+        "eyebrow": "06 · 限制与后续",
+        "title": "引擎扩展时仍保持清晰边界",
+        "limit_title": "当前约束",
+        "limit_body": "请求只能在正常输入与更新阶段发出，并且每个处理周期最多排队一个请求。",
+        "future_title": "自然扩展方向",
+        "future_body": "未来可以加入场景过渡效果或异步场景准备，同时保留现有路由与生命周期边界。"
+      },
+      "navigation": {
+        "aria": "模块导航",
+        "back_label": "模块索引",
+        "back_title": "← 返回全部模块",
+        "next_label": "下一个模块",
+        "next_title": "资源加载 · 即将开放"
+      },
+      "footer": "Elysia Engine · 场景系统"
+    }
+  }
+}

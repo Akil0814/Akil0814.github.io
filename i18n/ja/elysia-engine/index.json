@@ -24,7 +24,8 @@
       "localization": "ローカライゼーション",
       "ui": "UI",
       "testbed": "テストベッド",
-      "coming_soon": "近日公開"
+      "coming_soon": "近日公開",
+      "view_module": "モジュールを見る"
     },
     "footer": {
       "page": "Elysia Engine モジュール索引"

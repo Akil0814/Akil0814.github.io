@@ -1,0 +1,95 @@
+{
+  "ElysiaEngine": {
+    "scene": {
+      "meta": { "title": "シーンシステム · Elysia Engine" },
+      "hero": {
+        "eyebrow": "エンジンモジュール · ランタイム調整",
+        "title": "シーンシステム",
+        "summary": "シーンオブジェクトを所有し、安全なフレーム境界まで遷移を遅延させ、入力・物理・カメラ・描画・UIを統合するライフサイクルとルーティングの境界です。",
+        "status": "実装済み"
+      },
+      "toc": {
+        "label": "このページ",
+        "overview": "概要",
+        "boundaries": "責務",
+        "architecture": "アーキテクチャ",
+        "decisions": "設計の進化",
+        "code": "ソース",
+        "next": "今後"
+      },
+      "overview": {
+        "eyebrow": "01 · 概要",
+        "title": "シーン寿命とフレーム処理をまとめる境界",
+        "intro": "ルート判断とライフサイクル実行を分離します。シーンは遷移先を要求し、SceneManager が入力または更新の完了後に検証・保存・適用します。",
+        "manager_title": "レジストリと遷移の管理者",
+        "manager_body": "SceneKey を provider に対応付け、アクティブシーン、ランタイム文脈、遷移規則を管理します。",
+        "factory_title": "型付きインスタンスキャッシュ",
+        "factory_body": "具象 C++ 型ごとにシーンをキャッシュし、呼び出し側に割り当て処理を公開せず再利用・リセット・再生成を提供します。",
+        "route_title": "値として保持される遷移要求",
+        "route_body": "遷移先、型消去された payload、再読み込み方針をまとめ、処理前にマネージャーがコピーします。",
+        "context_title": "ライフサイクル境界のランタイムサービス",
+        "context_body": "on_enter より前に renderer、コンテンツレジストリ、論理解像度、フォント解決器、補助サービスを提供します。"
+      },
+      "boundaries": {
+        "eyebrow": "02 · 責務境界",
+        "title": "シーンが所有するものと委譲するもの",
+        "owns_label": "Scene が所有",
+        "owns_objects": "深度レイヤー別の GameObject と UI ルートの所有権。",
+        "owns_dispatch": "入力、更新、物理、衝突、カメラ、描画の実行順序。",
+        "owns_cleanup": "オブジェクトのインターフェース登録とフレーム終端での破棄済みオブジェクト削除。",
+        "delegates_label": "Scene が委譲",
+        "delegates_routes": "登録、ルート検証、キャッシュ、アクティブシーン置換を SceneManager に委譲します。",
+        "delegates_services": "共有カメラ、リソース、フォント、エンジンサービスは専用サービスを通して利用します。",
+        "delegates_quit": "アプリを直接閉じず、observer 要求として終了を通知します。"
+      },
+      "architecture": {
+        "eyebrow": "03 · アーキテクチャ",
+        "title": "構成と安全な遷移",
+        "intro": "シーンがアプリへ登録される流れと、実行時要求がライフサイクル遷移になる流れを示します。",
+        "composition_title": "アプリケーションのシーン構成",
+        "composition_body": "初期ルート開始前に、エンジン・テストベッド・ゲームの各シーンを一つのレジストリへ登録します。",
+        "composition_fallback": "各種シーンを登録し、設定された初期ルートを開始します。",
+        "transition_title": "遅延される遷移境界",
+        "transition_body": "シーンは入力または更新中に意図を通知し、そのフェーズが戻った後だけ置換が行われます。",
+        "transition_fallback": "シーン要求 → 値コピー → フレーム境界 → 終了と再読み込み → 文脈接続 → 開始。"
+      },
+      "decisions": {
+        "eyebrow": "04 · 設計の進化",
+        "title": "シーン境界が明確になるまで",
+        "intro": "三つの変更によって、便利なマネージャー呼び出しを予測可能なランタイム契約へ発展させました。",
+        "deferred_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>01</span><div><h3>直接切替から遅延要求境界へ</h3><p>シーンはナビゲーションの意図だけを示し、ライフサイクルの置換は現在のフレームフェーズが戻るまで待機します。</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>初期案</h4><p><code>SceneManager::switch_to&lt;T&gt;()</code> が factory から具象型のインスタンスを取得し、アクティブシーンを即座に置換していました。</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>変更が必要だった理由</h4><p>シーン自身が遷移を要求するようになると、入力や更新コールバック中の即時置換は、旧シーンが呼び出しスタック上にあるままライフサイクル処理を再入させる可能性があります。</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>現在の設計</h4><p>Scene が値所有の要求を発行し、SceneManager がコピーします。処理は <code>on_input</code> または <code>on_update</code> が戻った後だけ行われます。</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>トレードオフ</h4><p>要求は通常の入力・更新処理中に限られます。1サイクルにつき一つだけ受け付け、重複または再入要求は <code>logic_error</code> になります。</p></section></div>",
+        "route_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>02</span><div><h3>分散した操作から明示的なルート意味論へ</h3><p>遷移先、データ、インスタンス寿命方針を一つの値で完全に表現します。</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>初期案</h4><p>シーンの切替、リセット、破棄は別々のマネージャー操作でした。最初の要求構造も target、payload、reload mode を独立したフィールドとして保持していました。</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>変更が必要だった理由</h4><p>呼び出し側が完全な遷移契約を一つのオブジェクトで示せず、関連するルート情報が別々に渡されたり発展したりする状態でした。</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>現在の設計</h4><p><code>SceneRoute</code> が遷移先、payload、方針をまとめます。<code>Reuse</code> はキャッシュ状態を維持し、<code>Reset</code> は割り当てを保って状態を戻し、<code>Recreate</code> は新しいインスタンスを生成します。</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>トレードオフ</h4><p>factory キャッシュと型消去 payload は呼び出し側を簡潔にしますが、payload の互換性と再読み込み方針は実行時契約として残ります。</p></section></div>",
+        "context_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>03</span><div><h3>暗黙的なサービス参照から境界付きランタイム文脈へ</h3><p>実行時だけ成立する依存関係を、構築時状態ではなくライフサイクル境界で提供します。</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>初期案</h4><p>Scene のライフサイクルには統一された実行時依存の入れ物がなく、マネージャーとシーンが renderer、カメラなどのサービスへ別々の経路でアクセスしていました。</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>変更が必要だった理由</h4><p>キャッシュされたシーンは開始よりかなり前に構築される場合があります。renderer、コンテンツレジストリ、論理サイズなどは factory の構築時ではなくアクティブな実行環境に属します。</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>現在の設計</h4><p>SceneManager は <code>on_enter</code> より前に <code>SceneRuntimeContext</code> を接続します。Recreate と shutdown はキャッシュされたシーンを破棄する前に接続を解除します。</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>トレードオフ</h4><p>非所有の文脈はサービス寿命を延長せずにアクセスを集中させるため、Application、SceneManager、Scene は厳密な破棄順序を守る必要があります。</p></section></div>",
+        "test_note": "これらのライフサイクル動作は Scene コアテストで検証されています。",
+        "test_link": "scene_core_tests.cpp を見る ↗"
+      },
+      "code": {
+        "eyebrow": "05 · ソース抜粋",
+        "title": "処理フローを支える契約",
+        "intro": "現在のローカル Moonline 作業ツリーから取得したスナップショットです。リンクは GitHub の正式なファイルを開きます。",
+        "contract_title": "Scene のライフサイクルとルーティング",
+        "contract_body": "基底クラスはライフサイクルを公開し、ルート通知とランタイムサービスを protected 境界内に保ちます。",
+        "route_title": "値所有のルートデータ",
+        "route_body": "遷移先、payload、寿命方針を一つにまとめ、SceneRequest が切替と終了を区別します。",
+        "manager_title": "保留要求とライフサイクル実行",
+        "manager_body": "曖昧な要求を拒否し、値コピーを保存して終了・リセット・文脈接続・開始を順序通り実行します。"
+      },
+      "next": {
+        "eyebrow": "06 · 制約と今後",
+        "title": "エンジンが成長しても境界を明確に保つ",
+        "limit_title": "現在の制約",
+        "limit_body": "要求は通常の入力・更新中に限定され、各処理サイクルでキューに入れられる要求は一つだけです。",
+        "future_title": "自然な拡張",
+        "future_body": "同じルートとライフサイクル境界を保ちながら、遷移演出や非同期シーン準備を追加できます。"
+      },
+      "navigation": {
+        "aria": "モジュールナビゲーション",
+        "back_label": "モジュール一覧",
+        "back_title": "← すべてのモジュールへ戻る",
+        "next_label": "次のモジュール",
+        "next_title": "リソース読み込み · 準備中"
+      },
+      "footer": "Elysia Engine · シーンシステム"
+    }
+  }
+}

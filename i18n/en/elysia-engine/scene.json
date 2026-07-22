@@ -1,0 +1,95 @@
+{
+  "ElysiaEngine": {
+    "scene": {
+      "meta": { "title": "Scene System · Elysia Engine" },
+      "hero": {
+        "eyebrow": "Engine Module · Runtime Coordination",
+        "title": "Scene System",
+        "summary": "A lifecycle and routing boundary that owns scene objects, defers transitions to safe frame boundaries, and coordinates input, physics, cameras, rendering, and UI.",
+        "status": "Implemented"
+      },
+      "toc": {
+        "label": "On this page",
+        "overview": "Overview",
+        "boundaries": "Responsibilities",
+        "architecture": "Architecture",
+        "decisions": "Design Evolution",
+        "code": "Source",
+        "next": "Next"
+      },
+      "overview": {
+        "eyebrow": "01 · Overview",
+        "title": "One boundary for scene lifetime and frame work",
+        "intro": "The system separates route decisions from lifecycle execution. Scenes request a destination; SceneManager validates, stores, and applies that request after input or update completes.",
+        "manager_title": "Registry and transition authority",
+        "manager_body": "Maps SceneKey values to providers, owns the active-scene pointer, binds runtime context, and enforces transition rules.",
+        "factory_title": "Typed instance cache",
+        "factory_body": "Caches scenes by concrete C++ type and supports reuse, reset, or full reconstruction without exposing allocation to callers.",
+        "route_title": "A value-owned transition request",
+        "route_body": "Carries the target key, type-erased payload, and reload policy. The manager copies it before processing.",
+        "context_title": "Runtime services at the lifecycle boundary",
+        "context_body": "Provides the renderer, content registry, logical dimensions, font resolver, and engine-assist services before on_enter runs."
+      },
+      "boundaries": {
+        "eyebrow": "02 · Boundaries",
+        "title": "What the scene owns—and what it delegates",
+        "owns_label": "Scene owns",
+        "owns_objects": "GameObject instances grouped by depth layer and UI root ownership.",
+        "owns_dispatch": "Input, update, physics, collision, camera, and render dispatch order.",
+        "owns_cleanup": "Interface registration and frame-end removal of destroyed objects.",
+        "delegates_label": "Scene delegates",
+        "delegates_routes": "Registration, route validation, caching, and active-scene replacement to SceneManager.",
+        "delegates_services": "Shared cameras, resources, fonts, and engine services through focused service objects.",
+        "delegates_quit": "Application termination through an observer request instead of closing the app directly."
+      },
+      "architecture": {
+        "eyebrow": "03 · Architecture",
+        "title": "Composition and safe transitions",
+        "intro": "Two views show how scenes enter the application and how a runtime request becomes a lifecycle transition.",
+        "composition_title": "Application scene composition",
+        "composition_body": "Engine-owned, testbed, and game scenes share one registry before the initial route starts.",
+        "composition_fallback": "Application registers engine, testbed, and game scenes, then starts the configured initial route.",
+        "transition_title": "Deferred transition boundary",
+        "transition_body": "A scene emits intent during input or update; replacement happens only after that phase returns.",
+        "transition_fallback": "Scene request → pending value copy → frame boundary → exit and reload policy → context binding → enter."
+      },
+      "decisions": {
+        "eyebrow": "04 · Design evolution",
+        "title": "How the scene boundary became explicit",
+        "intro": "Three changes turned scene switching from a convenient manager call into a predictable runtime contract.",
+        "deferred_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>01</span><div><h3>From direct switching to a deferred request boundary</h3><p>Scene code expresses navigation intent; lifecycle replacement waits until the current frame phase has returned.</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>Initial approach</h4><p><code>SceneManager::switch_to&lt;T&gt;()</code> obtained a typed instance from the factory and replaced the active scene immediately.</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>Why it changed</h4><p>Once scenes initiated navigation themselves, immediate replacement during an input or update callback could re-enter lifecycle work while the old scene was still on the call stack.</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>Current design</h4><p>A Scene emits a value-owned request. SceneManager copies it, then processes it only after <code>on_input</code> or <code>on_update</code> returns.</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>Trade-off</h4><p>Requests are valid only during normal input or update work. One request is accepted per cycle; duplicate or reentrant requests throw <code>logic_error</code>.</p></section></div>",
+        "route_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>02</span><div><h3>From separate operations to explicit route semantics</h3><p>A transition now carries its destination, data, and instance-lifetime policy as one coherent value.</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>Initial approach</h4><p>Switching, resetting, and destroying scenes were separate manager operations. The first request structure also stored target, payload, and reload mode as independent fields.</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>Why it changed</h4><p>A call site could not express the complete transition contract in one object, and related routing fields could be passed or evolved independently.</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>Current design</h4><p><code>SceneRoute</code> groups the target, payload, and policy. <code>Reuse</code> keeps cached state, <code>Reset</code> keeps allocation but restores state, and <code>Recreate</code> constructs a new instance.</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>Trade-off</h4><p>The factory cache and type-erased payload keep callers simple, but payload compatibility and the selected reload policy remain runtime contracts.</p></section></div>",
+        "context_story": "<header class='module-evolution-story__head'><span class='module-evolution-story__index'>03</span><div><h3>From implicit services to a bounded runtime context</h3><p>Runtime-only dependencies are supplied at the lifecycle boundary instead of being treated as construction-time state.</p></div></header><div class='module-evolution-story__stages'><section class='module-evolution-stage module-evolution-stage--initial'><h4>Initial approach</h4><p>The Scene lifecycle had no unified runtime dependency carrier, while the manager and scenes reached renderer, camera, and other services through separate paths.</p></section><section class='module-evolution-stage module-evolution-stage--pressure'><h4>Why it changed</h4><p>Cached scenes may be constructed long before entry. Renderer, content registry, logical dimensions, and related services belong to the active runtime rather than factory construction.</p></section><section class='module-evolution-stage module-evolution-stage--current'><h4>Current design</h4><p>SceneManager binds <code>SceneRuntimeContext</code> before <code>on_enter</code>. Recreate and shutdown clear that binding before a cached scene is destroyed.</p></section><section class='module-evolution-stage module-evolution-stage--tradeoff'><h4>Trade-off</h4><p>The non-owning context centralizes access without extending service lifetime, so Application, SceneManager, and Scene must preserve a strict destruction order.</p></section></div>",
+        "test_note": "Lifecycle behavior is covered by the Scene core tests.",
+        "test_link": "View scene_core_tests.cpp ↗"
+      },
+      "code": {
+        "eyebrow": "05 · Selected source",
+        "title": "The contracts behind the flow",
+        "intro": "These snapshots were selected from the current local Moonline working tree. The source links point to their canonical files on GitHub.",
+        "contract_title": "Scene lifecycle and routing surface",
+        "contract_body": "The base class exposes lifecycle hooks while keeping route emission and runtime services behind the protected boundary.",
+        "route_title": "Value-owned route data",
+        "route_body": "The route keeps destination, payload, and lifetime policy together, while SceneRequest distinguishes switching from quitting.",
+        "manager_title": "Pending request and lifecycle execution",
+        "manager_body": "The manager rejects ambiguous requests, takes a value copy, and applies exit, reset, context binding, and enter in a controlled order."
+      },
+      "next": {
+        "eyebrow": "06 · Limits and next steps",
+        "title": "Keep the boundary explicit as the engine grows",
+        "limit_title": "Current constraints",
+        "limit_body": "Requests are intentionally limited to normal input and update execution, and only one request may be queued per processing cycle.",
+        "future_title": "Natural extensions",
+        "future_body": "Future work can add transition effects or asynchronous scene preparation while preserving the same route and lifecycle boundary."
+      },
+      "navigation": {
+        "aria": "Module navigation",
+        "back_label": "Module index",
+        "back_title": "← Back to all modules",
+        "next_label": "Next module",
+        "next_title": "Resource Loading · Coming soon"
+      },
+      "footer": "Elysia Engine · Scene System"
+    }
+  }
+}
