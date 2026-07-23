@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../../css/layout.css">
   <link rel="stylesheet" href="../_shared/base.css?v=20260722a">
   <link rel="stylesheet" href="../../projects/_shared/project_page.css?v=20260722a">
-  <link rel="stylesheet" href="../_shared/module-page.css?v=20260722b">
+  <link rel="stylesheet" href="../_shared/module-page.css?v=20260722c">
   <link
     id="elysiaPrismThemeLink"
     rel="stylesheet"
@@ -210,87 +210,48 @@ flowchart LR
           </header>
 
           <div class="module-evolution">
-            <article class="module-evolution-story" data-i18n="ElysiaEngine.scene.decisions.deferred_story" data-i18n-html>
-              <header class="module-evolution-story__head">
-                <span class="module-evolution-story__index">01</span>
-                <div>
-                  <h3>From direct switching to a deferred request boundary</h3>
-                  <p>Scene code expresses navigation intent; lifecycle replacement waits until the current frame phase has returned.</p>
-                </div>
+            <article class="module-evolution-story module-prose" data-i18n="ElysiaEngine.scene.decisions.deferred_story" data-i18n-html>
+              <header class="module-prose__head">
+                <span class="module-prose__index">01</span>
+                <div><h3>From direct switching to a deferred request boundary</h3><p class="module-prose__lead">The important change was not how a destination is named, but when replacing the active scene is allowed to happen.</p></div>
               </header>
-              <div class="module-evolution-story__stages">
-                <section class="module-evolution-stage module-evolution-stage--initial">
-                  <h4>Initial approach</h4>
-                  <p><code>SceneManager::switch_to&lt;T&gt;()</code> obtained a typed instance from the factory and replaced the active scene immediately.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--pressure">
-                  <h4>Why it changed</h4>
-                  <p>Once scenes initiated navigation themselves, immediate replacement during an input or update callback could re-enter lifecycle work while the old scene was still on the call stack.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--current">
-                  <h4>Current design</h4>
-                  <p>A Scene emits a value-owned request. SceneManager copies it, then processes it only after <code>on_input</code> or <code>on_update</code> returns.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--tradeoff">
-                  <h4>Trade-off</h4>
-                  <p>Requests are valid only during normal input or update work. One request is accepted per cycle; duplicate or reentrant requests throw <code>logic_error</code>.</p>
-                </section>
+              <div class="module-prose__body">
+                <h4>The first useful version</h4>
+                <p><code>SceneManager::switch_to&lt;T&gt;()</code> asked the factory for a typed instance and replaced the active scene immediately. It was compact and sufficient while navigation remained an external manager operation.</p>
+                <blockquote class="module-prose__callout"><strong>The pressure point</strong><span>Once scenes initiated navigation from input or update callbacks, immediate replacement could enter exit and destruction work while the old scene was still on the call stack.</span></blockquote>
+                <h4>The boundary now</h4>
+                <p>A Scene emits a value-owned request. SceneManager copies it into a pending slot and handles it only after <code>on_input</code> or <code>on_update</code> returns.</p>
+                <ul><li>The executing callback finishes against a stable scene.</li><li>Only one request may be queued in a processing cycle.</li><li>Duplicate and reentrant requests fail with <code>logic_error</code>.</li></ul>
+                <aside class="module-prose__aside"><strong>Trade-off</strong><p>Navigation becomes intentionally phase-bound: requests from enter, exit, render, reset, or destruction are invalid rather than silently reordered.</p></aside>
               </div>
             </article>
 
-            <article class="module-evolution-story" data-i18n="ElysiaEngine.scene.decisions.route_story" data-i18n-html>
-              <header class="module-evolution-story__head">
-                <span class="module-evolution-story__index">02</span>
-                <div>
-                  <h3>From separate operations to explicit route semantics</h3>
-                  <p>A transition now carries its destination, data, and instance-lifetime policy as one coherent value.</p>
-                </div>
+            <article class="module-evolution-story module-prose" data-i18n="ElysiaEngine.scene.decisions.route_story" data-i18n-html>
+              <header class="module-prose__head">
+                <span class="module-prose__index">02</span>
+                <div><h3>From separate operations to explicit route semantics</h3><p class="module-prose__lead">A transition should describe the destination, transferred data, and instance-lifetime policy as one decision.</p></div>
               </header>
-              <div class="module-evolution-story__stages">
-                <section class="module-evolution-stage module-evolution-stage--initial">
-                  <h4>Initial approach</h4>
-                  <p>Switching, resetting, and destroying scenes were separate manager operations. The first request structure also stored target, payload, and reload mode as independent fields.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--pressure">
-                  <h4>Why it changed</h4>
-                  <p>A call site could not express the complete transition contract in one object, and related routing fields could be passed or evolved independently.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--current">
-                  <h4>Current design</h4>
-                  <p><code>SceneRoute</code> groups the target, payload, and policy. <code>Reuse</code> keeps cached state, <code>Reset</code> keeps allocation but restores state, and <code>Recreate</code> constructs a new instance.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--tradeoff">
-                  <h4>Trade-off</h4>
-                  <p>The factory cache and type-erased payload keep callers simple, but payload compatibility and the selected reload policy remain runtime contracts.</p>
-                </section>
+              <div class="module-prose__body">
+                <div class="module-prose__split">
+                  <section><h4>Earlier surface</h4><p>Switching, resetting, and destroying scenes were separate manager operations. The first request value also exposed target, payload, and reload mode as parallel fields.</p></section>
+                  <section><h4>Current contract</h4><p><code>SceneRoute</code> keeps those three facts together, so registration, validation, request copying, and lifecycle execution all receive the same route value.</p></section>
+                </div>
+                <h4>Three deliberate lifetime choices</h4>
+                <dl class="module-prose__terms"><div><dt><code>Reuse</code></dt><dd>Keep the cached instance and its state.</dd></div><div><dt><code>Reset</code></dt><dd>Keep the allocation, run reset, then enter again.</dd></div><div><dt><code>Recreate</code></dt><dd>Destroy the cached instance and construct a fresh one.</dd></div></dl>
+                <aside class="module-prose__aside"><strong>Trade-off</strong><p>The factory cache and type-erased payload simplify call sites, but payload compatibility and the selected reload policy remain runtime contracts.</p></aside>
               </div>
             </article>
 
-            <article class="module-evolution-story" data-i18n="ElysiaEngine.scene.decisions.context_story" data-i18n-html>
-              <header class="module-evolution-story__head">
-                <span class="module-evolution-story__index">03</span>
-                <div>
-                  <h3>From implicit services to a bounded runtime context</h3>
-                  <p>Runtime-only dependencies are supplied at the lifecycle boundary instead of being treated as construction-time state.</p>
-                </div>
+            <article class="module-evolution-story module-prose" data-i18n="ElysiaEngine.scene.decisions.context_story" data-i18n-html>
+              <header class="module-prose__head">
+                <span class="module-prose__index">03</span>
+                <div><h3>From implicit services to a bounded runtime context</h3><p class="module-prose__lead">Cached construction and active execution are different lifetimes, so runtime-only dependencies belong at the entry boundary.</p></div>
               </header>
-              <div class="module-evolution-story__stages">
-                <section class="module-evolution-stage module-evolution-stage--initial">
-                  <h4>Initial approach</h4>
-                  <p>The Scene lifecycle had no unified runtime dependency carrier, while the manager and scenes reached renderer, camera, and other services through separate paths.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--pressure">
-                  <h4>Why it changed</h4>
-                  <p>Cached scenes may be constructed long before entry. Renderer, content registry, logical dimensions, and related services belong to the active runtime rather than factory construction.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--current">
-                  <h4>Current design</h4>
-                  <p>SceneManager binds <code>SceneRuntimeContext</code> before <code>on_enter</code>. Recreate and shutdown clear that binding before a cached scene is destroyed.</p>
-                </section>
-                <section class="module-evolution-stage module-evolution-stage--tradeoff">
-                  <h4>Trade-off</h4>
-                  <p>The non-owning context centralizes access without extending service lifetime, so Application, SceneManager, and Scene must preserve a strict destruction order.</p>
-                </section>
+              <div class="module-prose__body">
+                <p>The early Scene lifecycle had no unified runtime dependency carrier. The manager and scenes reached renderer, camera, and other services through separate paths, even though a cached scene might be constructed long before it becomes active.</p>
+                <blockquote class="module-prose__callout"><strong>The design rule</strong><span>Renderer, content registry, logical dimensions, font resolution, and engine-assist services describe the active runtime—not factory construction.</span></blockquote>
+                <ol class="module-prose__sequence"><li><strong>Bind</strong><span>SceneManager attaches <code>SceneRuntimeContext</code> before <code>on_enter</code>.</span></li><li><strong>Use</strong><span>The scene borrows the same context throughout normal execution and exit.</span></li><li><strong>Clear</strong><span>Recreate and shutdown remove the binding before destroying cached instances.</span></li></ol>
+                <aside class="module-prose__aside"><strong>Trade-off</strong><p>The context is deliberately non-owning. Service access is centralized without extending service lifetime, but Application, SceneManager, and Scene must preserve a strict destruction order.</p></aside>
               </div>
             </article>
           </div>
