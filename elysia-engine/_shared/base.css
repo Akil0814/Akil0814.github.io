@@ -492,11 +492,71 @@ html[data-theme="dark"] .elysia-page .lang-select option {
 
 .elysia-aura,
 .elysia-stars,
+.elysia-light-sanctuary,
 .elysia-background-video {
   position: fixed;
   pointer-events: none;
   inset: 0;
   z-index: 0;
+}
+
+.elysia-light-sanctuary {
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  background: #fff3f8;
+  transition: opacity 700ms ease, visibility 0s linear 0s;
+}
+
+.elysia-light-sanctuary__art,
+.elysia-light-sanctuary__haze,
+.elysia-light-sanctuary__petals {
+  position: absolute;
+  inset: 0;
+}
+
+.elysia-light-sanctuary__art {
+  inset: -2.5%;
+  background-image: url("../res/elysian-sanctuary-light.webp");
+  background-position: center center;
+  background-size: cover;
+  filter: saturate(0.92) brightness(1.02);
+  transform: scale(1.035);
+  animation: elysiaSanctuaryBreathe 24s ease-in-out infinite alternate;
+}
+
+.elysia-light-sanctuary__haze {
+  inset: -12%;
+  background:
+    radial-gradient(ellipse at 52% 82%, rgba(255, 255, 255, 0.58), transparent 44%),
+    linear-gradient(105deg, transparent 22%, rgba(255, 255, 255, 0.2) 48%, transparent 72%),
+    linear-gradient(180deg, rgba(255, 244, 250, 0.08), rgba(255, 239, 247, 0.18));
+  mix-blend-mode: screen;
+  animation: elysiaSanctuaryHaze 18s ease-in-out infinite alternate;
+}
+
+.elysia-light-sanctuary__petals {
+  overflow: hidden;
+}
+
+.elysia-light-sanctuary__petals i {
+  position: absolute;
+  top: -8vh;
+  left: var(--x);
+  width: 10px;
+  height: 16px;
+  border-radius: 80% 12% 70% 22%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(238, 128, 188, 0.72));
+  box-shadow: 0 0 9px rgba(255, 164, 211, 0.28);
+  opacity: 0;
+  transform: scale(var(--scale));
+  animation: elysiaPetalFall var(--duration) linear var(--delay) infinite;
+}
+
+html[data-theme="dark"] .elysia-light-sanctuary {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s, 700ms;
 }
 
 .elysia-background-video {
@@ -555,11 +615,21 @@ html[data-theme="dark"] .elysia-stars {
 
 body.fx-off .elysia-aura,
 body.fx-off .elysia-stars,
+body.fx-off .elysia-light-sanctuary,
+body.fx-off .elysia-light-sanctuary__art,
+body.fx-off .elysia-light-sanctuary__haze,
+body.fx-off .elysia-light-sanctuary__petals i,
 body.fx-off .elysia-background-video,
 body.fx-off .elysia-sigil__ring,
 body.fx-off .elysia-sigil__spark,
 body.fx-off .elysia-brand__crest::after {
   animation: none !important;
+}
+
+body.fx-off .elysia-light-sanctuary {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
 }
 
 .elysia-nav {
@@ -1864,10 +1934,50 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-intro__code-panel,
   .elysia-intro-code__line,
   .elysia-aura,
+  .elysia-light-sanctuary__art,
+  .elysia-light-sanctuary__haze,
+  .elysia-light-sanctuary__petals i,
   .elysia-module-card,
   .elysia-module-card__arrow {
     transition-duration: 1ms !important;
     animation: none !important;
+  }
+}
+
+@keyframes elysiaSanctuaryBreathe {
+  from {
+    transform: translate3d(-0.3%, -0.15%, 0) scale(1.035);
+  }
+  to {
+    transform: translate3d(0.45%, 0.3%, 0) scale(1.055);
+  }
+}
+
+@keyframes elysiaSanctuaryHaze {
+  from {
+    transform: translate3d(-2.5%, 0, 0) scale(1);
+    opacity: 0.58;
+  }
+  to {
+    transform: translate3d(2.5%, -1%, 0) scale(1.04);
+    opacity: 0.88;
+  }
+}
+
+@keyframes elysiaPetalFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -10vh, 0) rotate(0deg) scale(var(--scale));
+  }
+  12% {
+    opacity: 0.72;
+  }
+  84% {
+    opacity: 0.52;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift), 116vh, 0) rotate(540deg) scale(var(--scale));
   }
 }
 
