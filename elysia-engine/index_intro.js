@@ -310,14 +310,29 @@
       return;
     }
 
-    const cosmos = window.ElysiaCosmos?.init(document.getElementById("elysiaCosmos"));
+    const backgroundVideo = document.getElementById("elysiaBackgroundVideo");
+    let currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    let fxEnabled = true;
+
+    function syncBackgroundVideo() {
+      if (!backgroundVideo) return;
+
+      if (currentTheme === "dark" && fxEnabled) {
+        backgroundVideo.play().catch(() => {});
+      } else {
+        backgroundVideo.pause();
+      }
+    }
+
     const pageCore = window.ElysiaBase.init({
       onThemeChange(theme) {
+        currentTheme = theme;
         syncPrismTheme(theme);
-        cosmos?.setTheme(theme);
+        syncBackgroundVideo();
       },
       onFxChange(enabled) {
-        cosmos?.setFx(enabled);
+        fxEnabled = enabled;
+        syncBackgroundVideo();
       },
       onLangChange(language) {
         if (typeof window.applyI18n !== "function") return;
@@ -327,9 +342,10 @@
       },
     });
 
-    syncPrismTheme(pageCore.getTheme());
-    cosmos?.setTheme(pageCore.getTheme());
-    cosmos?.setFx(pageCore.getFx());
+    currentTheme = pageCore.getTheme();
+    fxEnabled = pageCore.getFx();
+    syncPrismTheme(currentTheme);
+    syncBackgroundVideo();
     initIntro(pageCore);
   }
 

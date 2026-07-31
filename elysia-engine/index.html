@@ -55,7 +55,7 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="./_shared/base.css?v=20260719a">
 </head>
-<body class="elysia-page">
+<body class="elysia-page elysia-index-page">
   <div class="elysia-intro" id="elysiaIntro" aria-hidden="true">
     <div class="elysia-intro__backdrop"></div>
     <video
@@ -79,7 +79,17 @@
   <div class="elysia-aura elysia-aura--one" aria-hidden="true"></div>
   <div class="elysia-aura elysia-aura--two" aria-hidden="true"></div>
   <div class="elysia-stars" aria-hidden="true"></div>
-  <canvas class="elysia-cosmos" id="elysiaCosmos" aria-hidden="true"></canvas>
+  <video
+    class="elysia-background-video"
+    id="elysiaBackgroundVideo"
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+  >
+    <source src="./res/Elysian_background.mp4" type="video/mp4" />
+  </video>
 
   <header class="nav">
     <div class="nav__left">
@@ -236,7 +246,6 @@
   <script src="../assets/js/i18n.js"></script>
   <script src="../assets/prism/prism.js"></script>
   <script src="./_shared/base.js?v=20260709a"></script>
-  <script src="./_shared/cosmos.js?v=20260719c"></script>
   <script src="./index_intro.js?v=20260713b"></script>
 </body>
 </html>

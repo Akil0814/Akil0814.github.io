@@ -109,14 +109,9 @@
       return;
     }
 
-    const cosmos = window.ElysiaCosmos?.init(document.getElementById("elysiaCosmos"));
     const pageCore = window.ElysiaBase.init({
       onThemeChange(theme) {
         syncPrismTheme(theme);
-        cosmos?.setTheme(theme);
-      },
-      onFxChange(enabled) {
-        cosmos?.setFx(enabled);
       },
       onLangChange(language) {
         applyLanguage(language)
@@ -128,8 +123,6 @@
     });
 
     syncPrismTheme(pageCore.getTheme());
-    cosmos?.setTheme(pageCore.getTheme());
-    cosmos?.setFx(pageCore.getFx());
     initToc();
     renderDiagrams();
     applyLanguage(pageCore.getLang())

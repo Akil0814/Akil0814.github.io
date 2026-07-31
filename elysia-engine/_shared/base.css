@@ -492,23 +492,24 @@ html[data-theme="dark"] .elysia-page .lang-select option {
 
 .elysia-aura,
 .elysia-stars,
-.elysia-cosmos {
+.elysia-background-video {
   position: fixed;
   pointer-events: none;
   inset: 0;
   z-index: 0;
 }
 
-.elysia-cosmos {
+.elysia-background-video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   opacity: 0;
   visibility: hidden;
   transition: opacity 700ms ease, visibility 0s linear 700ms;
 }
 
-html[data-theme="dark"] .elysia-cosmos {
-  opacity: 0.88;
+html[data-theme="dark"] .elysia-background-video {
+  opacity: 1;
   visibility: visible;
   transition-delay: 0s;
 }
@@ -524,15 +525,7 @@ html[data-theme="dark"] .elysia-cosmos {
 }
 
 html[data-theme="dark"] .elysia-aura--one {
-  background:
-    radial-gradient(circle at 8% 18%, rgba(204, 114, 255, 0.13), transparent 14%),
-    radial-gradient(circle at 35% 39%, rgba(139, 105, 255, 0.1), transparent 18%),
-    radial-gradient(circle at 66% 13%, rgba(255, 119, 224, 0.1), transparent 15%),
-    radial-gradient(circle at 91% 45%, rgba(179, 131, 255, 0.11), transparent 14%),
-    radial-gradient(circle at 22% 82%, rgba(104, 111, 255, 0.09), transparent 17%);
-  animation: elysiaNebulaDriftOne 32s ease-in-out infinite alternate;
-  filter: blur(18px);
-  opacity: 0.9;
+  display: none;
 }
 
 .elysia-aura--two {
@@ -562,17 +555,11 @@ html[data-theme="dark"] .elysia-stars {
 
 body.fx-off .elysia-aura,
 body.fx-off .elysia-stars,
-body.fx-off .elysia-cosmos,
+body.fx-off .elysia-background-video,
 body.fx-off .elysia-sigil__ring,
 body.fx-off .elysia-sigil__spark,
 body.fx-off .elysia-brand__crest::after {
   animation: none !important;
-}
-
-body.fx-off .elysia-cosmos {
-  opacity: 0;
-  visibility: hidden;
-  transition-delay: 0s;
 }
 
 .elysia-nav {
@@ -1141,6 +1128,12 @@ html[data-theme="dark"] .elysia-module-card:not(.is-disabled):focus-visible {
   letter-spacing: 0.06em;
   white-space: nowrap;
   color: var(--elysia-text-muted);
+}
+
+body.fx-off .elysia-background-video {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
 }
 
 .elysia-module-card:not(.is-disabled) .elysia-module-card__status::after {
@@ -1871,7 +1864,6 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   .elysia-intro__code-panel,
   .elysia-intro-code__line,
   .elysia-aura,
-  .elysia-cosmos,
   .elysia-module-card,
   .elysia-module-card__arrow {
     transition-duration: 1ms !important;
@@ -1894,24 +1886,6 @@ html[data-theme="dark"] .elysia-bottom-showcase {
   }
   to {
     transform: translate3d(-4%, 2%, 0) scale(1.06);
-  }
-}
-
-@keyframes elysiaNebulaDriftOne {
-  from {
-    transform: translate3d(-0.6%, 0.4%, 0) scale(1);
-  }
-  to {
-    transform: translate3d(1.4%, -0.8%, 0) scale(1.025);
-  }
-}
-
-@keyframes elysiaNebulaDriftTwo {
-  from {
-    transform: translate3d(0.8%, -0.5%, 0) scale(1.02);
-  }
-  to {
-    transform: translate3d(-1.2%, 0.9%, 0) scale(1);
   }
 }
 
