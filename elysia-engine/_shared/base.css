@@ -517,7 +517,7 @@ html[data-theme="dark"] .elysia-page .lang-select option {
 
 .elysia-light-sanctuary__art {
   inset: -2.5%;
-  background-image: url("../res/elysian-sanctuary-light.webp");
+  background-image: url("../res/elysian_timeless_grand_hall.png");
   background-position: center center;
   background-size: cover;
   filter: saturate(0.92) brightness(1.02);
