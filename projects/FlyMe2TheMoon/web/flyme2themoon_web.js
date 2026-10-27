@@ -1,6 +1,8 @@
 (() => {
   'use strict';
   const canvas = document.getElementById('canvas');
+  const viewport = document.getElementById('gameViewport');
+  const exitFullscreen = document.getElementById('exitFullscreen');
   const status = document.getElementById('status');
   const progress = document.getElementById('downloadProgress');
   const detail = document.getElementById('downloadDetail');
@@ -11,9 +13,11 @@
   const state = {mode: 'idle', downloaded: 0, total: 0, storage: null, error: ''};
   const buffers = new Map();
   const downloadAbort = new AbortController();
+  let fullscreenPending = false;
   const t = (key, fallback) => window.I18N?.t(`flyme2themoon_web.${key}`, undefined, fallback) ?? fallback;
   const mib = bytes => (bytes / 1048576).toFixed(1);
   function render() {
+    syncFullscreenControls();
     status.textContent = t(`runtime.${state.mode}`, state.mode);
     progress.hidden = state.mode !== 'loading';
     progress.max = state.total || 1;
@@ -30,7 +34,6 @@
     state.mode = 'error';
     state.error = t('runtime.failed', 'The game could not start. Reload the page to try again.');
     reload.hidden = false;
-    fullscreen.disabled = true;
     buffers.clear();
     downloadAbort.abort();
     render();
@@ -66,7 +69,8 @@
     const audio = window.Module?.SDL3?.audioContext;
     if (audio?.state === 'suspended') audio.resume().catch(console.warn);
   }
-  canvas.addEventListener('pointerdown', () => { canvas.focus(); resumeAudio(); });
+  const focusGame = () => { canvas.focus({preventScroll:true}); resumeAudio(); };
+  canvas.addEventListener('pointerdown', focusGame);
   canvas.addEventListener('keydown', event => {
     if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.code)) event.preventDefault();
     resumeAudio();
@@ -74,14 +78,40 @@
   canvas.addEventListener('contextmenu', event => event.preventDefault());
   canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); fail('WebGL context lost'); });
   reload.addEventListener('click', () => location.reload());
-  fullscreen.addEventListener('click', async () => {
+  function syncFullscreenControls() {
+    const active = document.fullscreenElement === viewport;
+    exitFullscreen.hidden = !active;
+    exitFullscreen.disabled = fullscreenPending;
+    fullscreen.disabled = fullscreenPending || state.mode !== 'running';
+    fullscreen.setAttribute('aria-pressed', String(active));
+    fullscreen.textContent = t(active ? 'actions.exit_fullscreen' : 'actions.fullscreen', active ? 'Exit Fullscreen' : 'Fullscreen');
+  }
+  async function toggleFullscreen() {
+    if (fullscreenPending) return;
+    fullscreenPending = true;
+    syncFullscreenControls();
     try {
-      if (document.fullscreenElement) await document.exitFullscreen();
-      else await canvas.requestFullscreen();
-      canvas.focus();
-      resumeAudio();
+      if (document.fullscreenElement === viewport) await document.exitFullscreen();
+      // SDL observes fullscreen events on its canvas and changes its viewport.
+      // Fullscreen the host instead, and let CSS scale the complete 16:9 image.
+      else await viewport.requestFullscreen();
+      focusGame();
     } catch (error) { console.warn('Fullscreen unavailable:', error); }
+    finally { fullscreenPending = false; syncFullscreenControls(); }
+  }
+  fullscreen.addEventListener('click', toggleFullscreen);
+  exitFullscreen.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', () => {
+    syncFullscreenControls();
+    if (state.mode === 'running') focusGame();
   });
+  // Exiting fullscreen must not also trigger the game's Escape/back action.
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || document.fullscreenElement !== viewport) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if (!fullscreenPending) void toggleFullscreen();
+  }, true);
   start.addEventListener('click', async () => {
     start.disabled = true;
     state.mode = 'loading';
@@ -109,15 +139,13 @@
           state.mode = 'running';
           canvas.hidden = false;
           document.getElementById('gameCover').hidden = true;
-          fullscreen.disabled = false;
           reload.hidden = false;
           render();
-          canvas.focus();
+          canvas.focus({preventScroll:true});
         },
         onGameExit(code) {
           if (code) { fail('Game exited with an error'); return; }
           state.mode = 'exited';
-          fullscreen.disabled = true;
           render();
         },
         onAbort: fail,

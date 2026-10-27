@@ -16,7 +16,8 @@
       "start": "ゲーム開始",
       "fullscreen": "全画面",
       "reload": "再読み込み",
-      "notices": "サードパーティ表記"
+      "notices": "サードパーティ表記",
+      "exit_fullscreen": "全画面を終了"
     },
     "runtime": {
       "title": "オンラインデモ",

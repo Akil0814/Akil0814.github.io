@@ -65,6 +65,11 @@ game remains. Click the canvas to focus it and enable audio; keyboard capture is
 restricted to that canvas. Space/W/Up supplies thrust, A/D steers, P pauses,
 R retries and Escape returns. Existing mouse and gamepad controls are retained.
 Fullscreen is requested through the page button and requires a browser gesture.
+The outer game host enters fullscreen while the SDL canvas keeps its drawing
+buffer size. CSS fits the complete 16:9 canvas inside the screen with letterbox
+space when needed; this avoids competing browser and SDL viewport resizes that
+can crop rendering to the lower-left corner. Escape or the in-screen exit
+button leaves fullscreen without sending Escape to the game's navigation.
 The Web settings panel exposes audio and language; canvas size, refresh cadence
 and fullscreen are controlled by the browser instead of desktop window settings.
 

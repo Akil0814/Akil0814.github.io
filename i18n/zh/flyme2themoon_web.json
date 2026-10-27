@@ -16,7 +16,8 @@
       "start": "开始游戏",
       "fullscreen": "全屏",
       "reload": "重新加载",
-      "notices": "第三方声明"
+      "notices": "第三方声明",
+      "exit_fullscreen": "退出全屏"
     },
     "runtime": {
       "title": "在线演示",

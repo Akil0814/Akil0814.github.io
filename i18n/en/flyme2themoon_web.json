@@ -16,7 +16,8 @@
       "start": "Start Game",
       "fullscreen": "Fullscreen",
       "reload": "Reload",
-      "notices": "Third-party notices"
+      "notices": "Third-party notices",
+      "exit_fullscreen": "Exit Fullscreen"
     },
     "runtime": {
       "title": "Live Demo",

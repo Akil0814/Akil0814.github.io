@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../../css/layout.css">
   <link rel="stylesheet" href="../../_shared/project_page.css?v=20260530a">
 
-  <link rel="stylesheet" href="./flyme2themoon_web.css?v=20261027-web1">
+  <link rel="stylesheet" href="./flyme2themoon_web.css?v=20261027-web2">
 </head>
 <body>
   <header class="nav">
@@ -60,13 +60,14 @@
           <h2 data-i18n="flyme2themoon_web.runtime.title" class="demo-stage__title">Live Demo</h2>
           <span id="status" role="status" aria-live="polite" class="demo-stage__status">Ready to download</span>
         </div>
-        <div class="game-viewport">
+        <div id="gameViewport" class="game-viewport">
           <canvas id="canvas" width="1280" height="720" tabindex="0" aria-label="FlyMe2TheMoon game" hidden></canvas>
+          <button id="exitFullscreen" class="btn game-fullscreen-exit" type="button" data-i18n="flyme2themoon_web.actions.exit_fullscreen" hidden>Exit Fullscreen</button>
           <div id="gameCover"><p data-i18n="flyme2themoon_web.runtime.cover">Ready for the moon? Start the full game below.</p></div>
         </div>
         <div class="game-toolbar">
           <button id="startGame" class="btn" type="button" data-i18n="flyme2themoon_web.actions.start" disabled>Start Game</button>
-          <button id="fullscreenGame" class="btn" type="button" data-i18n="flyme2themoon_web.actions.fullscreen" disabled>Fullscreen</button>
+          <button id="fullscreenGame" class="btn" type="button" data-i18n="flyme2themoon_web.actions.fullscreen" aria-pressed="false" disabled>Fullscreen</button>
           <button id="reloadGame" class="btn" type="button" data-i18n="flyme2themoon_web.actions.reload" hidden>Reload</button>
         </div>
         <div class="game-details">
@@ -87,6 +88,6 @@
 
   <script src="../../../assets/js/i18n.js"></script>
   <script src="../../_shared/project_page.js?v=20260228"></script>
-  <script src="./flyme2themoon_web.js?v=20261027-web1"></script>
+  <script src="./flyme2themoon_web.js?v=20261027-web2"></script>
 </body>
 </html>
