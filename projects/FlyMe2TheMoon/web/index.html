@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../../css/layout.css">
   <link rel="stylesheet" href="../../_shared/project_page.css?v=20260530a">
 
-  <link rel="stylesheet" href="./flyme2themoon_web.css">
+  <link rel="stylesheet" href="./flyme2themoon_web.css?v=20261027-web1">
 </head>
 <body>
   <header class="nav">
@@ -47,7 +47,7 @@
     <section class="project-intro">
       <p data-i18n="flyme2themoon_web.intro.kicker" class="project-intro__kicker">FlyMe2TheMoon / Browser Demo</p>
       <h1 data-i18n="flyme2themoon_web.intro.title" class="project-intro__title">FlyMe2TheMoon Web Demo</h1>
-      <p data-i18n="flyme2themoon_web.intro.desc" class="project-intro__desc">The browser demo is not available yet. This page reserves a place for a future playable build; visit the project page to read about the gameplay and implementation.</p>
+      <p data-i18n="flyme2themoon_web.intro.desc" class="project-intro__desc">Play the complete 60-level game in your desktop browser. The first launch downloads approximately 145 MiB of assets; progress and settings are stored in this browser.</p>
       <div class="demo-actions">
         <a class="btn btn--link" href="../FlyMe2TheMoon.html" data-i18n="flyme2themoon_web.actions.project_page">Back to Project Page</a>
         <a class="btn btn--link" href="../../index.html" data-i18n="flyme2themoon_web.actions.more_projects">More Projects</a>
@@ -58,9 +58,25 @@
       <article class="panel demo-stage">
         <div class="demo-stage__top">
           <h2 data-i18n="flyme2themoon_web.runtime.title" class="demo-stage__title">Live Demo</h2>
-          <span data-i18n="flyme2themoon_web.runtime.status" class="demo-stage__status">Not available yet</span>
+          <span id="status" role="status" aria-live="polite" class="demo-stage__status">Ready to download</span>
         </div>
-        <div class="demo-stage__placeholder"><p data-i18n="flyme2themoon_web.runtime.placeholder">The playable demo will appear here when a browser build is ready.</p></div>
+        <div class="game-viewport">
+          <canvas id="canvas" width="1280" height="720" tabindex="0" aria-label="FlyMe2TheMoon game" hidden></canvas>
+          <div id="gameCover"><p data-i18n="flyme2themoon_web.runtime.cover">Ready for the moon? Start the full game below.</p></div>
+        </div>
+        <div class="game-toolbar">
+          <button id="startGame" class="btn" type="button" data-i18n="flyme2themoon_web.actions.start" disabled>Start Game</button>
+          <button id="fullscreenGame" class="btn" type="button" data-i18n="flyme2themoon_web.actions.fullscreen" disabled>Fullscreen</button>
+          <button id="reloadGame" class="btn" type="button" data-i18n="flyme2themoon_web.actions.reload" hidden>Reload</button>
+        </div>
+        <div class="game-details">
+          <progress id="downloadProgress" aria-label="Download progress" hidden></progress>
+          <p id="downloadDetail"></p>
+          <p id="storageStatus" role="status" hidden></p>
+          <p data-i18n="flyme2themoon_web.runtime.controls">Click the game to focus. Space / W / Up: thrust; A / D: steer. Hold the mouse below the character to fly. P: pause; R: retry; Esc: back. Supported gamepads can also be used.</p>
+          <p data-i18n="flyme2themoon_web.runtime.note">Desktop browsers with WebGL 2 are required. Click the game or press a key to enable audio. Saves belong to this browser and website; clearing site data removes them.</p>
+          <a href="./runtime/THIRD_PARTY_NOTICES.md" data-i18n="flyme2themoon_web.actions.notices">Third-party notices</a>
+        </div>
       </article>
     </section>
   </main>
@@ -71,8 +87,6 @@
 
   <script src="../../../assets/js/i18n.js"></script>
   <script src="../../_shared/project_page.js?v=20260228"></script>
-  <script>
-    ProjectPageCore.init();
-  </script>
+  <script src="./flyme2themoon_web.js?v=20261027-web1"></script>
 </body>
 </html>
