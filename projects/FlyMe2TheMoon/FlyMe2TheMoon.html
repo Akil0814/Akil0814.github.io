@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<html lang="en" data-i18n-page="FlyMe2TheMoon" data-i18n-base="../..">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../icon/Akil_icon_32.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="../../icon/Akil_icon_128.png" />
+  <link rel="icon" type="image/png" sizes="1024x1024" href="../../icon/Akil_icon_1024.png" />
+  <link rel="apple-touch-icon" href="../../icon/Akil_icon_1024.png" />
+  <title data-i18n="FlyMe2TheMoon.title">FlyMe2TheMoon Project</title>
+  <meta name="description" content="A desktop recreation of Fly2theMoon built on my own ElysiaEngine. Guide the character toward the moon with controlled thrust, navigating gravity, inertia, and obstacles while collecting stars and gems. The project brings flight physics, level mechanisms, Lua-driven story sequences, and a complete desktop interface together in C++23." />
+  <script src="../../js/prefs_bootstrap.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link id="prismThemeLink" rel="stylesheet" href="../../assets/prism/prism-dark.css">
+  <link rel="stylesheet" href="../_shared/project_page.css?v=20260530a">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__left">
+      <a class="brand" href="../../index.html" aria-label="Home">
+        <span class="brand__dot"></span>
+        <span class="brand__text">AKIL</span>
+      </a>
+    </div>
+
+    <nav class="nav__right">
+      <a href="#stack" data-i18n="common.nav.stack">Stack</a>
+      <a href="#videos" data-i18n="common.nav.videos">Videos</a>
+      <a href="#summary" data-i18n="common.nav.summary">Summary</a>
+      <a href="#architecture" data-i18n="common.nav.diagram">Diagram</a>
+      <a href="#code" data-i18n="common.nav.code">Code</a>
+      <select id="langSelect" class="lang-select" aria-label="Language select" data-i18n="common.lang.select" data-i18n-attr="aria-label">
+        <option value="zh" data-i18n="common.lang.zh">&#20013;&#25991;</option>
+        <option value="ja" data-i18n="common.lang.ja">&#26085;&#26412;&#35486;</option>
+        <option value="en" selected data-i18n="common.lang.en">English</option>
+      </select>
+      <button id="toggleFx" class="btn" type="button" title="Toggle visual effects" data-i18n="common.controls.fx">FX</button>
+      <button id="themeBtn" class="btn" type="button" title="Toggle theme" data-i18n="common.controls.theme">Theme</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="project-intro">
+      <p data-i18n="FlyMe2TheMoon.intro.kicker" class="project-intro__kicker">C++23 / ElysiaEngine / 2D Flight Game</p>
+      <h1 data-i18n="FlyMe2TheMoon.intro.title" class="project-intro__title">FlyMe2TheMoon</h1>
+      <p data-i18n="FlyMe2TheMoon.intro.desc" class="project-intro__desc">A desktop recreation of Fly2theMoon built on my own ElysiaEngine. Guide the character toward the moon with controlled thrust, navigating gravity, inertia, and obstacles while collecting stars and gems. The project brings flight physics, level mechanisms, Lua-driven story sequences, and a complete desktop interface together in C++23.</p>
+      <div class="project-intro__chips">
+        <span data-i18n="FlyMe2TheMoon.intro.chips.chip1" class="chip">Thrust &amp; Physics</span>
+        <span data-i18n="FlyMe2TheMoon.intro.chips.chip2" class="chip">Level Mechanisms</span>
+        <span data-i18n="FlyMe2TheMoon.intro.chips.chip3" class="chip">Lua Storytelling</span>
+        <span data-i18n="FlyMe2TheMoon.intro.chips.chip4" class="chip">Progress &amp; Saves</span>
+      </div>
+    </section>
+    <section id="stack" class="section section--split">
+      <article class="panel">
+        <div class="section__head"><h2 data-i18n="common.sections.tech_stack">Tech Stack</h2></div>
+        <div class="project-intro__chips">
+          <span class="chip">C++23</span>
+          <span class="chip">ElysiaEngine</span>
+          <span class="chip">SDL3</span>
+          <span class="chip">Box2D</span>
+          <span class="chip">Lua</span>
+          <span class="chip">CMake</span>
+        </div>
+      </article>
+      <article class="panel">
+        <div class="section__head"><h2 data-i18n="common.sections.repo_download">Repo + Download</h2></div>
+        <div class="action-row">
+          <a class="btn btn--link" href="https://github.com/Akil0814/FlyMe2TheMoon" target="_blank" rel="noreferrer" data-i18n="common.actions.repository">Repository</a>
+          <a class="btn btn--link" href="https://github.com/Akil0814/FlyMe2TheMoon/archive/refs/heads/master.zip" target="_blank" rel="noreferrer" data-i18n="common.actions.download_zip">Download ZIP</a>
+          <a class="btn btn--link" href="./web/" data-i18n="FlyMe2TheMoon.actions.web_demo">Web Demo</a>
+          <a class="btn btn--link" href="../../elysia-engine/index.html" data-i18n="FlyMe2TheMoon.actions.engine">About ElysiaEngine</a>
+        </div>
+      </article>
+    </section>
+    <section id="videos" class="section">
+      <div class="section__head"><h2><span data-i18n="FlyMe2TheMoon.sections.demo_videos">Demo Videos</span> (<span id="videoCount">0</span>)</h2></div>
+      <article class="panel">
+        <h3 data-i18n="FlyMe2TheMoon.videos.pending">Videos to be added</h3>
+        <p data-i18n="FlyMe2TheMoon.videos.desc" class="project-intro__desc">Gameplay videos will be added here. You can explore the architecture and source excerpts below in the meantime.</p>
+      </article>
+    </section>
+    <section id="summary" class="section">
+      <div class="section__head"><h2 data-i18n="common.sections.project_summary">Architecture &amp; Implementation</h2></div>
+      <div class="panel" data-i18n="FlyMe2TheMoon.summary.text" data-i18n-html>
+        <h4>Flight and controls</h4><p>Keyboard, mouse, and gamepad inputs feed the same flight model. Pointer direction and distance determine thrust, while analog stick and trigger input retain gradual power after a 20% dead zone. Gravity, inertia, collision, power limits, and damping shape the route through each level.</p>
+        <h4>Levels and mechanisms</h4><p>The project imports terrain and object data for 60 levels across four chapters. Gameplay entities implement moving platforms, rotating mechanisms, spikes, wind fields, portals, lasers, launchers, and bombs. Content coverage and individual level validation are still in progress.</p>
+        <h4>Story and presentation</h4><p>Lua coroutines suspend for dialogue, delays, and camera travel, then resume through the game loop or player input. Host callbacks connect scripts to FlightScene. The presentation layer handles tutorials, character transitions, collection effects, dialogue, audio, and camera movement.</p>
+        <h4>Progress and the desktop interface</h4><p>Main menu, level selection, achievements, settings, credits, HUD, pause, and result panels form the desktop flow. Completed runs update stars, scores, best times, achievements, and newly unlocked levels through progress::Store and the engine save service. Death records and story flags are also retained.</p>
+        <h4>Engineering and development tools</h4><p>GameModule registers scenes with ElysiaEngine; FlightScene coordinates content, gameplay entities, story, and frontend components. CMake builds the C++23 project with SDL3, Box2D, and Lua. The optional F2 overlay exposes debug drawing, performance statistics, time controls, and camera controls; tests, input replays, and asset checks support development.</p>
+      </div>
+    </section>
+    <section id="architecture" class="section">
+      <div class="section__head"><h2 data-i18n="common.sections.architecture_diagram">Architecture Diagram</h2></div>
+      <div id="flymoon-mermaid" class="project-mermaid-grid"></div>
+    </section>
+    <section id="code" class="section">
+      <div class="section__head"><h2><span data-i18n="FlyMe2TheMoon.sections.core_code_blocks">Core Code Blocks</span> (<span id="codeCount">4</span>)</h2></div>
+      <div id="codeList" class="code-list">
+      <article class="code-card" id="code-card-1">
+        <h3 data-i18n="FlyMe2TheMoon.codes.code1.title">Scene registration</h3>
+        <p data-i18n="FlyMe2TheMoon.codes.code1.desc">GameModule registers the menu, flight, selection, credits, achievements, and settings scenes with the engine SceneManager.</p>
+        <div id="code-slot-1" class="code-slot"></div>
+      </article>
+      <article class="code-card" id="code-card-2">
+        <h3 data-i18n="FlyMe2TheMoon.codes.code2.title">Flight input and thrust</h3>
+        <p data-i18n="FlyMe2TheMoon.codes.code2.desc">Analog controls rescale their dead zone; pointer input maps angle and distance to thrust. Force is limited by maximum power, with separate velocity damping.</p>
+        <div id="code-slot-2" class="code-slot"></div>
+      </article>
+      <article class="code-card" id="code-card-3">
+        <h3 data-i18n="FlyMe2TheMoon.codes.code3.title">Lua story coroutines</h3>
+        <p data-i18n="FlyMe2TheMoon.codes.code3.desc">Script commands yield for dialogue and timed waits. Runtime resumes the coroutine after time advances or the player continues a line.</p>
+        <div id="code-slot-3" class="code-slot"></div>
+      </article>
+      <article class="code-card" id="code-card-4">
+        <h3 data-i18n="FlyMe2TheMoon.codes.code4.title">Clear records and level unlocks</h3>
+        <p data-i18n="FlyMe2TheMoon.codes.code4.desc">The progress store compares dependency-based unlocks before and after a clear, retains best records, evaluates achievements, and saves progress.</p>
+        <div id="code-slot-4" class="code-slot"></div>
+      </article>
+      </div>
+    </section>
+    <section class="section">
+      <article class="panel">
+        <h2 data-i18n="FlyMe2TheMoon.credits.title">Project status and asset sources</h2>
+        <p data-i18n="FlyMe2TheMoon.credits.text" class="project-intro__desc">This is an unofficial recreation for game development learning and research into the original mechanics. Project code is MIT licensed; the original name, artwork, audio, and story belong to their respective rights holders and are not covered by that license. Implementation and level validation are ongoing; importing all 60 levels does not establish a complete playthrough of every level.</p>
+        <div class="action-row"><a class="btn btn--link" href="../index.html" data-i18n="FlyMe2TheMoon.actions.more">More Projects</a></div>
+      </article>
+    </section>
+    <section class="section">
+      <article class="theme-photo-card">
+        <img
+          src="../../image/Arcueid_Bar.png"
+          data-src-dark="../../image/Arcueid_Bar.png"
+          data-src-light="../../image/The_Stranger_In_The_Mirror_T.png"
+          alt="Theme preview card"
+          data-i18n="common.theme.preview_alt"
+          data-i18n-attr="alt"
+          loading="lazy"
+        />
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="mono">&copy; <span id="year"></span> Akil</span> <span class="dot">&middot;</span> <span class="mono" data-i18n="FlyMe2TheMoon.footer.page">FlyMe2TheMoon Project Page</span></p>
+  </footer>
+
+  <script src="../../assets/js/i18n.js"></script>
+  <script src="../../assets/prism/prism.js"></script>
+  <script src="../_shared/project_code_block.js?v=20260228"></script>
+  <script src="../_shared/project_mermaid.js?v=20260228"></script>
+  <script src="../_shared/project_page.js?v=20260228"></script>
+  <script src="./flyme2themoon_page.js?v=20261026"></script>
+</body>
+</html>
+
+

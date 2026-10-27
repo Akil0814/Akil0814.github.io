@@ -18,50 +18,46 @@
     "featured": {
       "elysia": {
         "eyebrow": "Main Project",
-        "desc": "A reusable 2D game engine framework featuring an asynchronous asset loading pipeline, a scene management system, systems for frame-based animations and special effects, basic physics support, i18n capabilities, and a foundational UI system.",
         "cta": "Project Detail"
       }
     },
     "cards": {
+      "flymetothemoon": {
+        "kind": "Game",
+        "title": "FlyMe2TheMoon",
+        "web_demo": "Web Demo"
+      },
       "warships": {
         "kind": "Game",
-        "title": "WarShips",
-        "desc": "A tactical naval battle board-game project designed to practice more engineering-oriented architecture and multiple design patterns, improving maintainability and extensibility."
+        "title": "WarShips"
       },
       "softrenderer": {
         "kind": "Graphics",
-        "title": "SoftRenderer",
-        "desc": "A CPU-based C++ software renderer that implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling. It also integrates a Dear ImGui backend adapted to the current pipeline for runtime debugging, performance statistics, and rendering bottleneck analysis. The project is currently in a long-term performance optimization phase."
+        "title": "SoftRenderer"
       },
       "microcomputer": {
         "kind": "Hardware",
-        "title": "74xx 8-bit Microcomputer",
-        "desc": "A Turing-complete 8-bit microcomputer built from 74-series TTL chips with a custom ISA, registers, memory, and I/O."
+        "title": "74xx 8-bit Microcomputer"
       },
       "pathfinding": {
         "kind": "Visualizer",
-        "title": "PathFindingVisualizer",
-        "desc": "A visualization project page for pathfinding algorithms, including implementations and visual demonstrations of A*, Dijkstra, BFS, DFS, and more. It also supports dynamically adding obstacles and adjusting algorithm parameters to observe the performance of different algorithms."
+        "title": "PathFindingVisualizer"
       },
       "minesweeper": {
         "kind": "Game",
-        "title": "MineSweeper",
-        "desc": "My first attempt at building an OOP-structured project: I implemented a Scene Manager to drive and switch scenes in a unified way, and built core components such as a Button class and a Board class."
+        "title": "MineSweeper"
       },
       "collegetour": {
         "kind": "Tool",
-        "title": "CollegeTour",
-        "desc": "A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module."
+        "title": "CollegeTour"
       },
       "takemetoballgame": {
         "kind": "Project",
-        "title": "Take me  to  ballgame.",
-        "desc": "An MLB stadium trip-planning project built with Qt Widgets + SQLite, where I was responsible for the overall architecture and the app's backend-layer implementation."
+        "title": "Take me  to  ballgame."
       },
       "buttonsdl": {
         "kind": "Utility",
-        "title": "ButtonForSDL",
-        "desc": "I extracted a reusable Button class from the project and performed a series of refactors to make interaction logic clearer and improve maintainability."
+        "title": "ButtonForSDL"
       }
     },
     "footer": {

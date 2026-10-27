@@ -132,8 +132,13 @@
     }
   }
 
-  function loadEnglishBundle(basePath, page) {
-    const cacheKey = `${basePath}|${page}`;
+  function getSharedBundleNames() {
+    const names = document.documentElement.dataset.i18nShared || "";
+    return names.trim().split(/\s+/).filter(Boolean);
+  }
+
+  function loadEnglishBundle(basePath, page, sharedNames) {
+    const cacheKey = `${basePath}|${page}|${sharedNames.join(" ")}`;
     if (englishBundleCache.has(cacheKey)) {
       return englishBundleCache.get(cacheKey);
     }
@@ -145,17 +150,20 @@
         ? buildLocaleFilePath(basePath, "en", `${pageScope}/common`)
         : null;
       const enPagePath = buildLocaleFilePath(basePath, "en", page);
-      const [enCommon, enScopedCommon, enPage] = await Promise.all([
+      const [enCommon, enScopedCommon, enShared, enPage] = await Promise.all([
         readJson(enCommonPath),
         enScopedCommonPath ? readJson(enScopedCommonPath) : Promise.resolve({}),
+        Promise.all(sharedNames.map((name) =>
+          readJson(buildLocaleFilePath(basePath, "en", name))
+        )),
         readJson(enPagePath),
       ]);
 
       const enBundle = deepMerge(
         deepMerge(deepClone(enCommon), enScopedCommon),
-        enPage
+        enShared.reduce((merged, shared) => deepMerge(merged, shared), {})
       );
-      return enBundle;
+      return deepMerge(enBundle, enPage);
     })();
 
     englishBundleCache.set(cacheKey, englishBundlePromise);
@@ -165,14 +173,15 @@
 
   async function loadBundle(lang, page) {
     const basePath = getI18nBasePath();
-    const cacheKey = `${basePath}|${lang}|${page}`;
+    const sharedNames = getSharedBundleNames();
+    const cacheKey = `${basePath}|${lang}|${page}|${sharedNames.join(" ")}`;
     if (bundleCache.has(cacheKey)) {
       return bundleCache.get(cacheKey);
     }
 
     const bundlePromise = (async () => {
       const pageScope = getPageScope(page);
-      const enBundle = await loadEnglishBundle(basePath, page);
+      const enBundle = await loadEnglishBundle(basePath, page, sharedNames);
       if (lang === "en") {
         return { merged: enBundle, english: enBundle };
       }
@@ -182,9 +191,12 @@
         ? buildLocaleFilePath(basePath, lang, `${pageScope}/common`)
         : null;
       const pagePath = buildLocaleFilePath(basePath, lang, page);
-      const [commonBundle, scopedCommonBundle, pageBundle] = await Promise.all([
+      const [commonBundle, scopedCommonBundle, sharedBundles, pageBundle] = await Promise.all([
         readJson(commonPath),
         scopedCommonPath ? readJson(scopedCommonPath) : Promise.resolve({}),
+        Promise.all(sharedNames.map((name) =>
+          readJson(buildLocaleFilePath(basePath, lang, name))
+        )),
         readJson(pagePath),
       ]);
 
@@ -193,9 +205,9 @@
           deepMerge(deepClone(enBundle), commonBundle),
           scopedCommonBundle
         ),
-        pageBundle
+        sharedBundles.reduce((merged, shared) => deepMerge(merged, shared), {})
       );
-      return { merged: localizedBundle, english: enBundle };
+      return { merged: deepMerge(localizedBundle, pageBundle), english: enBundle };
     })();
 
     bundleCache.set(cacheKey, bundlePromise);

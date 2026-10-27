@@ -3,9 +3,9 @@
     "title": "Akil0814",
     "hero": {
       "subtitle_intro": "Tech stack:",
-      "subtitle_line2": "I'm currently learning OpenGL, and at this stage I plan to learn Vulkan and then build a multi-backend rendering engine.",
-      "subtitle_line3": "In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.",
-      "subtitle_line4": "If you're interested in collaborating on development, feel free to reach out.",
+      "subtitle_line2": "I'm currently learning OpenGL, with plans to study Vulkan next and build a 3D rendering engine that supports multiple rendering backends.",
+      "subtitle_line3": "I'm working with a teammate on Codex Zero, a game built on ElysiaEngine. I also plan to resume development of Moonline, a 2D side-scrolling combat game using SDL3, in the future.",
+      "subtitle_line4": "If you're interested in graphics, game engines, or game development, feel free to reach out to exchange ideas or collaborate.",
       "floating_profile_title": "Profile",
       "floating_profile_desc": "Skill · Resume · Email",
       "floating_more_title": "More About Me",
@@ -15,7 +15,7 @@
       "focus_label": "Current Focus",
       "focus_value": "C++ / Graphics",
       "status_label": "Status",
-      "status_value": "Learning..."
+      "status_value": "Learning and developing"
     },
     "sections": {
       "projects": "Projects",
@@ -26,47 +26,47 @@
     "featured": {
       "elysia": {
         "eyebrow": "Main Project",
-        "desc": "A reusable 2D game engine framework featuring an asynchronous asset loading pipeline, a scene management system, systems for frame-based animations and special effects, basic physics support, i18n capabilities, and a foundational UI system.",
         "cta": "Project Detail"
       }
     },
     "projects": {
+      "codexzero": {
+        "title": "Codex Zero",
+        "status": "In development"
+      },
+      "orbitalstrike": {
+        "title": "OrbitalStrike",
+        "status": "In development"
+      },
       "warships": {
         "badge_game": "Game",
-        "title": "WarShips",
-        "desc": "A tactical naval battle board-game project designed to practice more engineering-oriented architecture and multiple design patterns, improving maintainability and extensibility."
+        "title": "WarShips"
       },
       "minesweeper": {
         "badge_game": "Game",
-        "title": "MineSweeper",
-        "desc": "My first attempt at building an OOP-structured project: I implemented a Scene Manager to drive and switch scenes in a unified way, and built core components such as a Button class and a Board class."
+        "title": "MineSweeper"
       },
       "pathfindingvisualizer": {
         "badge_visualizer": "Visualizer",
-        "title": "PathFindingVisualizer",
-        "desc": "A visualization project page for pathfinding algorithms, including implementations and visual demonstrations of A*, Dijkstra, BFS, DFS, and more. It also supports dynamically adding obstacles and adjusting algorithm parameters to observe the performance of different algorithms."
+        "title": "PathFindingVisualizer"
       },
       "microcomputer": {
         "badge_hardware": "Hardware",
         "badge_cpu": "CPU",
         "badge_ttl": "74xx TTL",
-        "title": "74xx 8-bit Microcomputer",
-        "desc": "A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system."
+        "title": "74xx 8-bit Microcomputer"
       },
       "softrenderer": {
         "badge_graphics": "Graphics",
-        "title": "SoftRenderer",
-        "desc": "A CPU-based C++ software renderer with an OpenGL-inspired interface. It implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling, and also integrates a Dear ImGui backend adapted to the current pipeline. The project is currently in a long-term performance optimization phase."
+        "title": "SoftRenderer"
       },
       "takemetoballgame": {
         "badge_project": "Project",
-        "title": "Take me  to  ballgame.",
-        "desc": "An MLB stadium trip-planning project built with Qt Widgets + SQLite, where I was responsible for the overall architecture and the app's backend-layer implementation."
+        "title": "Take me  to  ballgame."
       },
       "buttonsdl": {
         "badge_tool": "Tool",
-        "title": "ButtonForSDL",
-        "desc": "I extracted a reusable Button class from the project and performed a series of refactors to make interaction logic clearer and improve maintainability."
+        "title": "ButtonForSDL"
       }
     },
     "about": {
@@ -85,12 +85,12 @@
       "next_value": "Vulkan",
       "skills_title": "Skills",
       "summary_title": "Summary",
-      "summary_text": "I’m a CS student currently focusing on C++ and computer graphics, with strong interests in game programming and real-time rendering. Rather than simply calling black-box APIs, I prefer understanding the underlying implementation details. My goal is to build a multi-backend 3D rendering engine that supports OpenGL, Vulkan, and a self-developed software rasterizer backend, while gradually improving dynamic model loading, real-time light adjustment, skeletal animation playback and control, the material system, scene management, and debugging tools.",
+      "summary_text": "I'm a CS student focused on C++ and computer graphics, with interests in game programming and real-time rendering. I enjoy understanding how APIs work under the hood and deepening that understanding through hands-on projects. I'm currently improving ElysiaEngine and working with a teammate on Codex Zero. My long-term goal is to build a 3D rendering engine with OpenGL, Vulkan, and a software rasterizer backend of my own, then gradually develop dynamic model loading, real-time lighting controls, skeletal animation playback and control, a material system, scene management, and debugging tools.",
       "skills": {
         "opengl": "OpenGL (learning)",
         "english": "English (fluent)",
         "chinese": "Chinese (native)",
-        "japanese": "Japanese (beginner)",
+        "japanese": "Japanese (preparing for JLPT N2)",
         "anime_expert": "Anime Expert"
       }
     },

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-i18n-page="projects" data-i18n-base="..">
+<html lang="en" data-i18n-page="projects" data-i18n-base=".." data-i18n-shared="project_cards">
 <head>
   <link rel="preload" as="image" href="../image/moon.png">
   <meta charset="UTF-8" />
@@ -97,7 +97,7 @@
               </div>
             </div>
             <h3 class="featured-project__title">Elysia Engine</h3>
-            <p class="featured-project__text" data-i18n="projects.featured.elysia.desc">A reusable 2D game engine framework.</p>
+            <p class="featured-project__text" data-i18n="project_cards.elysia.desc">A 2D game engine written in C++23 with SDL3, featuring asynchronous asset loading, scene transitions, input and gamepad support, animation, effects, audio, cameras, physics, and UI, along with localization and save data support.</p>
           </div>
         </div>
         <a class="featured-project__cta" href="../elysia-engine/index.html" aria-label="Open Elysia Engine page" data-i18n="projects.featured.elysia.cta">Project Detail</a>
@@ -106,12 +106,27 @@
       <div class="project-catalog">
         <article class="proj project-card">
           <div class="proj__top">
+            <span class="proj__badge">C++23</span>
+            <span class="proj__badge">ElysiaEngine</span>
+            <span class="proj__badge" data-i18n="projects.cards.flymetothemoon.kind">Game</span>
+          </div>
+          <h3 class="proj__title" data-i18n="projects.cards.flymetothemoon.title">FlyMe2TheMoon</h3>
+          <p class="proj__text" data-i18n="project_cards.flymetothemoon.desc">A 2D flight game recreation built on ElysiaEngine with C++23, SDL3, Box2D, and Lua. Control thrust through gravity and inertia, explore level mechanisms, collect stars and gems, and follow scripted story sequences.</p>
+          <div class="proj__links project-card__links">
+            <a class="link" href="./FlyMe2TheMoon/FlyMe2TheMoon.html" data-i18n="common.actions.more_info">More information</a>
+            <a class="link" href="https://github.com/Akil0814/FlyMe2TheMoon" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+            <a class="link" href="./FlyMe2TheMoon/web/" data-i18n="projects.cards.flymetothemoon.web_demo">Web Demo</a>
+          </div>
+        </article>
+
+        <article class="proj project-card">
+          <div class="proj__top">
             <span class="proj__badge">C++</span>
             <span class="proj__badge">SDL</span>
             <span class="proj__badge" data-i18n="projects.cards.warships.kind">Game</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.warships.title">WarShips</h3>
-          <p class="proj__text" data-i18n="projects.cards.warships.desc">A tactical naval game prototype focused on cleaner architecture, reusable systems, and design-pattern practice.</p>
+          <p class="proj__text" data-i18n="project_cards.warships.desc">A tactical naval battle board-game project designed to practice more engineering-oriented architecture and multiple design patterns, improving maintainability and extensibility.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="./WarShip/WarShip.html" data-i18n="common.actions.more_info">More information</a>
             <a class="link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
@@ -125,7 +140,7 @@
             <span class="proj__badge" data-i18n="projects.cards.softrenderer.kind">Graphics</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.softrenderer.title">SoftRenderer</h3>
-          <p class="proj__text" data-i18n="projects.cards.softrenderer.desc">A CPU-side renderer for rebuilding the graphics pipeline through triangle rasterization, depth testing, and basic shading.</p>
+          <p class="proj__text" data-i18n="project_cards.softrenderer.desc">A CPU-based C++ software renderer with an OpenGL-inspired interface. It implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling, and also integrates a Dear ImGui backend adapted to the current pipeline. The project is currently in a long-term performance optimization phase.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="./SoftRenderer/SoftRenderer.html" data-i18n="common.actions.more_info">More information</a>
             <a class="link" href="https://github.com/Akil0814/Akil0814.github.io" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
@@ -139,7 +154,7 @@
             <span class="proj__badge" data-i18n="projects.cards.microcomputer.kind">Hardware</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.microcomputer.title">74xx 8-bit Microcomputer</h3>
-          <p class="proj__text" data-i18n="projects.cards.microcomputer.desc">A Turing-complete 8-bit microcomputer built from 74-series TTL chips with a custom ISA, registers, memory, and I/O.</p>
+          <p class="proj__text" data-i18n="project_cards.microcomputer.desc">A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="./8BitComputer/8BitComputer.html" data-i18n="common.actions.more_info">More information</a>
           </div>
@@ -152,7 +167,7 @@
             <span class="proj__badge" data-i18n="projects.cards.pathfinding.kind">Visualizer</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.pathfinding.title">PathFindingVisualizer</h3>
-          <p class="proj__text" data-i18n="projects.cards.pathfinding.desc">A visualizer page prepared for grid-search demos, frontier expansion, and final path reconstruction notes.</p>
+          <p class="proj__text" data-i18n="project_cards.pathfindingvisualizer.desc">A small project for exploring how A*, Dijkstra, BFS, and Greedy search find paths. You can edit obstacles and cell weights, step through the search, pause, and step backward.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="./PathFindingVisualizer/PathFindingVisualizer.html" data-i18n="common.actions.more_info">More information</a>
           </div>
@@ -165,7 +180,7 @@
             <span class="proj__badge" data-i18n="projects.cards.minesweeper.kind">Game</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.minesweeper.title">MineSweeper</h3>
-          <p class="proj__text" data-i18n="projects.cards.minesweeper.desc">My first OOP-structured project, with a scene manager, reusable UI components, and multiple game modes.</p>
+          <p class="proj__text" data-i18n="project_cards.minesweeper.desc">My first attempt at building an OOP-structured project: I implemented a Scene Manager to drive and switch scenes in a unified way, and built core components such as a Button class and a Board class.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="./MineSweeper/MineSweeper.html" data-i18n="common.actions.more_info">More information</a>
             <a class="link" href="https://github.com/Akil0814/Minesweeper" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
@@ -179,7 +194,7 @@
             <span class="proj__badge">SQLite</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.collegetour.title">CollegeTour</h3>
-          <p class="proj__text" data-i18n="projects.cards.collegetour.desc">A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module.</p>
+          <p class="proj__text" data-i18n="project_cards.collegetour.desc">A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="./CollegeTour/CollegeTour.html" data-i18n="common.actions.more_info">More information</a>
             <a class="link" href="https://github.com/Akil0814/College_Tour" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
@@ -193,7 +208,7 @@
             <span class="proj__badge">SQLite</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.takemetoballgame.title">Take me  to  ballgame.</h3>
-          <p class="proj__text" data-i18n="projects.cards.takemetoballgame.desc">A project page skeleton prepared for future notes, architecture details, and code snippets.</p>
+          <p class="proj__text" data-i18n="project_cards.takemetoballgame.desc">An MLB stadium trip-planning project built with Qt Widgets + SQLite, where I was responsible for the overall architecture and the app's backend-layer implementation.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="./TakeMeToBallgame/TakeMeToBallgame.html" data-i18n="common.actions.more_info">More information</a>
           </div>
@@ -206,7 +221,7 @@
             <span class="proj__badge" data-i18n="projects.cards.buttonsdl.kind">Utility</span>
           </div>
           <h3 class="proj__title" data-i18n="projects.cards.buttonsdl.title">ButtonForSDL</h3>
-          <p class="proj__text" data-i18n="projects.cards.buttonsdl.desc">A reusable SDL button component extracted and refactored to make interaction logic clearer and easier to maintain.</p>
+          <p class="proj__text" data-i18n="project_cards.buttonsdl.desc">I extracted a reusable Button class from the project and performed a series of refactors to make interaction logic clearer and improve maintainability.</p>
           <div class="proj__links project-card__links">
             <a class="link" href="https://github.com/Akil0814/Button_for_SDL" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
           </div>

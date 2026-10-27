@@ -18,50 +18,46 @@
     "featured": {
       "elysia": {
         "eyebrow": "メインプロジェクト",
-        "desc": "非同期アセット読み込みパイプライン、シーン管理、フレームアニメーションと特殊効果、基礎的な物理、i18n、基礎 UI システムを備えた、再利用可能な 2D ゲームエンジンフレームワークです。",
         "cta": "プロジェクト詳細"
       }
     },
     "cards": {
+      "flymetothemoon": {
+        "kind": "ゲーム",
+        "title": "FlyMe2TheMoon",
+        "web_demo": "Web デモ"
+      },
       "warships": {
         "kind": "ゲーム",
-        "title": "WarShips",
-        "desc": "よりエンジニアリング志向のアーキテクチャと複数のデザインパターンを練習するために制作した戦術海戦ボードゲームで、保守性と拡張性の向上を目的としました。"
+        "title": "WarShips"
       },
       "softrenderer": {
         "kind": "グラフィックス",
-        "title": "SoftRenderer",
-        "desc": "CPU 側でレンダリングパイプラインを再構築することを目的としたソフトウェアレンダラープロジェクトです。現在は三角形ラスタライズ、深度テスト、基礎シェーディングに注力しています。"
+        "title": "SoftRenderer"
       },
       "microcomputer": {
         "kind": "ハードウェア",
-        "title": "74xx 8-bit マイクロコンピュータ",
-        "desc": "74 シリーズ TTL チップで構成したチューリング完全な 8-bit マイクロコンピュータで、独自 ISA、レジスタ、メモリ、I/O を備えています。"
+        "title": "74xx 8-bit マイクロコンピュータ"
       },
       "pathfinding": {
         "kind": "可視化",
-        "title": "PathFindingVisualizer",
-        "desc": "A*、Dijkstra、BFS、DFS などの経路探索アルゴリズムの実装と可視化表示を含むプロジェクトページです。障害物を動的に追加したり、アルゴリズムのパラメータを調整したりして、各アルゴリズムの性能の違いを観察できます。"
+        "title": "PathFindingVisualizer"
       },
       "minesweeper": {
         "kind": "ゲーム",
-        "title": "MineSweeper",
-        "desc": "初めて OOP を意識して構築したプロジェクトです。シーン管理を統一して駆動・切り替えを行う Scene Manager を実装し、Button クラスや盤面（Board）クラスなどの基盤コンポーネントも作成しました。"
+        "title": "MineSweeper"
       },
       "collegetour": {
         "kind": "ツール",
-        "title": "CollegeTour",
-        "desc": "データ構造のグループプロジェクトで、SQLite ベースの DataManager と管理者認証モジュールを実装しました。"
+        "title": "CollegeTour"
       },
       "takemetoballgame": {
         "kind": "プロジェクト",
-        "title": "Take me  to  ballgame.",
-        "desc": "Qt Widgets + SQLite を用いた MLB 球場旅行計画プロジェクトで、全体アーキテクチャとアプリのバックエンド層実装を担当しました。"
+        "title": "Take me  to  ballgame."
       },
       "buttonsdl": {
         "kind": "ユーティリティ",
-        "title": "ButtonForSDL",
-        "desc": "プロジェクトから抽象化した Button クラスをもとに複数回のリファクタリングを行い、入力・操作のロジックをより明確にして保守性を高めました。"
+        "title": "ButtonForSDL"
       }
     },
     "footer": {

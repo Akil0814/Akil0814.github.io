@@ -1,0 +1,26 @@
+{
+  "flyme2themoon_web": {
+    "title": "FlyMe2TheMoon Web Demo",
+    "intro": {
+      "kicker": "FlyMe2TheMoon / 浏览器演示",
+      "title": "FlyMe2TheMoon Web Demo",
+      "desc": "浏览器演示尚未上线，此页为后续可游玩的版本预留。可以前往项目页了解玩法和实现。"
+    },
+    "nav": {
+      "project_page": "项目页"
+    },
+    "actions": {
+      "project_page": "返回项目页",
+      "more_projects": "更多项目",
+      "source": "源码仓库"
+    },
+    "runtime": {
+      "title": "在线演示",
+      "status": "尚未上线",
+      "placeholder": "浏览器版本准备好后，可游玩的演示将在这里提供。"
+    },
+    "footer": {
+      "page": "FlyMe2TheMoon Web Demo"
+    }
+  }
+}

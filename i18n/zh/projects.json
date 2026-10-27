@@ -18,50 +18,46 @@
     "featured": {
       "elysia": {
         "eyebrow": "主要项目",
-        "desc": "一个可复用的2D游戏引擎层框架，包含基础的资源异步加载管线，场景管理系统，输入管理与手柄兼容，帧动画与特效系统，基础物理支持，i18n字典，与基础的UI系统",
         "cta": "项目详细"
       }
     },
     "cards": {
+      "flymetothemoon": {
+        "kind": "游戏",
+        "title": "FlyMe2TheMoon",
+        "web_demo": "Web Demo"
+      },
       "warships": {
         "kind": "游戏",
-        "title": "WarShips",
-        "desc": "一个战术海战棋项目，用于练习更工程化的架构和多种设计模式，以提升可维护性与可扩展性"
+        "title": "WarShips"
       },
       "softrenderer": {
         "kind": "图形",
-        "title": "SoftRenderer",
-        "desc": "一个基于 CPU 的 C++ 软件渲染器，实现了简化图形管线，包括顶点处理、三角形光栅化、片元着色与纹理采样；同时集成适配当前管线的 Dear ImGui 后端，用于运行时调试、性能统计和渲染瓶颈定位，项目目前处于长期性能优化阶段。"
+        "title": "SoftRenderer"
       },
       "microcomputer": {
         "kind": "硬件",
-        "title": "74xx 8 位微型计算机",
-        "desc": "由 74 系列 TTL 芯片搭建的图灵完备 8 位微型计算机，包含自定义 ISA、寄存器、内存和 I/O。"
+        "title": "74xx 8 位微型计算机"
       },
       "pathfinding": {
         "kind": "可视化",
-        "title": "PathFindingVisualizer",
-        "desc": "一个用于展示寻路算法的可视化项目页，包含A*、Dijkstra、BFS、DFS等算法的实现与可视化展示，支持动态添加障碍物和调整算法参数以观察不同算法的性能表现。"
+        "title": "PathFindingVisualizer"
       },
       "minesweeper": {
         "kind": "游戏",
-        "title": "MineSweeper",
-        "desc": "第一个尝试构建的OOP项目，使用场景管理器统一驱动与切换场景，包含按钮类，棋盘类等"
+        "title": "MineSweeper"
       },
       "collegetour": {
         "kind": "工具",
-        "title": "CollegeTour",
-        "desc": "数据结构课的小组项目，我负责实现基于 SQLite 的 DataManager 与管理员凭证模块。"
+        "title": "CollegeTour"
       },
       "takemetoballgame": {
         "kind": "项目",
-        "title": "Take me  to  ballgame.",
-        "desc": "基于 Qt Widgets + SQLite 的 MLB 球场旅行规划项目，我负责整体架构与 App 后端层实现。"
+        "title": "Take me  to  ballgame."
       },
       "buttonsdl": {
         "kind": "工具",
-        "title": "ButtonForSDL",
-        "desc": "由项目中抽象出的Button类，进行了一系列重构让交互逻辑更清晰，提高可维护性."
+        "title": "ButtonForSDL"
       }
     },
     "footer": {

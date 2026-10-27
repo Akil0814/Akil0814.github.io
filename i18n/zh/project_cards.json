@@ -1,0 +1,38 @@
+{
+  "project_cards": {
+    "flymetothemoon": {"desc":"基于 ElysiaEngine 的 2D 飞行闯关复刻，使用 C++23、SDL3、Box2D 与 Lua。控制喷射推力，在重力与惯性之间探索机关、收集星星和宝石，并体验脚本驱动的剧情演出。"},
+    "elysia": {
+      "desc": "用 C++23 和 SDL3 写的 2D 游戏引擎，包含异步资源加载、场景切换、输入与手柄支持、动画、特效、音频、相机、物理和 UI，也支持多语言和存档。"
+    },
+    "codexzero": {
+      "desc": "与伙伴合作开发的 2D 俯视角射击游戏，基于 ElysiaEngine，包含符文武器组合、弹丸行为和地图生成。"
+    },
+    "orbitalstrike": {
+      "desc": "基于 ElysiaEngine 的太空弹道策略游戏。调整发射方向和力度，利用引力、斥力、黑洞和虫洞规划炮击路线，在有限的炮击次数内击毁敌方主力舰。"
+    },
+    "warships": {
+      "desc": "一个战术海战棋项目，用于练习更工程化的架构和多种设计模式，以提升可维护性与可扩展性"
+    },
+    "minesweeper": {
+      "desc": "第一个尝试构建的OOP项目，使用场景管理器统一驱动与切换场景，包含按钮类，棋盘类等"
+    },
+    "pathfindingvisualizer": {
+      "desc": "用来观察 A*、Dijkstra、BFS 和 Greedy 寻路过程的小项目。可以编辑障碍物和格子权重，也支持单步执行、暂停和回退。"
+    },
+    "microcomputer": {
+      "desc": "由 74 系列 TTL 芯片搭建的图灵完备 8 位微型计算机，包含自定义 ISA、程序计数器/地址寄存器，以及简易内存与 I/O 系统。"
+    },
+    "softrenderer": {
+      "desc": "一个基于 CPU 的 C++ 软件渲染器，接口仿OpenGL，实现了简化图形管线，包括顶点处理、三角形光栅化、片元着色与纹理采样；同时集成适配当前管线的 Dear ImGui 后端。项目目前处于长期性能优化阶段。"
+    },
+    "takemetoballgame": {
+      "desc": "基于 Qt Widgets + SQLite 的 MLB 球场旅行规划项目，我负责整体架构与 App 后端层实现。"
+    },
+    "buttonsdl": {
+      "desc": "由项目中抽象出的Button类，进行了一系列重构让交互逻辑更清晰，提高可维护性."
+    },
+    "collegetour": {
+      "desc": "数据结构课的小组项目，我负责实现基于 SQLite 的 DataManager 与管理员凭证模块。"
+    }
+  }
+}

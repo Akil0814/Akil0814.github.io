@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-i18n-page="index" data-i18n-base=".">
+<html lang="en" data-i18n-page="index" data-i18n-base="." data-i18n-shared="project_cards">
 <head>
   <link rel="preload" as="image" href="./image/moon.png">
   <meta charset="UTF-8" />
@@ -73,9 +73,9 @@
           <span data-i18n="index.hero.subtitle_intro">Tech stack:</span> <span class="k">C++</span>,
           <span class="k">SDL</span>, <span class="k">OpenGL</span>, <span class="k">SQLite</span>, ...
           <br/>
-          <span data-i18n="index.hero.subtitle_line2">I'm currently learning OpenGL, and my next goal is to build a software rasterizer.</span>
-          <span data-i18n="index.hero.subtitle_line3">In the future, I plan to refactor my WarShips project and build a new 2D side-scrolling combat game with SDL.</span>
-          <span data-i18n="index.hero.subtitle_line4">If you're interested in collaborating, feel free to reach out.</span>
+          <span data-i18n="index.hero.subtitle_line2">I'm currently learning OpenGL, with plans to study Vulkan next and build a 3D rendering engine that supports multiple rendering backends.</span>
+          <span data-i18n="index.hero.subtitle_line3">I'm working with a teammate on Codex Zero, a game built on ElysiaEngine. I also plan to resume development of Moonline, a 2D side-scrolling combat game using SDL3, in the future.</span>
+          <span data-i18n="index.hero.subtitle_line4">If you're interested in graphics, game engines, or game development, feel free to reach out to exchange ideas or collaborate.</span>
         </p>
 
         <div class="cta">
@@ -90,7 +90,7 @@
           </div>
           <div class="chip">
             <span class="chip__label" data-i18n="index.stats.status_label">Status</span>
-            <span class="chip__value" data-i18n="index.stats.status_value">Learning...</span>
+            <span class="chip__value" data-i18n="index.stats.status_value">Learning and developing</span>
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@
               </div>
             </div>
             <h3 class="featured-project__title">Elysia Engine</h3>
-            <p class="featured-project__text" data-i18n="index.featured.elysia.desc">A.</p>
+            <p class="featured-project__text" data-i18n="project_cards.elysia.desc">A 2D game engine written in C++23 with SDL3, featuring asynchronous asset loading, scene transitions, input and gamepad support, animation, effects, audio, cameras, physics, and UI, along with localization and save data support.</p>
           </div>
         </div>
         <a class="featured-project__cta" href="./elysia-engine/index.html" aria-label="Open Elysia Engine page" data-i18n="index.featured.elysia.cta">Project</a>
@@ -157,10 +157,36 @@
             <span class="proj__badge" data-i18n="index.projects.softrenderer.badge_graphics">Graphics</span>
           </div>
           <h3 class="proj__title" data-i18n="index.projects.softrenderer.title">SoftRenderer</h3>
-          <p class="proj__text" data-i18n="index.projects.softrenderer.desc">A software renderer project focused on rebuilding the rendering pipeline on CPU side, including triangle rasterization, depth testing, and shading basics.</p>
+          <p class="proj__text" data-i18n="project_cards.softrenderer.desc">A CPU-based C++ software renderer with an OpenGL-inspired interface. It implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling, and also integrates a Dear ImGui backend adapted to the current pipeline. The project is currently in a long-term performance optimization phase.</p>
           <div class="proj__links">
             <a class="link" href="https://github.com/Akil0814/SoftRenderer" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
             <a class="link" href="https://akil0814.github.io/projects/SoftRenderer/SoftRenderer.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">ElysiaEngine</span>
+            <span class="proj__badge" data-i18n="index.projects.codexzero.status">In development</span>
+          </div>
+          <h3 class="proj__title" data-i18n="index.projects.codexzero.title">Codex Zero</h3>
+          <p class="proj__text" data-i18n="project_cards.codexzero.desc">A 2D top-down shooter I'm developing with a teammate using ElysiaEngine, featuring rune-based weapon combinations, projectile behaviors, and map generation.</p>
+          <div class="proj__links">
+            <a class="link" href="https://github.com/Dangling-Pointer/Codex-Zero" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge">C++</span>
+            <span class="proj__badge">ElysiaEngine</span>
+            <span class="proj__badge" data-i18n="index.projects.orbitalstrike.status">In development</span>
+          </div>
+          <h3 class="proj__title" data-i18n="index.projects.orbitalstrike.title">OrbitalStrike</h3>
+          <p class="proj__text" data-i18n="project_cards.orbitalstrike.desc">A space-themed ballistic strategy game built on ElysiaEngine. Adjust your firing angle and power, using gravity, repulsion, black holes, and wormholes to plan your trajectories and destroy the enemy flagship with a limited number of shots.</p>
+          <div class="proj__links">
+            <a class="link" href="https://github.com/Akil0814/OrbitalStrike" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
           </div>
         </article>
 
@@ -171,51 +197,10 @@
             <span class="proj__badge" data-i18n="index.projects.pathfindingvisualizer.badge_visualizer">Visualizer</span>
           </div>
           <h3 class="proj__title" data-i18n="index.projects.pathfindingvisualizer.title">PathFindingVisualizer</h3>
-          <p class="proj__text" data-i18n="index.projects.pathfindingvisualizer.desc">A pathfinding algorithm visualizer page prepared for grid-search demos, frontier expansion, and final path reconstruction notes.</p>
+          <p class="proj__text" data-i18n="project_cards.pathfindingvisualizer.desc">A small project for exploring how A*, Dijkstra, BFS, and Greedy search find paths. You can edit obstacles and cell weights, step through the search, pause, and step backward.</p>
           <div class="proj__links">
             <a class="link" href="https://github.com/Akil0814/PathFindingVisualizer" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
             <a class="link" href="https://akil0814.github.io/projects/PathFindingVisualizer/PathFindingVisualizer.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
-          </div>
-        </article>
-
-        <article class="proj">
-          <div class="proj__top">
-            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_cpu">CPU</span>
-            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_ttl">74xx TTL</span>
-            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_hardware">Hardware</span>
-          </div>
-          <h3 class="proj__title" data-i18n="index.projects.microcomputer.title">74xx 8-bit Microcomputer</h3>
-          <p class="proj__text" data-i18n="index.projects.microcomputer.desc">A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system.</p>
-          <div class="proj__links">
-            <a class="link" href="https://akil0814.github.io/projects/8BitComputer/8BitComputer.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
-          </div>
-        </article>
-
-        <article class="proj">
-          <div class="proj__top">
-            <span class="proj__badge">C++</span>
-            <span class="proj__badge">SDL</span>
-            <span class="proj__badge" data-i18n="index.projects.warships.badge_game">Game</span>
-          </div>
-          <h3 class="proj__title" data-i18n="index.projects.warships.title">WarShips</h3>
-          <p class="proj__text" data-i18n="index.projects.warships.desc">A tactical naval game prototype built to practice a more professional architecture and multiple design patterns, improving maintainability and extensibility.</p>
-          <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814/WarShips" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
-            <a class="link" href="https://akil0814.github.io/projects/WarShip/WarShip.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
-          </div>
-        </article>
-
-        <article class="proj">
-          <div class="proj__top">
-            <span class="proj__badge">C++</span>
-            <span class="proj__badge">EasyX</span>
-            <span class="proj__badge" data-i18n="index.projects.minesweeper.badge_game">Game</span>
-          </div>
-          <h3 class="proj__title" data-i18n="index.projects.minesweeper.title">MineSweeper</h3>
-          <p class="proj__text" data-i18n="index.projects.minesweeper.desc">My first OOP-structured project, featuring a scene manager for smooth scene switching and multiple game modes.</p>
-          <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814/Minesweeper" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
-            <a class="link" href="https://akil0814.github.io/projects/MineSweeper/MineSweeper.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
           </div>
         </article>
 
@@ -226,10 +211,23 @@
             <span class="proj__badge">SQLite</span>
           </div>
           <h3 class="proj__title" data-i18n="index.projects.takemetoballgame.title">Take me  to  ballgame.</h3>
-          <p class="proj__text" data-i18n="index.projects.takemetoballgame.desc">A project page skeleton prepared for future notes, architecture details, and code snippets.</p>
+          <p class="proj__text" data-i18n="project_cards.takemetoballgame.desc">An MLB stadium trip-planning project built with Qt Widgets + SQLite, where I was responsible for the overall architecture and the app's backend-layer implementation.</p>
           <div class="proj__links">
-            <a class="link" href="https://github.com/Akil0814/CS_1D_BaseBall" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
+            <a class="link" href="https://github.com/Akil0814/TakeMeToBallgame" target="_blank" rel="noreferrer" data-i18n="common.actions.repo">Repo</a>
             <a class="link" href="https://akil0814.github.io/projects/TakeMeToBallgame/TakeMeToBallgame.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj__top">
+            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_cpu">CPU</span>
+            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_ttl">74xx TTL</span>
+            <span class="proj__badge" data-i18n="index.projects.microcomputer.badge_hardware">Hardware</span>
+          </div>
+          <h3 class="proj__title" data-i18n="index.projects.microcomputer.title">74xx 8-bit Microcomputer</h3>
+          <p class="proj__text" data-i18n="project_cards.microcomputer.desc">A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system.</p>
+          <div class="proj__links">
+            <a class="link" href="https://akil0814.github.io/projects/8BitComputer/8BitComputer.html" target="_blank" rel="noreferrer" data-i18n="common.actions.more_info">More information</a>
           </div>
         </article>
       </div>
@@ -250,7 +248,7 @@
               <li><b data-i18n="index.about.location_label">Location:</b> <span data-i18n="index.about.location_value">Orange County, CA, USA</span></li>
               <li><b data-i18n="index.about.main_label">Main:</b> <span data-i18n="index.about.main_value">C++ / Graphics</span></li>
               <li><b data-i18n="index.about.now_label">Now:</b> <span data-i18n="index.about.now_value">Learning OpenGL.</span></li>
-              <li><b data-i18n="index.about.next_label">Next:</b> <span data-i18n="index.about.next_value">Software Rasterizer.</span></li>
+              <li><b data-i18n="index.about.next_label">Next:</b> <span data-i18n="index.about.next_value">Vulkan</span></li>
             </ul>
             <h3 class="panel__title" data-i18n="index.about.skills_title">Skills</h3>
             <div class="tags">
@@ -263,7 +261,7 @@
               <span class="tag" data-i18n="index.about.skills.opengl">OpenGL (learning)</span>
               <span class="tag" data-i18n="index.about.skills.english">English (fluent)</span>
               <span class="tag" data-i18n="index.about.skills.chinese">Chinese (native)</span>
-              <span class="tag" data-i18n="index.about.skills.japanese">Japanese (beginner)</span>
+              <span class="tag" data-i18n="index.about.skills.japanese">Japanese (preparing for JLPT N2)</span>
               <span class="tag tag--strike" data-i18n="index.about.skills.anime_expert">Anime Expert</span>
             </div>
           </div>
@@ -271,7 +269,7 @@
           <div class="about-panel__block about-panel__block--skills">
             <h3 class="panel__title about-panel__subtitle" data-i18n="index.about.summary_title">Summary</h3>
             <p class="about-panel__intro" data-i18n="index.about.summary_text">
-              I'm a CS student focused on C++ and graphics. I enjoy building clean gameplay systems and reusable modules, and I prefer understanding what's happening under the hood, because I don't like the feeling of calling something without knowing what it actually does. Right now I'm learning OpenGL to strengthen my graphics fundamentals, and my next goal is to write a software rasterizer to understand the rendering pipeline end-to-end.
+              I'm a CS student focused on C++ and computer graphics, with interests in game programming and real-time rendering. I enjoy understanding how APIs work under the hood and deepening that understanding through hands-on projects. I'm currently improving ElysiaEngine and working with a teammate on Codex Zero. My long-term goal is to build a 3D rendering engine with OpenGL, Vulkan, and a software rasterizer backend of my own, then gradually develop dynamic model loading, real-time lighting controls, skeletal animation playback and control, a material system, scene management, and debugging tools.
             </p>
           </div>
         </div>

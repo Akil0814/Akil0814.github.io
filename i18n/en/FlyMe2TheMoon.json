@@ -1,0 +1,67 @@
+{
+  "FlyMe2TheMoon": {
+    "title": "FlyMe2TheMoon Project",
+    "intro": {
+      "kicker": "C++23 / ElysiaEngine / 2D Flight Game",
+      "title": "FlyMe2TheMoon",
+      "desc": "A desktop recreation of Fly2theMoon built on my own ElysiaEngine. Guide the character toward the moon with controlled thrust, navigating gravity, inertia, and obstacles while collecting stars and gems. The project brings flight physics, level mechanisms, Lua-driven story sequences, and a complete desktop interface together in C++23.",
+      "chips": {
+        "chip1": "Thrust & Physics",
+        "chip2": "Level Mechanisms",
+        "chip3": "Lua Storytelling",
+        "chip4": "Progress & Saves"
+      }
+    },
+    "sections": {
+      "demo_videos": "Demo Videos",
+      "core_code_blocks": "Core Code Blocks"
+    },
+    "videos": {
+      "pending": "Videos to be added",
+      "desc": "Gameplay videos will be added here. You can explore the architecture and source excerpts below in the meantime."
+    },
+    "summary": {
+      "text": "<h4>Flight and controls</h4><p>Keyboard, mouse, and gamepad inputs feed the same flight model. Pointer direction and distance determine thrust, while analog stick and trigger input retain gradual power after a 20% dead zone. Gravity, inertia, collision, power limits, and damping shape the route through each level.</p>\n<h4>Levels and mechanisms</h4><p>The project imports terrain and object data for 60 levels across four chapters. Gameplay entities implement moving platforms, rotating mechanisms, spikes, wind fields, portals, lasers, launchers, and bombs. Content coverage and individual level validation are still in progress.</p>\n<h4>Story and presentation</h4><p>Lua coroutines suspend for dialogue, delays, and camera travel, then resume through the game loop or player input. Host callbacks connect scripts to FlightScene. The presentation layer handles tutorials, character transitions, collection effects, dialogue, audio, and camera movement.</p>\n<h4>Progress and the desktop interface</h4><p>Main menu, level selection, achievements, settings, credits, HUD, pause, and result panels form the desktop flow. Completed runs update stars, scores, best times, achievements, and newly unlocked levels through progress::Store and the engine save service. Death records and story flags are also retained.</p>\n<h4>Engineering and development tools</h4><p>GameModule registers scenes with ElysiaEngine; FlightScene coordinates content, gameplay entities, story, and frontend components. CMake builds the C++23 project with SDL3, Box2D, and Lua. The optional F2 overlay exposes debug drawing, performance statistics, time controls, and camera controls; tests, input replays, and asset checks support development.</p>"
+    },
+    "codes": {
+      "code1": {
+        "title": "Scene registration",
+        "desc": "GameModule registers the menu, flight, selection, credits, achievements, and settings scenes with the engine SceneManager."
+      },
+      "code2": {
+        "title": "Flight input and thrust",
+        "desc": "Analog controls rescale their dead zone; pointer input maps angle and distance to thrust. Force is limited by maximum power, with separate velocity damping."
+      },
+      "code3": {
+        "title": "Lua story coroutines",
+        "desc": "Script commands yield for dialogue and timed waits. Runtime resumes the coroutine after time advances or the player continues a line."
+      },
+      "code4": {
+        "title": "Clear records and level unlocks",
+        "desc": "The progress store compares dependency-based unlocks before and after a clear, retains best records, evaluates achievements, and saves progress."
+      }
+    },
+    "diagrams": {
+      "modules": {
+        "title": "Game modules and systems",
+        "desc": "GameModule registers the scenes; FlightScene brings content, gameplay, story, presentation, and progress together on ElysiaEngine."
+      },
+      "flow": {
+        "title": "From level selection to saved progress",
+        "desc": "Level dependencies control selection. A run loads its world and story, then a successful result updates records, achievements, and pending unlock notifications."
+      }
+    },
+    "credits": {
+      "title": "Project status and asset sources",
+      "text": "This is an unofficial recreation for game development learning and research into the original mechanics. Project code is MIT licensed; the original name, artwork, audio, and story belong to their respective rights holders and are not covered by that license. Implementation and level validation are ongoing; importing all 60 levels does not establish a complete playthrough of every level."
+    },
+    "actions": {
+      "engine": "About ElysiaEngine",
+      "web_demo": "Web Demo",
+      "more": "More Projects"
+    },
+    "footer": {
+      "page": "FlyMe2TheMoon Project Page"
+    }
+  }
+}

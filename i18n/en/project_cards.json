@@ -1,0 +1,38 @@
+{
+  "project_cards": {
+    "flymetothemoon": {"desc":"A 2D flight game recreation built on ElysiaEngine with C++23, SDL3, Box2D, and Lua. Control thrust through gravity and inertia, explore level mechanisms, collect stars and gems, and follow scripted story sequences."},
+    "elysia": {
+      "desc": "A 2D game engine written in C++23 with SDL3, featuring asynchronous asset loading, scene transitions, input and gamepad support, animation, effects, audio, cameras, physics, and UI, along with localization and save data support."
+    },
+    "codexzero": {
+      "desc": "A 2D top-down shooter I'm developing with a teammate using ElysiaEngine, featuring rune-based weapon combinations, projectile behaviors, and map generation."
+    },
+    "orbitalstrike": {
+      "desc": "A space-themed ballistic strategy game built on ElysiaEngine. Adjust your firing angle and power, using gravity, repulsion, black holes, and wormholes to plan your trajectories and destroy the enemy flagship with a limited number of shots."
+    },
+    "warships": {
+      "desc": "A tactical naval battle board-game project designed to practice more engineering-oriented architecture and multiple design patterns, improving maintainability and extensibility."
+    },
+    "minesweeper": {
+      "desc": "My first attempt at building an OOP-structured project: I implemented a Scene Manager to drive and switch scenes in a unified way, and built core components such as a Button class and a Board class."
+    },
+    "pathfindingvisualizer": {
+      "desc": "A small project for exploring how A*, Dijkstra, BFS, and Greedy search find paths. You can edit obstacles and cell weights, step through the search, pause, and step backward."
+    },
+    "microcomputer": {
+      "desc": "A Turing-complete 8-bit microcomputer built from 74-series TTL chips, featuring a custom ISA, program counter/address registers, and a simple memory + I/O system."
+    },
+    "softrenderer": {
+      "desc": "A CPU-based C++ software renderer with an OpenGL-inspired interface. It implements a simplified graphics pipeline, including vertex processing, triangle rasterization, fragment shading, and texture sampling, and also integrates a Dear ImGui backend adapted to the current pipeline. The project is currently in a long-term performance optimization phase."
+    },
+    "takemetoballgame": {
+      "desc": "An MLB stadium trip-planning project built with Qt Widgets + SQLite, where I was responsible for the overall architecture and the app's backend-layer implementation."
+    },
+    "buttonsdl": {
+      "desc": "I extracted a reusable Button class from the project and performed a series of refactors to make interaction logic clearer and improve maintainability."
+    },
+    "collegetour": {
+      "desc": "A Data Structures group project where I implemented a SQLite-based DataManager and admin credential module."
+    }
+  }
+}

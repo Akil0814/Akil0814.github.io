@@ -1,0 +1,26 @@
+{
+  "flyme2themoon_web": {
+    "title": "FlyMe2TheMoon Web Demo",
+    "intro": {
+      "kicker": "FlyMe2TheMoon / Browser Demo",
+      "title": "FlyMe2TheMoon Web Demo",
+      "desc": "The browser demo is not available yet. This page reserves a place for a future playable build; visit the project page to read about the gameplay and implementation."
+    },
+    "nav": {
+      "project_page": "Project Page"
+    },
+    "actions": {
+      "project_page": "Back to Project Page",
+      "more_projects": "More Projects",
+      "source": "Source Repo"
+    },
+    "runtime": {
+      "title": "Live Demo",
+      "status": "Not available yet",
+      "placeholder": "The playable demo will appear here when a browser build is ready."
+    },
+    "footer": {
+      "page": "FlyMe2TheMoon Web Demo"
+    }
+  }
+}
