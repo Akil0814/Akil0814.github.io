@@ -166,3 +166,13 @@
   const page = ProjectPageCore.init({onLangChange: render});
   page.setLang(page.getLang()).then(render).finally(() => { start.disabled = false; });
 })();
+
+(() => {
+  // Keep previews out of the public page-level UV count. Leave the placeholder
+  // unchanged when the service is blocked or unavailable.
+  if (location.hostname !== 'akil0814.github.io') return;
+  const counter = document.createElement('script');
+  counter.async = true;
+  counter.src = 'https://busuanzi.9420.ltd/js';
+  document.head.appendChild(counter);
+})();

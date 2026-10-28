@@ -34,7 +34,8 @@
       "note": "需要支持 WebGL 2 的桌面浏览器。点击画面或按键以启用音频。存档属于当前浏览器和网站，清除网站数据会删除存档。"
     },
     "footer": {
-      "page": "FlyMe2TheMoon Web Demo"
+      "page": "FlyMe2TheMoon Web Demo",
+      "visitors": "本页累计访客数："
     }
   }
 }
