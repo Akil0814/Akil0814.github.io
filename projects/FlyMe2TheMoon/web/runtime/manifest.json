@@ -1,9 +1,10 @@
 {
   "version": 1,
-  "buildId": "c995be0210e8a44e",
+  "gameVersion": "1.0.1",
+  "buildId": "9fc4b150cc13665a",
   "emscripten": "5.0.6",
-  "sourceRevision": "295ccfa1f4ac64dc2516d1f236258c809f9ead96",
-  "sourceHasLocalChanges": true,
+  "sourceRevision": "6301a3b3891c9b78474207a08ea101dfad6e7069",
+  "sourceHasLocalChanges": false,
   "runtime": "FlyMe2TheMoon.js",
   "packages": [
     {
@@ -14,7 +15,7 @@
     {
       "script": "assets-01.js",
       "data": "assets-01.data",
-      "bytes": 29677927
+      "bytes": 29677849
     },
     {
       "script": "assets-02.js",
@@ -32,21 +33,21 @@
       "bytes": 22428729
     }
   ],
-  "downloadBytes": 158536782,
-  "assetBytes": 151894084,
+  "downloadBytes": 158530771,
+  "assetBytes": 151894006,
   "assetCount": 1169,
   "files": {
     "FlyMe2TheMoon.js": {
       "bytes": 215781,
-      "sha256": "3024b845b5ad0e5665e6df9abb82151e95a2044e87bbd949888bdd93b5e0bce5"
+      "sha256": "c763130f1f191bc4360cf023727043200a13e663cbad11e68d4968fc4b2bf646"
     },
     "FlyMe2TheMoon.wasm": {
-      "bytes": 6269031,
-      "sha256": "38e31fecf59c8591782b63984a32132a098c18ecaa52aea0508060e2d709ee4e"
+      "bytes": 6263098,
+      "sha256": "2c9cfc28997c38c77c24595ffb0ecc54963069a085288704c3634fbb39c95336"
     },
     "asset-manifest.json": {
       "bytes": 192701,
-      "sha256": "ec0129c4ec23c5127eb1a8aa0559b70fca13015c5e65e695d9f1021b94af02eb"
+      "sha256": "bd42856b6a10619412bbc48543c54434eb6d55f1ea343b566ce671cb886ab5d6"
     },
     "assets-00.js": {
       "bytes": 5967,
@@ -58,11 +59,11 @@
     },
     "assets-01.js": {
       "bytes": 18969,
-      "sha256": "ddf7e1b10dd2d4899cdbec63bea9763ddaf9283b9ffa8db46cff225c1ca1aa7b"
+      "sha256": "2f003966abc01df45ba58b4e17a26fa9a5dc2e02838d5f9bb814325fd23c21c0"
     },
     "assets-01.data": {
-      "bytes": 29677927,
-      "sha256": "6827435dd2408a3cf1454c658c5f57a50fc001f9745ece947093f2baa4c915b5"
+      "bytes": 29677849,
+      "sha256": "02e248d37a11ab8cd92f938aa6dce27a2fcad9d90dbbb7c444a19aeeaebe6e83"
     },
     "assets-02.js": {
       "bytes": 7929,

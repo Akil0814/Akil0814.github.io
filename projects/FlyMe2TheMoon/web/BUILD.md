@@ -19,7 +19,10 @@ script with a Python interpreter supported by the SDK. `--fresh` clears CMake's
 cached feature checks; `--package-only` repackages an already compiled runtime.
 Build, cache, temporary files and packages are confined to `out/`.
 
-The generated `out/web/runtime/manifest.json` records the source revision, whether
+The generated `out/web/runtime/manifest.json` records `gameVersion` from the CMake
+project version (currently **1.0.1**). Its `version` remains the manifest schema
+version, independently of game releases. The page displays the game version.
+The manifest also records the source revision, whether
 it included local changes, toolchain, runtime hashes, resource sizes and a build
 identifier. `asset-manifest.json` lists every asset and its SHA-256. Resources,
 including `assets/.elysia_root`, are sorted by path and split into packages of at
@@ -47,7 +50,8 @@ After validation:
 This verifies runtime hashes, copies the page, scripts, styles and runtime to
 `projects/FlyMe2TheMoon/web/`, and updates only this page's English, Chinese and
 Japanese dictionaries. Overwritten page files are backed up under
-`out/web/backups/`. Existing project description pages remain the entry point.
+`out/web/backups/`, together with the old runtime and build notes. Existing project
+description pages remain the entry point.
 The script never runs Git commit, push, or a remote deployment. Review the
 website changes and publish with its existing GitHub Pages workflow.
 

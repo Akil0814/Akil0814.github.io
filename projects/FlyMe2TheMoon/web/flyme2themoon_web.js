@@ -120,6 +120,7 @@
       const response = await fetch('./runtime/manifest.json', {cache: 'no-store'});
       if (!response.ok) throw new Error('Web build manifest is missing');
       const manifest = await response.json();
+      document.getElementById('gameVersion').textContent = `v${manifest.gameVersion || '1.0.0'}`;
       const locate = path => `./runtime/${path}?v=${encodeURIComponent(manifest.buildId)}`;
       const wasm = manifest.runtime.replace(/\.js$/, '.wasm');
       state.total = manifest.packages.reduce((sum, p) => sum + p.bytes, manifest.files[wasm].bytes);

@@ -284,8 +284,8 @@
     "sha256": "3641a876912d048352a6f6eb6d951899094dd785cc34ee8069d3d9a5202510cc"
   },
   "assets/configs/global/app_config.json": {
-    "bytes": 434,
-    "sha256": "26ddb9134f43aa3d7c3b99ccbcb3196ba93deb0001aad869d6efbba25daccdbe"
+    "bytes": 383,
+    "sha256": "0db9f41000dd1303ff17e76c8d110872ed4e3e6f8e0fb17252e97700511bf91a"
   },
   "assets/configs/landscape_boundaries.json": {
     "bytes": 322,
@@ -400,8 +400,8 @@
     "sha256": "dff920ebbdfeebdf45b10aa1dbe55700b0842274fdd648b4dda80c1cc48f4d6c"
   },
   "assets/configs/levels/028.json": {
-    "bytes": 84601,
-    "sha256": "ef0b15496446858b24512c1275749893e19e202c2b1191c62807f411cfc97d49"
+    "bytes": 84602,
+    "sha256": "442cad305672affeb47692e6f4b41313aadba0bd5f7f1d28b46c098e9508277e"
   },
   "assets/configs/levels/029.json": {
     "bytes": 106678,
@@ -409,7 +409,7 @@
   },
   "assets/configs/levels/030.json": {
     "bytes": 173153,
-    "sha256": "a094002a561fadac6fa45f4200962ad444aa0d36851c36d536503680eccbf5f4"
+    "sha256": "876f9f0abae9f4263092b35d1141dcbec20c9712321b0a76d9868fb34a1f8256"
   },
   "assets/configs/levels/031.json": {
     "bytes": 224501,
@@ -452,8 +452,8 @@
     "sha256": "995c35e92a1a72c85ccc20b80aa8650a18625bb1a025e7695c26909416f8a922"
   },
   "assets/configs/levels/041.json": {
-    "bytes": 43967,
-    "sha256": "a509dd6fd1f01118cc9277aeda0a53152eb37bfaeee52bd07936483b725dc7f1"
+    "bytes": 43939,
+    "sha256": "9092eeb09b56ca456d342778f654fe5640fac14d6e1ef5546ae9d1dd68cea347"
   },
   "assets/configs/levels/042.json": {
     "bytes": 109198,
