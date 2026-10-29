@@ -1,0 +1,4694 @@
+{
+  "assets/.elysia_root": {
+    "bytes": 2,
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  "assets/audio/music/Hectic.wav": {
+    "bytes": 4233678,
+    "sha256": "308c691e2ba0561eb9a14c0ffa29cccfeaa93ee4583439dd5f3db80efb8cae5c"
+  },
+  "assets/audio/music/LifeforSpeed.wav": {
+    "bytes": 3175278,
+    "sha256": "d51cafa5bfb5cb727d4c9d45401e08464ea0da1ef482aef322595abd7153f4ab"
+  },
+  "assets/audio/music/MoonTrip.wav": {
+    "bytes": 18349404,
+    "sha256": "a2a1f26b2f624138175112579bd14fbb2f78767897ad35a95fc27c6fa6d22893"
+  },
+  "assets/audio/music/SkyTunnel.wav": {
+    "bytes": 3763280,
+    "sha256": "72d4d1412652f275d3f6d04999e991496b94428146bc331b94bf37e51accae03"
+  },
+  "assets/audio/music/SpiralofAdventure.wav": {
+    "bytes": 3763280,
+    "sha256": "bca1b58f79665f59767f2baa5898c0da1add56ffabd6ae813555ff9ae003e51c"
+  },
+  "assets/audio/music/SymphonyofRush.wav": {
+    "bytes": 3629168,
+    "sha256": "233ed906c5bf6c294cb755aebf80d6440b643898dd3f2ce3b4760849d4266462"
+  },
+  "assets/audio/sounds/106-1.wav": {
+    "bytes": 25754,
+    "sha256": "8e371f51a1169a498c4e3aa877e148285b14dbcbdc77e5ec581856578eaf16e0"
+  },
+  "assets/audio/sounds/106-2.wav": {
+    "bytes": 19370,
+    "sha256": "b281dc4a895c48241fd4b7bac11928330d75d109c970fdae434df94792d33023"
+  },
+  "assets/audio/sounds/106-3.wav": {
+    "bytes": 34482,
+    "sha256": "7fa1f2079589473e445b92d602ef176d8094e9b7f47e1692fae802ba6b9e4567"
+  },
+  "assets/audio/sounds/107-1.wav": {
+    "bytes": 5320,
+    "sha256": "7e223f9d83557acf1b682502a9ecc0e6ab5bad79c5ca4f54bdbc92a87c08dffe"
+  },
+  "assets/audio/sounds/108-1.wav": {
+    "bytes": 52542,
+    "sha256": "a1278deeafac75e39fb86da1defefeee4dfbd1704f2e1583c74c7c1e921a52f9"
+  },
+  "assets/audio/sounds/109-1.wav": {
+    "bytes": 133182,
+    "sha256": "81a2a92a2493131a779e8e0015a3e5067d4438918e85db63c332a2c7072e2439"
+  },
+  "assets/audio/sounds/12-4.wav": {
+    "bytes": 59454,
+    "sha256": "43a460da8bb822438e631e83886951a7b65e3d10dfee6bbae74bd73fb9d219b6"
+  },
+  "assets/audio/sounds/13-2.wav": {
+    "bytes": 181524,
+    "sha256": "56ac9c8eb1078edf6906b95a68f60b4b5216a85c8762351fc1b8734ceaf3a5c8"
+  },
+  "assets/audio/sounds/14-3.wav": {
+    "bytes": 18604,
+    "sha256": "d6447226db3bef667a7fe58e39856c30c0b75ddb2e7173088002b18aa820994e"
+  },
+  "assets/audio/sounds/15-3.wav": {
+    "bytes": 314200,
+    "sha256": "8db914cdfe74927009a300775358ebcd6e141bdd99ca1d4e026565cd8e02f4f7"
+  },
+  "assets/audio/sounds/16-1.wav": {
+    "bytes": 46252,
+    "sha256": "1d027d32ea8ed21a01ef2d1f4d19df46a21d95141629e649eae71548bf874d16"
+  },
+  "assets/audio/sounds/17-4.wav": {
+    "bytes": 62910,
+    "sha256": "a92aaeffcae727c9003d9d9666038da2778a087bb0b06ceaf2827ad7ea8a8ebf"
+  },
+  "assets/audio/sounds/18-1.wav": {
+    "bytes": 89406,
+    "sha256": "0d179512c5312820de0cf2b663ebe2d206fc3750ae6d247c21f084ed0645e21c"
+  },
+  "assets/audio/sounds/19-2.wav": {
+    "bytes": 44478,
+    "sha256": "4be836e06018171e37df81f0908933080e04114ae0bc9dfa7fc0644893c30e0e"
+  },
+  "assets/audio/sounds/20-1.wav": {
+    "bytes": 115902,
+    "sha256": "c998743360dc07ea6780f0cebd6f240aba1d895de754ca22bd468541a3562ecb"
+  },
+  "assets/audio/sounds/23-2.wav": {
+    "bytes": 418836,
+    "sha256": "501068ef73d70e8068833256d637ea3e857880a2418968c9320f78341adccc57"
+  },
+  "assets/audio/sounds/31-1.wav": {
+    "bytes": 532926,
+    "sha256": "ef409c4509c98feb87bc792dfbef5692e33af886e24fbddd71a2823903d4ad80"
+  },
+  "assets/audio/sounds/33-6.wav": {
+    "bytes": 30654,
+    "sha256": "f8a21ef3bcf4d8a55d861cf53bcd76077678d2f51f32ddd0c2876cb95f27bc36"
+  },
+  "assets/audio/sounds/34-1.wav": {
+    "bytes": 27820,
+    "sha256": "0a081d44e8e04f6c08cbf00db0eb355eea00b43a6d45f6df30dd0ddcec365722"
+  },
+  "assets/audio/sounds/40-1.wav": {
+    "bytes": 4818,
+    "sha256": "7b5c98894a40c8437d03d586acb7d7dd9341a5473160aafc1f9e1a9397799e11"
+  },
+  "assets/audio/sounds/40-2.wav": {
+    "bytes": 4236,
+    "sha256": "1960613542be0abf9da59957c3a6dc074d26fc9bfb6e5fd83e4700cc5baef3af"
+  },
+  "assets/audio/sounds/41-1.wav": {
+    "bytes": 8822,
+    "sha256": "9fff467899f719a55d5d0ee5c79ef23c68dd5bd10a94faf053ff559c75a9eea3"
+  },
+  "assets/audio/sounds/42-1.wav": {
+    "bytes": 20124,
+    "sha256": "f3f4e6394ae649803e3a35a242ac024067a9af1bf8f4f80e559fa13b34c42393"
+  },
+  "assets/audio/sounds/42-2.wav": {
+    "bytes": 23938,
+    "sha256": "81275ce2fbd5b11c00693cbafa13249e832b48d092a0bdc26c6b4b95d4399558"
+  },
+  "assets/audio/sounds/43-1.wav": {
+    "bytes": 9816,
+    "sha256": "0906e18fc62050318007e952bbd7a17c3f966bdc58a260266ce23eafc60d0fa9"
+  },
+  "assets/audio/sounds/45-1.wav": {
+    "bytes": 10150,
+    "sha256": "5fbf0970c56c474f42f9c38cb2cf02e4ea97a43ac2753d5a07b4c1ee07cea87c"
+  },
+  "assets/audio/sounds/45-2.wav": {
+    "bytes": 19382,
+    "sha256": "476ae2c2a803819b19c9d5bac4f48adcb3fcc1cfa0375937596c2f6f4292a2da"
+  },
+  "assets/audio/sounds/46-1.wav": {
+    "bytes": 18280,
+    "sha256": "74ce86904c8e522e52f8327cd0a130b0fff3842bec09a2dc78d16b4b0b8a24f5"
+  },
+  "assets/audio/sounds/47-1.wav": {
+    "bytes": 19252,
+    "sha256": "3a584dc0a22d9f180c83a4e6cbee27757f602affa1e4904986ff86e1e555f094"
+  },
+  "assets/audio/sounds/48-1.wav": {
+    "bytes": 55720,
+    "sha256": "d48f8686388c75d5ce2f303b6adf63eb22cf82a513279b26991093bd8940a742"
+  },
+  "assets/audio/sounds/49-1.wav": {
+    "bytes": 56840,
+    "sha256": "131bc9b60f274fca6a122d028ea5b3eab8705be46acb31c836b79800b9e4d340"
+  },
+  "assets/audio/sounds/50-1.wav": {
+    "bytes": 23000,
+    "sha256": "9f800c5c39fb5ea778f437e3b5bfe994745c9f968bbe8a409721cb50c8ea5825"
+  },
+  "assets/audio/sounds/50-2.wav": {
+    "bytes": 10150,
+    "sha256": "0fdb36505278a37c2b37774412fec0c88175a12fb631de97de7f276477e4fbdb"
+  },
+  "assets/audio/sounds/51-1.wav": {
+    "bytes": 59162,
+    "sha256": "73259e74521143e9ab47a747eb5bdfbf3e1b0c0db97a326ea0df93a261cb82e5"
+  },
+  "assets/audio/sounds/51-2.wav": {
+    "bytes": 31550,
+    "sha256": "5f79cfca00233311d88489ae7b96af8e1f609cbd1636d6bade9a3dd5bcf9b5a1"
+  },
+  "assets/audio/sounds/52-1.wav": {
+    "bytes": 20346,
+    "sha256": "d26bbd82eb2272e25a473f369ee10e7d5de891d3656f8e977209001e6e85470d"
+  },
+  "assets/audio/sounds/53-1.wav": {
+    "bytes": 4386,
+    "sha256": "4b6a582fb4ba0914fdaecfd45fa5cba191b60d5faeeb43b553f5185a7f651308"
+  },
+  "assets/audio/sounds/54-1.wav": {
+    "bytes": 21374,
+    "sha256": "a61f34daac01d0cc03addc7bd0116487549fe52014e5fdbce7fdfe85bda42560"
+  },
+  "assets/audio/sounds/55-2.wav": {
+    "bytes": 7048,
+    "sha256": "2257eaba071bf70eb583a561d4c77e0b26e8ca4d365f9b00bdd50671c11bc0e2"
+  },
+  "assets/audio/sounds/57-1.wav": {
+    "bytes": 10394,
+    "sha256": "9c7a0db0641f13b5e317b2cc0e85e896f682a64a6cd6dea80f9e6063f8562320"
+  },
+  "assets/audio/sounds/58-1.wav": {
+    "bytes": 6232,
+    "sha256": "a89fa0f377d97375cc755c68ea9f0abc3bb150a3d3a606ab3b8f13e60e5626c8"
+  },
+  "assets/audio/sounds/59-1.wav": {
+    "bytes": 9486,
+    "sha256": "c65e59c0f2fabf801bdb0f729923f18a5727f591b64729bdaf5a3205e8ff39dc"
+  },
+  "assets/audio/sounds/6-3.wav": {
+    "bytes": 20286,
+    "sha256": "be8d31d7c84f68c33c0a3e9088a0b3c975fb37de9e1e19cbbdd7baa2a0a7d8fc"
+  },
+  "assets/audio/sounds/60-1.wav": {
+    "bytes": 45396,
+    "sha256": "084b1dbdae720598ab054e702c4ab66fd3117792288b51ee74e3e47463e04f18"
+  },
+  "assets/audio/sounds/60-2.wav": {
+    "bytes": 30598,
+    "sha256": "92285ec5713e55c69cd8f6734346ea1fd929ff6154f5193993604d53bbade46a"
+  },
+  "assets/audio/sounds/60-4.wav": {
+    "bytes": 54208,
+    "sha256": "38991b09a5a4c4db82444f719e7bf198bd4ad1794fa6d58eec7ec53ce8c8dd92"
+  },
+  "assets/audio/sounds/61-1.wav": {
+    "bytes": 13934,
+    "sha256": "b31ffe96d4ddef9b40ffcc0e12c18ea8c0d71d710dd72a2b3531c56b75a076ee"
+  },
+  "assets/audio/sounds/61-2.wav": {
+    "bytes": 11976,
+    "sha256": "0578464b5185e72f52a5ad6705789703167e589b86450d59f0b4236e2aa28619"
+  },
+  "assets/audio/sounds/7-4.wav": {
+    "bytes": 9918,
+    "sha256": "7b086d180619c48d03a04ef70b6202cbcc3c636f27e747008b654fe836724f43"
+  },
+  "assets/audio/sounds/70-1.wav": {
+    "bytes": 44478,
+    "sha256": "9bb3ab2a6a19f75e90875715c8894c479a297efc0475b8e53e22453745df2d49"
+  },
+  "assets/audio/sounds/70-2.wav": {
+    "bytes": 46782,
+    "sha256": "d2660d2e8881f54396bc1587164d38a8fbdcf6a66120f85b12e31cd28c2fc76e"
+  },
+  "assets/audio/sounds/90-1.wav": {
+    "bytes": 26046,
+    "sha256": "8fd259f360a9d0903208b2e8a9b01487bcba4a41da592f77274f9efea32fd541"
+  },
+  "assets/audio/sounds/90-10.wav": {
+    "bytes": 17982,
+    "sha256": "89a4d56156263bed5ef4a2cf9a6b4c2825c94ea7e7809414397114b3fae90b5c"
+  },
+  "assets/audio/sounds/90-2.wav": {
+    "bytes": 24894,
+    "sha256": "8e1fbccf83a7b92d2a16a3c9bd887c0fb39598481fec1bd032bc323b2aafd969"
+  },
+  "assets/audio/sounds/90-3.wav": {
+    "bytes": 24894,
+    "sha256": "7cf7791930215eca9fc99c9cd676d02526c37b36f23dc42c91ac22b541f248a5"
+  },
+  "assets/audio/sounds/90-4.wav": {
+    "bytes": 23742,
+    "sha256": "88a39a5c8df2bc0114837cb5c1c59de893cdc0b6c26bb884c3c0070c0ce75308"
+  },
+  "assets/audio/sounds/90-5.wav": {
+    "bytes": 22590,
+    "sha256": "eb5c5e59d2a67161baa547e37d91d9a610a8ed56a1d671351187bba009a2a445"
+  },
+  "assets/audio/sounds/90-6.wav": {
+    "bytes": 21438,
+    "sha256": "4f51816661d5d9fad06196c2f8d516e9c26c2e922335a3bc4e02ff891f722893"
+  },
+  "assets/audio/sounds/90-7.wav": {
+    "bytes": 20286,
+    "sha256": "08fdbd5172b56756df8f57d2ee57ef66a513048824ef470c24c557535a9f870f"
+  },
+  "assets/audio/sounds/90-8.wav": {
+    "bytes": 19134,
+    "sha256": "16895919f6d2f9291654f9488812ad60e7ff09235f6036246c9c0615b6774723"
+  },
+  "assets/audio/sounds/90-9.wav": {
+    "bytes": 19134,
+    "sha256": "4aa9dcbb4972b4489ffcf88710fe7d29b5f22181c40047eb0e6bbb21a9cf2720"
+  },
+  "assets/audio/system/button_click_down.wav": {
+    "bytes": 3704,
+    "sha256": "88d7c1cc313c2ea403d684a78bcc3cf9c5fb3a69a726a05fe01b9decda3d6507"
+  },
+  "assets/audio/system/button_click_up.wav": {
+    "bytes": 4548,
+    "sha256": "a539a7d101f6c6c08c1d4937c555144659fbf7abc0ae42078c25296d1b7814e3"
+  },
+  "assets/configs/catalog.json": {
+    "bytes": 84123,
+    "sha256": "3641a876912d048352a6f6eb6d951899094dd785cc34ee8069d3d9a5202510cc"
+  },
+  "assets/configs/global/app_config.json": {
+    "bytes": 382,
+    "sha256": "de0a4827602a33770d13eb17c08cf2dc7db4173ff0b24ff1ac020b16bb9f1dbb"
+  },
+  "assets/configs/landscape_boundaries.json": {
+    "bytes": 322,
+    "sha256": "3b368012a3c8e6ac46004c8f67b90b89b14e29623e55a447950f58a54870d2e5"
+  },
+  "assets/configs/levels/001.json": {
+    "bytes": 46927,
+    "sha256": "85dd5b8bacb18d376ffbbb1be0de5028f7ee57d675b351718b9f603853763f69"
+  },
+  "assets/configs/levels/002.json": {
+    "bytes": 124833,
+    "sha256": "668228049dce3b537d765070c464846e329afd78bd8244e45ed8fb7076e08204"
+  },
+  "assets/configs/levels/003.json": {
+    "bytes": 105276,
+    "sha256": "23e015c3d133bcead4d87bb2c0a96562737d7a3577aaf360461e33020dd9f882"
+  },
+  "assets/configs/levels/004.json": {
+    "bytes": 79382,
+    "sha256": "7ed0f8578b268ac95df8cb40cdfb9ccb0a62fdb44abd34bcfa795de1190fc5d9"
+  },
+  "assets/configs/levels/005.json": {
+    "bytes": 101112,
+    "sha256": "94fd59988dc2b344ac3158c71d77a44358402931a6889514b89ddcb04478b012"
+  },
+  "assets/configs/levels/006.json": {
+    "bytes": 99561,
+    "sha256": "e6e19a98c333f2b20c3da4c1a0642d97cf7c1d7b4cd7f42930f194740e7b083e"
+  },
+  "assets/configs/levels/007.json": {
+    "bytes": 221803,
+    "sha256": "f4d7b81840d9b1dcf6c09c1495bf521445a1caf986f5e07d59508271ef336977"
+  },
+  "assets/configs/levels/008.json": {
+    "bytes": 105910,
+    "sha256": "8a3b1c1d9772b6561f5a3cb7e11d678e0ff28326bc3d8fdc937207d69895a8d4"
+  },
+  "assets/configs/levels/009.json": {
+    "bytes": 109129,
+    "sha256": "147e0d41ceaa2b33aba8c94958137d4dd265d280d1dd2cbe369529eff88b43f0"
+  },
+  "assets/configs/levels/010.json": {
+    "bytes": 197560,
+    "sha256": "8c9fed0aa8f4aaa2c0b08a8dbe297e09f13dd27a634cd55f62052c9f31361f55"
+  },
+  "assets/configs/levels/011.json": {
+    "bytes": 177648,
+    "sha256": "906a365185d1f4923dfc38149b6f8a22e963c080f18d6e6de252a367155f32ee"
+  },
+  "assets/configs/levels/012.json": {
+    "bytes": 160319,
+    "sha256": "33f738b9ee1f93d6d648ebd58858d03795a63c78da968185ad340f246c3f132a"
+  },
+  "assets/configs/levels/013.json": {
+    "bytes": 212214,
+    "sha256": "dd7168f2ae685fbc94d63537a0e9d1c6b8588ed7225726bda2ee70cf6c7ccf6d"
+  },
+  "assets/configs/levels/014.json": {
+    "bytes": 115552,
+    "sha256": "b1de5c83d595e5ec1eaf0ddf193a699ffd44ddba7cef3b953a218e233ecce7f9"
+  },
+  "assets/configs/levels/015.json": {
+    "bytes": 115191,
+    "sha256": "76e63c60b45ab5a27792b3b5693b44953f535268b510b4af34f4eceaed4f36f0"
+  },
+  "assets/configs/levels/016.json": {
+    "bytes": 162670,
+    "sha256": "2699ab6978a70ff102248d006d1c411ffc4d56560f83b0958369d15c66996885"
+  },
+  "assets/configs/levels/017.json": {
+    "bytes": 132070,
+    "sha256": "415bbfd8197794ecbda3f8e401b1032a92a7619616cbf2e1cf91e51e992cc767"
+  },
+  "assets/configs/levels/018.json": {
+    "bytes": 101273,
+    "sha256": "d1d261baf6bf30434baab0d08652c9006eebe75c9da7181de00abbbed950a73e"
+  },
+  "assets/configs/levels/019.json": {
+    "bytes": 97234,
+    "sha256": "0b3a9f2af53634f2a0d9ba875910c92b833159cb744e8c334cdf42239f3f6ce1"
+  },
+  "assets/configs/levels/020.json": {
+    "bytes": 115648,
+    "sha256": "1a04a075de7c4ed06d393f8501e827c758312c4662d38b4530418e159f2ab9da"
+  },
+  "assets/configs/levels/021.json": {
+    "bytes": 135588,
+    "sha256": "b66053f790e7732b416b145547264f11c9c0f0b14f792df1b28b3cd4540470e5"
+  },
+  "assets/configs/levels/022.json": {
+    "bytes": 165508,
+    "sha256": "b16ae5e49a193e9a674a898f63449d43741470fcdc3efa9e7125d052910a4af9"
+  },
+  "assets/configs/levels/023.json": {
+    "bytes": 90036,
+    "sha256": "2d303fec7002fb2d4e296ba65c25e6ceb64b466cbef87d877cd7f638676ad2f9"
+  },
+  "assets/configs/levels/024.json": {
+    "bytes": 152746,
+    "sha256": "3bfbb570c3293e07eb80354f0e79b31b1c2153b2d226e55287b3d5305aca9897"
+  },
+  "assets/configs/levels/025.json": {
+    "bytes": 130510,
+    "sha256": "55ac9e63dd7b7878a33a6f83a71243f289dc01629778872d4ff274e834b5a19f"
+  },
+  "assets/configs/levels/026.json": {
+    "bytes": 124030,
+    "sha256": "44215889318505043eff63c5f79e7a8f3918e04eeca6d10e89d550d93e903475"
+  },
+  "assets/configs/levels/027.json": {
+    "bytes": 110909,
+    "sha256": "dff920ebbdfeebdf45b10aa1dbe55700b0842274fdd648b4dda80c1cc48f4d6c"
+  },
+  "assets/configs/levels/028.json": {
+    "bytes": 84602,
+    "sha256": "442cad305672affeb47692e6f4b41313aadba0bd5f7f1d28b46c098e9508277e"
+  },
+  "assets/configs/levels/029.json": {
+    "bytes": 106678,
+    "sha256": "afe4e3eaf7b78cdb35a74ac68d545d77a62f4e8570355e85105aeb6de9ed90e8"
+  },
+  "assets/configs/levels/030.json": {
+    "bytes": 173153,
+    "sha256": "876f9f0abae9f4263092b35d1141dcbec20c9712321b0a76d9868fb34a1f8256"
+  },
+  "assets/configs/levels/031.json": {
+    "bytes": 224501,
+    "sha256": "1fe16a2bf18b551430662987c63d764e5c4ace71bcc358a170a2b5ffda19fbc9"
+  },
+  "assets/configs/levels/032.json": {
+    "bytes": 107687,
+    "sha256": "7b91963e8f22aa4c7163813452cb058462740accdc377a557759185d891b96b7"
+  },
+  "assets/configs/levels/033.json": {
+    "bytes": 78616,
+    "sha256": "b7c643436f35f135e92710267c048397e41155b9fd0a5a4e58329389de0c14e0"
+  },
+  "assets/configs/levels/034.json": {
+    "bytes": 183614,
+    "sha256": "b671b930e5fd2df88a4db6597ec12547b78daf1d1325bee66b9710d5be624675"
+  },
+  "assets/configs/levels/035.json": {
+    "bytes": 85084,
+    "sha256": "07e0089f3e14bb68bc461256c346d28dccead3d969f670ce3a1f25de32d29d24"
+  },
+  "assets/configs/levels/036.json": {
+    "bytes": 99488,
+    "sha256": "aca26043a055c1d54f3175586526496717c653de796b9d05ef3b879f6089fdd6"
+  },
+  "assets/configs/levels/037.json": {
+    "bytes": 153732,
+    "sha256": "0ced0632bf161531ff7d99586eba76ce787a255974cda17e461ceae4c85d722e"
+  },
+  "assets/configs/levels/038.json": {
+    "bytes": 69847,
+    "sha256": "8d7664d61bd717b726c3fa58b88b1e2f77bd4cddcedd3504cc1e2cf7e0b61095"
+  },
+  "assets/configs/levels/039.json": {
+    "bytes": 115567,
+    "sha256": "137faf3b6fdc4f3f2b566feec0588f4a440fe64d10a4cf25e7145bb7cbe41c2f"
+  },
+  "assets/configs/levels/040.json": {
+    "bytes": 142690,
+    "sha256": "995c35e92a1a72c85ccc20b80aa8650a18625bb1a025e7695c26909416f8a922"
+  },
+  "assets/configs/levels/041.json": {
+    "bytes": 43939,
+    "sha256": "9092eeb09b56ca456d342778f654fe5640fac14d6e1ef5546ae9d1dd68cea347"
+  },
+  "assets/configs/levels/042.json": {
+    "bytes": 109198,
+    "sha256": "889379ab178a23293b8dbbdfac57fe087a8d0d7d38d0e9efb913a85104c49f88"
+  },
+  "assets/configs/levels/043.json": {
+    "bytes": 88560,
+    "sha256": "9ae0dc4f867594e33273e666187ff4b0ac53f45b87e0bdbc1323d9de640edb34"
+  },
+  "assets/configs/levels/044.json": {
+    "bytes": 102952,
+    "sha256": "9c1f22bd1fd068a5db03a66d071c6c993f65bbd5118c161955f329dbf6341d54"
+  },
+  "assets/configs/levels/045.json": {
+    "bytes": 172944,
+    "sha256": "1ef5947167b5ec5df6022a938a358aeb4a2bd34f409f619fcfe87d5ea90dc80f"
+  },
+  "assets/configs/levels/046.json": {
+    "bytes": 103062,
+    "sha256": "a62a8fd2a88115d3ba73ed5f5470414357105df0ed36cff3da2fecad24777db5"
+  },
+  "assets/configs/levels/047.json": {
+    "bytes": 61633,
+    "sha256": "fe5a085928a88f898ea9f1fe365e42084ff5991e79aacc34df45f03deaf37ac4"
+  },
+  "assets/configs/levels/048.json": {
+    "bytes": 199519,
+    "sha256": "d281affde16b200bc7cd00d8ebe76f288bde2108505fda0eef8852865c9fce95"
+  },
+  "assets/configs/levels/049.json": {
+    "bytes": 116534,
+    "sha256": "7b4f695fa16d5c954b2656d78e20896cafd28955c8238d6a3e9915533d44bb36"
+  },
+  "assets/configs/levels/050.json": {
+    "bytes": 121906,
+    "sha256": "7829fbdf4723ff6d3be7a6f7840976474572e231d018e100d62eeeb5dec8e33c"
+  },
+  "assets/configs/levels/051.json": {
+    "bytes": 201153,
+    "sha256": "46ee8208a8f9157b3b1765f8694a1801764f0471925d8171f8ccdad20fbd17f9"
+  },
+  "assets/configs/levels/052.json": {
+    "bytes": 114067,
+    "sha256": "84f5a53c85dde03232952caaa6ac305b885c710455da3880128f7dc131fd7a29"
+  },
+  "assets/configs/levels/053.json": {
+    "bytes": 75302,
+    "sha256": "3cc605cc4cef90da02448e8ce5675fed3cf5e7c70c330333d4e19c73a8c99e2d"
+  },
+  "assets/configs/levels/054.json": {
+    "bytes": 115853,
+    "sha256": "93a7838ddac444162413b75952a2bb84b05bfe1cb662e35c9d0675e08e48256e"
+  },
+  "assets/configs/levels/055.json": {
+    "bytes": 136280,
+    "sha256": "0bb55fb8f3e3cd26cde1cce5b1136937fbe388e98cd69149ab989dc618b8dba4"
+  },
+  "assets/configs/levels/056.json": {
+    "bytes": 58449,
+    "sha256": "f0807b7ada3a41c10c8a248134448bc6cdd9f9d867420adb2d29ba439c051397"
+  },
+  "assets/configs/levels/057.json": {
+    "bytes": 208180,
+    "sha256": "a0c85ada2ec416afdc4fb1a44d47c9e8ed0978b61c1daefc70c800ffea6981c0"
+  },
+  "assets/configs/levels/058.json": {
+    "bytes": 103274,
+    "sha256": "b0a88e9ed6dbdd52d28eb9d915b550d56a28429785164e6bc8801d5856ca2d21"
+  },
+  "assets/configs/levels/059.json": {
+    "bytes": 98424,
+    "sha256": "d74c7d2fae7ee957857a93f3b087ad039293009d7e506b7819ede81832398685"
+  },
+  "assets/configs/levels/060.json": {
+    "bytes": 304421,
+    "sha256": "eb42b90c84f0970e524adb60be414c98585c46a46d00f237129609cb4e114e99"
+  },
+  "assets/configs/manifests/animations_manifest.json": {
+    "bytes": 12393,
+    "sha256": "33c29f12acc99620018f33fbfd812109bd9977d937afbe2679c0fb0bbc9ffb21"
+  },
+  "assets/configs/manifests/audio_manifest.json": {
+    "bytes": 4758,
+    "sha256": "b6dd3c81fcb11b1aa5c95965d081f73bb362346e093812b4f807f2aad62a9b68"
+  },
+  "assets/configs/manifests/config_manifest.json": {
+    "bytes": 47,
+    "sha256": "d88bf64bf0ac4801d2678d9a6046f0d62acd1f4fda9b12134d849761fea72fb7"
+  },
+  "assets/configs/manifests/effects_manifest.json": {
+    "bytes": 23,
+    "sha256": "27705b42d23f7cd2044337e3a55126d74fec2cf68bfd7d29c06c2f842b4da84f"
+  },
+  "assets/configs/manifests/fonts_manifest.json": {
+    "bytes": 517,
+    "sha256": "bab276a776780633ffd236a9b6ab223dc5680f071a18603ca7ef170c9b00c7c4"
+  },
+  "assets/configs/manifests/i18n_manifest.json": {
+    "bytes": 158,
+    "sha256": "b330027916d4789a5bee9bb4329b4fb2262e461eb57d3eb3524eead01c3c61ee"
+  },
+  "assets/configs/manifests/preload_manifest.json": {
+    "bytes": 107,
+    "sha256": "e965e51b0c7ae83ba656e7148c8c1e1b6cf1b0cec970c5154041c822922011e3"
+  },
+  "assets/configs/manifests/textures_manifest.json": {
+    "bytes": 64746,
+    "sha256": "b474fdf605a316fa881ae08bfc1a3c3398f6a51ce3cca624e6edfe0fcc46a9f5"
+  },
+  "assets/configs/text/en/gcDescriptions.json": {
+    "bytes": 1883,
+    "sha256": "864ce6b5542fd1404b09a6113c5430004c20a1bdf9e203fe038f35a2073d7de1"
+  },
+  "assets/configs/text/en/strings.json": {
+    "bytes": 15953,
+    "sha256": "c2632d0528a85cfeefb14b0003552217e884db244f67b8b2e084e63387224bd6"
+  },
+  "assets/configs/text/ja/gcDescriptions.json": {
+    "bytes": 2213,
+    "sha256": "ef5446fcdb1920118a1aa230e6b62f541924d5b2e887ea67f7eb1b2511cb5678"
+  },
+  "assets/configs/text/ja/strings.json": {
+    "bytes": 19837,
+    "sha256": "1e2db447c39156582febd46d302d97b55a6d85aebce47fd12f6e26d0075f7ae0"
+  },
+  "assets/configs/text/zh-Hans/gcDescriptions.json": {
+    "bytes": 1886,
+    "sha256": "fbf21df3a422fc7e60d4b4fc05f9d9ae90fc4c79af63daa1498bb0c6eb94a4eb"
+  },
+  "assets/configs/text/zh-Hans/strings.json": {
+    "bytes": 15643,
+    "sha256": "297399bdbe6a2a1672ba28e3aac400b3f8aa05699c3173316c6f81e2444db38c"
+  },
+  "assets/configs/tutorial.json": {
+    "bytes": 147049,
+    "sha256": "7aecea2704a5867c1b12456f29edc0738e274bedd28e3e58dea0d58e8ad90fc1"
+  },
+  "assets/configs/tutorial_visual.json": {
+    "bytes": 25298,
+    "sha256": "95a1d2fc65f21a3c16ced6aa968b9a73f0ef328c3e8bffb5da300373bfbd5ab8"
+  },
+  "assets/content_registry.json": {
+    "bytes": 638,
+    "sha256": "6923eab950d18d87cc3a2f55a03be274a2cb29d0a997ddeb8ea2662ed8734046"
+  },
+  "assets/engine/.elysia_engine_required": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "assets/engine/audio/Elysian_Realm.ogg": {
+    "bytes": 2537768,
+    "sha256": "6c8532973b288e51e3cf1e77806c1a747742a90886cb633a8978d69149b5e0a5"
+  },
+  "assets/engine/fonts/NotoSans-Regular.ttf": {
+    "bytes": 629024,
+    "sha256": "fe8c022f48d8dd29f17b744d16f9346f4357e16f7d4f7be58b000ae7c291b614"
+  },
+  "assets/engine/fonts/NotoSansJP-Regular.ttf": {
+    "bytes": 5472784,
+    "sha256": "d930d5d52d15231c283089760f84584272ad5e37e14607ba0d19c798e7a9caec"
+  },
+  "assets/engine/fonts/NotoSansKR-Regular.ttf": {
+    "bytes": 6185868,
+    "sha256": "8cbc9b353bb9ce848fd69bb6a507319dfacc659cf5fd643db5d88f3c4970e1dd"
+  },
+  "assets/engine/fonts/NotoSansSC-Regular.ttf": {
+    "bytes": 10559284,
+    "sha256": "d45f67f0a7c0ca3f256950777ce6a61cc7ce5f9696d02900cbbaac25f8aa7d16"
+  },
+  "assets/engine/fonts/NotoSansTC-Regular.ttf": {
+    "bytes": 7109460,
+    "sha256": "add35d53f70727657b4509531677c4e3712b67df3d54661efdee5d3a0c16d954"
+  },
+  "assets/engine/fonts/OFL.txt": {
+    "bytes": 4489,
+    "sha256": "be2f3f8727ac2e18b714ad1c4336d4ddb3f3adbeb9a7f70bfab74d21f4d2b3fb"
+  },
+  "assets/engine/i18n/en/engine.json": {
+    "bytes": 3063,
+    "sha256": "d1e89604514003bd2558b50286d71e02795ea38fc46f8887e84c3ec60badea47"
+  },
+  "assets/engine/i18n/ja/engine.json": {
+    "bytes": 3680,
+    "sha256": "cd2fcca7ca0922b265d680eec06afc35e5b017cafc0ba7363754e63bcd20ccd6"
+  },
+  "assets/engine/i18n/ko/engine.json": {
+    "bytes": 3418,
+    "sha256": "f53d6af34735949eb2d8593c5cde824de5dd45317c22c60e5c28d4efd985e5ad"
+  },
+  "assets/engine/i18n/zh-Hans/engine.json": {
+    "bytes": 2871,
+    "sha256": "6ccaa738b78a73482e613ae883f9dbc0f2905899f46f821dba4d6c1c902bc282"
+  },
+  "assets/engine/i18n/zh-Hant/engine.json": {
+    "bytes": 2918,
+    "sha256": "23c3abb316f032c01558e913d3a2fcf46e489a0296f26a10b5b762da79bdb017"
+  },
+  "assets/engine/textures/character_idle.png": {
+    "bytes": 4591,
+    "sha256": "16fe41b5ff2bad112110b056d6e59d37bd1cedafb423044a0ae94c68a9bad9f9"
+  },
+  "assets/engine/textures/character_move.png": {
+    "bytes": 4936,
+    "sha256": "35d0677e0347ab14095f28c3d63f50381f191f24617fe695565ebf7cca4d89c5"
+  },
+  "assets/engine/textures/elysia.png": {
+    "bytes": 131645,
+    "sha256": "357b814bd5010031b5b1c0a0a094b7cd1cd95ff2b92af8eeee7868d29652459c"
+  },
+  "assets/engine/textures/elysia_black.png": {
+    "bytes": 104704,
+    "sha256": "1327a156d377fe0faeed0b78164bbb915c73cd739a08651cf73dda9b1231a67d"
+  },
+  "assets/engine/textures/elysia_black_alpha_inverse.png": {
+    "bytes": 74242,
+    "sha256": "64d172821051ab52207f450829698fe8f7785e683b1d3dbb1780b970fdee6e46"
+  },
+  "assets/engine/textures/elysia_light_edge.png": {
+    "bytes": 576006,
+    "sha256": "75754975a2cf52377be2cbbcf030d158a32a9f500b5e5dd9ea1034b9356a14fd"
+  },
+  "assets/engine/textures/Elysia_main.png": {
+    "bytes": 854295,
+    "sha256": "f2c9d9da3c3282540b05707c5cd3ba8fa89d968c494117b654fd115e65f534f2"
+  },
+  "assets/engine/textures/elysia_white.png": {
+    "bytes": 79910,
+    "sha256": "36590b228ee69c8b0af3120cc3e00eba65a694437c1bdb3cf266c7156fb6e3fe"
+  },
+  "assets/engine/textures/elysian_timeless_grand_hall.png": {
+    "bytes": 1619789,
+    "sha256": "c176e2043589ed1eea0d17641ba44ef0ef71777b654a606e750b0bc2b9830c2d"
+  },
+  "assets/fonts/fusion-pixel-10px-proportional-ja.ttf": {
+    "bytes": 3957920,
+    "sha256": "bd3966e9343b10cf69fe867e4e0493a0e02e425152ebe8505fc58083abf8f102"
+  },
+  "assets/fonts/fusion-pixel-10px-proportional-ko.ttf": {
+    "bytes": 3941740,
+    "sha256": "23bc00d74df73d460eda4175df05132d690c4bfe18c1ee5d4e46c54e24501521"
+  },
+  "assets/fonts/fusion-pixel-10px-proportional-zh_hans.ttf": {
+    "bytes": 3957604,
+    "sha256": "3456620f656a285ae913fa5b1232ada0083ec2c2da2d94f21dec8c45aeee2d68"
+  },
+  "assets/fonts/fusion-pixel-10px-proportional-zh_hant.ttf": {
+    "bytes": 3958608,
+    "sha256": "86e681f9107bc4afe3bfc9ae9137a037836e9be04465fd642213f92acd6a72a9"
+  },
+  "assets/fonts/OFL.txt": {
+    "bytes": 4447,
+    "sha256": "6f4007802d1f082674726446865a0a37b8fb38673dd347a77ca0b1b72d86aaf8"
+  },
+  "assets/i18n/en/base.json": {
+    "bytes": 15760,
+    "sha256": "24f08992bf791f5a6257d0c533218d2d9fd33ea0bf4ac59815f2cda068986897"
+  },
+  "assets/i18n/ja/base.json": {
+    "bytes": 17750,
+    "sha256": "03b7110d43342273181538beaab547e00ca244ffc7449b6ebb26b2d56dbab8c4"
+  },
+  "assets/i18n/ko/base.json": {
+    "bytes": 17218,
+    "sha256": "683bd1d8dfba2c78b9cbca78a436aa277ae54b407ca08d25c537f8fc36030bbb"
+  },
+  "assets/i18n/zh-Hans/base.json": {
+    "bytes": 15333,
+    "sha256": "1ffd552a468af39aa495eef1707d878f38992e20f7adf8b166668508cca9477d"
+  },
+  "assets/i18n/zh-Hant/base.json": {
+    "bytes": 15402,
+    "sha256": "4caf402c031776ed986d27e34a36e79531c35db9d5e3e503974e716f0588a5c7"
+  },
+  "assets/preload/loading.png": {
+    "bytes": 854167,
+    "sha256": "546a91a3f49b8af1f9d996b40fb6aef0d7f50c4103d267f1ef08dad041ef67d5"
+  },
+  "assets/textures/animation/CharActions.charDeath/frame_000.png": {
+    "bytes": 16186,
+    "sha256": "d03bde94eb898136f10357408dc660d7845d1269edd32910dff2d6be114d279e"
+  },
+  "assets/textures/animation/CharActions.charDeath/frame_001.png": {
+    "bytes": 17415,
+    "sha256": "8f0aa67689052d9cd1af86c5231ffba7b4f4e1098a68aed2c9c6e35070c1bd76"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_000.png": {
+    "bytes": 15365,
+    "sha256": "2eb3f633e9364b0424ab960f3cf290040cceaedbb9826b85ea7c1b206a6bfa32"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_001.png": {
+    "bytes": 15025,
+    "sha256": "81ca38bf5d19e2a841e815d72041ba3c51634713a316afcc6f2198a1e74ef562"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_002.png": {
+    "bytes": 14964,
+    "sha256": "1ddb0a88687a52bd943b23f8122cabc99c3dbc9c6eadfce33d4b172a28ad3974"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_003.png": {
+    "bytes": 14847,
+    "sha256": "6b0400b217c0664a15103df5e1e227ecc8eb4be0c83a5addbd813ed8cc90ce76"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_004.png": {
+    "bytes": 14824,
+    "sha256": "5a35b3849dda0d734939ccc8b8ffe13cebb8096fac9d1346c43a8c63f938e517"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_005.png": {
+    "bytes": 14847,
+    "sha256": "6b0400b217c0664a15103df5e1e227ecc8eb4be0c83a5addbd813ed8cc90ce76"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_006.png": {
+    "bytes": 14964,
+    "sha256": "1ddb0a88687a52bd943b23f8122cabc99c3dbc9c6eadfce33d4b172a28ad3974"
+  },
+  "assets/textures/animation/CharActions.charDown/frame_007.png": {
+    "bytes": 15025,
+    "sha256": "81ca38bf5d19e2a841e815d72041ba3c51634713a316afcc6f2198a1e74ef562"
+  },
+  "assets/textures/animation/CharActions.charEffects.ball/frame_000.png": {
+    "bytes": 34261,
+    "sha256": "379feb92e6465ba43876e85b82a6084f0b8ca7ac7b450818494e8f8d28a87033"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballDisapear/frame_000.png": {
+    "bytes": 5042,
+    "sha256": "d00a782674f3e485a2271743fda0eb98432a60b5de290a70305256a7f16a26ad"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballDisapear/frame_001.png": {
+    "bytes": 7359,
+    "sha256": "137a5ada7883a65d8b35c64e203bb75ef5bd354a3f187ffa7b0d869f95a136db"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballDisapear/frame_002.png": {
+    "bytes": 7751,
+    "sha256": "ccc403a41c8435bc238b4eca0433301bd62791d9430fcb5db99d7c7f8e1223e8"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballDisapear/frame_003.png": {
+    "bytes": 9253,
+    "sha256": "e3c465887c0476709975940147003f12904aef888eee30b87b0abd8c33f5d13d"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballExplode/frame_000.png": {
+    "bytes": 25281,
+    "sha256": "6e87c8ff5003c2025a78a3c2565ae065e5d3f3e2579a8f54b74f1b5a4daff296"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballExplode/frame_001.png": {
+    "bytes": 26137,
+    "sha256": "bb2e4a600d3420ec7b7c7d4e3d102f08a8aaee28e982567765ec8042fcf25485"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballExplode/frame_002.png": {
+    "bytes": 30944,
+    "sha256": "22e25d00d9ebd0c9e6e6fd64d5fd01e56e1fb50adc92e801050412df9754b4e5"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballExplode/frame_003.png": {
+    "bytes": 29393,
+    "sha256": "0fefdc77cf6ec42891bf267b42519d0b3bc72375d0d079a5c47fedea07c06c09"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballExplode/frame_004.png": {
+    "bytes": 19249,
+    "sha256": "902983ac1cb515d7c3bbdc421146b21a28ac22607703b51bae8f4454dd58fda4"
+  },
+  "assets/textures/animation/CharActions.charEffects.ballExplode/frame_005.png": {
+    "bytes": 11939,
+    "sha256": "b228b3d7b5e2b703fa72c5c5ce799f618d855e0611cb4801ca2e31dee6cb83ca"
+  },
+  "assets/textures/animation/CharActions.charFree/frame_000.png": {
+    "bytes": 16071,
+    "sha256": "555c2834969311b0b64b67c14e392245ed2c740d9b9b05911b752eefc8097bae"
+  },
+  "assets/textures/animation/CharActions.charFree/frame_001.png": {
+    "bytes": 15797,
+    "sha256": "becfeb1fc7458d5d9f947d6030b1fb2679cb5de014eba42dbcdd045391972454"
+  },
+  "assets/textures/animation/CharActions.charFree/frame_002.png": {
+    "bytes": 16147,
+    "sha256": "1e226976b5e1583d7f14b125df44a8ac3bf72dbf1653eb6dfea5fd3d8df2b03a"
+  },
+  "assets/textures/animation/CharActions.charFree/frame_003.png": {
+    "bytes": 15797,
+    "sha256": "becfeb1fc7458d5d9f947d6030b1fb2679cb5de014eba42dbcdd045391972454"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_000.png": {
+    "bytes": 17056,
+    "sha256": "b2f7596336a204e3ceabe6e66c20add98a0560f171ccd2fa96b38c711601bf0e"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_001.png": {
+    "bytes": 16898,
+    "sha256": "f0939871445f3cbb0c45be9dc7f0821bc9800e46e632211223656fd7d6485c4c"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_002.png": {
+    "bytes": 16902,
+    "sha256": "1c3369a67ef2470cacb1f1c8baa0f4494084eb3fed4e02d99caae2ed4d76cdf3"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_003.png": {
+    "bytes": 16898,
+    "sha256": "f0939871445f3cbb0c45be9dc7f0821bc9800e46e632211223656fd7d6485c4c"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_004.png": {
+    "bytes": 17056,
+    "sha256": "b2f7596336a204e3ceabe6e66c20add98a0560f171ccd2fa96b38c711601bf0e"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_005.png": {
+    "bytes": 16944,
+    "sha256": "73dd0d83e3b834926fc46a2ed4b53412d4f2bf6badcf6c7333b7e7e09c911ae0"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_006.png": {
+    "bytes": 17041,
+    "sha256": "5b890081758c4b20cd500818497183eb1d7978705bea150b1fa37cbe60a9e184"
+  },
+  "assets/textures/animation/CharActions.charIdle/frame_007.png": {
+    "bytes": 16944,
+    "sha256": "73dd0d83e3b834926fc46a2ed4b53412d4f2bf6badcf6c7333b7e7e09c911ae0"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_000.png": {
+    "bytes": 16872,
+    "sha256": "38aa96e4262c353a86b806d06fc4c5c3d18fd18bbfd7e1f188a37a639c60bdbc"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_001.png": {
+    "bytes": 16636,
+    "sha256": "3c6678b965669578a67bf8620d067c0921f8eb99b6313ca425f06df04db2c48c"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_002.png": {
+    "bytes": 16623,
+    "sha256": "f4b282fc0a26b42e73514ac5378029b57b2ce02e93e2a2d210a6e1978287bbdf"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_003.png": {
+    "bytes": 16859,
+    "sha256": "50a57ac27a523ccfe8c2d9107c46d374e94f43963f1bf30bf830561c9872b66d"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_004.png": {
+    "bytes": 16597,
+    "sha256": "0fcfdc683c9d0ede9ee44caa38d19c0173b0bb5ed88686e5904a49721ed13e46"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_005.png": {
+    "bytes": 16570,
+    "sha256": "9f79b7a489b5277085d4935b3ffd3aa5e52d0a1a7e6e904b877e3093734f214a"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_006.png": {
+    "bytes": 16563,
+    "sha256": "27774a232322053cd3022f8770f06589cb904f18e67b60b0186c3c5a5a4643b0"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_007.png": {
+    "bytes": 16570,
+    "sha256": "9f79b7a489b5277085d4935b3ffd3aa5e52d0a1a7e6e904b877e3093734f214a"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_008.png": {
+    "bytes": 16597,
+    "sha256": "0fcfdc683c9d0ede9ee44caa38d19c0173b0bb5ed88686e5904a49721ed13e46"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_009.png": {
+    "bytes": 16859,
+    "sha256": "50a57ac27a523ccfe8c2d9107c46d374e94f43963f1bf30bf830561c9872b66d"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_010.png": {
+    "bytes": 16623,
+    "sha256": "f4b282fc0a26b42e73514ac5378029b57b2ce02e93e2a2d210a6e1978287bbdf"
+  },
+  "assets/textures/animation/CharActions.charLeft/frame_011.png": {
+    "bytes": 16636,
+    "sha256": "3c6678b965669578a67bf8620d067c0921f8eb99b6313ca425f06df04db2c48c"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_000.png": {
+    "bytes": 18411,
+    "sha256": "c7262bebc3f31f81048b87ee303316e080d9236db08af6fa1476a0fda2b172b7"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_001.png": {
+    "bytes": 17419,
+    "sha256": "de9192f056ad81aa021b082d6e094bc067d816ed934087c1cc1bcac9eda3b801"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_002.png": {
+    "bytes": 17788,
+    "sha256": "7c787a21cce08a1aebc5a7a4bc1830039194fdfa531d88930f9982dcc30372bf"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_003.png": {
+    "bytes": 17918,
+    "sha256": "c945a0e44539d410aabf09436006559e2f3504d89503ba8fe9391e2b272a34e5"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_004.png": {
+    "bytes": 17788,
+    "sha256": "7c787a21cce08a1aebc5a7a4bc1830039194fdfa531d88930f9982dcc30372bf"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_005.png": {
+    "bytes": 17764,
+    "sha256": "7a243420d825903ec0fb5bb1f026aadbdc96019f55f6abdbd5ef3483e18a863c"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_006.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_007.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_008.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_009.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_010.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_011.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_012.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_013.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_014.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_015.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_016.png": {
+    "bytes": 17419,
+    "sha256": "de9192f056ad81aa021b082d6e094bc067d816ed934087c1cc1bcac9eda3b801"
+  },
+  "assets/textures/animation/CharActions.charLookLeft/frame_017.png": {
+    "bytes": 18411,
+    "sha256": "c7262bebc3f31f81048b87ee303316e080d9236db08af6fa1476a0fda2b172b7"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_000.png": {
+    "bytes": 18411,
+    "sha256": "c7262bebc3f31f81048b87ee303316e080d9236db08af6fa1476a0fda2b172b7"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_001.png": {
+    "bytes": 17419,
+    "sha256": "de9192f056ad81aa021b082d6e094bc067d816ed934087c1cc1bcac9eda3b801"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_002.png": {
+    "bytes": 17788,
+    "sha256": "7c787a21cce08a1aebc5a7a4bc1830039194fdfa531d88930f9982dcc30372bf"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_003.png": {
+    "bytes": 17918,
+    "sha256": "c945a0e44539d410aabf09436006559e2f3504d89503ba8fe9391e2b272a34e5"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_004.png": {
+    "bytes": 17788,
+    "sha256": "7c787a21cce08a1aebc5a7a4bc1830039194fdfa531d88930f9982dcc30372bf"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_005.png": {
+    "bytes": 17764,
+    "sha256": "7a243420d825903ec0fb5bb1f026aadbdc96019f55f6abdbd5ef3483e18a863c"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_006.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_007.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_008.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_009.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_010.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_011.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_012.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_013.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_014.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_015.png": {
+    "bytes": 17913,
+    "sha256": "e4f7bd0d30447c69399792ea7943f1deca2410eec8a66c53c87afbd264167fcc"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_016.png": {
+    "bytes": 17419,
+    "sha256": "de9192f056ad81aa021b082d6e094bc067d816ed934087c1cc1bcac9eda3b801"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_017.png": {
+    "bytes": 18411,
+    "sha256": "c7262bebc3f31f81048b87ee303316e080d9236db08af6fa1476a0fda2b172b7"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_018.png": {
+    "bytes": 17526,
+    "sha256": "4f729b0c455020ebfba0626920d8a90f2d008145df126737a89a577f261185e9"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_019.png": {
+    "bytes": 18051,
+    "sha256": "1dd275b3784b6159ca7ad61d7b927a26233492686e1e971430a4779a296f66ba"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_020.png": {
+    "bytes": 18261,
+    "sha256": "82e9abf06e262a3dd107670400a62bca00d21bead950fbbf3a45dbb7231b428f"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_021.png": {
+    "bytes": 18051,
+    "sha256": "1dd275b3784b6159ca7ad61d7b927a26233492686e1e971430a4779a296f66ba"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_022.png": {
+    "bytes": 18303,
+    "sha256": "c8055b20c6e765ab4bccd51e2c8084eee2f0115dcdc3c76312ea9fd7fca0c9d9"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_023.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_024.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_025.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_026.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_027.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_028.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_029.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_030.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_031.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_032.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_033.png": {
+    "bytes": 17526,
+    "sha256": "4f729b0c455020ebfba0626920d8a90f2d008145df126737a89a577f261185e9"
+  },
+  "assets/textures/animation/CharActions.charLookLeftRight/frame_034.png": {
+    "bytes": 18411,
+    "sha256": "c7262bebc3f31f81048b87ee303316e080d9236db08af6fa1476a0fda2b172b7"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_000.png": {
+    "bytes": 18411,
+    "sha256": "c7262bebc3f31f81048b87ee303316e080d9236db08af6fa1476a0fda2b172b7"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_001.png": {
+    "bytes": 17526,
+    "sha256": "4f729b0c455020ebfba0626920d8a90f2d008145df126737a89a577f261185e9"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_002.png": {
+    "bytes": 18051,
+    "sha256": "1dd275b3784b6159ca7ad61d7b927a26233492686e1e971430a4779a296f66ba"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_003.png": {
+    "bytes": 18261,
+    "sha256": "82e9abf06e262a3dd107670400a62bca00d21bead950fbbf3a45dbb7231b428f"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_004.png": {
+    "bytes": 18051,
+    "sha256": "1dd275b3784b6159ca7ad61d7b927a26233492686e1e971430a4779a296f66ba"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_005.png": {
+    "bytes": 18303,
+    "sha256": "c8055b20c6e765ab4bccd51e2c8084eee2f0115dcdc3c76312ea9fd7fca0c9d9"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_006.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_007.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_008.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_009.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_010.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_011.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_012.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_013.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_014.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_015.png": {
+    "bytes": 18140,
+    "sha256": "206db1f1ec4c2621defb766a824129bf25cfe2a48a53ceb53a408c63ebb42166"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_016.png": {
+    "bytes": 17526,
+    "sha256": "4f729b0c455020ebfba0626920d8a90f2d008145df126737a89a577f261185e9"
+  },
+  "assets/textures/animation/CharActions.charLookRight/frame_017.png": {
+    "bytes": 18411,
+    "sha256": "c7262bebc3f31f81048b87ee303316e080d9236db08af6fa1476a0fda2b172b7"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_000.png": {
+    "bytes": 16932,
+    "sha256": "bf3c56fd8657e396698d83c1ce7aee119f302c9d7aa6a29472ae018bee2a1f38"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_001.png": {
+    "bytes": 16661,
+    "sha256": "61324cff8ef9b8f1ca64e3604f612f5945c54f12ac8f2c31d443cb8382857772"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_002.png": {
+    "bytes": 16537,
+    "sha256": "a81bf71376d6a34595a8fb82af320bd427dcda51cb01e6d0a842b9ced7f98578"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_003.png": {
+    "bytes": 16751,
+    "sha256": "5b78b7ee84b6da7d76a55ca27c7b5224c07d3a7bfdb912d01630b03377ba0688"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_004.png": {
+    "bytes": 16597,
+    "sha256": "6b5905d6e0fab8d0858e079a6e0a56adbcee4c26ce4a8c31299012060354a7cd"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_005.png": {
+    "bytes": 16597,
+    "sha256": "ed8fbe4c8a00364de022bfe8cb12b6759fd0282438f2e96cae3e63b298dc9c66"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_006.png": {
+    "bytes": 16600,
+    "sha256": "319d1e6e91cefd6efc92cfaa89ba2aceb801749ac3bbe93054a4c2b5e33e6492"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_007.png": {
+    "bytes": 16597,
+    "sha256": "ed8fbe4c8a00364de022bfe8cb12b6759fd0282438f2e96cae3e63b298dc9c66"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_008.png": {
+    "bytes": 16597,
+    "sha256": "6b5905d6e0fab8d0858e079a6e0a56adbcee4c26ce4a8c31299012060354a7cd"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_009.png": {
+    "bytes": 16751,
+    "sha256": "5b78b7ee84b6da7d76a55ca27c7b5224c07d3a7bfdb912d01630b03377ba0688"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_010.png": {
+    "bytes": 16537,
+    "sha256": "a81bf71376d6a34595a8fb82af320bd427dcda51cb01e6d0a842b9ced7f98578"
+  },
+  "assets/textures/animation/CharActions.charRight/frame_011.png": {
+    "bytes": 16661,
+    "sha256": "61324cff8ef9b8f1ca64e3604f612f5945c54f12ac8f2c31d443cb8382857772"
+  },
+  "assets/textures/animation/CharActions.charStand/frame_000.png": {
+    "bytes": 17965,
+    "sha256": "2a5774762d2bbfee068f2135450d57e70f234a514469208df6d99d8a9c71fca3"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_000.png": {
+    "bytes": 16061,
+    "sha256": "be5b5bd188dd2126d1e4b1743f231af95250de47bdf0b035cbfdceca43769add"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_001.png": {
+    "bytes": 16016,
+    "sha256": "e7ce6b9bd5f7da3e6b1e00ca2c3578b451578365c9b0bfd8c708e9d94fa4acf6"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_002.png": {
+    "bytes": 15946,
+    "sha256": "a87ae77793b7518b2996a30499ccf5d5648c5ea163e88c88cbae6ca0b54b7527"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_003.png": {
+    "bytes": 15944,
+    "sha256": "a7c79936be545562f10fa65b7fccb1df962cd44323b71d93053cea45ea92ddfc"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_004.png": {
+    "bytes": 15964,
+    "sha256": "b49f7ee759ff5c18c4ae0b83e64a52903e6ab1767d40e779603519b5bef4475e"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_005.png": {
+    "bytes": 15944,
+    "sha256": "a7c79936be545562f10fa65b7fccb1df962cd44323b71d93053cea45ea92ddfc"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_006.png": {
+    "bytes": 15946,
+    "sha256": "a87ae77793b7518b2996a30499ccf5d5648c5ea163e88c88cbae6ca0b54b7527"
+  },
+  "assets/textures/animation/CharActions.charUp/frame_007.png": {
+    "bytes": 16016,
+    "sha256": "e7ce6b9bd5f7da3e6b1e00ca2c3578b451578365c9b0bfd8c708e9d94fa4acf6"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_008/frame_000.png": {
+    "bytes": 144,
+    "sha256": "1594258d650464372a84556d099c6f0fad9551bbf0efe58e7403336fee183eee"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_008/frame_001.png": {
+    "bytes": 102382,
+    "sha256": "bbd3cddeb930d9e4cff25f0d3ea337a39af07155503159aaa7bdcfb725840a37"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_008/frame_002.png": {
+    "bytes": 1191,
+    "sha256": "990c1923d720324496093b79cef8252fb890030e9a2d65073c2c693fb63969f8"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_024/frame_000.png": {
+    "bytes": 208,
+    "sha256": "34a143a2fcbdba31a3d8755d07f54e41326817b07c87deed1e9c7524a0bcaf3d"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_024/frame_001.png": {
+    "bytes": 102382,
+    "sha256": "bbd3cddeb930d9e4cff25f0d3ea337a39af07155503159aaa7bdcfb725840a37"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_024/frame_002.png": {
+    "bytes": 1191,
+    "sha256": "990c1923d720324496093b79cef8252fb890030e9a2d65073c2c693fb63969f8"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_025/frame_000.png": {
+    "bytes": 334,
+    "sha256": "198d9e4f83b820ed52db9d97d3238be7c71c238a8d728458e9fecfd9cf3203b5"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_025/frame_001.png": {
+    "bytes": 102382,
+    "sha256": "bbd3cddeb930d9e4cff25f0d3ea337a39af07155503159aaa7bdcfb725840a37"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_025/frame_002.png": {
+    "bytes": 1191,
+    "sha256": "990c1923d720324496093b79cef8252fb890030e9a2d65073c2c693fb63969f8"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_101/frame_000.png": {
+    "bytes": 54656,
+    "sha256": "7dffd86873daa3439f338628554b3a6f5e1316d82fafe03bbfa91c58e82cfc99"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_101/frame_001.png": {
+    "bytes": 51117,
+    "sha256": "dfc18c79ef61603617c12c77cdf14d32febe324b818ca03beecf4d2acea8f375"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_105/frame_000.png": {
+    "bytes": 4999,
+    "sha256": "454426551cffce16dc09ad0a4fdc3bbcf2a6711e7a31d8f129ac0381a0666e66"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_105/frame_001.png": {
+    "bytes": 5677,
+    "sha256": "d0a6b946bb3b71e47293d8ab7d418e746eb157eb39ed0e9641a14a901aab333e"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_105/frame_002.png": {
+    "bytes": 5660,
+    "sha256": "605d53f3c679d93305aee1399557cde7108fceee52c8b7b83812263e2da39931"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_105/frame_003.png": {
+    "bytes": 5007,
+    "sha256": "8996248570fa13558b2b4f904763e8c3a7ebb73d21f43bcb9e46b92ac2c2006a"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_105/frame_004.png": {
+    "bytes": 3721,
+    "sha256": "df05ca573d8c15afebd580df21fc77e7f6b56dc05eeb0311f1f7a0eed07d43ed"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_105.S01/frame_000.png": {
+    "bytes": 2479,
+    "sha256": "c198b5dccc1b3f85019f601e3f603ec4d237b2b85aca65c4c5bac997dab24b9e"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_106/frame_000.png": {
+    "bytes": 8440,
+    "sha256": "c32eb7bb6ae9bffb4a7dc1d598def7d4dfcb625bf3ff3530103e6fe6f71798ba"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_106/frame_001.png": {
+    "bytes": 10580,
+    "sha256": "3acfdb0cd215ec6fb88bf0feae1e57fb97e5f134ebbe6233f979b70a56d54bc9"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_106/frame_002.png": {
+    "bytes": 10602,
+    "sha256": "87eabba5ff413f6fd9f33d874a47c2b37a173d80640f04eb617d90a3cd623a76"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_106/frame_003.png": {
+    "bytes": 8504,
+    "sha256": "c325ed1999e6b1c721d745a3b3e743434e8c8ac163a0c8a0bd0d4b2685bc1502"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_106/frame_004.png": {
+    "bytes": 5063,
+    "sha256": "ef444517211c1ad6a7932968745cb547f67a173f5cea6a60d0b7158b5651d653"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_106.S01/frame_000.png": {
+    "bytes": 2479,
+    "sha256": "c198b5dccc1b3f85019f601e3f603ec4d237b2b85aca65c4c5bac997dab24b9e"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_107/frame_000.png": {
+    "bytes": 12030,
+    "sha256": "e4a17fbe194d1bd280f9600e21fae8aaa6580b2bb0978106228db8991d74290f"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_107/frame_001.png": {
+    "bytes": 15023,
+    "sha256": "4d491cc7f6f64885bba47bede5cdd2b3d4dd4eca2cc0c7b155dfed4c3d5a2936"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_107/frame_002.png": {
+    "bytes": 14983,
+    "sha256": "b7df9e2b22faef1f378ef4a8e160c15bb450e38c2f623bc470c4bbef2ed7e972"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_107/frame_003.png": {
+    "bytes": 12005,
+    "sha256": "fedf8839d4e3f4a021df20d5c5e77e6d3bf32773cfa1a084af08edb4705c8b3d"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_107/frame_004.png": {
+    "bytes": 7197,
+    "sha256": "a541a2785709e877ba5cc049b482141559649ef83bea7487894cf7ea41d3a30b"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_107.S01/frame_000.png": {
+    "bytes": 2479,
+    "sha256": "c198b5dccc1b3f85019f601e3f603ec4d237b2b85aca65c4c5bac997dab24b9e"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_108/frame_000.png": {
+    "bytes": 3459,
+    "sha256": "cc2bd0f0cb5bdae839caf79e04e6eb0e13cf1f8341b7456f97c1a7a8cf586179"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_108/frame_001.png": {
+    "bytes": 2918,
+    "sha256": "ce514a6a10afded1ff559fc48832ab3e81426932b77df0426a405a4fdf2412fd"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_108.S01/frame_000.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_109/frame_000.png": {
+    "bytes": 5177,
+    "sha256": "89f8d02cead7339c9816cef0867fa88414186d70cd5c7261118e315d5121a76b"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_109/frame_001.png": {
+    "bytes": 4618,
+    "sha256": "9697d4e95a4fc263d5732ff28d2cf6f8d86856b121b8963eba938e4b6b644570"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_109.S01/frame_000.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_110/frame_000.png": {
+    "bytes": 7716,
+    "sha256": "9720df0c3f03c2dda22c0890d3d0e133bddda03856c45bca4f38b9e49e299a77"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_110/frame_001.png": {
+    "bytes": 7262,
+    "sha256": "ca15f1c83b8351f3c042ea734a5ab239137b465835a0bd9a6a16b0f61d00d3e7"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_110.S01/frame_000.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_111/frame_000.png": {
+    "bytes": 6307,
+    "sha256": "f266610fe54e9784158c8109e144f1db8b188167e381bc612af7f1e0b6d210de"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_111/frame_001.png": {
+    "bytes": 6281,
+    "sha256": "debb010dc018a97ed218f7f51f4ed032d199a2051fc262205d10c2d231929d26"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112/frame_000.png": {
+    "bytes": 7164,
+    "sha256": "c54196ae2b6322027daa2da6d77204ba2dacd5a33268db9868ffee4e56675444"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S01/frame_000.png": {
+    "bytes": 6965,
+    "sha256": "8cdef1094b954ff3a9910916b4e1e3748c569f93ee2907898a7bcce3149d9edc"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_000.png": {
+    "bytes": 889,
+    "sha256": "6e0e8a0e4d19863bc7f81a9ed880885cd9ec3521e781d1d7e01d5c43ba2a0492"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_001.png": {
+    "bytes": 287,
+    "sha256": "3a70ba4cb723812505066bdd3b60b31b7a183f0e20f5e8468a7b66cb2b6ece86"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_002.png": {
+    "bytes": 540,
+    "sha256": "d9796d5da86c1908a443fae5c5e00d27909a1695bdfd7fea1e40e67c57da3026"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_003.png": {
+    "bytes": 800,
+    "sha256": "35f7a435ccb057f5776c82308ceb4fb324eae654885bdd416f65fba85536a405"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_004.png": {
+    "bytes": 1006,
+    "sha256": "a5cc11ed07de492ba71a91db1b3d9ab04214cca025b34cef04c8cc7a44dc12fc"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_005.png": {
+    "bytes": 1216,
+    "sha256": "c719f1904c309066da72defea9fc9b91ea49c98ebd0dda2312f90ccc8862039f"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_006.png": {
+    "bytes": 1145,
+    "sha256": "918013380d66920ba110d64de9118807e8c1265878218ee7e40baf8868059ad3"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_007.png": {
+    "bytes": 1239,
+    "sha256": "734bf54313b39478f327c1afccd9c7602156b783cdb0b5eadd5aa2d48bc1f474"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_008.png": {
+    "bytes": 1278,
+    "sha256": "7457c392cc2c454411f4540351aaae236566c4f431c7b7bffc5f3b1c39e45083"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_009.png": {
+    "bytes": 1174,
+    "sha256": "bb112b592ebca347c5cd36008e4af26d5515e901b7e550d4792b62e28d2965ae"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_010.png": {
+    "bytes": 1247,
+    "sha256": "8c79972b396e1caeab154fdb102c8914d40f684636ad49bb5efe61033c769d96"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_011.png": {
+    "bytes": 1166,
+    "sha256": "48980e0553f56aa8d781b3d0dcd1644d2c5d04c032dcc145cca17935e23378b0"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_012.png": {
+    "bytes": 944,
+    "sha256": "51047ec9c68ed9f8d9c03c54613f0cb5a26891477d85c85730d3e06c1ffa1f07"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_013.png": {
+    "bytes": 623,
+    "sha256": "53d8bbaac4ee0bb75c130e9fdccdbbe869cff26ec502e3af57e490349d316428"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_014.png": {
+    "bytes": 288,
+    "sha256": "c627cc90815541bbb37c173b821c9de6e8dab7db9575c29545bc586513c604ae"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_112.S02/frame_015.png": {
+    "bytes": 119,
+    "sha256": "68dbe5731def0b4f6a35c8784e47411d3cf8307fcc3cb49af5b0e281b272dd81"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113/frame_000.png": {
+    "bytes": 8689,
+    "sha256": "ea4b9d9739f2f15997bdd71694503840e5e27529775f1de219a9e7e93cd73c3f"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113/frame_001.png": {
+    "bytes": 5275,
+    "sha256": "4dacce9dce48fe25542fd9714582ee4baee2e00a2a1a616fb786a7e06f9964c0"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113/frame_002.png": {
+    "bytes": 5371,
+    "sha256": "42eed8f58612d494201fecbd88f6938e06f919b3e3699ae0d5d07af231235f13"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_000.png": {
+    "bytes": 2600,
+    "sha256": "86e5d2c854862282de9bbe8148b050dfffd12ac4c0a19d03563eab239427d9a7"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_001.png": {
+    "bytes": 287,
+    "sha256": "3a70ba4cb723812505066bdd3b60b31b7a183f0e20f5e8468a7b66cb2b6ece86"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_002.png": {
+    "bytes": 540,
+    "sha256": "d9796d5da86c1908a443fae5c5e00d27909a1695bdfd7fea1e40e67c57da3026"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_003.png": {
+    "bytes": 800,
+    "sha256": "35f7a435ccb057f5776c82308ceb4fb324eae654885bdd416f65fba85536a405"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_004.png": {
+    "bytes": 1006,
+    "sha256": "a5cc11ed07de492ba71a91db1b3d9ab04214cca025b34cef04c8cc7a44dc12fc"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_005.png": {
+    "bytes": 1216,
+    "sha256": "c719f1904c309066da72defea9fc9b91ea49c98ebd0dda2312f90ccc8862039f"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_006.png": {
+    "bytes": 1145,
+    "sha256": "918013380d66920ba110d64de9118807e8c1265878218ee7e40baf8868059ad3"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_007.png": {
+    "bytes": 1239,
+    "sha256": "734bf54313b39478f327c1afccd9c7602156b783cdb0b5eadd5aa2d48bc1f474"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_008.png": {
+    "bytes": 1278,
+    "sha256": "7457c392cc2c454411f4540351aaae236566c4f431c7b7bffc5f3b1c39e45083"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_009.png": {
+    "bytes": 1174,
+    "sha256": "bb112b592ebca347c5cd36008e4af26d5515e901b7e550d4792b62e28d2965ae"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_010.png": {
+    "bytes": 1247,
+    "sha256": "8c79972b396e1caeab154fdb102c8914d40f684636ad49bb5efe61033c769d96"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_011.png": {
+    "bytes": 1166,
+    "sha256": "48980e0553f56aa8d781b3d0dcd1644d2c5d04c032dcc145cca17935e23378b0"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_012.png": {
+    "bytes": 944,
+    "sha256": "51047ec9c68ed9f8d9c03c54613f0cb5a26891477d85c85730d3e06c1ffa1f07"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_013.png": {
+    "bytes": 623,
+    "sha256": "53d8bbaac4ee0bb75c130e9fdccdbbe869cff26ec502e3af57e490349d316428"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_014.png": {
+    "bytes": 288,
+    "sha256": "c627cc90815541bbb37c173b821c9de6e8dab7db9575c29545bc586513c604ae"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_113.S01/frame_015.png": {
+    "bytes": 119,
+    "sha256": "68dbe5731def0b4f6a35c8784e47411d3cf8307fcc3cb49af5b0e281b272dd81"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114/frame_000.png": {
+    "bytes": 11825,
+    "sha256": "ad91d3bfacd66812f9394dbedeea24f35965c552accbae6b5ffbe6d0a87c96c3"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S01/frame_000.png": {
+    "bytes": 2240,
+    "sha256": "8ad9d98f97cf7c09402f858700b8ed27173576f948d419d69b6f693096608aeb"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S01/frame_001.png": {
+    "bytes": 724,
+    "sha256": "5a6df2bfb8229d712429e1d9e97fd0b160643dc3f3c3b2b2b7ac5fb6c40098c9"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S02/frame_000.png": {
+    "bytes": 576,
+    "sha256": "1344242cee802de48802d6a2eaaf4b0a9ef6878a192c26dca147b9c16a6e41cd"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S02/frame_001.png": {
+    "bytes": 539,
+    "sha256": "fb5b6a545576849abe78703b03e0bd01066fcd8079aa5b9fd0253410b7e67378"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S03/frame_000.png": {
+    "bytes": 1468,
+    "sha256": "95c09bd3ce1fcd84c675b9f5e0c790c236c71368f07e57335693ac3d485ffdc4"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S03/frame_001.png": {
+    "bytes": 1404,
+    "sha256": "b19efde96d7adc8d7ed7726346f4a580f72c673db9c8de215579585339bc7dee"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S03/frame_002.png": {
+    "bytes": 1532,
+    "sha256": "08d798f84c761b5b9c1ab396b5be75d969fdbcf3dd3a892d00cbb19c9e2fc74e"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S03/frame_003.png": {
+    "bytes": 1488,
+    "sha256": "cb4adf2d1e097a28f2ccd5da0ac93b1d8b34065ec194ae8e53092c516a7ac05f"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_000.png": {
+    "bytes": 1910,
+    "sha256": "37260aa3240799ff6dddbaf6e4c64f14adf5d203405282129b33ab9ffb1e5836"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_001.png": {
+    "bytes": 2088,
+    "sha256": "a447a2f444bb0b86856c95b13cee37a336f98d158bbcc1aeb5bf1c17bea6ca38"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_002.png": {
+    "bytes": 2195,
+    "sha256": "30067ad810dfe15083e8819a6a0f04ff92a6b91edeb734ae6598a2a996cd4cb0"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_003.png": {
+    "bytes": 2337,
+    "sha256": "be328386d04017630559e213719a1e77eec1f050799b593e01812eca581c0283"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_004.png": {
+    "bytes": 2270,
+    "sha256": "762650c7e3cc8b0ba43349c18d049d725c4d4cc519bf0e52fd7cf2c9e5cf172e"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_005.png": {
+    "bytes": 2269,
+    "sha256": "c64682df5bb7a28381a3a896ffd118980e684097375842fa296059d6011f273c"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_006.png": {
+    "bytes": 2393,
+    "sha256": "df204cb341ec93c4dd379bcfac7e4d1a963266b3c4cc8bfba5d377a646da30ce"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_007.png": {
+    "bytes": 2431,
+    "sha256": "10e89d412c8ddb21f2ac70f804d2ce9d6a8592aa016b7e494747713b7208c337"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_008.png": {
+    "bytes": 2157,
+    "sha256": "290443de591c429f0b2c565ad46314e959082220c2cd984f0a0cb3c80545ee7d"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_009.png": {
+    "bytes": 2217,
+    "sha256": "83017dfc636cdf604c5ede8299e70f76be3f02c71b3754ecc225917a02bd69ea"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_010.png": {
+    "bytes": 2281,
+    "sha256": "bb1c41ed2551f8924564ba1846655130837b11cebea6d67f37558723e14768e6"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_011.png": {
+    "bytes": 2452,
+    "sha256": "d684d38061ebd6e51828d924b99d3c7b3146a29a151b673053c4af28ccfe4efb"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_012.png": {
+    "bytes": 2226,
+    "sha256": "f28af85d0b4f8d93cf8af079683d30b0b9eec01eefa34ac8b71528f8d9a1d93c"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_013.png": {
+    "bytes": 2348,
+    "sha256": "e9bdff2d46a0cc1f4a472e0cc743a1e237b4bf354a9486e65bbb27b55dc3566e"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_014.png": {
+    "bytes": 2311,
+    "sha256": "3110ac5a3c865c6083a7d06858752d216adb848968253a0d6f7882a315a802df"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_015.png": {
+    "bytes": 1599,
+    "sha256": "87a3838f992723ca2a4e7fb71f4cd7eb3ec4b5e39b9574dd2880419fb17721eb"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_016.png": {
+    "bytes": 1711,
+    "sha256": "a400b0d1be409659dfb1be48718dc5a3f217da14bc0bd15ef13aea3fe393fd60"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_017.png": {
+    "bytes": 1846,
+    "sha256": "1dad79013dad896a3f6baaa1adf8a9a3c909d24b4c20816c1eeb32291c426770"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_018.png": {
+    "bytes": 1887,
+    "sha256": "477e962eb9b448447b5010f4330421cb3767e34569370172f74ea212d692f0fa"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_114.S04/frame_019.png": {
+    "bytes": 1845,
+    "sha256": "74924d53aa6ae3c56522f93ef22e248106ac20089ce3dfdc73f308edfbfa6526"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_115/frame_000.png": {
+    "bytes": 144,
+    "sha256": "1594258d650464372a84556d099c6f0fad9551bbf0efe58e7403336fee183eee"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_115.S01/frame_000.png": {
+    "bytes": 497,
+    "sha256": "74dcdf66afbf2567a503e8bbe2c9c9a67bc5b59c5866bbf9ec011ec4136acc91"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_115.S01/frame_001.png": {
+    "bytes": 497,
+    "sha256": "0fdd90d3159e201319d8af1b8234a8310eaaa5630deacfe26a606eb000cdce84"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_115.S02/frame_000.png": {
+    "bytes": 518,
+    "sha256": "0bdc9a4e789f2bca323502e11cd472ad6284e7396216a33ed24a01ede81564d0"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_115.S02/frame_001.png": {
+    "bytes": 517,
+    "sha256": "ca3b8c3bc83680e5de60ad49946441c06bfeeb3f514db977e7e83bc6ab311592"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_116/frame_000.png": {
+    "bytes": 93,
+    "sha256": "86651b21ada5e3aadbbf4b784498ae23029c98ce1c5ae0a3c596ff8652c09a2b"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_116.S01/frame_000.png": {
+    "bytes": 565,
+    "sha256": "e55673a3a37c8c3979d857b2dc6a2477b1735874e6f50e80ebd2b0eb5eb69fb7"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_116.S01/frame_001.png": {
+    "bytes": 233,
+    "sha256": "47e567cad2b08ac0cfb8d538fb4a7774e5f12cfa3b73e881679dd5a75f4c500c"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_116.S02/frame_000.png": {
+    "bytes": 1468,
+    "sha256": "4e154d1280e18931b040f36c3c74cd1c70b5cc2c4c0efb1dca0be597cdd1b025"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_116.S03/frame_000.png": {
+    "bytes": 6676,
+    "sha256": "1372509e8e68b3a778d1be33f91d21b71b9c2abcc5d4ef51b9b7cd8d16d25c62"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_116.S03/frame_001.png": {
+    "bytes": 1606,
+    "sha256": "95e677c2ecd849b1bf649c723835979178f802f3223bc6704ed3b413d7258be5"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_116.S04/frame_000.png": {
+    "bytes": 41288,
+    "sha256": "3e61f37b53116fe432ee8598e33b948bc6d515585935480399c3a3a60ca8e2e6"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_117/frame_000.png": {
+    "bytes": 14010,
+    "sha256": "657cba22ff011ae5084515e8b11c7f87d57574ec675b6e59f624d7c65571e86d"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_117/frame_001.png": {
+    "bytes": 13313,
+    "sha256": "b546fff3a85ac16404e09af7d3a64ab6d5777e0d9f92b15d62a0bba52f4c3fcd"
+  },
+  "assets/textures/animation/DynamicObjectsLite.DynamicObject_117.S01/frame_000.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/animation/DynamicObjectsLite.Item_003/frame_000.png": {
+    "bytes": 6848,
+    "sha256": "18fc5605d2346d13b56ef5ae39be6d155b2bd028aeaf9320da4c514324a41e59"
+  },
+  "assets/textures/animation/DynamicObjectsLite.Item_003/frame_001.png": {
+    "bytes": 6920,
+    "sha256": "44c94c307c162d7b3328f015fc947a121b9af2d1673cb3f042b0cbbed33de900"
+  },
+  "assets/textures/animation/DynamicObjectsLite.Item_004/frame_000.png": {
+    "bytes": 1627,
+    "sha256": "437413e15d6636c10d29775357f0856a7a0351d330425b2af7b817a1428ad541"
+  },
+  "assets/textures/animation/DynamicObjectsLite.Item_004/frame_001.png": {
+    "bytes": 2690,
+    "sha256": "012637036589b6359f5a53859334a7beb32a820769fd1cf99b37c21e6887df0a"
+  },
+  "assets/textures/animation/DynamicObjectsLite.Item_005/frame_000.png": {
+    "bytes": 5414,
+    "sha256": "7657abc25de27fc92951cfb7bc751a424f7430f6c57f734659f67cc481103afe"
+  },
+  "assets/textures/animation/DynamicObjectsLite.Item_005/frame_001.png": {
+    "bytes": 914,
+    "sha256": "1991cfdd75202788e3d3d205e6b668df3a2d3db350dc9f93bcd415302b548014"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_008/first.png": {
+    "bytes": 144,
+    "sha256": "1594258d650464372a84556d099c6f0fad9551bbf0efe58e7403336fee183eee"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_008.png": {
+    "bytes": 144,
+    "sha256": "1594258d650464372a84556d099c6f0fad9551bbf0efe58e7403336fee183eee"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_024/first.png": {
+    "bytes": 208,
+    "sha256": "34a143a2fcbdba31a3d8755d07f54e41326817b07c87deed1e9c7524a0bcaf3d"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_024.png": {
+    "bytes": 208,
+    "sha256": "34a143a2fcbdba31a3d8755d07f54e41326817b07c87deed1e9c7524a0bcaf3d"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_025/first.png": {
+    "bytes": 334,
+    "sha256": "198d9e4f83b820ed52db9d97d3238be7c71c238a8d728458e9fecfd9cf3203b5"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_025.png": {
+    "bytes": 334,
+    "sha256": "198d9e4f83b820ed52db9d97d3238be7c71c238a8d728458e9fecfd9cf3203b5"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_101/first.png": {
+    "bytes": 54656,
+    "sha256": "7dffd86873daa3439f338628554b3a6f5e1316d82fafe03bbfa91c58e82cfc99"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_101.png": {
+    "bytes": 54656,
+    "sha256": "7dffd86873daa3439f338628554b3a6f5e1316d82fafe03bbfa91c58e82cfc99"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_105/first.png": {
+    "bytes": 4999,
+    "sha256": "454426551cffce16dc09ad0a4fdc3bbcf2a6711e7a31d8f129ac0381a0666e66"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_105/S01/first.png": {
+    "bytes": 2479,
+    "sha256": "c198b5dccc1b3f85019f601e3f603ec4d237b2b85aca65c4c5bac997dab24b9e"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_105.png": {
+    "bytes": 4999,
+    "sha256": "454426551cffce16dc09ad0a4fdc3bbcf2a6711e7a31d8f129ac0381a0666e66"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_106/first.png": {
+    "bytes": 8440,
+    "sha256": "c32eb7bb6ae9bffb4a7dc1d598def7d4dfcb625bf3ff3530103e6fe6f71798ba"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_106/S01/first.png": {
+    "bytes": 2479,
+    "sha256": "c198b5dccc1b3f85019f601e3f603ec4d237b2b85aca65c4c5bac997dab24b9e"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_106.png": {
+    "bytes": 8440,
+    "sha256": "c32eb7bb6ae9bffb4a7dc1d598def7d4dfcb625bf3ff3530103e6fe6f71798ba"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_107/first.png": {
+    "bytes": 12030,
+    "sha256": "e4a17fbe194d1bd280f9600e21fae8aaa6580b2bb0978106228db8991d74290f"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_107/S01/first.png": {
+    "bytes": 2479,
+    "sha256": "c198b5dccc1b3f85019f601e3f603ec4d237b2b85aca65c4c5bac997dab24b9e"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_107.png": {
+    "bytes": 12030,
+    "sha256": "e4a17fbe194d1bd280f9600e21fae8aaa6580b2bb0978106228db8991d74290f"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_108/first.png": {
+    "bytes": 3459,
+    "sha256": "cc2bd0f0cb5bdae839caf79e04e6eb0e13cf1f8341b7456f97c1a7a8cf586179"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_108/S01/first.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_108.png": {
+    "bytes": 3459,
+    "sha256": "cc2bd0f0cb5bdae839caf79e04e6eb0e13cf1f8341b7456f97c1a7a8cf586179"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_109/first.png": {
+    "bytes": 5177,
+    "sha256": "89f8d02cead7339c9816cef0867fa88414186d70cd5c7261118e315d5121a76b"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_109/S01/first.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_109.png": {
+    "bytes": 5177,
+    "sha256": "89f8d02cead7339c9816cef0867fa88414186d70cd5c7261118e315d5121a76b"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_110/first.png": {
+    "bytes": 7716,
+    "sha256": "9720df0c3f03c2dda22c0890d3d0e133bddda03856c45bca4f38b9e49e299a77"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_110/S01/first.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_110.png": {
+    "bytes": 7716,
+    "sha256": "9720df0c3f03c2dda22c0890d3d0e133bddda03856c45bca4f38b9e49e299a77"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_111/first.png": {
+    "bytes": 6307,
+    "sha256": "f266610fe54e9784158c8109e144f1db8b188167e381bc612af7f1e0b6d210de"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_111.png": {
+    "bytes": 3483,
+    "sha256": "7935ef362ae0ff0bfeb07753b443d4d46cb20dc5f23128bb0c3ce7d9498a9b5e"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_112/first.png": {
+    "bytes": 7164,
+    "sha256": "c54196ae2b6322027daa2da6d77204ba2dacd5a33268db9868ffee4e56675444"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_112/S01/first.png": {
+    "bytes": 6965,
+    "sha256": "8cdef1094b954ff3a9910916b4e1e3748c569f93ee2907898a7bcce3149d9edc"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_112/S02/first.png": {
+    "bytes": 889,
+    "sha256": "6e0e8a0e4d19863bc7f81a9ed880885cd9ec3521e781d1d7e01d5c43ba2a0492"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_112.png": {
+    "bytes": 7677,
+    "sha256": "fc145a0ece66ec73191c11012d36a3fcdcd4660ea39182319fe3c6e2138d1aed"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_113/first.png": {
+    "bytes": 8689,
+    "sha256": "ea4b9d9739f2f15997bdd71694503840e5e27529775f1de219a9e7e93cd73c3f"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_113/S01/first.png": {
+    "bytes": 2600,
+    "sha256": "86e5d2c854862282de9bbe8148b050dfffd12ac4c0a19d03563eab239427d9a7"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_113.png": {
+    "bytes": 9949,
+    "sha256": "7e6a9af21ee70d2be8fe8f0caac9747a77d0ac076081d3742b325aacb2dc6402"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_114/first.png": {
+    "bytes": 11825,
+    "sha256": "ad91d3bfacd66812f9394dbedeea24f35965c552accbae6b5ffbe6d0a87c96c3"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_114/S01/first.png": {
+    "bytes": 2240,
+    "sha256": "8ad9d98f97cf7c09402f858700b8ed27173576f948d419d69b6f693096608aeb"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_114/S02/first.png": {
+    "bytes": 576,
+    "sha256": "1344242cee802de48802d6a2eaaf4b0a9ef6878a192c26dca147b9c16a6e41cd"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_114/S03/first.png": {
+    "bytes": 1468,
+    "sha256": "95c09bd3ce1fcd84c675b9f5e0c790c236c71368f07e57335693ac3d485ffdc4"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_114/S04/first.png": {
+    "bytes": 1910,
+    "sha256": "37260aa3240799ff6dddbaf6e4c64f14adf5d203405282129b33ab9ffb1e5836"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_114.png": {
+    "bytes": 11503,
+    "sha256": "2c86932b1824c4f88d243cbe524ee3c80c133f98eee27c9efcc47908c0d4850f"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_115/first.png": {
+    "bytes": 144,
+    "sha256": "1594258d650464372a84556d099c6f0fad9551bbf0efe58e7403336fee183eee"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_115/S01/first.png": {
+    "bytes": 497,
+    "sha256": "74dcdf66afbf2567a503e8bbe2c9c9a67bc5b59c5866bbf9ec011ec4136acc91"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_115/S02/first.png": {
+    "bytes": 518,
+    "sha256": "0bdc9a4e789f2bca323502e11cd472ad6284e7396216a33ed24a01ede81564d0"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_115.png": {
+    "bytes": 12502,
+    "sha256": "96a2d19e8ccb0e36672c781128c496fd245b6d15194415a0c3ed2c064ee77138"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_116/first.png": {
+    "bytes": 93,
+    "sha256": "86651b21ada5e3aadbbf4b784498ae23029c98ce1c5ae0a3c596ff8652c09a2b"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_116/S01/first.png": {
+    "bytes": 565,
+    "sha256": "e55673a3a37c8c3979d857b2dc6a2477b1735874e6f50e80ebd2b0eb5eb69fb7"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_116/S02/first.png": {
+    "bytes": 1468,
+    "sha256": "4e154d1280e18931b040f36c3c74cd1c70b5cc2c4c0efb1dca0be597cdd1b025"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_116/S03/first.png": {
+    "bytes": 6676,
+    "sha256": "1372509e8e68b3a778d1be33f91d21b71b9c2abcc5d4ef51b9b7cd8d16d25c62"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_116/S04/first.png": {
+    "bytes": 41288,
+    "sha256": "3e61f37b53116fe432ee8598e33b948bc6d515585935480399c3a3a60ca8e2e6"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_116.png": {
+    "bytes": 6676,
+    "sha256": "1372509e8e68b3a778d1be33f91d21b71b9c2abcc5d4ef51b9b7cd8d16d25c62"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_117/first.png": {
+    "bytes": 14010,
+    "sha256": "657cba22ff011ae5084515e8b11c7f87d57574ec675b6e59f624d7c65571e86d"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_117/S01/first.png": {
+    "bytes": 909,
+    "sha256": "b2382352d0b466ac6ba1b05bac6bb183e26a193ed4cad5e456b134cc926764b6"
+  },
+  "assets/textures/DynamicObjectsLite/DynamicObject_117.png": {
+    "bytes": 13313,
+    "sha256": "b546fff3a85ac16404e09af7d3a64ab6d5777e0d9f92b15d62a0bba52f4c3fcd"
+  },
+  "assets/textures/DynamicObjectsLite/Item_003/first.png": {
+    "bytes": 6848,
+    "sha256": "18fc5605d2346d13b56ef5ae39be6d155b2bd028aeaf9320da4c514324a41e59"
+  },
+  "assets/textures/DynamicObjectsLite/Item_003.png": {
+    "bytes": 6848,
+    "sha256": "18fc5605d2346d13b56ef5ae39be6d155b2bd028aeaf9320da4c514324a41e59"
+  },
+  "assets/textures/DynamicObjectsLite/Item_004/first.png": {
+    "bytes": 1627,
+    "sha256": "437413e15d6636c10d29775357f0856a7a0351d330425b2af7b817a1428ad541"
+  },
+  "assets/textures/DynamicObjectsLite/Item_004.png": {
+    "bytes": 1627,
+    "sha256": "437413e15d6636c10d29775357f0856a7a0351d330425b2af7b817a1428ad541"
+  },
+  "assets/textures/DynamicObjectsLite/Item_005/first.png": {
+    "bytes": 5414,
+    "sha256": "7657abc25de27fc92951cfb7bc751a424f7430f6c57f734659f67cc481103afe"
+  },
+  "assets/textures/DynamicObjectsLite/Item_005.png": {
+    "bytes": 5414,
+    "sha256": "7657abc25de27fc92951cfb7bc751a424f7430f6c57f734659f67cc481103afe"
+  },
+  "assets/textures/far1/Background_002.png": {
+    "bytes": 405,
+    "sha256": "71903c0767405141a8fb337064a62b61df3a17736ddc186985c916bfb27c0434"
+  },
+  "assets/textures/far1/Background_003.png": {
+    "bytes": 691,
+    "sha256": "0aa2c4b301883d1b9fc8409ba371638393d36152f6a096a611fd8d37b4d7ac47"
+  },
+  "assets/textures/far1/Background_004.png": {
+    "bytes": 551,
+    "sha256": "2f982e1bba8ee14e3042c73a2d20fd4ecfba132b1c1b9972c3c700c1f1eec2b2"
+  },
+  "assets/textures/far1/Background_005.png": {
+    "bytes": 1062,
+    "sha256": "7b408a9432905ed645d25676a6d80e18c7e8ab687836968320ca2ba5e58f1478"
+  },
+  "assets/textures/far1/Background_006.png": {
+    "bytes": 1110,
+    "sha256": "59beb31a96d269d8ff24a4ccccccd52f40dabc77d7b9bfabe8ce7cc4bd1dd18d"
+  },
+  "assets/textures/far1/Farground_001.png": {
+    "bytes": 11264,
+    "sha256": "fd4d2a7af7b163c47e72c4999de9ca6c0729a29b4c56a11d955a989306bd004a"
+  },
+  "assets/textures/far1/Farground_002.png": {
+    "bytes": 18311,
+    "sha256": "5917739ef715b8af25dc3e2851cacc8b19a977c58cdd709ff8a76d65d53e3f11"
+  },
+  "assets/textures/far1/Farground_003.png": {
+    "bytes": 2206,
+    "sha256": "e81d714677f7bc92c6f8fd5a9a6aaa02370bf9df134f36ff20a63654be866f42"
+  },
+  "assets/textures/far1/Farground_004.png": {
+    "bytes": 15029,
+    "sha256": "89396a002e479a4086f4b9ae326fffc76cc8ebd32b8626029f9192c75a3dd59d"
+  },
+  "assets/textures/far1/Farground_005.png": {
+    "bytes": 19281,
+    "sha256": "9864b745a69951ad8c6d2f3f49dc0216b57c0027b4c023ff495a0f07a6d7d047"
+  },
+  "assets/textures/far1/Farground_006.png": {
+    "bytes": 22758,
+    "sha256": "6eb48f8f66495f4eb1aace47cbbf2213eedb15f20af5495b11890b16308f4011"
+  },
+  "assets/textures/far1/Farground_007.png": {
+    "bytes": 42457,
+    "sha256": "9d6c8c9868ee5bf75cfbbf324e63fb48625cf257a51d239c9e1af6d3c5251264"
+  },
+  "assets/textures/far1/Farground_008.png": {
+    "bytes": 38534,
+    "sha256": "41b6c0bea6a94aa124082aa9d58023111e3392e3601ba7800b4a526270f8111b"
+  },
+  "assets/textures/far1/Farground_009.png": {
+    "bytes": 54371,
+    "sha256": "7267e7b7716515d885920c011d7fb07e8f3f731e058f69b391c48c051df6ea6b"
+  },
+  "assets/textures/far1/Farground_010.png": {
+    "bytes": 36404,
+    "sha256": "0df0781e90e91711700321e5846c629cab8552757fa9b06cc83b1aca957b985f"
+  },
+  "assets/textures/far1/Farground_011.png": {
+    "bytes": 66247,
+    "sha256": "a46e1bab2a18c46ee755b0f59c8cc0f78f23aedfa2d6b5b678b6d5735e51ba68"
+  },
+  "assets/textures/far1/Farground_012.png": {
+    "bytes": 63586,
+    "sha256": "27d12582c43f9995c1e125473bbd3b3db9f7cbd4cf31b49d6baff940ef55843e"
+  },
+  "assets/textures/far2/Background_002.png": {
+    "bytes": 428,
+    "sha256": "293c332d84da8bb24d7f923403d348dcd9d1607d39fbc3faf8f6f825690fa7e8"
+  },
+  "assets/textures/far2/Background_003.png": {
+    "bytes": 668,
+    "sha256": "a2a0f8e3c031ecf4ec302015a862447a392593e035be63d38828d531ca0ce687"
+  },
+  "assets/textures/far2/Background_004.png": {
+    "bytes": 593,
+    "sha256": "a9c98aecdf6561d519a444e3873146da1eb8a73505762cb1c1eab4d83f7dcb9b"
+  },
+  "assets/textures/far2/Background_005.png": {
+    "bytes": 1104,
+    "sha256": "76abd4ea654ab287a6b0089deca2fe34814503a0c3d425b104c1077650029793"
+  },
+  "assets/textures/far2/Background_006.png": {
+    "bytes": 1095,
+    "sha256": "98143635607d33854158e7bac8aff200db69a20fe1006b35fb0ad0389468bc30"
+  },
+  "assets/textures/far2/Farground_001.png": {
+    "bytes": 11370,
+    "sha256": "4c83210b38d57790ccd9e54cc13e79ae8b9ca9474ec75bd1f832d720166abc84"
+  },
+  "assets/textures/far2/Farground_002.png": {
+    "bytes": 18994,
+    "sha256": "bc9e19e0bc8a7fe9ab8bae65293825ae987ece01589f17022ee79115881035b8"
+  },
+  "assets/textures/far2/Farground_003.png": {
+    "bytes": 2076,
+    "sha256": "775c241d06cc06d24f7fb648a199fb37bd79632451377e65f98357773aff67fd"
+  },
+  "assets/textures/far2/Farground_004.png": {
+    "bytes": 16208,
+    "sha256": "902ae68746a2684a9c0790d16146b6507b7767b1894dc83caa282f6a9dfcf2eb"
+  },
+  "assets/textures/far2/Farground_005.png": {
+    "bytes": 19087,
+    "sha256": "65256208869aa5d378a610e3496731f0cddbe358f6cfa0cf98b7d790c87c0461"
+  },
+  "assets/textures/far2/Farground_006.png": {
+    "bytes": 22302,
+    "sha256": "60867da45f4c4e53e401f84dd33a0e9f5d3af2d9831bbf6cc35515e0f934d597"
+  },
+  "assets/textures/far2/Farground_007.png": {
+    "bytes": 41037,
+    "sha256": "b86ba9902df3b12b596a60ccab39d9187b0d614bc65760a5ce8fb495d8ea6160"
+  },
+  "assets/textures/far2/Farground_008.png": {
+    "bytes": 37785,
+    "sha256": "8f38505e011519b19578647b4d3583dde2fe79bae95b4809f654e3c27925f9b7"
+  },
+  "assets/textures/far2/Farground_009.png": {
+    "bytes": 59137,
+    "sha256": "326ea1e64e71759facdbbde103282256a488b6108bfc153f1f61350ea5568012"
+  },
+  "assets/textures/far2/Farground_010.png": {
+    "bytes": 38034,
+    "sha256": "d6781c0be33db03e811e8af5463ab0aad935ee125eaf6aae10e8b39f6c334d49"
+  },
+  "assets/textures/far2/Farground_011.png": {
+    "bytes": 69990,
+    "sha256": "9f17e76764cc98ad0838adda7966b359dc37c1bbf7f6468e5b5e96e82ed3c281"
+  },
+  "assets/textures/far2/Farground_012.png": {
+    "bytes": 62744,
+    "sha256": "7b9ce3774b259b3b0e20944d9b5f2a5a59f9c2d34af2c102eb67fd956a2a44e0"
+  },
+  "assets/textures/far3/Background_002.png": {
+    "bytes": 359,
+    "sha256": "77f9593181367615de1055d3da43205c99d0047f3212da37766bf4e77edf9efa"
+  },
+  "assets/textures/far3/Background_003.png": {
+    "bytes": 703,
+    "sha256": "9c04dedd26b08e3f40078e78f16bb48bfef61e3fb8b04344e7f75351cc2c374c"
+  },
+  "assets/textures/far3/Background_004.png": {
+    "bytes": 531,
+    "sha256": "1c4912a926c21e359fe1161753b17b4d32c927fd56590cdde7c4ea59c3537545"
+  },
+  "assets/textures/far3/Background_005.png": {
+    "bytes": 1067,
+    "sha256": "179f0c44a039012f082fcc41eb183f8224cfdab918e89c6fdd2450e30c9945c5"
+  },
+  "assets/textures/far3/Background_006.png": {
+    "bytes": 1131,
+    "sha256": "56eb324a2a456204d0f684f81f8ca2686e5aa9c2248af9c33b6414e573350fb9"
+  },
+  "assets/textures/far3/Farground_001.png": {
+    "bytes": 10354,
+    "sha256": "cae065a6782b0c96f6cc7062242c636f7552bd79d0dc513903b80475caf45b5a"
+  },
+  "assets/textures/far3/Farground_002.png": {
+    "bytes": 17405,
+    "sha256": "3b009b779595abd6fc52d5ce4c0a57f45c6990b1aff05e3a75fb9258c981da82"
+  },
+  "assets/textures/far3/Farground_003.png": {
+    "bytes": 2144,
+    "sha256": "a72392ba99481cfa020552486f045feb7e93640a473df08fd473a50463ff92a7"
+  },
+  "assets/textures/far3/Farground_004.png": {
+    "bytes": 14188,
+    "sha256": "35c1451884f6b679d26a6b68ac49ef42bf252023f3dc3c2749e0ef827586ca23"
+  },
+  "assets/textures/far3/Farground_005.png": {
+    "bytes": 17852,
+    "sha256": "cc1a4f0f9c8e50b57226daeb0e42ad59c789a8b4a7d68942fe97e187a39c6a86"
+  },
+  "assets/textures/far3/Farground_006.png": {
+    "bytes": 21306,
+    "sha256": "1770c871daeddc6ada2f312af95f63f6d9035db9b20b5b20a66fcd77f96eb4f1"
+  },
+  "assets/textures/far3/Farground_007.png": {
+    "bytes": 39209,
+    "sha256": "ffd08e754d92b44ddbf45852562a8e8f4ce373c01f969987f600730ea9655ac2"
+  },
+  "assets/textures/far3/Farground_008.png": {
+    "bytes": 35683,
+    "sha256": "827a403787ac71b60766f1229f9ec9dd75f63086018f5b93cc39dcd667f36c61"
+  },
+  "assets/textures/far3/Farground_009.png": {
+    "bytes": 51613,
+    "sha256": "124f79a8b4c25ac626a6355c4cdea09833f8565000220b7146712547ae92715e"
+  },
+  "assets/textures/far3/Farground_010.png": {
+    "bytes": 34218,
+    "sha256": "a0436417eba23fd6d182221670835e9caed03d6299ea5987a5c461e585edccb1"
+  },
+  "assets/textures/far3/Farground_011.png": {
+    "bytes": 64506,
+    "sha256": "7d46151e5b76654af190a146db5d5789cec1f18b3030daddd27160eebd9143f3"
+  },
+  "assets/textures/far3/Farground_012.png": {
+    "bytes": 59157,
+    "sha256": "614993d1b83f1540075b3cbdb70a57023d3eeb668f749aaa217523d29116e7aa"
+  },
+  "assets/textures/far4/Background_002.png": {
+    "bytes": 355,
+    "sha256": "6d1be97fd147b35772f40ea6b744202682e7b050f1e0872cdd0c21430f10c2e4"
+  },
+  "assets/textures/far4/Background_003.png": {
+    "bytes": 689,
+    "sha256": "7b9dbd363a7cb29b39145351165ab34adf76fe309ddd818bd5d92846df41578a"
+  },
+  "assets/textures/far4/Background_004.png": {
+    "bytes": 579,
+    "sha256": "5699abab4eae4a115faba64dd47a09af169bd0da1a2ef4873f40457a96ce903d"
+  },
+  "assets/textures/far4/Background_005.png": {
+    "bytes": 1023,
+    "sha256": "8378b60becacf2539846e52a66150ba915167b6e0dbc11fef47a1d56d39efe83"
+  },
+  "assets/textures/far4/Background_006.png": {
+    "bytes": 1128,
+    "sha256": "d210810c4d37cad9b32d727f92571478e2e4cc059a63fe8e7d7841fce4e5db85"
+  },
+  "assets/textures/far4/Farground_001.png": {
+    "bytes": 10647,
+    "sha256": "f504d9f89271945982340ccccbcf9202519cf883b9cd13ee131343559ea7c826"
+  },
+  "assets/textures/far4/Farground_002.png": {
+    "bytes": 18021,
+    "sha256": "d4559b97d30c9eac0f45aca8832e99f4a415d9cd053176f64a5bea5184b6be01"
+  },
+  "assets/textures/far4/Farground_003.png": {
+    "bytes": 2111,
+    "sha256": "a8fb9a61bd7faa7d19dea9fbcf53fdea525c7d49fdc74d669cddf213e04b28bc"
+  },
+  "assets/textures/far4/Farground_004.png": {
+    "bytes": 14887,
+    "sha256": "d5b6ada55117740c7362d814e60ddfd7b3f857551f7a7c5e808263bb0e562580"
+  },
+  "assets/textures/far4/Farground_005.png": {
+    "bytes": 18085,
+    "sha256": "193e2941314346008c8024781a4c263fc6727d4690a0a19172f656e96b924a0a"
+  },
+  "assets/textures/far4/Farground_006.png": {
+    "bytes": 21538,
+    "sha256": "5b87681985be9a66a9f1ccc4b9c8afa6f42e8e2515a68b2bb124c41bba27e490"
+  },
+  "assets/textures/far4/Farground_007.png": {
+    "bytes": 39370,
+    "sha256": "cc40598ba86b95291ffaba09c4d294b5d8fda495a56d5359abc29118818b21b4"
+  },
+  "assets/textures/far4/Farground_008.png": {
+    "bytes": 37666,
+    "sha256": "58c4b9bd3a420688149f5de869d351fea241e7c83a531e78055502655765ff3e"
+  },
+  "assets/textures/far4/Farground_009.png": {
+    "bytes": 53762,
+    "sha256": "b3a12f87957fac9913a5b7124c9e00de8569d5707acc85025fabd7768c7cfac9"
+  },
+  "assets/textures/far4/Farground_010.png": {
+    "bytes": 36941,
+    "sha256": "c0feb243dbdde2a1fa4ef032a55d3c30a69c08dbef2d85fb47a2ef741993a5b2"
+  },
+  "assets/textures/far4/Farground_011.png": {
+    "bytes": 64971,
+    "sha256": "6dd3ac642978eff14b2b76b7068430ccf69a5b531346f3021809897b74376d74"
+  },
+  "assets/textures/far4/Farground_012.png": {
+    "bytes": 60760,
+    "sha256": "732b646f5c1a91780b92ce655a04730b8c6b251f61ec85f9616c4414ac30c2c5"
+  },
+  "assets/textures/frontend/achv101.png": {
+    "bytes": 8815,
+    "sha256": "c057af4db5d63cad289f17127b575e94d77bfa1e25dd92c8db66651654e2490a"
+  },
+  "assets/textures/frontend/achv102.png": {
+    "bytes": 8786,
+    "sha256": "4084140529f32c9af6d80fbc15c82345903333e74ead583a813cd222a9ef13f9"
+  },
+  "assets/textures/frontend/achv103.png": {
+    "bytes": 10160,
+    "sha256": "a6887cdaed2582c70609dde6f8007755bcef7043b24db40c38c61838a881a40f"
+  },
+  "assets/textures/frontend/achv104.png": {
+    "bytes": 8576,
+    "sha256": "d64fefc38847f08462f92bb8079d350146199c184b3c6ca63f50e3d45ed803e9"
+  },
+  "assets/textures/frontend/achv105.png": {
+    "bytes": 9874,
+    "sha256": "37ad3419cc7b3784f6f08cc21593c66ad4801d659ca72bc67e2a83f3a7194ad3"
+  },
+  "assets/textures/frontend/achv106.png": {
+    "bytes": 8532,
+    "sha256": "187ce01b6244f7aba358bb72f47337e02686d0c0409739020b68b4aa6fcc0bb8"
+  },
+  "assets/textures/frontend/achv107.png": {
+    "bytes": 9831,
+    "sha256": "4a1e22b25fb6b6c80dd215088aef38624d9e48c9f8f778a07a72303605f07b7a"
+  },
+  "assets/textures/frontend/achv108.png": {
+    "bytes": 8778,
+    "sha256": "e7722fd94e7275ee9dec33de3ed5b2a65b66d9f51f22c4d164277596309fe393"
+  },
+  "assets/textures/frontend/achv109.png": {
+    "bytes": 10084,
+    "sha256": "ddb4724ec1044447c018a44473b11668ec413fd892a511f2c1295d06845574ef"
+  },
+  "assets/textures/frontend/achv121.png": {
+    "bytes": 8578,
+    "sha256": "732fcb591affb90fb5f91c4569a67b35c12aa1e49191953cff5499561244e5d1"
+  },
+  "assets/textures/frontend/achv122.png": {
+    "bytes": 9829,
+    "sha256": "0abc2534a626e4e77b8b859d4a92cc95f20c03bdda85558909c86d703c4018b6"
+  },
+  "assets/textures/frontend/achv131.png": {
+    "bytes": 10066,
+    "sha256": "922a21bf5f38412988e944aa2ce80d38935ae8ffe08aabff9740802311278b21"
+  },
+  "assets/textures/frontend/achv132.png": {
+    "bytes": 10039,
+    "sha256": "b266b11fe406e5f1516c7259f1494bf406e6b3783186da987e9591cf44442dfb"
+  },
+  "assets/textures/frontend/achv139.png": {
+    "bytes": 10062,
+    "sha256": "ce2ecd239f871eda2f3dbc9f46333f9f9ce0fb72ac8565f013b87f4f10674af0"
+  },
+  "assets/textures/frontend/achv141.png": {
+    "bytes": 9456,
+    "sha256": "b812b1aa29067973f4bf70f6e55abd83147ea8d9a3ffb2b6eab80febc43f34f9"
+  },
+  "assets/textures/frontend/achv142.png": {
+    "bytes": 9612,
+    "sha256": "5b17bfbb48333583f6f08aaa3b9ccd4bdf6a8220727862318c8d2ecc3f26b638"
+  },
+  "assets/textures/frontend/achv151.png": {
+    "bytes": 8422,
+    "sha256": "9aaa40c5320d3ac94f768aa1a359c83fb4ff9c538d538bcbb0cd54e2fafcfad5"
+  },
+  "assets/textures/frontend/background_menu.png": {
+    "bytes": 783926,
+    "sha256": "817faf74c7054cb36f4d35c1e6b5b384ce755fb8b554937e20544b9fff3e7ffa"
+  },
+  "assets/textures/frontend/background_moon.png": {
+    "bytes": 1132781,
+    "sha256": "d1c011da86e3fb82a13b41767c11d17716fc9ba24612c7afedd1807e42a079f8"
+  },
+  "assets/textures/frontend/background_settings.png": {
+    "bytes": 878287,
+    "sha256": "53a041c5191522459e3fd4abfa1f78a5279c8769c333b88b5da488d725e1b3ec"
+  },
+  "assets/textures/frontend/dialogue_skip_down.png": {
+    "bytes": 11737,
+    "sha256": "87c5a8019ea79f5454eb18b74a3c6e4020b64e58c27825bafbe83cbeb02d1184"
+  },
+  "assets/textures/frontend/dialogue_skip_up.png": {
+    "bytes": 5503,
+    "sha256": "020e0c51b53334fd5f6085a5132d87af2806127ae53872a62a6cf04ccf52cafb"
+  },
+  "assets/textures/frontend/lockG.png": {
+    "bytes": 2058,
+    "sha256": "eba6723c1755021045851482be628770beb7cce727ed0369b3261441e6cfc182"
+  },
+  "assets/textures/frontend/lockO.png": {
+    "bytes": 2045,
+    "sha256": "8da1c71eb2780bf4ba39c76493c68cd63187f9d8a7597a604b777d97bc4a5e85"
+  },
+  "assets/textures/frontend/lockP.png": {
+    "bytes": 1920,
+    "sha256": "7f7bc817baf688ef60c242c49a46220db016489ddee7398f8c6c4f8be93956d8"
+  },
+  "assets/textures/frontend/lockY.png": {
+    "bytes": 1991,
+    "sha256": "6e59692f744aac909918e6ab143ae74c1673fa9ea79d5acd46c353862ee99fc5"
+  },
+  "assets/textures/frontend/mainMenuBtnUp.png": {
+    "bytes": 30339,
+    "sha256": "dfe47f8d4690661cab52b5a46798e34fc4b4a71dc505b921687948065339e6aa"
+  },
+  "assets/textures/frontend/pointG.png": {
+    "bytes": 1175,
+    "sha256": "728566ac0b1963e968d02ae66976df7c94bd7d993a3a91e51bd2628cbcc3d351"
+  },
+  "assets/textures/frontend/pointO.png": {
+    "bytes": 1054,
+    "sha256": "5d443d3bed2a7220c9c84df76b926756aed4457f89428ef3254492cbadb65631"
+  },
+  "assets/textures/frontend/pointP.png": {
+    "bytes": 1006,
+    "sha256": "f91cc163869eb94bd1e36ead14a4a061ab9621cd3b01fd604e4f50f521d21d35"
+  },
+  "assets/textures/frontend/pointY.png": {
+    "bytes": 1030,
+    "sha256": "09dac6dccf0729ee63f353504a046f99e0ecb953e88add2971b0eb45bf6cc0f2"
+  },
+  "assets/textures/frontend/starDownG.png": {
+    "bytes": 2329,
+    "sha256": "7a5b267d16862f75ebb13c43a004ca586e062a7592e90775eefb0f607a998e44"
+  },
+  "assets/textures/frontend/starDownO.png": {
+    "bytes": 2237,
+    "sha256": "84d2c8140101255c28dd0227b8fec12c160a5be16cc09830cb683ee2b0bb88e9"
+  },
+  "assets/textures/frontend/starDownP.png": {
+    "bytes": 2106,
+    "sha256": "7717966970e191fe4e19a8e88ce4a3c171c813ed01eccc75ee4750d0f16f02db"
+  },
+  "assets/textures/frontend/starDownY.png": {
+    "bytes": 2124,
+    "sha256": "e9f2f110829f992baea10bb18ccafbec3935d2d4919e4694a470f8c175b9b12c"
+  },
+  "assets/textures/frontend/starGreyG.png": {
+    "bytes": 2215,
+    "sha256": "7515b4946b42fb3b2263935cae327587824456c46a84034049b0f1c247539222"
+  },
+  "assets/textures/frontend/starGreyO.png": {
+    "bytes": 2197,
+    "sha256": "7653bfad6a6267f9a282b92a262d48581bc95de3ea89098646df2028a8267f84"
+  },
+  "assets/textures/frontend/starGreyP.png": {
+    "bytes": 2111,
+    "sha256": "a64370853c5d75d6a863a38298af0780ce85ebba312e884767acb02772556fcd"
+  },
+  "assets/textures/frontend/starGreyY.png": {
+    "bytes": 2213,
+    "sha256": "ee20a1ade559173bf5eba4c735845621797378056f73f3bab023c5f1d7d42fd8"
+  },
+  "assets/textures/frontend/starUpG.png": {
+    "bytes": 2688,
+    "sha256": "93ed2bb4d0d556ec3d69274f5d191436e2f99e2f4e1274666226874d75bb06d0"
+  },
+  "assets/textures/frontend/starUpO.png": {
+    "bytes": 2643,
+    "sha256": "247866f135b880005492166c14627f10bdaf5b4a44dd7f7d903436bfa2ccabab"
+  },
+  "assets/textures/frontend/starUpP.png": {
+    "bytes": 2505,
+    "sha256": "45d6822eda6d98d2e551b4b01824c7310e3d59dc99ad1013227b0ef4f9620a4e"
+  },
+  "assets/textures/frontend/starUpY.png": {
+    "bytes": 2615,
+    "sha256": "745692a1a48f8cb8bbbd8748a4ce08e6abc4db02b302b6fec5b55b1586a67aec"
+  },
+  "assets/textures/frontend/tutorial_demo_en.png": {
+    "bytes": 14453,
+    "sha256": "5ff6333dca5736bbe380d7692c530d8c20e889c728509d6e8e070f51e6a5089c"
+  },
+  "assets/textures/frontend/tutorial_demo_ja.png": {
+    "bytes": 14453,
+    "sha256": "5ff6333dca5736bbe380d7692c530d8c20e889c728509d6e8e070f51e6a5089c"
+  },
+  "assets/textures/frontend/tutorial_demo_zh-Hans.png": {
+    "bytes": 15175,
+    "sha256": "d2c8ff5821430f69f7b8d995802d11d7b90a314edd543b0b1d7269c9f572e66e"
+  },
+  "assets/textures/InGameUI/animateStar.png": {
+    "bytes": 6920,
+    "sha256": "44c94c307c162d7b3328f015fc947a121b9af2d1673cb3f042b0cbbed33de900"
+  },
+  "assets/textures/InGameUI/btn1Up.png": {
+    "bytes": 8262,
+    "sha256": "dd3df51a7b45c39f33c4198ad48025f4c4d67bbb6340597c04dd038edf4929dc"
+  },
+  "assets/textures/InGameUI/fingerDown.png": {
+    "bytes": 15412,
+    "sha256": "1dcb5cb3a05564488c20c9eee2865b926fe17c86714dd49b010c19f6d32e6bf5"
+  },
+  "assets/textures/InGameUI/fingerUp.png": {
+    "bytes": 14274,
+    "sha256": "634254923304f40aa2865a5f279ab6e991e26783dce429470cfe176d77380b61"
+  },
+  "assets/textures/InGameUI/pauseBtnDown.png": {
+    "bytes": 2678,
+    "sha256": "b8184da4135354b8f9ef930ac59d8e5fb1290160bb78365c96216c43bac9c78d"
+  },
+  "assets/textures/InGameUI/pauseBtnText.png": {
+    "bytes": 399,
+    "sha256": "113b222a2dc07def2a0b4bf88a8114177f83a3313e9c3145ca498269a7885607"
+  },
+  "assets/textures/InGameUI/pauseBtnUp.png": {
+    "bytes": 2934,
+    "sha256": "bf04f54b5f32746d179470bcf904e693718a07f918302a566a590d1ad4caf748"
+  },
+  "assets/textures/InGameUI/starDown.png": {
+    "bytes": 12069,
+    "sha256": "f88d2c1616737e6b7d50424a3c445dff1bc59fff5fd9af212e59e6981e9b07d2"
+  },
+  "assets/textures/InGameUI/starUp.png": {
+    "bytes": 12302,
+    "sha256": "fffc2850bd4b2b389f59240a9e17090933a4684d362de5dff424f039c40b0e0d"
+  },
+  "assets/textures/InGameUI/timeIcon.png": {
+    "bytes": 3799,
+    "sha256": "d028de6b30b0e74da7bc63a39390adfacff2267fe13ffef074c2679e10935ad3"
+  },
+  "assets/textures/InGameUI/tutorialPanelHalf.png": {
+    "bytes": 23540,
+    "sha256": "392bf6bf21868bc226ab75df1866bbe7e991863e0ba099f4052b98b95d0a2420"
+  },
+  "assets/textures/InGameUI/uiCrystalLarge.png": {
+    "bytes": 5414,
+    "sha256": "7657abc25de27fc92951cfb7bc751a424f7430f6c57f734659f67cc481103afe"
+  },
+  "assets/textures/InGameUI/uiCrystalSmall.png": {
+    "bytes": 1627,
+    "sha256": "437413e15d6636c10d29775357f0856a7a0351d330425b2af7b817a1428ad541"
+  },
+  "assets/textures/laser_stars.png": {
+    "bytes": 1030,
+    "sha256": "3f16e0a28e4fbd5c10ae2ea846662ad2b36a61957b20695123629a252fd2fdaa"
+  },
+  "assets/textures/result_star_particles.png": {
+    "bytes": 1992,
+    "sha256": "2b7f516f7edad913c5a6e7bfd8e4f2e6e2c3206521196693459fea1ce2579f24"
+  },
+  "assets/textures/role_fire.png": {
+    "bytes": 734,
+    "sha256": "61f0eaa6e3e567f890ecbf42ff8fd43ad6b4de4f7a3f022435a38289f2cc0af9"
+  },
+  "assets/textures/terrain1/Foreground_001.png": {
+    "bytes": 5455,
+    "sha256": "5fddaede10160e837847d33a01737086e504e9dd3fd6352d7697c6615c36a252"
+  },
+  "assets/textures/terrain1/Foreground_002.png": {
+    "bytes": 4954,
+    "sha256": "1d97e0df205c57ea5301b9c03cb5c027821e20142b9a9ea0ef64258d931af06b"
+  },
+  "assets/textures/terrain1/Foreground_003.png": {
+    "bytes": 11271,
+    "sha256": "2935c36dd9bbba67e7a4f4000a02675bfd19b29ba104281b2cd81ecb6b0c729d"
+  },
+  "assets/textures/terrain1/Foreground_004.png": {
+    "bytes": 16301,
+    "sha256": "7d257b9eca8332f532496bba0eb4d306a627957365ee38a3f32cc5e9e69c34a4"
+  },
+  "assets/textures/terrain1/Foreground_008.png": {
+    "bytes": 24682,
+    "sha256": "e2ae8840cc850e2491a9b4ad3561d99bbecdff2bf172cb21f322fb02ca55c755"
+  },
+  "assets/textures/terrain1/Foreground_009.png": {
+    "bytes": 14751,
+    "sha256": "8b477880e42f0d4ff85e8a0c7fad05c2f3c4261448fbfc5915f31e8ecd8c4325"
+  },
+  "assets/textures/terrain1/Foreground_010.png": {
+    "bytes": 11736,
+    "sha256": "cec9c7d45d18e21398c4406ef810a38ff26090109b613bbd5d42dfae8895d640"
+  },
+  "assets/textures/terrain1/Foreground_011.png": {
+    "bytes": 9113,
+    "sha256": "438513056099eff150715509f80e8e38fbbb43a85c968941f88b20572b420efd"
+  },
+  "assets/textures/terrain1/Foreground_012.png": {
+    "bytes": 3755,
+    "sha256": "df5b271d5958ed5bd6d92f894d16940ec3316ba21f56bab201f8fbd1383f0df0"
+  },
+  "assets/textures/terrain1/Foreground_013.png": {
+    "bytes": 3237,
+    "sha256": "2d49970a25a9c46d873934d5a0c98cccc4edb02ec76b65092e46e3e5de75bd58"
+  },
+  "assets/textures/terrain1/Foreground_014.png": {
+    "bytes": 3434,
+    "sha256": "bba9945ff015477aee326462cf13ec73e63e2ec17a9d3a6dbf9c97aee00bfa62"
+  },
+  "assets/textures/terrain1/Foreground_015.png": {
+    "bytes": 3739,
+    "sha256": "23149a4c2e1e2cb7037e4a60cc5d1bac4a0c429271b76e71e20635c7c578b598"
+  },
+  "assets/textures/terrain1/Foreground_016.png": {
+    "bytes": 26523,
+    "sha256": "5ae56df9b5dbc8dfc9b2d87b18a3b65b18c71b58a825ad287f2dda7f44c3e5a7"
+  },
+  "assets/textures/terrain1/Foreground_017.png": {
+    "bytes": 25872,
+    "sha256": "862c32471ebe381a172389e00037935d668219a0897209e53a0ba587c1ed2d9c"
+  },
+  "assets/textures/terrain1/Foreground_018.png": {
+    "bytes": 24506,
+    "sha256": "d7f55bb22899292dbae15af87360ab26e776acc8dbfcb35535780e7b45ba3b9b"
+  },
+  "assets/textures/terrain1/Foreground_019.png": {
+    "bytes": 21278,
+    "sha256": "f2d1cc9bee6a362892c291d5985631b998c36af5401123ebd9a0602f0a5210ff"
+  },
+  "assets/textures/terrain1/Foreground_020.png": {
+    "bytes": 32264,
+    "sha256": "d9eeda8f4fae5b86f3061cf9cdb2722b3eb32408a1a64fe2bdbd2137a084a1e5"
+  },
+  "assets/textures/terrain1/Foreground_021.png": {
+    "bytes": 28596,
+    "sha256": "3470b5aa87e76d529a9bef62eaa713f7fd457baf289cbbe964029153f800ed6d"
+  },
+  "assets/textures/terrain1/Foreground_022.png": {
+    "bytes": 16086,
+    "sha256": "1bc34998cb928837f4eb6f04cdd3f02f10b8396c240e55ab3792482960e8034d"
+  },
+  "assets/textures/terrain1/Foreground_023.png": {
+    "bytes": 15460,
+    "sha256": "2b03f4d3b7473626b59c923a1a5a59e25ef0796501aaad122e9a91a18f878011"
+  },
+  "assets/textures/terrain1/Foreground_072.png": {
+    "bytes": 277944,
+    "sha256": "dc9682319d240f61dec5af4f3a0dcd2521e011559f0ae32687381d76a57053ac"
+  },
+  "assets/textures/terrain1/Foreground_073.png": {
+    "bytes": 280168,
+    "sha256": "b9b94c23aa6b649d38e50bb1f673dfc289aa8754ed9ea89cfb8183ca88d3f359"
+  },
+  "assets/textures/terrain1/Foreground_074.png": {
+    "bytes": 192030,
+    "sha256": "bd6b2d2b5dcf2a66aa5c162de1817bb2ca3f16bd655c42f80129c218dc86f968"
+  },
+  "assets/textures/terrain1/Foreground_075.png": {
+    "bytes": 223040,
+    "sha256": "55100bc4ae8cc7c464816df141efa9faeffad66df3f9a0d443a271037f300c4f"
+  },
+  "assets/textures/terrain1/Foreground_076.png": {
+    "bytes": 158343,
+    "sha256": "5d3aedaafe586491881f295f4593506d4d7b98fc2ada7a0ea16638705f54225e"
+  },
+  "assets/textures/terrain1/Foreground_077.png": {
+    "bytes": 32818,
+    "sha256": "b8ab1d70d5e2827d867feacd993d83f95de82a88bed7dc68946f118fd77e9d98"
+  },
+  "assets/textures/terrain1/Foreground_078.png": {
+    "bytes": 35466,
+    "sha256": "ad08e9024ef4212fbed8efb0a6840f83cdd708e18c9c9861a4d6be2f972b65c1"
+  },
+  "assets/textures/terrain1/Foreground_079.png": {
+    "bytes": 43519,
+    "sha256": "100b829b9be1eb3af119f9333504eb8536469685a49a8caef41fa84ed3f943dc"
+  },
+  "assets/textures/terrain1/Foreground_080.png": {
+    "bytes": 42439,
+    "sha256": "bd348b4bfb7b6487aa14344e6f143b1be287857896bdc587d7d38d31b8be8222"
+  },
+  "assets/textures/terrain1/Foreground_081.png": {
+    "bytes": 39047,
+    "sha256": "4672493772377ab08f1f6f7a9e5e2ace45b710960e789cba1c1705cb40b46569"
+  },
+  "assets/textures/terrain1/Foreground_082.png": {
+    "bytes": 34811,
+    "sha256": "ea0c1c65970037508e4c83516c176566bcc660543b5b719e9121682fc5abba71"
+  },
+  "assets/textures/terrain1/Foreground_083.png": {
+    "bytes": 33661,
+    "sha256": "67b802bd98cf12c26b342945208fdafcb0805b316a2556d8f08096962a1bf957"
+  },
+  "assets/textures/terrain1/Foreground_084.png": {
+    "bytes": 21728,
+    "sha256": "5e92398826ec29f2e3912df146d58d776b55ee7d6d0d4eeee863bd631b4210e5"
+  },
+  "assets/textures/terrain1/Foreground_085.png": {
+    "bytes": 39788,
+    "sha256": "6d4d20aec970b9d1aea3c2dde3357ad7045a146a57c97751d91c6a2aa909b0e2"
+  },
+  "assets/textures/terrain1/Foreground_086.png": {
+    "bytes": 39592,
+    "sha256": "6dec290ca83957f618c9f750e966bf4b52d674502156a256c10ce6be593391f0"
+  },
+  "assets/textures/terrain1/Foreground_087.png": {
+    "bytes": 32781,
+    "sha256": "23e1f1e09511dab797335607e1463b41c02b445c9f52b7402bd128f5a6f3ce2e"
+  },
+  "assets/textures/terrain1/Foreground_088.png": {
+    "bytes": 262332,
+    "sha256": "5632ab7e53c642d4841e699c7d5a867dac53a83a237294c76e7dfd4589d11dd9"
+  },
+  "assets/textures/terrain1/Foreground_089.png": {
+    "bytes": 191259,
+    "sha256": "ee5cfc8c8d2cbe7943034c2661e938cc893c0827a2562e6b3b77023de50c7be4"
+  },
+  "assets/textures/terrain1/Foreground_090.png": {
+    "bytes": 42338,
+    "sha256": "96684a73108130228504ab96092862ac7e4b5ab7a2d612a90f781f32db2c39bc"
+  },
+  "assets/textures/terrain1/Foreground_091.png": {
+    "bytes": 47481,
+    "sha256": "869accaea5e63272eba6981cb78c75a1c6663b87bde8cae2b78366560d1b1916"
+  },
+  "assets/textures/terrain1/Foreground_092.png": {
+    "bytes": 58106,
+    "sha256": "ba0c8c4b82c055c77e88dbd888117e050707cdc8a51fb6daba72bab660c1d8c0"
+  },
+  "assets/textures/terrain1/Foreground_093.png": {
+    "bytes": 55532,
+    "sha256": "6f78adff9bf9fc5f5400befa5fe6cb9ce53e558a70fcc8a9f957c8533ff5cc98"
+  },
+  "assets/textures/terrain1/Foreground_094.png": {
+    "bytes": 50979,
+    "sha256": "57ffea768bfeab0dc499e3eda2c40f3a0a9d514dc67ae99c8dd4520565930ae0"
+  },
+  "assets/textures/terrain1/Foreground_095.png": {
+    "bytes": 46011,
+    "sha256": "c5e81dcda518fc9f143f7963d5a3bb9a726c85d7a6c755ade1a8689fd17c766a"
+  },
+  "assets/textures/terrain1/Foreground_096.png": {
+    "bytes": 44564,
+    "sha256": "5e6bc1fa22e879214019091eea1b246c383e97bc11b1289e3c0f97d49ca0d384"
+  },
+  "assets/textures/terrain1/Foreground_097.png": {
+    "bytes": 29898,
+    "sha256": "e748f1f5a4107b4c2114c5d9465f84d6db3699b462e36389be23b14ee8cf6d41"
+  },
+  "assets/textures/terrain1/Foreground_098.png": {
+    "bytes": 53720,
+    "sha256": "fcb1df077a47713fd3d254e725e5231c666fbbfc38f36efc52c0242727db73e1"
+  },
+  "assets/textures/terrain1/Foreground_099.png": {
+    "bytes": 53176,
+    "sha256": "cda708294133d006ee6528fb88807ce7f0a9c19ca66fe4c117232093e5e145b9"
+  },
+  "assets/textures/terrain1/Foreground_100.png": {
+    "bytes": 43621,
+    "sha256": "070ce9b8f283c387784873cc43156386a076c5fb9e17b96dcbdd8aed56c77e4f"
+  },
+  "assets/textures/terrain1/Texture_002.png": {
+    "bytes": 4954,
+    "sha256": "1d97e0df205c57ea5301b9c03cb5c027821e20142b9a9ea0ef64258d931af06b"
+  },
+  "assets/textures/terrain1/Texture_003.png": {
+    "bytes": 11271,
+    "sha256": "2935c36dd9bbba67e7a4f4000a02675bfd19b29ba104281b2cd81ecb6b0c729d"
+  },
+  "assets/textures/terrain1/Texture_004.png": {
+    "bytes": 16301,
+    "sha256": "7d257b9eca8332f532496bba0eb4d306a627957365ee38a3f32cc5e9e69c34a4"
+  },
+  "assets/textures/terrain1/Texture_008.png": {
+    "bytes": 24682,
+    "sha256": "e2ae8840cc850e2491a9b4ad3561d99bbecdff2bf172cb21f322fb02ca55c755"
+  },
+  "assets/textures/terrain1/Texture_011.png": {
+    "bytes": 9113,
+    "sha256": "438513056099eff150715509f80e8e38fbbb43a85c968941f88b20572b420efd"
+  },
+  "assets/textures/terrain1/Texture_014.png": {
+    "bytes": 3434,
+    "sha256": "bba9945ff015477aee326462cf13ec73e63e2ec17a9d3a6dbf9c97aee00bfa62"
+  },
+  "assets/textures/terrain1/Texture_015.png": {
+    "bytes": 3739,
+    "sha256": "23149a4c2e1e2cb7037e4a60cc5d1bac4a0c429271b76e71e20635c7c578b598"
+  },
+  "assets/textures/terrain1/Texture_019.png": {
+    "bytes": 21278,
+    "sha256": "f2d1cc9bee6a362892c291d5985631b998c36af5401123ebd9a0602f0a5210ff"
+  },
+  "assets/textures/terrain1/Texture_020.png": {
+    "bytes": 32264,
+    "sha256": "d9eeda8f4fae5b86f3061cf9cdb2722b3eb32408a1a64fe2bdbd2137a084a1e5"
+  },
+  "assets/textures/terrain1/Texture_022.png": {
+    "bytes": 16086,
+    "sha256": "1bc34998cb928837f4eb6f04cdd3f02f10b8396c240e55ab3792482960e8034d"
+  },
+  "assets/textures/terrain1/Texture_023.png": {
+    "bytes": 15460,
+    "sha256": "2b03f4d3b7473626b59c923a1a5a59e25ef0796501aaad122e9a91a18f878011"
+  },
+  "assets/textures/terrain1/Texture_024.png": {
+    "bytes": 390721,
+    "sha256": "a3e51a9ea929d83ff909d0ba510cbb10b9a8ae811b0ac6fafd51c9dc5d52a4e4"
+  },
+  "assets/textures/terrain1/Texture_025.png": {
+    "bytes": 137775,
+    "sha256": "9ffb338989439076d0326b64c5b51bab9a2ed119b0f9b9f01c28bec3b414ec5c"
+  },
+  "assets/textures/terrain1/Texture_026.png": {
+    "bytes": 109215,
+    "sha256": "6416057ad481c8f29577f75d314f774b52af1817e74c3ec16ea5b6c587167cb9"
+  },
+  "assets/textures/terrain1/Texture_027.png": {
+    "bytes": 58176,
+    "sha256": "02a1d04226cfc38e8bf4cfec4a85e4822fda54807035c1aec188753ca351e3d2"
+  },
+  "assets/textures/terrain1/Texture_028.png": {
+    "bytes": 40953,
+    "sha256": "1fef27efe015e8813e3da6e31d4373ee958aaad99cb063c8dfb9243d55346241"
+  },
+  "assets/textures/terrain1/Texture_029.png": {
+    "bytes": 12541,
+    "sha256": "5c5e13317c8cb494eebc33793b68d97f3a525621872d09075707fbfd82effe01"
+  },
+  "assets/textures/terrain1/Texture_030.png": {
+    "bytes": 11227,
+    "sha256": "366057b3322bfd232e3bb02c3600d4a52cd2c6ba129e05b6f54f86d5c2ec085f"
+  },
+  "assets/textures/terrain1/Texture_031.png": {
+    "bytes": 9010,
+    "sha256": "56cf0c804c8171f90de417a238baee7bab9781fb74f38811356de0d696ecad2e"
+  },
+  "assets/textures/terrain1/Texture_032.png": {
+    "bytes": 4680,
+    "sha256": "17d22bf09d5139585236358416049b1f14557be4b57458131a773900b448766a"
+  },
+  "assets/textures/terrain1/Texture_033.png": {
+    "bytes": 4055,
+    "sha256": "a4cd0b463c9a16c948906f47528163596ca6b0bc39da1095563b0b5546bbc95f"
+  },
+  "assets/textures/terrain1/Texture_034.png": {
+    "bytes": 6477,
+    "sha256": "0a6e1333f17c36058afcb7f3e89ea9edccbe3eda436809399b86b058ed4a363b"
+  },
+  "assets/textures/terrain1/Texture_035.png": {
+    "bytes": 6534,
+    "sha256": "1700522bdf2e477a919502800e5ffda2fed4ca1a905d336af2da440c6ab93f6f"
+  },
+  "assets/textures/terrain1/Texture_036.png": {
+    "bytes": 6213,
+    "sha256": "3f737c55be02091700247c7689beeca3751b822f1dd6e949440649ca062c2e6d"
+  },
+  "assets/textures/terrain1/Texture_037.png": {
+    "bytes": 4146,
+    "sha256": "0e34aeaa1a480f5f68e8d438e15752f571447e51e24f4a7e0f6e48c7db384dea"
+  },
+  "assets/textures/terrain1/Texture_039.png": {
+    "bytes": 2022,
+    "sha256": "228f84966dfd8e233b6e2594f60afbaad5c4478cc3e10b04e5187c704c72c17b"
+  },
+  "assets/textures/terrain1/Texture_040.png": {
+    "bytes": 516362,
+    "sha256": "3a7a42c559976c45faaac0f5918a2c442541f69cf0f551de2fdd493be888336e"
+  },
+  "assets/textures/terrain1/Texture_041.png": {
+    "bytes": 178189,
+    "sha256": "361544225fbe477018e85ba4bfac55a32fb747d626d18d633b0621c9bf36e550"
+  },
+  "assets/textures/terrain1/Texture_042.png": {
+    "bytes": 136209,
+    "sha256": "1028d3598ae090ca3537240e60aafe935cf6d5bb426c430d715c9d9eb78ab5d7"
+  },
+  "assets/textures/terrain1/Texture_043.png": {
+    "bytes": 73833,
+    "sha256": "6a0d0a915b81696833f2491a99f2b17923c1fcb827fb0a8bf4f20591abfbfdf2"
+  },
+  "assets/textures/terrain1/Texture_044.png": {
+    "bytes": 50875,
+    "sha256": "8990bd7899013e8f5e7b9595c75f2a13512f2c5c17fe9d623a9c53871e1d48a9"
+  },
+  "assets/textures/terrain1/Texture_045.png": {
+    "bytes": 14125,
+    "sha256": "6a8052417bc4569003d8e09e55677ddf832960525d7cd8af12a49f97e683acac"
+  },
+  "assets/textures/terrain1/Texture_046.png": {
+    "bytes": 12552,
+    "sha256": "3ea2eebeb913bad7d28ab264647146bab87a64e505e8d51053ab063f9521f768"
+  },
+  "assets/textures/terrain1/Texture_047.png": {
+    "bytes": 10427,
+    "sha256": "f5bb8c203445e90b5fa8626822ab0cfb1fc7aa31c3266c7166617668789c8060"
+  },
+  "assets/textures/terrain1/Texture_048.png": {
+    "bytes": 4906,
+    "sha256": "87b7d01064e20f18893f65ac80558f7ee306fa0e2c64c5ef602b14c63d6dc9c3"
+  },
+  "assets/textures/terrain1/Texture_049.png": {
+    "bytes": 4807,
+    "sha256": "4deadb04f5d86bf0ff16ace6163ed0eb691018b46d80222e6a52bbc2bea539a1"
+  },
+  "assets/textures/terrain1/Texture_050.png": {
+    "bytes": 6827,
+    "sha256": "d7865767a54526614dc23e7a663fd5d2c44e973e3ae86bb5cd25d5b76d2dee2e"
+  },
+  "assets/textures/terrain1/Texture_051.png": {
+    "bytes": 6336,
+    "sha256": "8edbae246eb2f34192ee0642355098d5d9cfb19ede885c8dfef86b731c579eba"
+  },
+  "assets/textures/terrain1/Texture_052.png": {
+    "bytes": 6670,
+    "sha256": "f915bebb2ebb557546329fef9ee601909b4ecc65d90f78e28d7000669d40374c"
+  },
+  "assets/textures/terrain1/Texture_053.png": {
+    "bytes": 3625,
+    "sha256": "f32218b0bdb3b6a4ac2483691590512edcc83b618ea7e913db07d776848e8130"
+  },
+  "assets/textures/terrain1/Texture_055.png": {
+    "bytes": 1814,
+    "sha256": "3d8cd3397922733616a499712f077a954fe0f2193bd1fd2e1129def80151d2e5"
+  },
+  "assets/textures/terrain1/Texture_056.png": {
+    "bytes": 243824,
+    "sha256": "dc6ecec69f9be1ffc9eb5ad1973278045e771e56f5d7cb065284fb9d06a7aca5"
+  },
+  "assets/textures/terrain1/Texture_057.png": {
+    "bytes": 247765,
+    "sha256": "efe00cab5d06ddd3df23fd7f3a35c63fc7203e00aa96823681dd80cbf7ff8cb4"
+  },
+  "assets/textures/terrain1/Texture_058.png": {
+    "bytes": 164340,
+    "sha256": "2223d2ea1f8a1e24a88ad850127bd2ad963280593de9ccea6fbfdd2db39808a6"
+  },
+  "assets/textures/terrain1/Texture_059.png": {
+    "bytes": 187684,
+    "sha256": "6d2a85e77631be015bf03dbdc1ea8c6673c4b55a90d41b9a5e6e206e7276b588"
+  },
+  "assets/textures/terrain1/Texture_060.png": {
+    "bytes": 136007,
+    "sha256": "2489139781def4830cc76a9febfadec469a2e0dfb9969b327509a41d9936c101"
+  },
+  "assets/textures/terrain1/Texture_061.png": {
+    "bytes": 30000,
+    "sha256": "9843fdbeff7f7ddd121d84dda483100254c2489cd30e2a9940a83e1cfee43d53"
+  },
+  "assets/textures/terrain1/Texture_062.png": {
+    "bytes": 34229,
+    "sha256": "5278262075e1341a9c57a830b71d1ba66453cd3fb81026dfd5f63cc6c9d6e4e5"
+  },
+  "assets/textures/terrain1/Texture_063.png": {
+    "bytes": 44254,
+    "sha256": "e47b10172c87de8360d985e7394b266c0cfe8a009c4f4d8a2f6326c106b75d53"
+  },
+  "assets/textures/terrain1/Texture_064.png": {
+    "bytes": 41452,
+    "sha256": "38e8c2a81e77b1bd7ba27fc29bebbf76a78cb3b06fb51e2406b029d6660631b9"
+  },
+  "assets/textures/terrain1/Texture_065.png": {
+    "bytes": 38850,
+    "sha256": "d79a75402bf9c6141243a33b069e3af016b1718bf4ee745946d5c52c88db7159"
+  },
+  "assets/textures/terrain1/Texture_066.png": {
+    "bytes": 34165,
+    "sha256": "23ee388ab508a6f817cff6c3fda8d13640f013705ab7caaf46d28801be0a253e"
+  },
+  "assets/textures/terrain1/Texture_067.png": {
+    "bytes": 31406,
+    "sha256": "744514b69a46143c188cf33c5ac93004386bc9d01019f09d11f82b47c479419b"
+  },
+  "assets/textures/terrain1/Texture_068.png": {
+    "bytes": 20368,
+    "sha256": "6b79a90447608bf595f05ded46b6f41a1caebe400a697828121fa62220e4ae90"
+  },
+  "assets/textures/terrain1/Texture_069.png": {
+    "bytes": 41315,
+    "sha256": "6db4a0fbcc12a25aeb2a08d1cdfe46e1e09ab243f6d21d79b09f571b107a7de1"
+  },
+  "assets/textures/terrain1/Texture_070.png": {
+    "bytes": 40462,
+    "sha256": "12a559f866491fcc15e56f4233584650dbe67845c45f07d35172fa1ce11de6f8"
+  },
+  "assets/textures/terrain1/Texture_071.png": {
+    "bytes": 29990,
+    "sha256": "598d9f78563dba8f77c817c13c4950830a7272ac129d6f1a77a6703ac49b9fa3"
+  },
+  "assets/textures/terrain1/Texture_072.png": {
+    "bytes": 277944,
+    "sha256": "dc9682319d240f61dec5af4f3a0dcd2521e011559f0ae32687381d76a57053ac"
+  },
+  "assets/textures/terrain1/Texture_073.png": {
+    "bytes": 280168,
+    "sha256": "b9b94c23aa6b649d38e50bb1f673dfc289aa8754ed9ea89cfb8183ca88d3f359"
+  },
+  "assets/textures/terrain1/Texture_074.png": {
+    "bytes": 192030,
+    "sha256": "bd6b2d2b5dcf2a66aa5c162de1817bb2ca3f16bd655c42f80129c218dc86f968"
+  },
+  "assets/textures/terrain1/Texture_075.png": {
+    "bytes": 223040,
+    "sha256": "55100bc4ae8cc7c464816df141efa9faeffad66df3f9a0d443a271037f300c4f"
+  },
+  "assets/textures/terrain1/Texture_076.png": {
+    "bytes": 158343,
+    "sha256": "5d3aedaafe586491881f295f4593506d4d7b98fc2ada7a0ea16638705f54225e"
+  },
+  "assets/textures/terrain1/Texture_077.png": {
+    "bytes": 32818,
+    "sha256": "b8ab1d70d5e2827d867feacd993d83f95de82a88bed7dc68946f118fd77e9d98"
+  },
+  "assets/textures/terrain1/Texture_078.png": {
+    "bytes": 35466,
+    "sha256": "ad08e9024ef4212fbed8efb0a6840f83cdd708e18c9c9861a4d6be2f972b65c1"
+  },
+  "assets/textures/terrain1/Texture_079.png": {
+    "bytes": 43519,
+    "sha256": "100b829b9be1eb3af119f9333504eb8536469685a49a8caef41fa84ed3f943dc"
+  },
+  "assets/textures/terrain1/Texture_081.png": {
+    "bytes": 39047,
+    "sha256": "4672493772377ab08f1f6f7a9e5e2ace45b710960e789cba1c1705cb40b46569"
+  },
+  "assets/textures/terrain1/Texture_082.png": {
+    "bytes": 34811,
+    "sha256": "ea0c1c65970037508e4c83516c176566bcc660543b5b719e9121682fc5abba71"
+  },
+  "assets/textures/terrain1/Texture_083.png": {
+    "bytes": 33661,
+    "sha256": "67b802bd98cf12c26b342945208fdafcb0805b316a2556d8f08096962a1bf957"
+  },
+  "assets/textures/terrain1/Texture_084.png": {
+    "bytes": 21728,
+    "sha256": "5e92398826ec29f2e3912df146d58d776b55ee7d6d0d4eeee863bd631b4210e5"
+  },
+  "assets/textures/terrain1/Texture_088.png": {
+    "bytes": 262332,
+    "sha256": "5632ab7e53c642d4841e699c7d5a867dac53a83a237294c76e7dfd4589d11dd9"
+  },
+  "assets/textures/terrain1/Texture_089.png": {
+    "bytes": 191259,
+    "sha256": "ee5cfc8c8d2cbe7943034c2661e938cc893c0827a2562e6b3b77023de50c7be4"
+  },
+  "assets/textures/terrain1/Texture_091.png": {
+    "bytes": 47481,
+    "sha256": "869accaea5e63272eba6981cb78c75a1c6663b87bde8cae2b78366560d1b1916"
+  },
+  "assets/textures/terrain1/Texture_092.png": {
+    "bytes": 58106,
+    "sha256": "ba0c8c4b82c055c77e88dbd888117e050707cdc8a51fb6daba72bab660c1d8c0"
+  },
+  "assets/textures/terrain1/Texture_093.png": {
+    "bytes": 55532,
+    "sha256": "6f78adff9bf9fc5f5400befa5fe6cb9ce53e558a70fcc8a9f957c8533ff5cc98"
+  },
+  "assets/textures/terrain1/Texture_094.png": {
+    "bytes": 50979,
+    "sha256": "57ffea768bfeab0dc499e3eda2c40f3a0a9d514dc67ae99c8dd4520565930ae0"
+  },
+  "assets/textures/terrain1/Texture_095.png": {
+    "bytes": 46011,
+    "sha256": "c5e81dcda518fc9f143f7963d5a3bb9a726c85d7a6c755ade1a8689fd17c766a"
+  },
+  "assets/textures/terrain1/Texture_096.png": {
+    "bytes": 44564,
+    "sha256": "5e6bc1fa22e879214019091eea1b246c383e97bc11b1289e3c0f97d49ca0d384"
+  },
+  "assets/textures/terrain1/Texture_097.png": {
+    "bytes": 29898,
+    "sha256": "e748f1f5a4107b4c2114c5d9465f84d6db3699b462e36389be23b14ee8cf6d41"
+  },
+  "assets/textures/terrain2/Foreground_001.png": {
+    "bytes": 5612,
+    "sha256": "d4044a79eb155847375938c7b1c73c863bd422cb9ff60da8e6294f21c2f13138"
+  },
+  "assets/textures/terrain2/Foreground_002.png": {
+    "bytes": 4992,
+    "sha256": "3e4c81e01ec70441f611cb9b98b085f33c7c1da5aaa23f325fe11aa456da9606"
+  },
+  "assets/textures/terrain2/Foreground_003.png": {
+    "bytes": 11315,
+    "sha256": "3dcf541b2bb40c3dc45a21d451854934b0ff57fc38d25584edd987f97cf96fc4"
+  },
+  "assets/textures/terrain2/Foreground_004.png": {
+    "bytes": 16358,
+    "sha256": "390189615f0a37bfb969c7756cb41fd5ac0e7f2cabdb20979d04521668168f90"
+  },
+  "assets/textures/terrain2/Foreground_008.png": {
+    "bytes": 24229,
+    "sha256": "766fba7feaa64ea63e836694b18132258cc26988b70a6103dab9c793221175d2"
+  },
+  "assets/textures/terrain2/Foreground_009.png": {
+    "bytes": 14877,
+    "sha256": "5708cc695d8e96e3cfba24555646bda0c80ce67a5a1a37cd26bb33c5fabfe574"
+  },
+  "assets/textures/terrain2/Foreground_010.png": {
+    "bytes": 11802,
+    "sha256": "d5ce87e9534bcaf80176d74b7bbeab9fc67774028d069b0bec1189b032aaff7b"
+  },
+  "assets/textures/terrain2/Foreground_011.png": {
+    "bytes": 9131,
+    "sha256": "3f75fced250826c87b195043948e6a8fbdff154f26a3a9e6ce365b3a8fc2b53e"
+  },
+  "assets/textures/terrain2/Foreground_012.png": {
+    "bytes": 3824,
+    "sha256": "f8d308af1157887b0d2631eb4a949ea223cac91b985574083d4b4f447624599b"
+  },
+  "assets/textures/terrain2/Foreground_013.png": {
+    "bytes": 3388,
+    "sha256": "3e222028604d30d1198f6f1f70e5dbc9efbd5323ce110472ffa7277f4518daf1"
+  },
+  "assets/textures/terrain2/Foreground_014.png": {
+    "bytes": 3658,
+    "sha256": "d67d0f612733b63f49eaf970262bb120fc97af9738c0e2e5c4928a8c25b3c3cb"
+  },
+  "assets/textures/terrain2/Foreground_015.png": {
+    "bytes": 3766,
+    "sha256": "09808234703829ec8bd4d1fb2e5fffe548cdb4c0dcfa6619aecd4c0ff14e03d7"
+  },
+  "assets/textures/terrain2/Foreground_016.png": {
+    "bytes": 26643,
+    "sha256": "66da8544badf9edf1f355556062238022c324a854c3f67fdfb0218260f6f96b2"
+  },
+  "assets/textures/terrain2/Foreground_017.png": {
+    "bytes": 25730,
+    "sha256": "cbef5df127f3316cd1eed9ab5b7cc982589a720f9b46bd8b9e9aa2bc82e952e0"
+  },
+  "assets/textures/terrain2/Foreground_018.png": {
+    "bytes": 24828,
+    "sha256": "7c6d0619bff4cecf18e9eed6255e0794692cbae691048f7de44b022a8143b77c"
+  },
+  "assets/textures/terrain2/Foreground_019.png": {
+    "bytes": 21222,
+    "sha256": "dbec60e683d5f76239d000aa0838efb76fe0972479e2425e2805143f46731f41"
+  },
+  "assets/textures/terrain2/Foreground_020.png": {
+    "bytes": 32299,
+    "sha256": "b760711efe1f03f03658996c5fc8d008f7fcc725fabc9cecc2383235c7f901cf"
+  },
+  "assets/textures/terrain2/Foreground_021.png": {
+    "bytes": 28279,
+    "sha256": "a7ca61b4a3bacf3a10e1952a4951867829d06bf34c1d4b475bbe8298ac08f353"
+  },
+  "assets/textures/terrain2/Foreground_022.png": {
+    "bytes": 16150,
+    "sha256": "439affc0234a5dcf4a49bf696681be7140bb192f277091d0382a4defae52e346"
+  },
+  "assets/textures/terrain2/Foreground_023.png": {
+    "bytes": 15183,
+    "sha256": "508dede3753319d35c41f9d70609459cf223818c4aa209139f82a865a37d32e8"
+  },
+  "assets/textures/terrain2/Foreground_040.png": {
+    "bytes": 517599,
+    "sha256": "636293858b8f1670b75f74e9d50e56e52fbac7c689178121888bd181f5b2f7c6"
+  },
+  "assets/textures/terrain2/Foreground_041.png": {
+    "bytes": 177866,
+    "sha256": "a9258ca7e4e5b492c6bcf2773042fb0b67a36ee96cb548c0af0e83c4eb407dd0"
+  },
+  "assets/textures/terrain2/Foreground_043.png": {
+    "bytes": 73732,
+    "sha256": "dfda3d3ed3111924b02129671a5da948e2b4a1d4f760ee163fc7c902b4586b85"
+  },
+  "assets/textures/terrain2/Foreground_046.png": {
+    "bytes": 12820,
+    "sha256": "0fa5b0726f5e4fe3aaa7dea1bb44eeeee07715ecf22e1e1b8c7ee6d8f804fba5"
+  },
+  "assets/textures/terrain2/Foreground_047.png": {
+    "bytes": 10470,
+    "sha256": "806ba1cba2fde673413cae1efa037e83767648d0135a072d53a1eedab5c1190b"
+  },
+  "assets/textures/terrain2/Foreground_049.png": {
+    "bytes": 4780,
+    "sha256": "3915f7d94ad725c6554cc9bf1e00a03c19df4064414bc40ebdca5d791f32fe27"
+  },
+  "assets/textures/terrain2/Foreground_051.png": {
+    "bytes": 6441,
+    "sha256": "f34ea532a4c5c29c6ce6e7aa2e98190ef7edd97b7ea29f57a72f91c30201f9c7"
+  },
+  "assets/textures/terrain2/Foreground_052.png": {
+    "bytes": 6629,
+    "sha256": "da349a3fd0b2544859cae2bbda6141a5dd6d289c5463d773079c822f513248e8"
+  },
+  "assets/textures/terrain2/Foreground_053.png": {
+    "bytes": 3652,
+    "sha256": "22e618e05dcfe81b56c1e8f067c71dd3639eccac1b19b61da3c1c1b2a25ca119"
+  },
+  "assets/textures/terrain2/Foreground_072.png": {
+    "bytes": 327176,
+    "sha256": "bc2feb7111bb0a43823880f858e59a19b01c2206689c9ba80f30369a0621f030"
+  },
+  "assets/textures/terrain2/Foreground_073.png": {
+    "bytes": 329957,
+    "sha256": "8d329839bc6d08ae66d87bdd5375a5ad02578e82ec83da37d2bc41ea2b382e2e"
+  },
+  "assets/textures/terrain2/Foreground_074.png": {
+    "bytes": 224479,
+    "sha256": "9533f89f920815c93efa1bf273f6e9128daffceaa5371f38ea0a5faea4db21cc"
+  },
+  "assets/textures/terrain2/Foreground_075.png": {
+    "bytes": 261248,
+    "sha256": "9409263a7dd94616aeb561e2024e603705277ec81c1bf956a65e9643f676dd63"
+  },
+  "assets/textures/terrain2/Foreground_076.png": {
+    "bytes": 183034,
+    "sha256": "3ec6dfc4a9dbd6bda66462751d85bf6326bc07993e93ab3355419420b5a09010"
+  },
+  "assets/textures/terrain2/Foreground_077.png": {
+    "bytes": 38082,
+    "sha256": "c3cdfa91f8e6e6aa13a0ebcd2672e9c9c1a7aa255151eb5c356b4fde82e1c7ba"
+  },
+  "assets/textures/terrain2/Foreground_078.png": {
+    "bytes": 40588,
+    "sha256": "5ca340af62b7e1eedfe34c6aaac3d0ce111b8bd41197d454521513456099cc99"
+  },
+  "assets/textures/terrain2/Foreground_079.png": {
+    "bytes": 50083,
+    "sha256": "34cd21151d46316e901643ac0b5491410e0cf22dfed7f06fbb929c1360448f39"
+  },
+  "assets/textures/terrain2/Foreground_080.png": {
+    "bytes": 48439,
+    "sha256": "5403802253eab94612a23d3c6e82ea0ad594cf90f9b94f4ce7bc8aa014812118"
+  },
+  "assets/textures/terrain2/Foreground_081.png": {
+    "bytes": 45378,
+    "sha256": "0b82fb8dc85d4b576430132199c498c779a8cf0fcc9cfe70d5a480d34b510bf1"
+  },
+  "assets/textures/terrain2/Foreground_082.png": {
+    "bytes": 40409,
+    "sha256": "c82b369fe73726abfaebc46195a2328fcce1c96d438e55fefad8b2b0a44dad4e"
+  },
+  "assets/textures/terrain2/Foreground_083.png": {
+    "bytes": 39052,
+    "sha256": "b3e7fc04b750ee0107949c840bc6acbb30ef36e4889b8329e92e5445fa166a67"
+  },
+  "assets/textures/terrain2/Foreground_084.png": {
+    "bytes": 24246,
+    "sha256": "08548beaba9e5683001e9a57e44a65bd4f12ac796877e110ac0a920b2718a924"
+  },
+  "assets/textures/terrain2/Foreground_085.png": {
+    "bytes": 46100,
+    "sha256": "823bd6e7c94f5b269bbb060109a6e1ba5a83753a867de9bc6398b324fd71ad64"
+  },
+  "assets/textures/terrain2/Foreground_086.png": {
+    "bytes": 45454,
+    "sha256": "4c3111a57da98a45f1ed569dd439e7622df105511b20d6e8b7ef1c490845369f"
+  },
+  "assets/textures/terrain2/Foreground_087.png": {
+    "bytes": 37530,
+    "sha256": "c4bcbd11634df0f30a117876acc56b74a6f00f7b75006cb65cf513474d8b93f3"
+  },
+  "assets/textures/terrain2/Foreground_088.png": {
+    "bytes": 302696,
+    "sha256": "7f8c76841a3967cbdf3835a29677e1e45f1145ae5afde02755e837bca976a8e3"
+  },
+  "assets/textures/terrain2/Foreground_089.png": {
+    "bytes": 220288,
+    "sha256": "fb3daa1dbaa0a2bdbb18a154a218897a7efc3676900a76c8cb47857f8d982430"
+  },
+  "assets/textures/terrain2/Foreground_090.png": {
+    "bytes": 48152,
+    "sha256": "2bc700c46d6e8f03f5c00a1b5f5f6027c75c4e0408ee70fe09e4e14f91eb86e2"
+  },
+  "assets/textures/terrain2/Foreground_091.png": {
+    "bytes": 53462,
+    "sha256": "afd259c128330b4d62dd7883c18352e7b8da2cc804d5086f7d366e9391699656"
+  },
+  "assets/textures/terrain2/Foreground_092.png": {
+    "bytes": 65973,
+    "sha256": "7b436c165abfcebfd218606812a0c6e97a34a49f1a4afd75c3233e77fe19c850"
+  },
+  "assets/textures/terrain2/Foreground_093.png": {
+    "bytes": 62582,
+    "sha256": "53b2481172341d25fff10584c2c256f514f3d63fd06e5f5914885dd9e1430a73"
+  },
+  "assets/textures/terrain2/Foreground_094.png": {
+    "bytes": 57747,
+    "sha256": "5c1154585c74c77b6640358dbcfb862e1ca3038ce9d99e8b018d395a85723ef7"
+  },
+  "assets/textures/terrain2/Foreground_095.png": {
+    "bytes": 51916,
+    "sha256": "a96b01dd2b82b0095788713e7b247a67c19d7f183d9884149fe1ff0d79bca81f"
+  },
+  "assets/textures/terrain2/Foreground_096.png": {
+    "bytes": 50026,
+    "sha256": "0c57d280936a2389e1c7f8545a10fdc02161c2aeee7a84d51183a44af97d9429"
+  },
+  "assets/textures/terrain2/Foreground_097.png": {
+    "bytes": 33151,
+    "sha256": "b8d718a23da2f53032cd37bfb907ffa96000d3d620c1f5ddd283e8ec5e24c85a"
+  },
+  "assets/textures/terrain2/Foreground_098.png": {
+    "bytes": 60798,
+    "sha256": "874dea2a3e0787bf8499553f53ad004875a367c3b2ae1e1d8c7c6ba465aa63cd"
+  },
+  "assets/textures/terrain2/Foreground_099.png": {
+    "bytes": 59372,
+    "sha256": "84e1274a5ab6969a01bb49a716e744fefa5b1a7ee6d24fa22f20120e4c49931a"
+  },
+  "assets/textures/terrain2/Foreground_100.png": {
+    "bytes": 48870,
+    "sha256": "6a7023cb23e6eb56792984cff1bad6918414b4686e3aa909eb577f68d00f24cb"
+  },
+  "assets/textures/terrain2/Texture_002.png": {
+    "bytes": 4992,
+    "sha256": "3e4c81e01ec70441f611cb9b98b085f33c7c1da5aaa23f325fe11aa456da9606"
+  },
+  "assets/textures/terrain2/Texture_004.png": {
+    "bytes": 16358,
+    "sha256": "390189615f0a37bfb969c7756cb41fd5ac0e7f2cabdb20979d04521668168f90"
+  },
+  "assets/textures/terrain2/Texture_010.png": {
+    "bytes": 11802,
+    "sha256": "d5ce87e9534bcaf80176d74b7bbeab9fc67774028d069b0bec1189b032aaff7b"
+  },
+  "assets/textures/terrain2/Texture_011.png": {
+    "bytes": 9131,
+    "sha256": "3f75fced250826c87b195043948e6a8fbdff154f26a3a9e6ce365b3a8fc2b53e"
+  },
+  "assets/textures/terrain2/Texture_014.png": {
+    "bytes": 3658,
+    "sha256": "d67d0f612733b63f49eaf970262bb120fc97af9738c0e2e5c4928a8c25b3c3cb"
+  },
+  "assets/textures/terrain2/Texture_015.png": {
+    "bytes": 3766,
+    "sha256": "09808234703829ec8bd4d1fb2e5fffe548cdb4c0dcfa6619aecd4c0ff14e03d7"
+  },
+  "assets/textures/terrain2/Texture_016.png": {
+    "bytes": 26643,
+    "sha256": "66da8544badf9edf1f355556062238022c324a854c3f67fdfb0218260f6f96b2"
+  },
+  "assets/textures/terrain2/Texture_018.png": {
+    "bytes": 24828,
+    "sha256": "7c6d0619bff4cecf18e9eed6255e0794692cbae691048f7de44b022a8143b77c"
+  },
+  "assets/textures/terrain2/Texture_019.png": {
+    "bytes": 21222,
+    "sha256": "dbec60e683d5f76239d000aa0838efb76fe0972479e2425e2805143f46731f41"
+  },
+  "assets/textures/terrain2/Texture_022.png": {
+    "bytes": 16150,
+    "sha256": "439affc0234a5dcf4a49bf696681be7140bb192f277091d0382a4defae52e346"
+  },
+  "assets/textures/terrain2/Texture_023.png": {
+    "bytes": 15183,
+    "sha256": "508dede3753319d35c41f9d70609459cf223818c4aa209139f82a865a37d32e8"
+  },
+  "assets/textures/terrain2/Texture_024.png": {
+    "bytes": 388776,
+    "sha256": "8e333c73c96ec899b4d263855fbd73b37151e4bd466fde0adaa504c247a417df"
+  },
+  "assets/textures/terrain2/Texture_025.png": {
+    "bytes": 136962,
+    "sha256": "9e3e2c334d6b56bf42af5d9e51c1918d50351fefb873e539b570bd594b14f611"
+  },
+  "assets/textures/terrain2/Texture_026.png": {
+    "bytes": 108252,
+    "sha256": "0e1fed698ef2f4c68108374f001b4944927cf1130f7dfd18cc683ed7defa4440"
+  },
+  "assets/textures/terrain2/Texture_027.png": {
+    "bytes": 56721,
+    "sha256": "dd2d697c6acf8c04d02af56180042eab74e63bd3891978beddc4bc6ca015184f"
+  },
+  "assets/textures/terrain2/Texture_028.png": {
+    "bytes": 40963,
+    "sha256": "1a8f43657c376216b252651ca89c6e2088ac3bef28b311b675ab9de85d6299f7"
+  },
+  "assets/textures/terrain2/Texture_029.png": {
+    "bytes": 11553,
+    "sha256": "2307eaebb2dd38671b5f45601661e10dd1f3e4f44432fdc0d4c08a5e76efb49d"
+  },
+  "assets/textures/terrain2/Texture_030.png": {
+    "bytes": 11454,
+    "sha256": "34accab4f7d864ad1f3c8867443820074fe20f4bc5dde98950cc45dfd011ab4c"
+  },
+  "assets/textures/terrain2/Texture_031.png": {
+    "bytes": 8887,
+    "sha256": "5e4cac61882d047fc16420d0a7d8fa25797c020a36ea032cff37540bdb23aab5"
+  },
+  "assets/textures/terrain2/Texture_032.png": {
+    "bytes": 4826,
+    "sha256": "4bbb13480d72643b7b04d898464a283d52fa45fe9340e25d725ca36f6dec618c"
+  },
+  "assets/textures/terrain2/Texture_033.png": {
+    "bytes": 3941,
+    "sha256": "29a68cf8f242323119d6e811d450b33da2c61f6f93364a88b0bec022a92a7c5e"
+  },
+  "assets/textures/terrain2/Texture_034.png": {
+    "bytes": 6191,
+    "sha256": "8346e761ea4920aea5e914d7f6b52d7ab1ab28ed323a47d06dc97ec7f0d58317"
+  },
+  "assets/textures/terrain2/Texture_035.png": {
+    "bytes": 6696,
+    "sha256": "f81dd248792c4263ac7083ccac5642fa3b7e9db3ff07753525c905d0ae46815a"
+  },
+  "assets/textures/terrain2/Texture_036.png": {
+    "bytes": 6339,
+    "sha256": "4f8f61e0aa8b4de7392131a1ee40fedf932b75e7e5dc09882af97a1690d471f5"
+  },
+  "assets/textures/terrain2/Texture_037.png": {
+    "bytes": 4092,
+    "sha256": "d15227b0ef57f6fa13349a51b2d4e391cf70750cca0bb08f17bb3d94c1853801"
+  },
+  "assets/textures/terrain2/Texture_040.png": {
+    "bytes": 517599,
+    "sha256": "636293858b8f1670b75f74e9d50e56e52fbac7c689178121888bd181f5b2f7c6"
+  },
+  "assets/textures/terrain2/Texture_041.png": {
+    "bytes": 177866,
+    "sha256": "a9258ca7e4e5b492c6bcf2773042fb0b67a36ee96cb548c0af0e83c4eb407dd0"
+  },
+  "assets/textures/terrain2/Texture_042.png": {
+    "bytes": 136249,
+    "sha256": "77bb6b82da613f2c7b96f603bea9193548dab331ae6b47a9898703d0b13b0409"
+  },
+  "assets/textures/terrain2/Texture_043.png": {
+    "bytes": 73732,
+    "sha256": "dfda3d3ed3111924b02129671a5da948e2b4a1d4f760ee163fc7c902b4586b85"
+  },
+  "assets/textures/terrain2/Texture_044.png": {
+    "bytes": 51827,
+    "sha256": "a7dffa4bdb26406605d87b6baf6e0d70a3462564f89f46d72f20759a4354c192"
+  },
+  "assets/textures/terrain2/Texture_045.png": {
+    "bytes": 14061,
+    "sha256": "8eacd12d580f04c8e1ea6f1fc24c2c132484f040ba9a65fa0f2e2ac67186f9f0"
+  },
+  "assets/textures/terrain2/Texture_046.png": {
+    "bytes": 12820,
+    "sha256": "0fa5b0726f5e4fe3aaa7dea1bb44eeeee07715ecf22e1e1b8c7ee6d8f804fba5"
+  },
+  "assets/textures/terrain2/Texture_047.png": {
+    "bytes": 10470,
+    "sha256": "806ba1cba2fde673413cae1efa037e83767648d0135a072d53a1eedab5c1190b"
+  },
+  "assets/textures/terrain2/Texture_048.png": {
+    "bytes": 5033,
+    "sha256": "b6a33804466fe594d1ee5fc242086c4cff0eec5fba68d58ef60aacf9f0ca06f1"
+  },
+  "assets/textures/terrain2/Texture_049.png": {
+    "bytes": 4780,
+    "sha256": "3915f7d94ad725c6554cc9bf1e00a03c19df4064414bc40ebdca5d791f32fe27"
+  },
+  "assets/textures/terrain2/Texture_050.png": {
+    "bytes": 6984,
+    "sha256": "dadd23fe964c22f894c7344a077e00334a5ebc03e9d73bad1617fcb9310d41f6"
+  },
+  "assets/textures/terrain2/Texture_051.png": {
+    "bytes": 6441,
+    "sha256": "f34ea532a4c5c29c6ce6e7aa2e98190ef7edd97b7ea29f57a72f91c30201f9c7"
+  },
+  "assets/textures/terrain2/Texture_052.png": {
+    "bytes": 6629,
+    "sha256": "da349a3fd0b2544859cae2bbda6141a5dd6d289c5463d773079c822f513248e8"
+  },
+  "assets/textures/terrain2/Texture_053.png": {
+    "bytes": 3652,
+    "sha256": "22e618e05dcfe81b56c1e8f067c71dd3639eccac1b19b61da3c1c1b2a25ca119"
+  },
+  "assets/textures/terrain2/Texture_054.png": {
+    "bytes": 991,
+    "sha256": "6c184d9a50fcd6d0256292596f87393bf9f242b78d7391bb30d1d67c1534c78b"
+  },
+  "assets/textures/terrain2/Texture_055.png": {
+    "bytes": 1807,
+    "sha256": "8e44c3990c94986cf0940fb6d09e2742f5b7d7184f24f56e9b3a3a303ffd228c"
+  },
+  "assets/textures/terrain2/Texture_056.png": {
+    "bytes": 262795,
+    "sha256": "dd02f6d505a85b77444094480fe9b956c0d90e0e1c9cbcf6231f0c46e80b2450"
+  },
+  "assets/textures/terrain2/Texture_057.png": {
+    "bytes": 267150,
+    "sha256": "d407738258a72b3ae0959a84f513d6ca4717cd9339e5a0943f7f17a276b9198c"
+  },
+  "assets/textures/terrain2/Texture_058.png": {
+    "bytes": 178146,
+    "sha256": "4cde9af3ecfb154b19a50f7c09aabcd6c0418beb1d83a41badbc2d178d3fd051"
+  },
+  "assets/textures/terrain2/Texture_059.png": {
+    "bytes": 203151,
+    "sha256": "4d97a879265fcb9d94c080e1841d1adcf70033c9979b4722323898bd788eff6e"
+  },
+  "assets/textures/terrain2/Texture_060.png": {
+    "bytes": 145779,
+    "sha256": "e620ee051ae64cee9d6909035f03510790e276dbc5ed71cdc0de6352a2c115e5"
+  },
+  "assets/textures/terrain2/Texture_061.png": {
+    "bytes": 32106,
+    "sha256": "d995d74120c4d59d032237ba315b4cace53d365581fab5993275e98767223d11"
+  },
+  "assets/textures/terrain2/Texture_062.png": {
+    "bytes": 36315,
+    "sha256": "23f71a15b16a27b83a1ff4796f785650c175cb9f8d3551dc05c27a9f57b54d40"
+  },
+  "assets/textures/terrain2/Texture_063.png": {
+    "bytes": 46490,
+    "sha256": "79820ccd255bd5054fcf3654e361f46a67d9dd48a03edf0eb9f48e5eb304e8ca"
+  },
+  "assets/textures/terrain2/Texture_064.png": {
+    "bytes": 43526,
+    "sha256": "978d25e335d716ac44c43b92e1f4814c11c0936503cf930b21050920deddab41"
+  },
+  "assets/textures/terrain2/Texture_065.png": {
+    "bytes": 40846,
+    "sha256": "b29c179fa34353acbda85781f4b44356e96a2ae6773f0badad4e99862186ceb7"
+  },
+  "assets/textures/terrain2/Texture_066.png": {
+    "bytes": 35953,
+    "sha256": "b2703f74db3221c90d5a7b0263de1153a90e8e97df01a1834d4c6e830b78ffb1"
+  },
+  "assets/textures/terrain2/Texture_067.png": {
+    "bytes": 33450,
+    "sha256": "34851f14c308316a7ea2967ce7c88d812c8464f269f4496acd492ff4adb077f8"
+  },
+  "assets/textures/terrain2/Texture_068.png": {
+    "bytes": 21821,
+    "sha256": "62d5f11db9242aa2c02378685ed2bc67414c68b26dba6a72e024e654fb23d38d"
+  },
+  "assets/textures/terrain2/Texture_069.png": {
+    "bytes": 42888,
+    "sha256": "0c3504e2aa58121844839c5821435b285e9d78cf41837a1224e456fb11e5fe66"
+  },
+  "assets/textures/terrain2/Texture_070.png": {
+    "bytes": 42138,
+    "sha256": "cdf4b32ae92ff1ef876ff37986fe96bdc18ac4dcbef2a1d9a1b79d032d5e781e"
+  },
+  "assets/textures/terrain2/Texture_071.png": {
+    "bytes": 31939,
+    "sha256": "05fa4d9a082efeb11990757c791bdba4aa696eda8240c5cb8a6ecffa0b5b21a0"
+  },
+  "assets/textures/terrain2/Texture_072.png": {
+    "bytes": 327176,
+    "sha256": "bc2feb7111bb0a43823880f858e59a19b01c2206689c9ba80f30369a0621f030"
+  },
+  "assets/textures/terrain2/Texture_073.png": {
+    "bytes": 329957,
+    "sha256": "8d329839bc6d08ae66d87bdd5375a5ad02578e82ec83da37d2bc41ea2b382e2e"
+  },
+  "assets/textures/terrain2/Texture_074.png": {
+    "bytes": 224479,
+    "sha256": "9533f89f920815c93efa1bf273f6e9128daffceaa5371f38ea0a5faea4db21cc"
+  },
+  "assets/textures/terrain2/Texture_075.png": {
+    "bytes": 261248,
+    "sha256": "9409263a7dd94616aeb561e2024e603705277ec81c1bf956a65e9643f676dd63"
+  },
+  "assets/textures/terrain2/Texture_077.png": {
+    "bytes": 38082,
+    "sha256": "c3cdfa91f8e6e6aa13a0ebcd2672e9c9c1a7aa255151eb5c356b4fde82e1c7ba"
+  },
+  "assets/textures/terrain2/Texture_078.png": {
+    "bytes": 40588,
+    "sha256": "5ca340af62b7e1eedfe34c6aaac3d0ce111b8bd41197d454521513456099cc99"
+  },
+  "assets/textures/terrain2/Texture_080.png": {
+    "bytes": 48439,
+    "sha256": "5403802253eab94612a23d3c6e82ea0ad594cf90f9b94f4ce7bc8aa014812118"
+  },
+  "assets/textures/terrain2/Texture_083.png": {
+    "bytes": 39052,
+    "sha256": "b3e7fc04b750ee0107949c840bc6acbb30ef36e4889b8329e92e5445fa166a67"
+  },
+  "assets/textures/terrain2/Texture_084.png": {
+    "bytes": 24246,
+    "sha256": "08548beaba9e5683001e9a57e44a65bd4f12ac796877e110ac0a920b2718a924"
+  },
+  "assets/textures/terrain2/Texture_087.png": {
+    "bytes": 37530,
+    "sha256": "c4bcbd11634df0f30a117876acc56b74a6f00f7b75006cb65cf513474d8b93f3"
+  },
+  "assets/textures/terrain2/Texture_088.png": {
+    "bytes": 302696,
+    "sha256": "7f8c76841a3967cbdf3835a29677e1e45f1145ae5afde02755e837bca976a8e3"
+  },
+  "assets/textures/terrain2/Texture_089.png": {
+    "bytes": 220288,
+    "sha256": "fb3daa1dbaa0a2bdbb18a154a218897a7efc3676900a76c8cb47857f8d982430"
+  },
+  "assets/textures/terrain2/Texture_090.png": {
+    "bytes": 48152,
+    "sha256": "2bc700c46d6e8f03f5c00a1b5f5f6027c75c4e0408ee70fe09e4e14f91eb86e2"
+  },
+  "assets/textures/terrain2/Texture_091.png": {
+    "bytes": 53462,
+    "sha256": "afd259c128330b4d62dd7883c18352e7b8da2cc804d5086f7d366e9391699656"
+  },
+  "assets/textures/terrain2/Texture_092.png": {
+    "bytes": 65973,
+    "sha256": "7b436c165abfcebfd218606812a0c6e97a34a49f1a4afd75c3233e77fe19c850"
+  },
+  "assets/textures/terrain2/Texture_093.png": {
+    "bytes": 62582,
+    "sha256": "53b2481172341d25fff10584c2c256f514f3d63fd06e5f5914885dd9e1430a73"
+  },
+  "assets/textures/terrain2/Texture_094.png": {
+    "bytes": 57747,
+    "sha256": "5c1154585c74c77b6640358dbcfb862e1ca3038ce9d99e8b018d395a85723ef7"
+  },
+  "assets/textures/terrain2/Texture_095.png": {
+    "bytes": 51916,
+    "sha256": "a96b01dd2b82b0095788713e7b247a67c19d7f183d9884149fe1ff0d79bca81f"
+  },
+  "assets/textures/terrain2/Texture_096.png": {
+    "bytes": 50026,
+    "sha256": "0c57d280936a2389e1c7f8545a10fdc02161c2aeee7a84d51183a44af97d9429"
+  },
+  "assets/textures/terrain2/Texture_097.png": {
+    "bytes": 33151,
+    "sha256": "b8d718a23da2f53032cd37bfb907ffa96000d3d620c1f5ddd283e8ec5e24c85a"
+  },
+  "assets/textures/terrain3/Foreground_001.png": {
+    "bytes": 5742,
+    "sha256": "b2649e3501642a9566db6f6b3eeeb9dffd6dd95d0b51d4bf7a04e7531bfee47a"
+  },
+  "assets/textures/terrain3/Foreground_002.png": {
+    "bytes": 5235,
+    "sha256": "b0093a368df877e415bfd84d8adc3c3f57ece8603f98aa11c5e6afdd311fea83"
+  },
+  "assets/textures/terrain3/Foreground_003.png": {
+    "bytes": 11120,
+    "sha256": "a96ab74c15da2f4fab2b5a22925cee085fed40f71193d548db736105058a8f97"
+  },
+  "assets/textures/terrain3/Foreground_004.png": {
+    "bytes": 16219,
+    "sha256": "98673e96de1bd6745a37dbcfd0d8f96d89c82e84211328b32d75e71ab5cb2a76"
+  },
+  "assets/textures/terrain3/Foreground_008.png": {
+    "bytes": 24705,
+    "sha256": "9210f4450f056b26484692fcd2d87206129b5a5a4f0f0800bd871ecaf7f39559"
+  },
+  "assets/textures/terrain3/Foreground_009.png": {
+    "bytes": 14807,
+    "sha256": "687a6f214147b10695f924cc226c613a1d3c3482ce8fef23fd196111251a39cd"
+  },
+  "assets/textures/terrain3/Foreground_010.png": {
+    "bytes": 11892,
+    "sha256": "c55bc4a6571141196f50fdbb71a29ee4ce0a05b0b862f6f79fe354e9dfd6bde5"
+  },
+  "assets/textures/terrain3/Foreground_011.png": {
+    "bytes": 9320,
+    "sha256": "546ef183792b3b12cb7ed81a74b5e610c1e678b1c40d16cb02fa6544f830e5d9"
+  },
+  "assets/textures/terrain3/Foreground_012.png": {
+    "bytes": 3736,
+    "sha256": "9a3fb744ba85a1b0e31dab827297eb2c49d215894f25fbe9d9004a0d6d79bd37"
+  },
+  "assets/textures/terrain3/Foreground_013.png": {
+    "bytes": 3313,
+    "sha256": "8a8a54eae5b4e5fae548ebe7580960b4a171c9e341b083b5ed2801b268c9b8f5"
+  },
+  "assets/textures/terrain3/Foreground_014.png": {
+    "bytes": 3178,
+    "sha256": "71e66b2b25ceca06993c99345080ad1aac7cdf374e917b9ef423139fd0eed914"
+  },
+  "assets/textures/terrain3/Foreground_015.png": {
+    "bytes": 3746,
+    "sha256": "923cf7a5eb39a4b70756cee529d0eb7f09ccc40335d4dc3682bf6ba8391b75c3"
+  },
+  "assets/textures/terrain3/Foreground_016.png": {
+    "bytes": 26433,
+    "sha256": "8c91f2f2c157503fb2b20a3a89169467abc0e9d068e52268d64f5b7e4db8fc72"
+  },
+  "assets/textures/terrain3/Foreground_017.png": {
+    "bytes": 25654,
+    "sha256": "d7d60bdab7a8c92dc76d8af11cd97a72fa877c54519f082a5c20bddfce7a37e0"
+  },
+  "assets/textures/terrain3/Foreground_018.png": {
+    "bytes": 24628,
+    "sha256": "4b56a46670ecaf1cceee9e3f61093266f5c6c608569a7d41bd9d3400b87aea21"
+  },
+  "assets/textures/terrain3/Foreground_019.png": {
+    "bytes": 21521,
+    "sha256": "205d77a905a448df9b95ad9e598f59e8002b15bf37deeb0651f9fff41b667bb1"
+  },
+  "assets/textures/terrain3/Foreground_020.png": {
+    "bytes": 32597,
+    "sha256": "dee6c7799a2ce42f313a7f99008a8eacb93e231141bbdbcdc54372efe26b18d1"
+  },
+  "assets/textures/terrain3/Foreground_021.png": {
+    "bytes": 28769,
+    "sha256": "692afc96283b63845035b00c429e67715d5c96d0c00fb552790bf6942d812e66"
+  },
+  "assets/textures/terrain3/Foreground_022.png": {
+    "bytes": 16219,
+    "sha256": "dbaa47cfe7306be0c0c124c7f0f4d3ea737375bfcefe2dc26f8f3a4e6144d585"
+  },
+  "assets/textures/terrain3/Foreground_023.png": {
+    "bytes": 15157,
+    "sha256": "1989ce07face5db13dd4232d5c849dd5665306d0fd6f3662376480b3fa2839ba"
+  },
+  "assets/textures/terrain3/Foreground_072.png": {
+    "bytes": 271571,
+    "sha256": "dbb02ae2b5e30bb0a4942cd01fcd457ec9078e2edaf0fd0696aff0ff8284085e"
+  },
+  "assets/textures/terrain3/Foreground_073.png": {
+    "bytes": 274159,
+    "sha256": "b767602ed2fd1c397de0854b4c9c1d035791e08da9584db15d0520fa667b410e"
+  },
+  "assets/textures/terrain3/Foreground_074.png": {
+    "bytes": 186449,
+    "sha256": "32abf164ad650f08ea32748a8393172df1a77b6f641cff661f4b75815e7df780"
+  },
+  "assets/textures/terrain3/Foreground_075.png": {
+    "bytes": 215386,
+    "sha256": "0a70134095ecfa27f071e7f5373f0324f493a73aaa16fa72296454f7ae5fde91"
+  },
+  "assets/textures/terrain3/Foreground_076.png": {
+    "bytes": 153803,
+    "sha256": "ebf137671ce1eb30f27e0bd18232eadb5ca5dd03f8cec8f42b513ee8458ed404"
+  },
+  "assets/textures/terrain3/Foreground_077.png": {
+    "bytes": 31897,
+    "sha256": "e97c821626c1bdf193a5919319af166ecbfd4fad94e855fa6a306771bbf2485a"
+  },
+  "assets/textures/terrain3/Foreground_078.png": {
+    "bytes": 35282,
+    "sha256": "7dd4c20a4bf2ce563b6091a548325f81af62f1333582e037cfc800940fc35e7f"
+  },
+  "assets/textures/terrain3/Foreground_079.png": {
+    "bytes": 44221,
+    "sha256": "984d3485935133cab94548f2655608f03440bdf1b497ca215cd763cd9b52e529"
+  },
+  "assets/textures/terrain3/Foreground_080.png": {
+    "bytes": 42383,
+    "sha256": "9d91fb9bd054e772770c8009d81d0588683ce8835e2f6db353813673a939c802"
+  },
+  "assets/textures/terrain3/Foreground_081.png": {
+    "bytes": 39216,
+    "sha256": "209f0b0ac96d81e10be13f9470f711c8286a7045fcf053e21b8efa9974c474eb"
+  },
+  "assets/textures/terrain3/Foreground_082.png": {
+    "bytes": 34691,
+    "sha256": "a27f7195ec62b96615ca48a4a4927ab8dee02e3faad57ec60acca7195eaf7e7c"
+  },
+  "assets/textures/terrain3/Foreground_083.png": {
+    "bytes": 32929,
+    "sha256": "172fddf53472346e1af67ea36a9d7519b273e85807259a6787b5b0d551804604"
+  },
+  "assets/textures/terrain3/Foreground_084.png": {
+    "bytes": 21146,
+    "sha256": "4e56635300a3d25e43cd5db45e0758c530aa9a61e944050dd64be99782cd66ce"
+  },
+  "assets/textures/terrain3/Foreground_085.png": {
+    "bytes": 40227,
+    "sha256": "0f5ec10dbd2092d6b47d43ae185020722b0642cf0143f303d07e1e75cb3b675a"
+  },
+  "assets/textures/terrain3/Foreground_086.png": {
+    "bytes": 39759,
+    "sha256": "e389b1c7335df14a8beb3199529a3a175822977b562cd97314c49d90f99cbd49"
+  },
+  "assets/textures/terrain3/Foreground_087.png": {
+    "bytes": 31840,
+    "sha256": "3dca25eca681c0365713c9532d1323f175603fdd7b4a3e8b82b1ec14d3c90e6c"
+  },
+  "assets/textures/terrain3/Foreground_088.png": {
+    "bytes": 254011,
+    "sha256": "b48c0d0a8d5af39fb803e4327cfe3a82a7114a92063158378609a128c688460e"
+  },
+  "assets/textures/terrain3/Foreground_089.png": {
+    "bytes": 186303,
+    "sha256": "c45b41f02d5a8f0fc46b6ca6e667ad96cffa0c4dfc44c88f85c5395e014821aa"
+  },
+  "assets/textures/terrain3/Foreground_090.png": {
+    "bytes": 41521,
+    "sha256": "8171e8ed343a4f5be422186811bd7f6d198a4efc330d151c0843c9223bba1951"
+  },
+  "assets/textures/terrain3/Foreground_091.png": {
+    "bytes": 46228,
+    "sha256": "c8b8e13dd73ed3042027b714d3c44078b077ab5d599230e9345e2d350dd95f9d"
+  },
+  "assets/textures/terrain3/Foreground_092.png": {
+    "bytes": 58231,
+    "sha256": "fde058b8aef4a18300c106e5952bb90dc39500b738aef567a9ad5f155aa4472b"
+  },
+  "assets/textures/terrain3/Foreground_093.png": {
+    "bytes": 55161,
+    "sha256": "f012b0bb35ca089dfc36ec984221460246c05aa8203f52944fec497b537d2150"
+  },
+  "assets/textures/terrain3/Foreground_094.png": {
+    "bytes": 50522,
+    "sha256": "490249f17eeff62a6ec241b5c426921d6a7280b63adb5a01e65047a11c1e265a"
+  },
+  "assets/textures/terrain3/Foreground_095.png": {
+    "bytes": 45705,
+    "sha256": "b8f780161318c93ba22972b044c40561653c0850f40b0be8577e25f1dd0656cd"
+  },
+  "assets/textures/terrain3/Foreground_096.png": {
+    "bytes": 43159,
+    "sha256": "d54d9dedcb92555669b2555334727411fc42f0be4a98227222404242653b4973"
+  },
+  "assets/textures/terrain3/Foreground_097.png": {
+    "bytes": 29370,
+    "sha256": "d4b3aaf2d90239fcf792e4c097f8719577882461cff97f54a55ff285b08c23fd"
+  },
+  "assets/textures/terrain3/Foreground_098.png": {
+    "bytes": 53331,
+    "sha256": "7782e449507ed82c35877291b092142521a0c9434f82f4e1c94f203997d3caf9"
+  },
+  "assets/textures/terrain3/Foreground_099.png": {
+    "bytes": 52768,
+    "sha256": "58e62bc9c954c0216e1704d51b6f9a1d2ec4eb19aff4975bfcbbe768e3947565"
+  },
+  "assets/textures/terrain3/Foreground_100.png": {
+    "bytes": 42199,
+    "sha256": "a55f76e942447371b3e587983d738283aabefd7aec5a5b121e3553334fc27bff"
+  },
+  "assets/textures/terrain3/Texture_022.png": {
+    "bytes": 16219,
+    "sha256": "dbaa47cfe7306be0c0c124c7f0f4d3ea737375bfcefe2dc26f8f3a4e6144d585"
+  },
+  "assets/textures/terrain3/Texture_024.png": {
+    "bytes": 403405,
+    "sha256": "fa968fe3c82754f83cbc35284dc4d37d6b05a7297423afb1d96cd55019dd85ff"
+  },
+  "assets/textures/terrain3/Texture_025.png": {
+    "bytes": 141908,
+    "sha256": "6b51a14779ed225911d38b4371407702a1939500c7e8ad35c1fb8ed3a5ee26e2"
+  },
+  "assets/textures/terrain3/Texture_026.png": {
+    "bytes": 111990,
+    "sha256": "cb186fc9dc26a6c9d8a6760664c0521b30c47478aa54b3cfdc66f3d46fa1ebd5"
+  },
+  "assets/textures/terrain3/Texture_027.png": {
+    "bytes": 59415,
+    "sha256": "ca1d1bbef52418aadeb6a61ed19c41da04401c61fe0b65f217d6c8994acf31c0"
+  },
+  "assets/textures/terrain3/Texture_028.png": {
+    "bytes": 42249,
+    "sha256": "158f68cb6201f698151bfd271f90c68d2f373caf4b9193ac956c76d3c477281e"
+  },
+  "assets/textures/terrain3/Texture_029.png": {
+    "bytes": 12480,
+    "sha256": "c367e7e337a38a05be3b02ebb7d7165b67cdb839ac19f2cd5ff7f88de0386016"
+  },
+  "assets/textures/terrain3/Texture_030.png": {
+    "bytes": 11616,
+    "sha256": "326c49287df544a6b98c896f1ae7a6fcc716a3525631ff5d2105411557bec072"
+  },
+  "assets/textures/terrain3/Texture_031.png": {
+    "bytes": 9003,
+    "sha256": "7fd1f3a216b21c1fc21788a2e4489adbeddcfc86c2a5f903257d7a231cb49a58"
+  },
+  "assets/textures/terrain3/Texture_032.png": {
+    "bytes": 4917,
+    "sha256": "6f4f9fa7cd6f0196da43844bcf53da63af965c7d83c3ee9a6cb033d9aece71c6"
+  },
+  "assets/textures/terrain3/Texture_033.png": {
+    "bytes": 4060,
+    "sha256": "b677d242e2e777061df93000e7725f8a07bef865fcdec7a35f6194f9ed9876b5"
+  },
+  "assets/textures/terrain3/Texture_034.png": {
+    "bytes": 6294,
+    "sha256": "55399614b0755a9b657c5a550e339c02cc0680c63b3e601d2e91ff38699def0c"
+  },
+  "assets/textures/terrain3/Texture_035.png": {
+    "bytes": 6623,
+    "sha256": "479febb89135148a31c2c58f764d9eb11464dd3c0e1c0cfc2a784cb0aeae8987"
+  },
+  "assets/textures/terrain3/Texture_036.png": {
+    "bytes": 6505,
+    "sha256": "a95ce4405a168ce9c5c2e32f09d475918e62231d519a77a4c54e85ae614c9c87"
+  },
+  "assets/textures/terrain3/Texture_037.png": {
+    "bytes": 4202,
+    "sha256": "04314902c8a33ed3759fc138ff05b71cd6feb1b8dfbcbf05456ead2b9c250058"
+  },
+  "assets/textures/terrain3/Texture_040.png": {
+    "bytes": 517929,
+    "sha256": "c95a7e08cf37d4956977791a3c32c0ad9527086139af18d2f424eaeb5a687562"
+  },
+  "assets/textures/terrain3/Texture_041.png": {
+    "bytes": 178039,
+    "sha256": "0147f184f0f79bc6bdd31a97d155300f01c3b319845203af9707c74ea65b9c06"
+  },
+  "assets/textures/terrain3/Texture_042.png": {
+    "bytes": 136346,
+    "sha256": "edb204b11839f5d2d9bf67bf82b147207002415168fddeb3d9790f68ab8975c0"
+  },
+  "assets/textures/terrain3/Texture_043.png": {
+    "bytes": 74153,
+    "sha256": "e12274f380763780dad54e5e25c649ecdd188953316c5714b78b539aa1ec0436"
+  },
+  "assets/textures/terrain3/Texture_044.png": {
+    "bytes": 51396,
+    "sha256": "ba5773f79231373b1d68cf4d294b6affb067f04feeee8b1ada0739347cfdbc17"
+  },
+  "assets/textures/terrain3/Texture_045.png": {
+    "bytes": 13961,
+    "sha256": "0a21c84458254100ca799b2cc5ec0eaf7d4f5f92ba5d51489afd607dec419386"
+  },
+  "assets/textures/terrain3/Texture_046.png": {
+    "bytes": 13149,
+    "sha256": "2a402858b38f525e03c1f1a42f0da3b4c241a6e87b4ebc35d7e826b671c9eb89"
+  },
+  "assets/textures/terrain3/Texture_047.png": {
+    "bytes": 10589,
+    "sha256": "11d491d7490de855e2702ee24e9d9f9ab6af5f4cfb7c5599ecb35f61cbfb142f"
+  },
+  "assets/textures/terrain3/Texture_048.png": {
+    "bytes": 4975,
+    "sha256": "d4708591482c75e4f7948f0936cab3cac6da07bc9e05b2487d1b6ccdd53ea6d4"
+  },
+  "assets/textures/terrain3/Texture_049.png": {
+    "bytes": 4766,
+    "sha256": "6f244d29a3624181570599cf4117b2dfd44f2d1d2d9535207f4d9194aa489ae1"
+  },
+  "assets/textures/terrain3/Texture_050.png": {
+    "bytes": 6880,
+    "sha256": "9024a768da31fd15217082916882b3787023402383f6f1d7dc37925203e4e191"
+  },
+  "assets/textures/terrain3/Texture_051.png": {
+    "bytes": 6163,
+    "sha256": "f9ba9de3d1ccb1b6bdb12383af634e1315a202d9e1c0810953c358cfc92b3038"
+  },
+  "assets/textures/terrain3/Texture_052.png": {
+    "bytes": 6669,
+    "sha256": "2161ff880f41987735ed33e6d1a8bce32794f5423162ca4254d67c6cf3f98696"
+  },
+  "assets/textures/terrain3/Texture_053.png": {
+    "bytes": 3583,
+    "sha256": "a9e425b35465f510c7f9aefc144dec58e30024f0c04b7a0c8001a51b967d05cd"
+  },
+  "assets/textures/terrain3/Texture_054.png": {
+    "bytes": 969,
+    "sha256": "757f2383330127bc81ced75fc53df3cff17df50769c08097dc88504c9bb739fc"
+  },
+  "assets/textures/terrain3/Texture_055.png": {
+    "bytes": 1817,
+    "sha256": "14582d57f738741b6db14491e1cf7e18e645001cd6d55e9c5d3e7c20bffc5090"
+  },
+  "assets/textures/terrain3/Texture_056.png": {
+    "bytes": 260040,
+    "sha256": "5911dac90c806fdf0bd5f9f4846637f703183cea7a118752bb83a36ee7ea0405"
+  },
+  "assets/textures/terrain3/Texture_058.png": {
+    "bytes": 176350,
+    "sha256": "9ec1045936065ffb652e6a4f0464d0d54e6712e133d179b32c9c739e27ce780b"
+  },
+  "assets/textures/terrain3/Texture_059.png": {
+    "bytes": 201375,
+    "sha256": "1b6487d7edeef1fded734520cee8708eefd87794d621957ea7292d88fe5becc6"
+  },
+  "assets/textures/terrain3/Texture_060.png": {
+    "bytes": 145167,
+    "sha256": "8c92f8901b241c4246af92dfff1e6592b53d57dcfaccd5e17268a7f41ff4b468"
+  },
+  "assets/textures/terrain3/Texture_061.png": {
+    "bytes": 31872,
+    "sha256": "ee8218449c4f531f4ee76a1c45102dba7052b576299da4ed239f31a621ea33a1"
+  },
+  "assets/textures/terrain3/Texture_062.png": {
+    "bytes": 36220,
+    "sha256": "2d4e59423d44d0769c81202513e5c96e860f0eca20cb13dbac99d4e5c0f694fa"
+  },
+  "assets/textures/terrain3/Texture_063.png": {
+    "bytes": 46087,
+    "sha256": "de95582e142f4e6e167a8400e9375a729fe829335e48f5247ed575e4e3bbaa5d"
+  },
+  "assets/textures/terrain3/Texture_064.png": {
+    "bytes": 43341,
+    "sha256": "7f08c026ebd33e5ddc3424f203195378304212cc54514a2a0e9aaafc33e163a1"
+  },
+  "assets/textures/terrain3/Texture_065.png": {
+    "bytes": 40972,
+    "sha256": "69b1375ef90f570c2a0ca5e59377f9535a169459ef3509d904453fec10340574"
+  },
+  "assets/textures/terrain3/Texture_066.png": {
+    "bytes": 35750,
+    "sha256": "d3c8660f83cef2d5c533e1f2b91f142cfc03d7f64bebffc925421d0a5b305d45"
+  },
+  "assets/textures/terrain3/Texture_067.png": {
+    "bytes": 33231,
+    "sha256": "a5a5672f1e9dd28b46b0454734c5f65c27d87751f16e8464601c8b75e2cc1cb9"
+  },
+  "assets/textures/terrain3/Texture_068.png": {
+    "bytes": 21731,
+    "sha256": "b50eba3c598be1698c1ba1220e32c6957be98424961619957b358e22585cd172"
+  },
+  "assets/textures/terrain3/Texture_069.png": {
+    "bytes": 42701,
+    "sha256": "33d2957c318d120819ee0eb6fb623814add4f817de3d2078ada411cbc0d01ebd"
+  },
+  "assets/textures/terrain3/Texture_071.png": {
+    "bytes": 31830,
+    "sha256": "a55526de84c57632a267e49068facc0fa324c9593f6379add5d78de0b2833cd2"
+  },
+  "assets/textures/terrain3/Texture_072.png": {
+    "bytes": 271571,
+    "sha256": "dbb02ae2b5e30bb0a4942cd01fcd457ec9078e2edaf0fd0696aff0ff8284085e"
+  },
+  "assets/textures/terrain3/Texture_073.png": {
+    "bytes": 274159,
+    "sha256": "b767602ed2fd1c397de0854b4c9c1d035791e08da9584db15d0520fa667b410e"
+  },
+  "assets/textures/terrain3/Texture_074.png": {
+    "bytes": 186449,
+    "sha256": "32abf164ad650f08ea32748a8393172df1a77b6f641cff661f4b75815e7df780"
+  },
+  "assets/textures/terrain3/Texture_075.png": {
+    "bytes": 215386,
+    "sha256": "0a70134095ecfa27f071e7f5373f0324f493a73aaa16fa72296454f7ae5fde91"
+  },
+  "assets/textures/terrain3/Texture_077.png": {
+    "bytes": 31897,
+    "sha256": "e97c821626c1bdf193a5919319af166ecbfd4fad94e855fa6a306771bbf2485a"
+  },
+  "assets/textures/terrain3/Texture_078.png": {
+    "bytes": 35282,
+    "sha256": "7dd4c20a4bf2ce563b6091a548325f81af62f1333582e037cfc800940fc35e7f"
+  },
+  "assets/textures/terrain3/Texture_079.png": {
+    "bytes": 44221,
+    "sha256": "984d3485935133cab94548f2655608f03440bdf1b497ca215cd763cd9b52e529"
+  },
+  "assets/textures/terrain3/Texture_082.png": {
+    "bytes": 34691,
+    "sha256": "a27f7195ec62b96615ca48a4a4927ab8dee02e3faad57ec60acca7195eaf7e7c"
+  },
+  "assets/textures/terrain3/Texture_083.png": {
+    "bytes": 32929,
+    "sha256": "172fddf53472346e1af67ea36a9d7519b273e85807259a6787b5b0d551804604"
+  },
+  "assets/textures/terrain3/Texture_084.png": {
+    "bytes": 21146,
+    "sha256": "4e56635300a3d25e43cd5db45e0758c530aa9a61e944050dd64be99782cd66ce"
+  },
+  "assets/textures/terrain3/Texture_087.png": {
+    "bytes": 31840,
+    "sha256": "3dca25eca681c0365713c9532d1323f175603fdd7b4a3e8b82b1ec14d3c90e6c"
+  },
+  "assets/textures/terrain3/Texture_088.png": {
+    "bytes": 254011,
+    "sha256": "b48c0d0a8d5af39fb803e4327cfe3a82a7114a92063158378609a128c688460e"
+  },
+  "assets/textures/terrain3/Texture_089.png": {
+    "bytes": 186303,
+    "sha256": "c45b41f02d5a8f0fc46b6ca6e667ad96cffa0c4dfc44c88f85c5395e014821aa"
+  },
+  "assets/textures/terrain3/Texture_090.png": {
+    "bytes": 41521,
+    "sha256": "8171e8ed343a4f5be422186811bd7f6d198a4efc330d151c0843c9223bba1951"
+  },
+  "assets/textures/terrain3/Texture_091.png": {
+    "bytes": 46228,
+    "sha256": "c8b8e13dd73ed3042027b714d3c44078b077ab5d599230e9345e2d350dd95f9d"
+  },
+  "assets/textures/terrain3/Texture_092.png": {
+    "bytes": 58231,
+    "sha256": "fde058b8aef4a18300c106e5952bb90dc39500b738aef567a9ad5f155aa4472b"
+  },
+  "assets/textures/terrain3/Texture_093.png": {
+    "bytes": 55161,
+    "sha256": "f012b0bb35ca089dfc36ec984221460246c05aa8203f52944fec497b537d2150"
+  },
+  "assets/textures/terrain3/Texture_094.png": {
+    "bytes": 50522,
+    "sha256": "490249f17eeff62a6ec241b5c426921d6a7280b63adb5a01e65047a11c1e265a"
+  },
+  "assets/textures/terrain3/Texture_095.png": {
+    "bytes": 45705,
+    "sha256": "b8f780161318c93ba22972b044c40561653c0850f40b0be8577e25f1dd0656cd"
+  },
+  "assets/textures/terrain3/Texture_096.png": {
+    "bytes": 43159,
+    "sha256": "d54d9dedcb92555669b2555334727411fc42f0be4a98227222404242653b4973"
+  },
+  "assets/textures/terrain3/Texture_097.png": {
+    "bytes": 29370,
+    "sha256": "d4b3aaf2d90239fcf792e4c097f8719577882461cff97f54a55ff285b08c23fd"
+  },
+  "assets/textures/terrain4/Foreground_001.png": {
+    "bytes": 5461,
+    "sha256": "9ba015ad9375b5411981631881ecbb36e09d175977f27a0e7e5f7d2365026c8c"
+  },
+  "assets/textures/terrain4/Foreground_002.png": {
+    "bytes": 5075,
+    "sha256": "9f6fdb6445801352b8269dc2375421875bb776527d2ca93f4e4f1a5d78ccc37a"
+  },
+  "assets/textures/terrain4/Foreground_003.png": {
+    "bytes": 11107,
+    "sha256": "5dbfedcef04a80d49f8e7dc6c945d1cdb7df844b53d43b271ee74a7dd09c77ba"
+  },
+  "assets/textures/terrain4/Foreground_004.png": {
+    "bytes": 16285,
+    "sha256": "664e9b056ef1b14a20c92ac6c22870dac3c520af894bcba33d8530295dcc7674"
+  },
+  "assets/textures/terrain4/Foreground_008.png": {
+    "bytes": 24521,
+    "sha256": "9fb37896ffde53c5dc4ad677ea1617fc6d5cefaee179ffa2a9db7239400de0d3"
+  },
+  "assets/textures/terrain4/Foreground_009.png": {
+    "bytes": 14740,
+    "sha256": "6406d0df3809a0ad423a975dfca7db0675fbc12b44ed71ea9bb9215c07cba1a1"
+  },
+  "assets/textures/terrain4/Foreground_010.png": {
+    "bytes": 11834,
+    "sha256": "7b1a0f35bdfb08d680106df6b6cf9ae90c0ffbdad930c866157ce2ecd30b5912"
+  },
+  "assets/textures/terrain4/Foreground_011.png": {
+    "bytes": 9179,
+    "sha256": "9879f1f297fea2aedae565541268b6f0d7a52be903017133c490af451ca7169a"
+  },
+  "assets/textures/terrain4/Foreground_012.png": {
+    "bytes": 3588,
+    "sha256": "a340612001f0f743cb90a853e5c114b7f005fb37887ee3763339150e2ac80bc2"
+  },
+  "assets/textures/terrain4/Foreground_013.png": {
+    "bytes": 3190,
+    "sha256": "b227674ef65250ed60252d309740ffa5ebf331bf1f75a3e1eeb0e7a8b70a9a82"
+  },
+  "assets/textures/terrain4/Foreground_014.png": {
+    "bytes": 3419,
+    "sha256": "64b4488577249ad6f925be680d9e84d12ae4919f77e0d99976a318eaed07c1d0"
+  },
+  "assets/textures/terrain4/Foreground_015.png": {
+    "bytes": 3661,
+    "sha256": "be727a674aaa6f8eee6548673ba240b481c549017c3a26119233f53fdeb8ec5a"
+  },
+  "assets/textures/terrain4/Foreground_016.png": {
+    "bytes": 26834,
+    "sha256": "3fb633477855052f8b1427ac10f53c6f63a4429d9d146ff35bdfd3153a415c3c"
+  },
+  "assets/textures/terrain4/Foreground_017.png": {
+    "bytes": 25739,
+    "sha256": "96bc189487003fab9d4c82ae0eea370499171420d1a9733d6881ee786a684f96"
+  },
+  "assets/textures/terrain4/Foreground_018.png": {
+    "bytes": 24941,
+    "sha256": "3d143e60c9eff9522181189dcbd26b0a4b1dfbfe6ec70a2e0314d3aa404eec5e"
+  },
+  "assets/textures/terrain4/Foreground_019.png": {
+    "bytes": 21291,
+    "sha256": "83636cb7aa676df3b314527cc61c42f34da1baacedf493e42c9fb3e954c4d694"
+  },
+  "assets/textures/terrain4/Foreground_020.png": {
+    "bytes": 32175,
+    "sha256": "ada65c960bade396881f74dea4c9e0d38810b75b279e4158bef16acf918d3b20"
+  },
+  "assets/textures/terrain4/Foreground_021.png": {
+    "bytes": 28237,
+    "sha256": "31ac8537002bf62822a40137d6194ac3b862febb808e6e264348a8b3b743c538"
+  },
+  "assets/textures/terrain4/Foreground_022.png": {
+    "bytes": 16067,
+    "sha256": "afcaca9a2f8d7a84427d5e70f243e37ffe01ca9a4614a5e08f08bf3d9cb49357"
+  },
+  "assets/textures/terrain4/Foreground_023.png": {
+    "bytes": 15130,
+    "sha256": "bc6f404fb2a7ed6def0d66a0f1ecd4b38a0820d7197123bb5d1b90c6594c91b5"
+  },
+  "assets/textures/terrain4/Foreground_040.png": {
+    "bytes": 511427,
+    "sha256": "8e045b90cc22ecbe5b8f697cad96e9c20451f22ccb2f6c66593b194a322005cf"
+  },
+  "assets/textures/terrain4/Foreground_042.png": {
+    "bytes": 134440,
+    "sha256": "7916c16000c81f89c391e1d7191bb8d00f6f5b8eb04c1364006b8a681af834e5"
+  },
+  "assets/textures/terrain4/Foreground_043.png": {
+    "bytes": 72939,
+    "sha256": "456291802480a130e0e8db1235c378b13feb4c29a3ae821b5fa4769767769dc1"
+  },
+  "assets/textures/terrain4/Foreground_044.png": {
+    "bytes": 50833,
+    "sha256": "c9470619c1a01d61bc05b870bb71714255ec19e3779c9feebdfe4bf045208d30"
+  },
+  "assets/textures/terrain4/Foreground_047.png": {
+    "bytes": 10408,
+    "sha256": "215a72c3802cba0289e8b89fc3b3b20a55fed175c14eb53bed0c7dbd534c57bc"
+  },
+  "assets/textures/terrain4/Foreground_050.png": {
+    "bytes": 6714,
+    "sha256": "7777e6bcf5d5797113b02ffab99eb236477f922b2efe4d816399c3fd1d18b4fe"
+  },
+  "assets/textures/terrain4/Foreground_052.png": {
+    "bytes": 6847,
+    "sha256": "7c350e87f624fd9e5bed78ba09e1826a562638b1098ea26e4b48220b92d64bdb"
+  },
+  "assets/textures/terrain4/Foreground_072.png": {
+    "bytes": 276242,
+    "sha256": "fad3532794de1194b0750a72f3a591b5aed519ed9195692ba2f2c71e88ba70ea"
+  },
+  "assets/textures/terrain4/Foreground_073.png": {
+    "bytes": 278340,
+    "sha256": "f7e28ae45bd805f48455f692702d90238c6e2a6971fecb9186844d1e76e97c65"
+  },
+  "assets/textures/terrain4/Foreground_074.png": {
+    "bytes": 190746,
+    "sha256": "2f37cd0e8e555877c550d70fcb8cefdcbc7e966a26ce35447e8a992409eab414"
+  },
+  "assets/textures/terrain4/Foreground_075.png": {
+    "bytes": 219806,
+    "sha256": "8ce235523c24e7449471ca6a485ff06dedf17763d72f1b806e7bfdf685ab203e"
+  },
+  "assets/textures/terrain4/Foreground_076.png": {
+    "bytes": 156824,
+    "sha256": "2cb412dbd3f6f13bd885f24287efae6e68fd7669898bfc4933a521131396ddd2"
+  },
+  "assets/textures/terrain4/Foreground_077.png": {
+    "bytes": 32584,
+    "sha256": "ce6ee35389f8fdfa0af09254490aed2b25b5cee4640d67db198aab247e607b70"
+  },
+  "assets/textures/terrain4/Foreground_078.png": {
+    "bytes": 35584,
+    "sha256": "2dba1c43ae9c31a825b77959900ec76e0d0cc8395e88f860ec11d740d673fa70"
+  },
+  "assets/textures/terrain4/Foreground_079.png": {
+    "bytes": 43727,
+    "sha256": "157014943396105c5f723398796b2e9681025c227dab771e3b2dc49373befa0d"
+  },
+  "assets/textures/terrain4/Foreground_080.png": {
+    "bytes": 42465,
+    "sha256": "3eeebb00364442f12b113479fe0e04fc810ea21d3fb7a07fde307d5a5b89bb5b"
+  },
+  "assets/textures/terrain4/Foreground_081.png": {
+    "bytes": 39630,
+    "sha256": "767f8b25f7e1fb4a76ec82c5c2650c2b92b397a30f148d836653616b6bda992e"
+  },
+  "assets/textures/terrain4/Foreground_082.png": {
+    "bytes": 35344,
+    "sha256": "7893bc0f5844578e3b7699ba1308d57e61235ed369d96c520cdd20105accc0ed"
+  },
+  "assets/textures/terrain4/Foreground_083.png": {
+    "bytes": 33573,
+    "sha256": "920f9dab9c0f2d9522523dda763dad6ce8855c531946cce2e784e23d715f51e2"
+  },
+  "assets/textures/terrain4/Foreground_084.png": {
+    "bytes": 21507,
+    "sha256": "56780f2b3637d565d5290d3d540ba89934fe58c7a85f5a2908c7079b16b26431"
+  },
+  "assets/textures/terrain4/Foreground_085.png": {
+    "bytes": 40684,
+    "sha256": "7697fb9ca0620de5d47ce820617aa30e08ced955aa69994a68da75597afbd602"
+  },
+  "assets/textures/terrain4/Foreground_086.png": {
+    "bytes": 40225,
+    "sha256": "99b99b6f6334aa693c677de99bd985eb776559305490fdb747cdc7fc9fa67d02"
+  },
+  "assets/textures/terrain4/Foreground_087.png": {
+    "bytes": 32724,
+    "sha256": "dc2b8cb60ba34c8530c686263776fa08a151b03d828a5eee300293ab7d859f28"
+  },
+  "assets/textures/terrain4/Foreground_088.png": {
+    "bytes": 258081,
+    "sha256": "87fa8e312b9df5290f76d427b517d5f2383105d77845b34ea83a5c03c9aee4ea"
+  },
+  "assets/textures/terrain4/Foreground_089.png": {
+    "bytes": 188831,
+    "sha256": "68f209d7cf6c5063f18d834fb15e2ae246e85418e1cd7ffeab03983fa63b02f0"
+  },
+  "assets/textures/terrain4/Foreground_090.png": {
+    "bytes": 41938,
+    "sha256": "912e90a972cbc322a396b8bb4968a71426b93dc4fd630dfda92d025781f37ac5"
+  },
+  "assets/textures/terrain4/Foreground_091.png": {
+    "bytes": 46957,
+    "sha256": "717e1f6e0735bf6dfd49e9a00b15e743c87bb991ccd2c62131ab94706b6b133f"
+  },
+  "assets/textures/terrain4/Foreground_092.png": {
+    "bytes": 58121,
+    "sha256": "38653770cf74668fe4806a09e023038a684031c07bc52922d0f665e5d8dcebab"
+  },
+  "assets/textures/terrain4/Foreground_093.png": {
+    "bytes": 55314,
+    "sha256": "5fb717739aee4596aaf2fe327ba497897b9d0a72fd296e53a21b28827da5d70e"
+  },
+  "assets/textures/terrain4/Foreground_094.png": {
+    "bytes": 50564,
+    "sha256": "c318a930b99fc664d4f82a200ae4163bb4687fac2c8eff807a76433cb6270d36"
+  },
+  "assets/textures/terrain4/Foreground_095.png": {
+    "bytes": 45645,
+    "sha256": "daf7ff217cd7a53ee8f90c30da2ca8412c6ab20757653f93abf39f7a23ddaabd"
+  },
+  "assets/textures/terrain4/Foreground_096.png": {
+    "bytes": 43939,
+    "sha256": "f86487b009e847f96030b9c97a203d0354e8a611deba3a90f26107e2311ec218"
+  },
+  "assets/textures/terrain4/Foreground_097.png": {
+    "bytes": 29670,
+    "sha256": "66f8dbab19ea8b1e54fb98b0344b362a9af866bff4edf06c19e5aac3879695bf"
+  },
+  "assets/textures/terrain4/Foreground_098.png": {
+    "bytes": 53802,
+    "sha256": "910311d66d222fc9b0537b4c8d9db39f98cf102bb240b18478e30483ad851231"
+  },
+  "assets/textures/terrain4/Foreground_099.png": {
+    "bytes": 53419,
+    "sha256": "43c8c2b9b69451c6bb183afb5f5745f53f0004765dc3d6cf07d6d6c61d41beec"
+  },
+  "assets/textures/terrain4/Foreground_100.png": {
+    "bytes": 42809,
+    "sha256": "c0676755763c1360d879cfd5438994b3a2566a27ab375f4f6718174c934afcfd"
+  },
+  "assets/textures/terrain4/Texture_008.png": {
+    "bytes": 24521,
+    "sha256": "9fb37896ffde53c5dc4ad677ea1617fc6d5cefaee179ffa2a9db7239400de0d3"
+  },
+  "assets/textures/terrain4/Texture_011.png": {
+    "bytes": 9179,
+    "sha256": "9879f1f297fea2aedae565541268b6f0d7a52be903017133c490af451ca7169a"
+  },
+  "assets/textures/terrain4/Texture_019.png": {
+    "bytes": 21291,
+    "sha256": "83636cb7aa676df3b314527cc61c42f34da1baacedf493e42c9fb3e954c4d694"
+  },
+  "assets/textures/terrain4/Texture_021.png": {
+    "bytes": 28237,
+    "sha256": "31ac8537002bf62822a40137d6194ac3b862febb808e6e264348a8b3b743c538"
+  },
+  "assets/textures/terrain4/Texture_022.png": {
+    "bytes": 16067,
+    "sha256": "afcaca9a2f8d7a84427d5e70f243e37ffe01ca9a4614a5e08f08bf3d9cb49357"
+  },
+  "assets/textures/terrain4/Texture_023.png": {
+    "bytes": 15130,
+    "sha256": "bc6f404fb2a7ed6def0d66a0f1ecd4b38a0820d7197123bb5d1b90c6594c91b5"
+  },
+  "assets/textures/terrain4/Texture_024.png": {
+    "bytes": 391005,
+    "sha256": "b545e0c9b402be61f091af40a45d7fda29cc21dafe4b21835a8202e8870f3e47"
+  },
+  "assets/textures/terrain4/Texture_025.png": {
+    "bytes": 137750,
+    "sha256": "5ba14e45a1361857d35d07d709716556849fbd0c05c73f0a1192749f90b84345"
+  },
+  "assets/textures/terrain4/Texture_026.png": {
+    "bytes": 108979,
+    "sha256": "f31ceb46cf8f98e52917be4bd97a2ffdd9a5ddcaaed22e05cbe3442333b59ce4"
+  },
+  "assets/textures/terrain4/Texture_027.png": {
+    "bytes": 57532,
+    "sha256": "04b6f99f097f94f4769797375fb8d569b32d84056466e90a50b6adb5c12002d1"
+  },
+  "assets/textures/terrain4/Texture_028.png": {
+    "bytes": 41609,
+    "sha256": "87173caf7d98c30b4ae109774aed00c3299febbcf369cd2adf7403a48f64b235"
+  },
+  "assets/textures/terrain4/Texture_029.png": {
+    "bytes": 12120,
+    "sha256": "10ac5cb23fe56e8246ff484f19c5b8466215d592aa5166e21f10548d6945a853"
+  },
+  "assets/textures/terrain4/Texture_030.png": {
+    "bytes": 11324,
+    "sha256": "ceec98e89e5cecf7ab41ac20c1aafabe9d0126a6be043a5484ba6f4f313a96d1"
+  },
+  "assets/textures/terrain4/Texture_031.png": {
+    "bytes": 8723,
+    "sha256": "54404d6d5923ca18715157b3303102a661ab26e75ff99c534fb5950c478d6e56"
+  },
+  "assets/textures/terrain4/Texture_032.png": {
+    "bytes": 4765,
+    "sha256": "9eac5de3a87f0daf56e67676dadfdbf77ab69ece0268dc2b7d7318cb9a6918bd"
+  },
+  "assets/textures/terrain4/Texture_034.png": {
+    "bytes": 6318,
+    "sha256": "86fcb18dba6851055cdeed4ce5a68beac6c491d29b5f4ebdc863839038649cb7"
+  },
+  "assets/textures/terrain4/Texture_035.png": {
+    "bytes": 6498,
+    "sha256": "3f8d8073cd5d574fa3657636dea44a7bfa8aa1d81ef9607f1c5002febb08c710"
+  },
+  "assets/textures/terrain4/Texture_036.png": {
+    "bytes": 6282,
+    "sha256": "9cf805e203a3d203a8d32cdd8aac7ad5bd6d479e91be29cbc520c104eec0e838"
+  },
+  "assets/textures/terrain4/Texture_037.png": {
+    "bytes": 3989,
+    "sha256": "ecaa3611496486de34100d9360085f3973b761e54de59ce601587757e9a9b160"
+  },
+  "assets/textures/terrain4/Texture_040.png": {
+    "bytes": 511427,
+    "sha256": "8e045b90cc22ecbe5b8f697cad96e9c20451f22ccb2f6c66593b194a322005cf"
+  },
+  "assets/textures/terrain4/Texture_041.png": {
+    "bytes": 176649,
+    "sha256": "63947dbff9b1b447ecbeb1c6a6f668d4187769014d04be0ea329dbeb26e1ef9d"
+  },
+  "assets/textures/terrain4/Texture_042.png": {
+    "bytes": 134440,
+    "sha256": "7916c16000c81f89c391e1d7191bb8d00f6f5b8eb04c1364006b8a681af834e5"
+  },
+  "assets/textures/terrain4/Texture_043.png": {
+    "bytes": 72939,
+    "sha256": "456291802480a130e0e8db1235c378b13feb4c29a3ae821b5fa4769767769dc1"
+  },
+  "assets/textures/terrain4/Texture_044.png": {
+    "bytes": 50833,
+    "sha256": "c9470619c1a01d61bc05b870bb71714255ec19e3779c9feebdfe4bf045208d30"
+  },
+  "assets/textures/terrain4/Texture_045.png": {
+    "bytes": 13976,
+    "sha256": "2d72b3347b1673c7596ec62a38db27422c5643853c2f1bf1d1f97853fa5e07dd"
+  },
+  "assets/textures/terrain4/Texture_046.png": {
+    "bytes": 12719,
+    "sha256": "f425a361723f3662bd6ac2e928fe9e7e29f6fa2d6258dd880d312e9f262f0324"
+  },
+  "assets/textures/terrain4/Texture_047.png": {
+    "bytes": 10408,
+    "sha256": "215a72c3802cba0289e8b89fc3b3b20a55fed175c14eb53bed0c7dbd534c57bc"
+  },
+  "assets/textures/terrain4/Texture_048.png": {
+    "bytes": 4955,
+    "sha256": "b3f6d03f4c0618cebc371893e19badf43dfd6647a41b4fbdf30828b05857ba0a"
+  },
+  "assets/textures/terrain4/Texture_049.png": {
+    "bytes": 4762,
+    "sha256": "f8e10282074d3dc152a17b6eec538c85ab190755b254565f89ea9d34273c820d"
+  },
+  "assets/textures/terrain4/Texture_050.png": {
+    "bytes": 6714,
+    "sha256": "7777e6bcf5d5797113b02ffab99eb236477f922b2efe4d816399c3fd1d18b4fe"
+  },
+  "assets/textures/terrain4/Texture_051.png": {
+    "bytes": 6399,
+    "sha256": "931a6953f2a317f86b4ed7f8759ad59def6cc1fa6a5d6c894003c3f12f0011c1"
+  },
+  "assets/textures/terrain4/Texture_052.png": {
+    "bytes": 6847,
+    "sha256": "7c350e87f624fd9e5bed78ba09e1826a562638b1098ea26e4b48220b92d64bdb"
+  },
+  "assets/textures/terrain4/Texture_053.png": {
+    "bytes": 3633,
+    "sha256": "8ec8745f88d0d2545c48d183fdf4dc64a9f12acf0d679018e9bcd22de50dd923"
+  },
+  "assets/textures/terrain4/Texture_055.png": {
+    "bytes": 1821,
+    "sha256": "96b46d4f784f393fcdf9674cd1baed7a0f6725dfc872c7b4a82bc5dccb3a090a"
+  },
+  "assets/textures/terrain4/Texture_056.png": {
+    "bytes": 242201,
+    "sha256": "d1447152eb1b14f1941987627edb64e8b6d4a574aaf379fdc88132ba17142dd8"
+  },
+  "assets/textures/terrain4/Texture_057.png": {
+    "bytes": 246228,
+    "sha256": "4fd2169e24bd28431b7ca05a228cc1a9b0ff3596df8ab55c5e8a097db3bd1f92"
+  },
+  "assets/textures/terrain4/Texture_058.png": {
+    "bytes": 161413,
+    "sha256": "524ad89e9620d965db3c6e347922b2c8482cbc4e1cf2a5728a2b14be7625767e"
+  },
+  "assets/textures/terrain4/Texture_059.png": {
+    "bytes": 182634,
+    "sha256": "0419e05a8ee14d563eeeae2b8c06eaac1e2f43d17865c2d5c09432dde3cf4d99"
+  },
+  "assets/textures/terrain4/Texture_060.png": {
+    "bytes": 133759,
+    "sha256": "d96cf6b0e557ee344bb254dc68b7194df6a33f811cf83b32d7736da11d9a3a1d"
+  },
+  "assets/textures/terrain4/Texture_061.png": {
+    "bytes": 29606,
+    "sha256": "1428338e2671f06e4933688d445c1ea3be985d4b13300b8b71443fbe906ef1e6"
+  },
+  "assets/textures/terrain4/Texture_062.png": {
+    "bytes": 34418,
+    "sha256": "bc2e4f3e6c9b19a6484c56ff6e999ae6ac72100db4bdf88f1eb1ab087309d506"
+  },
+  "assets/textures/terrain4/Texture_063.png": {
+    "bytes": 44003,
+    "sha256": "977bb76628bdf277a3db10c73996d17afbf326f6bb97f74c9ddcc80e2870c909"
+  },
+  "assets/textures/terrain4/Texture_064.png": {
+    "bytes": 40877,
+    "sha256": "d5c30e0849c53fd9d7a8733a5adbe0c470e0583f069a95bdef8cea1825d4a0c5"
+  },
+  "assets/textures/terrain4/Texture_065.png": {
+    "bytes": 38898,
+    "sha256": "72f124628df55a80194fb77cafc032dcc8f2ce7614863dbce5ee6a290f57268f"
+  },
+  "assets/textures/terrain4/Texture_066.png": {
+    "bytes": 33935,
+    "sha256": "df283b468449baf33faf4698fdfd5a06345a677246bd7a52a54819802051bb01"
+  },
+  "assets/textures/terrain4/Texture_067.png": {
+    "bytes": 31199,
+    "sha256": "766b09e98da8ca2ab734d58ce481b987f84b2ddd3f34ebdd5b91d175e062fa1a"
+  },
+  "assets/textures/terrain4/Texture_068.png": {
+    "bytes": 20387,
+    "sha256": "f683ea518dc46454046be2164ba7f28c3c3fb3127618df3001697535fe7ecb64"
+  },
+  "assets/textures/terrain4/Texture_069.png": {
+    "bytes": 41187,
+    "sha256": "7f1ce4586187748c4857eb9e87b6ca12e3abf7686939ef1db20b212d49f6253c"
+  },
+  "assets/textures/terrain4/Texture_070.png": {
+    "bytes": 40256,
+    "sha256": "c13db1d81b891a742f55fa1c00abbbe344331d9c382ed72b95d70e89de120164"
+  },
+  "assets/textures/terrain4/Texture_072.png": {
+    "bytes": 276242,
+    "sha256": "fad3532794de1194b0750a72f3a591b5aed519ed9195692ba2f2c71e88ba70ea"
+  },
+  "assets/textures/terrain4/Texture_073.png": {
+    "bytes": 278340,
+    "sha256": "f7e28ae45bd805f48455f692702d90238c6e2a6971fecb9186844d1e76e97c65"
+  },
+  "assets/textures/terrain4/Texture_074.png": {
+    "bytes": 190746,
+    "sha256": "2f37cd0e8e555877c550d70fcb8cefdcbc7e966a26ce35447e8a992409eab414"
+  },
+  "assets/textures/terrain4/Texture_075.png": {
+    "bytes": 219806,
+    "sha256": "8ce235523c24e7449471ca6a485ff06dedf17763d72f1b806e7bfdf685ab203e"
+  },
+  "assets/textures/terrain4/Texture_076.png": {
+    "bytes": 156824,
+    "sha256": "2cb412dbd3f6f13bd885f24287efae6e68fd7669898bfc4933a521131396ddd2"
+  },
+  "assets/textures/terrain4/Texture_077.png": {
+    "bytes": 32584,
+    "sha256": "ce6ee35389f8fdfa0af09254490aed2b25b5cee4640d67db198aab247e607b70"
+  },
+  "assets/textures/terrain4/Texture_078.png": {
+    "bytes": 35584,
+    "sha256": "2dba1c43ae9c31a825b77959900ec76e0d0cc8395e88f860ec11d740d673fa70"
+  },
+  "assets/textures/terrain4/Texture_079.png": {
+    "bytes": 43727,
+    "sha256": "157014943396105c5f723398796b2e9681025c227dab771e3b2dc49373befa0d"
+  },
+  "assets/textures/terrain4/Texture_080.png": {
+    "bytes": 42465,
+    "sha256": "3eeebb00364442f12b113479fe0e04fc810ea21d3fb7a07fde307d5a5b89bb5b"
+  },
+  "assets/textures/terrain4/Texture_081.png": {
+    "bytes": 39630,
+    "sha256": "767f8b25f7e1fb4a76ec82c5c2650c2b92b397a30f148d836653616b6bda992e"
+  },
+  "assets/textures/terrain4/Texture_083.png": {
+    "bytes": 33573,
+    "sha256": "920f9dab9c0f2d9522523dda763dad6ce8855c531946cce2e784e23d715f51e2"
+  },
+  "assets/textures/terrain4/Texture_084.png": {
+    "bytes": 21507,
+    "sha256": "56780f2b3637d565d5290d3d540ba89934fe58c7a85f5a2908c7079b16b26431"
+  },
+  "assets/textures/terrain4/Texture_087.png": {
+    "bytes": 32724,
+    "sha256": "dc2b8cb60ba34c8530c686263776fa08a151b03d828a5eee300293ab7d859f28"
+  },
+  "assets/textures/terrain4/Texture_088.png": {
+    "bytes": 258081,
+    "sha256": "87fa8e312b9df5290f76d427b517d5f2383105d77845b34ea83a5c03c9aee4ea"
+  },
+  "assets/textures/terrain4/Texture_089.png": {
+    "bytes": 188831,
+    "sha256": "68f209d7cf6c5063f18d834fb15e2ae246e85418e1cd7ffeab03983fa63b02f0"
+  },
+  "assets/textures/terrain4/Texture_090.png": {
+    "bytes": 41938,
+    "sha256": "912e90a972cbc322a396b8bb4968a71426b93dc4fd630dfda92d025781f37ac5"
+  },
+  "assets/textures/terrain4/Texture_091.png": {
+    "bytes": 46957,
+    "sha256": "717e1f6e0735bf6dfd49e9a00b15e743c87bb991ccd2c62131ab94706b6b133f"
+  },
+  "assets/textures/terrain4/Texture_092.png": {
+    "bytes": 58121,
+    "sha256": "38653770cf74668fe4806a09e023038a684031c07bc52922d0f665e5d8dcebab"
+  },
+  "assets/textures/terrain4/Texture_093.png": {
+    "bytes": 55314,
+    "sha256": "5fb717739aee4596aaf2fe327ba497897b9d0a72fd296e53a21b28827da5d70e"
+  },
+  "assets/textures/terrain4/Texture_094.png": {
+    "bytes": 50564,
+    "sha256": "c318a930b99fc664d4f82a200ae4163bb4687fac2c8eff807a76433cb6270d36"
+  },
+  "assets/textures/terrain4/Texture_095.png": {
+    "bytes": 45645,
+    "sha256": "daf7ff217cd7a53ee8f90c30da2ca8412c6ab20757653f93abf39f7a23ddaabd"
+  },
+  "assets/textures/terrain4/Texture_096.png": {
+    "bytes": 43939,
+    "sha256": "f86487b009e847f96030b9c97a203d0354e8a611deba3a90f26107e2311ec218"
+  },
+  "assets/textures/terrain4/Texture_098.png": {
+    "bytes": 53802,
+    "sha256": "910311d66d222fc9b0537b4c8d9db39f98cf102bb240b18478e30483ad851231"
+  },
+  "assets/textures/terrain4/Texture_099.png": {
+    "bytes": 53419,
+    "sha256": "43c8c2b9b69451c6bb183afb5f5745f53f0004765dc3d6cf07d6d6c61d41beec"
+  },
+  "assets/textures/terrain4/Texture_100.png": {
+    "bytes": 42809,
+    "sha256": "c0676755763c1360d879cfd5438994b3a2566a27ab375f4f6718174c934afcfd"
+  },
+  "assets/textures/TutorialUI/tutArrow.png": {
+    "bytes": 479,
+    "sha256": "de0662bbd3c4e167d85a4dc9d8f293157f70ccc2682a82c7e010afd9c1cdf74f"
+  },
+  "assets/textures/TutorialUI/tutBlank.png": {
+    "bytes": 3428,
+    "sha256": "3f0a0450310bc83dc1295e4b1d923691513781d0946f994c8a4d874134586c9b"
+  },
+  "assets/textures/TutorialUI/tutBubble.png": {
+    "bytes": 39666,
+    "sha256": "375105ea8efa1165da0212d2bc1e0cc188dc79d08d85532fa0d0e27d008eb2d8"
+  },
+  "assets/textures/TutorialUI/tutCharFall.png": {
+    "bytes": 11668,
+    "sha256": "df749203c4fdd74520348dfc4076a273eb10ae9484ef1edd8b6161d9fb376407"
+  },
+  "assets/textures/TutorialUI/tutCharLeft.png": {
+    "bytes": 13002,
+    "sha256": "c7c2507523fd54a24f3251b6ff7e0cedef2bad933b564f20ac770a7c479f5d56"
+  },
+  "assets/textures/TutorialUI/tutCharRight.png": {
+    "bytes": 12858,
+    "sha256": "ade03015884e524bf4523a21581275211029e7d2054895f2b9694750f2231d25"
+  },
+  "assets/textures/TutorialUI/tutCharStand.png": {
+    "bytes": 13391,
+    "sha256": "d31d92144288f7f310a087700599f9f510d45f6fdd6d7db06b6883fdb6b87463"
+  },
+  "assets/textures/TutorialUI/tutCharUp.png": {
+    "bytes": 12627,
+    "sha256": "53c4c3883047b789f76d20454b41ec0dc1f81df9551a40a431756dd697e64dbf"
+  },
+  "assets/textures/TutorialUI/tutDown.png": {
+    "bytes": 15096,
+    "sha256": "71e7ffa72fdb6a89544693c01cf703b98194576569618118ac7e9edf955edeb9"
+  },
+  "assets/textures/TutorialUI/tutUp.png": {
+    "bytes": 11605,
+    "sha256": "7c0e0b42cb9e7c60e3e10c15c09fcaf511042a19fd0a1b87ccc20b41295b6db6"
+  },
+  "assets/textures/ui/creditsSleep.png": {
+    "bytes": 130818,
+    "sha256": "16eeeb9c4b71fadf8560396951a13a17937cc1c30def056b5aae9e45c0314e7a"
+  },
+  "assets/textures/ui/creditsText1.png": {
+    "bytes": 110718,
+    "sha256": "c88f52e4e8613973831ec27af491f51dfa9511a6ad4a022bbd8d36cce2494298"
+  },
+  "assets/textures/ui/creditsText2.png": {
+    "bytes": 143937,
+    "sha256": "0ef224d01936e1fc4254f3b1fe9598b048bbbdf7942ee2aebf682e0477a731ef"
+  },
+  "assets/textures/ui/creditsText3.png": {
+    "bytes": 66953,
+    "sha256": "a6d849dd3e68dd0db3d44fa2545568c48853579555ce652bc88cd3188c39d635"
+  },
+  "assets/textures/ui/creditsText4.png": {
+    "bytes": 149551,
+    "sha256": "d91db04fec8b3bc0013593681ac9b012f09dbe6a89e94a3442b0b4e0234d3ee6"
+  },
+  "assets/textures/ui/creditsText5.png": {
+    "bytes": 90662,
+    "sha256": "72d531014e772a7ae762a133189c1b8ac2e9996ed8d2f86f427359cb4c850634"
+  },
+  "assets/textures/ui/creditsText6.png": {
+    "bytes": 79868,
+    "sha256": "fddd5dbfbf13ca34cddbef5e7a855aa1b8226710e758d352deaab8a315995568"
+  },
+  "assets/textures/ui/faceBujie.png": {
+    "bytes": 88895,
+    "sha256": "0d0cdb803c95d8044a4ae57b2167419a775e77029627466636f61287a9e2ef58"
+  },
+  "assets/textures/ui/faceDeyi.png": {
+    "bytes": 84876,
+    "sha256": "52c20130427de82a998f4b57fe0693acd07d7268d3b3c4f07544d6832aef23dd"
+  },
+  "assets/textures/ui/faceJingya.png": {
+    "bytes": 88373,
+    "sha256": "fc933be958083634fee2db93336c8a482ad57551db61aa0945914c6fb022d186"
+  },
+  "assets/textures/ui/faceManyi.png": {
+    "bytes": 88207,
+    "sha256": "d92178a3c9908596abe7dd5ec08c00722f72b7cc2f2dedd56221cc7ea0b9548f"
+  },
+  "assets/textures/ui/facePutong.png": {
+    "bytes": 88173,
+    "sha256": "61885e4ce62647ad54cbe0330b63faf37554afb33ca1dc02c30396213f3b0310"
+  },
+  "assets/textures/ui/faceQidao.png": {
+    "bytes": 88757,
+    "sha256": "60167697ac88b01ed485eaa880f0c46c2b6f3c351e18ea1e91c5ca24107b69c3"
+  },
+  "assets/textures/ui/faceRenzhen.png": {
+    "bytes": 87917,
+    "sha256": "9061c0041654881e6a868e2274e5c79be90a8e2beda25e37f598e7ad802863db"
+  },
+  "assets/textures/ui/faceShengqi.png": {
+    "bytes": 90818,
+    "sha256": "979b08294e41d41f6e0abd0303fb3cb6280d35eedfeceb1b0e7d86558eebddc9"
+  },
+  "assets/textures/ui/faceShijin.png": {
+    "bytes": 89181,
+    "sha256": "3062476100a28b451b90fd8b5ec93423a53c2792f426061ecf2251735ad13d69"
+  },
+  "assets/textures/ui/faceWeixiao.png": {
+    "bytes": 87522,
+    "sha256": "67318e0816d342aa6113e2dee8c47d47d7bc1a74e88b7bf5fd36b59a6611feaf"
+  },
+  "assets/textures/ui/faceWunai.png": {
+    "bytes": 89382,
+    "sha256": "32348d3cc30a927e417b17df73ea68c269ef5f7f122c90afb6fe1507180ed1e7"
+  },
+  "assets/textures/ui/faceZhoumei.png": {
+    "bytes": 86444,
+    "sha256": "4964ae4524d89c8348f7fc4008b0be11eb0aebeafcb763ff8c2f958af9c41aa9"
+  }
+}

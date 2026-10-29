@@ -1,97 +1,97 @@
-# Desktop browser build
+# Dual-version browser release
 
-The browser edition includes the current game's full 60-level content and normal
-unlock rules. It uses WebAssembly, WebGL 2, SDL3, and a browser-driven frame loop.
-Touch controls are not included. ImGui, ENet, and pthreads are disabled for this
-build. The Windows build retains its existing overlay, loading workers and frame
-pacing.
+The `web-portrait` branch builds the current 640×960 game as WebAssembly.
+Its scene layouts, artwork, 1.8 camera zoom, physics, 60 levels, unlock rules and
+save format come from this branch. The existing 1280×720 landscape runtime is
+retained byte-for-byte in the website's `runtime/` directory. Do not rebuild it
+from the portrait source or replace it with the portrait assets.
 
-## Build
+## Build and preview
 
-The tested toolchain is Emscripten **5.0.6**. On this workstation:
+Use Emscripten 5.0.6 with C++23 and Wasm exceptions. SDL and extensions are
+static; ImGui, unused ENet and pthreads are disabled only for Web builds.
+Desktop builds keep their worker loading and pacing. Browser preparation runs
+up to four jobs, approximately four milliseconds between jobs, per update.
 
 ```powershell
 & 'G:\DevelopTools\Toolchains\emsdk\python\3.13.3_64bit\python.exe' game/tools/build_web.py
+& 'G:\DevelopTools\Toolchains\emsdk\python\3.13.3_64bit\python.exe' game/tests/web_package_tests.py
+& 'G:\DevelopTools\Toolchains\emsdk\node\22.16.0_64bit\bin\node.exe' game/tests/web_launcher_tests.mjs
+& 'G:\DevelopTools\Toolchains\emsdk\python\3.13.3_64bit\python.exe' game/tools/preview_web.py --host 0.0.0.0 --port 8772
 ```
 
-Use `--emsdk`, `--cmake`, and `--ninja` to select other tool locations. Run the
-script with a Python interpreter supported by the SDK. `--fresh` clears CMake's
-cached feature checks; `--package-only` repackages an already compiled runtime.
-Build, cache, temporary files and packages are confined to `out/`.
+Build output is `out/build/web-portrait/`; packaged output is
+`out/web-portrait/runtime/`. `--package-only` repackages an existing binary;
+use it only when the binary was built from the source being recorded.
+Each stable, path-ordered data package is at most 32 MiB. Hidden root markers,
+all game assets, third-party notices and licenses remain included.
 
-The generated `out/web/runtime/manifest.json` records `gameVersion` from the CMake
-project version (currently **1.0.1**). Its `version` remains the manifest schema
-version, independently of game releases. The page displays the game version.
-The manifest also records the source revision, whether
-it included local changes, toolchain, runtime hashes, resource sizes and a build
-identifier. `asset-manifest.json` lists every asset and its SHA-256. Resources,
-including `assets/.elysia_root`, are sorted by path and split into packages of at
-most 32 MiB without changing their contents or virtual paths. The first download
-contains approximately 145 MiB of assets plus the runtime.
+The preview serves the actual `/projects/FlyMe2TheMoon/web/` subpath, overlaying
+the current launcher and portrait package while reading the landscape package
+from the website checkout. It does not modify the website. Without `--host`,
+the server binds only to 127.0.0.1. `--fail-package` and `--disable-storage`
+provide separate local fault-injection environments.
 
-## Preview and prepare the website
+## Launching and switching
 
-```powershell
-& 'G:\DevelopTools\Toolchains\emsdk\python\3.13.3_64bit\python.exe' game/tools/preview_web.py
-```
+The page selects a default from the viewport orientation. `?mode=landscape` or
+`?mode=portrait` overrides the default. Users can change the selection before
+pressing Start; only that edition's packages are downloaded. Rotating the device
+never changes the running edition. One Module instance runs per page.
 
-Open <http://127.0.0.1:8765/projects/FlyMe2TheMoon/web/>. The preview serves the
-existing website with the local build and page overlaid at their real deployment
-paths. It does not modify the website checkout. Use `--port` and `--site-root`
-when needed. QA-only flags `--fail-package` and `--disable-storage` simulate
-download and IndexedDB failures; neither changes the deployment files.
+The portrait manifest retains schema `version: 1` and reads `gameVersion` from
+CMake. It adds `displayMode`, `logicalWidth` and `logicalHeight`; `buildId` and
+SHA-256 hashes identify the actual package bytes. The launcher accepts the old
+landscape manifest with its known 1280×720 dimensions. New portrait manifests
+must report 640×960. Canvas geometry is configured before SDL starts.
 
-After validation:
+The page scales each edition at its own aspect ratio. Fullscreen always targets
+the outer host, avoiding conflicting SDL canvas resizes and lower-left cropping.
+Portrait Start enters a focused view; Back to Page retains the instance.
+The current game's own loading confirmation and all in-game UI remain intact.
+The native Web bridge cancels pointers and requests the existing pause menu on
+backgrounding or focus loss; returning never toggles an existing pause off.
+The preserved landscape binary retains its original gameplay pause behavior.
+
+## Shared saves
+
+Both editions mount IDBFS at `/player_data`, restore it before initializing the
+game and automatically persist writes. Existing files and schema are unchanged.
+The browser's origin (protocol, hostname and port) and mount path identify the
+store, not the runtime directory. Localhost, a LAN address and GitHub Pages have
+different stores; different devices and browsers do not synchronize.
+
+Switch Version and Reload await `FS.syncfs(false)` before navigating to a fresh
+page. A failed flush retains the current instance and exposes a retryable error.
+If storage is unavailable, temporary play is allowed with a visible warning;
+in-page switching is blocked to avoid silently discarding temporary progress.
+Multiple simultaneous game tabs are unsupported. Do not clear IndexedDB or
+provide unlocked saves. An immediate external browser/process termination may
+interrupt the last asynchronous write.
+
+## Staging and publishing
+
+After package and local browser checks:
 
 ```powershell
 & 'G:\DevelopTools\Toolchains\emsdk\python\3.13.3_64bit\python.exe' game/tools/deploy_web.py --site-root 'G:\Coding\Projects\Akil0814.github.io'
 ```
 
-This verifies runtime hashes, copies the page, scripts, styles and runtime to
-`projects/FlyMe2TheMoon/web/`, and updates only this page's English, Chinese and
-Japanese dictionaries. Overwritten page files are backed up under
-`out/web/backups/`, together with the old runtime and build notes. Existing project
-description pages remain the entry point.
-The script never runs Git commit, push, or a remote deployment. Review the
-website changes and publish with its existing GitHub Pages workflow.
+The script backs up managed page files and both existing runtime directories
+under `out/web-portrait/backups/`. It copies the new edition into
+`runtime-portrait/`, updates the shared launcher and three language dictionaries,
+and verifies that every existing landscape file is unchanged. It never commits,
+pushes or changes GitHub Pages settings.
 
-Runtime requests use the manifest's build identifier for cache invalidation.
-Serve over HTTP or HTTPS, including the `.wasm` and `.data` files; opening the
-HTML directly with `file://` is unsupported. No cross-origin isolation headers
-or service worker are required. Keep third-party notices and licenses with the
-runtime. A rebuild can leave older, unused package files in the output directory;
-the manifest identifies which packages are actually used.
+Commit the source compatibility changes on `web-portrait`; rebuild/repackage so
+the manifest records that source revision. Commit the website on `main` and use
+its existing Pages deployment from the root of that branch. Verify both online
+editions after Pages completes. Preserve unrelated local modifications.
 
-## Browser behavior
-
-Click **Start Game** to download and launch. The startup confirmation inside the
-game remains. Click the canvas to focus it and enable audio; keyboard capture is
-restricted to that canvas. Space/W/Up supplies thrust, A/D steers, P pauses,
-R retries and Escape returns. Existing mouse and gamepad controls are retained.
-Fullscreen is requested through the page button and requires a browser gesture.
-The outer game host enters fullscreen while the SDL canvas keeps its drawing
-buffer size. CSS fits the complete 16:9 canvas inside the screen with letterbox
-space when needed; this avoids competing browser and SDL viewport resizes that
-can crop rendering to the lower-left corner. Escape or the in-screen exit
-button leaves fullscreen without sending Escape to the game's navigation.
-The Web settings panel exposes audio and language; canvas size, refresh cadence
-and fullscreen are controlled by the browser instead of desktop window settings.
-
-`/player_data` is mounted with IDBFS and populated before the game initializes.
-Both progress and user settings are automatically written to IndexedDB. Saves
-are specific to the browser and origin; a localhost save does not transfer to
-GitHub Pages. Clearing site data removes it. If storage initialization fails,
-the game runs with temporary data and displays a warning. The last asynchronous
-write may not survive an immediate browser/process termination.
-
-The loader prepares up to four textures/atlas frames per browser update, stopping
-after approximately four milliseconds between jobs. Large individual decodes
-can exceed that budget. GPU upload and existing content validation still use
-the same resource/error handling as the native game. The browser controls frame
-cadence; its background-tab policy may reduce or suspend updates.
-
-## Validation records
-
-See `out/web/validation.md` in the game workspace for this build's actual checks
-and remaining manual coverage. Bundling all levels does not establish that every
-level has been manually completed.
+Native tests compare against the pre-change baseline. The current baseline's
+`fly_idle_visuals` already fails its old tutorial coordinate assertion; do not
+change the redesigned tutorial to satisfy it. `fly_web_input` verifies pointer
+projection, cancellation and one-way pause requests. The Node test verifies lazy
+loading, legacy manifests, one instance, flush ordering, failed-save retry and
+touch cancellation. Browser viewport emulation is not physical Android testing;
+record hardware, audio and full-level-playthrough limits in the release evidence.
