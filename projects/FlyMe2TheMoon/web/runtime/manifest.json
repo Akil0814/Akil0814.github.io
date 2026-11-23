@@ -1,9 +1,12 @@
 {
   "version": 1,
-  "gameVersion": "1.0.1",
-  "buildId": "9fc4b150cc13665a",
+  "gameVersion": "1.1.2",
+  "displayMode": "landscape",
+  "logicalWidth": 1280,
+  "logicalHeight": 720,
+  "buildId": "c2a98101dd7466f5",
   "emscripten": "5.0.6",
-  "sourceRevision": "6301a3b3891c9b78474207a08ea101dfad6e7069",
+  "sourceRevision": "2b3b4e32cd0631b5f7567d6cff3cbddf43e5d6b4",
   "sourceHasLocalChanges": false,
   "runtime": "FlyMe2TheMoon.js",
   "packages": [
@@ -15,7 +18,7 @@
     {
       "script": "assets-01.js",
       "data": "assets-01.data",
-      "bytes": 29677849
+      "bytes": 29677936
     },
     {
       "script": "assets-02.js",
@@ -25,7 +28,7 @@
     {
       "script": "assets-03.js",
       "data": "assets-03.data",
-      "bytes": 33505941
+      "bytes": 33507933
     },
     {
       "script": "assets-04.js",
@@ -33,21 +36,21 @@
       "bytes": 22428729
     }
   ],
-  "downloadBytes": 158530771,
-  "assetBytes": 151894006,
-  "assetCount": 1169,
+  "downloadBytes": 158526119,
+  "assetBytes": 151896085,
+  "assetCount": 1170,
   "files": {
     "FlyMe2TheMoon.js": {
-      "bytes": 215781,
-      "sha256": "c763130f1f191bc4360cf023727043200a13e663cbad11e68d4968fc4b2bf646"
+      "bytes": 215978,
+      "sha256": "1f33ea64d5d461dc1cba09e2ecd3a9f72cc5135486a8f881cc13d4df47901fe0"
     },
     "FlyMe2TheMoon.wasm": {
-      "bytes": 6263098,
-      "sha256": "2c9cfc28997c38c77c24595ffb0ecc54963069a085288704c3634fbb39c95336"
+      "bytes": 6256074,
+      "sha256": "8e9c9dbd136cb156baed8eaa734f8933b0308af4eb5a2b6a2e8c123782ddb1c6"
     },
     "asset-manifest.json": {
-      "bytes": 192701,
-      "sha256": "bd42856b6a10619412bbc48543c54434eb6d55f1ea343b566ce671cb886ab5d6"
+      "bytes": 192859,
+      "sha256": "468044a3b2c20d738587762de8fd85bda8a51532c6a5009546bd5a349e4707a3"
     },
     "assets-00.js": {
       "bytes": 5967,
@@ -59,11 +62,11 @@
     },
     "assets-01.js": {
       "bytes": 18969,
-      "sha256": "2f003966abc01df45ba58b4e17a26fa9a5dc2e02838d5f9bb814325fd23c21c0"
+      "sha256": "2a4c9c19533cc79796d2870368e6a8caec26b27b3ae280aadf8b6b37f3761e6b"
     },
     "assets-01.data": {
-      "bytes": 29677849,
-      "sha256": "02e248d37a11ab8cd92f938aa6dce27a2fcad9d90dbbb7c444a19aeeaebe6e83"
+      "bytes": 29677936,
+      "sha256": "b9452c034c5c5d7ca0b9ef63c2e8d3d525f812d7f2311b9ea71a1f1aab6737dd"
     },
     "assets-02.js": {
       "bytes": 7929,
@@ -74,12 +77,12 @@
       "sha256": "b5a96371167283f7043a8207d456347552b4aa4796daebb535dcab5f151976a8"
     },
     "assets-03.js": {
-      "bytes": 90050,
-      "sha256": "52564f550d0d046a10fbe077f68805fb98501fb061128a6b9594837718f779a4"
+      "bytes": 90146,
+      "sha256": "ed905e6fddeae6e09540455a5f7921d2930032f55664f98372164cdcb86d0c93"
     },
     "assets-03.data": {
-      "bytes": 33505941,
-      "sha256": "1d95d8468d18b5bdcd0388e7682777bb231e0e53a60bee7ef88dd7fa82efd406"
+      "bytes": 33507933,
+      "sha256": "32eb5db08205e1c855d6cb134e6e230577aa5f82bfddd6243a0495052214c247"
     },
     "assets-04.js": {
       "bytes": 34971,

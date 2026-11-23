@@ -509,7 +509,7 @@
   },
   "assets/configs/levels/055.json": {
     "bytes": 136280,
-    "sha256": "b809e5fc66c711ab0e9ff66747ee0ef25cb577f1d0886fe47f4fdab5d207e42d"
+    "sha256": "0bb55fb8f3e3cd26cde1cce5b1136937fbe388e98cd69149ab989dc618b8dba4"
   },
   "assets/configs/levels/056.json": {
     "bytes": 58449,
@@ -560,8 +560,8 @@
     "sha256": "e965e51b0c7ae83ba656e7148c8c1e1b6cf1b0cec970c5154041c822922011e3"
   },
   "assets/configs/manifests/textures_manifest.json": {
-    "bytes": 64368,
-    "sha256": "818a0d8bad816f6a8f8bcd6c5493106d7ccfb599f8c553c980487d4f9b80584e"
+    "bytes": 64455,
+    "sha256": "9a55cacf383932cba69d85a3ddcad6ce112c26737c82d11a2643821a937a4597"
   },
   "assets/configs/text/en/gcDescriptions.json": {
     "bytes": 1883,
@@ -2526,6 +2526,10 @@
   "assets/textures/laser_stars.png": {
     "bytes": 1030,
     "sha256": "3f16e0a28e4fbd5c10ae2ea846662ad2b36a61957b20695123629a252fd2fdaa"
+  },
+  "assets/textures/result_star_particles.png": {
+    "bytes": 1992,
+    "sha256": "2b7f516f7edad913c5a6e7bfd8e4f2e6e2c3206521196693459fea1ce2579f24"
   },
   "assets/textures/role_fire.png": {
     "bytes": 734,
